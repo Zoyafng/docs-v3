@@ -10,9 +10,9 @@ meta:
 
 {{$localeConfig.brandName}} Java SDK 由两部分组成：用户认证模块（AuthenticationClient） 和管理模块（ManagementClient）。
 
-!!!include(reference/sdk-v5/common/authentication_client_desc.md)!!!
+!!!include(reference/sdk/common/authentication_client_desc.md)!!!
 
-!!!include(reference/sdk-v5/common/management_client_desc.md)!!!
+!!!include(reference/sdk/common/management_client_desc.md)!!!
 
 在一个项目中，ManagementClient 应该只应该被初始化一次，而 AuthenticationClient 一个实例对应一个终端用户，应该在每次请求中初始化一次。
 
@@ -46,13 +46,13 @@ implementation "cn.authing:authing-java-sdk:<{version}>"
 
 ## 使用用户认证模块
 
-!!!include(reference/sdk-v5/common/authentication_client_desc.md)!!!
+!!!include(reference/sdk/common/authentication_client_desc.md)!!!
 
 ### 初始化
 
 #### 获取应用信息
 
-!!!include(reference/sdk-v5/common/get_app_info.md)!!!
+!!!include(reference/sdk/common/get_app_info.md)!!!
 
 #### 初始化
 
