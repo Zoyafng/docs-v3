@@ -88,7 +88,7 @@ export default {
     ExploreCard
   },
 
-  created () {
+  mounted() {
     this.$router.replace({
       path: '/reference/'
     })
