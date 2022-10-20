@@ -1,57 +1,270 @@
-# 开发集成概述
+---
+{
+  title: "开发集成",
+  reference: true,
+  noSidebar: true,
+  subtitle: "Authing  提供 RESTful 形式的 HTTP API，以及十余种不同语言和框架的 SDK。你可以基于这些 API & SDK 资源，灵活的组合出你需要的认证流程。",
+  info: "新版 SDK 已于 2022 年 4 月 26 日正式上线，若你仍希望使用旧版 SDK，",
+  link: "/v2/reference/",
+  linkLabel: "可点击此处跳转",
+  # 编辑类型数据
+  # 在目录重构时重点关注 https://docs.authing.cn/v2/reference/ 开头的旧文档链接
+  # 修改完成后可以用相对路径， 如 /v2/reference/
+  data: [
+      # 大类别
+      {
+        title: "登录组件（Guard）",
+        desc: "5分钟为你的应用接入 Authing 提供的认证服务",
+        # 链接元素
+        list: [
+            {
+              # 图标目录位于：docs/.vuepress/theme/assets/images/reference/
+              # 保存 svg 格式
+              title: "Javascript",
+              icon: "JavaScript",
+              github: "https://github.com/Authing/authing-ui-components",
+              doc: "https://docs.authing.cn/v2/reference/guard/v2/native-javascript.html",
+            },
+            {
+              #
+              title: "React",
+              icon: "React-Native",
+              github: "https://github.com/Authing/authing-ui-components",
+              doc: "https://docs.authing.cn/v2/reference/guard/v2/react.html",
+            },
+          ],
+      },
+      {
+        title: "单页应用",
+        desc: "在浏览器运行的 Web 应用中快速接入认证服务并实现单点登录",
+        list: [
+            {
+              #
+              title: "Javascript",
+              icon: "JavaScript",
+              doc: "https://docs.authing.cn/v2/reference/guard/v2/native-javascript.html",
+            },
+            {
+              #
+              title: "React",
+              icon: "React-Native",
+              doc: "./single-page-application/react.html",
+            },
+            {
+              #
+              title: "Vue",
+              icon: "Vue",
+              doc: "./single-page-application/vue.html",
+            },
+            {
+              #
+              title: "Angular",
+              icon: "Angular",
+              doc: "./single-page-application/angular.html",
+            },
+          ],
+      },
+      {
+        title: "移动、客户端应用",
+        desc: "在移动 / 客户端应用中快速接入认证服务",
+        list: [
+            {
+              #
+              title: "iOS Swift",
+              icon: "iOS",
+              github: "https://github.com/Authing/guard-ios",
+              doc: "./mobile/sdk-for-ios/",
+            },
+            {
+              #
+              title: "Android",
+              icon: "Android",
+              github: "https://github.com/Authing/guard-android",
+              doc: "./mobile/sdk-for-android/",
+            },
+            {
+              #
+              title: "Flutter",
+              icon: "Flutter",
+              github: "https://github.com/Authing/sdk-flutter",
+              doc: "./mobile/sdk-for-flutter/",
+            },
+            {
+              #
+              title: "React Native",
+              icon: "React-Native",
+              github: "https://github.com/Authing/authing-rn-sdk",
+              doc: "./mobile/sdk-for-react-native.html",
+            },
+            {
+              #
+              title: "C#",
+              icon: "csharp",
+              github: "https://github.com/Authing/authing-api-client-net",
+              doc: "./mobile/sdk-for-csharp/",
+            },
+          ],
+      },
+      {
+        title: "标准 Web 应用",
+        desc: "在标准 Web 应用中快速接入 Authing 能力",
+        list: [
+            {
+              #
+              title: "Javascript",
+              icon: "JavaScript",
+              github: "https://github.com/Authing/authing.js",
+              doc: "./sdk-v5/node/install.html",
+            },
+            {
+              #
+              title: "Python",
+              icon: "Python",
+              github: "https://github.com/Authing/authing-py-sdk",
+              doc: "./sdk-v5/python/install.html",
+            },
+            {
+              #
+              title: "C#",
+              icon: "csharp",
+              github: "https://github.com/Authing/authing-api-client-net",
+              doc: "./sdk-v5/csharp/install.html",
+            },
+            {
+              #
+              title: "Node.js",
+              icon: "Nodejs",
+              github: "https://github.com/Authing/authing.js",
+              doc: "./sdk-v5/node/install.html",
+            },
+            {
+              #
+              title: "Ruby",
+              icon: "Ruby",
+              github: "https://github.com/Authing/authing-ruby",
+              doc: "./web/sdk-for-ruby.html",
+            },
+            {
+              #
+              title: "Java",
+              icon: "Java",
+              github: "https://github.com/Authing/authing-java-sdk",
+              doc: "./sdk-v5/java/install.html",
+            },
+            {
+              #
+              title: "Golang",
+              icon: "Go",
+              github: "https://github.com/Authing/authing-go-sdk",
+              doc: "./sdk-v5/go/install.html",
+            },
+            {
+              #
+              title: "PHP",
+              icon: "php",
+              github: "https://github.com/Authing/authing-php-sdk",
+              doc: "./sdk-v5/php/install.html",
+            },
+          ],
+      },
 
-<LastUpdated/>
-
-{{$localeConfig.brandName}} 提供 `RESTful` 和 `GraphQL` 两种风格的 API，并将 SDK 分成两大类：
-
-- Management SDK: 供管理员使用，用于管理 {{$localeConfig.brandName}} 资源，如管理用户、角色、应用、组织机构、配置等；
-- Authentication SDK: 供终端用户使用，已终端用户的身份进行操作，如登录注册、修改个人资料、重置密码等。
-
-## 集成认证到你的应用中
-
-我们推荐使用 {{$localeConfig.brandName}} 提供的 [前端登录组件 Guard](https://docs.authing.cn/v2/reference/guard/v2/) ，它为开发者屏蔽了很多底层认证的实现细节，同时也包括繁琐的 UI 开发；如果你需要自己实现登录界面 UI，可以使用我们为各语言提供的 `Authentication SDK`；在单点登录场景下，我们提供[单点登录 SDK](https://docs.authing.cn/v2/reference/sdk-for-sso.html) 帮助你快速实现单点登录。
-
-一些场景的认证场景包括：
-
-- 用户登录之后获取身份凭证 `id_token`；
-- 使用用户的 `id_token` 获取用户信息；
-- 使用多因素认证（MFA）作为额外认证手段。
-
-## 管理你在 {{$localeConfig.brandName}} 中的资源
-
-所有你在 {{$localeConfig.brandName}} 控制台进行的操作，基本上都可以使用 Management SDK 完成，从而实现自动化的运维管理。
-
-一些典型的管理场景包括：
-
-- 管理你在 Authing 中的角色；
-- 查看审计日志和用户行为日志；
-- 管理用户目录等。
-
-## 支持的 SDK 种类
-
-在此之上，{{$localeConfig.brandName}} 将 API 进一步封装为多语言的 SDK，目前共支持以下几种常见语言 / 场景：
-
-- [Java](https://docs.authing.cn/v2/reference/sdk-for-java/)
-- [Node.js/JavaScript](https://docs.authing.cn/v2/reference/sdk-for-node/)
-- [Python](https://docs.authing.cn/v2/reference/sdk-for-python/)
-- [PHP](https://docs.authing.cn/v2/reference/sdk-for-php/)
-- [C#](https://docs.authing.cn/v2/reference/sdk-for-csharp/)
-- [Android](https://docs.authing.cn/v2/reference/sdk-for-android/)
-- [iOS](https://docs.authing.cn/v2/reference/sdk-for-ios/)
-- [Flutter](https://docs.authing.cn/v2/reference/sdk-for-flutter.html)
-- [Swift](https://docs.authing.cn/v2/reference/sdk-for-swift.html)
-- [小程序](https://docs.authing.cn/v2/reference/sdk-for-wxapp.html)
-- [微信网页授权](https://docs.authing.cn/v2/reference/sdk-for-wxmp.html)
-- [Go](https://docs.authing.cn/v2/reference/sdk-for-go.html)
-- [Ruby](https://docs.authing.cn/v2/reference/sdk-for-ruby.html)
-- [Delphi](https://docs.authing.cn/v2/reference/sdk-for-delphi.html)
-
-在此之上，我们又将 SDK 进一步封装成高度定制化、通用的登录表单组件，你可以快速集成到你的项目中，详情请见：[登录组件](https://docs.authing.cn/v2/reference/guard/v2/)。
-
-Authing 的 SDK 赋能了很多客户：高等教育出版社使用了 Java，Delphi ，iOS 等 SDK 语言，中国石油使用 Python，C# 版本的 SDK ，东南大学使用了 Java，Delphi，C# 等多种开发语言的 SDK。
-
-除此之外，我们还提供了专门用于单点登录场景的 [JavaScript SSO SDK](https://docs.authing.cn/v2/reference/sdk-for-sso.html)，可以帮助你快速实现单点登录。
-
-最后，我们还有[快速在 Web 框架中集成 {{$localeConfig.brandName}} 的指引流程](https://docs.authing.cn/v2/reference/frameworks.html)。
-
-你可以结合自己的业务场景，选择合适的 API 或者 SDK。
+      {
+        #
+        title: "框架集成",
+        # desc: "更新文案",
+        list: [
+            {
+              #
+              icon: "Spring",
+              title: "Spring CAS",
+              doc: "./frameworks/spring-security-cas/",
+            },
+            {
+              #
+              icon: "Spring",
+              title: "Spring OAuth",
+              doc: "./frameworks/spring-security-oauth/",
+            },
+            {
+              #
+              icon: "Spring",
+              title: "Spring OIDC",
+              doc: "./frameworks/spring-security-oidc/",
+            },
+            {
+              #
+              icon: "Express",
+              title: "Express OIDC",
+              doc: "./frameworks/express-oidc-client/",
+            },
+            {
+              #
+              icon: "Express",
+              title: "Express Passport",
+              doc: "./frameworks/express-passport-openidconnect/",
+            },
+          ],
+      },
+      {
+        #
+        title: "API 接口",
+        desc: "提供 RESTful 形式的 HTTP API，帮助快速获取认证能力",
+        list: [
+            {
+              #
+              title: "API",
+              icon: "SDK",
+              api: "https://core.authing.cn/openapi/",
+            },
+          ],
+      },
+      #     {
+      #
+      #       title: "SDK 库",
+      #       desc: "丰富的 SDK 帮助你快速接入 Authing 能力",
+      #       list: [
+      #           {
+      #
+      #            title: "SDK",
+      #            icon: "SDK",
+      #            doc: "https://authing-open-api.readme.io/reference",
+      #          },
+      #        ],
+      #    },
+      {
+        #
+        title: "其他",
+        desc: " ",
+        list: [
+            {
+              #
+              title: "单点登录（SSO）",
+              doc: "./other/sdk-for-sso.html",
+            },
+            {
+              #
+              title: "微信小程序",
+              github: "https://github.com/authing/authing-wxapp-sdk",
+              doc: "./other/sdk-for-wxapp.html",
+            },
+            {
+              #
+              title: "微信网页登录",
+              doc: "./other/sdk-for-wxmp.html",
+            },
+            {
+              #
+              title: "Radius",
+              doc: "./other/radius/",
+            },
+            {
+              #
+              title: "错误代码",
+              doc: "./other/error-code.html
+                ",
+            },
+          ],
+      },
+    ],
+}
+---
