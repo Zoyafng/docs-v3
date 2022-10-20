@@ -20,8 +20,7 @@
 | description | string | 否 | - | 权限分组描述信息  | `我的权限分组描述` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -37,7 +36,6 @@ data = management_client.create_namespace(
   
 )
 ```
- -->
 
 
 ## 请求响应

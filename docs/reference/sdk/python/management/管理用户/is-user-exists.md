@@ -21,8 +21,7 @@
 | externalId | string | 否 | - | 第三方外部 ID  | `10010` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -39,7 +38,6 @@ data = management_client.is_user_exists(
   
 )
 ```
- -->
 
 
 ## 请求响应

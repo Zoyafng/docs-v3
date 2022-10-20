@@ -19,8 +19,7 @@
 | appId | string | 是 | - | 应用 ID  | `6229ffaxxxxxxxxcade3e3d9` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -35,7 +34,6 @@ data = management_client.update_application_permission_strategy(
   
 )
 ```
- -->
 
 
 ## 请求响应

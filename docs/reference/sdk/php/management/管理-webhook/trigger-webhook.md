@@ -20,8 +20,7 @@
 | requestBody | object | 否 | - | 请求体  | `{"eventName":"test","data":{"description":"A test from authing"}}` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -50,8 +49,7 @@ $data = $management->triggerWebhook(array(
 ),
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

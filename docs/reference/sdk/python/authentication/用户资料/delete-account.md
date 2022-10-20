@@ -18,8 +18,7 @@
 | deleteAccountToken | string | 是 | - | 注销账户的 token  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -33,7 +32,7 @@ data = management_client.delete_account(
   
 )
 ```
- -->
+
 
 ## 请求响应
 

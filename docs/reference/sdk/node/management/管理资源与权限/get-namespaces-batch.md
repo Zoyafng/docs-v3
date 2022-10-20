@@ -18,8 +18,7 @@
  | codeList | string[]  | 是 | - | 资源 code 列表，批量可以使用逗号分隔 数组长度限制：50。 | `code1,code2` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -37,7 +36,6 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
- -->
 
 
 ## 请求响应

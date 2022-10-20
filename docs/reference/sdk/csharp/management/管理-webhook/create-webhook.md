@@ -23,8 +23,7 @@
 | secret | string | 否 | - | 请求密钥  | `xxxxxxxxxxxx` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -72,7 +71,6 @@ namespace Example
 }
 
 ```
- -->
 
 
 ## 请求响应

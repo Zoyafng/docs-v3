@@ -18,8 +18,7 @@
  | targetType | string  | 是 | - | 目标对象类型：<br>- `USER`: 用户<br>- `ROLE`: 角色<br>- `GROUP`: 分组<br>- `DEPARTMENT`: 部门<br>      | `USER` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -37,8 +36,7 @@ $data = $management->getCustomFields(array(
     "targetType" => "USER",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 
@@ -135,7 +133,7 @@ $data = $management->getCustomFields(array(
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）   |  |
-| value | boolean | 是 | 多语言内容   |  |
+| value | string | 是 | 多语言内容   |  |
 
 
 ### <a id="CustomFieldSelectOption"></a> CustomFieldSelectOption

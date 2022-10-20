@@ -21,8 +21,7 @@
 | namespace | string | 否 | - | 所属权限分组的 code，当 target_type 为角色的时候需要填写，否则可以忽略  | `default` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -42,7 +41,6 @@ data = management_client.set_custom_data(
   
 )
 ```
- -->
 
 
 ## 请求响应

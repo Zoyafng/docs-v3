@@ -18,8 +18,7 @@
 | list | <a href="#RoleListItem">RoleListItem[]</a> | 是 | - | 角色列表 数组长度限制：50。 | `[{"code":"my-role-code","namespace":"default","description":"this is  description"}]` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```go
 package main
 
@@ -55,7 +54,6 @@ func main() {
   )
 }
 ```
- -->
 
 
 ## 请求响应

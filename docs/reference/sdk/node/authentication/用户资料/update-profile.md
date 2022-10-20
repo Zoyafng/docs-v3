@@ -31,8 +31,7 @@
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"school":"北京大学","age":22}` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -65,7 +64,7 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
- -->
+
 
 ## 请求响应
 

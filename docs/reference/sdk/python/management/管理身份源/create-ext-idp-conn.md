@@ -24,8 +24,7 @@
 | logo | string | 否 | - | 身份源图标  | `https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -48,7 +47,6 @@ data = management_client.create_ext_idp_conn(
   
 )
 ```
- -->
 
 
 ## 请求响应

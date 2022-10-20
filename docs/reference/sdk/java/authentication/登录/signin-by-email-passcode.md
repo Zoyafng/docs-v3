@@ -19,8 +19,7 @@
 | passCode | String | 是 | - | 邮箱验证码  | `1234` |
 | options | <a href="#SignInOptionsDto">SignInOptionsDto</a> | 否 | - | 可选参数  | `{"passwordEncryptType":"none"}` |
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.client.AuthenticationClient;
 import cn.authing.sdk.java.dto.*;
@@ -80,7 +79,7 @@ class Test {
     }
 }
 ```
- -->
+
 
 ## 请求响应
 

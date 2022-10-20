@@ -19,8 +19,7 @@
 | name | string | 是 | - | 名称  | `exampleName` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -38,8 +37,7 @@ $data = $management->updateExtIdp(array(
     "id" => "60b49eb83fd80adb96f26e68",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

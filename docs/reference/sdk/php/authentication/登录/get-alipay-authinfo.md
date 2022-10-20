@@ -18,8 +18,7 @@
  | extIdpConnidentifier | string  | 是 | - | 外部身份源连接标志符  | `wework` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -37,7 +36,7 @@ $data = $management->getAlipayAuthinfo(array(
     "extIdpConnidentifier" => "wework",
 
 ));
-``` -->
+```
 
 ## 请求响应
 

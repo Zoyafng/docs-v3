@@ -57,8 +57,7 @@
 | options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```go
 package main
 
@@ -149,7 +148,6 @@ func main() {
   )
 }
 ```
- -->
 
 
 ## 请求响应

@@ -21,8 +21,7 @@
  | type | string  | 否 | - | 身份源类型  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -43,7 +42,6 @@ data = management_client.ext_idp_conn_apps(
   
 )
 ```
- -->
 
 
 ## 请求响应

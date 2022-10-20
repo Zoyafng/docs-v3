@@ -22,8 +22,7 @@
 | i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 | - | 多语言设置  | `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -69,22 +68,22 @@ namespace Example
                         Zh-CN= new LangUnit
                 {
                           Enabled= false ,
-          Value= false ,
+          Value= "false" ,
         },
         En-US= new LangUnit
                 {
                           Enabled= false ,
-          Value= false ,
+          Value= "false" ,
         },
         Zh-TW= new LangUnit
                 {
                           Enabled= false ,
-          Value= false ,
+          Value= "false" ,
         },
         Ja-JP= new LangUnit
                 {
                           Enabled= false ,
-          Value= false ,
+          Value= "false" ,
         },
         },
         },
@@ -95,7 +94,6 @@ namespace Example
 }
 
 ```
- -->
 
 
 ## 请求响应
@@ -174,7 +172,7 @@ namespace Example
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）   |  |
-| value | boolean | 是 | 多语言内容   |  |
+| value | string | 是 | 多语言内容   |  |
 
 
 ### <a id="OrganizationDto"></a> OrganizationDto
@@ -218,6 +216,6 @@ namespace Example
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）   |  |
-| value | boolean | 是 | 多语言内容   |  |
+| value | string | 是 | 多语言内容   |  |
 
 

@@ -21,8 +21,7 @@
 | departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型  | `department_id` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```go
 package main
 
@@ -54,7 +53,6 @@ func main() {
   )
 }
 ```
- -->
 
 
 ## 请求响应

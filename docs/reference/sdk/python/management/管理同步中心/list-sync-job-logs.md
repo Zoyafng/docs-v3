@@ -23,8 +23,7 @@
  | objectType | string  | 否 | - | 操作对象类型:<br>- `department`: 部门<br>- `user`: 用户<br>      | `DEPARTMENT` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -49,7 +48,6 @@ data = management_client.list_sync_job_logs(
   
 )
 ```
- -->
 
 
 ## 请求响应

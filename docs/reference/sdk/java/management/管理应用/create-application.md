@@ -31,7 +31,7 @@
 | samlProviderEnabled | boolean | 否 | - | 是否开启 SAML 身份提供商  |  |
 | samlConfig | <a href="#SamlIdpConfig">SamlIdpConfig</a> | 否 | [object Object] | SAML 协议配置  |  |
 | oauthProviderEnabled | boolean | 否 | - | 是否开启 OAuth 身份提供商  |  |
-| oauthConfig | <a href="#OauthIdpConfig">OauthIdpConfig</a> | 否 | - | OAuth2.0 协议配置。【重要提示】不再推荐使用 OAuth2.0，建议切换到 OIDC。  | `{"grants":["authorization_code"],"access_token_lifetime":1209600,"refresh_token_lifetime":2592000,"introspection_endpoint_auth_method":"client_secret_post","revocation_endpoint_auth_method":"client_secret_post","id":"635105b267de3f03c58547eb","client_secret":"eac1620f9180a8f4041f01f23b215c37","redirect_uris":[]}` |
+| oauthConfig | <a href="#OauthIdpConfig">OauthIdpConfig</a> | 否 | - | OAuth2.0 协议配置。【重要提示】不再推荐使用 OAuth2.0，建议切换到 OIDC。  | `{"grants":["authorization_code"],"access_token_lifetime":1209600,"refresh_token_lifetime":2592000,"introspection_endpoint_auth_method":"client_secret_post","revocation_endpoint_auth_method":"client_secret_post"}` |
 | casProviderEnabled | boolean | 否 | - | 是否开启 CAS 身份提供商  |  |
 | casConfig | <a href="#CasIdPConfig">CasIdPConfig</a> | 否 | - | CAS 协议配置  | `{"casUserIdentifier":"${user.username}","customAttributes":{"customAttr1":"123"},"stLifetime":300}` |
 | loginConfig | <a href="#ApplicationLoginConfigInputDto">ApplicationLoginConfigInputDto</a> | 否 | - | 登录配置  |  |
@@ -39,8 +39,7 @@
 | brandingConfig | <a href="#ApplicationBrandingConfigInputDto">ApplicationBrandingConfigInputDto</a> | 否 | - | 品牌化配置  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
@@ -126,7 +125,6 @@ Change the background color
     }
 }
 ```
- -->
 
 
 ## 请求响应
@@ -400,7 +398,7 @@ Change the background color
 | showEnterpriseConnections | boolean | 是 | 是否显示企业身份源登录方式   |  `true` |
 | showSocialConnections | boolean | 是 | 是否显示社会化登录方式   |  `true` |
 | showAgreement | boolean | 是 | 是否展示登录注册协议   |  |
-| agreements |  | 是 | 展示的登录注册协议列表 嵌套类型：<a href="#ApplicationAgreementDto">ApplicationAgreementDto</a>。  |  |
+| agreements | array | 是 | 展示的登录注册协议列表 嵌套类型：<a href="#ApplicationAgreementDto">ApplicationAgreementDto</a>。  |  |
 
 
 ### <a id="ApplicationAgreementDto"></a> ApplicationAgreementDto

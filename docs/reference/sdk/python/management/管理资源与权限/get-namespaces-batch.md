@@ -18,8 +18,7 @@
  | codeList | string[]  | 是 | - | 资源 code 列表，批量可以使用逗号分隔 数组长度限制：50。 | `code1,code2` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -34,7 +33,6 @@ data = management_client.get_namespaces_batch(
   
 )
 ```
- -->
 
 
 ## 请求响应

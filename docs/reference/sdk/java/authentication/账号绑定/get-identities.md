@@ -52,8 +52,7 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.client.AuthenticationClient;
 import cn.authing.sdk.java.dto.*;
@@ -79,7 +78,7 @@ class Test {
     }
 }
 ```
- -->
+
 
 ## 请求响应
 

@@ -20,8 +20,7 @@
 | description | string | 否 | - | 角色描述  | `this is manager` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -40,8 +39,7 @@ $data = $management->createRole(array(
     "description" => "this is manager",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

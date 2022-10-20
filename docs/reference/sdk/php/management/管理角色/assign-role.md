@@ -20,8 +20,7 @@
 | namespace | string | 否 | - | 所属权限分组的 code  | `60b49eb83fd80adb96f26e68` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -46,8 +45,7 @@ $data = $management->assignRole(array(
     ),
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

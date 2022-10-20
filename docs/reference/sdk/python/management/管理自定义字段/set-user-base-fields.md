@@ -18,8 +18,7 @@
 | list | <a href="#SetUserBaseFieldDto">SetUserBaseFieldDto[]</a> | 是 | - | 自定义字段列表 数组长度限制：50。 |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -40,19 +39,19 @@ data = management_client.set_user_base_fields(
          label: {
          zh-_c_n: {
          enabled: false,
-       value: false,
+       value: "false",
     },
        en-_u_s: {
          enabled: false,
-       value: false,
+       value: "false",
     },
        zh-_t_w: {
          enabled: false,
-       value: false,
+       value: "false",
     },
        ja-_j_p: {
          enabled: false,
-       value: false,
+       value: "false",
     },
     },
     },
@@ -60,7 +59,6 @@ data = management_client.set_user_base_fields(
   
 )
 ```
- -->
 
 
 ## 请求响应
@@ -152,7 +150,7 @@ data = management_client.set_user_base_fields(
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）   |  |
-| value | boolean | 是 | 多语言内容   |  |
+| value | string | 是 | 多语言内容   |  |
 
 
 ### <a id="CustomFieldDto"></a> CustomFieldDto
@@ -196,7 +194,7 @@ data = management_client.set_user_base_fields(
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）   |  |
-| value | boolean | 是 | 多语言内容   |  |
+| value | string | 是 | 多语言内容   |  |
 
 
 ### <a id="CustomFieldSelectOption"></a> CustomFieldSelectOption

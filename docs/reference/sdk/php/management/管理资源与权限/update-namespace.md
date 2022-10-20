@@ -21,8 +21,7 @@
 | newCode | string | 否 | - | 权限分组新的唯一标志符  | `my-new-namespace` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -42,8 +41,7 @@ $data = $management->updateNamespace(array(
     "newCode" => "my-new-namespace",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

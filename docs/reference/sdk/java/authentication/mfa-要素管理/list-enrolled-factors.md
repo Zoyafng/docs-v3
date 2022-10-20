@@ -17,8 +17,7 @@ Authing 目前支持四种类型的 MFA 认证要素：手机短信、邮件验�
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.client.AuthenticationClient;
 import cn.authing.sdk.java.dto.*;
@@ -44,7 +43,7 @@ class Test {
     }
 }
 ```
- -->
+
 
 ## 请求响应
 

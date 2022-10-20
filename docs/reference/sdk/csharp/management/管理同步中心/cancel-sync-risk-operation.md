@@ -18,8 +18,7 @@
 | syncRiskOperationIds | array[] | 是 | - | 同步任务风险操作 ID  | `[1,2]` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -62,7 +61,6 @@ namespace Example
 }
 
 ```
- -->
 
 
 ## 请求响应

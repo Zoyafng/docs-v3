@@ -20,8 +20,7 @@
 | options | <a href="#HasAnyRoleOptionsDto">HasAnyRoleOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -42,7 +41,6 @@ data = management_client.has_any_role(
   
 )
 ```
- -->
 
 
 ## 请求响应

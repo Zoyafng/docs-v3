@@ -23,8 +23,7 @@
 | type | string | 否 | - | 资源类型，如数据、API、按钮、菜单  | `API` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -52,8 +51,7 @@ $data = $management->updateResource(array(
     "type" => "API",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

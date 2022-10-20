@@ -19,8 +19,7 @@
  | startTime | string  | 是 | - | 起始时间（年月日）  | `20220202` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -40,8 +39,7 @@ $data = $management->getMauPeriodUsageHistory(array(
     "startTime" => "20220202",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

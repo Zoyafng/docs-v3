@@ -18,8 +18,7 @@
 | extIdpId | string | 是 | - | 外部身份源 ID  | `62f209327xxxxcc10d966ee5` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -36,7 +35,7 @@ $data = $management->unlinkExtidp(array(
       "extIdpId" => "62f209327xxxxcc10d966ee5",
 
 ));
-``` -->
+```
 
 ## 请求响应
 

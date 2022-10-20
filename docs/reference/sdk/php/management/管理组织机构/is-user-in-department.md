@@ -22,8 +22,7 @@
  | includeChildrenDepartments | boolean  | 否 | - | 是否包含子部门  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -49,8 +48,7 @@ $data = $management->isUserInDepartment(array(
     "includeChildrenDepartments" => false,
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

@@ -21,8 +21,7 @@
 | namespace | string | 否 | - | 所属权限分组的 code  | `default` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```go
 package main
 
@@ -54,7 +53,6 @@ func main() {
   )
 }
 ```
- -->
 
 
 ## 请求响应

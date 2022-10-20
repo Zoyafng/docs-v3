@@ -18,8 +18,7 @@
  | code | string  | 是 | - | 分组 code  | `developer` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -37,8 +36,7 @@ $data = $management->getGroup(array(
     "code" => "developer",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

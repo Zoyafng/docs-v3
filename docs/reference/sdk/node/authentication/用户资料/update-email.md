@@ -19,8 +19,7 @@
 | updateEmailToken | string | 是 | - | 用于临时修改邮箱的 token，可从**发起修改邮箱的验证请求**接口获取。  | `xxxx` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -37,7 +36,7 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
- -->
+
 
 ## 请求响应
 

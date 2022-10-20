@@ -21,8 +21,7 @@
 | externalId | string | 否 | - | 第三方外部 ID  | `10010` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -42,8 +41,7 @@ $data = $management->isUserExists(array(
     "externalId" => "10010",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

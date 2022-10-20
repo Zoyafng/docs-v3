@@ -19,8 +19,7 @@
 | verifyMethod | string | 是 | - | 修改手机号的验证方式：<br>- `PHONE_PASSCODE`: 使用短信验证码的方式进行验证，当前仅支持这一种方式。<br>      |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -45,7 +44,7 @@ $data = $management->verifyUpdatePhoneRequest(array(
     ),
 
 ));
-``` -->
+```
 
 ## 请求响应
 

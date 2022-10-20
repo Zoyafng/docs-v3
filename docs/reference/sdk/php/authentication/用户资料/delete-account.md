@@ -18,8 +18,7 @@
 | deleteAccountToken | string | 是 | - | 注销账户的 token  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -36,7 +35,7 @@ $data = $management->deleteAccount(array(
       "deleteAccountToken" => "undefined",
 
 ));
-``` -->
+```
 
 ## 请求响应
 

@@ -23,8 +23,7 @@
  | withDenied | boolean  | 否 | - | 是否获取被拒绝的资源  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -49,7 +48,6 @@ data = management_client.get_authorized_resources(
   
 )
 ```
- -->
 
 
 ## 请求响应

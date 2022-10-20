@@ -21,8 +21,7 @@
  | resourceType | string  | 否 | - | 资源类型，如 数据、API、菜单、按钮  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -43,7 +42,6 @@ data = management_client.get_user_authorized_resources(
   
 )
 ```
- -->
 
 
 ## 请求响应

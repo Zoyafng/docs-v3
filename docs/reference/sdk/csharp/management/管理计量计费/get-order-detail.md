@@ -18,8 +18,7 @@
  | orderNo | string  | 是 | - | 订单号  | `2022080410062060e26f7fd6b9` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -62,7 +61,6 @@ namespace Example
 }
 
 ```
- -->
 
 
 ## 请求响应

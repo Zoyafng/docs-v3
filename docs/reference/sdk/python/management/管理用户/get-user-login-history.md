@@ -25,8 +25,7 @@
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -55,7 +54,6 @@ data = management_client.get_user_login_history(
   
 )
 ```
- -->
 
 
 ## 请求响应

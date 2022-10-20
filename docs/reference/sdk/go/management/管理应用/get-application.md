@@ -18,8 +18,7 @@
  | appId | string  | 是 | - | 应用 ID  | `6229ffaxxxxxxxxcade3e3d9` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```go
 package main
 
@@ -48,7 +47,6 @@ func main() {
   )
 }
 ```
- -->
 
 
 ## 请求响应
@@ -226,7 +224,7 @@ Change the background color
 | showEnterpriseConnections | boolean | 是 | 是否显示企业身份源登录方式   |  `true` |
 | showSocialConnections | boolean | 是 | 是否显示社会化登录方式   |  `true` |
 | showAgreement | boolean | 是 | 是否展示登录注册协议   |  |
-| agreements |  | 是 | 展示的登录注册协议列表 嵌套类型：<a href="#ApplicationAgreementDto">ApplicationAgreementDto</a>。  |  |
+| agreements | array | 是 | 展示的登录注册协议列表 嵌套类型：<a href="#ApplicationAgreementDto">ApplicationAgreementDto</a>。  |  |
 
 
 ### <a id="ApplicationAgreementDto"></a> ApplicationAgreementDto

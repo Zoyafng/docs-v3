@@ -34,8 +34,7 @@
 | enabled | boolean | 否 | - | 是否启用此 Pipeline  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -65,7 +64,6 @@ data = management_client.update_pipeline_function(
   
 )
 ```
- -->
 
 
 ## 请求响应

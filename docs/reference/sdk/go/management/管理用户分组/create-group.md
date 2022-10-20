@@ -20,8 +20,7 @@
 | code | string | 是 | - | 分组 code  | `developer` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```go
 package main
 
@@ -52,7 +51,6 @@ func main() {
   )
 }
 ```
- -->
 
 
 ## 请求响应

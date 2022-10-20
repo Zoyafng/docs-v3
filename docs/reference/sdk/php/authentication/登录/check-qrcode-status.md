@@ -18,8 +18,7 @@
  | qrcodeId | string  | 是 | - | 二维码唯一 ID  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -37,7 +36,7 @@ $data = $management->checkQrcodeStatus(array(
     "qrcodeId" => "",
 
 ));
-``` -->
+```
 
 ## 请求响应
 

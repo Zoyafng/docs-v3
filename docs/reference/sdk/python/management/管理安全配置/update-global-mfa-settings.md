@@ -18,8 +18,7 @@
 | enabledFactors | string[] | 是 |  | 开启的 MFA 认证因素列表  | `["SMS"]` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -33,7 +32,6 @@ data = management_client.update_global_mfa_settings(
   
 )
 ```
- -->
 
 
 ## 请求响应

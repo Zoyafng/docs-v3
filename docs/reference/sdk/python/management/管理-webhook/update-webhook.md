@@ -24,8 +24,7 @@
 | secret | string | 否 | - | 请求密钥  | `xxxxxxxxxxxx` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -45,7 +44,6 @@ data = management_client.update_webhook(
   
 )
 ```
- -->
 
 
 ## 请求响应

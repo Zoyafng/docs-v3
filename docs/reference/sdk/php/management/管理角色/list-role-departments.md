@@ -21,8 +21,7 @@
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -46,8 +45,7 @@ $data = $management->listRoleDepartments(array(
     "limit" => 10,
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

@@ -20,8 +20,7 @@
 | options | <a href="#KickUsersOptionsDto">KickUsersOptionsDto</a> | 否 | - | 可选参数  | `{"userIdType":"user_id"}` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -39,7 +38,6 @@ data = management_client.kick_users(
   
 )
 ```
- -->
 
 
 ## 请求响应

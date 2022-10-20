@@ -19,8 +19,7 @@
 | factorType | string | 是 | - | MFA 认证要素类型，目前共支持短信、邮箱验证码、OTP、人脸四种类型的认证要素。  | `SMS` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -42,7 +41,7 @@ $data = $management->sendEnrollFactorRequest(array(
     ),
 
 ));
-``` -->
+```
 
 ## 请求响应
 

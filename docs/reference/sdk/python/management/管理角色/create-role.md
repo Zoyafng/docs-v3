@@ -20,8 +20,7 @@
 | description | string | 否 | - | 角色描述  | `this is manager` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -37,7 +36,6 @@ data = management_client.create_role(
   
 )
 ```
- -->
 
 
 ## 请求响应

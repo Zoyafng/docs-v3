@@ -21,8 +21,7 @@
 | passwordPayload | <a href="#DeleteAccountByPasswordDto">DeleteAccountByPasswordDto</a> | 否 | - | 使用密码验证的数据  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -49,7 +48,7 @@ data = management_client.verify_delete_account_request(
   
 )
 ```
- -->
+
 
 ## 请求响应
 

@@ -18,8 +18,7 @@
 | codeList | string[] | 是 | - | 分组 code 列表 数组长度限制：50。 | `["code1"]` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -36,7 +35,6 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
- -->
 
 
 ## 请求响应

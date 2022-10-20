@@ -21,8 +21,7 @@
 | newCode | string | 否 | - | 分组新的 code  | `developer` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -39,7 +38,6 @@ data = management_client.update_group(
   
 )
 ```
- -->
 
 
 ## 请求响应

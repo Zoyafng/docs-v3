@@ -23,8 +23,7 @@
 | type | string | 否 | - | 资源类型，如数据、API、按钮、菜单  | `API` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
@@ -57,7 +56,6 @@ class Test {
     }
 }
 ```
- -->
 
 
 ## 请求响应

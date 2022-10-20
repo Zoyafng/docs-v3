@@ -18,8 +18,7 @@
 | webhookIds | string[] | 是 | - | webhookId 数组  | `["xxxx"]` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -36,8 +35,7 @@ $data = $management->deleteWebhook(array(
       "webhookIds" => array("xxxx"),
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

@@ -20,8 +20,7 @@
  | resourceType | string  | 否 | - | 资源类型  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -43,8 +42,7 @@ $data = $management->getGroupAuthorizedResources(array(
     "resourceType" => "undefined",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

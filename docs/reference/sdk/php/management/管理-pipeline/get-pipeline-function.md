@@ -18,8 +18,7 @@
  | funcId | string  | 是 | - | Pipeline 函数 ID  | `62ce9135dxxxxb83e373f5d6` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -37,8 +36,7 @@ $data = $management->getPipelineFunction(array(
     "funcId" => "62ce9135dxxxxb83e373f5d6",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 
