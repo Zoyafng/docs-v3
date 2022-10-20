@@ -18,8 +18,7 @@
 | list | <a href="#ImportOtpItemDto">ImportOtpItemDto[]</a> | 是 | - | 参数列表  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
@@ -50,7 +49,6 @@ class Test {
     }
 }
 ```
- -->
 
 
 ## 请求响应

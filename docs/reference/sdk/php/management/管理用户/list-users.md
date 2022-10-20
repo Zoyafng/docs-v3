@@ -193,8 +193,7 @@
 | options | <a href="#ListUsersOptionsDto">ListUsersOptionsDto</a> | 否 | - | 可选项  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -236,8 +235,7 @@ $data = $management->listUsers(array(
     ),
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

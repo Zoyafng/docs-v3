@@ -19,8 +19,7 @@
 | email | string | 是 | - | 邮箱，不区分大小写。  | `test@example.com` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -35,7 +34,7 @@ data = management_client.bind_email(
   
 )
 ```
- -->
+
 
 ## 请求响应
 

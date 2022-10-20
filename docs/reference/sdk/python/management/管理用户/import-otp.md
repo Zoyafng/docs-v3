@@ -18,8 +18,7 @@
 | list | <a href="#ImportOtpItemDto">ImportOtpItemDto[]</a> | 是 | - | 参数列表  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -39,7 +38,6 @@ data = management_client.import_otp(
   
 )
 ```
- -->
 
 
 ## 请求响应

@@ -23,8 +23,7 @@
  | withDenied | boolean  | 否 | - | 是否获取被拒绝的资源  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -52,8 +51,7 @@ $data = $management->getAuthorizedResources(array(
     "withDenied" => false,
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

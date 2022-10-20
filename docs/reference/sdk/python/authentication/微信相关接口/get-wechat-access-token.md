@@ -19,8 +19,7 @@
 | appId | string | 是 | - | 微信小程序或微信公众号的 AppId  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -35,7 +34,7 @@ data = management_client.get_wechat_access_token(
   
 )
 ```
- -->
+
 
 ## 请求响应
 

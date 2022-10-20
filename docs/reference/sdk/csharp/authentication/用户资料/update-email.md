@@ -19,8 +19,7 @@
 | updateEmailToken | string | 是 | - | 用于临时修改邮箱的 token，可从**发起修改邮箱的验证请求**接口获取。  | `xxxx` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -63,7 +62,7 @@ namespace Example
 }
 
 ```
- -->
+
 
 ## 请求响应
 

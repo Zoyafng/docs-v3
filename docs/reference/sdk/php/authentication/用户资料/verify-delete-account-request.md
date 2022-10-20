@@ -21,8 +21,7 @@
 | passwordPayload | <a href="#DeleteAccountByPasswordDto">DeleteAccountByPasswordDto</a> | 否 | - | 使用密码验证的数据  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -52,7 +51,7 @@ $data = $management->verifyDeleteAccountRequest(array(
     ),
 
 ));
-``` -->
+```
 
 ## 请求响应
 

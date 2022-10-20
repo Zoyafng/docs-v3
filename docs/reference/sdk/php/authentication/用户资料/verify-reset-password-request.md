@@ -20,8 +20,7 @@
 | emailPassCodePayload | <a href="#ResetPasswordByEmailPassCodeDto">ResetPasswordByEmailPassCodeDto</a> | 否 | - | 使用邮箱验证码验证的数据  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -47,7 +46,7 @@ $data = $management->verifyResetPasswordRequest(array(
     ),
 
 ));
-``` -->
+```
 
 ## 请求响应
 

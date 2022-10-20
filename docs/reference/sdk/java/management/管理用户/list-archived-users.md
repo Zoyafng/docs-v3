@@ -20,8 +20,7 @@
  | startAt | number  | 否 | - | 开始时间，为精确到秒的 UNIX 时间戳，默认不指定  | `1655714763890` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
@@ -45,7 +44,6 @@ class Test {
     }
 }
 ```
- -->
 
 
 ## 请求响应

@@ -15,14 +15,13 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
- | keywords | string  | 否 | - | 搜索角色 code  | `admin` |
+ | keywords | string  | 否 | - | 用于根据角色的 code 进行模糊搜索，可选。  | `admin` |
  | namespace | string  | 否 | default | 所属权限分组的 code  | `default` |
  | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
@@ -47,7 +46,6 @@ class Test {
     }
 }
 ```
- -->
 
 
 ## 请求响应

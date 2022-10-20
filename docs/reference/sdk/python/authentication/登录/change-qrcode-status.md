@@ -19,8 +19,7 @@
 | qrcodeId | string | 是 | - | 二维码唯一 ID  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -35,7 +34,7 @@ data = management_client.change_qrcode_status(
   
 )
 ```
- -->
+
 
 ## 请求响应
 

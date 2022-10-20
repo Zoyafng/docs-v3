@@ -18,8 +18,7 @@
 | codeList | string[] | 是 | - | 权限分组 code 列表 数组长度限制：10。 | `["code1","code2"]` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -33,7 +32,6 @@ data = management_client.delete_namespaces_batch(
   
 )
 ```
- -->
 
 
 ## 请求响应

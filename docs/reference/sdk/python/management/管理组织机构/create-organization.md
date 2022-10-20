@@ -22,8 +22,7 @@
 | i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 | - | 多语言设置  | `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -41,26 +40,25 @@ data = management_client.create_organization(
          organization_name: {
          zh-_c_n: {
          enabled: false,
-       value: false,
+       value: "false",
     },
        en-_u_s: {
          enabled: false,
-       value: false,
+       value: "false",
     },
        zh-_t_w: {
          enabled: false,
-       value: false,
+       value: "false",
     },
        ja-_j_p: {
          enabled: false,
-       value: false,
+       value: "false",
     },
     },
     },
   
 )
 ```
- -->
 
 
 ## 请求响应
@@ -139,7 +137,7 @@ data = management_client.create_organization(
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）   |  |
-| value | boolean | 是 | 多语言内容   |  |
+| value | string | 是 | 多语言内容   |  |
 
 
 ### <a id="OrganizationDto"></a> OrganizationDto
@@ -183,6 +181,6 @@ data = management_client.create_organization(
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）   |  |
-| value | boolean | 是 | 多语言内容   |  |
+| value | string | 是 | 多语言内容   |  |
 
 

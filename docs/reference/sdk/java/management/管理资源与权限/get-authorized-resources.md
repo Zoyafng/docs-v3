@@ -23,8 +23,7 @@
  | withDenied | boolean  | 否 | - | 是否获取被拒绝的资源  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
@@ -51,7 +50,6 @@ class Test {
     }
 }
 ```
- -->
 
 
 ## 请求响应

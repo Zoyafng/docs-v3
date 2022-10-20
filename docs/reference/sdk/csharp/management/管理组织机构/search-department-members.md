@@ -27,8 +27,7 @@
  | withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表  | `true` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -80,7 +79,6 @@ namespace Example
 }
 
 ```
- -->
 
 
 ## 请求响应

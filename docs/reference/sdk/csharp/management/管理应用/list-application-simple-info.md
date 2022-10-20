@@ -23,8 +23,7 @@
  | keyword | string  | 否 | - | 模糊搜索字符串  | `test` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -58,7 +57,7 @@ namespace Example
 
           ManagementClient managementClient = new ManagementClient(options);
         
-          ApplicationSimpleInfoSingleRespDto  result = await managementClient.ListApplicationSimpleInfo
+          ApplicationSimpleInfoPaginatedRespDto  result = await managementClient.ListApplicationSimpleInfo
           (             
                 page: 1, 
                 limit: 10, 
@@ -72,12 +71,11 @@ namespace Example
 }
 
 ```
- -->
 
 
 ## 请求响应
 
-类型： `ApplicationSimpleInfoSingleRespDto`
+类型： `ApplicationSimpleInfoPaginatedRespDto`
 
 | 名称 | 类型 | 描述 |
 | ---- | ---- | ---- |
@@ -85,7 +83,7 @@ namespace Example
 | message | string | 描述信息 |
 | apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
 | requestId | string | 请求 ID。当请求失败时会返回。 |
-| data | <a href="#ApplicationSimpleInfoDto">ApplicationSimpleInfoDto</a> | 响应数据 |
+| data | <a href="#ApplicationSimpleInfoPaginatedDataDto">ApplicationSimpleInfoPaginatedDataDto</a> | 响应数据 |
 
 
 
@@ -97,17 +95,28 @@ namespace Example
   "message": "操作成功",
   "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c",
   "data": {
-    "appId": "62eaa95fe0xxxx9a5295bf7c",
-    "appIdentifier": "example",
-    "appName": "示例应用",
-    "appLogo": "示例应用",
-    "appDescription": "示例描述信息",
-    "appType": "web"
+    "list": {
+      "appId": "62eaa95fe0xxxx9a5295bf7c",
+      "appIdentifier": "example",
+      "appName": "示例应用",
+      "appLogo": "示例应用",
+      "appDescription": "示例描述信息",
+      "appType": "web"
+    },
+    "totalCount": 10
   }
 }
 ```
 
 ## 数据结构
+
+
+### <a id="ApplicationSimpleInfoPaginatedDataDto"></a> ApplicationSimpleInfoPaginatedDataDto
+
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+| ---- |  ---- | ---- | ---- | ---- |
+| list | array | 是 | 列表数据 嵌套类型：<a href="#ApplicationSimpleInfoDto">ApplicationSimpleInfoDto</a>。  |  |
+| totalCount | number | 是 | 记录总数   |  `10` |
 
 
 ### <a id="ApplicationSimpleInfoDto"></a> ApplicationSimpleInfoDto

@@ -18,8 +18,7 @@
  | scene | string  | 是 | - | 通过函数的触发场景进行筛选（可选，默认返回所有）：<br>- `PRE_REGISTER`: 注册前<br>- `POST_REGISTER`: 注册后<br>- `PRE_AUTHENTICATION`: 认证前<br>- `POST_AUTHENTICATION`: 认证后<br>- `PRE_OIDC_ID_TOKEN_ISSUED`: OIDC ID Token 签发前<br>- `PRE_OIDC_ACCESS_TOKEN_ISSUED`: OIDC Access Token 签发前<br>- `PRE_COMPLETE_USER_INFO`: 补全用户信息前<br>      | `PRE_REGISTER` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
@@ -41,7 +40,6 @@ class Test {
     }
 }
 ```
- -->
 
 
 ## 请求响应

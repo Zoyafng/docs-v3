@@ -19,8 +19,7 @@
 | name | string | 是 | - | 名称  | `exampleName` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -35,7 +34,6 @@ data = management_client.update_ext_idp(
   
 )
 ```
- -->
 
 
 ## 请求响应

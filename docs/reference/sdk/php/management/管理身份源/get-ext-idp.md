@@ -21,8 +21,7 @@
  | type | string  | 否 | - | 身份源类型  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -46,8 +45,7 @@ $data = $management->getExtIdp(array(
     "type" => "undefined",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

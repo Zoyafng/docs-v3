@@ -20,8 +20,7 @@
 | description | string | 否 | - | 权限分组描述信息  | `我的权限分组描述` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -66,7 +65,6 @@ namespace Example
 }
 
 ```
- -->
 
 
 ## 请求响应

@@ -19,8 +19,7 @@
 | password | String | 是 | - | 用户密码，默认不加密。Authing 所有 API 均通过 HTTPS 协议对密码进行安全传输，可以在一定程度上保证安全性。如果你还需要更高级别的安全性，我们还支持 `RSA256` 和国密 `SM2` 的密码加密方式。详情见可选参数 `options.passwordEncryptType`。  | `passw0rd` |
 | options | <a href="#SignInOptionsDto">SignInOptionsDto</a> | 否 | - | 可选参数  | `{"passwordEncryptType":"none"}` |
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.client.AuthenticationClient;
 import cn.authing.sdk.java.dto.*;
@@ -80,7 +79,7 @@ class Test {
     }
 }
 ```
- -->
+
 
 ## 请求响应
 

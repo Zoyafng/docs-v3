@@ -18,8 +18,7 @@
 | syncRiskOperationIds | number[] | 是 | - | 同步任务风险操作 ID  | `[1,2]` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -33,7 +32,6 @@ data = management_client.trigger_sync_risk_operations(
   
 )
 ```
- -->
 
 
 ## 请求响应

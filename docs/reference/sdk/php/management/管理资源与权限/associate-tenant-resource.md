@@ -21,8 +21,7 @@
 | tenantId | string | 否 | - | 租户 ID  | `60b49eb83fd80adb96f26e68` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -42,8 +41,7 @@ $data = $management->associateTenantResource(array(
     "tenantId" => "60b49eb83fd80adb96f26e68",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

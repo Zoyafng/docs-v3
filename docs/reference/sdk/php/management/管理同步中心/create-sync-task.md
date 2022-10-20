@@ -26,8 +26,7 @@
 | timedScheduler | <a href="#SyncTaskTimedScheduler">SyncTaskTimedScheduler</a> | 否 | - | 定时同步时间设置  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -146,8 +145,7 @@ $data = $management->createSyncTask(array(
     ),
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 
@@ -388,7 +386,7 @@ $data = $management->createSyncTask(array(
 | syncTaskType | string | 是 | 同步任务类型:<br>- `lark`: 飞书<br>- `lark-international`: 飞书国际版<br>- `wechatwork`: 企业微信<br>- `dingtalk`: 钉钉<br>- `active-directory`: Windows AD<br>- `ldap`: LDAP<br>- `italent`: 北森<br>- `maycur`: 每刻报销<br>- `moka`: Moka<br>- `fxiaoke`: 纷享销客<br>- `xiaoshouyi`: 销售易<br>- `kayang`: 嘉扬 HR<br>- `scim`: 自定义同步源<br>       | lark |
 | syncFlow | string | 是 | 同步任务数据流向：<br>- `upstream`: 作为上游，将数据同步到 Authing<br>- `downstream`: 作为下游，将 Authing 数据同步到此系统<br>       | upstream |
 | syncTrigger | string | 是 | 同步任务触发类型：<br>- `manually`: 手动触发执行<br>- `timed`: 定时触发<br>- `automatic`: 根据事件自动触发<br>   | manually |
-| lastSyncMessage | boolean | 否 | 最近一次同步错误信息   |  |
+| lastSyncMessage | string | 否 | 最近一次同步错误信息   |  |
 | lastSyncRate | number | 否 | 最近一次同步进度   |  `80` |
 | lastSyncStatus | string | 否 | 最近一次同步状态:<br>- `free`: 空闲状态，从未执行<br>- `pending`: 等待系统执行<br>- `onProgress`: 正在执行<br>- `success`: 成功<br>- `failed`: 失败<br>       | free |
 | lastSyncTime | string | 否 | 最近一次同步时间   |  `2022-07-03T02:20:30.000Z` |

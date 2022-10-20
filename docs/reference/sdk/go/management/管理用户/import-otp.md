@@ -18,8 +18,7 @@
 | list | <a href="#ImportOtpItemDto">ImportOtpItemDto[]</a> | 是 | - | 参数列表  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```go
 package main
 
@@ -57,7 +56,6 @@ func main() {
   )
 }
 ```
- -->
 
 
 ## 请求响应

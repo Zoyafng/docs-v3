@@ -18,8 +18,7 @@
 | codeList | string[] | 是 | - | 分组 code 列表 数组长度限制：50。 | `["code1"]` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -36,8 +35,7 @@ $data = $management->deleteGroupsBatch(array(
       "codeList" => array("code1"),
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

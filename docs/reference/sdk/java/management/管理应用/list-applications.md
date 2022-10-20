@@ -23,8 +23,7 @@
  | keyword | string  | 否 | - | 模糊搜索字符串  | `test` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
@@ -51,7 +50,6 @@ class Test {
     }
 }
 ```
- -->
 
 
 ## 请求响应
@@ -240,7 +238,7 @@ Change the background color
 | showEnterpriseConnections | boolean | 是 | 是否显示企业身份源登录方式   |  `true` |
 | showSocialConnections | boolean | 是 | 是否显示社会化登录方式   |  `true` |
 | showAgreement | boolean | 是 | 是否展示登录注册协议   |  |
-| agreements |  | 是 | 展示的登录注册协议列表 嵌套类型：<a href="#ApplicationAgreementDto">ApplicationAgreementDto</a>。  |  |
+| agreements | array | 是 | 展示的登录注册协议列表 嵌套类型：<a href="#ApplicationAgreementDto">ApplicationAgreementDto</a>。  |  |
 
 
 ### <a id="ApplicationAgreementDto"></a> ApplicationAgreementDto

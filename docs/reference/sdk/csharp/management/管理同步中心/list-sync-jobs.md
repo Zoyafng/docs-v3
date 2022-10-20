@@ -21,8 +21,7 @@
  | syncTrigger | string  | 否 | - | 同步任务触发类型：<br>- `manually`: 手动触发执行<br>- `timed`: 定时触发<br>- `automatic`: 根据事件自动触发<br>  | `manually` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -68,7 +67,6 @@ namespace Example
 }
 
 ```
- -->
 
 
 ## 请求响应

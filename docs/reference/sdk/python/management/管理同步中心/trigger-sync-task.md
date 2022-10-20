@@ -18,8 +18,7 @@
 | syncTaskId | number | 是 | - | 同步任务 ID  | `1000` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -33,7 +32,6 @@ data = management_client.trigger_sync_task(
   
 )
 ```
- -->
 
 
 ## 请求响应

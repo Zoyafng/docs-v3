@@ -19,8 +19,7 @@
 | namespace | string | 否 | default | 所属权限分组的 code  | `default` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -64,7 +63,6 @@ namespace Example
 }
 
 ```
- -->
 
 
 ## 请求响应

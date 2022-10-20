@@ -18,8 +18,7 @@
  | extIdpConnidentifier | string  | 是 | - | 外部身份源连接标志符  | `wework` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -34,7 +33,7 @@ data = management_client.get_alipay_authinfo(
   
 )
 ```
- -->
+
 
 ## 请求响应
 

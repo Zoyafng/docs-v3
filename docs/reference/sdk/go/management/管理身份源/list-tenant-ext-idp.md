@@ -18,12 +18,11 @@
  | tenantId | string  | 否 | - | 租户 ID  | `60b49eb83fd80adb96f26e68` |
  | appId | string  | 否 | - | 应用 ID  | `60b49eb83fd80adb96f26e68` |
  | type | string  | 否 | - | 身份源类型  |  |
- | page | string  | 否 | - | 页码  |  |
- | limit | string  | 否 | - | 每页获取的数据量  |  |
+ | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
+ | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```go
 package main
 
@@ -51,12 +50,11 @@ func main() {
         tenantId: "60b49eb83fd80adb96f26e68"        , 
         appId: "60b49eb83fd80adb96f26e68"        , 
         type: "undefined"        , 
-        page: "undefined"        , 
-        limit: "undefined"        
+        page: 1        , 
+        limit: 10        
   )
 }
 ```
- -->
 
 
 ## 请求响应

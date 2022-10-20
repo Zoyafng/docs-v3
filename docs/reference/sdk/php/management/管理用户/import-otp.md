@@ -18,8 +18,7 @@
 | list | <a href="#ImportOtpItemDto">ImportOtpItemDto[]</a> | 是 | - | 参数列表  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -45,8 +44,7 @@ $data = $management->importOtp(array(
     ),
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

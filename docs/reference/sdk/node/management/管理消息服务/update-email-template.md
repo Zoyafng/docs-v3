@@ -26,8 +26,7 @@
 | tplEngine | string | 否 | handlebar | 模版渲染引擎。Authing 邮件模版目前支持两种渲染引擎：<br>- `handlebar`: 详细使用方法请见：[handlebars 官方文档](https://handlebarsjs.com/)<br>- `ejs`: 详细使用方法请见：[ejs 官方文档](https://ejs.co/)<br><br>默认将使用 `handlerbar` 作为膜拜渲染引擎。<br>      | `handlebar` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -52,7 +51,6 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
- -->
 
 
 ## 请求响应

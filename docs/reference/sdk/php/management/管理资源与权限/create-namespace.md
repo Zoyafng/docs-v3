@@ -20,8 +20,7 @@
 | description | string | 否 | - | 权限分组描述信息  | `我的权限分组描述` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -40,8 +39,7 @@ $data = $management->createNamespace(array(
     "description" => "我的权限分组描述",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

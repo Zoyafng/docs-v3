@@ -22,8 +22,7 @@
 | autoMergeQrCode | boolean | 否 | - | 当 type 为 `WECHAT_MINIPROGRAM` 时，是否将自定义的 logo 自动合并到生成的图片上，默认为 false。服务器合并二维码的过程会加大接口响应速度，推荐使用默认值，在客户端对图片进行拼接。如果你使用 Authing 的 SDK，可以省去手动拼接的过程。  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -48,7 +47,7 @@ $data = $management->geneQrcode(array(
     "autoMergeQrCode" => false,
 
 ));
-``` -->
+```
 
 ## 请求响应
 

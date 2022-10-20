@@ -18,8 +18,7 @@
 | codeList | string[] | 是 | - | 权限分组 code 列表 数组长度限制：10。 | `["code1","code2"]` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -36,8 +35,7 @@ $data = $management->deleteNamespacesBatch(array(
       "codeList" => array("code1","code2"),
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

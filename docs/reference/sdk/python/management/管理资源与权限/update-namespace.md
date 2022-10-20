@@ -21,8 +21,7 @@
 | newCode | string | 否 | - | 权限分组新的唯一标志符  | `my-new-namespace` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -39,7 +38,6 @@ data = management_client.update_namespace(
   
 )
 ```
- -->
 
 
 ## 请求响应

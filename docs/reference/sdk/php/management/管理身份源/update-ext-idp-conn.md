@@ -22,8 +22,7 @@
 | loginOnly | boolean | 否 | - | 是否只支持登录  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -46,8 +45,7 @@ $data = $management->updateExtIdpConn(array(
     "loginOnly" => false,
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

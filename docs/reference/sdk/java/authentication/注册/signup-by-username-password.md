@@ -22,8 +22,7 @@
 | options | <a href="#SignUpOptionsDto">SignUpOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.client.AuthenticationClient;
 import cn.authing.sdk.java.dto.*;
@@ -96,7 +95,7 @@ class Test {
     }
 }
 ```
- -->
+
 
 ## 请求响应
 

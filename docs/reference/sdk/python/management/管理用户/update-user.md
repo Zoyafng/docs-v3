@@ -53,8 +53,7 @@
 | options | <a href="#UpdateUserOptionsDto">UpdateUserOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -118,7 +117,6 @@ data = management_client.update_user(
   
 )
 ```
- -->
 
 
 ## 请求响应

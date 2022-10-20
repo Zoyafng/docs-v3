@@ -34,8 +34,7 @@
 | enabled | boolean | 否 | - | 是否启用此 Pipeline  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -68,7 +67,6 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
- -->
 
 
 ## 请求响应

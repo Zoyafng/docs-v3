@@ -19,8 +19,7 @@
 | appId | string | 是 | - | 微信小程序或微信公众号的 AppId  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -38,7 +37,7 @@ $data = $management->getWechatAccessToken(array(
     "appSecret" => "",
 
 ));
-``` -->
+```
 
 ## 请求响应
 

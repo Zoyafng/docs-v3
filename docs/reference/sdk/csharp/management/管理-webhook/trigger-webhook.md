@@ -20,8 +20,7 @@
 | requestBody | object | 否 | - | 请求体  | `{"eventName":"test","data":{"description":"A test from authing"}}` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -66,7 +65,6 @@ namespace Example
 }
 
 ```
- -->
 
 
 ## 请求响应

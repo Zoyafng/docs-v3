@@ -19,8 +19,7 @@
  | endTime | string  | 是 | - | 截止时间（年月日）  | `20220802` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -37,7 +36,6 @@ data = management_client.get_mau_period_usage_history(
   
 )
 ```
- -->
 
 
 ## 请求响应

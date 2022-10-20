@@ -18,8 +18,7 @@
 | domain | string | 是 | - | 域名  | `domain-a` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -36,8 +35,7 @@ $data = $management->checkDomainAvailable(array(
       "domain" => "domain-a",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

@@ -73,8 +73,7 @@ JS 代码示例：
 | client_secret | string | 否 | - | 应用密钥。当应用的「换取 token 身份验证方式」配置为 `client_secret_post` 需要传。  | `4203d30e5e915xxxxxx26c31c9adce68` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -155,7 +154,7 @@ namespace Example
 }
 
 ```
- -->
+
 
 ## 请求响应
 

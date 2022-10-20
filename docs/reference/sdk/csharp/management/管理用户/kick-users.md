@@ -20,8 +20,7 @@
 | options | <a href="#KickUsersOptionsDto">KickUsersOptionsDto</a> | 否 | - | 可选参数  | `{"userIdType":"user_id"}` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -69,7 +68,6 @@ namespace Example
 }
 
 ```
- -->
 
 
 ## 请求响应

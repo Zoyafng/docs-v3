@@ -18,8 +18,7 @@
  | orderNo | string  | 是 | - | 订单号  | `2022080410062060e26f7fd6b9` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -34,7 +33,6 @@ data = management_client.get_order_detail(
   
 )
 ```
- -->
 
 
 ## 请求响应

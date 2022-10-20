@@ -19,8 +19,7 @@
  | namespace | string  | 否 | - | 所属权限分组的 code  | `default` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -40,8 +39,7 @@ $data = $management->getResource(array(
     "namespace" => "default",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

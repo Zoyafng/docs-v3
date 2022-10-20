@@ -24,8 +24,7 @@
 | logo | string | 否 | - | 身份源图标  | `https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```go
 package main
 
@@ -60,7 +59,6 @@ func main() {
   )
 }
 ```
- -->
 
 
 ## 请求响应

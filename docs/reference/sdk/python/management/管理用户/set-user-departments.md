@@ -20,8 +20,7 @@
 | options | <a href="#SetUserDepartmentsOptionsDto">SetUserDepartmentsOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -43,7 +42,6 @@ data = management_client.set_user_departments(
   
 )
 ```
- -->
 
 
 ## 请求响应

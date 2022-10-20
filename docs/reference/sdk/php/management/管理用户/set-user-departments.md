@@ -20,8 +20,7 @@
 | options | <a href="#SetUserDepartmentsOptionsDto">SetUserDepartmentsOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -49,8 +48,7 @@ $data = $management->setUserDepartments(array(
     ),
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

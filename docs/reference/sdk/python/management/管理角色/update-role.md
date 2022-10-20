@@ -21,8 +21,7 @@
 | description | string | 否 | - | 角色描述  | `this is description` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -39,7 +38,6 @@ data = management_client.update_role(
   
 )
 ```
- -->
 
 
 ## 请求响应

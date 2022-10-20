@@ -19,8 +19,7 @@
 | updatePhoneToken | string | 是 | - | 用于临时修改手机号的 token，可从**发起修改手机号的验证请求**接口获取。  | `xxxx` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -34,7 +33,7 @@ data = management_client.update_phone(
   
 )
 ```
- -->
+
 
 ## 请求响应
 

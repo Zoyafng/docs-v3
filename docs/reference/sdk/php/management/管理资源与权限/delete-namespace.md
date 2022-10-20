@@ -18,8 +18,7 @@
 | code | string | 是 | - | 权限分组唯一标志符  | `my-namespace` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -36,8 +35,7 @@ $data = $management->deleteNamespace(array(
       "code" => "my-namespace",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

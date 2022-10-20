@@ -34,8 +34,7 @@
 | enabled | boolean | 否 | - | 是否启用此 Pipeline  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -68,8 +67,7 @@ $data = $management->updatePipelineFunction(array(
     "enabled" => false,
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

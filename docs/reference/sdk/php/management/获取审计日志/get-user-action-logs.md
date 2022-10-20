@@ -26,8 +26,7 @@
 | pagination | <a href="#ListWebhooksDto">ListWebhooksDto</a> | 否 | - | 分页  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -55,8 +54,7 @@ $data = $management->getUserActionLogs(array(
     ),
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

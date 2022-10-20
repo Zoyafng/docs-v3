@@ -21,8 +21,7 @@
 | newCode | string | 否 | - | 分组新的 code  | `developer` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -42,8 +41,7 @@ $data = $management->updateGroup(array(
     "newCode" => "developer",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

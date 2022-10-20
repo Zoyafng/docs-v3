@@ -18,8 +18,7 @@
  | factorId | string  | 是 | - | MFA Factor ID  | `6229ffaxxxxxxxxcade3e3d9` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -34,7 +33,7 @@ data = management_client.get_factor(
   
 )
 ```
- -->
+
 
 ## 请求响应
 

@@ -18,8 +18,7 @@
 | codeList | string[] | 是 | - | 权限分组 code 列表 数组长度限制：10。 | `["code1","code2"]` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
@@ -41,7 +40,6 @@ class Test {
     }
 }
 ```
- -->
 
 
 ## 请求响应

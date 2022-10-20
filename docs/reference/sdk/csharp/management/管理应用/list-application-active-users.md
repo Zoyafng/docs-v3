@@ -19,8 +19,7 @@
 | options | <a href="#ListApplicationActiveUsersOptionsDto">ListApplicationActiveUsersOptionsDto</a> | 否 | - | 可选项  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -74,7 +73,6 @@ namespace Example
 }
 
 ```
- -->
 
 
 ## 请求响应

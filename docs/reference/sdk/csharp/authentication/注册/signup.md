@@ -29,8 +29,7 @@
 | options | <a href="#SignUpOptionsDto">SignUpOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```csharp
 
 using Authing.CSharp.SDK.Models;
@@ -123,7 +122,7 @@ namespace Example
 }
 
 ```
- -->
+
 
 ## 请求响应
 

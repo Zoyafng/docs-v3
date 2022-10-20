@@ -19,8 +19,7 @@
 | verifyMethod | string | 是 | - | 修改当前邮箱使用的验证手段：<br>- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证，当前只支持这种验证方式。<br>      | `EMAIL_PASSCODE` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -40,7 +39,7 @@ data = management_client.verify_update_email_request(
   
 )
 ```
- -->
+
 
 ## 请求响应
 

@@ -18,8 +18,7 @@
 | id | string | 是 | - | 身份源 ID  | `60b49eb83fd80adb96f26e68` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -36,8 +35,7 @@ $data = $management->deleteExtIdp(array(
       "id" => "60b49eb83fd80adb96f26e68",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

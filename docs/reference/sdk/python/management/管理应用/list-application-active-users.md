@@ -19,8 +19,7 @@
 | options | <a href="#ListApplicationActiveUsersOptionsDto">ListApplicationActiveUsersOptionsDto</a> | 否 | - | 可选项  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -43,7 +42,6 @@ data = management_client.list_application_active_users(
   
 )
 ```
- -->
 
 
 ## 请求响应

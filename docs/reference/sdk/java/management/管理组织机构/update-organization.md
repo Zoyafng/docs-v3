@@ -24,8 +24,7 @@
 | organizationName | string | 否 | - | 组织名称  | `蒸汽记忆` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
@@ -48,19 +47,19 @@ class Test {
                         OrganizationName= new LangObject(
                         Zh-CN= new LangUnit(
                     request.setEnabled(false);
-    request.setValue(false);
+    request.setValue("false");
         ),
         En-US= new LangUnit(
                     request.setEnabled(false);
-    request.setValue(false);
+    request.setValue("false");
         ),
         Zh-TW= new LangUnit(
                     request.setEnabled(false);
-    request.setValue(false);
+    request.setValue("false");
         ),
         Ja-JP= new LangUnit(
                     request.setEnabled(false);
-    request.setValue(false);
+    request.setValue("false");
         ),
         ),
         ),
@@ -72,7 +71,6 @@ class Test {
     }
 }
 ```
- -->
 
 
 ## 请求响应
@@ -151,7 +149,7 @@ class Test {
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）   |  |
-| value | boolean | 是 | 多语言内容   |  |
+| value | string | 是 | 多语言内容   |  |
 
 
 ### <a id="OrganizationDto"></a> OrganizationDto
@@ -195,6 +193,6 @@ class Test {
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）   |  |
-| value | boolean | 是 | 多语言内容   |  |
+| value | string | 是 | 多语言内容   |  |
 
 

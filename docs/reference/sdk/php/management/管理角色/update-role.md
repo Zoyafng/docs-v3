@@ -21,8 +21,7 @@
 | description | string | 否 | - | 角色描述  | `this is description` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -42,8 +41,7 @@ $data = $management->updateRole(array(
     "description" => "this is description",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

@@ -18,8 +18,7 @@
 | id | string | 是 | - | 身份源连接 ID  | `60b49eb83fd80adb96f26e68` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -33,7 +32,6 @@ data = management_client.delete_ext_idp_conn(
   
 )
 ```
- -->
 
 
 ## 请求响应

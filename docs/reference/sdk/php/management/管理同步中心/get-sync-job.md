@@ -18,8 +18,7 @@
  | syncJobId | number  | 是 | - | 同步作业 ID  | `1` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -37,8 +36,7 @@ $data = $management->getSyncJob(array(
     "syncJobId" => 1,
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

@@ -22,8 +22,7 @@
  | includeChildrenDepartments | boolean  | 否 | - | 是否包含子部门  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```go
 package main
 
@@ -56,7 +55,6 @@ func main() {
   )
 }
 ```
- -->
 
 
 ## 请求响应

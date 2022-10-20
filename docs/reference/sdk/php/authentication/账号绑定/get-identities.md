@@ -52,8 +52,7 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -69,7 +68,7 @@ $management = new ManagementClient(
 $data = $management->getIdentities(array(
   
 ));
-``` -->
+```
 
 ## 请求响应
 

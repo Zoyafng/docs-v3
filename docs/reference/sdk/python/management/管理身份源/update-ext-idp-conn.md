@@ -22,8 +22,7 @@
 | loginOnly | boolean | 否 | - | 是否只支持登录  |  |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```py
 from authing import ManagementClient
 
@@ -43,7 +42,6 @@ data = management_client.update_ext_idp_conn(
   
 )
 ```
- -->
 
 
 ## 请求响应

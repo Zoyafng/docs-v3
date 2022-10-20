@@ -17,8 +17,7 @@ Authing 目前支持四种类型的 MFA 认证要素：手机短信、邮件验�
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -34,7 +33,7 @@ $management = new ManagementClient(
 $data = $management->listEnrolledFactors(array(
   
 ));
-``` -->
+```
 
 ## 请求响应
 

@@ -20,8 +20,7 @@
  | resourceType | string  | 否 | - | 资源类型，如 数据、API、按钮、菜单  | `DATA` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -43,7 +42,6 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
- -->
 
 
 ## 请求响应

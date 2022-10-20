@@ -20,8 +20,7 @@
 | limit | number | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```ts
 import { ManagementClient } from 'authing-node-sdk';
 // 在 Node.js 中引用：
@@ -40,7 +39,6 @@ const managementClient = new ManagementClient({
  });
 })();
 ```
- -->
 
 
 ## 请求响应

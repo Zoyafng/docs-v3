@@ -18,8 +18,7 @@
  | codeList | string[]  | 是 | - | 资源 code 列表，批量可以使用逗号分隔 数组长度限制：50。 | `code1,code2` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```php
 <?php
 
@@ -37,8 +36,7 @@ $data = $management->getNamespacesBatch(array(
     "codeList" => "code1,code2",
 
 ));
-``` -->
-
+```
 
 ## 请求响应
 

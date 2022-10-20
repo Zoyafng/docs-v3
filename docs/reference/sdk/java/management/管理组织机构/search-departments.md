@@ -20,8 +20,7 @@
 | withCustomData | boolean | 否 | - | 是否获取自定义数据  | `true` |
 
 
-<!-- 暂时不显示示例代码 -->
-<!-- ## 示例代码
+## 示例代码
 ```java
 import cn.authing.sdk.java.dto.*;
 import cn.authing.sdk.java.client.ManagementClient;
@@ -45,7 +44,6 @@ class Test {
     }
 }
 ```
- -->
 
 
 ## 请求响应
@@ -147,6 +145,6 @@ class Test {
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | enabled | boolean | 是 | 是否已开启。若开启，且控制台选择该语言，则展示该内容。（默认关闭）   |  |
-| value | boolean | 是 | 多语言内容   |  |
+| value | string | 是 | 多语言内容   |  |
 
 
