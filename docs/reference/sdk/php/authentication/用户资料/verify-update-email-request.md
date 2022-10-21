@@ -15,34 +15,11 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| emailPasscodePayload | <a href="#UpdateEmailByEmailPassCodeDto">UpdateEmailByEmailPassCodeDto</a> | 是 | - | 使用邮箱验证码方式验证的数据  |  |
+| emailPassCodePayload | <a href="#UpdateEmailByEmailPassCodeDto">UpdateEmailByEmailPassCodeDto</a> | 是 | - | 使用邮箱验证码方式验证的数据  |  |
 | verifyMethod | string | 是 | - | 修改当前邮箱使用的验证手段：<br>- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证，当前只支持这种验证方式。<br>      | `EMAIL_PASSCODE` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->verifyUpdateEmailRequest(array(
-      "verifyMethod" => "EMAIL_PASSCODE",
-    "emailPasscodePayload" => array(
-          "newEmail" => "new@example.com",
-        "newEmailPassCode" => "123456",
-        "oldEmail" => "old@example.com",
-        "oldEmailPassCode" => "123456",
-    ),
-
-));
-```
 
 ## 请求响应
 

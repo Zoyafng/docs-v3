@@ -21,27 +21,7 @@
 | extIdpConnidentifier | string | 是 | - | 微信小程序的外部身份源连接标志符  | `my-wxapp` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->decryptWechatMiniprogramData(array(
-      "extIdpConnidentifier" => "my-wxapp",
-    "encryptedData" => "",
-    "iv" => "",
-    "code" => "",
-
-));
-```
 
 ## 请求响应
 

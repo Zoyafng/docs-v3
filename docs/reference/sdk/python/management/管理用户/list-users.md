@@ -193,41 +193,8 @@
 | options | <a href="#ListUsersOptionsDto">ListUsersOptionsDto</a> | 否 | - | 可选项  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.list_users(
-     query: "test",
-     advanced_filter: [{
-           field: "nickname",
-         operator: "EQUAL",
-         value: test,
-      }],
-     options: {
-         pagination: {
-         page: 1,
-       limit: 10,
-    },
-       sort: [{
-           field: "loginsCount",
-         order: "desc",
-      }],
-       fuzzy_search_on: "phone,email,name,username,nickname",
-       with_custom_data: true,
-       with_identities: true,
-       with_department_ids: true,
-    },
   
-)
-```
-
-
 ## 请求响应
 
 类型： `UserPaginatedRespDto`

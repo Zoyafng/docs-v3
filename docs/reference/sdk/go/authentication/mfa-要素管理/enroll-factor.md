@@ -17,42 +17,9 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | enrollmentData | <a href="#EnrollFactorEnrollmentDataDto">EnrollFactorEnrollmentDataDto</a> | 是 | - | 绑定 MFA 认证要素时，对应认证要素要求的验证信息。  |  |
 | enrollmentToken | string | 是 | - | 「发起绑定 MFA 认证要素请求」接口返回的 enrollmentToken，此 token 有效时间为一分钟。  | `TQoCISidM0kBji0dxRi3afSDtkvvMiUphenIgLF87y+JOw4T8fDWOsHHXIcvZ2EVESXhTrfGyh1iGf52Cg9e9byeFQvm1VZ0QWrwmzwpntFAVtf1IP9LqVhmzXhBMFvLOcU/z1Eh/n0CrwX0uHNpJoMW9lp9AqHd9HvauaGKX+Y=` |
-| factorType | string | 是 | - | MFA 认证要素类型，目前共支持短信、邮箱验证码、OTP、人脸四种类型的认证要素。  | `SMS` |
+| factorType | string | 是 | - | MFA 认证要素类型：<br>- `OTP`: OTP<br>- `SMS`: 短信<br>- `EMAIL`: 邮件<br>- `FACE`: 人脸<br>        | `SMS` |
 
 
-## 示例代码
-```go
-package main
-
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.enrollFactor(
-      dto.EnrollFactorDto {
-          FactorType: EnrollFactorDto.factorType.SMS,
-          EnrollmentToken: "TQoCISidM0kBji0dxRi3afSDtkvvMiUphenIgLF87y+JOw4T8fDWOsHHXIcvZ2EVESXhTrfGyh1iGf52Cg9e9byeFQvm1VZ0QWrwmzwpntFAVtf1IP9LqVhmzXhBMFvLOcU/z1Eh/n0CrwX0uHNpJoMW9lp9AqHd9HvauaGKX+Y=",
-        EnrollmentData: dto.EnrollFactorEnrollmentDataDto {
-                          PassCode: "123456",
-        },
-    }
-  )
-}
-```
 
 
 ## 请求响应

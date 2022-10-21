@@ -27,65 +27,8 @@
 | departmentIdType | string | 否 | department_id | 此次调用中使用的父部门 ID 的类型  | `department_id` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.createDepartment(
-      dto.CreateDepartmentReqDto {
-          OrganizationCode: "steamory",
-          OpenDepartmentId: "ou_7dab8a3d3cdccxxxxxx777c7ad535d62",
-          Name: "开发部",
-          Description: "技术研发部门",
-          ParentDepartmentId: "6229c4deb3e4d8a20b6021ff",
-          Code: "6229c4deb3e4d8a20b6021ff",
-          IsVirtualNode: false,
-        I18n: dto.DepartmentI18nDto {
-                        Name: dto.LangObject {
-                        Zh-CN: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        En-US: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        Zh-TW: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        Ja-JP: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        },
-        },
-          CustomData: dto.CreateDepartmentReqDto {    icon="https://example.com/logo",},
-          DepartmentIdType: CreateDepartmentReqDto.departmentIdType.DEPARTMENT_ID,
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `DepartmentSingleRespDto`

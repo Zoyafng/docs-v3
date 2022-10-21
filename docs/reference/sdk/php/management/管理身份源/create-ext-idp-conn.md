@@ -24,34 +24,48 @@
 | logo | string | 否 | - | 身份源图标  | `https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png` |
 
 
+
+
 ## 示例代码
+
 ```php
 <?php
 
-require 'vendor/autoload.php';
-
 use Authing\ManagementClient;
 
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
+// 需要替换成你的 Authing Access Key ID
+$AUTHING_ACCESS_KEY_ID = "635124373e1cd646feecbeb9";
+// 需要替换成你的 Authing Access Key Secret
+$AUTHING_ACCESS_KEY_SECRET = "c3eaf45f7b467003158fd8615367ba6e";
+
+// 初始化 ManagementClient
+$managementClient = new Authing\ManagementClient(
+    array(
+        "accessKeyId" => $AUTHING_ACCESS_KEY_ID,
+        "accessKeySecret" => $AUTHING_ACCESS_KEY_SECRET,
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // "host" => "https://api.your-authing-service.com"
+    )
 );
 
-$data = $management->createExtIdpConn(array(
-      "extIdpId" => "60b49eb83fd80adb96f26e68",
+$data = $managementClient->createExtIdpConn(array(
+    "extIdpId" => "60b49eb83fd80adb96f26e68",
     "type" => "ad",
     "identifier" => "60b49eb83fd80adb96f26e68",
     "loginOnly" => false,
     "logo" => "https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png",
     "displayName" => "登录页",
     "fields" => array(
-   "clientId"=> "身份源上的 clientId",
-   "clientSecret"=> "身份源上的 clientSecret"
-),
-
+        "clientId"=> "身份源上的 clientId",
+        "clientSecret"=> "身份源上的 clientSecret"
+    ),
 ));
+print_r($data);
+
 ```
 
+
+  
 ## 请求响应
 
 类型： `ExtIdpConnDetailSingleRespDto`

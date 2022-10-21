@@ -19,23 +19,8 @@
 | scene | string | 是 | - | 函数的触发场景：<br>- `PRE_REGISTER`: 注册前<br>- `POST_REGISTER`: 注册后<br>- `PRE_AUTHENTICATION`: 认证前<br>- `POST_AUTHENTICATION`: 认证后<br>- `PRE_OIDC_ID_TOKEN_ISSUED`: OIDC ID Token 签发前<br>- `PRE_OIDC_ACCESS_TOKEN_ISSUED`: OIDC Access Token 签发前<br>- `PRE_COMPLETE_USER_INFO`: 补全用户信息前<br>      | `PRE_REGISTER` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.update_pipeline_order(
-     scene: "PRE_REGISTER",
-     order: "[]",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `CommonResponseDto`

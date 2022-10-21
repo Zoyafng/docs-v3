@@ -19,25 +19,7 @@
 | email | string | 是 | - | 邮箱，不区分大小写。  | `test@example.com` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->bindEmail(array(
-      "email" => "test@example.com",
-    "passCode" => "123456",
-
-));
-```
 
 ## 请求响应
 

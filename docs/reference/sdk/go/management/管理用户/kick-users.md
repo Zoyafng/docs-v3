@@ -20,41 +20,8 @@
 | options | <a href="#KickUsersOptionsDto">KickUsersOptionsDto</a> | 否 | - | 可选参数  | `{"userIdType":"user_id"}` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.kickUsers(
-      dto.KickUsersDto {
-          UserId: "undefined",
-          AppIds: []string{"62188e71cxxxx3075289c580",},
-        Options: dto.KickUsersOptionsDto {
-                          UserIdType: KickUsersOptionsDto.userIdType.USER_ID,
-        },
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

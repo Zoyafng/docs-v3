@@ -16,45 +16,13 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | description | string | 是 | - | 分组描述  | `描述内容` |
-| name | string | 是 | - | 分组名称  | `开发者` |
 | code | string | 是 | - | 分组 code  | `developer` |
+| name | string | 否 | - | 分组名称  | `开发者` |
 | newCode | string | 否 | - | 分组新的 code  | `developer` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.updateGroup(
-      dto.UpdateGroupReqDto {
-          Code: "developer",
-          Name: "开发者",
-          Description: "描述内容",
-          NewCode: "developer",
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `GroupSingleRespDto`

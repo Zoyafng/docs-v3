@@ -27,52 +27,8 @@
 | departmentIdType | string | 否 | department_id | 此次调用中使用的父部门 ID 的类型  | `department_id` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.create_department(
-     organization_code: "steamory",
-     open_department_id: "ou_7dab8a3d3cdccxxxxxx777c7ad535d62",
-     name: "开发部",
-     description: "技术研发部门",
-     parent_department_id: "6229c4deb3e4d8a20b6021ff",
-     code: "6229c4deb3e4d8a20b6021ff",
-     is_virtual_node: false,
-     i18n: {
-         name: {
-         zh-_c_n: {
-         enabled: false,
-       value: "false",
-    },
-       en-_u_s: {
-         enabled: false,
-       value: "false",
-    },
-       zh-_t_w: {
-         enabled: false,
-       value: "false",
-    },
-       ja-_j_p: {
-         enabled: false,
-       value: "false",
-    },
-    },
-    },
-     custom_data: {
-			"icon":	"https://example.com/logo"
-		},
-     department_id_type: "department_id",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `DepartmentSingleRespDto`

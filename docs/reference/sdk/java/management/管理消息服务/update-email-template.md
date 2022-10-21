@@ -26,38 +26,8 @@
 | tplEngine | string | 否 | handlebar | 模版渲染引擎。Authing 邮件模版目前支持两种渲染引擎：<br>- `handlebar`: 详细使用方法请见：[handlebars 官方文档](https://handlebarsjs.com/)<br>- `ejs`: 详细使用方法请见：[ejs 官方文档](https://ejs.co/)<br><br>默认将使用 `handlerbar` 作为膜拜渲染引擎。<br>      | `handlebar` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        UpdateEmailTemplateDto request = new UpdateEmailTemplateDto();
-        request.setType(UpdateEmailTemplateDto.type.WELCOME_EMAIL);
-        request.setCustomizeEnabled(true);
-        request.setName("欢迎邮件");
-        request.setSubject("欢迎加入 {{app_name}}");
-        request.setSender("{{client_name}}");
-        request.setContent("xxx");
-        request.setExpiresIn(300);
-        request.setRedirectTo("https://example.com");
-        request.setTplEngine(UpdateEmailTemplateDto.tplEngine.HANDLEBAR);
-        
-        EmailTemplateSingleItemRespDto response = managementClient.updateEmailTemplate(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `EmailTemplateSingleItemRespDto`

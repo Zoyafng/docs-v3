@@ -22,33 +22,7 @@
  | orderBy | string  | 否 | Desc | 增序或降序  | `Desc` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getMyDepartmentList(array(
-  
-    "page" => 1,
-
-    "limit" => 10,
-
-    "withCustomData" => true,
-
-    "sortBy" => "JoinDepartmentAt",
-
-    "orderBy" => "Desc",
-
-));
-```
 
 ## 请求响应
 

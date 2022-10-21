@@ -15,43 +15,10 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| emailPasscodePayload | <a href="#UpdateEmailByEmailPassCodeDto">UpdateEmailByEmailPassCodeDto</a> | 是 | - | 使用邮箱验证码方式验证的数据  |  |
+| emailPassCodePayload | <a href="#UpdateEmailByEmailPassCodeDto">UpdateEmailByEmailPassCodeDto</a> | 是 | - | 使用邮箱验证码方式验证的数据  |  |
 | verifyMethod | string | 是 | - | 修改当前邮箱使用的验证手段：<br>- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证，当前只支持这种验证方式。<br>      | `EMAIL_PASSCODE` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.client.AuthenticationClient;
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.model.AuthenticationClientOptions;
-
-class Test {
-    public static void main(String[] args) {
-        // 设置初始化参数
-        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
-        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
-        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
-        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
-    
-        // 初始化 AuthenticationClient
-        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
-    
-        
-        VerifyUpdateEmailRequestDto request = new VerifyUpdateEmailRequestDto();
-        request.setVerifyMethod(VerifyUpdateEmailRequestDto.verifyMethod.EMAIL_PASSCODE);
-            EmailPasscodePayload= new UpdateEmailByEmailPassCodeDto(
-                    request.setNewEmail("new@example.com");
-    request.setNewEmailPassCode("123456");
-    request.setOldEmail("old@example.com");
-    request.setOldEmailPassCode("123456");
-        ),
-        
-        VerifyUpdateEmailRequestRespDto response = managementClient.verifyUpdateEmailRequest(request);
-        System.out.println(response);
-    }
-}
-```
 
 
 ## 请求响应

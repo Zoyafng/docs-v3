@@ -18,39 +18,8 @@
 | list | <a href="#ImportOtpItemDto">ImportOtpItemDto[]</a> | 是 | - | 参数列表  |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        ImportOtpReqDto request = new ImportOtpReqDto();
-            List= new List<ImportOtpItemDto>(
-                    new ImportOtpItemDto().set
-
-               request.setUserId("xxxx");
-          Otp= new ImportOtpItemDataDto(
-                    request.setSecret("HZ2F6J3AGNAVSOTV");
-    request.setRecoveryCode("b471-8ec0-874a-087f-bccb-cd54");
-        ),
-      
-                  ),
-        
-        CommonResponseDto response = managementClient.importOtp(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `CommonResponseDto`

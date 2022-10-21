@@ -18,30 +18,8 @@
 | codeList | string[] | 是 | - | 权限分组 code 列表 数组长度限制：10。 | `["code1","code2"]` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        DeleteNamespacesBatchDto request = new DeleteNamespacesBatchDto();
-        request.setCodeList(new List<String>("code1","code2",));
-        
-        IsSuccessRespDto response = managementClient.deleteNamespacesBatch(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

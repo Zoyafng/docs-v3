@@ -21,33 +21,8 @@
  | type | string  | 否 | - | 身份源类型  |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        
-         
-        request.setId("6268b0e5e4b9a0e8ffa8fd60"); 
-        request.setTenantId("60b49eb83fd80adb96f26e68"); 
-        request.setAppId("60b49eb83fd80adb96f26e68"); 
-        request.setType("undefined");
-        ExtIdpDetailSingleRespDto response = managementClient.getExtIdp(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `ExtIdpDetailSingleRespDto`

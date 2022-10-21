@@ -19,24 +19,6 @@
 | email | string | 是 | - | 邮箱，不区分大小写  | `test@example.com` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
-
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.sendEmail({
-    email: 'test@example.com',
-    channel: 'CHANNEL_LOGIN',
- });
-})();
-```
 
 
 ## 请求响应

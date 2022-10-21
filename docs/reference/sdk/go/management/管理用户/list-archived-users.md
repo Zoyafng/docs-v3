@@ -20,39 +20,8 @@
  | startAt | number  | 否 | - | 开始时间，为精确到秒的 UNIX 时间戳，默认不指定  | `1655714763890` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.listArchivedUsers(
-    
-     
-        page: 1        , 
-        limit: 10        , 
-        startAt: 1655714763890        
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `ListArchivedUsersSingleRespDto`

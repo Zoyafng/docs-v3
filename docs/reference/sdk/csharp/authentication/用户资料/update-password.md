@@ -17,54 +17,59 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | newPassword | string | 是 | - | 新密码  |  |
 | oldPassword | string | 否 | - | 原始密码，如果用户当前设置了密码，此参数必填。  |  |
-| passwordEncryptType | string | 否 | none | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>    | `none` |
+| passwordEncryptType | string | 否 | none | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>    | `none` |
+
+
 
 
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
-using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using Authing.CSharp.SDK.Models.Authentication;
+using Authing.CSharp.SDK.Services;
 
-namespace Example
+namespace ConsoleApplication
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            AuthenticationClientInitOptions clientOptions = new AuthenticationClientInitOptions
+            {
+                AppId = "AUTHING_APP_ID",// Authing 应用 ID
+                AppSecret = "AUTHING_APP_SECRET",// Authing 应用密钥
+                AppHost = "AUTHING_APP_DOMAIN", // Authing 应用域名，如 https://example.authing.cn
+                RedirectUri = "AUTHING_APP_REDIRECT_URI",// Authing 应用配置的登录回调地址
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 AuthenticationClient
+            AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          CommonResponseDto  result = await managementClient.UpdatePassword
-          (  new UpdatePasswordDto{                  NewPassword= "undefined" ,
-                  OldPassword= "undefined" ,
-                  PasswordEncryptType= UpdatePasswordDto.passwordEncryptType.NONE ,
-            }
-          );
+            //登录临时用户
+            LoginTokenRespDto loginTokenRespDto = await authenticationClient.SignInByAccountPassword("AUTHING_USERNAME", "AUTHING_USER_PASSWORD");
+            authenticationClient.setAccessToken(loginTokenRespDto.Data.Access_token);
+
+            var res = await authenticationClient.UpdatePassword(new UpdatePasswordDto()
+            {
+                NewPassword = "AUTHING_NEW_PASSWORD",
+                OldPassword = "AUTHING_OLD_PASSWORD",
+                PasswordEncryptType = UpdatePasswordDto.passwordEncryptType.NONE
+            });
+
         }
     }
 }
-
 ```
+
+
 
 
 ## 请求响应

@@ -57,92 +57,8 @@
 | options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        CreateUserReqDto request = new CreateUserReqDto();
-        request.setStatus(CreateUserReqDto.status.ACTIVATED);
-        request.setEmail("test@example.com");
-        request.setPhone("188xxxx8888");
-        request.setPhoneCountryCode("+86");
-        request.setUsername("bob");
-        request.setExternalId("10010");
-        request.setName("张三");
-        request.setNickname("张三");
-        request.setPhoto("https://files.authing.co/authing-console/default-user-avatar.png");
-        request.setGender(CreateUserReqDto.gender.M);
-        request.setEmailVerified(true);
-        request.setPhoneVerified(true);
-        request.setBirthdate("2022-06-03");
-        request.setCountry("CN");
-        request.setProvince("BJ");
-        request.setCity("BJ");
-        request.setAddress("北京朝阳");
-        request.setStreetAddress("北京朝阳区 xxx 街道");
-        request.setPostalCode("438100");
-        request.setCompany("steamory");
-        request.setBrowser("Mozilla/5.0 (Linux; Android 10; V2001A; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/87.0.4280.141 Mobile Safari/537.36 VivoBrowser/10.2.10.0");
-        request.setDevice("iOS");
-        request.setGivenName("三");
-        request.setFamilyName("张");
-        request.setMiddleName("");
-        request.setProfile("");
-        request.setPreferredUsername("");
-        request.setWebsite("");
-        request.setZoneinfo("");
-        request.setLocale("");
-        request.setFormatted("");
-        request.setRegion("");
-        request.setPassword("oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=");
-        request.setSalt("dgisaeieruur");
-        request.setTenantIds(new List<String>());
-            Otp= new CreateUserOtpDto(
-                    request.setSecret("HZ2F6J3AGNAVSOTV");
-    request.setRecoveryCode("b471-8ec0-874a-087f-bccb-cd54");
-        ),
-        request.setDepartmentIds(new List<String>("624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe",));
-        request.setCustomData(new CreateUserReqDto.setSchool("北京大学",.setAge(age22,));
-            Identities= new List<CreateIdentityDto>(
-                    new CreateIdentityDto().set
-
-               request.setExtIdpId("6076bacxxxxxxxxd80d993b5");
-      request.setProvider(CreateIdentityDto.provider.WECHAT);
-      request.setType("openid");
-      request.setUserIdInIdp("oj7Nq05R-RRaqak0_YlMLnnIwsvg");
-      request.setOriginConnIds(new List<String>("605492ac41xxxxe0362f0707",));
-      
-                  ),
-            Options= new CreateUserOptionsDto(
-                    request.setKeepPassword(false);
-    request.setAutoGeneratePassword(false);
-    request.setResetPasswordOnFirstLogin(false);
-    request.setDepartmentIdType(CreateUserOptionsDto.departmentIdType.DEPARTMENT_ID);
-        SendNotification= new SendCreateAccountNotificationDto(
-                    request.setSendEmailNotification(false);
-    request.setSendPhoneNotification(false);
-    request.setAppId("appid1");
-        ),
-    request.setPasswordEncryptType(CreateUserOptionsDto.passwordEncryptType.NONE);
-        ),
-        
-        UserSingleRespDto response = managementClient.createUser(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `UserSingleRespDto`
@@ -247,7 +163,7 @@ class Test {
 | resetPasswordOnFirstLogin | boolean | 否 | 是否强制要求用户在第一次的时候重置密码   |  |
 | departmentIdType | string | 否 | 此次调用中使用的父部门 ID 的类型   | department_id |
 | sendNotification |  | 否 | 重置密码发送邮件和手机号选项 嵌套类型：<a href="#SendCreateAccountNotificationDto">SendCreateAccountNotificationDto</a>。  |  `{"sendEmailNotification":true,"sendPhoneNotification":true}` |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | string | 否 | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 
 
 ### <a id="SendCreateAccountNotificationDto"></a> SendCreateAccountNotificationDto

@@ -24,55 +24,8 @@
 | organizationName | string | 否 | - | 组织名称  | `蒸汽记忆` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        UpdateOrganizationReqDto request = new UpdateOrganizationReqDto();
-        request.setOrganizationCode("steamory");
-        request.setDescription("技术研发部门");
-        request.setOpenDepartmentId("60b49eb83fd80adb96f26e68");
-        request.setLeaderUserIds(new List<String>("60b49eb83fd80adb96f26e68",));
-            I18n= new OrganizationNameI18nDto(
-                        OrganizationName= new LangObject(
-                        Zh-CN= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        En-US= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        Zh-TW= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        Ja-JP= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        ),
-        ),
-        request.setOrganizationNewCode("steamory2");
-        request.setOrganizationName("蒸汽记忆");
-        
-        OrganizationSingleRespDto response = managementClient.updateOrganization(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `OrganizationSingleRespDto`

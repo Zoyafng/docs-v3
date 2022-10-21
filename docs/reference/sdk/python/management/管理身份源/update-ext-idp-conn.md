@@ -22,28 +22,8 @@
 | loginOnly | boolean | 否 | - | 是否只支持登录  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.update_ext_idp_conn(
-     id: "60b49eb83fd80adb96f26e68",
-     display_name: "exampleName",
-     fields: {
-			"clientId":	"clientId"
-		},
-     logo: "https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png",
-     login_only: false,
   
-)
-```
-
-
 ## 请求响应
 
 类型： `ExtIdpConnDetailSingleRespDto`

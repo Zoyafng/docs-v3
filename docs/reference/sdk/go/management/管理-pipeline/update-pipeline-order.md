@@ -19,38 +19,8 @@
 | scene | string | 是 | - | 函数的触发场景：<br>- `PRE_REGISTER`: 注册前<br>- `POST_REGISTER`: 注册后<br>- `PRE_AUTHENTICATION`: 认证前<br>- `POST_AUTHENTICATION`: 认证后<br>- `PRE_OIDC_ID_TOKEN_ISSUED`: OIDC ID Token 签发前<br>- `PRE_OIDC_ACCESS_TOKEN_ISSUED`: OIDC Access Token 签发前<br>- `PRE_COMPLETE_USER_INFO`: 补全用户信息前<br>      | `PRE_REGISTER` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.updatePipelineOrder(
-      dto.UpdatePipelineOrderDto {
-          Scene: UpdatePipelineOrderDto.scene.PRE_REGISTER,
-          Order: []string{},
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `CommonResponseDto`

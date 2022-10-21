@@ -19,31 +19,8 @@
 | options | <a href="#ListApplicationActiveUsersOptionsDto">ListApplicationActiveUsersOptionsDto</a> | 否 | - | 可选项  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.list_application_active_users(
-     app_id: "6229ffaxxxxxxxxcade3e3d9",
-     options: {
-         pagination: {
-         page: 1,
-       limit: 10,
-    },
-       with_custom_data: true,
-       with_identities: true,
-       with_department_ids: true,
-    },
   
-)
-```
-
-
 ## 请求响应
 
 类型： `UserPaginatedRespDto`

@@ -18,25 +18,8 @@
 | syncTaskId | number | 是 | - | 同步任务 ID  | `1000` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->triggerSyncTask(array(
-      "syncTaskId" => 1000,
-
-));
-```
-
+  
 ## 请求响应
 
 类型： `TriggerSyncTaskRespDto`

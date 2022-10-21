@@ -19,32 +19,7 @@
 | verifyMethod | string | 是 | - | 修改手机号的验证方式：<br>- `PHONE_PASSCODE`: 使用短信验证码的方式进行验证，当前仅支持这一种方式。<br>      |  |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->verifyUpdatePhoneRequest(array(
-      "verifyMethod" => "undefined",
-    "phonePassCodePayload" => array(
-          "newPhoneNumber" => "188xxxx8888",
-        "newPhonePassCode" => "123456",
-        "newPhoneCountryCode" => "+86",
-        "oldPhoneNumber" => "188xxxx8888",
-        "oldPhonePassCode" => "123456",
-        "oldPhoneCountryCode" => "+86",
-    ),
-
-));
-```
 
 ## 请求响应
 

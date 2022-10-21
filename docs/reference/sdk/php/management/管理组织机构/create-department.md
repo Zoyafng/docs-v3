@@ -27,55 +27,44 @@
 | departmentIdType | string | 否 | department_id | 此次调用中使用的父部门 ID 的类型  | `department_id` |
 
 
+
+
 ## 示例代码
+
 ```php
 <?php
 
-require 'vendor/autoload.php';
-
 use Authing\ManagementClient;
 
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
+// 需要替换成你的 Authing Access Key ID
+$AUTHING_ACCESS_KEY_ID = "635124373e1cd646feecbeb9";
+// 需要替换成你的 Authing Access Key Secret
+$AUTHING_ACCESS_KEY_SECRET = "c3eaf45f7b467003158fd8615367ba6e";
+
+// 初始化 ManagementClient
+$managementClient = new Authing\ManagementClient(
+    array(
+        "accessKeyId" => $AUTHING_ACCESS_KEY_ID,
+        "accessKeySecret" => $AUTHING_ACCESS_KEY_SECRET,
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // "host" => "https://api.your-authing-service.com"
+    )
 );
 
-$data = $management->createDepartment(array(
-      "organizationCode" => "steamory",
+$data = $managementClient->createDepartment(array(
+    // 需要替换成真实的 organizationCode
+    "organizationCode" => "steamory",
     "openDepartmentId" => "ou_7dab8a3d3cdccxxxxxx777c7ad535d62",
     "name" => "开发部",
     "description" => "技术研发部门",
-    "parentDepartmentId" => "6229c4deb3e4d8a20b6021ff",
-    "code" => "6229c4deb3e4d8a20b6021ff",
-    "isVirtualNode" => false,
-    "i18n" => array(
-          "name" => array(
-          "zh-CN" => array(
-          "enabled" => false,
-        "value" => "false",
-    ),
-        "en-US" => array(
-          "enabled" => false,
-        "value" => "false",
-    ),
-        "zh-TW" => array(
-          "enabled" => false,
-        "value" => "false",
-    ),
-        "ja-JP" => array(
-          "enabled" => false,
-        "value" => "false",
-    ),
-    ),
-    ),
-    "customData" => array(
-   "icon"=> "https=>//example.com/logo"
-),
-    "departmentIdType" => "department_id",
-
+    "parentDepartmentId" => "root",
 ));
+print_r($data);
+
 ```
 
+
+  
 ## 请求响应
 
 类型： `DepartmentSingleRespDto`

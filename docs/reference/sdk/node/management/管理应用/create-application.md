@@ -39,86 +39,8 @@
 | brandingConfig | <a href="#ApplicationBrandingConfigInputDto">ApplicationBrandingConfigInputDto</a> | 否 | - | 品牌化配置  |  |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.createApplication({
-    appName: '示例应用',
-    template: 'github',
-    templateData: 'github',
-    appIdentifier: 'example',
-    appLogo: '示例应用',
-    appDescription: '示例描述信息',
-    appType: 'web',
-    defaultProtocol: 'oidc',
-    redirectUris: ["https://example.com/callback"],
-    logoutRedirectUris: ["https://example.com/logout-callback"],
-    initLoginUri: '["https://example.com/login"]',
-    ssoEnabled: false,
-    oidcConfig: {
-      },
-    samlProviderEnabled: false,
-    samlConfig: {
-      },
-    oauthProviderEnabled: false,
-    oauthConfig: {
-      },
-    casProviderEnabled: false,
-    casConfig: {
-      },
-    loginConfig: {
-          mergeLoginAndRegisterPage: false,
-        enabledBasicLoginMethods: EMAIL_CODE,EMAIL_PASSWORD,
-        defaultLoginMethod: {
-          connectionType: 'PASSCODE',
-        qrcodeType: 'WECHAT_OFFICIAL_ACCOUNT',
-        qrcodeExtIdpConnId: '6303a2bf2xxxxx7f665f01bf1',
-        adExtIdpConnId: '6303a2bf2xxxxx7f665f01bf1',
-        ldapExtIdpConnId: '6303a2bf2xxxxx7f665f01bf1',
-    },
-        enabledExtIdpConnIds: [{
-            extIdpConnId: '6303a2bf2xxxxx7f665f01bf1',
-      }],
-        enabledAllExtIdpConns: false,
-        showAuthorizationPage: false,
-    },
-    registerConfig: {
-          enabledBasicRegisterMethods: ["EMAIL_CODE","PHONE_CODE"],
-        defaultRegisterMethod: 'PASSWORD',
-    },
-    brandingConfig: {
-          customCSSEnabled: false,
-        customCSS: '/* 
-Edit login page css
-eg：
-.authing-guard-layout {
-  background: black !important;
-}
-Change the background color
-*/',
-        guardVersion: 'Advanced',
-        customLoadingImage: 'https://files.authing.co/user-contents/photos/cbd51df7-efb1-4b50-b38c-d8e5a04b1830.png',
-        customBackground: 'https://files.authing.co/user-contents/photos/cbd51df7-efb1-4b50-b38c-d8e5a04b1830.png',
-        showChangeLanguageButton: false,
-        defaultLanguage: 'zh-CN',
-        showForgetPasswordButton: true,
-        showEnterpriseConnections: true,
-        showSocialConnections: true,
-    },
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `ApplicationPaginatedRespDto`

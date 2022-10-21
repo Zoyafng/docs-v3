@@ -21,25 +21,8 @@
 | externalId | string | 否 | - | 第三方外部 ID  | `10010` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.is_user_exists(
-     username: "bob",
-     email: "test@example.com",
-     phone: "188xxxx8888",
-     external_id: "10010",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `IsUserExistsRespDto`

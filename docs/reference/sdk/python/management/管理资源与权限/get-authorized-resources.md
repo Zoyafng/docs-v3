@@ -23,33 +23,8 @@
  | withDenied | boolean  | 否 | - | 是否获取被拒绝的资源  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_authorized_resources(
   
-      target_type: "USER",
-  
-      target_identifier: "userId1",
-  
-      namespace: "default",
-  
-      resource_type: "DATA",
-  
-      resource_list: "undefined",
-  
-      with_denied: false,
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `AuthorizedResourcePaginatedRespDto`

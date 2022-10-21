@@ -18,60 +18,8 @@
 | list | <a href="#SetUserBaseFieldDto">SetUserBaseFieldDto[]</a> | 是 | - | 自定义字段列表 数组长度限制：50。 |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        SetUserBaseFieldsReqDto request = new SetUserBaseFieldsReqDto();
-            List= new List<SetUserBaseFieldDto>(
-                    new SetUserBaseFieldDto().set
-
-               request.setKey("school");
-      request.setLabel("学校");
-      request.setDescription("学校");
-      request.setUserEditable(false);
-      request.setVisibleInAdminConsole(true);
-      request.setVisibleInUserCenter(true);
-          I18n= new CustomFieldI18n(
-                        Label= new LangObject(
-                        Zh-CN= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        En-US= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        Zh-TW= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        Ja-JP= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        ),
-        ),
-      
-                  ),
-        
-        CustomFieldListRespDto response = managementClient.setUserBaseFields(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `CustomFieldListRespDto`

@@ -22,41 +22,8 @@
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.listTenantExtIdp(
-    
-     
-        tenantId: "60b49eb83fd80adb96f26e68"        , 
-        appId: "60b49eb83fd80adb96f26e68"        , 
-        type: "undefined"        , 
-        page: 1        , 
-        limit: 10        
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `ExtIdpListPaginatedRespDto`

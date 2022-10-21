@@ -27,41 +27,8 @@
  | withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表  | `true` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.search_department_members(
   
-      organization_code: "steamory",
-  
-      department_id: "root",
-  
-      keywords: "张三",
-  
-      page: 1,
-  
-      limit: 10,
-  
-      department_id_type: "department_id",
-  
-      include_children_departments: false,
-  
-      with_custom_data: true,
-  
-      with_identities: true,
-  
-      with_department_ids: true,
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `UserPaginatedRespDto`

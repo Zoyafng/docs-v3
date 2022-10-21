@@ -22,31 +22,8 @@
  | includeChildrenDepartments | boolean  | 否 | - | 是否包含子部门  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.is_user_in_department(
   
-      user_id: "6229ffaxxxxxxxxcade3e3d9",
-  
-      organization_code: "steamory",
-  
-      department_id: "root",
-  
-      department_id_type: "department_id",
-  
-      include_children_departments: false,
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `IsUserInDepartmentRespDto`

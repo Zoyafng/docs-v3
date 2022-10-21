@@ -27,85 +27,61 @@
 | departmentIdType | string | 否 | department_id | 此次调用中使用的父部门 ID 的类型  | `department_id` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          DepartmentSingleRespDto  result = await managementClient.CreateDepartment
-          (  new CreateDepartmentReqDto{                  OrganizationCode= "steamory" ,
-                  OpenDepartmentId= "ou_7dab8a3d3cdccxxxxxx777c7ad535d62" ,
-                  Name= "开发部" ,
-                  Description= "技术研发部门" ,
-                  ParentDepartmentId= "6229c4deb3e4d8a20b6021ff" ,
-                  Code= "6229c4deb3e4d8a20b6021ff" ,
-                  IsVirtualNode= false ,
-                I18n= new DepartmentI18nDto
-                {
-                        Name= new LangObject
-                {
-                        Zh-CN= new LangUnit
-                {
-                          Enabled= false ,
-          Value= "false" ,
-        },
-        En-US= new LangUnit
-                {
-                          Enabled= false ,
-          Value= "false" ,
-        },
-        Zh-TW= new LangUnit
-                {
-                          Enabled= false ,
-          Value= "false" ,
-        },
-        Ja-JP= new LangUnit
-                {
-                          Enabled= false ,
-          Value= "false" ,
-        },
-        },
-        },
-                  CustomData= new CreateDepartmentReqDto{    icon="https://example.com/logo",} ,
-                  DepartmentIdType= CreateDepartmentReqDto.departmentIdType.DEPARTMENT_ID ,
-            }
-          );
+            CreateDepartmentReqDto reqDto = new CreateDepartmentReqDto()
+            {
+                ParentDepartmentId = "AUTHING_DEP_ID",
+                OrganizationCode = "AUTHING_ORG_CODE",
+                Code = "AUTHING_DEP_CPDE",
+                Name = "AUTHING_DEP_NAME",
+                Description = "AUTHING_DEP_DESCRIPTION",
+                OpenDepartmentId = "AUTHING_DEP_OPENDEPARTMENTID",
+                DepartmentIdType = CreateDepartmentReqDto.departmentIdType.DEPARTMENT_ID
+
+            };
+
+            DepartmentSingleRespDto dto = await managementClient.CreateDepartment(reqDto);
+
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `DepartmentSingleRespDto`

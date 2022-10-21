@@ -20,53 +20,51 @@
 | requestBody | object | 否 | - | 请求体  | `{"eventName":"test","data":{"description":"A test from authing"}}` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          TriggerWebhookRespDto  result = await managementClient.TriggerWebhook
-          (  new TriggerWebhookDto{                  WebhookId= "6229ffaxxxxxxxxcade3e3d9" ,
-                  RequestHeaders= new TriggerWebhookDto{    eventName="test",} ,
-                  RequestBody= new TriggerWebhookDto{    eventName="test",} ,
-            }
-          );
+            var res = await managementClient.ListWebhooks(new ListWebhooksDto { });
+            var item = res.Data.List.First();
+            var res2 = await managementClient.TriggerWebhook(new TriggerWebhookDto { WebhookId = item.WebhookId });
+
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `TriggerWebhookRespDto`

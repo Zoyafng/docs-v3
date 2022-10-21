@@ -23,42 +23,8 @@
 | tencentExmailConfig | <a href="#TencentExmailEmailProviderConfigInput">TencentExmailEmailProviderConfigInput</a> | 否 | - | 腾讯企业邮件服务配置  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.config_email_provier(
-     enabled: true,
-     type: "smtp",
-     smtp_config: {
-         smtp_host: "smtp.example.com",
-       smtp_port: 465,
-       sender: "test",
-       sender_pass: "passw0rd",
-       enable_s_s_l: true,
-    },
-     send_grid_config: {
-         sender: "test",
-       apikey: "xxxxxxxxxx",
-    },
-     ali_exmail_config: {
-         sender: "test",
-       sender_pass: "passw0rd",
-    },
-     tencent_exmail_config: {
-         sender: "test",
-       sender_pass: "passw0rd",
-    },
   
-)
-```
-
-
 ## 请求响应
 
 类型： `EmailProviderDto`

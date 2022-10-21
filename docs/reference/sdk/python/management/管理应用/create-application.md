@@ -39,83 +39,8 @@
 | brandingConfig | <a href="#ApplicationBrandingConfigInputDto">ApplicationBrandingConfigInputDto</a> | 否 | - | 品牌化配置  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.create_application(
-     app_name: "示例应用",
-     template: "github",
-     template_data: "github",
-     app_identifier: "example",
-     app_logo: "示例应用",
-     app_description: "示例描述信息",
-     app_type: "web",
-     default_protocol: "oidc",
-     redirect_uris: "["https://example.com/callback"]",
-     logout_redirect_uris: "["https://example.com/logout-callback"]",
-     init_login_uri: "["https://example.com/login"]",
-     sso_enabled: false,
-     oidc_config: {
-      },
-     saml_provider_enabled: false,
-     saml_config: {
-      },
-     oauth_provider_enabled: false,
-     oauth_config: {
-      },
-     cas_provider_enabled: false,
-     cas_config: {
-      },
-     login_config: {
-         merge_login_and_register_page: false,
-       enabled_basic_login_methods: "EMAIL_CODE,EMAIL_PASSWORD",
-       default_login_method: {
-         connection_type: "PASSCODE",
-       qrcode_type: "WECHAT_OFFICIAL_ACCOUNT",
-       qrcode_ext_idp_conn_id: "6303a2bf2xxxxx7f665f01bf1",
-       ad_ext_idp_conn_id: "6303a2bf2xxxxx7f665f01bf1",
-       ldap_ext_idp_conn_id: "6303a2bf2xxxxx7f665f01bf1",
-    },
-       enabled_ext_idp_conn_ids: [{
-           ext_idp_conn_id: "6303a2bf2xxxxx7f665f01bf1",
-      }],
-       enabled_all_ext_idp_conns: false,
-       show_authorization_page: false,
-    },
-     register_config: {
-         enabled_basic_register_methods: "["EMAIL_CODE","PHONE_CODE"]",
-       default_register_method: "PASSWORD",
-    },
-     branding_config: {
-         custom_c_s_s_enabled: false,
-       custom_c_s_s: "/* 
-Edit login page css
-eg：
-.authing-guard-layout {
-  background: black !important;
-}
-Change the background color
-*/",
-       guard_version: "Advanced",
-       custom_loading_image: "https://files.authing.co/user-contents/photos/cbd51df7-efb1-4b50-b38c-d8e5a04b1830.png",
-       custom_background: "https://files.authing.co/user-contents/photos/cbd51df7-efb1-4b50-b38c-d8e5a04b1830.png",
-       show_change_language_button: false,
-       default_language: "zh-CN",
-       show_forget_password_button: true,
-       show_enterprise_connections: true,
-       show_social_connections: true,
-    },
   
-)
-```
-
-
 ## 请求响应
 
 类型： `ApplicationPaginatedRespDto`

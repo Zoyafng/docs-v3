@@ -18,20 +18,6 @@
 | deleteAccountToken | string | 是 | - | 注销账户的 token  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.delete_account(
-     delete_account_token: "undefined",
-  
-)
-```
 
 
 ## 请求响应

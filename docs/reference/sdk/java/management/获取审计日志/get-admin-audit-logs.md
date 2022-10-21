@@ -26,41 +26,8 @@
 | pagination | <a href="#ListWebhooksDto">ListWebhooksDto</a> | 否 | - | 分页  |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        GetAdminAuditLogsDto request = new GetAdminAuditLogsDto();
-        request.setRequestId("xxx");
-        request.setClientIp("xxx");
-        request.setOperationType("create");
-        request.setResourceType("user");
-        request.setUserId("xxx");
-        request.setSuccess(true);
-        request.setStart(11);
-        request.setEnd(111);
-            Pagination= new ListWebhooksDto(
-                    request.setPage(1);
-    request.setLimit(10);
-        ),
-        
-        AdminAuditLogRespDto response = managementClient.getAdminAuditLogs(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `AdminAuditLogRespDto`

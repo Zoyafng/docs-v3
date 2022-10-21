@@ -26,45 +26,8 @@
 | tplEngine | string | 否 | handlebar | 模版渲染引擎。Authing 邮件模版目前支持两种渲染引擎：<br>- `handlebar`: 详细使用方法请见：[handlebars 官方文档](https://handlebarsjs.com/)<br>- `ejs`: 详细使用方法请见：[ejs 官方文档](https://ejs.co/)<br><br>默认将使用 `handlerbar` 作为膜拜渲染引擎。<br>      | `handlebar` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.updateEmailTemplate(
-      dto.UpdateEmailTemplateDto {
-          Type: UpdateEmailTemplateDto.type.WELCOME_EMAIL,
-          CustomizeEnabled: true,
-          Name: "欢迎邮件",
-          Subject: "欢迎加入 {{app_name}}",
-          Sender: "{{client_name}}",
-          Content: "xxx",
-          ExpiresIn: 300,
-          RedirectTo: "https://example.com",
-          TplEngine: UpdateEmailTemplateDto.tplEngine.HANDLEBAR,
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `EmailTemplateSingleItemRespDto`

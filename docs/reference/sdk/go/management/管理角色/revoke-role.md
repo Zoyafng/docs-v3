@@ -20,45 +20,8 @@
 | namespace | string | 否 | - | 所属权限分组的 code  | `default` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.revokeRole(
-      dto.RevokeRoleDto {
-          Code: "code1",
-          Namespace: "default",
-        Targets: []TargetDto{
-                    dto.TargetDto
-                    {
-                     TargetType: TargetDto.targetType.DEPARTMENT,
-            TargetIdentifier: "60b49eb83fd80adb96f26e68",
-                }
-                  },
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

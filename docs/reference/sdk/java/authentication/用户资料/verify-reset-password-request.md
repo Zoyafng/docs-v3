@@ -15,47 +15,11 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| verifyMethod | string | 是 | - | 忘记密码请求使用的验证手段：<br>- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证，当前只支持这种验证方式。<br>      | `EMAIL_PASSCODE` |
+| verifyMethod | string | 是 | - | 忘记密码请求使用的验证手段：<br>- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证<br>- `PHONE_PASSCODE`: 通过手机号验证码进行验证<br>      | `EMAIL_PASSCODE` |
 | phonePassCodePayload | <a href="#ResetPasswordByPhonePassCodeDto">ResetPasswordByPhonePassCodeDto</a> | 否 | - | 使用手机号验证码验证的数据  |  |
 | emailPassCodePayload | <a href="#ResetPasswordByEmailPassCodeDto">ResetPasswordByEmailPassCodeDto</a> | 否 | - | 使用邮箱验证码验证的数据  |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.client.AuthenticationClient;
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.model.AuthenticationClientOptions;
-
-class Test {
-    public static void main(String[] args) {
-        // 设置初始化参数
-        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
-        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
-        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
-        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
-    
-        // 初始化 AuthenticationClient
-        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
-    
-        
-        VerifyResetPasswordRequestDto request = new VerifyResetPasswordRequestDto();
-        request.setVerifyMethod(VerifyResetPasswordRequestDto.verifyMethod.EMAIL_PASSCODE);
-            PhonePassCodePayload= new ResetPasswordByPhonePassCodeDto(
-                    request.setPhoneNumber("188xxxx8888");
-    request.setPassCode("123456");
-    request.setPhoneCountryCode("+86");
-        ),
-            EmailPassCodePayload= new ResetPasswordByEmailPassCodeDto(
-                    request.setEmail("undefined");
-    request.setPassCode("undefined");
-        ),
-        
-        PasswordResetVerifyResp response = managementClient.verifyResetPasswordRequest(request);
-        System.out.println(response);
-    }
-}
-```
 
 
 ## 请求响应

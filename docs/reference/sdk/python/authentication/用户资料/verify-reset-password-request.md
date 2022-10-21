@@ -15,34 +15,11 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| verifyMethod | string | 是 | - | 忘记密码请求使用的验证手段：<br>- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证，当前只支持这种验证方式。<br>      | `EMAIL_PASSCODE` |
+| verifyMethod | string | 是 | - | 忘记密码请求使用的验证手段：<br>- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证<br>- `PHONE_PASSCODE`: 通过手机号验证码进行验证<br>      | `EMAIL_PASSCODE` |
 | phonePassCodePayload | <a href="#ResetPasswordByPhonePassCodeDto">ResetPasswordByPhonePassCodeDto</a> | 否 | - | 使用手机号验证码验证的数据  |  |
 | emailPassCodePayload | <a href="#ResetPasswordByEmailPassCodeDto">ResetPasswordByEmailPassCodeDto</a> | 否 | - | 使用邮箱验证码验证的数据  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.verify_reset_password_request(
-     verify_method: "EMAIL_PASSCODE",
-     phone_pass_code_payload: {
-         phone_number: "188xxxx8888",
-       pass_code: "123456",
-       phone_country_code: "+86",
-    },
-     email_pass_code_payload: {
-         email: "undefined",
-       pass_code: "undefined",
-    },
-  
-)
-```
 
 
 ## 请求响应

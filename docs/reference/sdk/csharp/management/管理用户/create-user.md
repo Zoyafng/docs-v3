@@ -51,123 +51,62 @@
 | salt | string | 否 | - | 加密用户密码的盐  | `dgisaeieruur` |
 | tenantIds | string[] | 否 | - | 租户 ID  |  |
 | otp | <a href="#CreateUserOtpDto">CreateUserOtpDto</a> | 否 | - | 用户的 OTP 验证器  |  |
-| departmentIds | array[] | 否 | - | 用户所属部门 ID 列表  | `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]` |
+| departmentIds | string[] | 否 | - | 用户所属部门 ID 列表  | `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]` |
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"school":"北京大学","age":22}` |
 | identities | <a href="#CreateIdentityDto">CreateIdentityDto[]</a> | 否 | - | 第三方身份源（建议调用绑定接口进行绑定）  | `{"extIdpId":"6076bacxxxxxxxxd80d993b5","provider":"wechat","type":"openid","userIdInIdp":"oj7Nq05R-RRaqak0_YlMLnnIwsvg"}` |
 | options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          UserSingleRespDto  result = await managementClient.CreateUser
-          (  new CreateUserReqDto{                  Status= CreateUserReqDto.status.ACTIVATED ,
-                  Email= "test@example.com" ,
-                  Phone= "188xxxx8888" ,
-                  PhoneCountryCode= "+86" ,
-                  Username= "bob" ,
-                  ExternalId= "10010" ,
-                  Name= "张三" ,
-                  Nickname= "张三" ,
-                  Photo= "https://files.authing.co/authing-console/default-user-avatar.png" ,
-                  Gender= CreateUserReqDto.gender.M ,
-                  EmailVerified= true ,
-                  PhoneVerified= true ,
-                  Birthdate= "2022-06-03" ,
-                  Country= "CN" ,
-                  Province= "BJ" ,
-                  City= "BJ" ,
-                  Address= "北京朝阳" ,
-                  StreetAddress= "北京朝阳区 xxx 街道" ,
-                  PostalCode= "438100" ,
-                  Company= "steamory" ,
-                  Browser= "Mozilla/5.0 (Linux; Android 10; V2001A; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/87.0.4280.141 Mobile Safari/537.36 VivoBrowser/10.2.10.0" ,
-                  Device= "iOS" ,
-                  GivenName= "三" ,
-                  FamilyName= "张" ,
-                  MiddleName= "" ,
-                  Profile= "" ,
-                  PreferredUsername= "" ,
-                  Website= "" ,
-                  Zoneinfo= "" ,
-                  Locale= "" ,
-                  Formatted= "" ,
-                  Region= "" ,
-                  Password= "oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=" ,
-                  Salt= "dgisaeieruur" ,
-                  TenantIds= new List<string>{} ,
-                Otp= new CreateUserOtpDto
-                {
-                          Secret= "HZ2F6J3AGNAVSOTV" ,
-          RecoveryCode= "b471-8ec0-874a-087f-bccb-cd54" ,
-        },
-                  DepartmentIds= new List<string>{"624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe",} ,
-                  CustomData= new CreateUserReqDto{    school="北京大学",    age=22,} ,
-                Identities= new List<CreateIdentityDto>
-                {
-                    new CreateIdentityDto
-                    {
-                     ExtIdpId= "6076bacxxxxxxxxd80d993b5" ,
-            Provider= CreateIdentityDto.provider.WECHAT ,
-            Type= "openid" ,
-            UserIdInIdp= "oj7Nq05R-RRaqak0_YlMLnnIwsvg" ,
-            OriginConnIds= new List<string>{"605492ac41xxxxe0362f0707",} ,
-                }
-                  },
-                Options= new CreateUserOptionsDto
-                {
-                          KeepPassword= false ,
-          AutoGeneratePassword= false ,
-          ResetPasswordOnFirstLogin= false ,
-          DepartmentIdType= CreateUserOptionsDto.departmentIdType.DEPARTMENT_ID ,
-        SendNotification= new SendCreateAccountNotificationDto
-                {
-                          SendEmailNotification= false ,
-          SendPhoneNotification= false ,
-          AppId= "appid1" ,
-        },
-          PasswordEncryptType= CreateUserOptionsDto.passwordEncryptType.NONE ,
-        },
-            }
-          );
+            CreateUserReqDto dto = new CreateUserReqDto()
+            {
+                Username = "AUTHING_USERNAME",
+                Status = CreateUserReqDto.status.ACTIVATED,
+                Password = "AUTHING_PASSWORD",
+                Options = new CreateUserOptionsDto { DepartmentIdType = CreateUserOptionsDto.departmentIdType.DEPARTMENT_ID }
+            };
+
+            UserSingleRespDto userSingleRespDto = await managementClient.CreateUser(dto);
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `UserSingleRespDto`
@@ -272,7 +211,7 @@ namespace Example
 | resetPasswordOnFirstLogin | boolean | 否 | 是否强制要求用户在第一次的时候重置密码   |  |
 | departmentIdType | string | 否 | 此次调用中使用的父部门 ID 的类型   | department_id |
 | sendNotification |  | 否 | 重置密码发送邮件和手机号选项 嵌套类型：<a href="#SendCreateAccountNotificationDto">SendCreateAccountNotificationDto</a>。  |  `{"sendEmailNotification":true,"sendPhoneNotification":true}` |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | string | 否 | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 
 
 ### <a id="SendCreateAccountNotificationDto"></a> SendCreateAccountNotificationDto

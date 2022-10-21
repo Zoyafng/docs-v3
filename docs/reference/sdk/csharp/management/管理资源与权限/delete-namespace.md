@@ -18,51 +18,63 @@
 | code | string | 是 | - | 权限分组唯一标志符  | `my-namespace` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          IsSuccessRespDto  result = await managementClient.DeleteNamespace
-          (  new DeleteNamespaceDto{                  Code= "my-namespace" ,
-            }
-          );
+            CreateNamespaceDto createNamespaceDto = new CreateNamespaceDto()
+            {
+                Code = "my-namespace",
+                Name = "我的权限分组",
+                Description = "我的权限分组描述"
+            };
+
+            NamespaceRespDto namespaceRespDto = await managementClient.CreateNamespace(createNamespaceDto);
+
+
+            DeleteNamespaceDto deleteNamespaceDto = new DeleteNamespaceDto()
+            {
+                Code = "my-new-namespace",
+            };
+
+            IsSuccessRespDto dto = await managementClient.DeleteNamespace(deleteNamespaceDto);
+
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

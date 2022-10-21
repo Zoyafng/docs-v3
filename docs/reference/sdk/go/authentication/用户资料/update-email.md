@@ -19,35 +19,6 @@
 | updateEmailToken | string | 是 | - | 用于临时修改邮箱的 token，可从**发起修改邮箱的验证请求**接口获取。  | `xxxx` |
 
 
-## 示例代码
-```go
-package main
-
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.updateEmail(
-      dto.UpdateEmailDto {
-          UpdateEmailToken: "xxxx",
-    }
-  )
-}
-```
 
 
 ## 请求响应

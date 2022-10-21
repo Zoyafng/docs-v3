@@ -22,48 +22,8 @@
 | i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 | - | 多语言设置  | `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.createOrganization({
-    organizationCode: 'steamory',
-    organizationName: '蒸汽记忆',
-    description: '组织描述信息',
-    openDepartmentId: '60b49eb83fd80adb96f26e68',
-    i18n: {
-          organizationName: {
-          zh-CN: {
-          enabled: false,
-        value: 'false',
-    },
-        en-US: {
-          enabled: false,
-        value: 'false',
-    },
-        zh-TW: {
-          enabled: false,
-        value: 'false',
-    },
-        ja-JP: {
-          enabled: false,
-        value: 'false',
-    },
-    },
-    },
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `OrganizationSingleRespDto`

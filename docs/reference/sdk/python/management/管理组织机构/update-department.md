@@ -27,52 +27,8 @@
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"icon":"https://example.com/icon"}` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.update_department(
-     organization_code: "steamory",
-     department_id: "60b49eb83fd80adb96f26e68",
-     leader_user_ids: "["60b49eb83fd80adb96f26e68"]",
-     description: "技术研发部门",
-     code: "6229c4deb3e4d8a20b6021ff",
-     i18n: {
-         name: {
-         zh-_c_n: {
-         enabled: false,
-       value: "false",
-    },
-       en-_u_s: {
-         enabled: false,
-       value: "false",
-    },
-       zh-_t_w: {
-         enabled: false,
-       value: "false",
-    },
-       ja-_j_p: {
-         enabled: false,
-       value: "false",
-    },
-    },
-    },
-     name: "开发部",
-     department_id_type: "department_id",
-     parent_department_id: "6229c4deb3e4d8a20b6021ff",
-     custom_data: {
-			"icon":	"https://example.com/icon"
-		},
   
-)
-```
-
-
 ## 请求响应
 
 类型： `DepartmentSingleRespDto`

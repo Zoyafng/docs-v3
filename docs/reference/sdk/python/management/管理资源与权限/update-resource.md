@@ -23,30 +23,8 @@
 | type | string | 否 | - | 资源类型，如数据、API、按钮、菜单  | `API` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.update_resource(
-     code: "ecs",
-     description: "服务器",
-     actions: [{
-           name: "ecs:Start",
-         description: "ecs:Start",
-      }],
-     api_identifier: "https://my-awesome-api.com/api",
-     namespace: "default",
-     type: "API",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `ResourceRespDto`

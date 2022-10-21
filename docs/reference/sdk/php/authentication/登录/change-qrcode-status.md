@@ -19,25 +19,7 @@
 | qrcodeId | string | 是 | - | 二维码唯一 ID  |  |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->changeQrcodeStatus(array(
-      "qrcodeId" => "",
-    "action" => "CONFIRM",
-
-));
-```
 
 ## 请求响应
 

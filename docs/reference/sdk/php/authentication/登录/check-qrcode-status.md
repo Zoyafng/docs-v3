@@ -18,25 +18,41 @@
  | qrcodeId | string  | 是 | - | 二维码唯一 ID  |  |
 
 
+
+
 ## 示例代码
+
 ```php
 <?php
 
-require 'vendor/autoload.php';
+use Authing\AuthenticationClient;
 
-use Authing\ManagementClient;
+// 需要替换成你的 Authing 应用 ID
+$AUTHING_APP_ID = "AUTHING_APP_ID";
+// 需要替换成你的 Authing 应用密钥
+$AUTHING_APP_SECRET = "AUTHING_APP_SECRET";
+// 需要替换成你的 Authing 应用域名
+$AUTHING_APP_HOST = "AUTHING_APP_HOST";
 
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
+// 初始化 AuthenticationClient
+$authenticationClient = new Authing\AuthenticationClient(
+    array(
+        "appId" => $AUTHING_APP_ID,
+        "appSecret" => $AUTHING_APP_SECRET,
+        "appHost" => $AUTHING_APP_HOST,
+    )
 );
 
-$data = $management->checkQrcodeStatus(array(
-  
-    "qrcodeId" => "",
+$data = $authenticationClient->checkQrCodeStatus(
+    array(
+        "qrcodeId" => "xxxx",
+    )
+);
+print_r($data);
 
-));
 ```
+
+
 
 ## 请求响应
 

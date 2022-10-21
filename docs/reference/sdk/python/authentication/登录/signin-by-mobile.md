@@ -23,7 +23,7 @@
 你可以在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**
 中找到**换取 token 身份验证方式** 配置项：
 
-> 单页 Web 应用和客户端应用隐藏，默认为 `none`，不允许修改；后端应用和 SDK 可以修改此配置项。
+> 单页 Web 应用和客户端应用隐藏，默认为 `none`，不允许修改；后端应用和标准 Web 应用可以修改此配置项。
 
 ![](https://files.authing.co/api-explorer/tokenAuthMethod.jpg)
 
@@ -65,8 +65,8 @@ JS 代码示例：
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | extIdpConnidentifier | string | 是 | - | 外部身份源连接标志符  | `wework` |
 | connection | string | 是 | - | 移动端社会化登录类型：<br>- `apple`: Apple 移动端应用<br>- `wechat`: 微信移动应用<br>- `alipay`: 支付宝移动应用<br>- `wechatwork`: 企业微信移动应用<br>- `wechatwork_agency`: 企业微信移动应用（代开发模式）<br>- `lark_internal`: 飞书移动端企业自建应用<br>- `lark_public`: 飞书移动端应用商店应用<br>- `yidun`: 网易易盾一键登录<br>- `wechat_mini_program_code`: 微信小程序使用 code 登录<br>- `wechat_mini_program_phone `: 微信小程序使用手机号登录<br>- `google`: Google 移动端社会化登录<br>  | `wechat` |
-| wechatPayload | <a href="#SignInByWechatPayloadDto">SignInByWechatPayloadDto</a> | 否 | - | 苹果移动端社会化登录数据，当 `connection` 为 `apple` 的时候必填。  |  |
-| applePayload | <a href="#SignInByApplePayloadDto">SignInByApplePayloadDto</a> | 否 | - | 微信移动端社会化登录数据，当 `connection` 为 `wechat` 的时候必填。  |  |
+| wechatPayload | <a href="#SignInByWechatPayloadDto">SignInByWechatPayloadDto</a> | 否 | - | 苹果移动端社会化登录数据，当 `connection` 为 `wechat` 的时候必填。  |  |
+| applePayload | <a href="#SignInByApplePayloadDto">SignInByApplePayloadDto</a> | 否 | - | 微信移动端社会化登录数据，当 `connection` 为 `apple` 的时候必填。  |  |
 | alipayPayload | <a href="#SignInByAlipayPayloadDto">SignInByAlipayPayloadDto</a> | 否 | - | 支付宝移动端社会化登录数据，当 `connection` 为 `alipay` 的时候必填。  |  |
 | wechatworkPayload | <a href="#SignInByWechatworkDto">SignInByWechatworkDto</a> | 否 | - | 企业微信移动端社会化登录数据，当 `connection` 为 `wechatwork` 的时候必填。  |  |
 | wechatworkAgencyPayload | <a href="#SignInByWechatworkAgencyPayloadDto">SignInByWechatworkAgencyPayloadDto</a> | 否 | - | 企业微信（代开发模式）移动端社会化登录数据，当 `connection` 为 `wechatwork_agency` 的时候必填。  |  |
@@ -81,72 +81,6 @@ JS 代码示例：
 | client_secret | string | 否 | - | 应用密钥。当应用的「换取 token 身份验证方式」配置为 `client_secret_post` 需要传。  | `4203d30e5e915xxxxxx26c31c9adce68` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.signin_by_mobile(
-     connection: "wechat",
-     ext_idp_connidentifier: "wework",
-     wechat_payload: {
-         code: "1660291866076",
-    },
-     apple_payload: {
-         code: "1660291866076",
-    },
-     alipay_payload: {
-         code: "1660291866076",
-    },
-     wechatwork_payload: {
-         code: "1660291866076",
-    },
-     wechatwork_agency_payload: {
-         code: "1660291866076",
-    },
-     lark_public_payload: {
-         code: "1660291866076",
-    },
-     lark_internal_payload: {
-         code: "1660291866076",
-    },
-     yidun_payload: {
-         token: "1660291866076",
-       access_token: "1660291866076",
-    },
-     wechat_mini_program_code_payload: {
-         encrypted_data: "",
-       iv: "",
-       code: "",
-    },
-     wechat_mini_program_phone_payload: {
-         encrypted_data: "",
-       iv: "",
-       code: "",
-    },
-     google_payload: {
-         code: "",
-    },
-     options: {
-         scope: "openid profile",
-       context: "{
-			"source":	"utm"
-		}",
-       tenant_id: "625783d629f2bd1f5ddddd98c",
-       custom_data: {
-			"school":	"pku",
-			"age":	"20"
-		},
-    },
-     client_id: "6342b8537axxxx047d314109",
-     client_secret: "4203d30e5e915xxxxxx26c31c9adce68",
-  
-)
-```
 
 
 ## 请求响应

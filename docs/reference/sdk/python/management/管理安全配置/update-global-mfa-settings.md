@@ -18,22 +18,8 @@
 | enabledFactors | string[] | 是 |  | 开启的 MFA 认证因素列表  | `["SMS"]` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.update_global_mfa_settings(
-     enabled_factors: "["SMS"]",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `MFASettingsRespDto`

@@ -23,36 +23,8 @@
  | objectType | string  | 否 | - | 操作对象类型:<br>- `department`: 部门<br>- `user`: 用户<br>      | `DEPARTMENT` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->listSyncJobLogs(array(
   
-    "syncJobId" => 1000,
-
-    "page" => 1,
-
-    "limit" => 10,
-
-    "success" => true,
-
-    "action" => "CreateUser",
-
-    "objectType" => "DEPARTMENT",
-
-));
-```
-
 ## 请求响应
 
 类型： `TriggerSyncTaskRespDto`

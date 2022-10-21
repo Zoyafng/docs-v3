@@ -15,60 +15,61 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| userIds | array[] | 是 | - | 用户 ID 列表  | `["623c20b2a062aaaaf41b17da"]` |
+| userIds | string[] | 是 | - | 用户 ID 列表  | `["623c20b2a062aaaaf41b17da"]` |
 | organizationCode | string | 是 | - | 组织 code  | `steamory` |
 | departmentId | string | 是 | - | 部门系统 ID（为 Authing 系统自动生成，不可修改）  | `60b49eb83fd80adb96f26e68` |
 | departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型  | `department_id` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          IsSuccessRespDto  result = await managementClient.AddDepartmentMembers
-          (  new AddDepartmentMembersReqDto{                  DepartmentId= "60b49eb83fd80adb96f26e68" ,
-                  OrganizationCode= "steamory" ,
-                  DepartmentIdType= AddDepartmentMembersReqDto.departmentIdType.DEPARTMENT_ID ,
-                  UserIds= new List<string>{"623c20b2a062aaaaf41b17da",} ,
-            }
-          );
+            AddDepartmentMembersReqDto addDepartmentMembersReqDto = new AddDepartmentMembersReqDto()
+            {
+                DepartmentId = "AUTHING_DEP_ID",
+                OrganizationCode = "AUTHING_ORG_CODE",
+                UserIds = new List<string> { "AUTHING_USERID", "AUTHNG_USERID2" }
+            };
+
+            IsSuccessRespDto respDto = await managementClient.AddDepartmentMembers(addDepartmentMembersReqDto);
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

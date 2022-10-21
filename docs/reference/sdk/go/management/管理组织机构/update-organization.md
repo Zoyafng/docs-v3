@@ -24,62 +24,8 @@
 | organizationName | string | 否 | - | 组织名称  | `蒸汽记忆` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.updateOrganization(
-      dto.UpdateOrganizationReqDto {
-          OrganizationCode: "steamory",
-          Description: "技术研发部门",
-          OpenDepartmentId: "60b49eb83fd80adb96f26e68",
-          LeaderUserIds: []string{"60b49eb83fd80adb96f26e68",},
-        I18n: dto.OrganizationNameI18nDto {
-                        OrganizationName: dto.LangObject {
-                        Zh-CN: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        En-US: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        Zh-TW: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        Ja-JP: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        },
-        },
-          OrganizationNewCode: "steamory2",
-          OrganizationName: "蒸汽记忆",
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `OrganizationSingleRespDto`

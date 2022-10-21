@@ -24,43 +24,8 @@
  | orderBy | string  | 否 | Desc | 增序或降序  | `Desc` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.getUserDepartments(
-    
-     
-        userId: "6229ffaxxxxxxxxcade3e3d9"        , 
-        userIdType: "user_id"        , 
-        page: 1        , 
-        limit: 10        , 
-        withCustomData: true        , 
-        sortBy: "JoinDepartmentAt"        , 
-        orderBy: "Desc"        
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `UserDepartmentPaginatedRespDto`

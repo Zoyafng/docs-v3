@@ -16,38 +16,13 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | description | string | 是 | - | 分组描述  | `描述内容` |
-| name | string | 是 | - | 分组名称  | `开发者` |
 | code | string | 是 | - | 分组 code  | `developer` |
+| name | string | 否 | - | 分组名称  | `开发者` |
 | newCode | string | 否 | - | 分组新的 code  | `developer` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        UpdateGroupReqDto request = new UpdateGroupReqDto();
-        request.setCode("developer");
-        request.setName("开发者");
-        request.setDescription("描述内容");
-        request.setNewCode("developer");
-        
-        GroupSingleRespDto response = managementClient.updateGroup(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `GroupSingleRespDto`

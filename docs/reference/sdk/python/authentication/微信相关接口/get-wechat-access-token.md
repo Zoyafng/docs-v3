@@ -19,21 +19,6 @@
 | appId | string | 是 | - | 微信小程序或微信公众号的 AppId  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_wechat_access_token(
-     app_id: "",
-     app_secret: "",
-  
-)
-```
 
 
 ## 请求响应

@@ -23,105 +23,12 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | connection | string | 是 | - | 注册方式：<br>- `PASSWORD`: 邮箱密码方式<br>- `PASSCODE`: 邮箱/手机号验证码方式<br>      | `PASSWORD` |
-| passwordPayload | <a href="#SignUpByPasswordDto">SignUpByPasswordDto</a> | 否 | - | 当主持方式为 `PASSWORD` 时此参数必填。  | `{"email":"test@example.com","password":"passw0rd"}` |
+| passwordPayload | <a href="#SignUpByPasswordDto">SignUpByPasswordDto</a> | 否 | - | 当注册方式为 `PASSWORD` 时此参数必填。  | `{"email":"test@example.com","password":"passw0rd"}` |
 | passCodePayload | <a href="#SignUpByPassCodeDto">SignUpByPassCodeDto</a> | 否 | - | 当认证方式为 `PASSCODE` 时此参数必填  | `{"email":"test@example.com","passCode":"passw0rd"}` |
 | profile | <a href="#SignUpProfileDto">SignUpProfileDto</a> | 否 | - | 用户资料  |  |
 | options | <a href="#SignUpOptionsDto">SignUpOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-## 示例代码
-```csharp
-
-using Authing.CSharp.SDK.Models;
-using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Example
-{
-    class Program
-    {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
-
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
-
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          UserSingleRespDto  result = await managementClient.Signup
-          (  new SignUpDto{                  Connection= SignUpDto.connection.PASSWORD ,
-                PasswordPayload= new SignUpByPasswordDto
-                {
-                          Password= "passw0rd" ,
-          Username= "test" ,
-          Email= "test@example.com" ,
-        },
-                PassCodePayload= new SignUpByPassCodeDto
-                {
-                          PassCode= "123456" ,
-          Email= "114114" ,
-          Phone= "188xxxx8888" ,
-          PhoneCountryCode= "+86" ,
-        },
-                Profile= new SignUpProfileDto
-                {
-                          Nickname= "" ,
-          Company= "Authing .Inc" ,
-          Photo= "https://authing.cn/demo.jpg" ,
-          Device= "iOS" ,
-          Browser= "Edge" ,
-          Name= "Mike" ,
-          GivenName= "Zhou" ,
-          FamilyName= "Jay" ,
-          MiddleName= "Jane" ,
-          Profile= "this is my profile" ,
-          PreferredUsername= "Mike" ,
-          Website= "https://authing.cn" ,
-          Gender= SignUpProfileDto.gender.M ,
-          Birthdate= "2020.2.2" ,
-          Zoneinfo= "HongKong" ,
-          Locale= "EN-US" ,
-          Address= "Hai Dian XX" ,
-          Formatted= "" ,
-          StreetAddress= "Hai Dian Street 1" ,
-          Locality= "BeiJing HaiDian" ,
-          Region= "china" ,
-          PostalCode= "3500000" ,
-          Country= "china" ,
-          Email= "help@authing.cn" ,
-          Phone= "114114114" ,
-          CustomData= new SignUpProfileDto{    name="H",} ,
-        },
-                Options= new SignUpOptionsDto
-                {
-                          ClientIp= "192.168.0.1" ,
-          PhonePassCodeForInformationCompletion= "1234" ,
-          EmailPassCodeForInformationCompletion= "1234" ,
-          Context= new SignUpOptionsDto{    phoneNumber="188xxxx8888",    phoneCountryCode="+86",} ,
-          PasswordEncryptType= SignUpOptionsDto.passwordEncryptType.NONE ,
-        },
-            }
-          );
-        }
-    }
-}
-
-```
 
 
 ## 请求响应
@@ -259,7 +166,7 @@ namespace Example
 | phonePassCodeForInformationCompletion | string | 否 | 用于注册时补全用户信息的短信验证码   |  `1234` |
 | emailPassCodeForInformationCompletion | string | 否 | 用于注册时补全用户信息的短信验证码   |  `1234` |
 | context | object | 是 | 登录/注册时传的额外参数，会存到用户自定义字段里面   |  `{"phoneNumber":"188xxxx8888","phoneCountryCode":"+86"}` |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | string | 否 | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 
 
 ### <a id="UserDto"></a> UserDto

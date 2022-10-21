@@ -20,27 +20,8 @@
  | resourceType | string  | 否 | - | 资源类型，如 数据、API、按钮、菜单  | `DATA` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_role_authorized_resources(
   
-      code: "60b49eb83fd80adb96f26e68",
-  
-      namespace: "default",
-  
-      resource_type: "DATA",
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `RoleAuthorizedResourcePaginatedRespDto`

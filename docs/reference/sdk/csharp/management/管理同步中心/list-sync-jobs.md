@@ -21,54 +21,8 @@
  | syncTrigger | string  | 否 | - | 同步任务触发类型：<br>- `manually`: 手动触发执行<br>- `timed`: 定时触发<br>- `automatic`: 根据事件自动触发<br>  | `manually` |
 
 
-## 示例代码
-```csharp
 
-using Authing.CSharp.SDK.Models;
-using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Example
-{
-    class Program
-    {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
-
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
-
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          SyncJobPaginatedRespDto  result = await managementClient.ListSyncJobs
-          (             
-                syncTaskId: 1000, 
-                page: 1, 
-                limit: 10, 
-                syncTrigger: "manually"
-          );
-        }
-    }
-}
-
-```
-
-
+  
 ## 请求响应
 
 类型： `SyncJobPaginatedRespDto`

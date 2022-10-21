@@ -21,65 +21,58 @@
 | passwordPayload | <a href="#DeleteAccountByPasswordDto">DeleteAccountByPasswordDto</a> | 否 | - | 使用密码验证的数据  |  |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
-using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using Authing.CSharp.SDK.Models.Authentication;
+using Authing.CSharp.SDK.Services;
 
-namespace Example
+namespace ConsoleApplication
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            AuthenticationClientInitOptions clientOptions = new AuthenticationClientInitOptions
+            {
+                AppId = "AUTHING_APP_ID",// Authing 应用 ID
+                AppSecret = "AUTHING_APP_SECRET",// Authing 应用密钥
+                AppHost = "AUTHING_APP_DOMAIN", // Authing 应用域名，如 https://example.authing.cn
+                RedirectUri = "AUTHING_APP_REDIRECT_URI",// Authing 应用配置的登录回调地址
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 AuthenticationClient
+            AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          VerifyDeleteAccountRequestRespDto  result = await managementClient.VerifyDeleteAccountRequest
-          (  new VerifyDeleteAccountRequestDto{                  VerifyMethod= VerifyDeleteAccountRequestDto.verifyMethod.PHONE_PASSCODE ,
-                PhonePassCodePayload= new DeleteAccountByPhonePassCodeDto
+            //登录临时用户
+            LoginTokenRespDto loginTokenRespDto = await authenticationClient.SignInByAccountPassword("AUTHING_USERNAME", "AUTHING_USER_PASSWORD");
+            authenticationClient.setAccessToken(loginTokenRespDto.Data.Access_token);
+
+            var res1 = await authenticationClient.VeirfyDeleteAccountRequest(new VerifyDeleteAccountRequestDto()
+            {
+                VerifyMethod = VerifyDeleteAccountRequestDto.verifyMethod.PASSWORD,
+                PasswordPayload = new DeleteAccountByPasswordDto
                 {
-                          PhoneNumber= "188xxxx8888" ,
-          PassCode= "123456" ,
-          PhoneCountryCode= "+86" ,
-        },
-                EmailPassCodePayload= new DeleteAccountByEmailPassCodeDto
-                {
-                          Email= "undefined" ,
-          PassCode= "undefined" ,
-        },
-                PasswordPayload= new DeleteAccountByPasswordDto
-                {
-                          Password= "undefined" ,
-          PasswordEncryptType= DeleteAccountByPasswordDto.passwordEncryptType.NONE ,
-        },
-            }
-          );
+                    PasswordEncryptType = DeleteAccountByPasswordDto.passwordEncryptType.NONE,
+                    Password = "AUTHING_PASSWORD"
+                }
+            });
         }
     }
 }
-
 ```
+
+
 
 
 ## 请求响应
@@ -135,7 +128,7 @@ namespace Example
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | password | string | 是 | 用户密码   |  |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | string | 否 | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 
 
 ### <a id="VerifyDeleteAccountRequestDataDto"></a> VerifyDeleteAccountRequestDataDto

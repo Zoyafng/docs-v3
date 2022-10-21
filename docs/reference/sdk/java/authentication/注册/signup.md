@@ -23,85 +23,12 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | connection | string | 是 | - | 注册方式：<br>- `PASSWORD`: 邮箱密码方式<br>- `PASSCODE`: 邮箱/手机号验证码方式<br>      | `PASSWORD` |
-| passwordPayload | <a href="#SignUpByPasswordDto">SignUpByPasswordDto</a> | 否 | - | 当主持方式为 `PASSWORD` 时此参数必填。  | `{"email":"test@example.com","password":"passw0rd"}` |
+| passwordPayload | <a href="#SignUpByPasswordDto">SignUpByPasswordDto</a> | 否 | - | 当注册方式为 `PASSWORD` 时此参数必填。  | `{"email":"test@example.com","password":"passw0rd"}` |
 | passCodePayload | <a href="#SignUpByPassCodeDto">SignUpByPassCodeDto</a> | 否 | - | 当认证方式为 `PASSCODE` 时此参数必填  | `{"email":"test@example.com","passCode":"passw0rd"}` |
 | profile | <a href="#SignUpProfileDto">SignUpProfileDto</a> | 否 | - | 用户资料  |  |
 | options | <a href="#SignUpOptionsDto">SignUpOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.client.AuthenticationClient;
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.model.AuthenticationClientOptions;
-
-class Test {
-    public static void main(String[] args) {
-        // 设置初始化参数
-        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
-        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
-        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
-        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
-    
-        // 初始化 AuthenticationClient
-        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
-    
-        
-        SignUpDto request = new SignUpDto();
-        request.setConnection(SignUpDto.connection.PASSWORD);
-            PasswordPayload= new SignUpByPasswordDto(
-                    request.setPassword("passw0rd");
-    request.setUsername("test");
-    request.setEmail("test@example.com");
-        ),
-            PassCodePayload= new SignUpByPassCodeDto(
-                    request.setPassCode("123456");
-    request.setEmail("114114");
-    request.setPhone("188xxxx8888");
-    request.setPhoneCountryCode("+86");
-        ),
-            Profile= new SignUpProfileDto(
-                    request.setNickname("");
-    request.setCompany("Authing .Inc");
-    request.setPhoto("https://authing.cn/demo.jpg");
-    request.setDevice("iOS");
-    request.setBrowser("Edge");
-    request.setName("Mike");
-    request.setGivenName("Zhou");
-    request.setFamilyName("Jay");
-    request.setMiddleName("Jane");
-    request.setProfile("this is my profile");
-    request.setPreferredUsername("Mike");
-    request.setWebsite("https://authing.cn");
-    request.setGender(SignUpProfileDto.gender.M);
-    request.setBirthdate("2020.2.2");
-    request.setZoneinfo("HongKong");
-    request.setLocale("EN-US");
-    request.setAddress("Hai Dian XX");
-    request.setFormatted("");
-    request.setStreetAddress("Hai Dian Street 1");
-    request.setLocality("BeiJing HaiDian");
-    request.setRegion("china");
-    request.setPostalCode("3500000");
-    request.setCountry("china");
-    request.setEmail("help@authing.cn");
-    request.setPhone("114114114");
-    request.setCustomData(new SignUpProfileDto.setName("H",));
-        ),
-            Options= new SignUpOptionsDto(
-                    request.setClientIp("192.168.0.1");
-    request.setPhonePassCodeForInformationCompletion("1234");
-    request.setEmailPassCodeForInformationCompletion("1234");
-    request.setContext(new SignUpOptionsDto.setPhoneNumber("188xxxx8888",.setPhoneCountryCode("+86",));
-    request.setPasswordEncryptType(SignUpOptionsDto.passwordEncryptType.NONE);
-        ),
-        
-        UserSingleRespDto response = managementClient.signup(request);
-        System.out.println(response);
-    }
-}
-```
 
 
 ## 请求响应
@@ -239,7 +166,7 @@ class Test {
 | phonePassCodeForInformationCompletion | string | 否 | 用于注册时补全用户信息的短信验证码   |  `1234` |
 | emailPassCodeForInformationCompletion | string | 否 | 用于注册时补全用户信息的短信验证码   |  `1234` |
 | context | object | 是 | 登录/注册时传的额外参数，会存到用户自定义字段里面   |  `{"phoneNumber":"188xxxx8888","phoneCountryCode":"+86"}` |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | string | 否 | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 
 
 ### <a id="UserDto"></a> UserDto

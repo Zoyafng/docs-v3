@@ -22,80 +22,57 @@
 | i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 | - | 多语言设置  | `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          OrganizationSingleRespDto  result = await managementClient.CreateOrganization
-          (  new CreateOrganizationReqDto{                  OrganizationCode= "steamory" ,
-                  OrganizationName= "蒸汽记忆" ,
-                  Description= "组织描述信息" ,
-                  OpenDepartmentId= "60b49eb83fd80adb96f26e68" ,
-                I18n= new OrganizationNameI18nDto
-                {
-                        OrganizationName= new LangObject
-                {
-                        Zh-CN= new LangUnit
-                {
-                          Enabled= false ,
-          Value= "false" ,
-        },
-        En-US= new LangUnit
-                {
-                          Enabled= false ,
-          Value= "false" ,
-        },
-        Zh-TW= new LangUnit
-                {
-                          Enabled= false ,
-          Value= "false" ,
-        },
-        Ja-JP= new LangUnit
-                {
-                          Enabled= false ,
-          Value= "false" ,
-        },
-        },
-        },
-            }
-          );
+            CreateOrganizationReqDto reqDto = new CreateOrganizationReqDto()
+            {
+                OrganizationCode = "AUTHING_ORG_CODE",
+                OrganizationName = "AUTHING_ORG_NAME",
+                Description = "AUTHING_ORG_DESCRIPTION",
+                OpenDepartmentId = "AUTHING_OPENDEPARTMENTID"
+            };
+
+            OrganizationSingleRespDto dto = await managementClient.CreateOrganization(reqDto);
+
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `OrganizationSingleRespDto`

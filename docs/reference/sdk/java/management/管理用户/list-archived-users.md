@@ -20,32 +20,8 @@
  | startAt | number  | 否 | - | 开始时间，为精确到秒的 UNIX 时间戳，默认不指定  | `1655714763890` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        
-         
-        request.setPage(1); 
-        request.setLimit(10); 
-        request.setStartAt(1655714763890);
-        ListArchivedUsersSingleRespDto response = managementClient.listArchivedUsers(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `ListArchivedUsersSingleRespDto`

@@ -20,27 +20,8 @@
  | departmentIdType | string  | 否 | department_id | 此次调用中使用的部门 ID 的类型  | `department_id` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.list_department_member_ids(
   
-      organization_code: "steamory",
-  
-      department_id: "root",
-  
-      department_id_type: "department_id",
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `UserIdListRespDto`

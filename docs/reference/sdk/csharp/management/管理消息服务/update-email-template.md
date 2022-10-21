@@ -26,59 +26,57 @@
 | tplEngine | string | 否 | handlebar | 模版渲染引擎。Authing 邮件模版目前支持两种渲染引擎：<br>- `handlebar`: 详细使用方法请见：[handlebars 官方文档](https://handlebarsjs.com/)<br>- `ejs`: 详细使用方法请见：[ejs 官方文档](https://ejs.co/)<br><br>默认将使用 `handlerbar` 作为膜拜渲染引擎。<br>      | `handlebar` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          EmailTemplateSingleItemRespDto  result = await managementClient.UpdateEmailTemplate
-          (  new UpdateEmailTemplateDto{                  Type= UpdateEmailTemplateDto.type.WELCOME_EMAIL ,
-                  CustomizeEnabled= true ,
-                  Name= "欢迎邮件" ,
-                  Subject= "欢迎加入 {{app_name}}" ,
-                  Sender= "{{client_name}}" ,
-                  Content= "xxx" ,
-                  ExpiresIn= 300 ,
-                  RedirectTo= "https://example.com" ,
-                  TplEngine= UpdateEmailTemplateDto.tplEngine.HANDLEBAR ,
-            }
-          );
+            var res = await managementClient.UpdateEmailTemplate(new UpdateEmailTemplateDto
+            {
+                Type = UpdateEmailTemplateDto.type.WELCOME_EMAIL,
+                Subject = "AUTHING_MAIL_SUBJECT",
+                Name = "AUTHING_MAIL_NAME",
+                Sender = "AUTHING_MAIL_SENDER",
+                Content = "AUTHING_MAIL_CONTENT",
+                CustomizeEnabled = true,
+                ExpiresIn = 999999
+            });
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `EmailTemplateSingleItemRespDto`

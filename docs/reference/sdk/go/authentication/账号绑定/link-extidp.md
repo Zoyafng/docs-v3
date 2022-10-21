@@ -90,37 +90,6 @@ const { success, errMsg, identities } = await sdk.bindExtIdpWithPopup({
  | ext_idp_conn_identifier | string  | 是 | - | 外部身份源连接唯一标志  | `my-wechat` |
 
 
-## 示例代码
-```go
-package main
-
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.linkExtidp(
-    
-     
-        id_token: ""        , 
-        app_id: ""        , 
-        ext_idp_conn_identifier: "my-wechat"        
-  )
-}
-```
 
 
 ## 请求响应

@@ -16,63 +16,61 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | contentType | string | 是 | - | 请求数据格式  | `application/json` |
-| events | array[] | 是 | - | 用户真实名称，不具备唯一性。 示例值: 张三  | `["user:created"]` |
+| events | string[] | 是 | - | 用户真实名称，不具备唯一性。 示例值: 张三  | `["user:created"]` |
 | url | string | 是 | - | Webhook 回调地址  | `https://example.com/callback` |
 | name | string | 是 | - | Webhook 名称  | `用户创建事件` |
 | enabled | boolean | 否 | - | 是否启用  | `true` |
 | secret | string | 否 | - | 请求密钥  | `xxxxxxxxxxxx` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          CreateWebhookRespDto  result = await managementClient.CreateWebhook
-          (  new CreateWebhookDto{                  Name= "用户创建事件" ,
-                  Url= "https://example.com/callback" ,
-                  Events= new List<string>{"user:created",} ,
-                  ContentType= CreateWebhookDto.contentType.APPLICATION/JSON ,
-                  Enabled= true ,
-                  Secret= "xxxxxxxxxxxx" ,
-            }
-          );
+            var res = await managementClient.CreateWebhook(new CreateWebhookDto
+            {
+                Name = "AUTHING_NAME",
+                Url = "https://www.baidu.com/callback",
+                Events = new List<string>() { "user:created" },
+                ContentType = CreateWebhookDto.contentType.APPLICATION_JSON
+            });
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `CreateWebhookRespDto`

@@ -17,21 +17,8 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_webhook_event_list(
   
-)
-```
-
-
 ## 请求响应
 
 类型： `WebhookEventListRespDto`

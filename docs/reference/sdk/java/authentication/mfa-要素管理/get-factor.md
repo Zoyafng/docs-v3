@@ -18,33 +18,6 @@
  | factorId | string  | 是 | - | MFA Factor ID  | `6229ffaxxxxxxxxcade3e3d9` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.client.AuthenticationClient;
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.model.AuthenticationClientOptions;
-
-class Test {
-    public static void main(String[] args) {
-        // 设置初始化参数
-        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
-        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
-        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
-        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
-    
-        // 初始化 AuthenticationClient
-        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
-    
-        
-        
-         
-        request.setFactorId("6229ffaxxxxxxxxcade3e3d9");
-        GetFactorRespDto response = managementClient.getFactor(request);
-        System.out.println(response);
-    }
-}
-```
 
 
 ## 请求响应

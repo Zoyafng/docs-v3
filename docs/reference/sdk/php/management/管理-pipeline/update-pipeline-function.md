@@ -34,41 +34,8 @@
 | enabled | boolean | 否 | - | 是否启用此 Pipeline  |  |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->updatePipelineFunction(array(
-      "funcId" => "62ce9135dxxxxb83e373f5d6",
-    "funcName" => "每周日凌晨 3-6 点系统维护禁止注册/登录",
-    "funcDescription" => "每周日凌晨 3-6 点系统维护禁止注册/登录。",
-    "sourceCode" => "async function pipe(user, context, callback) {
-  const date = new Date();
-  const d = date.getDay();
-  const n = date.getHours();
-  // 每周日凌晨 3-6 点禁止注册
-  if (d === 0 && (3 <= n && n <= 6)) {
-    return callback(new Error('系统维护中，暂时停止注册！'));
-  }
-  callback(null, user, context)
-}",
-    "isAsynchronous" => false,
-    "timeout" => 3,
-    "terminateOnTimeout" => false,
-    "enabled" => false,
-
-));
-```
-
+  
 ## 请求响应
 
 类型： `PipelineFunctionSingleRespDto`

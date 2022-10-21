@@ -21,33 +21,8 @@
 | description | string | 否 | - | 角色描述  | `this is description` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        UpdateRoleDto request = new UpdateRoleDto();
-        request.setCode("code1");
-        request.setNewCode("code2");
-        request.setNamespace("default");
-        request.setDescription("this is description");
-        
-        IsSuccessRespDto response = managementClient.updateRole(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

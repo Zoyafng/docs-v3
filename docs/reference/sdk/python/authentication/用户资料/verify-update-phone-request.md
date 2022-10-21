@@ -19,28 +19,6 @@
 | verifyMethod | string | 是 | - | 修改手机号的验证方式：<br>- `PHONE_PASSCODE`: 使用短信验证码的方式进行验证，当前仅支持这一种方式。<br>      |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.verify_update_phone_request(
-     verify_method: "undefined",
-     phone_pass_code_payload: {
-         new_phone_number: "188xxxx8888",
-       new_phone_pass_code: "123456",
-       new_phone_country_code: "+86",
-       old_phone_number: "188xxxx8888",
-       old_phone_pass_code: "123456",
-       old_phone_country_code: "+86",
-    },
-  
-)
-```
 
 
 ## 请求响应

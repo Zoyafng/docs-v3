@@ -15,49 +15,11 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| verifyMethod | string | 是 | - | 忘记密码请求使用的验证手段：<br>- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证，当前只支持这种验证方式。<br>      | `EMAIL_PASSCODE` |
+| verifyMethod | string | 是 | - | 忘记密码请求使用的验证手段：<br>- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证<br>- `PHONE_PASSCODE`: 通过手机号验证码进行验证<br>      | `EMAIL_PASSCODE` |
 | phonePassCodePayload | <a href="#ResetPasswordByPhonePassCodeDto">ResetPasswordByPhonePassCodeDto</a> | 否 | - | 使用手机号验证码验证的数据  |  |
 | emailPassCodePayload | <a href="#ResetPasswordByEmailPassCodeDto">ResetPasswordByEmailPassCodeDto</a> | 否 | - | 使用邮箱验证码验证的数据  |  |
 
 
-## 示例代码
-```go
-package main
-
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.verifyResetPasswordRequest(
-      dto.VerifyResetPasswordRequestDto {
-          VerifyMethod: VerifyResetPasswordRequestDto.verifyMethod.EMAIL_PASSCODE,
-        PhonePassCodePayload: dto.ResetPasswordByPhonePassCodeDto {
-                          PhoneNumber: "188xxxx8888",
-          PassCode: "123456",
-          PhoneCountryCode: "+86",
-        },
-        EmailPassCodePayload: dto.ResetPasswordByEmailPassCodeDto {
-                          Email: "undefined",
-          PassCode: "undefined",
-        },
-    }
-  )
-}
-```
 
 
 ## 请求响应

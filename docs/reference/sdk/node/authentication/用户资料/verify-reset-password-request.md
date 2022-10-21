@@ -15,37 +15,11 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| verifyMethod | string | 是 | - | 忘记密码请求使用的验证手段：<br>- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证，当前只支持这种验证方式。<br>      | `EMAIL_PASSCODE` |
+| verifyMethod | string | 是 | - | 忘记密码请求使用的验证手段：<br>- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证<br>- `PHONE_PASSCODE`: 通过手机号验证码进行验证<br>      | `EMAIL_PASSCODE` |
 | phonePassCodePayload | <a href="#ResetPasswordByPhonePassCodeDto">ResetPasswordByPhonePassCodeDto</a> | 否 | - | 使用手机号验证码验证的数据  |  |
 | emailPassCodePayload | <a href="#ResetPasswordByEmailPassCodeDto">ResetPasswordByEmailPassCodeDto</a> | 否 | - | 使用邮箱验证码验证的数据  |  |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
-
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.verifyResetPasswordRequest({
-    verifyMethod: 'EMAIL_PASSCODE',
-    phonePassCodePayload: {
-          phoneNumber: '188xxxx8888',
-        passCode: '123456',
-        phoneCountryCode: '+86',
-    },
-    emailPassCodePayload: {
-          email: 'undefined',
-        passCode: 'undefined',
-    },
- });
-})();
-```
 
 
 ## 请求响应

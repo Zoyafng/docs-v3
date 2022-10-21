@@ -23,75 +23,56 @@
 | tencentExmailConfig | <a href="#TencentExmailEmailProviderConfigInput">TencentExmailEmailProviderConfigInput</a> | 否 | - | 腾讯企业邮件服务配置  |  |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          EmailProviderDto  result = await managementClient.ConfigEmailProvier
-          (  new ConfigEmailProviderDto{                  Enabled= true ,
-                  Type= ConfigEmailProviderDto.type.SMTP ,
-                SmtpConfig= new SMTPEmailProviderConfigInput
+            var res = await managementClient.ConfigEmailProvider(new ConfigEmailProviderDto
+            {
+                Type = ConfigEmailProviderDto.type.ALI,
+                AliExmailConfig = new AliExmailEmailProviderConfigInput
                 {
-                          SmtpHost= "smtp.example.com" ,
-          SmtpPort= 465 ,
-          Sender= "test" ,
-          SenderPass= "passw0rd" ,
-          EnableSSL= true ,
-        },
-                SendGridConfig= new SendGridEmailProviderConfigInput
-                {
-                          Sender= "test" ,
-          Apikey= "xxxxxxxxxx" ,
-        },
-                AliExmailConfig= new AliExmailEmailProviderConfigInput
-                {
-                          Sender= "test" ,
-          SenderPass= "passw0rd" ,
-        },
-                TencentExmailConfig= new TencentExmailEmailProviderConfigInput
-                {
-                          Sender= "test" ,
-          SenderPass= "passw0rd" ,
-        },
-            }
-          );
+                    Sender = "AUTHING_MAIL_USERNAME",
+                    SenderPass = "AUTHING_MAIL_PASSWORD"
+                }
+            });
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `EmailProviderDto`

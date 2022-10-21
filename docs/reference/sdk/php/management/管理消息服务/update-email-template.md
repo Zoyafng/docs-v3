@@ -26,33 +26,8 @@
 | tplEngine | string | 否 | handlebar | 模版渲染引擎。Authing 邮件模版目前支持两种渲染引擎：<br>- `handlebar`: 详细使用方法请见：[handlebars 官方文档](https://handlebarsjs.com/)<br>- `ejs`: 详细使用方法请见：[ejs 官方文档](https://ejs.co/)<br><br>默认将使用 `handlerbar` 作为膜拜渲染引擎。<br>      | `handlebar` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->updateEmailTemplate(array(
-      "type" => "WELCOME_EMAIL",
-    "customizeEnabled" => true,
-    "name" => "欢迎邮件",
-    "subject" => "欢迎加入 {{app_name}}",
-    "sender" => "{{client_name}}",
-    "content" => "xxx",
-    "expiresIn" => 300,
-    "redirectTo" => "https://example.com",
-    "tplEngine" => "handlebar",
-
-));
-```
-
+  
 ## 请求响应
 
 类型： `EmailTemplateSingleItemRespDto`

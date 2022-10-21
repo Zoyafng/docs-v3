@@ -21,32 +21,8 @@
  | resourceType | string  | 否 | - | 资源类型，如 数据、API、菜单、按钮  |  |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getUserAuthorizedResources(array(
   
-    "userId" => "6229ffaxxxxxxxxcade3e3d9",
-
-    "userIdType" => "user_id",
-
-    "namespace" => "default",
-
-    "resourceType" => "undefined",
-
-));
-```
-
 ## 请求响应
 
 类型： `AuthorizedResourcePaginatedRespDto`

@@ -21,46 +21,6 @@
 | passwordPayload | <a href="#DeleteAccountByPasswordDto">DeleteAccountByPasswordDto</a> | 否 | - | 使用密码验证的数据  |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.client.AuthenticationClient;
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.model.AuthenticationClientOptions;
-
-class Test {
-    public static void main(String[] args) {
-        // 设置初始化参数
-        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
-        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
-        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
-        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
-    
-        // 初始化 AuthenticationClient
-        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
-    
-        
-        VerifyDeleteAccountRequestDto request = new VerifyDeleteAccountRequestDto();
-        request.setVerifyMethod(VerifyDeleteAccountRequestDto.verifyMethod.PHONE_PASSCODE);
-            PhonePassCodePayload= new DeleteAccountByPhonePassCodeDto(
-                    request.setPhoneNumber("188xxxx8888");
-    request.setPassCode("123456");
-    request.setPhoneCountryCode("+86");
-        ),
-            EmailPassCodePayload= new DeleteAccountByEmailPassCodeDto(
-                    request.setEmail("undefined");
-    request.setPassCode("undefined");
-        ),
-            PasswordPayload= new DeleteAccountByPasswordDto(
-                    request.setPassword("undefined");
-    request.setPasswordEncryptType(DeleteAccountByPasswordDto.passwordEncryptType.NONE);
-        ),
-        
-        VerifyDeleteAccountRequestRespDto response = managementClient.verifyDeleteAccountRequest(request);
-        System.out.println(response);
-    }
-}
-```
 
 
 ## 请求响应
@@ -116,7 +76,7 @@ class Test {
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | password | string | 是 | 用户密码   |  |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | string | 否 | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 
 
 ### <a id="VerifyDeleteAccountRequestDataDto"></a> VerifyDeleteAccountRequestDataDto

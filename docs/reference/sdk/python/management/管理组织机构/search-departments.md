@@ -20,24 +20,8 @@
 | withCustomData | boolean | 否 | - | 是否获取自定义数据  | `true` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.search_departments(
-     organization_code: "steamory",
-     keywords: "Authing",
-     with_custom_data: true,
   
-)
-```
-
-
 ## 请求响应
 
 类型： `DepartmentListRespDto`

@@ -23,33 +23,8 @@
  | keyword | string  | 否 | - | 模糊搜索字符串  | `test` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.list_applications(
   
-      page: 1,
-  
-      limit: 10,
-  
-      is_integrate_app: false,
-  
-      is_self_built_app: false,
-  
-      sso_enabled: false,
-  
-      keyword: "test",
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `ApplicationPaginatedRespDto`

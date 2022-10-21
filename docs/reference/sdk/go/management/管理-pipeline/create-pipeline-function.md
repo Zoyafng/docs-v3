@@ -34,53 +34,8 @@
 | enabled | boolean | 否 | - | 是否启用此 Pipeline  |  |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.createPipelineFunction(
-      dto.CreatePipelineFunctionDto {
-          FuncName: "每周日凌晨 3-6 点系统维护禁止注册/登录",
-          FuncDescription: "每周日凌晨 3-6 点系统维护禁止注册/登录。",
-          Scene: CreatePipelineFunctionDto.scene.PRE_REGISTER,
-          SourceCode: "async function pipe(user, context, callback) {
-  const date = new Date();
-  const d = date.getDay();
-  const n = date.getHours();
-  // 每周日凌晨 3-6 点禁止注册
-  if (d === 0 && (3 <= n && n <= 6)) {
-    return callback(new Error('系统维护中，暂时停止注册！'));
-  }
-  callback(null, user, context)
-}",
-          IsAsynchronous: false,
-          Timeout: 3,
-          TerminateOnTimeout: false,
-          Enabled: false,
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `PipelineFunctionSingleRespDto`

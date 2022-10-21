@@ -20,29 +20,7 @@
  | withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表  | `true` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getProfile(array(
-  
-    "withCustomData" => true,
-
-    "withIdentities" => true,
-
-    "withDepartmentIds" => true,
-
-));
-```
 
 ## 请求响应
 

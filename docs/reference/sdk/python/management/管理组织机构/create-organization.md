@@ -22,45 +22,8 @@
 | i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 | - | 多语言设置  | `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.create_organization(
-     organization_code: "steamory",
-     organization_name: "蒸汽记忆",
-     description: "组织描述信息",
-     open_department_id: "60b49eb83fd80adb96f26e68",
-     i18n: {
-         organization_name: {
-         zh-_c_n: {
-         enabled: false,
-       value: "false",
-    },
-       en-_u_s: {
-         enabled: false,
-       value: "false",
-    },
-       zh-_t_w: {
-         enabled: false,
-       value: "false",
-    },
-       ja-_j_p: {
-         enabled: false,
-       value: "false",
-    },
-    },
-    },
   
-)
-```
-
-
 ## 请求响应
 
 类型： `OrganizationSingleRespDto`

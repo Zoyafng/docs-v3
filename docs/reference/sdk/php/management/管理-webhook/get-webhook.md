@@ -18,26 +18,8 @@
  | webhookId | string  | 是 | - | Webhook ID  | `6229ffaxxxxxxxxcade3e3d9` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getWebhook(array(
   
-    "webhookId" => "6229ffaxxxxxxxxcade3e3d9",
-
-));
-```
-
 ## 请求响应
 
 类型： `GetWebhookRespDto`

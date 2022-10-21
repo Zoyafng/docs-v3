@@ -193,55 +193,8 @@
 | options | <a href="#ListUsersOptionsDto">ListUsersOptionsDto</a> | 否 | - | 可选项  |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        ListUsersRequestDto request = new ListUsersRequestDto();
-        request.setQuery("test");
-            AdvancedFilter= new List<ListUsersAdvancedFilterItemDto>(
-                    new ListUsersAdvancedFilterItemDto().set
-
-               request.setField("nickname");
-      request.setOperator(ListUsersAdvancedFilterItemDto.operator.EQUAL);
-      request.setValue(test);
-      
-                  ),
-            Options= new ListUsersOptionsDto(
-                        Pagination= new PaginationDto(
-                    request.setPage(1);
-    request.setLimit(10);
-        ),
-        Sort= new List<SortingDto>(
-                    new SortingDto().set
-
-               request.setField(SortingDto.field.LOGINSCOUNT);
-      request.setOrder(SortingDto.order.DESC);
-      
-                  ),
-    request.setFuzzySearchOn(new List<String>());
-    request.setWithCustomData(true);
-    request.setWithIdentities(true);
-    request.setWithDepartmentIds(true);
-        ),
-        
-        UserPaginatedRespDto response = managementClient.listUsers(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `UserPaginatedRespDto`

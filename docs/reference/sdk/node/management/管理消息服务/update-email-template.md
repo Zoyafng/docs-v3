@@ -26,33 +26,8 @@
 | tplEngine | string | 否 | handlebar | 模版渲染引擎。Authing 邮件模版目前支持两种渲染引擎：<br>- `handlebar`: 详细使用方法请见：[handlebars 官方文档](https://handlebarsjs.com/)<br>- `ejs`: 详细使用方法请见：[ejs 官方文档](https://ejs.co/)<br><br>默认将使用 `handlerbar` 作为膜拜渲染引擎。<br>      | `handlebar` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.updateEmailTemplate({
-    type: 'WELCOME_EMAIL',
-    customizeEnabled: true,
-    name: '欢迎邮件',
-    subject: '欢迎加入 {{app_name}}',
-    sender: '{{client_name}}',
-    content: 'xxx',
-    expiresIn: 300,
-    redirectTo: 'https://example.com',
-    tplEngine: 'handlebar',
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `EmailTemplateSingleItemRespDto`

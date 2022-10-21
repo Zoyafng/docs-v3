@@ -23,30 +23,8 @@
 | secret | string | 否 | - | 请求密钥  | `xxxxxxxxxxxx` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->createWebhook(array(
-      "name" => "用户创建事件",
-    "url" => "https://example.com/callback",
-    "events" => array("user:created"),
-    "contentType" => "application/json",
-    "enabled" => true,
-    "secret" => "xxxxxxxxxxxx",
-
-));
-```
-
+  
 ## 请求响应
 
 类型： `CreateWebhookRespDto`

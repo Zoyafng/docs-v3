@@ -23,35 +23,8 @@
  | keyword | string  | 否 | - | 模糊搜索字符串  | `test` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        
-         
-        request.setPage(1); 
-        request.setLimit(10); 
-        request.setIsIntegrateApp(false); 
-        request.setIsSelfBuiltApp(false); 
-        request.setSsoEnabled(false); 
-        request.setKeyword("test");
-        ApplicationPaginatedRespDto response = managementClient.listApplications(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `ApplicationPaginatedRespDto`

@@ -24,34 +24,8 @@
 | logo | string | 否 | - | 身份源图标  | `https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.createExtIdpConn({
-    extIdpId: '60b49eb83fd80adb96f26e68',
-    type: 'ad',
-    identifier: '60b49eb83fd80adb96f26e68',
-    loginOnly: false,
-    logo: 'https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png',
-    displayName: '登录页',
-    fields: {
-			"clientId":	"身份源上的	clientId",
-			"clientSecret":	"身份源上的	clientSecret"
-		},
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `ExtIdpConnDetailSingleRespDto`

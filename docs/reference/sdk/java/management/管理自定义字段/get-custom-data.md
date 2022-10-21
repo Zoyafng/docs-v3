@@ -20,32 +20,8 @@
  | namespace | string  | 否 | - | 所属权限分组的 code，当 targetType 为角色的时候需要填写，否则可以忽略  | `default` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        
-         
-        request.setTargetIdentifier("userId1"); 
-        request.setTargetType("USER"); 
-        request.setNamespace("default");
-        GetCustomDataRespDto response = managementClient.getCustomData(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `GetCustomDataRespDto`

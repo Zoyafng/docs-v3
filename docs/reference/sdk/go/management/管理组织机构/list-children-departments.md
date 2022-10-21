@@ -23,42 +23,8 @@
  | withCustomData | boolean  | 否 | - | 是否获取自定义数据  | `true` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.listChildrenDepartments(
-    
-     
-        departmentId: "60b49eb83fd80adb96f26e68"        , 
-        organizationCode: "steamory"        , 
-        departmentIdType: "department_id"        , 
-        excludeVirtualNode: false        , 
-        onlyVirtualNode: false        , 
-        withCustomData: true        
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `DepartmentPaginatedRespDto`

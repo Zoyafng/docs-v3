@@ -20,30 +20,43 @@
  | namespace | string  | 否 | - | 所属权限分组的 code，当 targetType 为角色的时候需要填写，否则可以忽略  | `default` |
 
 
+
+
 ## 示例代码
+
 ```php
 <?php
 
-require 'vendor/autoload.php';
-
 use Authing\ManagementClient;
 
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
+// 需要替换成你的 Authing Access Key ID
+$AUTHING_ACCESS_KEY_ID = "635124373e1cd646feecbeb9";
+// 需要替换成你的 Authing Access Key Secret
+$AUTHING_ACCESS_KEY_SECRET = "c3eaf45f7b467003158fd8615367ba6e";
+
+// 初始化 ManagementClient
+$managementClient = new Authing\ManagementClient(
+    array(
+        "accessKeyId" => $AUTHING_ACCESS_KEY_ID,
+        "accessKeySecret" => $AUTHING_ACCESS_KEY_SECRET,
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // "host" => "https://api.your-authing-service.com"
+    )
 );
 
-$data = $management->getCustomData(array(
-  
-    "targetIdentifier" => "userId1",
+$data = $managementClient->getCustomData(
+    array(
+        "targetType" => "USER",
+        // 需要替换成真实的用户 ID
+        "targetIdentifier" => "xxxxxxxxx",
+    )
+);
+print_r($data);
 
-    "targetType" => "USER",
-
-    "namespace" => "default",
-
-));
 ```
 
+
+  
 ## 请求响应
 
 类型： `GetCustomDataRespDto`

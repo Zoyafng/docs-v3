@@ -17,57 +17,73 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | enrollmentData | <a href="#EnrollFactorEnrollmentDataDto">EnrollFactorEnrollmentDataDto</a> | 是 | - | 绑定 MFA 认证要素时，对应认证要素要求的验证信息。  |  |
 | enrollmentToken | string | 是 | - | 「发起绑定 MFA 认证要素请求」接口返回的 enrollmentToken，此 token 有效时间为一分钟。  | `TQoCISidM0kBji0dxRi3afSDtkvvMiUphenIgLF87y+JOw4T8fDWOsHHXIcvZ2EVESXhTrfGyh1iGf52Cg9e9byeFQvm1VZ0QWrwmzwpntFAVtf1IP9LqVhmzXhBMFvLOcU/z1Eh/n0CrwX0uHNpJoMW9lp9AqHd9HvauaGKX+Y=` |
-| factorType | string | 是 | - | MFA 认证要素类型，目前共支持短信、邮箱验证码、OTP、人脸四种类型的认证要素。  | `SMS` |
+| factorType | string | 是 | - | MFA 认证要素类型：<br>- `OTP`: OTP<br>- `SMS`: 短信<br>- `EMAIL`: 邮件<br>- `FACE`: 人脸<br>        | `SMS` |
+
+
 
 
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
-using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using Authing.CSharp.SDK.Models.Authentication;
+using Authing.CSharp.SDK.Services;
+using Newtonsoft.Json.Linq;
 
-namespace Example
+namespace ConsoleApplication
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            AuthenticationClientInitOptions clientOptions = new AuthenticationClientInitOptions
+            {
+                AppId = "AUTHING_APP_ID",// Authing 应用 ID
+                AppSecret = "AUTHING_APP_SECRET",// Authing 应用密钥
+                AppHost = "AUTHING_APP_DOMAIN", // Authing 应用域名，如 https://example.authing.cn
+                RedirectUri = "AUTHING_APP_REDIRECT_URI",// Authing 应用配置的登录回调地址
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 AuthenticationClient
+            AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          EnrollFactorRespDto  result = await managementClient.EnrollFactor
-          (  new EnrollFactorDto{                  FactorType= EnrollFactorDto.factorType.SMS ,
-                  EnrollmentToken= "TQoCISidM0kBji0dxRi3afSDtkvvMiUphenIgLF87y+JOw4T8fDWOsHHXIcvZ2EVESXhTrfGyh1iGf52Cg9e9byeFQvm1VZ0QWrwmzwpntFAVtf1IP9LqVhmzXhBMFvLOcU/z1Eh/n0CrwX0uHNpJoMW9lp9AqHd9HvauaGKX+Y=" ,
-                EnrollmentData= new EnrollFactorEnrollmentDataDto
+            //登录临时用户
+            LoginTokenRespDto loginTokenRespDto = await authenticationClient.SignInByAccountPassword("AUTHING_USERNAME", "AUTHING_USER_PASSWORD");
+            authenticationClient.setAccessToken(loginTokenRespDto.Data.Access_token);
+
+            var res = await authenticationClient.SendEnrollFactorRequest(new SendEnrollFactorRequestDto()
+            {
+                FactorType = SendEnrollFactorRequestDto.factorType.EMAIL,
+                Profile = new FactorProfile()
                 {
-                          PassCode= "123456" ,
-        },
-            }
-          );
+                    Email = "AUTHING_EMAIL",
+                }
+            });
+
+            EnrollFactorDto param = new EnrollFactorDto
+            {
+                EnrollmentToken = res.Data.EnrollmentToken,
+                FactorType = EnrollFactorDto.factorType.EMAIL,
+                EnrollmentData = new EnrollFactorEnrollmentDataDto()
+                {
+                    PassCode = "AUTHING_CODE"
+                }
+            };
+            var result = await authenticationClient.EnrollFactor(param);
+
         }
     }
 }
-
 ```
+
+
 
 
 ## 请求响应

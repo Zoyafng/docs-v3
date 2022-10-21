@@ -1,4 +1,4 @@
-# 修改用户资料
+# 批量修改用户资料
 
 <!--
   警告⚠️：
@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-通过用户 ID，修改用户资料，邮箱、手机号、用户名、externalId 用户池内唯一，此接口将以管理员身份修改用户资料因此不需要进行手机号验证码检验等安全检测。
+批量修改用户资料，邮箱、手机号、用户名、externalId 用户池内唯一，此接口将以管理员身份修改用户资料因此不需要进行手机号验证码检验等安全检测。
 
 ## 请求参数
 
@@ -19,76 +19,8 @@
 | options | <a href="#UpdateUserBatchOptionsDto">UpdateUserBatchOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.updateUserBatch({
-    list: [{
-            userId: '6229ffaxxxxxxxxcade3e3d9',
-          phoneCountryCode: '+86',
-          name: '张三',
-          nickname: '张三',
-          photo: 'https://files.authing.co/authing-console/default-user-avatar.png',
-          externalId: '10010',
-          status: 'Activated',
-          emailVerified: true,
-          phoneVerified: true,
-          birthdate: '2022-06-03',
-          country: 'CN',
-          province: 'BJ',
-          city: 'BJ',
-          address: '北京朝阳',
-          streetAddress: '北京朝阳区 xxx 街道',
-          postalCode: '438100',
-          gender: 'M',
-          username: 'bob',
-          email: 'test@example.com',
-          phone: '188xxxx8888',
-          password: 'oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=',
-          company: 'steamory',
-          browser: 'Mozilla/5.0 (Linux; Android 10; V2001A; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/87.0.4280.141 Mobile Safari/537.36 VivoBrowser/10.2.10.0',
-          device: 'iOS',
-          givenName: '三',
-          familyName: '张',
-          middleName: '',
-          profile: '',
-          preferredUsername: '',
-          website: '',
-          zoneinfo: '',
-          locale: '',
-          formatted: '',
-          region: '',
-          customData: {
-			"school":	"北京大学",
-			"age":	22
-		},
-      }],
-    options: {
-          resetPasswordOnNextLogin: false,
-        passwordEncryptType: 'none',
-        autoGeneratePassword: false,
-        sendPasswordResetedNotification: {
-          sendDefaultEmailNotification: false,
-        sendDefaultPhoneNotification: false,
-        inputSendEmailNotification: 'test@example.com',
-        inputSendPhoneNotification: '183xxxx1234',
-        appId: 'appid1',
-    },
-    },
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `UserListRespDto`
@@ -211,7 +143,7 @@ const managementClient = new ManagementClient({
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码   |  |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | string | 否 | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 | autoGeneratePassword | boolean | 否 | 是否自动生成密码   |  |
 | sendPasswordResetedNotification |  | 否 | 重置密码发送邮件和手机号选项 嵌套类型：<a href="#SendResetPasswordNotificationDto">SendResetPasswordNotificationDto</a>。  |  `{"sendDefaultEmailNotification":false,"sendDefaultPhoneNotification":false,"inputSendEmailNotification":"test@example.com","inputSendPhoneNotification":"136xxxx1234","appId":"app1"}` |
 

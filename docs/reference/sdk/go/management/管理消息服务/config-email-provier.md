@@ -23,57 +23,8 @@
 | tencentExmailConfig | <a href="#TencentExmailEmailProviderConfigInput">TencentExmailEmailProviderConfigInput</a> | 否 | - | 腾讯企业邮件服务配置  |  |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.configEmailProvier(
-      dto.ConfigEmailProviderDto {
-          Enabled: true,
-          Type: ConfigEmailProviderDto.type.SMTP,
-        SmtpConfig: dto.SMTPEmailProviderConfigInput {
-                          SmtpHost: "smtp.example.com",
-          SmtpPort: 465,
-          Sender: "test",
-          SenderPass: "passw0rd",
-          EnableSSL: true,
-        },
-        SendGridConfig: dto.SendGridEmailProviderConfigInput {
-                          Sender: "test",
-          Apikey: "xxxxxxxxxx",
-        },
-        AliExmailConfig: dto.AliExmailEmailProviderConfigInput {
-                          Sender: "test",
-          SenderPass: "passw0rd",
-        },
-        TencentExmailConfig: dto.TencentExmailEmailProviderConfigInput {
-                          Sender: "test",
-          SenderPass: "passw0rd",
-        },
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `EmailProviderDto`

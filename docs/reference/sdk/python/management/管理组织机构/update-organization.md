@@ -24,47 +24,8 @@
 | organizationName | string | 否 | - | 组织名称  | `蒸汽记忆` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.update_organization(
-     organization_code: "steamory",
-     description: "技术研发部门",
-     open_department_id: "60b49eb83fd80adb96f26e68",
-     leader_user_ids: "["60b49eb83fd80adb96f26e68"]",
-     i18n: {
-         organization_name: {
-         zh-_c_n: {
-         enabled: false,
-       value: "false",
-    },
-       en-_u_s: {
-         enabled: false,
-       value: "false",
-    },
-       zh-_t_w: {
-         enabled: false,
-       value: "false",
-    },
-       ja-_j_p: {
-         enabled: false,
-       value: "false",
-    },
-    },
-    },
-     organization_new_code: "steamory2",
-     organization_name: "蒸汽记忆",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `OrganizationSingleRespDto`

@@ -22,31 +22,8 @@
  | objectType | string[]  | 否 | - | 根据操作对象类型，默认获取所有类型的记录：<br>- `department`: 部门<br>- `user`: 用户<br>      | `["DEPARTMENT","USER"]` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.list_sync_risk_operations(
   
-      sync_task_id: 1000,
-  
-      page: 1,
-  
-      limit: 10,
-  
-      status: "SUCCESS,FAILED",
-  
-      object_type: "DEPARTMENT,USER",
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `SyncRiskOperationPaginatedRespDto`

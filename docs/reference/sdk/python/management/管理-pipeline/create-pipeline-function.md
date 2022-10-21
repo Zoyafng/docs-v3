@@ -34,38 +34,8 @@
 | enabled | boolean | 否 | - | 是否启用此 Pipeline  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.create_pipeline_function(
-     func_name: "每周日凌晨 3-6 点系统维护禁止注册/登录",
-     func_description: "每周日凌晨 3-6 点系统维护禁止注册/登录。",
-     scene: "PRE_REGISTER",
-     source_code: "async function pipe(user, context, callback) {
-  const date = new Date();
-  const d = date.getDay();
-  const n = date.getHours();
-  // 每周日凌晨 3-6 点禁止注册
-  if (d === 0 && (3 <= n && n <= 6)) {
-    return callback(new Error('系统维护中，暂时停止注册！'));
-  }
-  callback(null, user, context)
-}",
-     is_asynchronous: false,
-     timeout: 3,
-     terminate_on_timeout: false,
-     enabled: false,
   
-)
-```
-
-
 ## 请求响应
 
 类型： `PipelineFunctionSingleRespDto`

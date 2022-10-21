@@ -24,43 +24,8 @@
 | logo | string | 否 | - | 身份源图标  | `https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.createExtIdpConn(
-      dto.CreateExtIdpConnDto {
-          ExtIdpId: "60b49eb83fd80adb96f26e68",
-          Type: CreateExtIdpConnDto.type.AD,
-          Identifier: "60b49eb83fd80adb96f26e68",
-          LoginOnly: false,
-          Logo: "https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png",
-          DisplayName: "登录页",
-          Fields: dto.CreateExtIdpConnDto {    clientId="身份源上的 clientId",    clientSecret="身份源上的 clientSecret",},
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `ExtIdpConnDetailSingleRespDto`

@@ -18,26 +18,8 @@
  | syncJobId | number  | 是 | - | 同步作业 ID  | `1` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getSyncJob(array(
   
-    "syncJobId" => 1,
-
-));
-```
-
 ## 请求响应
 
 类型： `SyncJobSingleRespDto`

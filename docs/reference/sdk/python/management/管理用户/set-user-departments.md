@@ -20,30 +20,8 @@
 | options | <a href="#SetUserDepartmentsOptionsDto">SetUserDepartmentsOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.set_user_departments(
-     user_id: "6229ffaxxxxxxxxcade3e3d9",
-     departments: [{
-           department_id: "60b49eb83fd80adb96f26e68",
-         is_leader: true,
-         is_main_department: true,
-      }],
-     options: {
-         user_id_type: "user_id",
-    },
   
-)
-```
-
-
 ## 请求响应
 
 类型： `IsSuccessRespDto`

@@ -23,7 +23,7 @@
 你可以在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**
 中找到**换取 token 身份验证方式** 配置项：
 
-> 单页 Web 应用和客户端应用隐藏，默认为 `none`，不允许修改；后端应用和 SDK 可以修改此配置项。
+> 单页 Web 应用和客户端应用隐藏，默认为 `none`，不允许修改；后端应用和标准 Web 应用可以修改此配置项。
 
 ![](https://files.authing.co/api-explorer/tokenAuthMethod.jpg)
 
@@ -68,26 +68,43 @@ JS 代码示例：
 | client_secret | string | 否 | - | 应用密钥。当应用的「换取 token 身份验证方式」配置为 `client_secret_post` 需要传。  | `4203d30e5e915xxxxxx26c31c9adce68` |
 
 
+
+
 ## 示例代码
+
 ```php
 <?php
 
-require 'vendor/autoload.php';
+use Authing\AuthenticationClient;
 
-use Authing\ManagementClient;
+// 需要替换成你的 Authing 应用 ID
+$AUTHING_APP_ID = "AUTHING_APP_ID";
+// 需要替换成你的 Authing 应用密钥
+$AUTHING_APP_SECRET = "AUTHING_APP_SECRET";
+// 需要替换成你的 Authing 应用域名
+$AUTHING_APP_HOST = "AUTHING_APP_HOST";
 
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
+// 初始化 AuthenticationClient
+$authenticationClient = new Authing\AuthenticationClient(
+    array(
+        "appId" => $AUTHING_APP_ID,
+        "appSecret" => $AUTHING_APP_SECRET,
+        "appHost" => $AUTHING_APP_HOST,
+    )
 );
 
-$data = $management->exchangeTokensetWithQrcodeTicket(array(
-      "ticket" => "",
-    "client_id" => "6342b8537axxxx047d314109",
-    "client_secret" => "4203d30e5e915xxxxxx26c31c9adce68",
+$data = $authenticationClient->exchangeTokenSetWithQrCodeTicket(
+    array(
+        "ticket" => "xxxx",
+        "client_id" => $AUTHING_APP_ID,
+        "client_secret" => $AUTHING_APP_SECRET
+    )
+);
+print_r($data);
 
-));
 ```
+
+
 
 ## 请求响应
 

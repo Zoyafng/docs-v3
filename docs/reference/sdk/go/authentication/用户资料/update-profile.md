@@ -31,48 +31,6 @@
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"school":"北京大学","age":22}` |
 
 
-## 示例代码
-```go
-package main
-
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.updateProfile(
-      dto.UpdateUserProfileDto {
-          Name: "张三",
-          Nickname: "张三",
-          Photo: "https://files.authing.co/authing-console/default-user-avatar.png",
-          ExternalId: "10010",
-          Birthdate: "2022-06-03",
-          Country: "CN",
-          Province: "BJ",
-          City: "BJ",
-          Address: "北京朝阳",
-          StreetAddress: "北京朝阳区 xxx 街道",
-          PostalCode: "438100",
-          Gender: UpdateUserProfileDto.gender.M,
-          Username: "bob",
-          CustomData: dto.UpdateUserProfileDto {    school="北京大学",    age=22,},
-    }
-  )
-}
-```
 
 
 ## 请求响应

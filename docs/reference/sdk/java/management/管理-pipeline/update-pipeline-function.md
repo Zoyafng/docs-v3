@@ -34,46 +34,8 @@
 | enabled | boolean | 否 | - | 是否启用此 Pipeline  |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        UpdatePipelineFunctionDto request = new UpdatePipelineFunctionDto();
-        request.setFuncId("62ce9135dxxxxb83e373f5d6");
-        request.setFuncName("每周日凌晨 3-6 点系统维护禁止注册/登录");
-        request.setFuncDescription("每周日凌晨 3-6 点系统维护禁止注册/登录。");
-        request.setSourceCode("async function pipe(user, context, callback) {
-  const date = new Date();
-  const d = date.getDay();
-  const n = date.getHours();
-  // 每周日凌晨 3-6 点禁止注册
-  if (d === 0 && (3 <= n && n <= 6)) {
-    return callback(new Error('系统维护中，暂时停止注册！'));
-  }
-  callback(null, user, context)
-}");
-        request.setIsAsynchronous(false);
-        request.setTimeout(3);
-        request.setTerminateOnTimeout(false);
-        request.setEnabled(false);
-        
-        PipelineFunctionSingleRespDto response = managementClient.updatePipelineFunction(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `PipelineFunctionSingleRespDto`

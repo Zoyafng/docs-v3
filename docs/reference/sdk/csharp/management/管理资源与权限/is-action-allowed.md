@@ -21,54 +21,56 @@
 | namespace | string | 否 | - | 所属权限分组的 code  | `default` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          IsActionAllowedRespDtp  result = await managementClient.IsActionAllowed
-          (  new IsActionAllowedDto{                  Namespace= "default" ,
-                  UserId= "userId1" ,
-                  Resource= "ecs:1" ,
-                  Action= "ecs:Start" ,
-            }
-          );
+            IsActionAllowedDto isActionAllowedDto = new IsActionAllowedDto
+            {
+                Action = "start",
+                Namespace = "default",
+                Resource = "ecs:*",
+                UserId = "USER_ID"
+            };
+
+            var dto = await managementClient.IsActionAllowed(isActionAllowedDto);
+
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `IsActionAllowedRespDtp`

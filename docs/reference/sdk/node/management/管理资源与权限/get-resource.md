@@ -19,28 +19,8 @@
  | namespace | string  | 否 | - | 所属权限分组的 code  | `default` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.getResource({
-
-    code: 'ecs',
-
-    namespace: 'default',
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `ResourceRespDto`

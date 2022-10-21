@@ -20,27 +20,8 @@
  | startAt | number  | 否 | - | 开始时间，为精确到秒的 UNIX 时间戳，默认不指定  | `1655714763890` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.list_archived_users(
   
-      page: 1,
-  
-      limit: 10,
-  
-      start_at: 1655714763890,
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `ListArchivedUsersSingleRespDto`

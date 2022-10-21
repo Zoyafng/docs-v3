@@ -16,30 +16,13 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | description | string | 是 | - | 分组描述  | `描述内容` |
-| name | string | 是 | - | 分组名称  | `开发者` |
 | code | string | 是 | - | 分组 code  | `developer` |
+| name | string | 否 | - | 分组名称  | `开发者` |
 | newCode | string | 否 | - | 分组新的 code  | `developer` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.update_group(
-     code: "developer",
-     name: "开发者",
-     description: "描述内容",
-     new_code: "developer",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `GroupSingleRespDto`

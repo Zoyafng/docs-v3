@@ -18,60 +18,8 @@
 | list | <a href="#SetCustomFieldDto">SetCustomFieldDto[]</a> | 是 | - | 自定义字段列表 数组长度限制：50。 |  |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.setCustomFields({
-    list: [{
-            targetType: 'USER',
-          key: 'school',
-          dataType: 'ENUM',
-          label: '学校',
-          description: '学校',
-          encrypted: false,
-          isUnique: false,
-          userEditable: false,
-          visibleInAdminConsole: true,
-          visibleInUserCenter: true,
-          options: [{
-            value: 'hust',
-          label: '华中科技大学',
-      }],
-          i18n: {
-          label: {
-          zh-CN: {
-          enabled: false,
-        value: 'false',
-    },
-        en-US: {
-          enabled: false,
-        value: 'false',
-    },
-        zh-TW: {
-          enabled: false,
-        value: 'false',
-    },
-        ja-JP: {
-          enabled: false,
-        value: 'false',
-    },
-    },
-    },
-      }],
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `CustomFieldListRespDto`

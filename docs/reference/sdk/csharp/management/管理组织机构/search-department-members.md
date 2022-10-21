@@ -27,60 +27,55 @@
  | withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表  | `true` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          UserPaginatedRespDto  result = await managementClient.SearchDepartmentMembers
-          (             
-                organizationCode: "steamory", 
-                departmentId: "root", 
-                keywords: "张三", 
-                page: 1, 
-                limit: 10, 
-                departmentIdType: "department_id", 
-                includeChildrenDepartments: false, 
-                withCustomData: true, 
-                withIdentities: true, 
-                withDepartmentIds: true
-          );
+            UserPaginatedRespDto respDto = await managementClient.SearchDepartmentMembers(new SearchDepartmentMembersDto 
+            { 
+                DepartmentId = "AUTHING_DEP_ID", 
+                DepartmentIdType = "department_id", 
+                Keywords = "AUTHING_KEYWORDS", 
+                OrganizationCode = "AUTHING_ORG_CODE" 
+            });
+
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `UserPaginatedRespDto`

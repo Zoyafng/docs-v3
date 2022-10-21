@@ -20,34 +20,8 @@
 | requestBody | object | 否 | - | 请求体  | `{"eventName":"test","data":{"description":"A test from authing"}}` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.trigger_webhook(
-     webhook_id: "6229ffaxxxxxxxxcade3e3d9",
-     request_headers: {
-			"eventName":	"test",
-			"data":	{
-						"description":	"A	test	from	authing"
-			}
-		},
-     request_body: {
-			"eventName":	"test",
-			"data":	{
-						"description":	"A	test	from	authing"
-			}
-		},
   
-)
-```
-
-
 ## 请求响应
 
 类型： `TriggerWebhookRespDto`

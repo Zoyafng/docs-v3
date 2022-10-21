@@ -18,22 +18,8 @@
 | syncRiskOperationIds | number[] | 是 | - | 同步任务风险操作 ID  | `[1,2]` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.trigger_sync_risk_operations(
-     sync_risk_operation_ids: [1,2],
   
-)
-```
-
-
 ## 请求响应
 
 类型： `TriggerSyncRiskOperationsRespDto`

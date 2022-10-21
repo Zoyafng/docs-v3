@@ -18,62 +18,8 @@
 | list | <a href="#ImportOtpItemDto">ImportOtpItemDto[]</a> | 是 | - | 参数列表  |  |
 
 
-## 示例代码
-```csharp
 
-using Authing.CSharp.SDK.Models;
-using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Example
-{
-    class Program
-    {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
-
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
-
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          CommonResponseDto  result = await managementClient.ImportOtp
-          (  new ImportOtpReqDto{                List= new List<ImportOtpItemDto>
-                {
-                    new ImportOtpItemDto
-                    {
-                     UserId= "xxxx" ,
-          Otp= new ImportOtpItemDataDto
-                {
-                          Secret= "HZ2F6J3AGNAVSOTV" ,
-          RecoveryCode= "b471-8ec0-874a-087f-bccb-cd54" ,
-        },
-                }
-                  },
-            }
-          );
-        }
-    }
-}
-
-```
-
-
+  
 ## 请求响应
 
 类型： `CommonResponseDto`

@@ -20,37 +20,8 @@
 | requestBody | object | 否 | - | 请求体  | `{"eventName":"test","data":{"description":"A test from authing"}}` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->triggerWebhook(array(
-      "webhookId" => "6229ffaxxxxxxxxcade3e3d9",
-    "requestHeaders" => array(
-   "eventName"=> "test",
-   "data"=> array(
-      "description"=> "A test from authing"
-   )
-),
-    "requestBody" => array(
-   "eventName"=> "test",
-   "data"=> array(
-      "description"=> "A test from authing"
-   )
-),
-
-));
-```
-
+  
 ## 请求响应
 
 类型： `TriggerWebhookRespDto`

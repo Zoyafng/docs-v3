@@ -23,27 +23,8 @@
 | secret | string | 否 | - | 请求密钥  | `xxxxxxxxxxxx` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.create_webhook(
-     name: "用户创建事件",
-     url: "https://example.com/callback",
-     events: "["user:created"]",
-     content_type: "application/json",
-     enabled: true,
-     secret: "xxxxxxxxxxxx",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `CreateWebhookRespDto`

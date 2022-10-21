@@ -18,25 +18,8 @@
 | syncRiskOperationIds | number[] | 是 | - | 同步任务风险操作 ID  | `[1,2]` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.cancelSyncRiskOperation({
-    syncRiskOperationIds: [1,2],
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `CancelSyncRiskOperationsRespDto`

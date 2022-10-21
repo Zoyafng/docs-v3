@@ -24,37 +24,7 @@
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getMyLoginHistory(array(
-  
-    "appId" => "5f6265c67fxxxxae64ec516e",
-
-    "clientIp" => "127.0.0.1",
-
-    "success" => true,
-
-    "start" => 1660828100000,
-
-    "end" => 1660828100000,
-
-    "page" => 1,
-
-    "limit" => 10,
-
-));
-```
 
 ## 请求响应
 

@@ -17,23 +17,7 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getCountryList(array(
-  
-));
-```
 
 ## 请求响应
 

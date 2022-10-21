@@ -31,36 +31,6 @@
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"school":"北京大学","age":22}` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.update_profile(
-     name: "张三",
-     nickname: "张三",
-     photo: "https://files.authing.co/authing-console/default-user-avatar.png",
-     external_id: "10010",
-     birthdate: "2022-06-03",
-     country: "CN",
-     province: "BJ",
-     city: "BJ",
-     address: "北京朝阳",
-     street_address: "北京朝阳区 xxx 街道",
-     postal_code: "438100",
-     gender: "M",
-     username: "bob",
-     custom_data: {
-			"school":	"北京大学",
-			"age":	22
-		},
-  
-)
-```
 
 
 ## 请求响应

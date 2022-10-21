@@ -26,36 +26,8 @@
 | pagination | <a href="#ListWebhooksDto">ListWebhooksDto</a> | 否 | - | 分页  |  |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.getAdminAuditLogs({
-    requestId: 'xxx',
-    clientIp: 'xxx',
-    operationType: 'create',
-    resourceType: 'user',
-    userId: 'xxx',
-    success: true,
-    start: 11,
-    end: 111,
-    pagination: {
-          page: 1,
-        limit: 10,
-    },
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `AdminAuditLogRespDto`

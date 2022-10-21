@@ -19,21 +19,6 @@
 | qrcodeId | string | 是 | - | 二维码唯一 ID  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.change_qrcode_status(
-     qrcode_id: "",
-     action: "CONFIRM",
-  
-)
-```
 
 
 ## 请求响应

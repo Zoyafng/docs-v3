@@ -19,25 +19,8 @@
 | options | <a href="#DeleteUsersBatchOptionsDto">DeleteUsersBatchOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.delete_users_batch(
-     user_ids: "["userId1","userId2"]",
-     options: {
-         user_id_type: "user_id",
-    },
   
-)
-```
-
-
 ## 请求响应
 
 类型： `IsSuccessRespDto`

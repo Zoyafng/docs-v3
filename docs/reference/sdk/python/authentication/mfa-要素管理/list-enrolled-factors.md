@@ -17,19 +17,6 @@ Authing 目前支持四种类型的 MFA 认证要素：手机短信、邮件验�
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.list_enrolled_factors(
-  
-)
-```
 
 
 ## 请求响应

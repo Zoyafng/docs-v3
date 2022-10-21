@@ -19,33 +19,8 @@
 | options | <a href="#ResetUserPrincipalAuthenticationInfoOptionsDto">ResetUserPrincipalAuthenticationInfoOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        ResetUserPrincipalAuthenticationInfoDto request = new ResetUserPrincipalAuthenticationInfoDto();
-        request.setUserId("6229ffaxxxxxxxxcade3e3d9");
-            Options= new ResetUserPrincipalAuthenticationInfoOptionsDto(
-                    request.setUserIdType(ResetUserPrincipalAuthenticationInfoOptionsDto.userIdType.USER_ID);
-        ),
-        
-        IsSuccessRespDto response = managementClient.resetUserPrincipalAuthenticationInfo(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

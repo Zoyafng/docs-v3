@@ -18,23 +18,8 @@
  | codeList | string[]  | 是 | - | 资源 code 列表，批量可以使用逗号分隔 数组长度限制：50。 | `code1,code2` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_namespaces_batch(
   
-      code_list: "code1,code2",
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `NamespaceListRespDto`

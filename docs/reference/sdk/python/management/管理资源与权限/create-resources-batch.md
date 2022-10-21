@@ -19,33 +19,8 @@
 | namespace | string | 否 | - | 所属权限分组的 code  | `default` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.create_resources_batch(
-     namespace: "default",
-     list: [{
-           code: "ecs",
-         description: "服务器",
-         name: "服务器",
-         type: "API",
-         actions: [{
-           name: "ecs:Start",
-         description: "ecs:Start",
-      }],
-         api_identifier: "https://my-awesome-api.com/api",
-      }],
   
-)
-```
-
-
 ## 请求响应
 
 类型： `IsSuccessRespDto`

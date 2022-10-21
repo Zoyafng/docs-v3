@@ -21,29 +21,8 @@
  | withCustomData | boolean  | 否 | - | 是否获取自定义数据  | `true` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_parent_department(
   
-      organization_code: "steamory",
-  
-      department_id: "root",
-  
-      department_id_type: "department_id",
-  
-      with_custom_data: true,
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `DepartmentSingleRespDto`

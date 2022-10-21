@@ -23,80 +23,12 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | connection | string | 是 | - | 注册方式：<br>- `PASSWORD`: 邮箱密码方式<br>- `PASSCODE`: 邮箱/手机号验证码方式<br>      | `PASSWORD` |
-| passwordPayload | <a href="#SignUpByPasswordDto">SignUpByPasswordDto</a> | 否 | - | 当主持方式为 `PASSWORD` 时此参数必填。  | `{"email":"test@example.com","password":"passw0rd"}` |
+| passwordPayload | <a href="#SignUpByPasswordDto">SignUpByPasswordDto</a> | 否 | - | 当注册方式为 `PASSWORD` 时此参数必填。  | `{"email":"test@example.com","password":"passw0rd"}` |
 | passCodePayload | <a href="#SignUpByPassCodeDto">SignUpByPassCodeDto</a> | 否 | - | 当认证方式为 `PASSCODE` 时此参数必填  | `{"email":"test@example.com","passCode":"passw0rd"}` |
 | profile | <a href="#SignUpProfileDto">SignUpProfileDto</a> | 否 | - | 用户资料  |  |
 | options | <a href="#SignUpOptionsDto">SignUpOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
-
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.signup({
-    connection: 'PASSWORD',
-    passwordPayload: {
-          password: 'passw0rd',
-        username: 'test',
-        email: 'test@example.com',
-    },
-    passCodePayload: {
-          passCode: '123456',
-        email: '114114',
-        phone: '188xxxx8888',
-        phoneCountryCode: '+86',
-    },
-    profile: {
-          nickname: '',
-        company: 'Authing .Inc',
-        photo: 'https://authing.cn/demo.jpg',
-        device: 'iOS',
-        browser: 'Edge',
-        name: 'Mike',
-        givenName: 'Zhou',
-        familyName: 'Jay',
-        middleName: 'Jane',
-        profile: 'this is my profile',
-        preferredUsername: 'Mike',
-        website: 'https://authing.cn',
-        gender: 'M',
-        birthdate: '2020.2.2',
-        zoneinfo: 'HongKong',
-        locale: 'EN-US',
-        address: 'Hai Dian XX',
-        formatted: '',
-        streetAddress: 'Hai Dian Street 1',
-        locality: 'BeiJing HaiDian',
-        region: 'china',
-        postalCode: '3500000',
-        country: 'china',
-        email: 'help@authing.cn',
-        phone: '114114114',
-        customData: {
-			"name":	"H"
-		},
-    },
-    options: {
-          clientIp: '192.168.0.1',
-        phonePassCodeForInformationCompletion: '1234',
-        emailPassCodeForInformationCompletion: '1234',
-        context: {
-			"phoneNumber":	"188xxxx8888",
-			"phoneCountryCode":	"+86"
-		},
-        passwordEncryptType: 'none',
-    },
- });
-})();
-```
 
 
 ## 请求响应
@@ -234,7 +166,7 @@ const managementClient = new ManagementClient({
 | phonePassCodeForInformationCompletion | string | 否 | 用于注册时补全用户信息的短信验证码   |  `1234` |
 | emailPassCodeForInformationCompletion | string | 否 | 用于注册时补全用户信息的短信验证码   |  `1234` |
 | context | object | 是 | 登录/注册时传的额外参数，会存到用户自定义字段里面   |  `{"phoneNumber":"188xxxx8888","phoneCountryCode":"+86"}` |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | string | 否 | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 
 
 ### <a id="UserDto"></a> UserDto

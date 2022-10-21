@@ -26,33 +26,8 @@
 | pagination | <a href="#ListWebhooksDto">ListWebhooksDto</a> | 否 | - | 分页  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_user_action_logs(
-     request_id: "xxx",
-     client_ip: "xxx",
-     event_type: "login",
-     user_id: "xxx",
-     app_id: "xxx",
-     start: 11,
-     end: 111,
-     success: true,
-     pagination: {
-         page: 1,
-       limit: 10,
-    },
   
-)
-```
-
-
 ## 请求响应
 
 类型： `UserActionLogRespDto`

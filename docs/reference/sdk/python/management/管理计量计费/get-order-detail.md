@@ -18,23 +18,8 @@
  | orderNo | string  | 是 | - | 订单号  | `2022080410062060e26f7fd6b9` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_order_detail(
   
-      order_no: "2022080410062060e26f7fd6b9",
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `CostGetOrderDetailRespDto`

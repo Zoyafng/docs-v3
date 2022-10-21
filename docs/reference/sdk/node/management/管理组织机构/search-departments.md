@@ -20,27 +20,8 @@
 | withCustomData | boolean | 否 | - | 是否获取自定义数据  | `true` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.searchDepartments({
-    organizationCode: 'steamory',
-    keywords: 'Authing',
-    withCustomData: true,
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `DepartmentListRespDto`

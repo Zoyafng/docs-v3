@@ -19,46 +19,8 @@
 | options | <a href="#ListApplicationActiveUsersOptionsDto">ListApplicationActiveUsersOptionsDto</a> | 否 | - | 可选项  |  |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.listApplicationActiveUsers(
-      dto.ListApplicationActiveUsersDto {
-          AppId: "6229ffaxxxxxxxxcade3e3d9",
-        Options: dto.ListApplicationActiveUsersOptionsDto {
-                        Pagination: dto.PaginationDto {
-                          Page: 1,
-          Limit: 10,
-        },
-          WithCustomData: true,
-          WithIdentities: true,
-          WithDepartmentIds: true,
-        },
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `UserPaginatedRespDto`

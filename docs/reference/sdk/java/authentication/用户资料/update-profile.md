@@ -31,46 +31,6 @@
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"school":"北京大学","age":22}` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.client.AuthenticationClient;
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.model.AuthenticationClientOptions;
-
-class Test {
-    public static void main(String[] args) {
-        // 设置初始化参数
-        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
-        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
-        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
-        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
-    
-        // 初始化 AuthenticationClient
-        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
-    
-        
-        UpdateUserProfileDto request = new UpdateUserProfileDto();
-        request.setName("张三");
-        request.setNickname("张三");
-        request.setPhoto("https://files.authing.co/authing-console/default-user-avatar.png");
-        request.setExternalId("10010");
-        request.setBirthdate("2022-06-03");
-        request.setCountry("CN");
-        request.setProvince("BJ");
-        request.setCity("BJ");
-        request.setAddress("北京朝阳");
-        request.setStreetAddress("北京朝阳区 xxx 街道");
-        request.setPostalCode("438100");
-        request.setGender(UpdateUserProfileDto.gender.M);
-        request.setUsername("bob");
-        request.setCustomData(new UpdateUserProfileDto.setSchool("北京大学",.setAge(age22,));
-        
-        UserSingleRespDto response = managementClient.updateProfile(request);
-        System.out.println(response);
-    }
-}
-```
 
 
 ## 请求响应

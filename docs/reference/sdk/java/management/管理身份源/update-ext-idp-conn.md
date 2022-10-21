@@ -22,34 +22,8 @@
 | loginOnly | boolean | 否 | - | 是否只支持登录  |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        UpdateExtIdpConnDto request = new UpdateExtIdpConnDto();
-        request.setId("60b49eb83fd80adb96f26e68");
-        request.setDisplayName("exampleName");
-        request.setFields(new UpdateExtIdpConnDto.setClientId("clientId",));
-        request.setLogo("https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png");
-        request.setLoginOnly(false);
-        
-        ExtIdpConnDetailSingleRespDto response = managementClient.updateExtIdpConn(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `ExtIdpConnDetailSingleRespDto`

@@ -1,4 +1,4 @@
-# 修改用户资料
+# 批量修改用户资料
 
 <!--
   警告⚠️：
@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-通过用户 ID，修改用户资料，邮箱、手机号、用户名、externalId 用户池内唯一，此接口将以管理员身份修改用户资料因此不需要进行手机号验证码检验等安全检测。
+批量修改用户资料，邮箱、手机号、用户名、externalId 用户池内唯一，此接口将以管理员身份修改用户资料因此不需要进行手机号验证码检验等安全检测。
 
 ## 请求参数
 
@@ -19,105 +19,8 @@
 | options | <a href="#UpdateUserBatchOptionsDto">UpdateUserBatchOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-## 示例代码
-```csharp
 
-using Authing.CSharp.SDK.Models;
-using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Example
-{
-    class Program
-    {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
-
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
-
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          UserListRespDto  result = await managementClient.UpdateUserBatch
-          (  new UpdateUserBatchReqDto{                List= new List<UpdateUserInfoDto>
-                {
-                    new UpdateUserInfoDto
-                    {
-                     UserId= "6229ffaxxxxxxxxcade3e3d9" ,
-            PhoneCountryCode= "+86" ,
-            Name= "张三" ,
-            Nickname= "张三" ,
-            Photo= "https://files.authing.co/authing-console/default-user-avatar.png" ,
-            ExternalId= "10010" ,
-            Status= UpdateUserInfoDto.status.ACTIVATED ,
-            EmailVerified= true ,
-            PhoneVerified= true ,
-            Birthdate= "2022-06-03" ,
-            Country= "CN" ,
-            Province= "BJ" ,
-            City= "BJ" ,
-            Address= "北京朝阳" ,
-            StreetAddress= "北京朝阳区 xxx 街道" ,
-            PostalCode= "438100" ,
-            Gender= UpdateUserInfoDto.gender.M ,
-            Username= "bob" ,
-            Email= "test@example.com" ,
-            Phone= "188xxxx8888" ,
-            Password= "oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=" ,
-            Company= "steamory" ,
-            Browser= "Mozilla/5.0 (Linux; Android 10; V2001A; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/87.0.4280.141 Mobile Safari/537.36 VivoBrowser/10.2.10.0" ,
-            Device= "iOS" ,
-            GivenName= "三" ,
-            FamilyName= "张" ,
-            MiddleName= "" ,
-            Profile= "" ,
-            PreferredUsername= "" ,
-            Website= "" ,
-            Zoneinfo= "" ,
-            Locale= "" ,
-            Formatted= "" ,
-            Region= "" ,
-            CustomData= new UpdateUserInfoDto{    school="北京大学",    age=22,} ,
-                }
-                  },
-                Options= new UpdateUserBatchOptionsDto
-                {
-                          ResetPasswordOnNextLogin= false ,
-          PasswordEncryptType= UpdateUserBatchOptionsDto.passwordEncryptType.NONE ,
-          AutoGeneratePassword= false ,
-        SendPasswordResetedNotification= new SendResetPasswordNotificationDto
-                {
-                          SendDefaultEmailNotification= false ,
-          SendDefaultPhoneNotification= false ,
-          InputSendEmailNotification= "test@example.com" ,
-          InputSendPhoneNotification= "183xxxx1234" ,
-          AppId= "appid1" ,
-        },
-        },
-            }
-          );
-        }
-    }
-}
-
-```
-
-
+  
 ## 请求响应
 
 类型： `UserListRespDto`
@@ -240,7 +143,7 @@ namespace Example
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码   |  |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | string | 否 | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 | autoGeneratePassword | boolean | 否 | 是否自动生成密码   |  |
 | sendPasswordResetedNotification |  | 否 | 重置密码发送邮件和手机号选项 嵌套类型：<a href="#SendResetPasswordNotificationDto">SendResetPasswordNotificationDto</a>。  |  `{"sendDefaultEmailNotification":false,"sendDefaultPhoneNotification":false,"inputSendEmailNotification":"test@example.com","inputSendPhoneNotification":"136xxxx1234","appId":"app1"}` |
 

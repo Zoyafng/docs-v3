@@ -21,29 +21,8 @@
  | syncTrigger | string  | 否 | - | 同步任务触发类型：<br>- `manually`: 手动触发执行<br>- `timed`: 定时触发<br>- `automatic`: 根据事件自动触发<br>  | `manually` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.list_sync_jobs(
   
-      sync_task_id: 1000,
-  
-      page: 1,
-  
-      limit: 10,
-  
-      sync_trigger: "manually",
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `SyncJobPaginatedRespDto`

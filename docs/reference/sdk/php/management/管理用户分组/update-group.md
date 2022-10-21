@@ -16,33 +16,45 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | description | string | 是 | - | 分组描述  | `描述内容` |
-| name | string | 是 | - | 分组名称  | `开发者` |
 | code | string | 是 | - | 分组 code  | `developer` |
+| name | string | 否 | - | 分组名称  | `开发者` |
 | newCode | string | 否 | - | 分组新的 code  | `developer` |
 
 
+
+
 ## 示例代码
+
 ```php
 <?php
 
-require 'vendor/autoload.php';
-
 use Authing\ManagementClient;
 
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
+// 需要替换成你的 Authing Access Key ID
+$AUTHING_ACCESS_KEY_ID = "635124373e1cd646feecbeb9";
+// 需要替换成你的 Authing Access Key Secret
+$AUTHING_ACCESS_KEY_SECRET = "c3eaf45f7b467003158fd8615367ba6e";
+
+// 初始化 ManagementClient
+$managementClient = new Authing\ManagementClient(
+    array(
+        "accessKeyId" => $AUTHING_ACCESS_KEY_ID,
+        "accessKeySecret" => $AUTHING_ACCESS_KEY_SECRET,
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // "host" => "https://api.your-authing-service.com"
+    )
 );
 
-$data = $management->updateGroup(array(
-      "code" => "developer",
-    "name" => "开发者",
-    "description" => "描述内容",
-    "newCode" => "developer",
-
+$data = $managementClient->updateGroup(array(
+    "code" => "developer",
+    "description" => "新的描述内容",
 ));
+print_r($data);
+
 ```
 
+
+  
 ## 请求响应
 
 类型： `GroupSingleRespDto`

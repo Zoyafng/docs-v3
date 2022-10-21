@@ -21,28 +21,8 @@
 | departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型  | `department_id` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.removeDepartmentMembers({
-    departmentId: '60b49eb83fd80adb96f26e68',
-    organizationCode: 'steamory',
-    departmentIdType: 'department_id',
-    userIds: ["623c20b2a062aaaaf41b17da"],
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

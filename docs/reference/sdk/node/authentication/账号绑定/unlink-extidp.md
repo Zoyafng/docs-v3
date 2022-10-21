@@ -18,23 +18,6 @@
 | extIdpId | string | 是 | - | 外部身份源 ID  | `62f209327xxxxcc10d966ee5` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
-
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.unlinkExtidp({
-    extIdpId: '62f209327xxxxcc10d966ee5',
- });
-})();
-```
 
 
 ## 请求响应

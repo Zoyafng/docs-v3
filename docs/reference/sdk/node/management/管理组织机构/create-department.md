@@ -27,55 +27,8 @@
 | departmentIdType | string | 否 | department_id | 此次调用中使用的父部门 ID 的类型  | `department_id` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.createDepartment({
-    organizationCode: 'steamory',
-    openDepartmentId: 'ou_7dab8a3d3cdccxxxxxx777c7ad535d62',
-    name: '开发部',
-    description: '技术研发部门',
-    parentDepartmentId: '6229c4deb3e4d8a20b6021ff',
-    code: '6229c4deb3e4d8a20b6021ff',
-    isVirtualNode: false,
-    i18n: {
-          name: {
-          zh-CN: {
-          enabled: false,
-        value: 'false',
-    },
-        en-US: {
-          enabled: false,
-        value: 'false',
-    },
-        zh-TW: {
-          enabled: false,
-        value: 'false',
-    },
-        ja-JP: {
-          enabled: false,
-        value: 'false',
-    },
-    },
-    },
-    customData: {
-			"icon":	"https://example.com/logo"
-		},
-    departmentIdType: 'department_id',
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `DepartmentSingleRespDto`

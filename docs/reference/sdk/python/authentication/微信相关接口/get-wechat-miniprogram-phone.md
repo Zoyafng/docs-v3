@@ -19,21 +19,6 @@
 | extIdpConnidentifier | string | 是 | - | 微信小程序的外部身份源连接标志符  | `my-wxapp` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_wechat_miniprogram_phone(
-     ext_idp_connidentifier: "my-wxapp",
-     code: "",
-  
-)
-```
 
 
 ## 请求响应

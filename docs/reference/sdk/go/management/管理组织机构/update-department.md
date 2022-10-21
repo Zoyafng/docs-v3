@@ -27,65 +27,8 @@
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"icon":"https://example.com/icon"}` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.updateDepartment(
-      dto.UpdateDepartmentReqDto {
-          OrganizationCode: "steamory",
-          DepartmentId: "60b49eb83fd80adb96f26e68",
-          LeaderUserIds: []string{"60b49eb83fd80adb96f26e68",},
-          Description: "技术研发部门",
-          Code: "6229c4deb3e4d8a20b6021ff",
-        I18n: dto.DepartmentI18nDto {
-                        Name: dto.LangObject {
-                        Zh-CN: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        En-US: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        Zh-TW: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        Ja-JP: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        },
-        },
-          Name: "开发部",
-          DepartmentIdType: UpdateDepartmentReqDto.departmentIdType.DEPARTMENT_ID,
-          ParentDepartmentId: "6229c4deb3e4d8a20b6021ff",
-          CustomData: dto.UpdateDepartmentReqDto {    icon="https://example.com/icon",},
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `DepartmentSingleRespDto`

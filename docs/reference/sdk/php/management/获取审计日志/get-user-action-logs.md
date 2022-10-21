@@ -26,36 +26,8 @@
 | pagination | <a href="#ListWebhooksDto">ListWebhooksDto</a> | 否 | - | 分页  |  |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getUserActionLogs(array(
-      "requestId" => "xxx",
-    "clientIp" => "xxx",
-    "eventType" => "login",
-    "userId" => "xxx",
-    "appId" => "xxx",
-    "start" => 11,
-    "end" => 111,
-    "success" => true,
-    "pagination" => array(
-          "page" => 1,
-        "limit" => 10,
-    ),
-
-));
-```
-
+  
 ## 请求响应
 
 类型： `UserActionLogRespDto`

@@ -24,43 +24,8 @@
 | secret | string | 否 | - | 请求密钥  | `xxxxxxxxxxxx` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.updateWebhook(
-      dto.UpdateWebhookDto {
-          WebhookId: "6229ffaxxxxxxxxcade3e3d9",
-          Name: "用户创建事件",
-          Url: "https://example.com/callback",
-          Events: []string{"user:created",},
-          ContentType: UpdateWebhookDto.contentType.APPLICATION/JSON,
-          Enabled: true,
-          Secret: "xxxxxxxxxxxx",
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `UpdateWebhooksRespDto`

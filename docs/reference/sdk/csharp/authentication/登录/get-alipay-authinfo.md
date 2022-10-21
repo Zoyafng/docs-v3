@@ -18,49 +18,48 @@
  | extIdpConnidentifier | string  | 是 | - | 外部身份源连接标志符  | `wework` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
-using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using Authing.CSharp.SDK.Models.Authentication;
+using Authing.CSharp.SDK.Services;
 
-namespace Example
+namespace ConsoleApplication
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            AuthenticationClientInitOptions clientOptions = new AuthenticationClientInitOptions
+            {
+                AppId = "AUTHING_APP_ID",// Authing 应用 ID
+                AppSecret = "AUTHING_APP_SECRET",// Authing 应用密钥
+                AppHost = "AUTHING_APP_DOMAIN", // Authing 应用域名，如 https://example.authing.cn
+                RedirectUri = "AUTHING_APP_REDIRECT_URI",// Authing 应用配置的登录回调地址
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 AuthenticationClient
+            AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          GetAlipayAuthInfoRespDto  result = await managementClient.GetAlipayAuthinfo
-          (             
-                extIdpConnidentifier: "wework"
-          );
+            //填入外部身份源连接标志符
+            var res = await authenticationClient.GetAlipayAuthInfo("AUTHING_EXT_IDP_CONNIDENTIFIER");
         }
     }
 }
 
 ```
+
+
 
 
 ## 请求响应

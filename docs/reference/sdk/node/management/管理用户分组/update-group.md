@@ -16,33 +16,13 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | description | string | 是 | - | 分组描述  | `描述内容` |
-| name | string | 是 | - | 分组名称  | `开发者` |
 | code | string | 是 | - | 分组 code  | `developer` |
+| name | string | 否 | - | 分组名称  | `开发者` |
 | newCode | string | 否 | - | 分组新的 code  | `developer` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.updateGroup({
-    code: 'developer',
-    name: '开发者',
-    description: '描述内容',
-    newCode: 'developer',
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `GroupSingleRespDto`

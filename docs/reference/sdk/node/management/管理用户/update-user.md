@@ -53,75 +53,8 @@
 | options | <a href="#UpdateUserOptionsDto">UpdateUserOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.updateUser({
-    userId: '6229ffaxxxxxxxxcade3e3d9',
-    phoneCountryCode: '+86',
-    name: '张三',
-    nickname: '张三',
-    photo: 'https://files.authing.co/authing-console/default-user-avatar.png',
-    externalId: '10010',
-    status: 'Activated',
-    emailVerified: true,
-    phoneVerified: true,
-    birthdate: '2022-06-03',
-    country: 'CN',
-    province: 'BJ',
-    city: 'BJ',
-    address: '北京朝阳',
-    streetAddress: '北京朝阳区 xxx 街道',
-    postalCode: '438100',
-    gender: 'M',
-    username: 'bob',
-    email: 'test@example.com',
-    phone: '188xxxx8888',
-    password: 'oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=',
-    company: 'steamory',
-    browser: 'Mozilla/5.0 (Linux; Android 10; V2001A; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/87.0.4280.141 Mobile Safari/537.36 VivoBrowser/10.2.10.0',
-    device: 'iOS',
-    givenName: '三',
-    familyName: '张',
-    middleName: '',
-    profile: '',
-    preferredUsername: '',
-    website: '',
-    zoneinfo: '',
-    locale: '',
-    formatted: '',
-    region: '',
-    customData: {
-			"school":	"北京大学",
-			"age":	22
-		},
-    options: {
-          userIdType: 'user_id',
-        resetPasswordOnNextLogin: false,
-        passwordEncryptType: 'none',
-        autoGeneratePassword: false,
-        sendPasswordResetedNotification: {
-          sendDefaultEmailNotification: false,
-        sendDefaultPhoneNotification: false,
-        inputSendEmailNotification: 'test@example.com',
-        inputSendPhoneNotification: '183xxxx1234',
-        appId: 'appid1',
-    },
-    },
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `UserSingleRespDto`
@@ -204,7 +137,7 @@ const managementClient = new ManagementClient({
 | ---- |  ---- | ---- | ---- | ---- |
 | userIdType | string | 否 | 用户 ID 类型，默认值为 `user_id`，可选值为：<br>- `user_id`: Authing 用户 ID，如 `6319a1504f3xxxxf214dd5b7`<br>- `phone`: 用户手机号<br>- `email`: 用户邮箱<br>- `username`: 用户名<br>- `external_id`: 用户在外部系统的 ID，对应 Authing 用户信息的 `externalId` 字段<br>- `identity`: 用户的外部身份源信息，格式为 `<extIdpId>:<userIdInIdp>`，其中 `<extIdpId>` 为 Authing 身份源的 ID，`<userIdInIdp>` 为用户在外部身份源的 ID。<br>示例值：`62f20932716fbcc10d966ee5:ou_8bae746eac07cd2564654140d2a9ac61`。<br>   | user_id |
 | resetPasswordOnNextLogin | boolean | 否 | 下次登录要求重置密码   |  |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | string | 否 | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 | autoGeneratePassword | boolean | 否 | 是否自动生成密码   |  |
 | sendPasswordResetedNotification |  | 否 | 重置密码发送邮件和手机号选项 嵌套类型：<a href="#SendResetPasswordNotificationDto">SendResetPasswordNotificationDto</a>。  |  `{"sendDefaultEmailNotification":false,"sendDefaultPhoneNotification":false,"inputSendEmailNotification":"test@example.com","inputSendPhoneNotification":"136xxxx1234","appId":"app1"}` |
 

@@ -17,19 +17,6 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.list_factors_to_enroll(
-  
-)
-```
 
 
 ## 请求响应

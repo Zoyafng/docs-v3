@@ -21,29 +21,8 @@
  | resourceType | string  | 否 | - | 资源类型，如 数据、API、菜单、按钮  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_user_authorized_resources(
   
-      user_id: "6229ffaxxxxxxxxcade3e3d9",
-  
-      user_id_type: "user_id",
-  
-      namespace: "default",
-  
-      resource_type: "undefined",
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `AuthorizedResourcePaginatedRespDto`

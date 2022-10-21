@@ -18,23 +18,8 @@
  | syncJobId | number  | 是 | - | 同步作业 ID  | `1` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_sync_job(
   
-      sync_job_id: 1,
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `SyncJobSingleRespDto`

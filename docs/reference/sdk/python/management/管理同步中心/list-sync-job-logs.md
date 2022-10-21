@@ -23,33 +23,8 @@
  | objectType | string  | 否 | - | 操作对象类型:<br>- `department`: 部门<br>- `user`: 用户<br>      | `DEPARTMENT` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.list_sync_job_logs(
   
-      sync_job_id: 1000,
-  
-      page: 1,
-  
-      limit: 10,
-  
-      success: true,
-  
-      action: "CreateUser",
-  
-      object_type: "DEPARTMENT",
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `TriggerSyncTaskRespDto`

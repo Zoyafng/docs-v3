@@ -21,40 +21,8 @@
  | syncTrigger | string  | 否 | - | 同步任务触发类型：<br>- `manually`: 手动触发执行<br>- `timed`: 定时触发<br>- `automatic`: 根据事件自动触发<br>  | `manually` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.listSyncJobs(
-    
-     
-        syncTaskId: 1000        , 
-        page: 1        , 
-        limit: 10        , 
-        syncTrigger: "manually"        
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `SyncJobPaginatedRespDto`

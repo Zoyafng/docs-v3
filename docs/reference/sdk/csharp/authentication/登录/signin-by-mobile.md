@@ -23,7 +23,7 @@
 你可以在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**
 中找到**换取 token 身份验证方式** 配置项：
 
-> 单页 Web 应用和客户端应用隐藏，默认为 `none`，不允许修改；后端应用和 SDK 可以修改此配置项。
+> 单页 Web 应用和客户端应用隐藏，默认为 `none`，不允许修改；后端应用和标准 Web 应用可以修改此配置项。
 
 ![](https://files.authing.co/api-explorer/tokenAuthMethod.jpg)
 
@@ -65,8 +65,8 @@ JS 代码示例：
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | extIdpConnidentifier | string | 是 | - | 外部身份源连接标志符  | `wework` |
 | connection | string | 是 | - | 移动端社会化登录类型：<br>- `apple`: Apple 移动端应用<br>- `wechat`: 微信移动应用<br>- `alipay`: 支付宝移动应用<br>- `wechatwork`: 企业微信移动应用<br>- `wechatwork_agency`: 企业微信移动应用（代开发模式）<br>- `lark_internal`: 飞书移动端企业自建应用<br>- `lark_public`: 飞书移动端应用商店应用<br>- `yidun`: 网易易盾一键登录<br>- `wechat_mini_program_code`: 微信小程序使用 code 登录<br>- `wechat_mini_program_phone `: 微信小程序使用手机号登录<br>- `google`: Google 移动端社会化登录<br>  | `wechat` |
-| wechatPayload | <a href="#SignInByWechatPayloadDto">SignInByWechatPayloadDto</a> | 否 | - | 苹果移动端社会化登录数据，当 `connection` 为 `apple` 的时候必填。  |  |
-| applePayload | <a href="#SignInByApplePayloadDto">SignInByApplePayloadDto</a> | 否 | - | 微信移动端社会化登录数据，当 `connection` 为 `wechat` 的时候必填。  |  |
+| wechatPayload | <a href="#SignInByWechatPayloadDto">SignInByWechatPayloadDto</a> | 否 | - | 苹果移动端社会化登录数据，当 `connection` 为 `wechat` 的时候必填。  |  |
+| applePayload | <a href="#SignInByApplePayloadDto">SignInByApplePayloadDto</a> | 否 | - | 微信移动端社会化登录数据，当 `connection` 为 `apple` 的时候必填。  |  |
 | alipayPayload | <a href="#SignInByAlipayPayloadDto">SignInByAlipayPayloadDto</a> | 否 | - | 支付宝移动端社会化登录数据，当 `connection` 为 `alipay` 的时候必填。  |  |
 | wechatworkPayload | <a href="#SignInByWechatworkDto">SignInByWechatworkDto</a> | 否 | - | 企业微信移动端社会化登录数据，当 `connection` 为 `wechatwork` 的时候必填。  |  |
 | wechatworkAgencyPayload | <a href="#SignInByWechatworkAgencyPayloadDto">SignInByWechatworkAgencyPayloadDto</a> | 否 | - | 企业微信（代开发模式）移动端社会化登录数据，当 `connection` 为 `wechatwork_agency` 的时候必填。  |  |
@@ -81,108 +81,52 @@ JS 代码示例：
 | client_secret | string | 否 | - | 应用密钥。当应用的「换取 token 身份验证方式」配置为 `client_secret_post` 需要传。  | `4203d30e5e915xxxxxx26c31c9adce68` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
-using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using Authing.CSharp.SDK.Models.Authentication;
+using Authing.CSharp.SDK.Services;
 
-namespace Example
+namespace ConsoleApplication
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            AuthenticationClientInitOptions clientOptions = new AuthenticationClientInitOptions
+            {
+                AppId = "AUTHING_APP_ID",// Authing 应用 ID
+                AppSecret = "AUTHING_APP_SECRET",// Authing 应用密钥
+                AppHost = "AUTHING_APP_DOMAIN", // Authing 应用域名，如 https://example.authing.cn
+                RedirectUri = "AUTHING_APP_REDIRECT_URI",// Authing 应用配置的登录回调地址
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 AuthenticationClient
+            AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          LoginTokenRespDto  result = await managementClient.SigninByMobile
-          (  new SigninByMobileDto{                  Connection= SigninByMobileDto.connection.WECHAT ,
-                  ExtIdpConnidentifier= "wework" ,
-                WechatPayload= new SignInByWechatPayloadDto
-                {
-                          Code= "1660291866076" ,
-        },
-                ApplePayload= new SignInByApplePayloadDto
-                {
-                          Code= "1660291866076" ,
-        },
-                AlipayPayload= new SignInByAlipayPayloadDto
-                {
-                          Code= "1660291866076" ,
-        },
-                WechatworkPayload= new SignInByWechatworkDto
-                {
-                          Code= "1660291866076" ,
-        },
-                WechatworkAgencyPayload= new SignInByWechatworkAgencyPayloadDto
-                {
-                          Code= "1660291866076" ,
-        },
-                LarkPublicPayload= new SignInByLarkPublicPayloadDto
-                {
-                          Code= "1660291866076" ,
-        },
-                LarkInternalPayload= new SignInByLarkInternalPayloadDto
-                {
-                          Code= "1660291866076" ,
-        },
-                YidunPayload= new SignInByYidunPayloadDto
-                {
-                          Token= "1660291866076" ,
-          AccessToken= "1660291866076" ,
-        },
-                WechatMiniProgramCodePayload= new SignInByWechatMiniProgramCodePayloadDto
-                {
-                          EncryptedData= "" ,
-          Iv= "" ,
-          Code= "" ,
-        },
-                WechatMiniProgramPhonePayload= new SignInByWechatMiniProgramPhonePayloadDto
-                {
-                          EncryptedData= "" ,
-          Iv= "" ,
-          Code= "" ,
-        },
-                GooglePayload= new SignInByGooglePayloadDto
-                {
-                          Code= "" ,
-        },
-                Options= new SignInByMobileOptionsDto
-                {
-                          Scope= "openid profile" ,
-          Context= new SignInByMobileOptionsDto{    source="utm",} ,
-          TenantId= "625783d629f2bd1f5ddddd98c" ,
-          CustomData= new SignInByMobileOptionsDto{    school="pku",    age="20",} ,
-        },
-                  Client_id= "6342b8537axxxx047d314109" ,
-                  Client_secret= "4203d30e5e915xxxxxx26c31c9adce68" ,
-            }
-          );
+            var res = await authenticationClient.SignInByMobile(new SigninByMobileDto()
+            {
+                Connection = SigninByMobileDto.connection.WECHAT,
+                //填入外部身份源连接标志符
+                ExtIdpConnidentifier = "AUTHING_EXT_IDP_CONNIDENTIFIER",
+            });
         }
     }
 }
 
 ```
+
+
 
 
 ## 请求响应

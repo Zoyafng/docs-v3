@@ -19,28 +19,8 @@
  | startTime | string  | 是 | - | 起始时间（年月日）  | `20220202` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getMauPeriodUsageHistory(array(
   
-    "endTime" => "20220802",
-
-    "startTime" => "20220202",
-
-));
-```
-
 ## 请求响应
 
 类型： `CostGetMauPeriodUsageHistoryRespDto`

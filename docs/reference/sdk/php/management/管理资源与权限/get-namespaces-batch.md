@@ -18,26 +18,41 @@
  | codeList | string[]  | 是 | - | 资源 code 列表，批量可以使用逗号分隔 数组长度限制：50。 | `code1,code2` |
 
 
+
+
 ## 示例代码
+
 ```php
 <?php
 
-require 'vendor/autoload.php';
-
 use Authing\ManagementClient;
 
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
+// 需要替换成你的 Authing Access Key ID
+$AUTHING_ACCESS_KEY_ID = "635124373e1cd646feecbeb9";
+// 需要替换成你的 Authing Access Key Secret
+$AUTHING_ACCESS_KEY_SECRET = "c3eaf45f7b467003158fd8615367ba6e";
+
+// 初始化 ManagementClient
+$managementClient = new Authing\ManagementClient(
+    array(
+        "accessKeyId" => $AUTHING_ACCESS_KEY_ID,
+        "accessKeySecret" => $AUTHING_ACCESS_KEY_SECRET,
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // "host" => "https://api.your-authing-service.com"
+    )
 );
 
-$data = $management->getNamespacesBatch(array(
-  
-    "codeList" => "code1,code2",
+$data = $managementClient->getNamespacesBatch(
+    array(
+        "codeList" => "my-namespace,my-namespace-2",
+    )
+);
+print_r($data);
 
-));
 ```
 
+
+  
 ## 请求响应
 
 类型： `NamespaceListRespDto`

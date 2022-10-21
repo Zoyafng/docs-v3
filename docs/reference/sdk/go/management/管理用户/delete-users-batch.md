@@ -19,40 +19,8 @@
 | options | <a href="#DeleteUsersBatchOptionsDto">DeleteUsersBatchOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.deleteUsersBatch(
-      dto.DeleteUsersBatchDto {
-          UserIds: []string{"userId1","userId2",},
-        Options: dto.DeleteUsersBatchOptionsDto {
-                          UserIdType: DeleteUsersBatchOptionsDto.userIdType.USER_ID,
-        },
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

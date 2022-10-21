@@ -18,26 +18,8 @@
 | list | <a href="#CreateGroupReqDto">CreateGroupReqDto[]</a> | 是 | - | 批量分组 数组长度限制：50。 |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.create_groups_batch(
-     list: [{
-           code: "developer",
-         name: "开发者",
-         description: "描述内容",
-      }],
   
-)
-```
-
-
 ## 请求响应
 
 类型： `GroupListRespDto`

@@ -23,45 +23,8 @@
 | tencentExmailConfig | <a href="#TencentExmailEmailProviderConfigInput">TencentExmailEmailProviderConfigInput</a> | 否 | - | 腾讯企业邮件服务配置  |  |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.configEmailProvier({
-    enabled: true,
-    type: 'smtp',
-    smtpConfig: {
-          smtpHost: 'smtp.example.com',
-        smtpPort: 465,
-        sender: 'test',
-        senderPass: 'passw0rd',
-        enableSSL: true,
-    },
-    sendGridConfig: {
-          sender: 'test',
-        apikey: 'xxxxxxxxxx',
-    },
-    aliExmailConfig: {
-          sender: 'test',
-        senderPass: 'passw0rd',
-    },
-    tencentExmailConfig: {
-          sender: 'test',
-        senderPass: 'passw0rd',
-    },
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `EmailProviderDto`

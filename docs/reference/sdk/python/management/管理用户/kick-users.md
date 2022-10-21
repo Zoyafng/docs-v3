@@ -20,26 +20,8 @@
 | options | <a href="#KickUsersOptionsDto">KickUsersOptionsDto</a> | 否 | - | 可选参数  | `{"userIdType":"user_id"}` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.kick_users(
-     user_id: "undefined",
-     app_ids: "["62188e71cxxxx3075289c580"]",
-     options: {
-         user_id_type: "user_id",
-    },
   
-)
-```
-
-
 ## 请求响应
 
 类型： `IsSuccessRespDto`

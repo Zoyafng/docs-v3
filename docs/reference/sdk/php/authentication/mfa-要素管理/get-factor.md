@@ -18,25 +18,7 @@
  | factorId | string  | 是 | - | MFA Factor ID  | `6229ffaxxxxxxxxcade3e3d9` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getFactor(array(
-  
-    "factorId" => "6229ffaxxxxxxxxcade3e3d9",
-
-));
-```
 
 ## 请求响应
 

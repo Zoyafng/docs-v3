@@ -18,37 +18,8 @@
 | list | <a href="#CreateGroupReqDto">CreateGroupReqDto[]</a> | 是 | - | 批量分组 数组长度限制：50。 |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        CreateGroupBatchReqDto request = new CreateGroupBatchReqDto();
-            List= new List<CreateGroupReqDto>(
-                    new CreateGroupReqDto().set
-
-               request.setCode("developer");
-      request.setName("开发者");
-      request.setDescription("描述内容");
-      
-                  ),
-        
-        GroupListRespDto response = managementClient.createGroupsBatch(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `GroupListRespDto`

@@ -15,54 +15,75 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| codeList | array[] | 是 | - | 权限分组 code 列表 数组长度限制：10。 | `["code1","code2"]` |
+| codeList | string[] | 是 | - | 权限分组 code 列表 数组长度限制：10。 | `["code1","code2"]` |
+
+
 
 
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          IsSuccessRespDto  result = await managementClient.DeleteNamespacesBatch
-          (  new DeleteNamespacesBatchDto{                  CodeList= new List<string>{"code1","code2",} ,
-            }
-          );
+            CreateNamespacesBatchDto createNamespacesBatchDto = new CreateNamespacesBatchDto()
+            {
+                List = new List<CreateNamespacesBatchItemDto>
+                    {
+                        new CreateNamespacesBatchItemDto()
+                            {
+                                Code = "my-namespace1",
+                                Name = "我的权限分组",
+                                Description = "我的权限分组描述"
+                            },
+                          new CreateNamespacesBatchItemDto()
+                            {
+                                Code = "my-namespace2",
+                                Name = "我的权限分组",
+                                Description = "我的权限分组描述"
+                            }
+                    }
+            };
+
+            DeleteNamespacesBatchDto deleteNamespacesBatchDto = new DeleteNamespacesBatchDto()
+            {
+                CodeList = new List<string> { "my-namespace1", "my-namespace2" }
+            };
+
+            IsSuccessRespDto dto = await managementClient.DeleteNamespacesBatch(deleteNamespacesBatchDto);
+
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

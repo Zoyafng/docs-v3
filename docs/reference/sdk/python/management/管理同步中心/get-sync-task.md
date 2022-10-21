@@ -18,23 +18,8 @@
  | syncTaskId | number  | 是 | - | 同步任务 ID  | `1000` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_sync_task(
   
-      sync_task_id: 1000,
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `SyncTaskSingleRespDto`

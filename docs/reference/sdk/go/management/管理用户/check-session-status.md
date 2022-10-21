@@ -19,38 +19,8 @@
 | userId | string | 是 | - | 用户唯一标志，可以是用户 ID、用户名、邮箱、手机号、外部 ID、在外部身份源的 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.checkSessionStatus(
-      dto.CheckSessionStatusDto {
-          UserId: "6229ffaxxxxxxxxcade3e3d9",
-          AppId: "app1",
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `CheckSessionStatusRespDto`

@@ -18,26 +18,8 @@
 | list | <a href="#CreateNamespacesBatchItemDto">CreateNamespacesBatchItemDto[]</a> | 是 | - | 权限分组列表 数组长度限制：50。 |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.create_namespaces_batch(
-     list: [{
-           code: "my-namespace",
-         name: "我的权限分组",
-         description: "我的权限分组描述",
-      }],
   
-)
-```
-
-
 ## 请求响应
 
 类型： `IsSuccessRespDto`

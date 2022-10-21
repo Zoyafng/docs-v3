@@ -15,60 +15,57 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| type | string | 是 | - | 二维码类型。当前支持三种类型：<br>- `MOBILE_APP`: 自建移动端 APP 扫码<br>- `WECHAT_MINIPROGRAM`: 微信小程序扫码<br>- `WECHAT_OFFICIAL_ACCOUN` 关注微信公众号扫码  | `MOBILE_APP` |
+| type | string | 是 | - | 二维码类型。当前支持三种类型：<br>- `MOBILE_APP`: 自建移动端 APP 扫码<br>- `WECHAT_MINIPROGRAM`: 微信小程序扫码<br>- `WECHAT_OFFICIAL_ACCOUNT` 关注微信公众号扫码  | `MOBILE_APP` |
 | extIdpConnId | string | 否 | - | 当 `type` 为 `WECHAT_MINIPROGRAM` 或 `WECHAT_OFFICIAL_ACCOUNT` 时，可以指定身份源连接，否则默认使用应用开启的第一个对应身份源连接生成二维码。  | `62eb7ed1f04xxxxc6955b329` |
 | customData | object | 否 | - | 当 `type` 为 `MOBILE_APP` 时，可以传递用户的自定义数据，当用户成功扫码授权时，会将此数据存入用户的自定义数据。  | `{"school":"hust"}` |
 | context | object | 否 | - | 当 type 为 `WECHAT_OFFICIAL_ACCOUNT` 或 `WECHAT_MINIPROGRAM` 时，指定自定义的 pipeline 上下文，将会传递的 pipeline 的 context 中  | `{"source":"utm"}` |
 | autoMergeQrCode | boolean | 否 | - | 当 type 为 `WECHAT_MINIPROGRAM` 时，是否将自定义的 logo 自动合并到生成的图片上，默认为 false。服务器合并二维码的过程会加大接口响应速度，推荐使用默认值，在客户端对图片进行拼接。如果你使用 Authing 的 SDK，可以省去手动拼接的过程。  |  |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
-using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using Authing.CSharp.SDK.Models.Authentication;
+using Authing.CSharp.SDK.Services;
 
-namespace Example
+namespace ConsoleApplication
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            AuthenticationClientInitOptions clientOptions = new AuthenticationClientInitOptions
+            {
+                AppId = "AUTHING_APP_ID",// Authing 应用 ID
+                AppSecret = "AUTHING_APP_SECRET",// Authing 应用密钥
+                AppHost = "AUTHING_APP_DOMAIN", // Authing 应用域名，如 https://example.authing.cn
+                RedirectUri = "AUTHING_APP_REDIRECT_URI",// Authing 应用配置的登录回调地址
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 AuthenticationClient
+            AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          GeneQRCodeRespDto  result = await managementClient.GeneQrcode
-          (  new GenerateQrcodeDto{                  Type= GenerateQrcodeDto.type.MOBILE_APP ,
-                  ExtIdpConnId= "62eb7ed1f04xxxxc6955b329" ,
-                  CustomData= new GenerateQrcodeDto{    school="hust",} ,
-                  Context= new GenerateQrcodeDto{    source="utm",} ,
-                  AutoMergeQrCode= false ,
-            }
-          );
+            var res = await authenticationClient.GeneQrCode(new GenerateQrcodeDto()
+            {
+                Type = GenerateQrcodeDto.type.MOBILE_APP
+            });
         }
     }
 }
 
 ```
+
+
 
 
 ## 请求响应

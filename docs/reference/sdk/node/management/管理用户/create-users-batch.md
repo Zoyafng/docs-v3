@@ -19,89 +19,8 @@
 | options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.createUsersBatch({
-    list: [{
-            status: 'Activated',
-          email: 'test@example.com',
-          phone: '188xxxx8888',
-          phoneCountryCode: '+86',
-          username: 'bob',
-          externalId: '10010',
-          name: '张三',
-          nickname: '张三',
-          photo: 'https://files.authing.co/authing-console/default-user-avatar.png',
-          gender: 'M',
-          emailVerified: true,
-          phoneVerified: true,
-          birthdate: '2022-06-03',
-          country: 'CN',
-          province: 'BJ',
-          city: 'BJ',
-          address: '北京朝阳',
-          streetAddress: '北京朝阳区 xxx 街道',
-          postalCode: '438100',
-          company: 'steamory',
-          browser: 'Mozilla/5.0 (Linux; Android 10; V2001A; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/87.0.4280.141 Mobile Safari/537.36 VivoBrowser/10.2.10.0',
-          device: 'iOS',
-          givenName: '三',
-          familyName: '张',
-          middleName: '',
-          profile: '',
-          preferredUsername: '',
-          website: '',
-          zoneinfo: '',
-          locale: '',
-          formatted: '',
-          region: '',
-          password: 'oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=',
-          salt: 'dgisaeieruur',
-          tenantIds: undefined,
-          otp: {
-          secret: 'HZ2F6J3AGNAVSOTV',
-        recoveryCode: 'b471-8ec0-874a-087f-bccb-cd54',
-    },
-          departmentIds: ["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"],
-          customData: {
-			"school":	"北京大学",
-			"age":	22
-		},
-          identities: [{
-            extIdpId: '6076bacxxxxxxxxd80d993b5',
-          provider: 'wechat',
-          type: 'openid',
-          userIdInIdp: 'oj7Nq05R-RRaqak0_YlMLnnIwsvg',
-          originConnIds: ["605492ac41xxxxe0362f0707"],
-      }],
-      }],
-    options: {
-          keepPassword: false,
-        autoGeneratePassword: false,
-        resetPasswordOnFirstLogin: false,
-        departmentIdType: 'department_id',
-        sendNotification: {
-          sendEmailNotification: false,
-        sendPhoneNotification: false,
-        appId: 'appid1',
-    },
-        passwordEncryptType: 'none',
-    },
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `UserListRespDto`
@@ -251,7 +170,7 @@ const managementClient = new ManagementClient({
 | resetPasswordOnFirstLogin | boolean | 否 | 是否强制要求用户在第一次的时候重置密码   |  |
 | departmentIdType | string | 否 | 此次调用中使用的父部门 ID 的类型   | department_id |
 | sendNotification |  | 否 | 重置密码发送邮件和手机号选项 嵌套类型：<a href="#SendCreateAccountNotificationDto">SendCreateAccountNotificationDto</a>。  |  `{"sendEmailNotification":true,"sendPhoneNotification":true}` |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | string | 否 | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 
 
 ### <a id="SendCreateAccountNotificationDto"></a> SendCreateAccountNotificationDto

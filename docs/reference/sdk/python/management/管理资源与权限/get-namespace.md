@@ -18,23 +18,8 @@
  | code | string  | 是 | - | 权限分组唯一标志符  | `my-namespace` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_namespace(
   
-      code: "my-namespace",
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `NamespaceRespDto`

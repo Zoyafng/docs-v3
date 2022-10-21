@@ -18,57 +18,8 @@
 | list | <a href="#SetCustomFieldDto">SetCustomFieldDto[]</a> | 是 | - | 自定义字段列表 数组长度限制：50。 |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.set_custom_fields(
-     list: [{
-           target_type: "USER",
-         key: "school",
-         data_type: "ENUM",
-         label: "学校",
-         description: "学校",
-         encrypted: false,
-         is_unique: false,
-         user_editable: false,
-         visible_in_admin_console: true,
-         visible_in_user_center: true,
-         options: [{
-           value: "hust",
-         label: "华中科技大学",
-      }],
-         i18n: {
-         label: {
-         zh-_c_n: {
-         enabled: false,
-       value: "false",
-    },
-       en-_u_s: {
-         enabled: false,
-       value: "false",
-    },
-       zh-_t_w: {
-         enabled: false,
-       value: "false",
-    },
-       ja-_j_p: {
-         enabled: false,
-       value: "false",
-    },
-    },
-    },
-      }],
   
-)
-```
-
-
 ## 请求响应
 
 类型： `CustomFieldListRespDto`

@@ -19,25 +19,7 @@
 | appId | string | 是 | - | 微信小程序或微信公众号的 AppId  |  |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getWechatAccessToken(array(
-      "appId" => "",
-    "appSecret" => "",
-
-));
-```
 
 ## 请求响应
 

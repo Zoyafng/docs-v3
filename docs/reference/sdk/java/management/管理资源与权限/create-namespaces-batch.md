@@ -18,37 +18,8 @@
 | list | <a href="#CreateNamespacesBatchItemDto">CreateNamespacesBatchItemDto[]</a> | 是 | - | 权限分组列表 数组长度限制：50。 |  |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        CreateNamespacesBatchDto request = new CreateNamespacesBatchDto();
-            List= new List<CreateNamespacesBatchItemDto>(
-                    new CreateNamespacesBatchItemDto().set
-
-               request.setCode("my-namespace");
-      request.setName("我的权限分组");
-      request.setDescription("我的权限分组描述");
-      
-                  ),
-        
-        IsSuccessRespDto response = managementClient.createNamespacesBatch(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

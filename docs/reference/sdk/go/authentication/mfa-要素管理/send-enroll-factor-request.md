@@ -16,43 +16,9 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | profile | <a href="#FactorProfile">FactorProfile</a> | 是 | - | MFA 认证要素详细信息  | `{"phoneNumber":"188xxxx8888","phoneCountryCode":"+86"}` |
-| factorType | string | 是 | - | MFA 认证要素类型，目前共支持短信、邮箱验证码、OTP、人脸四种类型的认证要素。  | `SMS` |
+| factorType | string | 是 | - | MFA 认证要素类型：<br>- `OTP`: OTP<br>- `SMS`: 短信<br>- `EMAIL`: 邮件<br>- `FACE`: 人脸<br>        | `SMS` |
 
 
-## 示例代码
-```go
-package main
-
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.sendEnrollFactorRequest(
-      dto.SendEnrollFactorRequestDto {
-          FactorType: SendEnrollFactorRequestDto.factorType.SMS,
-        Profile: dto.FactorProfile {
-                          PhoneNumber: "188xxxx8888",
-          PhoneCountryCode: "+86",
-          Email: "test@example.com",
-        },
-    }
-  )
-}
-```
 
 
 ## 请求响应

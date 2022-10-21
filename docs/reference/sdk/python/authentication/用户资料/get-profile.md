@@ -20,25 +20,6 @@
  | withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表  | `true` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_profile(
-  
-      with_custom_data: true,
-  
-      with_identities: true,
-  
-      with_department_ids: true,
-  
-)
-```
 
 
 ## 请求响应

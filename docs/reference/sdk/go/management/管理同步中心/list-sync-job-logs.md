@@ -23,42 +23,8 @@
  | objectType | string  | 否 | - | 操作对象类型:<br>- `department`: 部门<br>- `user`: 用户<br>      | `DEPARTMENT` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.listSyncJobLogs(
-    
-     
-        syncJobId: 1000        , 
-        page: 1        , 
-        limit: 10        , 
-        success: true        , 
-        action: "CreateUser"        , 
-        objectType: "DEPARTMENT"        
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `TriggerSyncTaskRespDto`

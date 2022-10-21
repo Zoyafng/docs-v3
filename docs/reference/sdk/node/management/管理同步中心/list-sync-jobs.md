@@ -21,32 +21,8 @@
  | syncTrigger | string  | 否 | - | 同步任务触发类型：<br>- `manually`: 手动触发执行<br>- `timed`: 定时触发<br>- `automatic`: 根据事件自动触发<br>  | `manually` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.listSyncJobs({
-
-    syncTaskId: 1000,
-
-    page: 1,
-
-    limit: 10,
-
-    syncTrigger: 'manually',
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `SyncJobPaginatedRespDto`

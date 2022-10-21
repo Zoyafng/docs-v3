@@ -21,38 +21,6 @@
 | extIdpConnidentifier | string | 是 | - | 微信小程序的外部身份源连接标志符  | `my-wxapp` |
 
 
-## 示例代码
-```go
-package main
-
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.decryptWechatMiniprogramData(
-      dto.DecryptWechatMiniProgramDataDto {
-          ExtIdpConnidentifier: "my-wxapp",
-          EncryptedData: "",
-          Iv: "",
-          Code: "",
-    }
-  )
-}
-```
 
 
 ## 请求响应

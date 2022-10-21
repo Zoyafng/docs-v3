@@ -18,25 +18,8 @@
 | webhookIds | string[] | 是 | - | webhookId 数组  | `["xxxx"]` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->deleteWebhook(array(
-      "webhookIds" => array("xxxx"),
-
-));
-```
-
+  
 ## 请求响应
 
 类型： `DeleteWebhookRespDto`

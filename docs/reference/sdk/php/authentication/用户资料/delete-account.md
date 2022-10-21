@@ -18,24 +18,7 @@
 | deleteAccountToken | string | 是 | - | 注销账户的 token  |  |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->deleteAccount(array(
-      "deleteAccountToken" => "undefined",
-
-));
-```
 
 ## 请求响应
 

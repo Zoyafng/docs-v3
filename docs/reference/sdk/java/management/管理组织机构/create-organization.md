@@ -22,53 +22,8 @@
 | i18n | <a href="#OrganizationNameI18nDto">OrganizationNameI18nDto</a> | 否 | - | 多语言设置  | `{"organizationName":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        CreateOrganizationReqDto request = new CreateOrganizationReqDto();
-        request.setOrganizationCode("steamory");
-        request.setOrganizationName("蒸汽记忆");
-        request.setDescription("组织描述信息");
-        request.setOpenDepartmentId("60b49eb83fd80adb96f26e68");
-            I18n= new OrganizationNameI18nDto(
-                        OrganizationName= new LangObject(
-                        Zh-CN= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        En-US= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        Zh-TW= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        Ja-JP= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        ),
-        ),
-        
-        OrganizationSingleRespDto response = managementClient.createOrganization(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `OrganizationSingleRespDto`

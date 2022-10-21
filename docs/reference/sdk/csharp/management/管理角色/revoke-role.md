@@ -20,60 +20,63 @@
 | namespace | string | 否 | - | 所属权限分组的 code  | `default` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          IsSuccessRespDto  result = await managementClient.RevokeRole
-          (  new RevokeRoleDto{                  Code= "code1" ,
-                  Namespace= "default" ,
-                Targets= new List<TargetDto>
-                {
-                    new TargetDto
+            RevokeRoleDto dto = new RevokeRoleDto()
+            {
+                Code = "AUTHING_ROLE_CODE",
+                Namespace = "AUTHING_NAMESPACE",
+                Targets = new List<TargetDto>
                     {
-                     TargetType= TargetDto.targetType.DEPARTMENT ,
-            TargetIdentifier= "60b49eb83fd80adb96f26e68" ,
-                }
-                  },
-            }
-          );
+                        new TargetDto
+                        {
+                            TargetIdentifier = "AUTHING_USERID",
+                            TargetType = TargetDto.targetType.USER
+                        }
+                    }
+            };
+
+            IsSuccessRespDto isSuccessResp = await managementClient.RevokeRole(dto);
+
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

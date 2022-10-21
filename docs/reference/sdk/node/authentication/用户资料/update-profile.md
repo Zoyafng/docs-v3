@@ -31,39 +31,6 @@
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"school":"北京大学","age":22}` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
-
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.updateProfile({
-    name: '张三',
-    nickname: '张三',
-    photo: 'https://files.authing.co/authing-console/default-user-avatar.png',
-    externalId: '10010',
-    birthdate: '2022-06-03',
-    country: 'CN',
-    province: 'BJ',
-    city: 'BJ',
-    address: '北京朝阳',
-    streetAddress: '北京朝阳区 xxx 街道',
-    postalCode: '438100',
-    gender: 'M',
-    username: 'bob',
-    customData: {
-			"school":	"北京大学",
-			"age":	22
-		},
- });
-})();
-```
 
 
 ## 请求响应

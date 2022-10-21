@@ -24,36 +24,8 @@
 | secret | string | 否 | - | 请求密钥  | `xxxxxxxxxxxx` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        UpdateWebhookDto request = new UpdateWebhookDto();
-        request.setWebhookId("6229ffaxxxxxxxxcade3e3d9");
-        request.setName("用户创建事件");
-        request.setUrl("https://example.com/callback");
-        request.setEvents(new List<String>("user:created",));
-        request.setContentType(UpdateWebhookDto.contentType.APPLICATION/JSON);
-        request.setEnabled(true);
-        request.setSecret("xxxxxxxxxxxx");
-        
-        UpdateWebhooksRespDto response = managementClient.updateWebhook(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `UpdateWebhooksRespDto`

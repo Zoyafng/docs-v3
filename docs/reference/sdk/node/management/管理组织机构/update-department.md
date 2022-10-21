@@ -27,55 +27,8 @@
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"icon":"https://example.com/icon"}` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.updateDepartment({
-    organizationCode: 'steamory',
-    departmentId: '60b49eb83fd80adb96f26e68',
-    leaderUserIds: ["60b49eb83fd80adb96f26e68"],
-    description: '技术研发部门',
-    code: '6229c4deb3e4d8a20b6021ff',
-    i18n: {
-          name: {
-          zh-CN: {
-          enabled: false,
-        value: 'false',
-    },
-        en-US: {
-          enabled: false,
-        value: 'false',
-    },
-        zh-TW: {
-          enabled: false,
-        value: 'false',
-    },
-        ja-JP: {
-          enabled: false,
-        value: 'false',
-    },
-    },
-    },
-    name: '开发部',
-    departmentIdType: 'department_id',
-    parentDepartmentId: '6229c4deb3e4d8a20b6021ff',
-    customData: {
-			"icon":	"https://example.com/icon"
-		},
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `DepartmentSingleRespDto`

@@ -19,23 +19,8 @@
 | userId | string | 是 | - | 用户唯一标志，可以是用户 ID、用户名、邮箱、手机号、外部 ID、在外部身份源的 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.check_session_status(
-     user_id: "6229ffaxxxxxxxxcade3e3d9",
-     app_id: "app1",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `CheckSessionStatusRespDto`

@@ -15,60 +15,74 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| emailPasscodePayload | <a href="#UpdateEmailByEmailPassCodeDto">UpdateEmailByEmailPassCodeDto</a> | 是 | - | 使用邮箱验证码方式验证的数据  |  |
+| emailPassCodePayload | <a href="#UpdateEmailByEmailPassCodeDto">UpdateEmailByEmailPassCodeDto</a> | 是 | - | 使用邮箱验证码方式验证的数据  |  |
 | verifyMethod | string | 是 | - | 修改当前邮箱使用的验证手段：<br>- `EMAIL_PASSCODE`: 通过邮箱验证码进行验证，当前只支持这种验证方式。<br>      | `EMAIL_PASSCODE` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
-using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using Authing.CSharp.SDK.Models.Authentication;
+using Authing.CSharp.SDK.Services;
 
-namespace Example
+namespace ConsoleApplication
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            AuthenticationClientInitOptions clientOptions = new AuthenticationClientInitOptions
+            {
+                AppId = "AUTHING_APP_ID",// Authing 应用 ID
+                AppSecret = "AUTHING_APP_SECRET",// Authing 应用密钥
+                AppHost = "AUTHING_APP_DOMAIN", // Authing 应用域名，如 https://example.authing.cn
+                RedirectUri = "AUTHING_APP_REDIRECT_URI",// Authing 应用配置的登录回调地址
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 AuthenticationClient
+            AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          VerifyUpdateEmailRequestRespDto  result = await managementClient.VerifyUpdateEmailRequest
-          (  new VerifyUpdateEmailRequestDto{                  VerifyMethod= VerifyUpdateEmailRequestDto.verifyMethod.EMAIL_PASSCODE ,
-                EmailPasscodePayload= new UpdateEmailByEmailPassCodeDto
+            //登录临时用户
+            LoginTokenRespDto loginTokenRespDto = await authenticationClient.SignInByAccountPassword("AUTHING_USERNAME", "AUTHING_USER_PASSWORD");
+            authenticationClient.setAccessToken(loginTokenRespDto.Data.Access_token);
+
+            var res0 = await authenticationClient.SendEmail(new SendEmailDto()
+            {
+                Channel = SendEmailDto.channel.CHANNEL_UPDATE_EMAIL,
+                Email = "AUTHING_OLD_EMAIL"
+            });
+            var res1 = await authenticationClient.SendEmail(new SendEmailDto()
+            {
+                Channel = SendEmailDto.channel.CHANNEL_UPDATE_EMAIL,
+                Email = "AUTHING_NEW_EMAIL"
+            });
+            var res2 = await authenticationClient.VerifyUpdateEmailRequest(new VerifyUpdateEmailRequestDto()
+            {
+                EmailPasscodePayload = new UpdateEmailByEmailPassCodeDto()
                 {
-                          NewEmail= "new@example.com" ,
-          NewEmailPassCode= "123456" ,
-          OldEmail= "old@example.com" ,
-          OldEmailPassCode= "123456" ,
-        },
-            }
-          );
+                    NewEmail = "AUTHING_NEW_EMAIL",
+                    NewEmailPassCode = "AUTHING_NEW_CODE",
+                    OldEmail = "AUTHING_OLD_EMAIL",
+                    OldEmailPassCode = "AUTHING_OLD_CODE"
+                },
+                VerifyMethod = VerifyUpdateEmailRequestDto.verifyMethod.EMAIL_PASSCODE
+            });
         }
     }
 }
-
 ```
+
+
 
 
 ## 请求响应

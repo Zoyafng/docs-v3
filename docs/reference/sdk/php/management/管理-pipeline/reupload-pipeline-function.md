@@ -18,25 +18,8 @@
 | funcId | string | 是 | - | Pipeline 函数 ID  | `62ce9135dxxxxb83e373f5d6` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->reuploadPipelineFunction(array(
-      "funcId" => "62ce9135dxxxxb83e373f5d6",
-
-));
-```
-
+  
 ## 请求响应
 
 类型： `PipelineFunctionSingleRespDto`

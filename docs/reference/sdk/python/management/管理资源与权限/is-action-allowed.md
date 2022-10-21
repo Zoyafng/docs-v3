@@ -21,25 +21,8 @@
 | namespace | string | 否 | - | 所属权限分组的 code  | `default` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.is_action_allowed(
-     namespace: "default",
-     user_id: "userId1",
-     resource: "ecs:1",
-     action: "ecs:Start",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `IsActionAllowedRespDtp`

@@ -23,48 +23,8 @@
 | type | string | 否 | - | 资源类型，如数据、API、按钮、菜单  | `API` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.updateResource(
-      dto.UpdateResourceDto {
-          Code: "ecs",
-          Description: "服务器",
-        Actions: []ResourceAction{
-                    dto.ResourceAction
-                    {
-                     Name: "ecs:Start",
-            Description: "ecs:Start",
-                }
-                  },
-          ApiIdentifier: "https://my-awesome-api.com/api",
-          Namespace: "default",
-          Type: UpdateResourceDto.type.API,
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `ResourceRespDto`

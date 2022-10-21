@@ -20,64 +20,60 @@
 | options | <a href="#SetUserDepartmentsOptionsDto">SetUserDepartmentsOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          IsSuccessRespDto  result = await managementClient.SetUserDepartments
-          (  new SetUserDepartmentsDto{                  UserId= "6229ffaxxxxxxxxcade3e3d9" ,
-                Departments= new List<SetUserDepartmentDto>
+            SetUserDepartmentsDto setUserDepartmentDto = new SetUserDepartmentsDto()
+            {
+                UserId = "AUTHING_USERID",
+                Departments = new List<SetUserDepartmentDto>()
                 {
-                    new SetUserDepartmentDto
-                    {
-                     DepartmentId= "60b49eb83fd80adb96f26e68" ,
-            IsLeader= true ,
-            IsMainDepartment= true ,
+                        new SetUserDepartmentDto{ DepartmentId= "AUTHING_DEP_ID",
+                        IsLeader=true,
+                        IsMainDepartment=false}
                 }
-                  },
-                Options= new SetUserDepartmentsOptionsDto
-                {
-                          UserIdType= SetUserDepartmentsOptionsDto.userIdType.USER_ID ,
-        },
-            }
-          );
+            };
+
+            IsSuccessRespDto isSuccessRespDto = await managementClient.SetUserDepartments(setUserDepartmentDto);
+
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

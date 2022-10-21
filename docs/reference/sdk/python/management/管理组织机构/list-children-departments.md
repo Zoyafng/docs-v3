@@ -23,33 +23,8 @@
  | withCustomData | boolean  | 否 | - | 是否获取自定义数据  | `true` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.list_children_departments(
   
-      organization_code: "steamory",
-  
-      department_id: "60b49eb83fd80adb96f26e68",
-  
-      department_id_type: "department_id",
-  
-      exclude_virtual_node: false,
-  
-      only_virtual_node: false,
-  
-      with_custom_data: true,
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `DepartmentPaginatedRespDto`

@@ -27,58 +27,8 @@
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"icon":"https://example.com/icon"}` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        UpdateDepartmentReqDto request = new UpdateDepartmentReqDto();
-        request.setOrganizationCode("steamory");
-        request.setDepartmentId("60b49eb83fd80adb96f26e68");
-        request.setLeaderUserIds(new List<String>("60b49eb83fd80adb96f26e68",));
-        request.setDescription("技术研发部门");
-        request.setCode("6229c4deb3e4d8a20b6021ff");
-            I18n= new DepartmentI18nDto(
-                        Name= new LangObject(
-                        Zh-CN= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        En-US= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        Zh-TW= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        Ja-JP= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        ),
-        ),
-        request.setName("开发部");
-        request.setDepartmentIdType(UpdateDepartmentReqDto.departmentIdType.DEPARTMENT_ID);
-        request.setParentDepartmentId("6229c4deb3e4d8a20b6021ff");
-        request.setCustomData(new UpdateDepartmentReqDto.setIcon("https://example.com/icon",));
-        
-        DepartmentSingleRespDto response = managementClient.updateDepartment(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `DepartmentSingleRespDto`

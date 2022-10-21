@@ -19,54 +19,8 @@
 | namespace | string | 否 | - | 所属权限分组的 code  | `default` |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.createResourcesBatch(
-      dto.CreateResourcesBatchDto {
-          Namespace: "default",
-        List: []CreateResourceBatchItemDto{
-                    dto.CreateResourceBatchItemDto
-                    {
-                     Code: "ecs",
-            Description: "服务器",
-            Name: "服务器",
-            Type: CreateResourceBatchItemDto.type.API,
-          Actions: []ResourceAction{
-                    dto.ResourceAction
-                    {
-                     Name: "ecs:Start",
-            Description: "ecs:Start",
-                }
-                  },
-            ApiIdentifier: "https://my-awesome-api.com/api",
-                }
-                  },
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

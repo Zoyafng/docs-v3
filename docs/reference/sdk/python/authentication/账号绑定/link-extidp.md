@@ -90,25 +90,6 @@ const { success, errMsg, identities } = await sdk.bindExtIdpWithPopup({
  | id_token | string  | 是 | - | 用户的 id_token  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.link_extidp(
-  
-      ext_idp_conn_identifier: "my-wechat",
-  
-      app_id: "",
-  
-      id_token: "",
-  
-)
-```
 
 
 ## 请求响应

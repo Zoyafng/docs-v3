@@ -90,29 +90,7 @@ const { success, errMsg, identities } = await sdk.bindExtIdpWithPopup({
  | ext_idp_conn_identifier | string  | 是 | - | 外部身份源连接唯一标志  | `my-wechat` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->generateLinkExtidpUrl(array(
-  
-    "id_token" => "",
-
-    "app_id" => "",
-
-    "ext_idp_conn_identifier" => "my-wechat",
-
-));
-```
 
 ## 请求响应
 

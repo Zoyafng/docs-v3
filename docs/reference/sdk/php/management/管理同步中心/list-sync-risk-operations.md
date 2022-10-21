@@ -22,34 +22,8 @@
  | objectType | string[]  | 否 | - | 根据操作对象类型，默认获取所有类型的记录：<br>- `department`: 部门<br>- `user`: 用户<br>      | `["DEPARTMENT","USER"]` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->listSyncRiskOperations(array(
   
-    "syncTaskId" => 1000,
-
-    "page" => 1,
-
-    "limit" => 10,
-
-    "status" => "SUCCESS,FAILED",
-
-    "objectType" => "DEPARTMENT,USER",
-
-));
-```
-
 ## 请求响应
 
 类型： `SyncRiskOperationPaginatedRespDto`

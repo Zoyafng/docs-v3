@@ -19,23 +19,6 @@
 | updatePhoneToken | string | 是 | - | 用于临时修改手机号的 token，可从**发起修改手机号的验证请求**接口获取。  | `xxxx` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
-
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.updatePhone({
-    updatePhoneToken: 'xxxx',
- });
-})();
-```
 
 
 ## 请求响应

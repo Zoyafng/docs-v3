@@ -18,24 +18,7 @@
 | extIdpId | string | 是 | - | 外部身份源 ID  | `62f209327xxxxcc10d966ee5` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->unlinkExtidp(array(
-      "extIdpId" => "62f209327xxxxcc10d966ee5",
-
-));
-```
 
 ## 请求响应
 

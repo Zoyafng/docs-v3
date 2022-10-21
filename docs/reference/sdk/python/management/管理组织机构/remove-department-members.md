@@ -21,25 +21,8 @@
 | departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型  | `department_id` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.remove_department_members(
-     department_id: "60b49eb83fd80adb96f26e68",
-     organization_code: "steamory",
-     department_id_type: "department_id",
-     user_ids: "["623c20b2a062aaaaf41b17da"]",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `IsSuccessRespDto`

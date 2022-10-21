@@ -23,7 +23,7 @@
 你可以在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**
 中找到**换取 token 身份验证方式** 配置项：
 
-> 单页 Web 应用和客户端应用隐藏，默认为 `none`，不允许修改；后端应用和 SDK 可以修改此配置项。
+> 单页 Web 应用和客户端应用隐藏，默认为 `none`，不允许修改；后端应用和标准 Web 应用可以修改此配置项。
 
 ![](https://files.authing.co/api-explorer/tokenAuthMethod.jpg)
 
@@ -73,66 +73,6 @@ JS 代码示例：
 | client_secret | string | 否 | - | 应用密钥。当应用的「换取 token 身份验证方式」配置为 `client_secret_post` 需要传。  | `4203d30e5e915xxxxxx26c31c9adce68` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.client.AuthenticationClient;
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.model.AuthenticationClientOptions;
-
-class Test {
-    public static void main(String[] args) {
-        // 设置初始化参数
-        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
-        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
-        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
-        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
-    
-        // 初始化 AuthenticationClient
-        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
-    
-        
-        SigninByCredentialsDto request = new SigninByCredentialsDto();
-        request.setConnection(SigninByCredentialsDto.connection.PASSWORD);
-            PasswordPayload= new SignInByPasswordPayloadDto(
-                    request.setPassword("passw0rd");
-    request.setAccount("test");
-    request.setEmail("test@example.com");
-    request.setUsername("test");
-    request.setPhone("188xxxx8888");
-        ),
-            PassCodePayload= new SignInByPassCodePayloadDto(
-                    request.setPassCode("123456");
-    request.setEmail("114114");
-    request.setPhone("188xxxx8888");
-    request.setPhoneCountryCode("+86");
-        ),
-            AdPayload= new SignInByAdPayloadDto(
-                    request.setPassword("passw0rd");
-    request.setSAMAccountName("test");
-        ),
-            LdapPayload= new SignInByLdapPayloadDto(
-                    request.setPassword("passw0rd");
-    request.setSAMAccountName("114114");
-        ),
-            Options= new SignInOptionsDto(
-                    request.setScope("openid profile");
-    request.setClientIp("192.168.0.1");
-    request.setContext(new SignInOptionsDto.setSource("utm",));
-    request.setTenantId("625783d629f2bd1f5ddddd98c");
-    request.setCustomData(new SignInOptionsDto.setSchool("pku",.setAge("20",));
-    request.setAutoRegister(false);
-    request.setCaptchaCode("a8nz");
-    request.setPasswordEncryptType(SignInOptionsDto.passwordEncryptType.NONE);
-        ),
-        request.setClient_id("6342b8537axxxx047d314109");
-        request.setClient_secret("4203d30e5e915xxxxxx26c31c9adce68");
-        
-        LoginTokenRespDto response = managementClient.signin(request);
-        System.out.println(response);
-    }
-}
-```
 
 
 ## 请求响应
@@ -217,7 +157,7 @@ class Test {
 | customData | object | 否 | 设置额外的用户自定义数据，你需要先在 Authing 控制台[配置自定义数据](https://docs.authing.cn/v2/guides/users/user-defined-field/)。   |  `{"school":"pku","age":"20"}` |
 | autoRegister | boolean | 否 | 是否开启自动注册。如果设置为 true，当用户不存在的时候，会先自动为其创建一个账号。   |  |
 | captchaCode | string | 否 | Captcha 图形验证码，不区分大小写。当**安全策略**设置为**验证码**且触发**登录失败次数限制**时，下次登录需要填写图形验证码。   |  `a8nz` |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | string | 否 | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 
 
 ### <a id="LoginTokenResponseDataDto"></a> LoginTokenResponseDataDto

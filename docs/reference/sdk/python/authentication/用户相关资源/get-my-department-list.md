@@ -22,29 +22,6 @@
  | orderBy | string  | 否 | Desc | 增序或降序  | `Desc` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_my_department_list(
-  
-      page: 1,
-  
-      limit: 10,
-  
-      with_custom_data: true,
-  
-      sort_by: "JoinDepartmentAt",
-  
-      order_by: "Desc",
-  
-)
-```
 
 
 ## 请求响应

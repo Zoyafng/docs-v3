@@ -20,27 +20,8 @@
 | limit | number | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getWebhookLogs(array(
-      "page" => 1,
-    "limit" => 10,
-    "webhookId" => "6229ffaxxxxxxxxcade3e3d9",
-
-));
-```
-
+  
 ## 请求响应
 
 类型： `ListWebhookLogsRespDto`

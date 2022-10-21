@@ -22,55 +22,8 @@
  | withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表  | `true` |
 
 
-## 示例代码
-```csharp
 
-using Authing.CSharp.SDK.Models;
-using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Example
-{
-    class Program
-    {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
-
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
-
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          UserSingleRespDto  result = await managementClient.GetUser
-          (             
-                userId: "6229ffaxxxxxxxxcade3e3d9", 
-                userIdType: "user_id", 
-                withCustomData: true, 
-                withIdentities: true, 
-                withDepartmentIds: true
-          );
-        }
-    }
-}
-
-```
-
-
+  
 ## 请求响应
 
 类型： `UserSingleRespDto`

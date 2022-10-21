@@ -19,25 +19,8 @@
  | endTime | string  | 是 | - | 截止时间（年月日）  | `20220802` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_mau_period_usage_history(
   
-      start_time: "20220202",
-  
-      end_time: "20220802",
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `CostGetMauPeriodUsageHistoryRespDto`

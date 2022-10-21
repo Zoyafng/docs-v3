@@ -20,30 +20,8 @@
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getPipelineLogs(array(
   
-    "funcId" => "62cc23737exxxx8341b1ce16",
-
-    "page" => 1,
-
-    "limit" => 10,
-
-));
-```
-
 ## 请求响应
 
 类型： `PipelineFunctionPaginatedRespDto`

@@ -18,44 +18,8 @@
 | list | <a href="#CreateGroupReqDto">CreateGroupReqDto[]</a> | 是 | - | 批量分组 数组长度限制：50。 |  |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.createGroupsBatch(
-      dto.CreateGroupBatchReqDto {
-        List: []CreateGroupReqDto{
-                    dto.CreateGroupReqDto
-                    {
-                     Code: "developer",
-            Name: "开发者",
-            Description: "描述内容",
-                }
-                  },
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `GroupListRespDto`

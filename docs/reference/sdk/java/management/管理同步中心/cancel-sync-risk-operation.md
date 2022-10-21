@@ -18,30 +18,8 @@
 | syncRiskOperationIds | number[] | 是 | - | 同步任务风险操作 ID  | `[1,2]` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        CancelSyncRiskOperationDto request = new CancelSyncRiskOperationDto();
-        request.setSyncRiskOperationIds(new List<String>("1","2",));
-        
-        CancelSyncRiskOperationsRespDto response = managementClient.cancelSyncRiskOperation(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `CancelSyncRiskOperationsRespDto`

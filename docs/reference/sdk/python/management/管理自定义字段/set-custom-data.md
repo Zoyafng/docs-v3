@@ -21,28 +21,8 @@
 | namespace | string | 否 | - | 所属权限分组的 code，当 target_type 为角色的时候需要填写，否则可以忽略  | `default` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.set_custom_data(
-     target_type: "USER",
-     target_identifier: "userId1",
-     namespace: "default",
-     list: [{
-           key: "school",
-         value: "pku",
-      }],
   
-)
-```
-
-
 ## 请求响应
 
 类型： `IsSuccessRespDto`

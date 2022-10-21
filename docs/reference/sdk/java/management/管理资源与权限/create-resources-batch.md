@@ -19,47 +19,8 @@
 | namespace | string | 否 | - | 所属权限分组的 code  | `default` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        CreateResourcesBatchDto request = new CreateResourcesBatchDto();
-        request.setNamespace("default");
-            List= new List<CreateResourceBatchItemDto>(
-                    new CreateResourceBatchItemDto().set
-
-               request.setCode("ecs");
-      request.setDescription("服务器");
-      request.setName("服务器");
-      request.setType(CreateResourceBatchItemDto.type.API);
-          Actions= new List<ResourceAction>(
-                    new ResourceAction().set
-
-               request.setName("ecs:Start");
-      request.setDescription("ecs:Start");
-      
-                  ),
-      request.setApiIdentifier("https://my-awesome-api.com/api");
-      
-                  ),
-        
-        IsSuccessRespDto response = managementClient.createResourcesBatch(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

@@ -26,30 +26,8 @@
 | tplEngine | string | 否 | handlebar | 模版渲染引擎。Authing 邮件模版目前支持两种渲染引擎：<br>- `handlebar`: 详细使用方法请见：[handlebars 官方文档](https://handlebarsjs.com/)<br>- `ejs`: 详细使用方法请见：[ejs 官方文档](https://ejs.co/)<br><br>默认将使用 `handlerbar` 作为膜拜渲染引擎。<br>      | `handlebar` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.update_email_template(
-     type: "WELCOME_EMAIL",
-     customize_enabled: true,
-     name: "欢迎邮件",
-     subject: "欢迎加入 {{app_name}}",
-     sender: "{{client_name}}",
-     content: "xxx",
-     expires_in: 300,
-     redirect_to: "https://example.com",
-     tpl_engine: "handlebar",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `EmailTemplateSingleItemRespDto`

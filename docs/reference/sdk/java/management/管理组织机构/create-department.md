@@ -27,58 +27,8 @@
 | departmentIdType | string | 否 | department_id | 此次调用中使用的父部门 ID 的类型  | `department_id` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        CreateDepartmentReqDto request = new CreateDepartmentReqDto();
-        request.setOrganizationCode("steamory");
-        request.setOpenDepartmentId("ou_7dab8a3d3cdccxxxxxx777c7ad535d62");
-        request.setName("开发部");
-        request.setDescription("技术研发部门");
-        request.setParentDepartmentId("6229c4deb3e4d8a20b6021ff");
-        request.setCode("6229c4deb3e4d8a20b6021ff");
-        request.setIsVirtualNode(false);
-            I18n= new DepartmentI18nDto(
-                        Name= new LangObject(
-                        Zh-CN= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        En-US= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        Zh-TW= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        Ja-JP= new LangUnit(
-                    request.setEnabled(false);
-    request.setValue("false");
-        ),
-        ),
-        ),
-        request.setCustomData(new CreateDepartmentReqDto.setIcon("https://example.com/logo",));
-        request.setDepartmentIdType(CreateDepartmentReqDto.departmentIdType.DEPARTMENT_ID);
-        
-        DepartmentSingleRespDto response = managementClient.createDepartment(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `DepartmentSingleRespDto`

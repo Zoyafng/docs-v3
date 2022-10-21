@@ -24,50 +24,8 @@
 | organizationName | string | 否 | - | 组织名称  | `蒸汽记忆` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.updateOrganization({
-    organizationCode: 'steamory',
-    description: '技术研发部门',
-    openDepartmentId: '60b49eb83fd80adb96f26e68',
-    leaderUserIds: ["60b49eb83fd80adb96f26e68"],
-    i18n: {
-          organizationName: {
-          zh-CN: {
-          enabled: false,
-        value: 'false',
-    },
-        en-US: {
-          enabled: false,
-        value: 'false',
-    },
-        zh-TW: {
-          enabled: false,
-        value: 'false',
-    },
-        ja-JP: {
-          enabled: false,
-        value: 'false',
-    },
-    },
-    },
-    organizationNewCode: 'steamory2',
-    organizationName: '蒸汽记忆',
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `OrganizationSingleRespDto`

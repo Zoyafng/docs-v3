@@ -20,34 +20,8 @@
 | options | <a href="#KickUsersOptionsDto">KickUsersOptionsDto</a> | 否 | - | 可选参数  | `{"userIdType":"user_id"}` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        KickUsersDto request = new KickUsersDto();
-        request.setUserId("undefined");
-        request.setAppIds(new List<String>("62188e71cxxxx3075289c580",));
-            Options= new KickUsersOptionsDto(
-                    request.setUserIdType(KickUsersOptionsDto.userIdType.USER_ID);
-        ),
-        
-        IsSuccessRespDto response = managementClient.kickUsers(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

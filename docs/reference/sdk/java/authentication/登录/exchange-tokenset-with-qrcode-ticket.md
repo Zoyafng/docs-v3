@@ -23,7 +23,7 @@
 你可以在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**
 中找到**换取 token 身份验证方式** 配置项：
 
-> 单页 Web 应用和客户端应用隐藏，默认为 `none`，不允许修改；后端应用和 SDK 可以修改此配置项。
+> 单页 Web 应用和客户端应用隐藏，默认为 `none`，不允许修改；后端应用和标准 Web 应用可以修改此配置项。
 
 ![](https://files.authing.co/api-explorer/tokenAuthMethod.jpg)
 
@@ -68,35 +68,6 @@ JS 代码示例：
 | client_secret | string | 否 | - | 应用密钥。当应用的「换取 token 身份验证方式」配置为 `client_secret_post` 需要传。  | `4203d30e5e915xxxxxx26c31c9adce68` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.client.AuthenticationClient;
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.model.AuthenticationClientOptions;
-
-class Test {
-    public static void main(String[] args) {
-        // 设置初始化参数
-        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
-        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
-        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
-        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
-    
-        // 初始化 AuthenticationClient
-        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
-    
-        
-        ExchangeTokenSetWithQRcodeTicketDto request = new ExchangeTokenSetWithQRcodeTicketDto();
-        request.setTicket("");
-        request.setClient_id("6342b8537axxxx047d314109");
-        request.setClient_secret("4203d30e5e915xxxxxx26c31c9adce68");
-        
-        LoginTokenRespDto response = managementClient.exchangeTokensetWithQrcodeTicket(request);
-        System.out.println(response);
-    }
-}
-```
 
 
 ## 请求响应

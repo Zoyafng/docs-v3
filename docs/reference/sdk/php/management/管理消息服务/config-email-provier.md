@@ -23,45 +23,8 @@
 | tencentExmailConfig | <a href="#TencentExmailEmailProviderConfigInput">TencentExmailEmailProviderConfigInput</a> | 否 | - | 腾讯企业邮件服务配置  |  |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->configEmailProvier(array(
-      "enabled" => true,
-    "type" => "smtp",
-    "smtpConfig" => array(
-          "smtpHost" => "smtp.example.com",
-        "smtpPort" => 465,
-        "sender" => "test",
-        "senderPass" => "passw0rd",
-        "enableSSL" => true,
-    ),
-    "sendGridConfig" => array(
-          "sender" => "test",
-        "apikey" => "xxxxxxxxxx",
-    ),
-    "aliExmailConfig" => array(
-          "sender" => "test",
-        "senderPass" => "passw0rd",
-    ),
-    "tencentExmailConfig" => array(
-          "sender" => "test",
-        "senderPass" => "passw0rd",
-    ),
-
-));
-```
-
+  
 ## 请求响应
 
 类型： `EmailProviderDto`

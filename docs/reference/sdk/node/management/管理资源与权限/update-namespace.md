@@ -21,28 +21,8 @@
 | newCode | string | 否 | - | 权限分组新的唯一标志符  | `my-new-namespace` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.updateNamespace({
-    code: 'my-namespace',
-    description: '我的权限分组描述',
-    name: '我的权限分组',
-    newCode: 'my-new-namespace',
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `UpdateNamespaceRespDto`

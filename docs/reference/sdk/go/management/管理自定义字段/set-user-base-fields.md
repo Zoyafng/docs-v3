@@ -18,67 +18,8 @@
 | list | <a href="#SetUserBaseFieldDto">SetUserBaseFieldDto[]</a> | 是 | - | 自定义字段列表 数组长度限制：50。 |  |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.setUserBaseFields(
-      dto.SetUserBaseFieldsReqDto {
-        List: []SetUserBaseFieldDto{
-                    dto.SetUserBaseFieldDto
-                    {
-                     Key: "school",
-            Label: "学校",
-            Description: "学校",
-            UserEditable: false,
-            VisibleInAdminConsole: true,
-            VisibleInUserCenter: true,
-          I18n: dto.CustomFieldI18n {
-                        Label: dto.LangObject {
-                        Zh-CN: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        En-US: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        Zh-TW: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        Ja-JP: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        },
-        },
-                }
-                  },
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `CustomFieldListRespDto`

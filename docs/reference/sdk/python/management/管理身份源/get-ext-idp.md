@@ -21,29 +21,8 @@
  | type | string  | 否 | - | 身份源类型  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_ext_idp(
   
-      id: "6268b0e5e4b9a0e8ffa8fd60",
-  
-      tenant_id: "60b49eb83fd80adb96f26e68",
-  
-      app_id: "60b49eb83fd80adb96f26e68",
-  
-      type: "undefined",
-  
-)
-```
-
-
 ## 请求响应
 
 类型： `ExtIdpDetailSingleRespDto`

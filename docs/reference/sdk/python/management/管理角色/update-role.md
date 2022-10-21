@@ -21,25 +21,8 @@
 | description | string | 否 | - | 角色描述  | `this is description` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.update_role(
-     code: "code1",
-     new_code: "code2",
-     namespace: "default",
-     description: "this is description",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `IsSuccessRespDto`

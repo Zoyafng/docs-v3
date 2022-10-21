@@ -24,33 +24,6 @@
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
-
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.get_my_login_history(
-  
-      app_id: "5f6265c67fxxxxae64ec516e",
-  
-      client_ip: "127.0.0.1",
-  
-      success: true,
-  
-      start: 1660828100000,
-  
-      end: 1660828100000,
-  
-      page: 1,
-  
-      limit: 10,
-  
-)
-```
 
 
 ## 请求响应

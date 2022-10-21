@@ -19,27 +19,7 @@
  | resourceType | string  | 否 | - | 资源类型，如 数据、API、菜单、按钮  |  |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->getMyAuthorizedResources(array(
-  
-    "namespace" => "default",
-
-    "resourceType" => "undefined",
-
-));
-```
 
 ## 请求响应
 

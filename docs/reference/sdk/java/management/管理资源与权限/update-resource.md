@@ -23,41 +23,8 @@
 | type | string | 否 | - | 资源类型，如数据、API、按钮、菜单  | `API` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        UpdateResourceDto request = new UpdateResourceDto();
-        request.setCode("ecs");
-        request.setDescription("服务器");
-            Actions= new List<ResourceAction>(
-                    new ResourceAction().set
-
-               request.setName("ecs:Start");
-      request.setDescription("ecs:Start");
-      
-                  ),
-        request.setApiIdentifier("https://my-awesome-api.com/api");
-        request.setNamespace("default");
-        request.setType(UpdateResourceDto.type.API);
-        
-        ResourceRespDto response = managementClient.updateResource(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `ResourceRespDto`

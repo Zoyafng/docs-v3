@@ -57,84 +57,8 @@
 | options | <a href="#CreateUserOptionsDto">CreateUserOptionsDto</a> | 否 | - | 可选参数  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.create_user(
-     status: "Activated",
-     email: "test@example.com",
-     phone: "188xxxx8888",
-     phone_country_code: "+86",
-     username: "bob",
-     external_id: "10010",
-     name: "张三",
-     nickname: "张三",
-     photo: "https://files.authing.co/authing-console/default-user-avatar.png",
-     gender: "M",
-     email_verified: true,
-     phone_verified: true,
-     birthdate: "2022-06-03",
-     country: "CN",
-     province: "BJ",
-     city: "BJ",
-     address: "北京朝阳",
-     street_address: "北京朝阳区 xxx 街道",
-     postal_code: "438100",
-     company: "steamory",
-     browser: "Mozilla/5.0 (Linux; Android 10; V2001A; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/87.0.4280.141 Mobile Safari/537.36 VivoBrowser/10.2.10.0",
-     device: "iOS",
-     given_name: "三",
-     family_name: "张",
-     middle_name: "",
-     profile: "",
-     preferred_username: "",
-     website: "",
-     zoneinfo: "",
-     locale: "",
-     formatted: "",
-     region: "",
-     password: "oqw5bhVmlDwF5qqeVA645bICyMVfFaV3sf3ZTrk5Npcm5dTOmBVo1anyZ5JLfHAz/P45r0QTPo8xS1YdKxIrshx4Ju+g04s9SQqW30ebdVdqcOntIJGAXU6arrkPvfcRFV3ZVTwBdgdRWHMkr5sTcnGNYdgL67P9/jHnzltkLbY=",
-     salt: "dgisaeieruur",
-     tenant_ids: "undefined",
-     otp: {
-         secret: "HZ2F6J3AGNAVSOTV",
-       recovery_code: "b471-8ec0-874a-087f-bccb-cd54",
-    },
-     department_ids: "["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]",
-     custom_data: {
-			"school":	"北京大学",
-			"age":	22
-		},
-     identities: [{
-           ext_idp_id: "6076bacxxxxxxxxd80d993b5",
-         provider: "wechat",
-         type: "openid",
-         user_id_in_idp: "oj7Nq05R-RRaqak0_YlMLnnIwsvg",
-         origin_conn_ids: "["605492ac41xxxxe0362f0707"]",
-      }],
-     options: {
-         keep_password: false,
-       auto_generate_password: false,
-       reset_password_on_first_login: false,
-       department_id_type: "department_id",
-       send_notification: {
-         send_email_notification: false,
-       send_phone_notification: false,
-       app_id: "appid1",
-    },
-       password_encrypt_type: "none",
-    },
   
-)
-```
-
-
 ## 请求响应
 
 类型： `UserSingleRespDto`
@@ -239,7 +163,7 @@ data = management_client.create_user(
 | resetPasswordOnFirstLogin | boolean | 否 | 是否强制要求用户在第一次的时候重置密码   |  |
 | departmentIdType | string | 否 | 此次调用中使用的父部门 ID 的类型   | department_id |
 | sendNotification |  | 否 | 重置密码发送邮件和手机号选项 嵌套类型：<a href="#SendCreateAccountNotificationDto">SendCreateAccountNotificationDto</a>。  |  `{"sendEmailNotification":true,"sendPhoneNotification":true}` |
-| passwordEncryptType | string | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | string | 否 | 密码加密类型，支持使用 RSA256 和国密 SM2 算法进行加密。默认为 `none` 不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
 
 
 ### <a id="SendCreateAccountNotificationDto"></a> SendCreateAccountNotificationDto

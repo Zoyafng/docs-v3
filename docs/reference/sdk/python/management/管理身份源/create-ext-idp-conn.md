@@ -24,31 +24,8 @@
 | logo | string | 否 | - | 身份源图标  | `https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.create_ext_idp_conn(
-     ext_idp_id: "60b49eb83fd80adb96f26e68",
-     type: "ad",
-     identifier: "60b49eb83fd80adb96f26e68",
-     login_only: false,
-     logo: "https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png",
-     display_name: "登录页",
-     fields: {
-			"clientId":	"身份源上的	clientId",
-			"clientSecret":	"身份源上的	clientSecret"
-		},
   
-)
-```
-
-
 ## 请求响应
 
 类型： `ExtIdpConnDetailSingleRespDto`

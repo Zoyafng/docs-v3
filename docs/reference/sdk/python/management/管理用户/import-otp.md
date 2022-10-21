@@ -18,28 +18,8 @@
 | list | <a href="#ImportOtpItemDto">ImportOtpItemDto[]</a> | 是 | - | 参数列表  |  |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.import_otp(
-     list: [{
-           user_id: "xxxx",
-         otp: {
-         secret: "HZ2F6J3AGNAVSOTV",
-       recovery_code: "b471-8ec0-874a-087f-bccb-cd54",
-    },
-      }],
   
-)
-```
-
-
 ## 请求响应
 
 类型： `CommonResponseDto`

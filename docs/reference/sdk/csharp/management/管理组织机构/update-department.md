@@ -17,7 +17,7 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | departmentId | string | 是 | - | 部门系统 ID（为 Authing 系统自动生成，不可修改）  | `60b49eb83fd80adb96f26e68` |
 | organizationCode | string | 是 | - | 组织 Code（organizationCode）  | `steamory` |
-| leaderUserIds | array[] | 否 | - | 部门负责人 ID  | `["60b49eb83fd80adb96f26e68"]` |
+| leaderUserIds | string[] | 否 | - | 部门负责人 ID  | `["60b49eb83fd80adb96f26e68"]` |
 | description | string | 否 | - | 部门描述  | `技术研发部门` |
 | code | string | 否 | - | 部门识别码  | `6229c4deb3e4d8a20b6021ff` |
 | i18n | <a href="#DepartmentI18nDto">DepartmentI18nDto</a> | 否 | - | 多语言设置  | `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
@@ -27,85 +27,60 @@
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"icon":"https://example.com/icon"}` |
 
 
+
+
 ## 示例代码
+
 ```csharp
-
-using Authing.CSharp.SDK.Models;
 using Authing.CSharp.SDK.Services;
-using Authing.CSharp.SDK.Utils;
-using Authing.CSharp.SDK.UtilsImpl;
-using System.Collections.Generic;
-using System.Threading;
+using System;
 using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Example
+namespace ConsoleManagement
 {
-    class Program
+    public class Program
     {
-      private static ManagementClientOptions options;
-      private static string ACCESS_Key_ID = "AUTHING_USERPOOL_ID";
-      private static string ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
 
-      static void Main(string[] args)
-      {
-          MainAsync().GetAwaiter().GetResult();
-      }
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
 
-      private static async Task MainAsync()
-      {
-          options = new ManagementClientOptions()
-          {
-              AccessKeyId = ACCESS_Key_ID,
-              AccessKeySecret = ACCESS_KEY_SECRET,
-          };
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
 
-          ManagementClient managementClient = new ManagementClient(options);
-        
-          DepartmentSingleRespDto  result = await managementClient.UpdateDepartment
-          (  new UpdateDepartmentReqDto{                  OrganizationCode= "steamory" ,
-                  DepartmentId= "60b49eb83fd80adb96f26e68" ,
-                  LeaderUserIds= new List<string>{"60b49eb83fd80adb96f26e68",} ,
-                  Description= "技术研发部门" ,
-                  Code= "6229c4deb3e4d8a20b6021ff" ,
-                I18n= new DepartmentI18nDto
-                {
-                        Name= new LangObject
-                {
-                        Zh-CN= new LangUnit
-                {
-                          Enabled= false ,
-          Value= "false" ,
-        },
-        En-US= new LangUnit
-                {
-                          Enabled= false ,
-          Value= "false" ,
-        },
-        Zh-TW= new LangUnit
-                {
-                          Enabled= false ,
-          Value= "false" ,
-        },
-        Ja-JP= new LangUnit
-                {
-                          Enabled= false ,
-          Value= "false" ,
-        },
-        },
-        },
-                  Name= "开发部" ,
-                  DepartmentIdType= UpdateDepartmentReqDto.departmentIdType.DEPARTMENT_ID ,
-                  ParentDepartmentId= "6229c4deb3e4d8a20b6021ff" ,
-                  CustomData= new UpdateDepartmentReqDto{    icon="https://example.com/icon",} ,
-            }
-          );
+            UpdateDepartmentReqDto reqDto = new UpdateDepartmentReqDto()
+            {
+                ParentDepartmentId = "AUTHING_DEP_ID",
+                OrganizationCode = "AUTHING_ORG_CODE",
+                Code = "AUTHING_DEP_CPDE",
+                Name = "AUTHING_DEP_NAME",
+                Description = "AUTHING_DEP_DESCRIPTION",
+                DepartmentIdType = UpdateDepartmentReqDto.departmentIdType.DEPARTMENT_ID
+
+            };
+
+            DepartmentSingleRespDto dto = await managementClient.UpdateDepartment(reqDto);
+
         }
     }
 }
-
 ```
 
 
+
+  
 ## 请求响应
 
 类型： `DepartmentSingleRespDto`

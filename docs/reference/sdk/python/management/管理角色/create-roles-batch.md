@@ -18,26 +18,8 @@
 | list | <a href="#RoleListItem">RoleListItem[]</a> | 是 | - | 角色列表 数组长度限制：50。 | `[{"code":"my-role-code","namespace":"default","description":"this is  description"}]` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.create_roles_batch(
-     list: [{
-           code: "my-role-code",
-         description: "this is a description about the role",
-         namespace: "default",
-      }],
   
-)
-```
-
-
 ## 请求响应
 
 类型： `IsSuccessRespDto`

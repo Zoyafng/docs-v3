@@ -18,78 +18,8 @@
 | list | <a href="#SetCustomFieldDto">SetCustomFieldDto[]</a> | 是 | - | 自定义字段列表 数组长度限制：50。 |  |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.setCustomFields(
-      dto.SetCustomFieldsReqDto {
-        List: []SetCustomFieldDto{
-                    dto.SetCustomFieldDto
-                    {
-                     TargetType: SetCustomFieldDto.targetType.USER,
-            Key: "school",
-            DataType: SetCustomFieldDto.dataType.ENUM,
-            Label: "学校",
-            Description: "学校",
-            Encrypted: false,
-            IsUnique: false,
-            UserEditable: false,
-            VisibleInAdminConsole: true,
-            VisibleInUserCenter: true,
-          Options: []CustomFieldSelectOption{
-                    dto.CustomFieldSelectOption
-                    {
-                     Value: "hust",
-            Label: "华中科技大学",
-                }
-                  },
-          I18n: dto.CustomFieldI18n {
-                        Label: dto.LangObject {
-                        Zh-CN: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        En-US: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        Zh-TW: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        Ja-JP: dto.LangUnit {
-                          Enabled: false,
-          Value: "false",
-        },
-        },
-        },
-                }
-                  },
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `CustomFieldListRespDto`

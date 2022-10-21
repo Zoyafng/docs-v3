@@ -26,48 +26,8 @@
 | pagination | <a href="#ListWebhooksDto">ListWebhooksDto</a> | 否 | - | 分页  |  |
 
 
-## 示例代码
-```go
-package main
 
-import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
-
-    "fmt"
-)
-
-func main() {
-    options := management.ClientOptions {
-        AccessKeyId:     "AUTHING_USERPOOL_ID",
-        AccessKeySecret: "AUTHING_USERPOOL_SECRET",
-    }
-
-    client, err := management.NewClient(&options)
-    if err != nil {
-        // The exception needs to be handled by the developer.
-    }
-
-    response := client.getAdminAuditLogs(
-      dto.GetAdminAuditLogsDto {
-          RequestId: "xxx",
-          ClientIp: "xxx",
-          OperationType: "create",
-          ResourceType: "user",
-          UserId: "xxx",
-          Success: true,
-          Start: 11,
-          End: 111,
-        Pagination: dto.ListWebhooksDto {
-                          Page: 1,
-          Limit: 10,
-        },
-    }
-  )
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `AdminAuditLogRespDto`

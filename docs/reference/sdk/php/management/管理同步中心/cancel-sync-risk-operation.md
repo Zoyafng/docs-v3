@@ -18,25 +18,8 @@
 | syncRiskOperationIds | number[] | 是 | - | 同步任务风险操作 ID  | `[1,2]` |
 
 
-## 示例代码
-```php
-<?php
 
-require 'vendor/autoload.php';
-
-use Authing\ManagementClient;
-
-$management = new ManagementClient(
-    "AUTHING_USERPOOL_ID",
-    "AUTHING_USERPOOL_SECRET"
-);
-
-$data = $management->cancelSyncRiskOperation(array(
-      "syncRiskOperationIds" => array(1,2),
-
-));
-```
-
+  
 ## 请求响应
 
 类型： `CancelSyncRiskOperationsRespDto`

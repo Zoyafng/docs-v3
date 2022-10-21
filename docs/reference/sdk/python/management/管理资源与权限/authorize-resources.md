@@ -19,31 +19,8 @@
 | namespace | string | 否 | - | 所属权限分组的 code  | `default` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.authorize_resources(
-     namespace: "default",
-     list: [{
-           target_type: "USER",
-         target_identifiers: "["userId1","userId2"]",
-         resources: [{
-           code: "ecs",
-         actions: "["ecs:Stop","ecs:Start"]",
-         resource_type: "DATA",
-      }],
-      }],
   
-)
-```
-
-
 ## 请求响应
 
 类型： `IsSuccessRespDto`

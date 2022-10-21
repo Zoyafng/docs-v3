@@ -18,29 +18,8 @@
 | list | <a href="#CreateNamespacesBatchItemDto">CreateNamespacesBatchItemDto[]</a> | 是 | - | 权限分组列表 数组长度限制：50。 |  |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.createNamespacesBatch({
-    list: [{
-            code: 'my-namespace',
-          name: '我的权限分组',
-          description: '我的权限分组描述',
-      }],
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `IsSuccessRespDto`

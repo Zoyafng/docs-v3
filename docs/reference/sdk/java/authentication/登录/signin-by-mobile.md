@@ -23,7 +23,7 @@
 你可以在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**
 中找到**换取 token 身份验证方式** 配置项：
 
-> 单页 Web 应用和客户端应用隐藏，默认为 `none`，不允许修改；后端应用和 SDK 可以修改此配置项。
+> 单页 Web 应用和客户端应用隐藏，默认为 `none`，不允许修改；后端应用和标准 Web 应用可以修改此配置项。
 
 ![](https://files.authing.co/api-explorer/tokenAuthMethod.jpg)
 
@@ -65,8 +65,8 @@ JS 代码示例：
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | extIdpConnidentifier | string | 是 | - | 外部身份源连接标志符  | `wework` |
 | connection | string | 是 | - | 移动端社会化登录类型：<br>- `apple`: Apple 移动端应用<br>- `wechat`: 微信移动应用<br>- `alipay`: 支付宝移动应用<br>- `wechatwork`: 企业微信移动应用<br>- `wechatwork_agency`: 企业微信移动应用（代开发模式）<br>- `lark_internal`: 飞书移动端企业自建应用<br>- `lark_public`: 飞书移动端应用商店应用<br>- `yidun`: 网易易盾一键登录<br>- `wechat_mini_program_code`: 微信小程序使用 code 登录<br>- `wechat_mini_program_phone `: 微信小程序使用手机号登录<br>- `google`: Google 移动端社会化登录<br>  | `wechat` |
-| wechatPayload | <a href="#SignInByWechatPayloadDto">SignInByWechatPayloadDto</a> | 否 | - | 苹果移动端社会化登录数据，当 `connection` 为 `apple` 的时候必填。  |  |
-| applePayload | <a href="#SignInByApplePayloadDto">SignInByApplePayloadDto</a> | 否 | - | 微信移动端社会化登录数据，当 `connection` 为 `wechat` 的时候必填。  |  |
+| wechatPayload | <a href="#SignInByWechatPayloadDto">SignInByWechatPayloadDto</a> | 否 | - | 苹果移动端社会化登录数据，当 `connection` 为 `wechat` 的时候必填。  |  |
+| applePayload | <a href="#SignInByApplePayloadDto">SignInByApplePayloadDto</a> | 否 | - | 微信移动端社会化登录数据，当 `connection` 为 `apple` 的时候必填。  |  |
 | alipayPayload | <a href="#SignInByAlipayPayloadDto">SignInByAlipayPayloadDto</a> | 否 | - | 支付宝移动端社会化登录数据，当 `connection` 为 `alipay` 的时候必填。  |  |
 | wechatworkPayload | <a href="#SignInByWechatworkDto">SignInByWechatworkDto</a> | 否 | - | 企业微信移动端社会化登录数据，当 `connection` 为 `wechatwork` 的时候必填。  |  |
 | wechatworkAgencyPayload | <a href="#SignInByWechatworkAgencyPayloadDto">SignInByWechatworkAgencyPayloadDto</a> | 否 | - | 企业微信（代开发模式）移动端社会化登录数据，当 `connection` 为 `wechatwork_agency` 的时候必填。  |  |
@@ -81,80 +81,6 @@ JS 代码示例：
 | client_secret | string | 否 | - | 应用密钥。当应用的「换取 token 身份验证方式」配置为 `client_secret_post` 需要传。  | `4203d30e5e915xxxxxx26c31c9adce68` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.client.AuthenticationClient;
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.model.AuthenticationClientOptions;
-
-class Test {
-    public static void main(String[] args) {
-        // 设置初始化参数
-        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
-        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
-        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
-        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
-    
-        // 初始化 AuthenticationClient
-        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
-    
-        
-        SigninByMobileDto request = new SigninByMobileDto();
-        request.setConnection(SigninByMobileDto.connection.WECHAT);
-        request.setExtIdpConnidentifier("wework");
-            WechatPayload= new SignInByWechatPayloadDto(
-                    request.setCode("1660291866076");
-        ),
-            ApplePayload= new SignInByApplePayloadDto(
-                    request.setCode("1660291866076");
-        ),
-            AlipayPayload= new SignInByAlipayPayloadDto(
-                    request.setCode("1660291866076");
-        ),
-            WechatworkPayload= new SignInByWechatworkDto(
-                    request.setCode("1660291866076");
-        ),
-            WechatworkAgencyPayload= new SignInByWechatworkAgencyPayloadDto(
-                    request.setCode("1660291866076");
-        ),
-            LarkPublicPayload= new SignInByLarkPublicPayloadDto(
-                    request.setCode("1660291866076");
-        ),
-            LarkInternalPayload= new SignInByLarkInternalPayloadDto(
-                    request.setCode("1660291866076");
-        ),
-            YidunPayload= new SignInByYidunPayloadDto(
-                    request.setToken("1660291866076");
-    request.setAccessToken("1660291866076");
-        ),
-            WechatMiniProgramCodePayload= new SignInByWechatMiniProgramCodePayloadDto(
-                    request.setEncryptedData("");
-    request.setIv("");
-    request.setCode("");
-        ),
-            WechatMiniProgramPhonePayload= new SignInByWechatMiniProgramPhonePayloadDto(
-                    request.setEncryptedData("");
-    request.setIv("");
-    request.setCode("");
-        ),
-            GooglePayload= new SignInByGooglePayloadDto(
-                    request.setCode("");
-        ),
-            Options= new SignInByMobileOptionsDto(
-                    request.setScope("openid profile");
-    request.setContext(new SignInByMobileOptionsDto.setSource("utm",));
-    request.setTenantId("625783d629f2bd1f5ddddd98c");
-    request.setCustomData(new SignInByMobileOptionsDto.setSchool("pku",.setAge("20",));
-        ),
-        request.setClient_id("6342b8537axxxx047d314109");
-        request.setClient_secret("4203d30e5e915xxxxxx26c31c9adce68");
-        
-        LoginTokenRespDto response = managementClient.signinByMobile(request);
-        System.out.println(response);
-    }
-}
-```
 
 
 ## 请求响应

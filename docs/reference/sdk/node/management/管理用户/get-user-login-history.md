@@ -25,40 +25,8 @@
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
-## 示例代码
-```ts
-import { ManagementClient } from 'authing-node-sdk';
-// 在 Node.js 中引用：
-// const { ManagementClient } = require('authing-node-sdk');
 
-const managementClient = new ManagementClient({
-  accessKeyId: 'AUTHING_USERPOOL_ID',
-  accessKeySecret: 'AUTHING_USERPOOL_SECRET',
-});
-
-(async () => {
-  const result = await managementClient.getUserLoginHistory({
-
-    userId: '6229ffaxxxxxxxxcade3e3d9',
-
-    userIdType: 'user_id',
-
-    appId: 'undefined',
-
-    clientIp: '127.0.0.1',
-
-    start: 1647360000000,
-
-    end: 1648051199000,
-
-    page: 1,
-
-    limit: 10,
- });
-})();
-```
-
-
+  
 ## 请求响应
 
 类型： `UserLoginHistoryPaginatedRespDto`

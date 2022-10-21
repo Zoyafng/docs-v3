@@ -21,25 +21,8 @@
 | newCode | string | 否 | - | 权限分组新的唯一标志符  | `my-new-namespace` |
 
 
-## 示例代码
-```py
-from authing import ManagementClient
 
-management_client = ManagementClient(
-    access_key_id="AUTHING_USERPOOL_ID",
-    access_key_secret="AUTHING_USERPOOL_SECRET",
-)
-
-data = management_client.update_namespace(
-     code: "my-namespace",
-     description: "我的权限分组描述",
-     name: "我的权限分组",
-     new_code: "my-new-namespace",
   
-)
-```
-
-
 ## 请求响应
 
 类型： `UpdateNamespaceRespDto`

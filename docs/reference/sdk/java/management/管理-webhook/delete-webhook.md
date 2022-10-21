@@ -18,30 +18,8 @@
 | webhookIds | string[] | 是 | - | webhookId 数组  | `["xxxx"]` |
 
 
-## 示例代码
-```java
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.client.ManagementClient;
-import cn.authing.sdk.java.model.ManagementClientOptions;
 
-class Test {
-    private static String ACCESS_KEY_ID = "AUTHING_USERPOOL_ID";
-    private static String ACCESS_KEY_SECRET = "AUTHING_USERPOOL_SECRET";
-
-    public static void main(String[] args) {
-        ManagementClientOptions clientOptions = new ManagementClientOptions(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-        ManagementClient managementClient = new ManagementClient(clientOptions);
-    
-        DeleteWebhookDto request = new DeleteWebhookDto();
-        request.setWebhookIds(new List<String>("xxxx",));
-        
-        DeleteWebhookRespDto response = managementClient.deleteWebhook(request);
-        System.out.println(response);
-    }
-}
-```
-
-
+  
 ## 请求响应
 
 类型： `DeleteWebhookRespDto`
