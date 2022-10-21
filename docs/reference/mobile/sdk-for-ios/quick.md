@@ -2,42 +2,35 @@
 
 <LastUpdated/>
 
-## 1. 新建 iOS Swift 工程
+## 操作步骤
+### 步骤 1：新建 iOS 工程
 
 ![](./images/create_project1.png)
 
 ![](./images/create_project2.png)
 
-## 2. 添加 Guard 依赖
+### 步骤 2：在工程中添加 SDK 依赖
 
-在 Xcode 菜单栏右上角选择 *File* 点击 *Add Packages*
+- 在 Xcode 菜单栏右上角选择 **File** 点击 **Add Packages** 。
 
-在 Swift Package 搜索栏输入：https://github.com/Authing/guard-ios
+- 在 Swift Package 搜索栏输入：https://github.com/Authing/authing-ios-sdk-v3 。
 
-依赖规则选择 *Up to Next Major Version 1.0.0*
+- 依赖规则选择 **Up to Next Major Version 1.0.0** 。
 
-![](./images/create_project3.png)
+<br>
 
-![](./images/create_project4.png)
+### 步骤 3：初始化
 
-![](./images/create_project5.png)
+1. 在 AppDelegate 或 SceneDelegate 中加入 import Authing 。
 
-## 3. 初始化
+2. 调用 Authing.start() 参数传入 [应用 ID](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)。
 
-红色部分是需要改动的地方
+> Objective-C 项目需创建 Bridging-Header 桥接文件让 OC 与 Swift 互通。
 
-![](./images/start.png)
+```swift
+import Authing
 
-## 4. 常用操作
-
-### a. 注册/登录并获取用户信息
-
-- [使用 SDK 托管页](./develop.md)
-- [使用 SDK 超组件](./component/)
-- [使用 SDK API](./apis/)
-
-### b. [第三方身份源登录](./social/)
-
-### c. [典型场景](./scenario/)
-
-### d. [私有化部署](./onpremise.md)
+Authing.start(<#AUTHING_APP_ID#>)
+ ```
+ 
+<br>

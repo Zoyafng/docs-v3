@@ -2,14 +2,17 @@
 
 <LastUpdated/>
 
-通过 Guard SDK 提供了丰富完善的认证用户及管理用户 API，来帮你应用完成用户的认证以及管理。
+iOS SDK 提供了丰富完善的认证用户及管理用户 API，来帮你应用完成用户的认证以及管理。
 
-若存粹完全使用 API 的方式来完成登录注册等认证流程，你需要独立构建自己的登录注册等 UI 界面。
+<!-- 若存粹完全使用 API 的方式来完成登录注册等认证流程，你需要独立构建自己的登录注册等 UI 界面。 -->
 
-Authing iOS SDK 提供了以下几个方面的 API：
+我们提供了以下几个方面的 API：
 
-- [核心认证](./authentication/README.md)
-- [标准协议认证](./protocol/README.md)
-- [多因素认证](./mfa/README.md)
-- [扫码认证](./scan/README.md)
-- [工具使用类](./util/README.md)
+* [登录](login.md)
+* [注册](register.md)
+* [用户资料](user.md)
+* [MFA 要素管理](mfa.md)
+* [用户相关资源](user-resources.md)
+* * [消息服务](message.md)
+* [其他](utils.md)
+* [OIDC 模块](oidc.md)

@@ -6688,147 +6688,26 @@ const zhCnNavBar = {
               path: '/reference/mobile/sdk-for-ios/quick'
             },
             {
-              title: '托管页',
-              path: '/reference/mobile/sdk-for-ios/develop'
-            },
-            {
-              title: '超组件',
-              path: '/reference/mobile/sdk-for-ios/component/',
-              children: [
-                {
-                  title: '教程',
-                  children: [
-                    '/reference/mobile/sdk-for-ios/component/tutorial/example',
-                    '/reference/mobile/sdk-for-ios/component/tutorial/basic-login',
-                    '/reference/mobile/sdk-for-ios/component/tutorial/advanced-login',
-                    '/reference/mobile/sdk-for-ios/component/tutorial/refine-login',
-                    '/reference/mobile/sdk-for-ios/component/tutorial/basic-register',
-                    '/reference/mobile/sdk-for-ios/component/tutorial/advanced-register',
-                    '/reference/mobile/sdk-for-ios/component/tutorial/login-to-register',
-                    '/reference/mobile/sdk-for-ios/component/tutorial/reset-password-by-phone',
-                    '/reference/mobile/sdk-for-ios/component/tutorial/reset-password-by-email',
-                    '/reference/mobile/sdk-for-ios/component/tutorial/reset-password-all'
-                  ]
-                },
-                {
-                  title: '基础组件',
-                  children: [
-                    {
-                      title: '应用图标',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/app-logo'
-                    },
-                    {
-                      title: '应用名称',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/app-name'
-                    },
-                    {
-                      title: '帐号输入框',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/account-textfield'
-                    },
-                    {
-                      title: '密码输入框',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/password-textfield'
-                    },
-                    {
-                      title: '邮箱输入框',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/email-textfield'
-                    },
-                    {
-                      title: '电话号码输入框',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/phonenumber-textfield'
-                    },
-                    {
-                      title: '验证码输入框',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/verifycode-textfield'
-                    },
-                    {
-                      title: '获取验证码按钮',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/get-verifycode-button'
-                    },
-                    {
-                      title: '登录按钮',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/login-button'
-                    },
-                    {
-                      title: '错误文本',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/error-label'
-                    },
-                    {
-                      title: '登录方式切换栏',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/login-method-tab'
-                    },
-                    {
-                      title: '登录容器',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/login-container'
-                    },
-                    {
-                      title: '隐私协议',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/privacy-confirm-box'
-                    },
-                    {
-                      title: '注册按钮',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/register-button'
-                    },
-                    {
-                      title: '注册方式切换栏',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/register-method-tab'
-                    },
-                    {
-                      title: '注册容器',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/register-container'
-                    },
-                    {
-                      title: '跳转注册按钮',
-                      path: '/reference/mobile/sdk-for-ios/component/basic/go-register-button'
-                    }
-                  ]
-                },
-                {
-                  title: '社会化组件',
-                  children: [
-                    {
-                      title: '社会化登录列表',
-                      path: '/reference/mobile/sdk-for-ios/component/social/social-login-listview'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
               title: 'APIs',
               path: '/reference/mobile/sdk-for-ios/apis/',
               children: [
-                '/reference/mobile/sdk-for-ios/apis/authentication/',
-                '/reference/mobile/sdk-for-ios/apis/protocol/',
-                '/reference/mobile/sdk-for-ios/apis/mfa/',
-                '/reference/mobile/sdk-for-ios/apis/scan/',
-                '/reference/mobile/sdk-for-ios/apis/util/'
+                '/reference/mobile/sdk-for-ios/apis/login',
+                '/reference/mobile/sdk-for-ios/apis/register',
+                '/reference/mobile/sdk-for-ios/apis/user',
+                '/reference/mobile/sdk-for-ios/apis/mfa',
+                '/reference/mobile/sdk-for-ios/apis/user-resources',
+                '/reference/mobile/sdk-for-ios/apis/message',
+                '/reference/mobile/sdk-for-ios/apis/utils',
+                '/reference/mobile/sdk-for-ios/apis/oidc',
               ]
             },
             {
-              title: '社会化登录',
-              path: '/reference/mobile/sdk-for-ios/social/',
-              children: [
-                '/reference/mobile/sdk-for-ios/social/wechat',
-                '/reference/mobile/sdk-for-ios/social/wecom',
-                '/reference/mobile/sdk-for-ios/social/lark',
-                '/reference/mobile/sdk-for-ios/social/apple',
-                '/reference/mobile/sdk-for-ios/social/oneauth'
-              ]
+              title: '可选参数说明',
+              path: '/reference/mobile/sdk-for-ios/options'
             },
             {
-              title: '典型场景',
-              path: '/reference/mobile/sdk-for-ios/scenario/',
-              children: [
-                '/reference/mobile/sdk-for-ios/scenario/tokens',
-                '/reference/mobile/sdk-for-ios/scenario/webview',
-                '/reference/mobile/sdk-for-ios/scenario/logout',
-                '/reference/mobile/sdk-for-ios/scenario/splash'
-              ]
-            },
-            {
-              title: '私有化部署',
-              path: '/reference/mobile/sdk-for-ios/onpremise'
+              title: '版本记录',
+              path: '/reference/mobile/sdk-for-ios/change-log'
             }
           ]
         },
