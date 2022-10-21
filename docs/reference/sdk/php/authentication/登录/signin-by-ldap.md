@@ -20,64 +20,33 @@
 | options | <a href="#SignInOptionsDto">SignInOptionsDto</a> | 否 | - | 可选参数  | `{"passwordEncryptType":"none"}` |
 
 ## 示例代码
-```java
-import cn.authing.sdk.java.client.AuthenticationClient;
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.model.AuthenticationClientOptions;
 
-class Test {
-    public static void main(String[] args) {
-        // 设置初始化参数
-        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
-        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
-        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
-        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
-    
-        // 初始化 AuthenticationClient
-        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
-    
-        
-        SigninByCredentialsDto request = new SigninByCredentialsDto();
-        request.setConnection(SigninByCredentialsDto.connection.PASSWORD);
-            PasswordPayload= new SignInByPasswordPayloadDto(
-                    request.setPassword("passw0rd");
-    request.setAccount("test");
-    request.setEmail("test@example.com");
-    request.setUsername("test");
-    request.setPhone("188xxxx8888");
-        ),
-            PassCodePayload= new SignInByPassCodePayloadDto(
-                    request.setPassCode("123456");
-    request.setEmail("114114");
-    request.setPhone("188xxxx8888");
-    request.setPhoneCountryCode("+86");
-        ),
-            AdPayload= new SignInByAdPayloadDto(
-                    request.setPassword("passw0rd");
-    request.setSAMAccountName("test");
-        ),
-            LdapPayload= new SignInByLdapPayloadDto(
-                    request.setPassword("passw0rd");
-    request.setSAMAccountName("114114");
-        ),
-            Options= new SignInOptionsDto(
-                    request.setScope("openid profile");
-    request.setClientIp("192.168.0.1");
-    request.setContext(new SignInOptionsDto.setSource("utm",));
-    request.setTenantId("625783d629f2bd1f5ddddd98c");
-    request.setCustomData(new SignInOptionsDto.setSchool("pku",.setAge("20",));
-    request.setAutoRegister(false);
-    request.setCaptchaCode("a8nz");
-    request.setPasswordEncryptType(SignInOptionsDto.passwordEncryptType.NONE);
-        ),
-        request.setClient_id("6342b8537axxxx047d314109");
-        request.setClient_secret("4203d30e5e915xxxxxx26c31c9adce68");
-        
-        LoginTokenRespDto response = managementClient.signin(request);
-        System.out.println(response);
-    }
-}
+```php
+<?php
+
+use Authing\AuthenticationClient;
+
+// 需要替换成你的 Authing 应用 ID
+$AUTHING_APP_ID = "AUTHING_APP_ID";
+// 需要替换成你的 Authing 应用密钥
+$AUTHING_APP_SECRET = "AUTHING_APP_SECRET";
+// 需要替换成你的 Authing 应用域名，如 https://example.authing.cn
+$AUTHING_APP_HOST = "AUTHING_APP_HOST";
+
+// 初始化 AuthenticationClient
+$authenticationClient = new Authing\AuthenticationClient(
+    array(
+        "appId" => $AUTHING_APP_ID,
+        "appSecret" => $AUTHING_APP_SECRET,
+        "appHost" => $AUTHING_APP_HOST,
+    )
+);
+
+$data = $authenticationClient->signInByLdap(
+    "test",
+    "password"
+);
+print_r($data);
 ```
 
 

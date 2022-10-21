@@ -23,77 +23,35 @@
 
 
 ## 示例代码
-```java
-import cn.authing.sdk.java.client.AuthenticationClient;
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.model.AuthenticationClientOptions;
 
-class Test {
-    public static void main(String[] args) {
-        // 设置初始化参数
-        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
-        clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
-        clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-        clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
-        clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
-    
-        // 初始化 AuthenticationClient
-        AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
-    
-        
-        SignUpDto request = new SignUpDto();
-        request.setConnection(SignUpDto.connection.PASSWORD);
-            PasswordPayload= new SignUpByPasswordDto(
-                    request.setPassword("passw0rd");
-    request.setUsername("test");
-    request.setEmail("test@example.com");
-        ),
-            PassCodePayload= new SignUpByPassCodeDto(
-                    request.setPassCode("123456");
-    request.setEmail("114114");
-    request.setPhone("188xxxx8888");
-    request.setPhoneCountryCode("+86");
-        ),
-            Profile= new SignUpProfileDto(
-                    request.setNickname("");
-    request.setCompany("Authing .Inc");
-    request.setPhoto("https://authing.cn/demo.jpg");
-    request.setDevice("iOS");
-    request.setBrowser("Edge");
-    request.setName("Mike");
-    request.setGivenName("Zhou");
-    request.setFamilyName("Jay");
-    request.setMiddleName("Jane");
-    request.setProfile("this is my profile");
-    request.setPreferredUsername("Mike");
-    request.setWebsite("https://authing.cn");
-    request.setGender(SignUpProfileDto.gender.M);
-    request.setBirthdate("2020.2.2");
-    request.setZoneinfo("HongKong");
-    request.setLocale("EN-US");
-    request.setAddress("Hai Dian XX");
-    request.setFormatted("");
-    request.setStreetAddress("Hai Dian Street 1");
-    request.setLocality("BeiJing HaiDian");
-    request.setRegion("china");
-    request.setPostalCode("3500000");
-    request.setCountry("china");
-    request.setEmail("help@authing.cn");
-    request.setPhone("114114114");
-    request.setCustomData(new SignUpProfileDto.setName("H",));
-        ),
-            Options= new SignUpOptionsDto(
-                    request.setClientIp("192.168.0.1");
-    request.setPhonePassCodeForInformationCompletion("1234");
-    request.setEmailPassCodeForInformationCompletion("1234");
-    request.setContext(new SignUpOptionsDto.setPhoneNumber("188xxxx8888",.setPhoneCountryCode("+86",));
-    request.setPasswordEncryptType(SignUpOptionsDto.passwordEncryptType.NONE);
-        ),
-        
-        UserSingleRespDto response = managementClient.signup(request);
-        System.out.println(response);
-    }
-}
+```php
+<?php
+
+use Authing\AuthenticationClient;
+
+// 需要替换成你的 Authing 应用 ID
+$AUTHING_APP_ID = "AUTHING_APP_ID";
+// 需要替换成你的 Authing 应用密钥
+$AUTHING_APP_SECRET = "AUTHING_APP_SECRET";
+// 需要替换成你的 Authing 应用域名，如 https://example.authing.cn
+$AUTHING_APP_HOST = "AUTHING_APP_HOST";
+
+// 初始化 AuthenticationClient
+$authenticationClient = new Authing\AuthenticationClient(
+    array(
+        "appId" => $AUTHING_APP_ID,
+        "appSecret" => $AUTHING_APP_SECRET,
+        "appHost" => $AUTHING_APP_HOST,
+    )
+);
+
+$data = $authenticationClient->signUpByPhonePassCode(
+    "188xxxx8888",
+    "1234",
+    null,
+    null
+);
+print_r($data);
 ```
 
 
