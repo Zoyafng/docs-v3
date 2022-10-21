@@ -1,5 +1,11 @@
 <template>
-  <p v-if="!link && type === 'bread'">
+  <Dropdown v-if="item.links" :list="item.links" :link="item.link">
+    <template #text>{{ item.text }}</template>
+    <template #active>
+      <Tag>{{ item.tag }}</Tag>
+    </template>
+  </Dropdown>
+  <p v-else-if="!link && type === 'bread'">
     {{ item.text }}
   </p>
   <RouterLink
@@ -8,20 +14,19 @@
     :to="link"
     :exact="exact"
     @focusout.native="focusoutAction"
-    @click.native="onRouter"
-  >
+    @click.native="onRouter">
     <slot>
       {{ item.text }}
     </slot>
   </RouterLink>
+
   <a
     v-else
     :href="link"
     class="nav-link external"
     :target="target"
     :rel="rel"
-    @focusout="focusoutAction"
-  >
+    @focusout="focusoutAction">
     <slot>
       {{ item.text }}
     </slot>
@@ -30,79 +35,86 @@
 </template>
 
 <script>
-import { isExternal, isMailto, isTel, ensureExt } from '../util'
+import { isExternal, isMailto, isTel, ensureExt } from '../util';
+import Dropdown from '@theme/components/Dropdown.vue';
+import Tag from '@theme/components/Tag.vue';
 
 export default {
   name: 'NavLink',
 
   props: {
     item: {
-      required: true,
+      required: true
     },
     type: {
       default: ''
     }
   },
 
+  components: {
+    Dropdown,
+    Tag
+  },
+
   computed: {
     link() {
-      return this.item.link ? ensureExt(this.item.link) : ''
+      return this.item.link ? ensureExt(this.item.link) : '';
     },
 
     exact() {
       if (this.$site.locales) {
         return Object.keys(this.$site.locales).some(
           (rootLink) => rootLink === this.link
-        )
+        );
       }
-      return this.link === '/'
+      return this.link === '/';
     },
 
     isNonHttpURI() {
-      return isMailto(this.link) || isTel(this.link)
+      return isMailto(this.link) || isTel(this.link);
     },
 
     isBlankTarget() {
-      return this.target === '_blank'
+      return this.target === '_blank';
     },
 
     isInternal() {
-      return !isExternal(this.link) && !this.isBlankTarget
+      return !isExternal(this.link) && !this.isBlankTarget;
     },
 
     target() {
       if (this.isNonHttpURI) {
-        return null
+        return null;
       }
       if (this.item.target) {
-        return this.item.target
+        return this.item.target;
       }
-      return isExternal(this.link) ? '_blank' : ''
+      return isExternal(this.link) ? '_blank' : '';
     },
 
     rel() {
       if (this.isNonHttpURI) {
-        return null
+        return null;
       }
       if (this.item.rel === false) {
-        return null
+        return null;
       }
       if (this.item.rel) {
-        return this.item.rel
+        return this.item.rel;
       }
-      return this.isBlankTarget ? 'noopener noreferrer' : null
-    },
+      return this.isBlankTarget ? 'noopener noreferrer' : null;
+    }
   },
 
   methods: {
     focusoutAction() {
-      this.$emit('focusout')
+      this.$emit('focusout');
     },
     onRouter() {
       setTimeout(() => {
-        this.$eventBus.$emit('onChangeIndex')
+        this.$eventBus.$emit('onChangeIndex');
       }, 200);
     }
-  },
-}
+  }
+};
 </script>
