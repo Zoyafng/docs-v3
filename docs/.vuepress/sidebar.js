@@ -6815,6 +6815,16 @@ const zhCnNavBar = {
               path: '/reference/mobile/sdk-for-ios/onpremise'
             }
           ]
+        },
+        {
+          title: '微信小程序',
+          path: '/reference/miniapp/',
+          children: [
+            {
+              title: '快速开始',
+              path: '/reference/miniapp/quick'
+            }
+          ]
         }
       ]
     },
