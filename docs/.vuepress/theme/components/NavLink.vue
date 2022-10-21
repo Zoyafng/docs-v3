@@ -1,11 +1,5 @@
 <template>
-  <Dropdown v-if="item.links" :list="item.links" :link="item.link">
-    <template #text>{{ item.text }}</template>
-    <template #active>
-      <Tag>{{ item.tag }}</Tag>
-    </template>
-  </Dropdown>
-  <p v-else-if="!link && type === 'bread'">
+  <p v-if="!link && type === 'bread'">
     {{ item.text }}
   </p>
   <RouterLink
@@ -36,8 +30,6 @@
 
 <script>
 import { isExternal, isMailto, isTel, ensureExt } from '../util';
-import Dropdown from '@theme/components/Dropdown.vue';
-import Tag from '@theme/components/Tag.vue';
 
 export default {
   name: 'NavLink',
@@ -51,10 +43,7 @@ export default {
     }
   },
 
-  components: {
-    Dropdown,
-    Tag
-  },
+  components: {},
 
   computed: {
     link() {
