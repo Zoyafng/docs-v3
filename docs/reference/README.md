@@ -106,8 +106,8 @@
           ],
       },
       {
-        title: "标准 Web 应用",
-        desc: "在标准 Web 应用中快速接入 Authing 能力",
+        title: "SDK",
+        desc: "在 SDK 中快速接入 Authing 能力",
         list: [
             {
               #
