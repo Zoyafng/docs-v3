@@ -21,7 +21,7 @@ Authing Android SDK 包含[**用户认证 API**](./apis/) 模块，SDK 中的用
 | 条目     | 说明                                                         |
 | -------- | ------------------------------------------------------------ |
 | 支持版本 | Android 7.0 +                                                |
-| 仓库地址 | [https://github.com/Authing/authing-android-android](https://github.com/Authing/authing-android-android) |
+| 仓库地址 | [https://github.com/Authing/authing-android-sdk](https://github.com/Authing/authing-android-sdk) |
 
 ## 开始之前
 
