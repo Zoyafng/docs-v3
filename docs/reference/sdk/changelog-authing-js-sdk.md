@@ -4,19 +4,6 @@
 
 完整的过往发布记录可以在 [GitHub](https://github.com/Authing/authing-js-sdk/releases) 查阅。
 
-## Authing JS SDK Ecosystem
-
-|Project|Status|Description
-|-----|----|----|
-|@authing/miniapp|[![npm version](https://badge.fury.io/js/@authing%2Fminiapp.svg)](https://www.npmjs.com/package/@authing/miniapp)|Miniprogram source code|
-|@authing/miniapp-jsencrypt|[![npm version](https://badge.fury.io/js/@authing%2Fminiapp-jsencrypt.svg)](https://www.npmjs.com/package/@authing/miniapp-jsencrypt)|Javascript rsa encrypt for miniapp|
-|@authing/miniapp-sm2encrypt|[![npm version](https://badge.fury.io/js/@authing%2Fminiapp-sm2encrypt.svg)](https://www.npmjs.com/package/@authing/miniapp-sm2encrypt)|Javascript sm2 encrypt for miniapp|
-|@authing/miniapp-taro|[![npm version](https://badge.fury.io/js/@authing%2Fminiapp-taro.svg)](https://www.npmjs.com/package/@authing/miniapp-taro)|<a href="https://docs.authing.cn/v2/reference/sdk-for-weixin-miniapp.html" target="_blank">Authing miniapp SDK for Taro</a>|
-|@authing/miniapp-uniapp|[![npm version](https://badge.fury.io/js/@authing%2Fminiapp-uniapp.svg)](https://www.npmjs.com/package/@authing/miniapp-uniapp)|<a href="https://docs.authing.cn/v2/reference/sdk-for-weixin-miniapp.html" target="_blank">Authing miniapp SDK for uniapp</a>|
-|@authing/miniapp-wx|[![npm version](https://badge.fury.io/js/@authing%2Fminiapp-wx.svg)](https://www.npmjs.com/package/@authing/miniapp-wx)|<a href="https://docs.authing.cn/v2/reference/sdk-for-weixin-miniapp.html" target="_blank">Authing miniapp SDK for Weixin</a>|
-|@authing/web|[![npm version](https://badge.fury.io/js/@authing%2Fweb.svg)](https://www.npmjs.com/package/@authing/web)|<a href="https://docs.authing.cn/v2/reference/sdk-for-sso-spa.html" target="_blank">Authing Browser SDK</a>|
-|@authing/weixin-official-account|[![npm version](https://badge.fury.io/js/@authing%2Fweixin-official-account.svg)](https://www.npmjs.com/package/@authing/weixin-official-account)|<a href="https://docs.authing.cn/v2/reference/sdk-for-weixin-official-account.html" target="_blank">Authing JS SDK for weixin official account</a>|
-
 ## 发布周期
 
 Authing 小程序 SDK 并没有固定的发布周期。
