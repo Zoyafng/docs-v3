@@ -46,14 +46,9 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	$data = $authenticationClient->getAlipayAuthInfo(
-    array(
-        // 需要替换为真实的外部身份源连接标志符
-        "extIdpConnidentifier" => "xxxx",
-    )
-);
-print_r($data);
-
+	    // 需要替换为真实的外部身份源连接标志符
+	reqDto := &dto.GetAlipayAuthinfoDto{ExtIdpConnidentifier: "xxxx"}
+	respDto := client.GetAlipayAuthInfo(reqDto)
 	fmt.Println(respDto)
 }
 

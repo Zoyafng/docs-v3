@@ -50,9 +50,7 @@ $data = $managementClient->revokeApplicationAccess(
             array(
                 "targetType" => "USER",
                 "namespaceCode" => "code1",
-                "inheritByChildren" => true,
                 "targetIdentifier" => array("6229ffaxxxxxxxxcade3e3d9"),
-                "effect" => "ALLOW",
             )
         ),
     )

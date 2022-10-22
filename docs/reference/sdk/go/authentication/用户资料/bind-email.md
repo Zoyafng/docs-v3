@@ -47,13 +47,13 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	// 使用用户的 access_token 初始化 AuthenticationClient，access_token 可以通过登录接口获取
-client.SetAccessToken("USER_ACCESS_TOKEN")
-reqDto := &dto.BindEmailDto{
-    PassCode: "1234",
-    Email:    "test@example.com",
-}
-respDto := client.BindEmail(reqDto)
+	    // 使用用户的 access_token 初始化 AuthenticationClient，access_token 可以通过登录接口获取
+    client.SetAccessToken("USER_ACCESS_TOKEN")
+    reqDto := &dto.BindEmailDto{
+        PassCode: "1234",
+        Email:    "test@example.com",
+    }
+    respDto := client.BindEmail(reqDto)
 	fmt.Println(respDto)
 }
 

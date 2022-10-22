@@ -43,7 +43,7 @@ $managementClient = new Authing\ManagementClient(
 );
 
 $data = $managementClient->deleteExtIdpConn(array(
-    "id" => "60b49eb83fd80adb96f26e68",
+    "id" => "60b49eb83fxxxdb96f26e68",
 ));
 print_r($data);
 

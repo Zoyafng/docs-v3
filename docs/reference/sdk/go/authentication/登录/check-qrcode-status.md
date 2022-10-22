@@ -46,9 +46,8 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	reqDto := &dto.CheckQrcodeStatusDto{QrcodeId: "xxxxx"}
-respDto := client.CheckQrCodeStatus(reqDto)
-
+	    reqDto := &dto.CheckQrcodeStatusDto{QrcodeId: "xxxxx"}
+    respDto := client.CheckQrCodeStatus(reqDto)
 	fmt.Println(respDto)
 }
 

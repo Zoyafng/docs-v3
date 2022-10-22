@@ -52,15 +52,16 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	// 使用用户的 access_token 初始化 $authenticationClient，access_token 可以通过登录接口获取
-$authenticationClient->setAccessToken("ACCESS_TOKEN");
+	  // 使用用户的 access_token 初始化 AuthenticationClient，access_token 可以通过登录接口获取
+  client.SetAccessToken("USER_ACCESS_TOKEN")
 
-$data = $authenticationClient->getLoginHistory(array(
-    # 根据应用 ID 筛选，可选，需要替换成真实的 appId
-    "appId" => "xxxx"
-));
-print_r($data);
-
+    reqDto := &dto.GetMyLoginHistoryDto{
+        // 根据应用 ID 筛选，可选，需要替换成真实的 appId
+		AppId: "xxx",
+		Page:  1,
+		Limit: 10,
+	}
+	respDto := client.GetLoginHistory(reqDto)
 	fmt.Println(respDto)
 }
 

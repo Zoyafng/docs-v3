@@ -49,7 +49,7 @@ $managementClient = new Authing\ManagementClient(
 );
 
 $data = $managementClient->getUserDepartments(array(
-    "userId" => "6351448ebe6d8742dedbc68a"
+    "userId" => "635215b413xxxxf5f63c511a"
 ));
 print_r($data);
 

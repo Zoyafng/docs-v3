@@ -48,11 +48,11 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	$data = $authenticationClient->sendSms(array(
-    "channel" => "CHANNEL_LOGIN",
-    "phoneNumber" => "188xxxx8888"
-));
-print_r($data);
+	    reqDto := &dto.SendSMSDto{
+		Channel:          "CHANNEL_LOGIN",
+		PhoneNumber:      "188xxxx8888",
+	}
+	respDto := client.SendSms(reqDto)
 
 	fmt.Println(respDto)
 }

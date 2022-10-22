@@ -45,14 +45,14 @@ $managementClient = new Authing\ManagementClient(
     )
 );
 
-$data = $managementClient->associationTenantResource(
+$data = $managementClient->associateTenantResource(
     array(
         "code" => "ecs",
         "association" => true,
         // 需要替换成真实的应用 ID
-        "appId" => "60b49eb83fd80adb96f26e68",
+        "appId" => "60b49eb83fxxxdb96f26e68",
         // 需要替换成真实的租户 ID
-        "tenantId" => "60b49eb83fd80adb96f26e68",
+        "tenantId" => "60b49eb83fxxxdb96f26e68",
     )
 );
 print_r($data);

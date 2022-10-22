@@ -118,13 +118,13 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	$data = $authenticationClient->generateLinkExtIdpUrl(array(
-    "ext_idp_conn_identifier" => "xxxxxxxx",
-    "app_id" => "xxxxxx",
-    // 需要替换为用户真实的 id_token
-    "id_token" => "xxxxxx"
-));
-print_r($data);
+	    reqDto := &dto.GenerateLinkExtidpUrlDto{
+		ExtIdpConnIdentifier: "xxxx",
+		AppId:                "xxxx",
+        // 需要替换为用户真实的 id_token
+		IdToken:              "xxxx",
+	}
+	respDto := client.GenerateLinkExtIdpUrl(reqDto)
 
 	fmt.Println(respDto)
 }

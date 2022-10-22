@@ -29,6 +29,42 @@
 
 
 
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/dto"
+	"github.com/Authing/authing-golang-sdk/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.ListDepartmentMembersDto{
+		// 需要替换成真实的 organizationCode
+		OrganizationCode: "steamory",
+		DepartmentId:     "root",
+	}
+	respDto := client.ListDepartmentMembers(reqDto)
+	fmt.Println(respDto)
+}
+```
+
+
+
   
 ## 请求响应
 

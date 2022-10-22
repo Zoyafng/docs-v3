@@ -49,9 +49,9 @@ $managementClient = new Authing\ManagementClient(
 );
 
 $data = $managementClient->createExtIdpConn(array(
-    "extIdpId" => "60b49eb83fd80adb96f26e68",
+    "extIdpId" => "60b49eb83fxxxdb96f26e68",
     "type" => "ad",
-    "identifier" => "60b49eb83fd80adb96f26e68",
+    "identifier" => "60b49eb83fxxxdb96f26e68",
     "loginOnly" => false,
     "logo" => "https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png",
     "displayName" => "登录页",

@@ -47,9 +47,9 @@ $managementClient = new Authing\ManagementClient(
 );
 
 $data = $managementClient->changeExtIdpConnState(array(
-    "id" => "60b49eb83fd80adb96f26e68",
+    "id" => "60b49eb83fxxxdb96f26e68",
     "enabled" => false,
-    "appId" => "60b49eb83fd80adb96f26e68",
+    "appId" => "60b49eb83fxxxdb96f26e68",
 ));
 print_r($data);
 

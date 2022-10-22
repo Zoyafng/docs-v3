@@ -49,14 +49,14 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	$data = $authenticationClient->decryptWechatMiniProgramData(array(
-    // 需要替换成微信小程序的外部身份源连接标志符
-    "extIdpConnidentifier" => "xxxxx",
-    "code" => "xxxxx",
-    "iv" => "xxxx",
-    "encryptedData" => "xxxxx"
-));
-print_r($data);
+	    reqDto := &dto.DecryptWechatMiniProgramDataDto{
+        Code:                 "xxxx",
+        Iv:                   "xxxx",
+        EncryptedData:        "xxxx",
+        // 需要替换成微信小程序的外部身份源连接标志符
+        ExtIdpConnidentifier: "xxxx",
+    }
+    respDto := client.DecryptWechatMiniProgramData(reqDto)
 
 	fmt.Println(respDto)
 }

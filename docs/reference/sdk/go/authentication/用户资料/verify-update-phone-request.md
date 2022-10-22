@@ -47,18 +47,17 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	// 使用用户的 access_token 初始化 $authenticationClient，access_token 可以通过登录接口获取
-$authenticationClient->setAccessToken("ACCESS_TOKEN");
+	    // 使用用户的 access_token 初始化 AuthenticationClient，access_token 可以通过登录接口获取
+    client.SetAccessToken("USER_ACCESS_TOKEN")
 
-$data = $authenticationClient->verifyUpdatePhoneRequest(array(
-    "verifyMethod" => "PHONE_PASSCODE",
-    "phonePassCodePayload" => array(
-        "newPhoneNumber" => "188xxxx8888",
-        "newPhonePassCode" => "1234"
-    )
-));
-print_r($data);
-
+    reqDto := &dto.VerifyUpdatePhoneRequestDto{
+		PhonePassCodePayload: dto.UpdatePhoneByPhonePassCodeDto{
+			NewPhoneNumber:   "188xxxx8888",
+			NewPhonePassCode: "1234",
+		},
+		VerifyMethod: "PHONE_PASSCODE",
+	}
+	respDto := client.VerifyUpdatePhoneRequest(reqDto)
 	fmt.Println(respDto)
 }
 

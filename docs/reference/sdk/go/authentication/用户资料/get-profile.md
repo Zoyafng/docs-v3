@@ -48,12 +48,15 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	// 使用用户的 access_token 初始化 $authenticationClient，access_token 可以通过登录接口获取
-$authenticationClient->setAccessToken("USER_ACCESS_TOKEN");
+	  // 使用用户的 access_token 初始化 AuthenticationClient，access_token 可以通过登录接口获取
+  client.SetAccessToken("USER_ACCESS_TOKEN")
 
-$data = $authenticationClient->getProfile();
-print_r($data);
-
+  reqDto := &dto.GetProfileDto{
+		WithCustomData:    false,
+		WithIdentities:    false,
+		WithDepartmentIds: false,
+	}
+	respDto := client.GetProfile(reqDto)
 	fmt.Println(respDto)
 }
 

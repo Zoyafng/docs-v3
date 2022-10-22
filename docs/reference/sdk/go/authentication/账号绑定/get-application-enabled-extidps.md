@@ -45,9 +45,7 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	$data = $authenticationClient->getApplicationEnabledExtIdps();
-print_r($data);
-
+	  respDto := client.GetApplicationEnabledExtIdps()
 	fmt.Println(respDto)
 }
 

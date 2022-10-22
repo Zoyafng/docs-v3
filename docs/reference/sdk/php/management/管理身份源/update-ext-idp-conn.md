@@ -47,7 +47,7 @@ $managementClient = new Authing\ManagementClient(
 );
 
 $data = $managementClient->updateExtIdpConn(array(
-    "id" => "60b49eb83fd80adb96f26e68",
+    "id" => "60b49eb83xxxxadb96f26e68",
     "displayName" => "exampleName",
     "fields" => array(
         "clientId"=> "clientId"

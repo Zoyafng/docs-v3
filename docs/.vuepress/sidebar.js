@@ -39,6 +39,7 @@ const zhCnNavBar = {
         // 自动生成粘贴开始
 
 
+
         {
           "title": "Java",
           "path": "/reference/sdk/java/",
@@ -6477,6 +6478,7 @@ const zhCnNavBar = {
             }
           ]
         },
+
         // 自动生成粘贴结束
         {
           title: 'Android',
@@ -6485,7 +6487,7 @@ const zhCnNavBar = {
             {
               title: '快速开始',
               path: '/reference/mobile/sdk-for-android/quick'
-            },       
+            },
             {
               title: 'APIs',
               path: '/reference/mobile/sdk-for-android/apis/',
@@ -6535,7 +6537,7 @@ const zhCnNavBar = {
                         {
                           "title": "使用移动端社会化登录",
                           "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/signin-by-mobile"
-                        },              
+                        },
                         {
                           "title": "查询二维码状态",
                           "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/check-qrcode-status"
@@ -6756,11 +6758,11 @@ const zhCnNavBar = {
                   ]
                 },
               ]
-            },           
+            },
             {
               title: '私有化部署',
               path: '/reference/mobile/sdk-for-android/onpremise'
-            }        
+            }
           ]
         },
         {

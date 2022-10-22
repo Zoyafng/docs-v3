@@ -96,15 +96,12 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	$data = $authenticationClient->exchangeTokenSetWithQrCodeTicket(
-    array(
-        "ticket" => "xxxx",
-        "client_id" => $AUTHING_APP_ID,
-        "client_secret" => $AUTHING_APP_SECRET
-    )
-);
-print_r($data);
-
+	    reqDto := &dto.ExchangeTokenSetWithQRcodeTicketDto{
+        Ticket:       "xxxx",
+        ClientId:     "AUTHING_APP_ID",
+        ClientSecret: "AUTHING_APP_SECRET",
+    }
+    respDto := client.ExchangeTokenSetWithQrCodeTicket(reqDto)
 	fmt.Println(respDto)
 }
 

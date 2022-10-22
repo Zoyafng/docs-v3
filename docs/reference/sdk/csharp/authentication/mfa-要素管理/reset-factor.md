@@ -59,7 +59,7 @@ namespace ConsoleApplication
 
             var lists = await authenticationClient.ListEnrolledFactors();
             var target = lists.Data.FirstOrDefault(i => i.FactorId.Contains("email"));
-            var res = await authenticationClient.ResetFactor(new RestFactorDto { FactorId = target.FactorId });
+            var res = await authenticationClient.ResetFactor(new ResetFactorDto { FactorId = target.FactorId });
         }
     }
 }

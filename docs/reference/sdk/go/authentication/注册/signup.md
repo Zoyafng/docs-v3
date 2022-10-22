@@ -57,17 +57,14 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	$data = $authenticationClient->signUp(
-    array(
-        "connection" => "PASSWORD",
-        "passwordPayload" => array(
-            "username" => "test",
-            "password" => "passw0rd"
-        )
-    )
-);
-print_r($data);
-
+	    reqDto := &dto.SignUpDto{
+		Connection: "PASSWORD",
+		PasswordPayload: dto.SignUpByPasswordDto{
+			Password: "test",
+			Username: "test",
+		},
+	}
+	respDto := client.SignUp(reqDto)
 	fmt.Println(respDto)
 }
 

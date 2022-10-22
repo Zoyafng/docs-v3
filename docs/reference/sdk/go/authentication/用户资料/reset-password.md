@@ -48,16 +48,15 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	// 使用用户的 access_token 初始化 $authenticationClient，access_token 可以通过登录接口获取
-$authenticationClient->setAccessToken("ACCESS_TOKEN");
+	    // 使用用户的 access_token 初始化 AuthenticationClient，access_token 可以通过登录接口获取
+    client.SetAccessToken("USER_ACCESS_TOKEN")
 
-$data = $authenticationClient->resetPassword(array(
-    // 需要替换成 verifyResetPasswordRequest 接口返回的真实 passwordResetToken
-    "passwordResetToken" => "xxxx",
-    "password" => "passw0rd"
-));
-print_r($data);
-
+    reqDto := &dto.ResetPasswordDto{
+		Password:           "xxxx",
+		// 需要替换成 verifyResetPasswordRequest 接口返回的真实 PasswordResetToken
+		PasswordResetToken: "xxxx",
+	}
+	respDto := client.ResetPassword(reqDto)
 	fmt.Println(respDto)
 }
 

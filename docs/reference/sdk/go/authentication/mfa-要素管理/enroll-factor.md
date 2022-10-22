@@ -48,19 +48,17 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	// 使用用户的 access_token 初始化 $authenticationClient，access_token 可以通过登录接口获取
-$authenticationClient->setAccessToken("ACCESS_TOKEN");
+	    // 使用用户的 access_token 初始化 AuthenticationClient，access_token 可以通过登录接口获取
+    client.SetAccessToken("USER_ACCESS_TOKEN")
 
-$data = $authenticationClient->enrollFactor(array(
-    "factorType" => "SMS",
-    // 需要替换成 sendEnrollFactorRequest 接口返回的真实 enrollmentToken
-    "enrollmentToken" => "xxxxxx",
-    "enrollmentData" => array(
-        "passCode" => "1234"
-    )
-));
-print_r($data);
-
+    print_r($data);
+    reqDto := &dto.EnrollFactorDto{
+        EnrollmentData:  dto.EnrollFactorEnrollmentDataDto{PassCode: "1234"},
+        // 需要替换成 sendEnrollFactorRequest 接口返回的真实 EnrollmentToken
+        EnrollmentToken: "xxxx",
+        FactorType:      "SMS",
+    }
+    respDto := client.EnrollFactor(reqDto)
 	fmt.Println(respDto)
 }
 

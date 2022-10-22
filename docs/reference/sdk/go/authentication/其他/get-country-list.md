@@ -45,8 +45,7 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	$data = $authenticationClient->getCountryList();
-print_r($data);
+	  respDto := client.GetCountryList()
 
 	fmt.Println(respDto)
 }

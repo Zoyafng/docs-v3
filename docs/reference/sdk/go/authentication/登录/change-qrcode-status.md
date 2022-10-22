@@ -47,14 +47,14 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	// 使用用户的 access_token 初始化 AuthenticationClient，access_token 可以通过登录接口获取
-client.SetAccessToken("USER_ACCESS_TOKEN")
+	    // 使用用户的 access_token 初始化 AuthenticationClient，access_token 可以通过登录接口获取
+    client.SetAccessToken("USER_ACCESS_TOKEN")
 
-reqDto := &dto.ChangeQRCodeStatusDto{
-    Action:   "CONFIRM",
-    QrcodeId: "xxxxx",
-}
-respDto := client.ChangeQrCodeStatus(reqDto)
+    reqDto := &dto.ChangeQRCodeStatusDto{
+        Action:   "CONFIRM",
+        QrcodeId: "xxxxx",
+    }
+    respDto := client.ChangeQrCodeStatus(reqDto)
 
 	fmt.Println(respDto)
 }

@@ -23,6 +23,50 @@
 
 
 
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/dto"
+	"github.com/Authing/authing-golang-sdk/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.GetUserBatchDto{
+		// 通过用户 ID 批量获取用户信息
+		// 替换成真实的用户 ID
+		UserIds:           "635215b413xxxxf5f63c511a",
+	}
+	respDto := client.GetUserBatch(reqDto)
+
+	reqDto := &dto.GetUserBatchDto{
+		// 通过邮箱批量获取用户信息
+		// 替换成真实的邮箱
+		UserIds:    "test@example.com",
+		UserIdType: "email",
+	}
+	respDto := client.GetUserBatch(reqDto)
+	fmt.Println(respDto)
+}
+```
+
+
+
   
 ## 请求响应
 

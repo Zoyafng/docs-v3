@@ -47,12 +47,12 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	$data = $authenticationClient->getWechatMpAccessToken(array(
-    "appId" => "xxxxx",
-    "appSecret" => "xxxxx",
-));
-print_r($data);
-
+	    reqDto := &dto.GetWechatAccessTokenDto{
+		AppSecret: "xxxx",
+		AppId:     "xxxx",
+	}
+	respDto := client.GetWechatMpAccessToken(reqDto)
+	fmt.Println(respDto)
 	fmt.Println(respDto)
 }
 

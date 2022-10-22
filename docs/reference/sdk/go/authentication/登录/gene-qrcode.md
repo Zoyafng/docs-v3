@@ -50,14 +50,11 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	$data = $authenticationClient->geneQrCode(
-    array(
-        // 需要替换为真实的外部身份源连接标志符
-        "type" => "WECHAT_OFFICIAL_ACCOUNT",
-    )
-);
-print_r($data);
-
+	    reqDto := &dto.GenerateQrcodeDto{
+    // 需要替换为真实的外部身份源连接标志符
+		Type:         "WECHAT_OFFICIAL_ACCOUNT",
+	}
+	respDto := client.GeneQrCode(reqDto)
 	fmt.Println(respDto)
 }
 

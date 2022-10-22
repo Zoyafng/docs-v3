@@ -109,19 +109,15 @@ func main() {
 	if err != nil {
 		// The exception needs to be handled by the developer.
 	}
-	$data = $authenticationClient->signInByMobile(
-    array(
+	    reqDto := &dto.SigninByMobileDto{
         // 需要替换为真实的外部身份源连接标志符
-        "extIdpConnidentifier" => "xxxx",
-        "connection" => "apple",
-        "applePayload" => array(
-            "code" => "xxx"
-        ),
-        "client_id" => $AUTHING_APP_ID,
-        "client_secret" => $AUTHING_APP_SECRET
-    )
-);
-print_r($data);
+		ExtIdpConnidentifier: "xxx",
+		Connection:           "apple",
+		ApplePayload:         dto.SignInByApplePayloadDto{Code: "xxx"},
+		ClientId:             "AUTHING_APP_ID",
+		ClientSecret:         "AUTHING_APP_SECRET",
+	}
+	respDto := client.SignInByMobile(reqDto)
 
 	fmt.Println(respDto)
 }
