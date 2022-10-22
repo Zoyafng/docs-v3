@@ -39,7 +39,7 @@ npm install authing-node-sdk
 yarn add authing-node-sdk
 ```
 
-## 使用认证模块
+## 使用用户认证模块
 
 !!!include(reference/sdk/common/authentication_client_desc.md)!!!
 
@@ -79,7 +79,7 @@ const authenticationClient = new AuthenticationClient({
 - `tokenEndPointAuthMethod`: 获取 token 端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**换取 token 身份验证方式** 配置保持一致。
 - `introspectionEndPointAuthMethod`: 校验 token 状态端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**检验 token 身份验证方式** 配置保持一致。
 - `revocationEndPointAuthMethod`: 撤回 token 端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**撤回 token 身份验证方式** 配置保持一致。
-- `timeout`: 请求超时时间，可选，位为毫秒，默认为 10000（10 秒）。
+- `timeout`: 请求超时时间，可选，单位为毫秒，默认为 10000（10 秒）。
 - `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN、en-US、ja-JP 和 zh-TW，默认为 zh-CN。
 
 

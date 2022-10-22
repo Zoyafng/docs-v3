@@ -29,7 +29,7 @@ meta:
 go get -u github.com/Authing/authing-golang-sdk
 ```
 
-## 使用认证模块
+## 使用用户认证模块
 
 !!!include(reference/sdk/common/authentication_client_desc.md)!!!
 
@@ -92,7 +92,7 @@ func main() {
 - `TokenEndPointAuthMethod`: 获取 token 端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**换取 token 身份验证方式** 配置保持一致。
 - `IntrospectionEndPointAuthMethod`: 校验 token 状态端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**检验 token 身份验证方式** 配置保持一致。
 - `RevocationEndPointAuthMethod`: 撤回 token 端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**撤回 token 身份验证方式** 配置保持一致。
-- `Timeout`: 请求超时时间，可选，位为毫秒，默认为 10000（10 秒）。
+- `Timeout`: 请求超时时间，可选，单位为毫秒，默认为 10000（10 秒）。
 - `InsecureSkipVerify`: 是否跳过 HTTPS 证书检测，默认为 false；如果是私有化部署的场景且证书不被信任，可以设置为 true。
 - `Lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN、en-US、ja-JP 和 zh-TW，默认为 zh-CN。
 
@@ -300,7 +300,7 @@ func main() {
 
 - `AccessKeyId`: Authing 用户池 ID 或者协作管理员的 Access Key ID。
 - `AccessKeySecret`: Authing 用户池密钥或者协作管理员的 Access Key Secret。
-- `Timeout`: 请求超时时间，可选，位为毫秒，默认为 10000（10 秒）。
+- `Timeout`: 请求超时时间，可选，单位为毫秒，默认为 10000（10 秒）。
 - `Host`: Authing 服务器地址，默认为 `https://api.authing.cn`。如果你使用的是 Authing 公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填，格式如下: https://authing-api.my-authing-service.com（最后不带斜杠 /）。
 - `Lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN、en-US、ja-JP 和 zh-TW，默认为 zh-CN。
 
