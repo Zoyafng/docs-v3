@@ -20,7 +20,42 @@
  | isIntegrateApp | boolean  | 否 | - | 是否为集成应用  |  |
  | isSelfBuiltApp | boolean  | 否 | - | 是否为自建应用  |  |
  | ssoEnabled | boolean  | 否 | - | 是否开启单点登录  |  |
- | keyword | string  | 否 | - | 模糊搜索字符串  | `test` |
+ | keywords | string  | 否 | - | 模糊搜索字符串  | `test` |
+
+
+
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/dto"
+	"github.com/Authing/authing-golang-sdk/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.ListApplicationSimpleInfoDto{
+		Page:           1,
+		Limit:          10,
+	}
+	respDto := client.ListApplicationSimpleInfo(reqDto)
+	fmt.Println(respDto)
+}
+```
 
 
 

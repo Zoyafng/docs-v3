@@ -31,9 +31,9 @@
 use Authing\ManagementClient;
 
 // 需要替换成你的 Authing Access Key ID
-$AUTHING_ACCESS_KEY_ID = "635124373e1cd646feecbeb9";
+$AUTHING_ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
 // 需要替换成你的 Authing Access Key Secret
-$AUTHING_ACCESS_KEY_SECRET = "c3eaf45f7b467003158fd8615367ba6e";
+$AUTHING_ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
 
 // 初始化 ManagementClient
 $managementClient = new Authing\ManagementClient(
@@ -45,14 +45,14 @@ $managementClient = new Authing\ManagementClient(
     )
 );
 
-$data = $managementClient->associationTenantResource(
+$data = $managementClient->associateTenantResource(
     array(
         "code" => "ecs",
         "association" => true,
         // 需要替换成真实的应用 ID
-        "appId" => "60b49eb83fd80adb96f26e68",
+        "appId" => "60b49eb83fxxxdb96f26e68",
         // 需要替换成真实的租户 ID
-        "tenantId" => "60b49eb83fd80adb96f26e68",
+        "tenantId" => "60b49eb83fxxxdb96f26e68",
     )
 );
 print_r($data);

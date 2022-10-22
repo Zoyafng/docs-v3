@@ -21,6 +21,46 @@
 
 
 
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/dto"
+	"github.com/Authing/authing-golang-sdk/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.RevokeRoleDto{
+		Targets: []dto.TargetDto{
+			{
+				TargetType: "USER",
+				TargetIdentifier: "60b49eb83fxxxdb96f26e68"
+			},
+		},
+		Code: "manager",
+	}
+	respDto := client.RevokeRole(reqDto)
+	fmt.Println(respDto)
+}
+```
+
+
+
   
 ## 请求响应
 

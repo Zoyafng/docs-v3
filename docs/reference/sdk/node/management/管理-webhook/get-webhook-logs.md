@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-通过指定 webhookId，可选 page 和 limit 来获取 webhook 日志
+通过指定 webhookId，可选 page 和 limit 来获取 webhook 日志,如果 webhookId 不存在,不返回报错信息
 
 ## 请求参数
 
@@ -18,6 +18,38 @@
 | webhookId | string | 是 | - | Webhook ID  | `6229ffaxxxxxxxxcade3e3d9` |
 | page | number | 否 | 1 | 当前页数，从 1 开始  | `1` |
 | limit | number | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
+
+
+
+
+## 示例代码
+
+```ts
+import { ManagementClient, Models } from 'authing-node-sdk';
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  // 需要替换成你的 Authing Access Key ID
+  accessKeyId: 'AUTHING_ACCESS_KEY_ID',
+  // 需要替换成你的 Authing Access Key Secret
+  accessKeySecret: 'AUTHING_ACCESS_KEY_SECRET',
+  // 如果是私有化部署的客户，需要设置 Authing 服务域名
+  // host: 'https://api.your-authing-service.com'
+});
+
+(async () => {
+
+  const result = await managementClient.getWebhookLogs({
+    page: 1,
+    limit: 10,
+    webhookId: '6229ffaxxxxxxxxcade3e3d9'
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
 
 
 

@@ -25,6 +25,45 @@
 
 
 
+
+## 示例代码
+
+```ts
+import { ManagementClient, Models } from 'authing-node-sdk';
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  // 需要替换成你的 Authing Access Key ID
+  accessKeyId: 'AUTHING_ACCESS_KEY_ID',
+  // 需要替换成你的 Authing Access Key Secret
+  accessKeySecret: 'AUTHING_ACCESS_KEY_SECRET',
+  // 如果是私有化部署的客户，需要设置 Authing 服务域名
+  // host: 'https://api.your-authing-service.com'
+});
+
+(async () => {
+
+  const result = await managementClient.createExtIdpConn({
+    extIdpId: '6229ffaxxxxxxxxcade3e3d9',
+    type: Models.CreateExtIdpConnDto.type.AD,
+    identifier: '60b49eb83xxxxxxb96f26e68',
+    loginOnly: false,
+    logo: 'https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png',
+    displayName: '登录页',
+    fields: {
+      clientId: '身份源上的	clientId',
+      clientSecret: '身份源上的	clientSecret'
+    }
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
+
+
+
   
 ## 请求响应
 

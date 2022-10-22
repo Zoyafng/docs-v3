@@ -54,6 +54,41 @@
 
 
 
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/dto"
+	"github.com/Authing/authing-golang-sdk/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.UpdateUserReqDto{
+		UserId:   "635215b413xxxxf5f63c511a",
+		Nickname: "张三",
+	}
+	respDto := client.UpdateUser(reqDto)
+	fmt.Println(respDto)
+}
+```
+
+
+
   
 ## 请求响应
 
@@ -81,6 +116,7 @@
     "createdAt": "2022-07-03T02:20:30.000Z",
     "updatedAt": "2022-07-03T02:20:30.000Z",
     "status": "Activated",
+    "workStatus": "Active",
     "externalId": "10010",
     "email": "test@example.com",
     "phone": "188xxxx8888",
@@ -161,6 +197,7 @@
 | createdAt | string | 是 | 创建时间   |  `2022-07-03T02:20:30.000Z` |
 | updatedAt | string | 是 | 更新时间   |  `2022-07-03T02:20:30.000Z` |
 | status | string | 是 | 账户当前状态   | Suspended |
+| workStatus | string | 是 | 账户当前工作状态   | Closed |
 | externalId | string | 否 | 第三方外部 ID   |  `10010` |
 | email | string | 否 | 邮箱，不区分大小写   |  `test@example.com` |
 | phone | string | 否 | 手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。   |  `188xxxx8888` |

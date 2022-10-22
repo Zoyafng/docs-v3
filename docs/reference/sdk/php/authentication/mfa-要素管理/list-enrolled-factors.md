@@ -19,6 +19,39 @@ Authing 目前支持四种类型的 MFA 认证要素：手机短信、邮件验�
 
 
 
+## 示例代码
+
+```php
+<?php
+
+use Authing\AuthenticationClient;
+
+// 需要替换成你的 Authing 应用 ID
+$AUTHING_APP_ID = "AUTHING_APP_ID";
+// 需要替换成你的 Authing 应用密钥
+$AUTHING_APP_SECRET = "AUTHING_APP_SECRET";
+// 需要替换成你的 Authing 应用域名
+$AUTHING_APP_HOST = "AUTHING_APP_HOST";
+
+// 初始化 AuthenticationClient
+$authenticationClient = new Authing\AuthenticationClient(
+    array(
+        "appId" => $AUTHING_APP_ID,
+        "appSecret" => $AUTHING_APP_SECRET,
+        "appHost" => $AUTHING_APP_HOST,
+    )
+);
+
+// 使用用户的 access_token 初始化 $authenticationClient，access_token 可以通过登录接口获取
+$authenticationClient->setAccessToken("ACCESS_TOKEN");
+
+$data = $authenticationClient->listEnrolledFactors();
+print_r($data);
+
+```
+
+
+
 ## 请求响应
 
 类型： `ListEnrolledFactorsRespDto`

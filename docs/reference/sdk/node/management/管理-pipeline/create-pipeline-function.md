@@ -35,6 +35,52 @@
 
 
 
+
+## 示例代码
+
+```ts
+import { ManagementClient, Models } from 'authing-node-sdk';
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  // 需要替换成你的 Authing Access Key ID
+  accessKeyId: 'AUTHING_ACCESS_KEY_ID',
+  // 需要替换成你的 Authing Access Key Secret
+  accessKeySecret: 'AUTHING_ACCESS_KEY_SECRET',
+  // 如果是私有化部署的客户，需要设置 Authing 服务域名
+  // host: 'https://api.your-authing-service.com'
+});
+
+(async () => {
+
+  const result = await managementClient.createPipelineFunction({
+    funcName: '每周日凌晨 3-6 点系统维护禁止注册/登录',
+    funcDescription: '每周日凌晨 3-6 点系统维护禁止注册/登录。',
+    scene: Models.CreatePipelineFunctionDto.scene.PRE_REGISTER,
+    sourceCode: `async function pipe(user, context, callback) {
+  const date = new Date();
+  const d = date.getDay();
+  const n = date.getHours();
+  // 每周日凌晨 3-6 点禁止注册
+  if (d === 0 && (3 <= n && n <= 6)) {
+    return callback(new Error('系统维护中，暂时停止注册！'));
+  }
+  callback(null, user, context)
+}`,
+    isAsynchronous: false,
+    timeout: 3,
+    terminateOnTimeout: false,
+    enabled: false
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
+
+
+
   
 ## 请求响应
 

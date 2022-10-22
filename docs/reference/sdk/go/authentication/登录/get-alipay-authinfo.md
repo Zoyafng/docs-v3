@@ -20,6 +20,43 @@
 
 
 
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/authentication"
+	"github.com/Authing/authing-golang-sdk/dto"
+)
+
+func main() {
+	options := &authentication.AuthenticationClientOptions{
+        // 需要替换成你的 Authing 应用 ID
+		AppId:       "AUTHING_APP_ID",
+        // 需要替换成你的 Authing 应用密钥
+		AppSecret:   "AUTHING_APP_SECRET",
+        // 需要替换成你的 Authing 应用域名
+		AppHost:     "AUTHING_APP_HOST",
+        // 需要替换成你的 Authing 应用回调地址
+		RedirectUri: "AUTHING_APP_REDIRECT_URI",
+	}
+	client, err := authentication.NewAuthenticationClient(options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+	    // 需要替换为真实的外部身份源连接标志符
+	reqDto := &dto.GetAlipayAuthinfoDto{ExtIdpConnidentifier: "xxxx"}
+	respDto := client.GetAlipayAuthInfo(reqDto)
+	fmt.Println(respDto)
+}
+
+```
+
+
+
+
 ## 请求响应
 
 类型： `GetAlipayAuthInfoRespDto`
