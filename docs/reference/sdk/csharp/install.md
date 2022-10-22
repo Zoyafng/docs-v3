@@ -104,7 +104,7 @@ namespace ConsoleApplication
 - `introspectionEndPointAuthMethod`: 校验 token 状态端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**检验 token 身份验证方式** 配置保持一致。
 - `revocationEndPointAuthMethod`: 撤回 token 端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**撤回 token 身份验证方式** 配置保持一致。
 - `timeout`: 请求超时时间，可选，位为毫秒，默认为 10000（10 秒）。
-- `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN 和 en-US，默认为 zh-CN。
+- `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN、en-US、ja-JP 和 zh-TW，默认为 zh-CN。
 
 
 </details>
@@ -329,7 +329,7 @@ namespace ConsoleManagement
 - `accessKeySecret`: Authing 用户池密钥;
 - `timeout`: 超时时间，单位为 ms，默认为 10000 ms;
 - `host`: Authing 服务器地址，默认为 `https://api.authing.cn`。如果你使用的是 Authing 公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填，格式如下: https://authing-api.my-authing-service.com（最后不带斜杠 /）。
-- `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN 和 en-US，默认为 zh-CN。
+- `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN、en-US、ja-JP 和 zh-TW，默认为 zh-CN。
 
 </details>
 
@@ -416,8 +416,6 @@ namespace ConsoleManagement
 }
 ```
 
-完整的接口列表，你可以在 [Authing Open API](https://api.authing.cn/openapi/) 和 [SDK 文档](https://authing-open-api.readme.io/reference/csharp) 中获取。
-
 ## 错误处理
 
 Authing CSharp SDK 方法在请求接口时，不会抛出 Exception（网络错误除外），除非特殊说明，所有的方法返回值都会包含两个状态码：`statusCode` 和 `apiCode`：
@@ -428,7 +426,7 @@ Authing CSharp SDK 方法在请求接口时，不会抛出 Exception（网络错
 - `apiCode`: `apiCode` 为业务状态码，每个 `apiCode` 具备特定的错误含义，具体的 `apiCode` 列表见下文。`apiCode` 只会在 `statusCode` 非 200 且错误原因具备业务含义时才会返回。
 - `requestId`: 请求 ID，当请求失败时会返回。如果你在使用 Node SDK 的过程中遇到了错误，可以使用此 `requestId` 咨询 Authing 开发人员。
 
-详细的 `statusCode` 列表和 `apiCode` 请见[错误码](../../other/error-code.md)。
+详细的 `statusCode` 列表和 `apiCode` 请见[错误码](../../error-code.md)。
 
 ```csharp
 using Authing.CSharp.SDK.Services;
@@ -475,7 +473,7 @@ namespace ConsoleManagement
 
 ## 私有化部署
 
-如果你使用的是私有化部署的 Authing IDaaS 服务，需要指定此 Authing 私有化实例的 `host`，如：
+如果你使用的是私有化部署的 Authing IDaaS 服务，需要在初始化时指定 Authing 私有化实例的 API 地址，如下所示：
 
 ```csharp
 using Authing.CSharp.SDK.Services;

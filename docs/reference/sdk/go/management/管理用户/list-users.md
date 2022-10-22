@@ -19,7 +19,7 @@
 
 ```json
 {
-  "query": "北京",
+  "keywords": "北京",
   "options": {
     "fuzzySearchOn": [
       "address"
@@ -188,9 +188,43 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| query | string | 否 | - | 模糊搜索关键字  | `test` |
+| keywords | string | 否 | - | 模糊搜索关键字  | `test` |
 | advancedFilter | <a href="#ListUsersAdvancedFilterItemDto">ListUsersAdvancedFilterItemDto[]</a> | 否 | - | 高级搜索  |  |
 | options | <a href="#ListUsersOptionsDto">ListUsersOptionsDto</a> | 否 | - | 可选项  |  |
+
+
+
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/dto"
+	"github.com/Authing/authing-golang-sdk/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_USERPOOL_ID",
+		AccessKeySecret: "AUTHING_USERPOOL_SECRET",
+	}
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+	reqDto := &dto.ListUsersRequestDto{
+    Options: dto.ListUsersOptionsDto{Pagination: dto.PaginationDto{
+        Page:  1,
+        Limit: 20,
+    }},
+}
+respDto := client.ListUsers(reqDto)
+	fmt.Println(respDto)
+}
+```
 
 
 
@@ -222,6 +256,7 @@
       "createdAt": "2022-07-03T02:20:30.000Z",
       "updatedAt": "2022-07-03T02:20:30.000Z",
       "status": "Activated",
+      "workStatus": "Active",
       "externalId": "10010",
       "email": "test@example.com",
       "phone": "188xxxx8888",
@@ -326,6 +361,7 @@
 | createdAt | string | 是 | 创建时间   |  `2022-07-03T02:20:30.000Z` |
 | updatedAt | string | 是 | 更新时间   |  `2022-07-03T02:20:30.000Z` |
 | status | string | 是 | 账户当前状态   | Suspended |
+| workStatus | string | 是 | 账户当前工作状态   | Closed |
 | externalId | string | 否 | 第三方外部 ID   |  `10010` |
 | email | string | 否 | 邮箱，不区分大小写   |  `test@example.com` |
 | phone | string | 否 | 手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。   |  `188xxxx8888` |

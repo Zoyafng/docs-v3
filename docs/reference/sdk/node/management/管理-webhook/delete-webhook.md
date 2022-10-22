@@ -9,13 +9,43 @@
 
 <LastUpdated />
 
-通过指定多个 webhookId，以数组的形式进行 webhook 的删除
+通过指定多个 webhookId,以数组的形式进行 webhook 的删除,如果 webhookId 不存在,不提示报错
 
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | webhookIds | string[] | 是 | - | webhookId 数组  | `["xxxx"]` |
+
+
+
+
+## 示例代码
+
+```ts
+import { ManagementClient, Models } from 'authing-node-sdk';
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  // 需要替换成你的 Authing Access Key ID
+  accessKeyId: 'AUTHING_ACCESS_KEY_ID',
+  // 需要替换成你的 Authing Access Key Secret
+  accessKeySecret: 'AUTHING_ACCESS_KEY_SECRET',
+  // 如果是私有化部署的客户，需要设置 Authing 服务域名
+  // host: 'https://api.your-authing-service.com'
+});
+
+(async () => {
+
+  const result = await managementClient.deleteWebhook({
+    webhookIds: ['6229ffaxxxxxxxxcade3e3d9']
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
 
 
 

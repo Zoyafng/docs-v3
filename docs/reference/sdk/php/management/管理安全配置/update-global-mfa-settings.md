@@ -19,6 +19,39 @@
 
 
 
+
+## 示例代码
+
+```php
+<?php
+
+use Authing\ManagementClient;
+
+// 需要替换成你的 Authing Access Key ID
+$AUTHING_ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+// 需要替换成你的 Authing Access Key Secret
+$AUTHING_ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+// 初始化 ManagementClient
+$managementClient = new Authing\ManagementClient(
+    array(
+        "accessKeyId" => $AUTHING_ACCESS_KEY_ID,
+        "accessKeySecret" => $AUTHING_ACCESS_KEY_SECRET,
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // "host" => "https://api.your-authing-service.com"
+    )
+);
+
+$data = $managementClient->updateGlobalMfaSettings(
+    array(
+        "enabledFactors" => array("SMS")
+    )
+);
+print_r($data);
+
+```
+
+
   
 ## 请求响应
 

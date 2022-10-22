@@ -28,6 +28,66 @@
 
 
 
+
+## 示例代码
+
+```ts
+import { ManagementClient, Models } from 'authing-node-sdk';
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  // 需要替换成你的 Authing Access Key ID
+  accessKeyId: 'AUTHING_ACCESS_KEY_ID',
+  // 需要替换成你的 Authing Access Key Secret
+  accessKeySecret: 'AUTHING_ACCESS_KEY_SECRET',
+  // 如果是私有化部署的客户，需要设置 Authing 服务域名
+  // host: 'https://api.your-authing-service.com'
+});
+
+(async () => {
+
+  const result = await managementClient.updateDepartment({
+    // 替换部门 ID 和组织 Code
+    departmentId: '6229c4xxxx4d8a20b6021ff',
+    organizationCode: 'steamory',
+    name: '开发部222',
+    description: '技术研发部门',
+    code: 'develop',
+    i18n: {
+      name: {
+        'zh-CN': {
+          enabled: false,
+          value: 'zh-CN'
+        },
+        'en-US': {
+          enabled: false,
+          value: 'en-US'
+        },
+        'zh-TW': {
+          enabled: false,
+          value: 'zh-TW'
+        },
+        'ja-JP': {
+          enabled: false,
+          value: 'ja-JP'
+        }
+      }
+    },
+    customData: {
+      icon: 'https://example.com/logo'
+    },
+    departmentIdType:
+      Models.UpdateDepartmentReqDto.departmentIdType.DEPARTMENT_ID
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
+
+
+
   
 ## 请求响应
 

@@ -48,7 +48,6 @@ $user = $management->getUser(array(
 ));
 ```
 
-完整的接口列表，你可以在 [Authing Open API](https://api.authing.cn/openapi/) 和 [SDK 文档](https://authing-open-api.readme.io/reference/php) 中获取。
 
 ## 错误处理
 
@@ -82,7 +81,7 @@ try {
 
 ## 私有化部署
 
-如果你使用的是私有化部署的 Authing IDaaS 服务，需要指定此 Authing 私有化实例的 `host`，如：
+如果你使用的是私有化部署的 Authing IDaaS 服务，需要在初始化时指定 Authing 私有化实例的 API 地址，如下所示：
 
 ```php
 require "vendor/autoload.php";

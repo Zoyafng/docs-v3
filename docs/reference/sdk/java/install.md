@@ -82,7 +82,7 @@ AuthenticationClient authenticationClient = new AuthenticationClient(clientOptio
 - `appHost`: Authing 应用域名，如 https://example.authing.cn，必填。
 - `redirectUri`: 认证完成后的重定向目标 URL，可选。Authing 服务器会对此链接进行校验，需要和控制台的设置保持一致。
 - `logoutRedirectUri`: 登出完成后的重定向目标 URL，可选。Authing 服务器会对此链接进行校验，需要和控制台的设置保持一致。
-- `scope`: 应用侧向 Authing 请求的权限，以空格分隔，可选。默认为 `'openid profile'`，成功获取的权限项会出现在 `access_token` 的 `scope` 字段中。一些示例：
+- `scope`: 应用侧向 Authing 请求的权限，以空格分隔，可选。默认为 `'openid profile'`，成功获取的权限项会出现在 `access_token` 的 `scope` 字段中。下面是一些示例，更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
     - `openid`: OIDC 标准规定的权限，必须包含。
     - `profile`: 获取用户的基本身份信息。
     - `offline_access`: 认证时获取 `refresh_token`，可以通过 `refresh_token` 请求新的 `access_token`。
@@ -91,7 +91,7 @@ AuthenticationClient authenticationClient = new AuthenticationClient(clientOptio
 - `introspectionEndPointAuthMethod`: 校验 token 状态端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**检验 token 身份验证方式** 配置保持一致。
 - `revocationEndPointAuthMethod`: 撤回 token 端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**撤回 token 身份验证方式** 配置保持一致。
 - `timeout`: 请求超时时间，可选，位为毫秒，默认为 10000（10 秒）。
-- `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN 和 en-US，默认为 zh-CN。
+- `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN、en-US、ja-JP 和 zh-TW，默认为 zh-CN。
 
 
 </details>
@@ -161,7 +161,6 @@ public static void main(String[] args) {
     // 初始化 AuthenticationClient
     AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
 
-    // 生成用于登录的一次性地址，之前可以引导用户访问此地址
     String code = "REPLACE_ME_WITH_REAL_CODE";
     // 使用 code 换取 access_token
     OIDCTokenResponse resp = authenticationClient.getAccessTokenByCode(code);
@@ -189,7 +188,7 @@ public static void main(String[] args) {
     // 初始化 AuthenticationClient
     AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
 
-    // 调用 AuthenticationClient 的方法，如 signInByEmailPassword
+    // 调用 AuthenticationClient 的登录方法，如 signInByEmailPassword
     LoginTokenRespDto signInresp = authenticationClient.signInByEmailPassword(
         "test@example.com",
         "passw0rd",
@@ -218,7 +217,7 @@ public static void main(String[] args) {
 
 #### 获取 AK/SK
 
-Authing Node SDK 使用 AK/SK 本地对请求数据的摘要进行签名的鉴权机制，客户端在调用 API 时，SDK 使用 AK/SK 对请求数据的摘要进行签名计算，并将签名结果传输给服务器端进行签名验证。
+Authing Java SDK 使用 AK/SK 本地对请求数据的摘要进行签名的鉴权机制，客户端在调用 API 时，SDK 使用 AK/SK 对请求数据的摘要进行签名计算，并将签名结果传输给服务器端进行签名验证。
 
 在 Authing 中，目前有两种类型的 AK/SK：
 
@@ -238,8 +237,8 @@ import cn.authing.sdk.java.model.ManagementClientOptions;
 
 // 设置初始化参数
 ManagementClientOptions clientOptions = new ManagementClientOptions();
-clientOptions.setAccessKeyId("AUTHING_ACCESS_KEY_ID");
-clientOptions.setAccessKeySecret("AUTHING_ACCESS_KEY_SECRET");
+clientOptions.setAccessKeyId("AUTHING_ACCESS_KEY_ID"); // Authing Access Key ID
+clientOptions.setAccessKeySecret("AUTHING_ACCESS_KEY_SECRET"); // Authing Access Key Secret
 
 // 初始化 ManagementClient
 ManagementClient managementClient = new ManagementClient(clientOptions);
@@ -249,11 +248,11 @@ ManagementClient managementClient = new ManagementClient(clientOptions);
 <details>
 <summary>点此展开 ManagementClient 的完整参数及释义</summary>
 
-- `accessKeyId`: Authing 用户池 ID;
-- `accessKeySecret`: Authing 用户池密钥;
-- `timeout`: 超时时间，单位为 ms，默认为 10000 ms;
+- `accessKeyId`: Authing 用户池 ID 或者协作管理员的 Access Key ID。
+- `accessKeySecret`: Authing 用户池密钥或者协作管理员的 Access Key Secret。
+- `timeout`: 请求超时时间，可选，位为毫秒，默认为 10000（10 秒）。
 - `host`: Authing 服务器地址，默认为 `https://api.authing.cn`。如果你使用的是 Authing 公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填，格式如下: https://authing-api.my-authing-service.com（最后不带斜杠 /）。
-- `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN 和 en-US，默认为 zh-CN。
+- `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN、en-US、ja-JP 和 zh-TW，默认为 zh-CN。
 
 </details>
 
@@ -310,7 +309,6 @@ public static void main(String[] args) {
 }
 ```
 
-完整的接口列表，你可以在 [Authing Open API](https://api.authing.cn/openapi/) 和 [SDK 文档](https://authing-open-api.readme.io/reference/java) 中获取。
 
 ## 错误处理
 
@@ -322,7 +320,7 @@ Authing Java SDK 方法在请求接口时，不会抛出 Exception（网络错�
 - `apiCode`: `apiCode` 为业务状态码，每个 `apiCode` 具备特定的错误含义，具体的 `apiCode` 列表见下文。`apiCode` 只会在 `statusCode` 非 200 且错误原因具备业务含义时才会返回。
 - `requestId`: 请求 ID，当请求失败时会返回。如果你在使用 Node SDK 的过程中遇到了错误，可以使用此 `requestId` 咨询 Authing 开发人员。
 
-详细的 `statusCode` 列表和 `apiCode` 请见[错误码](../../other/error-code.md)。
+详细的 `statusCode` 列表和 `apiCode` 请见[错误码](../../error-code.md)。
 
 ```java
 import cn.authing.sdk.java.dto.*;
@@ -352,7 +350,7 @@ public static void main(String[] args) {
 
 ## 私有化部署
 
-如果你使用的是私有化部署的 Authing IDaaS 服务，需要指定此 Authing 私有化实例的 `host`，如：
+如果你使用的是私有化部署的 Authing IDaaS 服务，需要在初始化时指定 Authing 私有化实例的 API 地址，如下所示：
 
 ```java
 import cn.authing.sdk.java.dto.*;

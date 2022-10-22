@@ -23,6 +23,42 @@
 
 
 
+## 示例代码
+
+```php
+<?php
+
+use Authing\AuthenticationClient;
+
+// 需要替换成你的 Authing 应用 ID
+$AUTHING_APP_ID = "AUTHING_APP_ID";
+// 需要替换成你的 Authing 应用密钥
+$AUTHING_APP_SECRET = "AUTHING_APP_SECRET";
+// 需要替换成你的 Authing 应用域名
+$AUTHING_APP_HOST = "AUTHING_APP_HOST";
+
+// 初始化 AuthenticationClient
+$authenticationClient = new Authing\AuthenticationClient(
+    array(
+        "appId" => $AUTHING_APP_ID,
+        "appSecret" => $AUTHING_APP_SECRET,
+        "appHost" => $AUTHING_APP_HOST,
+    )
+);
+
+$data = $authenticationClient->decryptWechatMiniProgramData(array(
+    // 需要替换成微信小程序的外部身份源连接标志符
+    "extIdpConnidentifier" => "xxxxx",
+    "code" => "xxxxx",
+    "iv" => "xxxx",
+    "encryptedData" => "xxxxx"
+));
+print_r($data);
+
+```
+
+
+
 ## 请求响应
 
 类型： `DecryptWechatMiniProgramDataRespDto`

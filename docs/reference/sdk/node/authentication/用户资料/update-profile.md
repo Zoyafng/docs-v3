@@ -33,6 +33,49 @@
 
 
 
+## 示例代码
+
+```ts
+import { AuthenticationClient, Models } from 'authing-node-sdk';
+
+const authenticationClient = new AuthenticationClient({
+  // 需要替换成你的 Authing AppId、 Secret 和 Host
+  appId: 'AUTHING_APP_ID',
+  appSecret: 'AUTHING_APP_SECRET',
+  appHost: 'AUTHING_APP_HOST'
+});
+
+(async () => {
+
+  // 请先调用登录接口获取 access_token，并调用 setAccessToken 方法设置 access_token
+  authenticationClient.setAccessToken("REPLACE_ME_WITH_REAL_ACCESS_TOKEN");
+
+  const result = await authenticationClient.updateProfile({
+    name: '张三',
+    nickname: '张三',
+    photo: 'https://files.authing.co/authing-console/default-user-avatar.png',
+    birthdate: '2022-06-03',
+    country: 'CN',
+    province: 'BJ',
+    city: 'BJ',
+    address: '北京朝阳',
+    streetAddress: '北京朝阳区 xxx 街道',
+    postalCode: '438100',
+    customData: {
+      school: '北京大学',
+      age: 22
+    }
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
+
+
+
+
 ## 请求响应
 
 类型： `UserSingleRespDto`
@@ -59,6 +102,7 @@
     "createdAt": "2022-07-03T02:20:30.000Z",
     "updatedAt": "2022-07-03T02:20:30.000Z",
     "status": "Activated",
+    "workStatus": "Active",
     "externalId": "10010",
     "email": "test@example.com",
     "phone": "188xxxx8888",
@@ -117,6 +161,7 @@
 | createdAt | string | 是 | 创建时间   |  `2022-07-03T02:20:30.000Z` |
 | updatedAt | string | 是 | 更新时间   |  `2022-07-03T02:20:30.000Z` |
 | status | string | 是 | 账户当前状态   | Suspended |
+| workStatus | string | 是 | 账户当前工作状态   | Closed |
 | externalId | string | 否 | 第三方外部 ID   |  `10010` |
 | email | string | 否 | 邮箱，不区分大小写   |  `test@example.com` |
 | phone | string | 否 | 手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。   |  `188xxxx8888` |

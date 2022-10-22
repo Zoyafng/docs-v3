@@ -63,9 +63,9 @@
 use Authing\ManagementClient;
 
 // 需要替换成你的 Authing Access Key ID
-$AUTHING_ACCESS_KEY_ID = "635124373e1cd646feecbeb9";
+$AUTHING_ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
 // 需要替换成你的 Authing Access Key Secret
-$AUTHING_ACCESS_KEY_SECRET = "c3eaf45f7b467003158fd8615367ba6e";
+$AUTHING_ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
 
 // 初始化 ManagementClient
 $managementClient = new Authing\ManagementClient(
@@ -113,6 +113,7 @@ print_r($data);
     "createdAt": "2022-07-03T02:20:30.000Z",
     "updatedAt": "2022-07-03T02:20:30.000Z",
     "status": "Activated",
+    "workStatus": "Active",
     "externalId": "10010",
     "email": "test@example.com",
     "phone": "188xxxx8888",
@@ -193,6 +194,7 @@ print_r($data);
 | createdAt | string | 是 | 创建时间   |  `2022-07-03T02:20:30.000Z` |
 | updatedAt | string | 是 | 更新时间   |  `2022-07-03T02:20:30.000Z` |
 | status | string | 是 | 账户当前状态   | Suspended |
+| workStatus | string | 是 | 账户当前工作状态   | Closed |
 | externalId | string | 否 | 第三方外部 ID   |  `10010` |
 | email | string | 否 | 邮箱，不区分大小写   |  `test@example.com` |
 | phone | string | 否 | 手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。   |  `188xxxx8888` |
