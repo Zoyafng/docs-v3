@@ -83,7 +83,7 @@ var data = await managementClient.Users.List();
 ::: page-ref /reference/sdk-for-csharp/management/WhitelistManagementClient.md
 :::
 
-## 使用认证模块
+## 使用用户认证模块
 
 初始化 `ManagementClient` 需要 `AppId` （应用 ID）：
 

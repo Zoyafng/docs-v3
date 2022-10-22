@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-通过指定多个 webhookId，以数组的形式进行 webhook 的删除
+通过指定多个 webhookId,以数组的形式进行 webhook 的删除,如果 webhookId 不存在,不提示报错
 
 ## 请求参数
 

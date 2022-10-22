@@ -40,6 +40,63 @@
 
 
 
+
+## 示例代码
+
+```ts
+import { ManagementClient, Models } from 'authing-node-sdk';
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  // 需要替换成你的 Authing Access Key ID
+  accessKeyId: 'AUTHING_ACCESS_KEY_ID',
+  // 需要替换成你的 Authing Access Key Secret
+  accessKeySecret: 'AUTHING_ACCESS_KEY_SECRET',
+  // 如果是私有化部署的客户，需要设置 Authing 服务域名
+  // host: 'https://api.your-authing-service.com'
+});
+
+(async () => {
+
+  const result = await managementClient.createApplication({
+    appName: '示例应用',
+    template: 'github',
+    appIdentifier: 'example',
+    appLogo: 'http://baidu.com/favicon.ico',
+    appDescription: '示例描述信息',
+    redirectUris: ['https://example.com/callback'],
+    logoutRedirectUris: ['https://example.com/logout-callback'],
+    initLoginUri: 'https://example.com/login',
+    ssoEnabled: false,
+    brandingConfig: {
+      customCSSEnabled: false,
+      customCSS: `/*
+Edit login page css
+eg：
+.authing-guard-layout {
+  background: black !important;
+}
+Change the background color
+*/`,
+      customLoadingImage:
+        'https://files.authing.co/user-contents/photos/cbd51df7-efb1-4b50-b38c-d8e5a04b1830.png',
+      customBackground:
+        'https://files.authing.co/user-contents/photos/cbd51df7-efb1-4b50-b38c-d8e5a04b1830.png',
+      showChangeLanguageButton: false,
+      showForgetPasswordButton: true,
+      showEnterpriseConnections: true,
+      showSocialConnections: true
+    }
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
+
+
+
   
 ## 请求响应
 

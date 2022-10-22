@@ -34,9 +34,9 @@
 use Authing\ManagementClient;
 
 // 需要替换成你的 Authing Access Key ID
-$AUTHING_ACCESS_KEY_ID = "635124373e1cd646feecbeb9";
+$AUTHING_ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
 // 需要替换成你的 Authing Access Key Secret
-$AUTHING_ACCESS_KEY_SECRET = "c3eaf45f7b467003158fd8615367ba6e";
+$AUTHING_ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
 
 // 初始化 ManagementClient
 $managementClient = new Authing\ManagementClient(
@@ -49,9 +49,9 @@ $managementClient = new Authing\ManagementClient(
 );
 
 $data = $managementClient->createExtIdpConn(array(
-    "extIdpId" => "60b49eb83fd80adb96f26e68",
+    "extIdpId" => "60b49eb83fxxxdb96f26e68",
     "type" => "ad",
-    "identifier" => "60b49eb83fd80adb96f26e68",
+    "identifier" => "60b49eb83fxxxdb96f26e68",
     "loginOnly" => false,
     "logo" => "https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png",
     "displayName" => "登录页",

@@ -20,7 +20,39 @@
  | isIntegrateApp | boolean  | 否 | - | 是否为集成应用  |  |
  | isSelfBuiltApp | boolean  | 否 | - | 是否为自建应用  |  |
  | ssoEnabled | boolean  | 否 | - | 是否开启单点登录  |  |
- | keyword | string  | 否 | - | 模糊搜索字符串  | `test` |
+ | keywords | string  | 否 | - | 模糊搜索字符串  | `test` |
+
+
+
+
+## 示例代码
+
+```ts
+import { ManagementClient, Models } from 'authing-node-sdk';
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  // 需要替换成你的 Authing Access Key ID
+  accessKeyId: 'AUTHING_ACCESS_KEY_ID',
+  // 需要替换成你的 Authing Access Key Secret
+  accessKeySecret: 'AUTHING_ACCESS_KEY_SECRET',
+  // 如果是私有化部署的客户，需要设置 Authing 服务域名
+  // host: 'https://api.your-authing-service.com'
+});
+
+(async () => {
+
+  const result = await managementClient.listApplicationSimpleInfo({
+    page: 1,
+    limit: 10,
+    keywords: 'test'
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
 
 
 

@@ -22,6 +22,41 @@
 
 
 
+## 示例代码
+
+```ts
+import { AuthenticationClient, Models } from 'authing-node-sdk';
+
+const authenticationClient = new AuthenticationClient({
+  // 需要替换成你的 Authing AppId、 Secret 和 Host
+  appId: 'AUTHING_APP_ID',
+  appSecret: 'AUTHING_APP_SECRET',
+  appHost: 'AUTHING_APP_HOST'
+});
+
+(async () => {
+
+  // 请先调用登录接口获取 access_token，并调用 setAccessToken 方法设置 access_token
+  authenticationClient.setAccessToken("REPLACE_ME_WITH_REAL_ACCESS_TOKEN");
+
+  const result = await authenticationClient.enrollFactor({
+    factorType: Models.EnrollFactorDto.factorType.SMS,
+    enrollmentToken:
+      'TQoCISidM0kBji0dxRi3afSDtkvvMiUphenIgLF87y+JOw4T8fDWOsHHXIcvZ2EVESXhTrfGyh1iGf52Cg9e9byeFQvm1VZ0QWrwmzwpntFAVtf1IP9LqVhmzXhBMFvLOcU/z1Eh/n0CrwX0uHNpJoMW9lp9AqHd9HvauaGKX+Y=',
+    enrollmentData: {
+      passCode: '123456'
+    }
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
+
+
+
+
 ## 请求响应
 
 类型： `EnrollFactorRespDto`

@@ -25,6 +25,50 @@
 
 
 
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/dto"
+	"github.com/Authing/authing-golang-sdk/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.CreateExtIdpConnDto{
+		ExtIdpId:    "60b49eb83fd80adb96f26e68",
+		Type:        "ad",
+		Identifier:  "60b49eb83fd80adb96f26e68",
+		LoginOnly:   false,
+		Logo:        "https://files.authing.co/authing-console/social-connections/icon_xiaochengxu@2x.png",
+		DisplayName: "登录页",
+		Fields: map[string]interface{}{
+			"clientId":     "身份源上的 clientId",
+			"clientSecret": "身份源上的 clientSecret",
+		},
+	}
+	respDto := client.CreateExtIdpConn(reqDto)
+
+	fmt.Println(respDto)
+}
+```
+
+
+
   
 ## 请求响应
 

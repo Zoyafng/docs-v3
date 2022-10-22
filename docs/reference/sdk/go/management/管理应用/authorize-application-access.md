@@ -20,6 +20,44 @@
 
 
 
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/dto"
+	"github.com/Authing/authing-golang-sdk/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.AuthorizeApplicationAccessDto{
+		AppId: "6229ffaxxxxxxxxcade3e3d9",
+		List: []dto.ApplicationPermissionRecordItem{
+			{TargetType: "USER", NamespaceCode: "code1", InheritByChildren: true, TargetIdentifier: []string{"6229ffaxxxxxxxxcade3e3d9"}, Effect: "ALLOW"},
+		},
+	}
+	respDto := client.AuthorizeApplicationAccess(reqDto)
+
+	fmt.Println(respDto)
+}
+```
+
+
+
   
 ## 请求响应
 

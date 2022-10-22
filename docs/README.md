@@ -100,7 +100,7 @@ applicationSdks:
       - react
       - angular
       - vue
-  - title: SDK
+  - title: 标准 Web 应用
     description: 多页面并支持跳转的网页应用
     color: "#28B1B0"
     sdks:

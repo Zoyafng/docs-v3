@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-通过指定 webhookId，可选 page 和 limit 来获取 webhook 日志
+通过指定 webhookId，可选 page 和 limit 来获取 webhook 日志,如果 webhookId 不存在,不返回报错信息
 
 ## 请求参数
 

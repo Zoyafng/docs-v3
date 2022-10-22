@@ -19,6 +19,59 @@
 
 
 
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/dto"
+	"github.com/Authing/authing-golang-sdk/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.SetCustomFieldsReqDto{
+		List: []dto.SetCustomFieldDto{
+			{
+				TargetType: "USER",
+				Key:        "school",
+				DataType: "ENUM",
+				Label: "学校",
+				Description: "学校",
+				Encrypted: false,
+				IsUnique: false,
+				UserEditable: false,
+				VisibleInAdminConsole: true,
+				VisibleInUserCenter: true,
+				Options: []dto.CustomFieldSelectOption{
+					{
+						Value: "hust",
+						Label: "华中科技大学",
+					},
+				},
+			},
+		},
+	}
+	respDto := client.SetCustomFields(reqDto)
+	fmt.Println(respDto)
+}
+```
+
+
+
   
 ## 请求响应
 

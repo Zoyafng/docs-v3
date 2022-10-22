@@ -20,6 +20,45 @@
 
 
 
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/dto"
+	"github.com/Authing/authing-golang-sdk/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.CreateUserBatchReqDto{
+		List:    []dto.CreateUserInfoDto{
+			{
+				Username: "test",
+				Password: "passw0rd"
+			},
+		},
+	}
+	respDto := client.CreateUsersBatch(reqDto)
+	fmt.Println(respDto)
+}
+```
+
+
+
   
 ## 请求响应
 
@@ -47,6 +86,7 @@
     "createdAt": "2022-07-03T02:20:30.000Z",
     "updatedAt": "2022-07-03T02:20:30.000Z",
     "status": "Activated",
+    "workStatus": "Active",
     "externalId": "10010",
     "email": "test@example.com",
     "phone": "188xxxx8888",
@@ -139,7 +179,7 @@
 | otp |  | 否 | 用户的 OTP 验证器 嵌套类型：<a href="#CreateUserOtpDto">CreateUserOtpDto</a>。  |  |
 | departmentIds | array | 否 | 用户所属部门 ID 列表   |  `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]` |
 | customData | object | 否 | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段   |  `{"school":"北京大学","age":22}` |
-| identities | array | 否 | 第三方身份源（建议调用绑定接口进行绑定） 嵌套类型：<a href="#CreateIdentityDto">CreateIdentityDto</a>。  |  `{"extIdpId":"6076bacxxxxxxxxd80d993b5","provider":"wechat","type":"openid","userIdInIdp":"oj7Nq05R-RRaqak0_YlMLnnIwsvg"}` |
+| identities | array | 否 | 第三方身份源（建议调用绑定接口进行绑定） 嵌套类型：<a href="#CreateIdentityDto">CreateIdentityDto</a>。  |  `[{"extIdpId":"6076bacxxxxxxxxd80d993b5","provider":"wechat","type":"openid","userIdInIdp":"oj7Nq05R-RRaqak0_YlMLnnIwsvg"}]` |
 
 
 ### <a id="CreateUserOtpDto"></a> CreateUserOtpDto
@@ -190,6 +230,7 @@
 | createdAt | string | 是 | 创建时间   |  `2022-07-03T02:20:30.000Z` |
 | updatedAt | string | 是 | 更新时间   |  `2022-07-03T02:20:30.000Z` |
 | status | string | 是 | 账户当前状态   | Suspended |
+| workStatus | string | 是 | 账户当前工作状态   | Closed |
 | externalId | string | 否 | 第三方外部 ID   |  `10010` |
 | email | string | 否 | 邮箱，不区分大小写   |  `test@example.com` |
 | phone | string | 否 | 手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。   |  `188xxxx8888` |

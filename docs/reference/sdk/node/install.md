@@ -39,7 +39,7 @@ npm install authing-node-sdk
 yarn add authing-node-sdk
 ```
 
-## 使用认证模块
+## 使用用户认证模块
 
 !!!include(reference/sdk/common/authentication_client_desc.md)!!!
 
@@ -53,7 +53,7 @@ yarn add authing-node-sdk
 
 初始化示例代码如下所示：
 
-```typescript
+```javascript
 import { AuthenticationClient } from "authing-node-sdk";
 
 const authenticationClient = new AuthenticationClient({
@@ -71,7 +71,7 @@ const authenticationClient = new AuthenticationClient({
 - `appHost`: Authing 应用域名，如 https://example.authing.cn，必填。
 - `redirectUri`: 认证完成后的重定向目标 URL，可选。Authing 服务器会对此链接进行校验，需要和控制台的设置保持一致。
 - `logoutRedirectUri`: 登出完成后的重定向目标 URL，可选。Authing 服务器会对此链接进行校验，需要和控制台的设置保持一致。
-- `scope`: 应用侧向 Authing 请求的权限，以空格分隔，可选。默认为 `'openid profile'`，成功获取的权限项会出现在 `access_token` 的 `scope` 字段中。一些示例：
+- `scope`: 应用侧向 Authing 请求的权限，以空格分隔，可选。默认为 `'openid profile'`，成功获取的权限项会出现在 `access_token` 的 `scope` 字段中。下面是一些示例，更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
     - `openid`: OIDC 标准规定的权限，必须包含。
     - `profile`: 获取用户的基本身份信息。
     - `offline_access`: 认证时获取 `refresh_token`，可以通过 `refresh_token` 请求新的 `access_token`。
@@ -79,8 +79,8 @@ const authenticationClient = new AuthenticationClient({
 - `tokenEndPointAuthMethod`: 获取 token 端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**换取 token 身份验证方式** 配置保持一致。
 - `introspectionEndPointAuthMethod`: 校验 token 状态端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**检验 token 身份验证方式** 配置保持一致。
 - `revocationEndPointAuthMethod`: 撤回 token 端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**撤回 token 身份验证方式** 配置保持一致。
-- `timeout`: 请求超时时间，可选，位为毫秒，默认为 10000（10 秒）。
-- `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN 和 en-US，默认为 zh-CN。
+- `timeout`: 请求超时时间，可选，单位为毫秒，默认为 10000（10 秒）。
+- `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN、en-US、ja-JP 和 zh-TW，默认为 zh-CN。
 
 
 </details>
@@ -91,7 +91,7 @@ const authenticationClient = new AuthenticationClient({
 
 #### 使用在线托管登录页登录
 
-Authing 为所有开发者提供了开箱即用的在线托管登录页，Java SDK 提供了自动生成登录链接、处理登录回调等方法。
+Authing 为所有开发者提供了开箱即用的在线托管登录页，Node SDK 提供了自动生成登录链接、处理登录回调等方法。
 
 <details>
 <summary>点此展开 Authing 托管登录页的详细介绍</summary>
@@ -131,62 +131,65 @@ console.log(url);
 import { AuthenticationClient } from "authing-node-sdk";
 
 const authenticationClient = new AuthenticationClient({
-  appId: "AUTHING_APP_ID",
-  appSecret: "AUTHING_APP_SECRET",
-  appHost: "AUTHING_APP_HOST",
-  redirectUri: "AUTHING_APP_REDIRECT_URI"
+  appId: "AUTHING_APP_ID", // Authing 应用 ID
+  appSecret: "AUTHING_APP_SECRET", // Authing 应用密钥
+  appHost: "AUTHING_APP_HOST", // Authing 应用域名，如 https://example.authing.cn
+  redirectUri: "AUTHING_APP_REDIRECT_URI" // Authing 应用配置的登录回调地址
 });
 
-// 生成用于登录的一次性地址，之后可以引导用户访问此地址
-const { url } = authenticationClient.buildAuthorizeUrl();
-console.log(url);
+const main = async () => {
+  // 需要替换为登录回调结果的真实 code，注意此 code 只能被使用一次。
+  const code = "REPLACE_ME_WITH_REAL_CODE";
+  // 使用 code 换取 access_token
+  const tokenResponse = await authenticationClient.getAccessTokenByCode(code);
+  console.log(tokenResponse);
+}
+
+main().then().catch(console.error)
 ```
 
 #### 邮箱 + 密码登录
 
 除了上述使用托管登录页的认证方式，如果你需要自建登录页面，Authing 也提供接口形式的认证方法，如果认证成功，也可以拿到用户的 `access_token`。拿到 `access_token` 之后，就可以调用修改用户信息等方法了。
 
-```java
-import cn.authing.sdk.java.client.AuthenticationClient;
-import cn.authing.sdk.java.dto.*;
-import cn.authing.sdk.java.model.AuthenticationClientOptions;
+```javascript
+import { AuthenticationClient } from "authing-node-sdk";
 
-public static void main(String[] args) {
-    // 设置初始化参数
-    AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
-    clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
-    clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-    clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
-    clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
+// 初始化 AuthenticationClient
+const authenticationClient = new AuthenticationClient({
+  appId: "AUTHING_APP_ID", // Authing 应用 ID
+  appSecret: "AUTHING_APP_SECRET", // Authing 应用密钥
+  appHost: "AUTHING_APP_HOST", // Authing 应用域名，如 https://example.authing.cn
+  redirectUri: "AUTHING_APP_REDIRECT_URI" // Authing 应用配置的登录回调地址
+});
 
-    // 初始化 AuthenticationClient
-    AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
+const main = async () => {
+  // 调用 AuthenticationClient 的登录方法，如 signInByEmailPassword
+  const loginRes = await authenticationClient.signInByEmailPassword({
+    email: "test@example.com",
+    password: "test",
+  });
 
-    // 调用 AuthenticationClient 的方法，如 signInByEmailPassword
-    LoginTokenRespDto signInresp = authenticationClient.signInByEmailPassword(
-        "test@example.com",
-        "passw0rd",
-        new SignInOptionsDto()
-    );
+  // 你可以从 loginRes 中得到用户的 access_token，此 access_token 代表了用户访问接口的凭证
+  const accessToken = loginRes.data.access_token;
 
-    // 你可以从 LoginTokenRespDto 中得到用户的 access_token，此 access_token 代表了用户访问接口的凭证
-    String accessToken = signInresp.getData().getAccessToken();
-    // 之后使用此 accessToken 调用 AuthenticationClient 的 setAccessToken 方法，AuthenticationClient 便可以调用获取用户资料、修改用户资料、获取角色列表等要求登录才能访问的接口了。
-    authenticationClient.setAccessToken(accessToken)
+  // 之后使用此 accessToken 调用 AuthenticationClient 的 setAccessToken 方法，AuthenticationClient 便可以调用获取用户资料、修改用户资料、获取角色列表等要求登录才能访问的接口了。
+  authenticationClient.setAccessToken(loginRes.data.access_token!);
 
-    // 调用其他需要登录才能访问的接口，如修改用户资料
-    UpdateUserProfileDto updateProfileDto = new UpdateUserProfileDto();
-    updateProfileDto.setNickname("张三"); // 修改昵称为张三
-    UserSingleRespDto resp = authenticationClient.updateProfile(updateProfileDto);
-    System.out.println(resp);
+  // 调用其他需要登录才能访问的接口，如修改用户资料
+  const resp = await authenticationClient.updateProfile({
+    nickname: "张三"
+  });
+  console.log(resp);
 }
-```
 
+main().then().catch(console.error)
+```
 
 
 ## 使用管理模块
 
-`ManagementClient` 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 [{{$localeConfig.brandName}} 控制台](https://console.authing.cn/console/userpool) 中能做的所有操作，都能用此模块完成。
+管理模块（ManagementClient） 以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，提供了管理用户、角色、应用、资源等方法；一般来说，你在 [{{$localeConfig.brandName}} 控制台](https://console.authing.cn/console/userpool) 中能做的所有操作，都能用此模块完成。
 
 ### 初始化
 
@@ -203,33 +206,45 @@ Authing Node SDK 使用 AK/SK 本地对请求数据的摘要进行签名的鉴�
 
 #### 初始化
 
-初始化 `ManagementClient` 时需要使用 `accessKeyId` 和 `accessKeySecret` 参数:
+初始化示例代码如下所示：
 
-```typescript
+```javascript
 import { ManagementClient } from "authing-node-sdk";
 
+// 初始化 ManagementClient
 const managementClient = new ManagementClient({
-  accessKeyId: "AUTHING_ACCESS_KEY_ID",
-  accessKeySecret: "AUTHING_ACCESS_KEY_SECRET",
+  accessKeyId: "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+  accessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
 });
 ```
 
-完整的参数和释义如下：
+<details>
+<summary>点此展开 ManagementClient 的完整参数及释义</summary>
 
-- `accessKeyId`: Authing 用户池 ID 或者协作管理员的 AK;
-- `accessKeySecret`: Authing 用户池密钥或者协作管理员的 SK；
+- `accessKeyId`: Authing 用户池 ID 或者协作管理员的 Access Key ID。
+- `accessKeySecret`: Authing 用户池密钥或者协作管理员的 Access Key Secret。
 - `timeout`: 超时时间，单位为 ms，默认为 10000 ms；
 - `host`: Authing 服务器地址，默认为 `https://api.authing.cn`。如果你使用的是 Authing 公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填，格式如下: https://authing-api.my-authing-service.com（最后不带斜杠 /）。
-- `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN 和 en-US，默认为 zh-CN。
+- `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN、en-US、ja-JP 和 zh-TW，默认为 zh-CN。
+
+</details>
 
 ### 快速开始
 
-初始化完成 `ManagementClient` 之后，你可以获取 `ManagementClient` 的实例，然后调用此实例上的方法。例如：
+初始化完成 ManagementClient 之后，你可以获取 ManagementClient 的实例，然后调用此实例上的方法。
 
-- 获取用户列表
+#### 获取用户列表
 
-```typescript
-(async () => {
+```javascript
+import { ManagementClient } from "authing-node-sdk";
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  accessKeyId: "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+  accessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+});
+
+const main = async () => {
   const { data } = await managementClient.listUsers({
     options: {
       pagination: {
@@ -238,22 +253,32 @@ const managementClient = new ManagementClient({
       }
     }
   });
-})();
+}
+
+main().then().catch(console.error)
 ```
 
-- 创建角色
+#### 创建角色
 
-```typescript
-(async () => {
+```javascript
+
+import { ManagementClient } from "authing-node-sdk";
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  accessKeyId: "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+  accessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+});
+
+const main = async () => {
   const { data } = await managementClient.createRole({
     code: "admin",
     description: "管理员",
-    namespace: "default",
   });
-})();
-```
+}
 
-完整的接口列表，你可以在 [Authing Open API](https://api.authing.cn/openapi/) 和 [SDK 文档](https://authing-open-api.readme.io/reference/nodejs) 中获取。
+main().then().catch(console.error)
+```
 
 
 ## 错误处理
@@ -266,18 +291,19 @@ Authing Node.js SDK 方法在请求接口时，不会抛出 [Error](https://node
 - `apiCode`: `apiCode` 为业务状态码，每个 `apiCode` 具备特定的错误含义，具体的 `apiCode` 列表见下文。`apiCode` 只会在 `statusCode` 非 200 且错误原因具备业务含义时才会返回。
 - `requestId`: 请求 ID，当请求失败时会返回。如果你在使用 Node SDK 的过程中遇到了错误，可以使用此 `requestId` 咨询 Authing 开发人员。
 
-详细的 `statusCode` 列表和 `apiCode` 请见[错误码](../../other/error-code.md)。
+详细的 `statusCode` 列表和 `apiCode` 请见[错误码](../../error-code.md)。
 
 ## 私有化部署
 
-如果你使用的是私有化部署的 Authing IDaaS 服务，需要指定此 Authing 私有化实例的 `host`，如：
+如果你使用的是私有化部署的 Authing IDaaS 服务，需要在初始化时指定 Authing 私有化实例的 API 地址，如下所示：
 
-```typescript
+```javascript
 import { ManagementClient } from "authing-node-sdk";
 
 const managementClient = new ManagementClient({
-  accessKeyId: "AUTHING_ACCESS_KEY_ID",
-  accessKeySecret: "AUTHING_ACCESS_KEY_SECRET",
+  accessKeyId: "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+  accessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+  // 设置私有化 Authing 服务的地址（最后不带斜杠 /）
   host: "https://authing-api.my-authing-service.com",
 });
 ```

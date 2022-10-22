@@ -1,9 +1,11 @@
 <template>
+
+  <!--
+
   <main
     class="home"
     :aria-labelledby="data.heroText !== null ? 'main-title' : null"
   >
-    <!-- <Content class="theme-default-content custom" /> -->
 
     <slot name="sidebar"></slot>
 
@@ -68,25 +70,29 @@
     </section>
 
   </main>
+
+-->
+
+<div></div>
 </template>
 
 <script>
-import NavLink from "@theme/components/NavLink.vue";
-import SdkCard from "@theme/components/Home/SdkCard.vue";
-import SectionCard from "@theme/components/Home/SectionCard.vue";
-import ExploreCard from "@theme/components/Home/ExploreCard.vue";
-import SearchInput from "@theme/components/SearchInput.vue";
+// import NavLink from "@theme/components/NavLink.vue";
+// import SdkCard from "@theme/components/Home/SdkCard.vue";
+// import SectionCard from "@theme/components/Home/SectionCard.vue";
+// import ExploreCard from "@theme/components/Home/ExploreCard.vue";
+// import SearchInput from "@theme/components/SearchInput.vue";
 
 export default {
   name: "Home",
 
-  components: {
-    NavLink,
-    SdkCard,
-    SearchInput,
-    SectionCard,
-    ExploreCard
-  },
+  // components: {
+  //   NavLink,
+  //   SdkCard,
+  //   SearchInput,
+  //   SectionCard,
+  //   ExploreCard
+  // },
 
   mounted() {
     this.$router.replace({
@@ -94,18 +100,18 @@ export default {
     })
   },
 
-  computed: {
-    data() {
-      return this.$page.frontmatter;
-    },
+  // computed: {
+  //   data() {
+  //     return this.$page.frontmatter;
+  //   },
 
-    actionLink() {
-      return {
-        link: this.data.actionLink,
-        text: this.data.actionText
-      };
-    }
-  }
+  //   actionLink() {
+  //     return {
+  //       link: this.data.actionLink,
+  //       text: this.data.actionText
+  //     };
+  //   }
+  // }
 };
 </script>
 
