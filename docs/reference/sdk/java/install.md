@@ -90,7 +90,7 @@ AuthenticationClient authenticationClient = new AuthenticationClient(clientOptio
 - `tokenEndPointAuthMethod`: 获取 token 端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**换取 token 身份验证方式** 配置保持一致。
 - `introspectionEndPointAuthMethod`: 校验 token 状态端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**检验 token 身份验证方式** 配置保持一致。
 - `revocationEndPointAuthMethod`: 撤回 token 端点认证方式，默认为 `client_secret_post`。可选值为 `client_secret_post`, `client_secret_basic` 和 `none`。需要和你在 [Authing 控制台](https://console.authing.cn) 的**应用** - **自建应用** - **应用详情** - **应用配置** - **其他设置** - **授权配置**中的**撤回 token 身份验证方式** 配置保持一致。
-- `timeout`: 请求超时时间，可选，位为毫秒，默认为 10000（10 秒）。
+- `timeout`: 请求超时时间，可选，单位为毫秒，默认为 10000（10 秒）。
 - `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN、en-US、ja-JP 和 zh-TW，默认为 zh-CN。
 
 
@@ -250,8 +250,8 @@ ManagementClient managementClient = new ManagementClient(clientOptions);
 
 - `accessKeyId`: Authing 用户池 ID 或者协作管理员的 Access Key ID。
 - `accessKeySecret`: Authing 用户池密钥或者协作管理员的 Access Key Secret。
-- `timeout`: 请求超时时间，可选，位为毫秒，默认为 10000（10 秒）。
 - `host`: Authing 服务器地址，默认为 `https://api.authing.cn`。如果你使用的是 Authing 公有云版本，请忽略此参数。如果你使用的是私有化部署的版本，此参数必填，格式如下: https://authing-api.my-authing-service.com（最后不带斜杠 /）。
+- `timeout`: 请求超时时间，可选，单位为毫秒，默认为 10000（10 秒）。
 - `lang`: 接口 Message 返回语言格式（可选），可选值为 zh-CN、en-US、ja-JP 和 zh-TW，默认为 zh-CN。
 
 </details>
