@@ -23,6 +23,42 @@
 
 
 
+
+## 示例代码
+
+```ts
+import { ManagementClient, Models } from 'authing-node-sdk';
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  // 需要替换成你的 Authing Access Key ID
+  accessKeyId: 'AUTHING_ACCESS_KEY_ID',
+  // 需要替换成你的 Authing Access Key Secret
+  accessKeySecret: 'AUTHING_ACCESS_KEY_SECRET',
+  // 如果是私有化部署的客户，需要设置 Authing 服务域名
+  // host: 'https://api.your-authing-service.com'
+});
+
+(async () => {
+
+  const result = await managementClient.isUserInDepartment({
+    // 替换用户 ID
+    userId: '6229ffaxxxxxxxxcade3e3d9',
+    // 替换组织 Code 和部门 ID
+    organizationCode: 'steamory',
+    departmentId: 'root',
+    departmentIdType: 'department_id',
+    includeChildrenDepartments: false
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
+
+
+
   
 ## 请求响应
 

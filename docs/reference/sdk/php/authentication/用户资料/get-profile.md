@@ -22,6 +22,39 @@
 
 
 
+## 示例代码
+
+```php
+<?php
+
+use Authing\AuthenticationClient;
+
+// 需要替换成你的 Authing 应用 ID
+$AUTHING_APP_ID = "AUTHING_APP_ID";
+// 需要替换成你的 Authing 应用密钥
+$AUTHING_APP_SECRET = "AUTHING_APP_SECRET";
+// 需要替换成你的 Authing 应用域名
+$AUTHING_APP_HOST = "AUTHING_APP_HOST";
+
+// 初始化 AuthenticationClient
+$authenticationClient = new Authing\AuthenticationClient(
+    array(
+        "appId" => $AUTHING_APP_ID,
+        "appSecret" => $AUTHING_APP_SECRET,
+        "appHost" => $AUTHING_APP_HOST,
+    )
+);
+
+// 使用用户的 access_token 初始化 $authenticationClient，access_token 可以通过登录接口获取
+$authenticationClient->setAccessToken("USER_ACCESS_TOKEN");
+
+$data = $authenticationClient->getProfile();
+print_r($data);
+
+```
+
+
+
 ## 请求响应
 
 类型： `UserSingleRespDto`
@@ -48,6 +81,7 @@
     "createdAt": "2022-07-03T02:20:30.000Z",
     "updatedAt": "2022-07-03T02:20:30.000Z",
     "status": "Activated",
+    "workStatus": "Active",
     "externalId": "10010",
     "email": "test@example.com",
     "phone": "188xxxx8888",
@@ -106,6 +140,7 @@
 | createdAt | string | 是 | 创建时间   |  `2022-07-03T02:20:30.000Z` |
 | updatedAt | string | 是 | 更新时间   |  `2022-07-03T02:20:30.000Z` |
 | status | string | 是 | 账户当前状态   | Suspended |
+| workStatus | string | 是 | 账户当前工作状态   | Closed |
 | externalId | string | 否 | 第三方外部 ID   |  `10010` |
 | email | string | 否 | 邮箱，不区分大小写   |  `test@example.com` |
 | phone | string | 否 | 手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。   |  `188xxxx8888` |

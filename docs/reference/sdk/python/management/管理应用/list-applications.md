@@ -20,7 +20,7 @@
  | isIntegrateApp | boolean  | 否 | - | 是否为集成应用  |  |
  | isSelfBuiltApp | boolean  | 否 | - | 是否为自建应用  |  |
  | ssoEnabled | boolean  | 否 | - | 是否开启单点登录  |  |
- | keyword | string  | 否 | - | 模糊搜索字符串  | `test` |
+ | keywords | string  | 否 | - | 模糊搜索字符串  | `test` |
 
 
 

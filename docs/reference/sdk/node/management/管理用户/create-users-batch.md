@@ -20,6 +20,72 @@
 
 
 
+
+## 示例代码
+
+```ts
+import { ManagementClient, Models } from 'authing-node-sdk';
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  // 需要替换成你的 Authing Access Key ID
+  accessKeyId: 'AUTHING_ACCESS_KEY_ID',
+  // 需要替换成你的 Authing Access Key Secret
+  accessKeySecret: 'AUTHING_ACCESS_KEY_SECRET',
+  // 如果是私有化部署的客户，需要设置 Authing 服务域名
+  // host: 'https://api.your-authing-service.com'
+});
+
+(async () => {
+
+  const result = await managementClient.createUsersBatch({
+    list: [
+      {
+        status: Models.CreateUserInfoDto.status.ACTIVATED,
+        // 替换手机号邮箱等信息
+        email: 'test-batch@example.com',
+        phone: '18812349999',
+        phoneCountryCode: '+86',
+        username: 'bob-batch',
+        name: '张三',
+        nickname: '张三',
+        photo:
+          'https://files.authing.co/authing-console/default-user-avatar.png',
+        gender: Models.CreateUserInfoDto.gender.M,
+        birthdate: '2022-06-03',
+        country: 'CN',
+        province: 'BJ',
+        city: 'BJ',
+        address: '北京朝阳',
+        streetAddress: '北京朝阳区 xxx 街道',
+        postalCode: '438100',
+        company: 'steamory',
+        browser:
+          'Mozilla/5.0 (Linux; Android 10; V2001A; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/87.0.4280.141 Mobile Safari/537.36 VivoBrowser/10.2.10.0',
+        device: 'iOS',
+        givenName: '三',
+        familyName: '张',
+
+        otp: {
+          secret: 'HZ2F6J3AGNAVSOTV',
+          recoveryCode: 'b471-8ec0-874a-087f-bccb-cd54'
+        },
+        customData: {
+          school: '北京大学',
+          age: 22
+        }
+      }
+    ]
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
+
+
+
   
 ## 请求响应
 
@@ -47,6 +113,7 @@
     "createdAt": "2022-07-03T02:20:30.000Z",
     "updatedAt": "2022-07-03T02:20:30.000Z",
     "status": "Activated",
+    "workStatus": "Active",
     "externalId": "10010",
     "email": "test@example.com",
     "phone": "188xxxx8888",
@@ -139,7 +206,7 @@
 | otp |  | 否 | 用户的 OTP 验证器 嵌套类型：<a href="#CreateUserOtpDto">CreateUserOtpDto</a>。  |  |
 | departmentIds | array | 否 | 用户所属部门 ID 列表   |  `["624d930c3xxxx5c08dd4986e","624d93102xxxx012f33cd2fe"]` |
 | customData | object | 否 | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段   |  `{"school":"北京大学","age":22}` |
-| identities | array | 否 | 第三方身份源（建议调用绑定接口进行绑定） 嵌套类型：<a href="#CreateIdentityDto">CreateIdentityDto</a>。  |  `{"extIdpId":"6076bacxxxxxxxxd80d993b5","provider":"wechat","type":"openid","userIdInIdp":"oj7Nq05R-RRaqak0_YlMLnnIwsvg"}` |
+| identities | array | 否 | 第三方身份源（建议调用绑定接口进行绑定） 嵌套类型：<a href="#CreateIdentityDto">CreateIdentityDto</a>。  |  `[{"extIdpId":"6076bacxxxxxxxxd80d993b5","provider":"wechat","type":"openid","userIdInIdp":"oj7Nq05R-RRaqak0_YlMLnnIwsvg"}]` |
 
 
 ### <a id="CreateUserOtpDto"></a> CreateUserOtpDto
@@ -190,6 +257,7 @@
 | createdAt | string | 是 | 创建时间   |  `2022-07-03T02:20:30.000Z` |
 | updatedAt | string | 是 | 更新时间   |  `2022-07-03T02:20:30.000Z` |
 | status | string | 是 | 账户当前状态   | Suspended |
+| workStatus | string | 是 | 账户当前工作状态   | Closed |
 | externalId | string | 否 | 第三方外部 ID   |  `10010` |
 | email | string | 否 | 邮箱，不区分大小写   |  `test@example.com` |
 | phone | string | 否 | 手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。   |  `188xxxx8888` |

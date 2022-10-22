@@ -15,7 +15,7 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| type | string | 是 | - | 第三方邮件服务商类型:<br>- `smtp`: 标准 SMTP 邮件服务<br>- `ali`: [阿里企业邮箱](https://www.ali-exmail.cn/Land/)<br>- `tencent`: [腾讯企业邮箱](https://work.weixin.qq.com/mail/)<br>- `sendgrid`: [SendGrid 邮件服务](https://sendgrid.com/)<br>      | `smtp` |
+| type | string | 是 | - | 第三方邮件服务商类型:<br>- `custom`: 自定义 SMTP 邮件服务<br>- `ali`: [阿里企业邮箱](https://www.ali-exmail.cn/Land/)<br>- `qq`: [腾讯企业邮箱](https://work.weixin.qq.com/mail/)<br>- `sendgrid`: [SendGrid 邮件服务](https://sendgrid.com/)<br>      | `custom` |
 | enabled | boolean | 是 | - | 是否启用，如果不启用，将默认使用 Authing 内置的邮件服务  | `true` |
 | smtpConfig | <a href="#SMTPEmailProviderConfigInput">SMTPEmailProviderConfigInput</a> | 否 | - | SMTP 邮件服务配置  |  |
 | sendGridConfig | <a href="#SendGridEmailProviderConfigInput">SendGridEmailProviderConfigInput</a> | 否 | - | SendGrid 邮件服务配置  |  |
@@ -75,16 +75,15 @@ namespace ConsoleManagement
   
 ## 请求响应
 
-类型： `EmailProviderDto`
+类型： `EmailProviderRespDto`
 
 | 名称 | 类型 | 描述 |
 | ---- | ---- | ---- |
-| enabled | boolean | 是否启用，如果不启用，将默认使用 Authing 内置的邮件服务 |
-| type | string | 第三方邮件服务商类型:<br>- `smtp`: 标准 SMTP 邮件服务<br>- `ali`: [阿里企业邮箱](https://www.ali-exmail.cn/Land/)<br>- `tencent`: [腾讯企业邮箱](https://work.weixin.qq.com/mail/)<br>- `sendgrid`: [SendGrid 邮件服务](https://sendgrid.com/)<br>     |
-| smtpConfig | <a href="#SMTPEmailProviderConfig">SMTPEmailProviderConfig</a> | SMTP 邮件服务配置 |
-| sendGridConfig | <a href="#SendGridEmailProviderConfig">SendGridEmailProviderConfig</a> | SendGrid 邮件服务配置 |
-| aliExmailConfig | <a href="#AliExmailEmailProviderConfig">AliExmailEmailProviderConfig</a> | 阿里企业邮件服务配置 |
-| tencentExmailConfig | <a href="#TencentExmailEmailProviderConfig">TencentExmailEmailProviderConfig</a> | 腾讯企业邮件服务配置 |
+| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message | string | 描述信息 |
+| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
+| requestId | string | 请求 ID。当请求失败时会返回。 |
+| data | <a href="#EmailProviderDto">EmailProviderDto</a> | 响应数据 |
 
 
 
@@ -92,26 +91,31 @@ namespace ConsoleManagement
 
 ```json
 {
-  "enabled": true,
-  "type": "smtp",
-  "smtpConfig": {
-    "smtpHost": "smtp.example.com",
-    "smtpPort": 465,
-    "sender": "test",
-    "senderPass": "passw0rd",
-    "enableSSL": true
-  },
-  "sendGridConfig": {
-    "sender": "test",
-    "apikey": "xxxxxxxxxx"
-  },
-  "aliExmailConfig": {
-    "sender": "test",
-    "senderPass": "passw0rd"
-  },
-  "tencentExmailConfig": {
-    "sender": "test",
-    "senderPass": "passw0rd"
+  "statusCode": 200,
+  "message": "操作成功",
+  "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c",
+  "data": {
+    "enabled": true,
+    "type": "custom",
+    "smtpConfig": {
+      "smtp_host": "smtp.example.com",
+      "smtp_port": 465,
+      "sender": "test",
+      "senderPass": "passw0rd",
+      "secure": true
+    },
+    "sendGridConfig": {
+      "sender": "test",
+      "apikey": "xxxxxxxxxx"
+    },
+    "aliExmailConfig": {
+      "sender": "test",
+      "senderPass": "passw0rd"
+    },
+    "tencentExmailConfig": {
+      "sender": "test",
+      "senderPass": "passw0rd"
+    }
   }
 }
 ```
@@ -123,11 +127,11 @@ namespace ConsoleManagement
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| smtpHost | string | 是 | SMTP 地址   |  `smtp.example.com` |
-| smtpPort | number | 是 | SMTP 端口   |  `465` |
-| sender | string | 是 | 用户名   |  `test` |
+| smtp_host | string | 是 | SMTP 地址   |  `smtp.example.com` |
+| smtp_port | number | 是 | SMTP 端口   |  `465` |
+| sender | string | 否 | 用户名   |  `test` |
 | senderPass | string | 是 | 密码   |  `passw0rd` |
-| enableSSL | boolean | 是 | 是否启用 SSL   |  `true` |
+| secure | boolean | 否 | 是否启用 SSL   |  `true` |
 
 
 ### <a id="SendGridEmailProviderConfigInput"></a> SendGridEmailProviderConfigInput
@@ -154,15 +158,27 @@ namespace ConsoleManagement
 | senderPass | string | 是 | 密码   |  `passw0rd` |
 
 
+### <a id="EmailProviderDto"></a> EmailProviderDto
+
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+| ---- |  ---- | ---- | ---- | ---- |
+| enabled | boolean | 是 | 是否启用，如果不启用，将默认使用 Authing 内置的邮件服务   |  `true` |
+| type | string | 否 | 第三方邮件服务商类型:<br>- `custom`: 自定义 SMTP 邮件服务<br>- `ali`: [阿里企业邮箱](https://www.ali-exmail.cn/Land/)<br>- `qq`: [腾讯企业邮箱](https://work.weixin.qq.com/mail/)<br>- `sendgrid`: [SendGrid 邮件服务](https://sendgrid.com/)<br>       | ali |
+| smtpConfig |  | 否 | SMTP 邮件服务配置 嵌套类型：<a href="#SMTPEmailProviderConfig">SMTPEmailProviderConfig</a>。  |  |
+| sendGridConfig |  | 否 | SendGrid 邮件服务配置 嵌套类型：<a href="#SendGridEmailProviderConfig">SendGridEmailProviderConfig</a>。  |  |
+| aliExmailConfig |  | 否 | 阿里企业邮件服务配置 嵌套类型：<a href="#AliExmailEmailProviderConfig">AliExmailEmailProviderConfig</a>。  |  |
+| tencentExmailConfig |  | 否 | 腾讯企业邮件服务配置 嵌套类型：<a href="#TencentExmailEmailProviderConfig">TencentExmailEmailProviderConfig</a>。  |  |
+
+
 ### <a id="SMTPEmailProviderConfig"></a> SMTPEmailProviderConfig
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| smtpHost | string | 是 | SMTP 地址   |  `smtp.example.com` |
-| smtpPort | number | 是 | SMTP 端口   |  `465` |
+| smtp_host | string | 是 | SMTP 地址   |  `smtp.example.com` |
+| smtp_port | number | 是 | SMTP 端口   |  `465` |
 | sender | string | 是 | 用户名   |  `test` |
 | senderPass | string | 是 | 密码   |  `passw0rd` |
-| enableSSL | boolean | 是 | 是否启用 SSL   |  `true` |
+| secure | boolean | 是 | 是否启用 SSL   |  `true` |
 
 
 ### <a id="SendGridEmailProviderConfig"></a> SendGridEmailProviderConfig

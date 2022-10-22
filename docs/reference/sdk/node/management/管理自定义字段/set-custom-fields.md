@@ -19,6 +19,75 @@
 
 
 
+
+## 示例代码
+
+```ts
+import { ManagementClient, Models } from 'authing-node-sdk';
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  // 需要替换成你的 Authing Access Key ID
+  accessKeyId: 'AUTHING_ACCESS_KEY_ID',
+  // 需要替换成你的 Authing Access Key Secret
+  accessKeySecret: 'AUTHING_ACCESS_KEY_SECRET',
+  // 如果是私有化部署的客户，需要设置 Authing 服务域名
+  // host: 'https://api.your-authing-service.com'
+});
+
+(async () => {
+
+  const result = await managementClient.setCustomFields({
+    list: [
+      {
+        targetType: Models.CustomFieldDto.targetType.USER,
+        key: 'school',
+        dataType: Models.CustomFieldDto.dataType.STRING,
+        label: '学校',
+        description: '学校',
+        encrypted: false,
+        isUnique: false,
+        userEditable: false,
+        visibleInAdminConsole: true,
+        visibleInUserCenter: true,
+        options: [
+          {
+            value: 'hust',
+            label: '华中科技大学'
+          }
+        ],
+        i18n: {
+          label: {
+            'zh-CN': {
+              enabled: false,
+              value: '中文'
+            },
+            'en-US': {
+              enabled: false,
+              value: '英文'
+            },
+            'zh-TW': {
+              enabled: false,
+              value: '繁体'
+            },
+            'ja-JP': {
+              enabled: false,
+              value: '日文'
+            }
+          }
+        }
+      }
+    ]
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
+
+
+
   
 ## 请求响应
 

@@ -21,6 +21,37 @@
 
 
 
+## 示例代码
+
+```ts
+import { AuthenticationClient, Models } from 'authing-node-sdk';
+
+const authenticationClient = new AuthenticationClient({
+  // 需要替换成你的 Authing AppId、 Secret 和 Host
+  appId: 'AUTHING_APP_ID',
+  appSecret: 'AUTHING_APP_SECRET',
+  appHost: 'AUTHING_APP_HOST'
+});
+
+(async () => {
+
+  // 请先调用登录接口获取 access_token，并调用 setAccessToken 方法设置 access_token
+  authenticationClient.setAccessToken("REPLACE_ME_WITH_REAL_ACCESS_TOKEN");
+
+  const result = await authenticationClient.updatePhone({
+    // 用于临时修改手机号的 token，可从发起修改手机号的验证请求接口获取。
+    updatePhoneToken: 'xxxx'
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
+
+
+
+
 ## 请求响应
 
 类型： `CommonResponseDto`

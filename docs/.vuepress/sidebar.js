@@ -6725,13 +6725,21 @@ const zhCnNavBar = {
     },
     {
       title: 'API',
-      path: '/reference/api/',
+      redirect: '/reference/api/authentication/',
       children: [
         {
-          title: 'API',
-          path: '/reference/api/'
+          title: '用户认证 API',
+          path: '/reference/api/authentication/'
+        },
+        {
+          title: '管理 API',
+          path: '/reference/api/management/'
         }
       ]
+    },
+    {
+      title: '错误码',
+      path: '/reference/error-code'
     }
   ]
 };

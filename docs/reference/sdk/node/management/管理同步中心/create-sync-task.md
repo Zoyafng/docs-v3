@@ -27,6 +27,58 @@
 
 
 
+
+## 示例代码
+
+```ts
+import { ManagementClient, Models } from 'authing-node-sdk';
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  // 需要替换成你的 Authing Access Key ID
+  accessKeyId: 'AUTHING_ACCESS_KEY_ID',
+  // 需要替换成你的 Authing Access Key Secret
+  accessKeySecret: 'AUTHING_ACCESS_KEY_SECRET',
+  // 如果是私有化部署的客户，需要设置 Authing 服务域名
+  // host: 'https://api.your-authing-service.com'
+});
+
+(async () => {
+
+  const result = await managementClient.createSyncTask({
+    syncTaskName: '我的飞书同步任务',
+    syncTaskType: Models.SyncTaskDto.syncTaskType.LARK,
+    clientConfig: {
+      larkConfig: {
+        app_id: '1',
+        app_secret: '2',
+        encrypt_key: '3',
+        verification_token: '4'
+      }
+    },
+    syncTaskFlow: Models.CreateSyncTaskDto.syncTaskFlow.UPSTREAM,
+    syncTaskTrigger: Models.CreateSyncTaskDto.syncTaskTrigger.MANUALLY,
+    organizationCode: 'steamory',
+    provisioningScope: {
+      all: true,
+      includeNewUsers: false
+    },
+    fieldMapping: [
+      {
+        expression: 'mobile',
+        targetKey: 'phone'
+      }
+    ]
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
+
+
+
   
 ## 请求响应
 
