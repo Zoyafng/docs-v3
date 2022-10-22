@@ -29,7 +29,7 @@
 在主工程的 build.gradle 文件里面添加依赖：
 
 ```groovy
-implementation 'cn.authing:authing-android-api-sdk:+'
+implementation 'cn.authing:authing-android-sdk:+'
 ```
 
 ## 第三步：初始化

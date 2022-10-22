@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-Authing Android API SDK 包含[**用户认证 API**](./apis/) 模块，SDK 中的用户认证模块（AuthClient）以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有用户**自助完成**的操作，如下：
+Authing Android SDK 包含[**用户认证 API**](./apis/) 模块，SDK 中的用户认证模块（AuthClient）以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有用户**自助完成**的操作，如下：
 
 * [登录](./apis/authentication/登录/)
 * [注册](./apis/authentication/注册/)
@@ -21,7 +21,7 @@ Authing Android API SDK 包含[**用户认证 API**](./apis/) 模块，SDK 中�
 | 条目     | 说明                                                         |
 | -------- | ------------------------------------------------------------ |
 | 支持版本 | Android 7.0 +                                                |
-| 仓库地址 | [https://github.com/Authing/authing-android-api](https://github.com/Authing/authing-android-api) |
+| 仓库地址 | [https://github.com/Authing/authing-android-android](https://github.com/Authing/authing-android-android) |
 
 ## 开始之前
 
