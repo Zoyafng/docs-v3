@@ -1,5 +1,9 @@
 # 快速开始
 
+::: hint-info
+Authing 微信小程序 SDK，五分钟接入微信小程序授权登录。
+:::
+
 ## 第一步：创建应用
 
 1. 使用 Authing 创建一个应用：
@@ -201,12 +205,6 @@ const authing = new Authing({
 
 Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 
-#### 说明
-
-- 如果返回值为 `null`，说明用户未登录，或登录态已过期
-
-- 如果返回值不为 `null`，说明用户已登录，且登录态未过期
-
 #### 示例代码
 
 :::: tabs :options="{ useUrlFragment: false }"
@@ -220,6 +218,13 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 Page({
   async getLoginState () {    
     const [error, loginState] = await authing.getLoginState()
+
+    if (error) {
+      // 用户未登录，或登录态已过期
+    } else {
+      // 用户已登录，且登录态未过期
+      console.log(loginState)
+    }
   }
 })
 ```
@@ -236,6 +241,13 @@ export default class Index extends Component<PropsWithChildren> {
   }
   async getLoginState () {    
     const [error, loginState] = await authing.getLoginState()
+
+    if (error) {
+      // 用户未登录，或登录态已过期
+    } else {
+      // 用户已登录，且登录态未过期
+      console.log(loginState)
+    }
   }
 }
 ```
@@ -246,6 +258,13 @@ export default {
   methods: {
     async getLoginState () {      
       const [error, loginState] = await authing.getLoginState()
+
+      if (error) {
+        // 用户未登录，或登录态已过期
+      } else {
+        // 用户已登录，且登录态未过期
+        console.log(loginState)
+      }
     }
   }
 }

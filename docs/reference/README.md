@@ -22,15 +22,27 @@
               # 保存 svg 格式
               title: "Javascript",
               icon: "JavaScript",
-              github: "https://github.com/Authing/authing-ui-components",
-              doc: "https://docs.authing.cn/v2/reference/guard/v2/native-javascript.html",
+              github: "https://github.com/Authing/Guard",
+              doc: "./guard/web.html",
             },
             {
               #
               title: "React",
               icon: "React-Native",
-              github: "https://github.com/Authing/authing-ui-components",
-              doc: "https://docs.authing.cn/v2/reference/guard/v2/react.html",
+              github: "https://github.com/Authing/Guard",
+              doc: "./guard/web.html",
+            },
+            {
+              title: "Vue",
+              icon: "Vue",
+              github: "https://github.com/Authing/Guard",
+              doc: "./guard/web.html",
+            },
+            {
+              title: "Angular",
+              icon: "Angular",
+              github: "https://github.com/Authing/Guard",
+              doc: "./guard/web.html",
             },
           ],
       },
@@ -42,25 +54,25 @@
               #
               title: "Javascript",
               icon: "JavaScript",
-              doc: "https://docs.authing.cn/v2/reference/guard/v2/native-javascript.html",
+              doc: "./sdk/web-sdk/",
             },
             {
               #
               title: "React",
               icon: "React-Native",
-              doc: "./single-page-application/react.html",
+              doc: "./sdk/web-sdk/",
             },
             {
               #
               title: "Vue",
               icon: "Vue",
-              doc: "./single-page-application/vue.html",
+              doc: "./sdk/web-sdk/",
             },
             {
               #
               title: "Angular",
               icon: "Angular",
-              doc: "./single-page-application/angular.html",
+              doc: "./sdk/web-sdk/",
             },
           ],
       },
@@ -113,7 +125,7 @@
               #
               title: "Javascript",
               icon: "JavaScript",
-              github: "https://github.com/Authing/authing.js",
+              github: "https://github.com/Authing/authing-node-sdk",
               doc: "./sdk/node/install.html",
             },
             {
@@ -238,19 +250,15 @@
         list: [
             {
               #
-              title: "单点登录（SSO）",
-              doc: "./other/sdk-for-sso.html",
-            },
-            {
-              #
               title: "微信小程序",
-              github: "https://github.com/authing/authing-wxapp-sdk",
-              doc: "./other/sdk-for-wxapp.html",
+              github: "https://github.com/authing/authing-js-sdk",
+              doc: "./sdk/miniapp/",
             },
             {
               #
               title: "微信网页登录",
-              doc: "./other/sdk-for-wxmp.html",
+              github: "https://github.com/authing/authing-js-sdk",
+              doc: "./sdk/weixin-official-account/",
             },
             {
               #
