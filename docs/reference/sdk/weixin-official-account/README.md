@@ -15,7 +15,7 @@ Authing 微信网页授权登录 SDK 5.0 主要有以下几个优势：
 |条目|说明|
 |-----|----|
 |最新版本|5.1.0|
-|仓库地址|https://github.com/authing/authing-js-sdk|
+|仓库地址|[https://github.com/authing/authing-js-sdk](https://github.com/authing/authing-js-sdk)|
 
 ## 开始之前
 

@@ -1,4 +1,4 @@
-# 快速开始
+# 开始集成
 
 本文讲述在浏览器环境中，如何使用 {{$localeConfig.brandName}} 提供的 SDK，实现[单点登录](https://docs.authing.cn/v2/guides/app-new/sso/)。
 

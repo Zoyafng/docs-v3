@@ -11,7 +11,7 @@
 |条目|说明|
 |-----|----|
 |最新版本|5.1.0|
-|仓库地址|https://github.com/authing/authing-js-sdk|
+|仓库地址|[https://github.com/authing/authing-js-sdk](https://github.com/authing/authing-js-sdk)|
 
 <br />
 

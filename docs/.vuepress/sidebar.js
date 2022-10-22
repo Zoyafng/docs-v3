@@ -6535,7 +6535,7 @@ const zhCnNavBar = {
                         {
                           "title": "使用移动端社会化登录",
                           "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/signin-by-mobile"
-                        }              
+                        },    
                         {
                           "title": "查询二维码状态",
                           "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/check-qrcode-status"
@@ -6824,52 +6824,68 @@ const zhCnNavBar = {
           path: '/reference/sdk/miniapp/',
           children: [
             {
-              title: '快速开始',
+              title: '开始集成',
               path: '/reference/sdk/miniapp/quick'
+            },
+            {
+              title: '错误处理',
+              path: '/reference/sdk/miniapp/process-error'
+            },
+            {
+              title: '版本更新',
+              path: '/reference/sdk/changelog-authing-js-sdk'
             }
           ]
         },
-        {
-          title: '微信网页授权（开发中）',
-          path: '/reference/sdk/weixin-official-account/',
-          children: [
-            {
-              title: '快速开始',
-              path: '/reference/sdk/weixin-official-account/quick'
-            }
-          ]
-        },
-        {
-          title: '单点登录 SSO（开发中）',
-          path: '/reference/sdk/web-sdk/',
-          children: [
-            {
-              title: '快速开始',
-              path: '/reference/sdk/web-sdk/quick'
-            }
-          ]
-        }
+        // {
+          // title: '微信网页授权（开发中）',
+          // path: '/reference/sdk/weixin-official-account/',
+          // children: [
+          //   {
+          //     title: '开始集成',
+          //     path: '/reference/sdk/weixin-official-account/quick'
+          //   },
+          //   {
+          //     title: '版本更新',
+          //     path: '/reference/sdk/changelog-authing-js-sdk'
+          //   }
+          // ]
+        // },
+        // {
+          // title: '单点登录 SSO（开发中）',
+          // path: '/reference/sdk/web-sdk/',
+          // children: [
+          //   {
+          //     title: '开始集成',
+          //     path: '/reference/sdk/web-sdk/quick'
+          //   },
+          //   {
+          //     title: '版本更新',
+          //     path: '/reference/sdk/changelog-authing-js-sdk'
+          //   }
+          // ]
+        // }
       ]
     },
-    {
-      title: '登录组件（Guard）',
-      path: '/reference/guard/',
-      children: [
-        {
-          title: 'Web Guard（开发中）',
-          path: '/reference/guard/web'
-        },
-        {
-          title: '更新日志',
-          children: [
-            {
-              title: "Web Guard 更新日志",
-              path: "/reference/guard/changelog-web"
-            }
-          ]
-        }
-      ]
-    },
+    // {
+      // title: 'Guard 登录组件（开发中）',
+      // path: '/reference/guard/',
+      // children: [
+      //   {
+      //     title: 'Web Guard（开发中）',
+      //     path: '/reference/guard/web'
+      //   },
+      //   {
+      //     title: '更新日志',
+      //     children: [
+      //       {
+      //         title: "Web Guard 更新日志",
+      //         path: "/reference/guard/changelog-web"
+      //       }
+      //     ]
+      //   }
+      // ]
+    // },
     {
       title: 'API',
       path: '/reference/api/',
