@@ -47,7 +47,7 @@ Authing V3 API & SDK 将管理员操作场景和终端用户使用场景做了�
 
 ### 集成认证到你的应用中
 
-我们推荐使用 {{$localeConfig.brandName}} 提供的 [前端登录组件 Guard](https://docs.authing.co/v2/reference/guard/v2/) （当前 Guard 集成的是 Authing V2 版认证 API，最新基于 V3 版 API 的 Guard 正在开发中），它为开发者屏蔽了很多底层认证的实现细节，同时也包括繁琐的 UI 开发；如果你需要自己实现登录界面 UI，可以使用我们为各语言提供的 `Authentication SDK`；在单点登录场景下，我们提供[单点登录 SDK](https://docs.authing.co/v2/reference/sdk-for-sso-spa.html) 帮助你快速实现单点登录。
+我们推荐使用 {{$localeConfig.brandName}} 提供的 [前端登录组件 Guard](https://docs.authing.co/v2/reference/guard/v2/) （当前 Guard 集成的是 Authing V2 版认证 API，最新基于 V3 版 API 的 Guard 正在开发中，敬请期待），它为开发者屏蔽了很多底层认证的实现细节，同时也包括繁琐的 UI 开发；如果你需要自己实现登录界面 UI，可以使用我们为各语言提供的 `Authentication SDK`；在单点登录场景下，我们提供[单点登录 SDK](https://docs.authing.co/v2/reference/sdk-for-sso-spa.html) 帮助你快速实现单点登录。
 
 一些场景的认证场景包括：
 
