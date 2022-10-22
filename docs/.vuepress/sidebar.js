@@ -6655,7 +6655,7 @@ const zhCnNavBar = {
                         },
                         {
                           "title": "获取应用开启的外部身份源列表",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/账号绑定/get-application-enabled-extidps"
+                          "path": "/reference/mobile/sdk-for-android/apis/authentication/账号绑定/get-extidps"
                         }
                       ]
                     },
