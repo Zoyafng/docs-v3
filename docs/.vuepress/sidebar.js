@@ -6535,7 +6535,7 @@ const zhCnNavBar = {
                         {
                           "title": "使用移动端社会化登录",
                           "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/signin-by-mobile"
-                        }              
+                        },        
                         {
                           "title": "查询二维码状态",
                           "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/check-qrcode-status"
