@@ -11,6 +11,10 @@
 
 获取所有应用已经开启、用户暂未绑定的 MFA 认证要素，用户可以从返回的列表中绑定新的 MFA 认证要素。
 
+## 方法名称
+
+`AuthenticationClient.list_factors_to_enroll`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |

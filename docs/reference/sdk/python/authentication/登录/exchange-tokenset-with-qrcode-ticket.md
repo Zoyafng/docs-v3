@@ -59,6 +59,10 @@ JS 代码示例：
 
     
 
+## 方法名称
+
+`AuthenticationClient.exchange_token_set_with_qr_code_ticket`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |

@@ -118,6 +118,19 @@ const zhCnNavBar = {
                   ]
                 },
                 {
+                  "title": "登出",
+                  "children": [
+                    {
+                      "title": "前端登出",
+                      "path": "/reference/sdk/java/authentication/登出/front-channel-logout.md"
+                    },
+                    {
+                      "title": "后端登出",
+                      "path": "/reference/sdk/java/authentication/登出/backend-channel-logout.md"
+                    }
+                  ]
+                },
+                {
                   "title": "注册",
                   "children": [
                     {
@@ -1187,6 +1200,19 @@ const zhCnNavBar = {
                     {
                       "title": "自建 APP 扫码登录：APP 端修改二维码状态",
                       "path": "/reference/sdk/node/authentication/登录/change-qrcode-status"
+                    }
+                  ]
+                },
+                {
+                  "title": "登出",
+                  "children": [
+                    {
+                      "title": "前端登出",
+                      "path": "/reference/sdk/node/authentication/登出/front-channel-logout.md"
+                    },
+                    {
+                      "title": "后端登出",
+                      "path": "/reference/sdk/node/authentication/登出/backend-channel-logout.md"
                     }
                   ]
                 },
@@ -2264,6 +2290,19 @@ const zhCnNavBar = {
                   ]
                 },
                 {
+                  "title": "登出",
+                  "children": [
+                    {
+                      "title": "前端登出",
+                      "path": "/reference/sdk/go/authentication/登出/front-channel-logout.md"
+                    },
+                    {
+                      "title": "后端登出",
+                      "path": "/reference/sdk/go/authentication/登出/backend-channel-logout.md"
+                    }
+                  ]
+                },
+                {
                   "title": "注册",
                   "children": [
                     {
@@ -3333,6 +3372,19 @@ const zhCnNavBar = {
                     {
                       "title": "自建 APP 扫码登录：APP 端修改二维码状态",
                       "path": "/reference/sdk/python/authentication/登录/change-qrcode-status"
+                    }
+                  ]
+                },
+                {
+                  "title": "登出",
+                  "children": [
+                    {
+                      "title": "前端登出",
+                      "path": "/reference/sdk/python/authentication/登出/front-channel-logout.md"
+                    },
+                    {
+                      "title": "后端登出",
+                      "path": "/reference/sdk/python/authentication/登出/backend-channel-logout.md"
                     }
                   ]
                 },
@@ -4410,6 +4462,19 @@ const zhCnNavBar = {
                   ]
                 },
                 {
+                  "title": "登出",
+                  "children": [
+                    {
+                      "title": "前端登出",
+                      "path": "/reference/sdk/php/authentication/登出/front-channel-logout.md"
+                    },
+                    {
+                      "title": "后端登出",
+                      "path": "/reference/sdk/php/authentication/登出/backend-channel-logout.md"
+                    }
+                  ]
+                },
+                {
                   "title": "注册",
                   "children": [
                     {
@@ -5483,6 +5548,19 @@ const zhCnNavBar = {
                   ]
                 },
                 {
+                  "title": "登出",
+                  "children": [
+                    {
+                      "title": "前端登出",
+                      "path": "/reference/sdk/csharp/authentication/登出/front-channel-logout.md"
+                    },
+                    {
+                      "title": "后端登出",
+                      "path": "/reference/sdk/csharp/authentication/登出/backend-channel-logout.md"
+                    }
+                  ]
+                },
+                {
                   "title": "注册",
                   "children": [
                     {
@@ -6477,8 +6555,8 @@ const zhCnNavBar = {
               ]
             }
           ]
-        },
-
+        }
+        ,
         // 自动生成粘贴结束
         {
           title: 'Android',
@@ -6847,53 +6925,53 @@ const zhCnNavBar = {
           ]
         },
         // {
-          // title: '微信网页授权（开发中）',
-          // path: '/reference/sdk/weixin-official-account/',
-          // children: [
-          //   {
-          //     title: '开始集成',
-          //     path: '/reference/sdk/weixin-official-account/quick'
-          //   },
-          //   {
-          //     title: '版本更新',
-          //     path: '/reference/sdk/changelog-authing-js-sdk'
-          //   }
-          // ]
+        // title: '微信网页授权（开发中）',
+        // path: '/reference/sdk/weixin-official-account/',
+        // children: [
+        //   {
+        //     title: '开始集成',
+        //     path: '/reference/sdk/weixin-official-account/quick'
+        //   },
+        //   {
+        //     title: '版本更新',
+        //     path: '/reference/sdk/changelog-authing-js-sdk'
+        //   }
+        // ]
         // },
         // {
-          // title: '单点登录 SSO（开发中）',
-          // path: '/reference/sdk/web-sdk/',
-          // children: [
-          //   {
-          //     title: '开始集成',
-          //     path: '/reference/sdk/web-sdk/quick'
-          //   },
-          //   {
-          //     title: '版本更新',
-          //     path: '/reference/sdk/changelog-authing-js-sdk'
-          //   }
-          // ]
+        // title: '单点登录 SSO（开发中）',
+        // path: '/reference/sdk/web-sdk/',
+        // children: [
+        //   {
+        //     title: '开始集成',
+        //     path: '/reference/sdk/web-sdk/quick'
+        //   },
+        //   {
+        //     title: '版本更新',
+        //     path: '/reference/sdk/changelog-authing-js-sdk'
+        //   }
+        // ]
         // }
       ]
     },
     // {
-      // title: 'Guard 登录组件（开发中）',
-      // path: '/reference/guard/',
-      // children: [
-      //   {
-      //     title: 'Web Guard（开发中）',
-      //     path: '/reference/guard/web'
-      //   },
-      //   {
-      //     title: '更新日志',
-      //     children: [
-      //       {
-      //         title: "Web Guard 更新日志",
-      //         path: "/reference/guard/changelog-web"
-      //       }
-      //     ]
-      //   }
-      // ]
+    // title: 'Guard 登录组件（开发中）',
+    // path: '/reference/guard/',
+    // children: [
+    //   {
+    //     title: 'Web Guard（开发中）',
+    //     path: '/reference/guard/web'
+    //   },
+    //   {
+    //     title: '更新日志',
+    //     children: [
+    //       {
+    //         title: "Web Guard 更新日志",
+    //         path: "/reference/guard/changelog-web"
+    //       }
+    //     ]
+    //   }
+    // ]
     // },
     {
       title: 'API',

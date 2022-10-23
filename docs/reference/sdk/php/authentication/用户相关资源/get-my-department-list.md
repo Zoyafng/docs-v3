@@ -11,6 +11,10 @@
 
 此接口用于获取用户的部门列表，可根据一定排序规则进行排序。
 
+## 方法名称
+
+`AuthenticationClient.getDepartmentList`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |

@@ -11,6 +11,10 @@
 
 动态获取国家列表，可以用于前端登录页面国家选择和国际短信输入框选择，以减少前端静态资源体积。
 
+## 方法名称
+
+`AuthenticationClient.getCountryList`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |

@@ -11,6 +11,10 @@
 
 通过权限分组内角色 code，创建角色，可以选择权限分组、角色描述等。
 
+## 方法名称
+
+`AuthenticationClient.CreateRole`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |

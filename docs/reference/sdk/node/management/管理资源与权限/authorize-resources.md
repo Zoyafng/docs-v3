@@ -11,6 +11,10 @@
 
 将一个/多个资源授权给用户、角色、分组、组织机构等主体，且可以分别指定不同的操作权限。
 
+## 方法名称
+
+`AuthenticationClient.authorizeResources`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |

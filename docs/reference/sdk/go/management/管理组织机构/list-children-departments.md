@@ -11,6 +11,10 @@
 
 通过组织 code、部门 ID，获取子部门列表，可以选择获取自定义数据、虚拟组织等。
 
+## 方法名称
+
+`AuthenticationClient.ListChildrenDepartments`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |

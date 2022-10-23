@@ -11,6 +11,10 @@
 
 给用户、角色或部门设置自定义字段的值，如果存在则更新，不存在则创建。
 
+## 方法名称
+
+`AuthenticationClient.setCustomData`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |

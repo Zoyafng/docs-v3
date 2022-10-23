@@ -11,10 +11,15 @@
 
 用户解绑邮箱，如果用户没有绑定其他登录方式（手机号、社会化登录账号），将无法解绑邮箱，会提示错误。
 
+## 方法名称
+
+`AuthenticationClient.UnbindEmail`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
+| passCode | string | 是 | - | 邮箱验证码，需要先调用**发送邮件**接口接收验证码。  | `1234` |
 
 
 

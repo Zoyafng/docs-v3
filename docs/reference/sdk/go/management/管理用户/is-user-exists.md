@@ -11,6 +11,10 @@
 
 根据条件判断用户是否存在，可以筛选用户名、邮箱、手机号、第三方外部 ID 等。
 
+## 方法名称
+
+`AuthenticationClient.IsUserExists`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |

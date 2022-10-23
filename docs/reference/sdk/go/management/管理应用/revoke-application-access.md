@@ -11,6 +11,10 @@
 
 取消给用户、分组、组织或角色的应用访问权限授权
 
+## 方法名称
+
+`AuthenticationClient.RevokeApplicationAccess`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |

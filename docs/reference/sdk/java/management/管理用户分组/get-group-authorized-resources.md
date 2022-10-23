@@ -11,6 +11,10 @@
 
 通过分组 code，获取分组被授权的资源列表，可以通过资源类型、权限分组 code 筛选。
 
+## 方法名称
+
+`AuthenticationClient.getGroupAuthorizedResources`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |

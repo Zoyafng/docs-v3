@@ -11,6 +11,10 @@
 
 配置第三方邮件服务
 
+## 方法名称
+
+`AuthenticationClient.config_email_provider`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
