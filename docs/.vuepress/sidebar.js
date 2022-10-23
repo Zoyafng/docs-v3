@@ -6578,11 +6578,10 @@ const zhCnNavBar = {
           children: [
             {
               title: '安装使用',
-              path: '/reference/mobile/sdk-for-android/quick'
+              path: '/reference/mobile/sdk-for-android/install'
             },
             {
-              title: 'API',
-              path: '/reference/mobile/sdk-for-android/apis/',
+              title: '用户认证模块',
               children: [
                 {
                   "title": "登录",
@@ -6845,10 +6844,6 @@ const zhCnNavBar = {
                   "path": "/reference/mobile/sdk-for-android/apis/oidc.md"
                 }
               ]
-            },
-            {
-              title: '私有化部署',
-              path: '/reference/mobile/sdk-for-android/onpremise'
             }
           ]
         },
