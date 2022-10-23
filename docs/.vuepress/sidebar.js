@@ -32,6 +32,20 @@ const DATABASE_CONNECTION_MENU_EN = {
 const zhCnNavBar = {
   '/reference/': [
     {
+      title: 'API',
+      redirect: '/reference/api/authentication/',
+      children: [
+        {
+          title: '用户认证 API',
+          path: '/reference/api/authentication/'
+        },
+        {
+          title: '管理 API',
+          path: '/reference/api/management/'
+        }
+      ]
+    },
+    {
       title: 'SDK',
       path: '/reference/sdk/',
       redirect: '/reference/sdk/java/install.html',
@@ -6843,11 +6857,11 @@ const zhCnNavBar = {
           path: '/reference/mobile/sdk-for-flutter/',
           children: [
             {
-              title: '快速开始',
+              title: '安装使用',
               path: '/reference/mobile/sdk-for-flutter/quick'
             },
             {
-              title: 'APIs',
+              title: 'API',
               path: '/reference/mobile/sdk-for-flutter/apis/',
               children: [
                 '/reference/mobile/sdk-for-flutter/apis/login',
@@ -6859,10 +6873,11 @@ const zhCnNavBar = {
                 '/reference/mobile/sdk-for-flutter/apis/utils',
                 '/reference/mobile/sdk-for-flutter/apis/oidc',
                 '/reference/mobile/sdk-for-flutter/apis/options',
+                '/reference/mobile/sdk-for-flutter/apis/enum',
               ]
             },
             {
-              title: '版本记录',
+              title: 'Flutter SDK 更新日志',
               path: '/reference/mobile/sdk-for-flutter/change-log'
             }
           ]
@@ -6872,11 +6887,11 @@ const zhCnNavBar = {
           path: '/reference/mobile/sdk-for-ios/',
           children: [
             {
-              title: '快速开始',
+              title: '安装使用',
               path: '/reference/mobile/sdk-for-ios/quick'
             },
             {
-              title: 'APIs',
+              title: 'API',
               path: '/reference/mobile/sdk-for-ios/apis/',
               children: [
                 '/reference/mobile/sdk-for-ios/apis/login',
@@ -6896,7 +6911,7 @@ const zhCnNavBar = {
               path: '/reference/mobile/sdk-for-ios/errorcode'
             },
             {
-              title: '版本记录',
+              title: 'iOS SDK 更新日志',
               path: '/reference/mobile/sdk-for-ios/change-log'
             }
           ]
@@ -6968,20 +6983,6 @@ const zhCnNavBar = {
     //   }
     // ]
     // },
-    {
-      title: 'API',
-      redirect: '/reference/api/authentication/',
-      children: [
-        {
-          title: '用户认证 API',
-          path: '/reference/api/authentication/'
-        },
-        {
-          title: '管理 API',
-          path: '/reference/api/management/'
-        }
-      ]
-    },
     {
       title: '错误码',
       path: '/reference/error-code'

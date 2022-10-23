@@ -10,9 +10,11 @@ func getProfile(customData: Bool? = false, identities: Bool? = false, department
 
 **请求参数**
 
-* *customData* 是否获取自定义数据
-* *identities* 是否获取 identities
-* *departmentIds* 是否获取部门 ID 列表
+| 名称  | 说明 |
+| :---- | :---- |
+| customData | 是否获取自定义数据 |
+| identities | 是否获取 identities |
+| departmentIds | 是否获取部门 ID 列表 |
 
 **示例代码**
 
@@ -32,7 +34,7 @@ func updateProfile(object: NSDictionary, completion: @escaping(Response) -> Void
 
 **请求参数**
 
-* *object* 字典类型用户资料
+`object` 字典类型用户资料
  
 **示例代码**
 
@@ -52,8 +54,10 @@ func bindEmail(email: String, passCode: String, completion: @escaping(Response) 
 
 **请求参数**
 
-* *email* 邮箱
-* *passCode* 验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| email | 邮箱 |
+| passCode | 验证码 |
  
 **示例代码**
 
@@ -89,12 +93,14 @@ func updateEmail(newEmail: String, newEmailPassCode: String, oldEmail: String? =
 ```
 
 **请求参数**
+  
+| 名称  | 说明 |
+| :---- | :---- |
+| newEmail | 新邮箱 |
+| newEmailPassCode | 新邮箱验证码 |
+| oldEmail | 旧邮箱 |
+| oldEmailPassCode | 旧邮箱验证码 |
 
-* *newEmail* 新邮箱
-* *newEmailPassCode* 新邮箱验证码
-* *oldEmail* 旧邮箱
-* *oldEmailPassCode* 旧邮箱验证码
- 
 **示例代码**
 
 ```swift
@@ -113,8 +119,11 @@ func bindPhone(phoneCountryCode: String? = nil, phoneNumber: String, passCode: S
 
 **请求参数**
 
-* *phoneNumber* 手机号
-* *passCode* 短信验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| phoneNumber | 手机号 |
+| passCode | 短信验证码 |
+
  
 **示例代码**
 
@@ -151,10 +160,12 @@ func updatePhone(newPhoneCountryCode: String? = nil, newPhoneNumber: String, new
 
 **请求参数**
 
-* *newPhoneNumber* 新手机号
-* *newPhonePassCode* 新手机短信验证码
-* *oldPhoneNumber* 旧手机号
-* *oldPhonePassCode* 旧手机短信验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| newPhoneNumber | 新手机号 |
+| newPhonePassCode | 新手机短信验证码 |
+| oldPhoneNumber | 旧手机号 |
+| oldPhonePassCode | 旧手机短信验证码 |
  
 **示例代码**
 
@@ -174,9 +185,11 @@ func updatePassword(newPassword: String, oldPassword: String? = nil, passwordEnc
 
 **请求参数**
 
-* *newPassword* 新密码
-* *oldPassword* 原始密码，如果用户当前设置了密码，此参数必填。
-* [*passwordEncryptType* 密码加密类型](./enum.md#-EncryptType)
+| 名称  | 说明 |
+| :---- | :---- |
+| newPassword | 新密码 |
+| oldPassword | 原始密码，如果用户当前设置了密码，此参数必填。 |
+| [passwordEncryptType](./enum.md#-EncryptType) | [密码加密类型](./enum.md#-EncryptType) |
 
 **示例代码**
 
@@ -196,10 +209,12 @@ func resetPasswordByPhone(phoneCountryCode: String? = nil, phoneNumber: String, 
 
 **请求参数**
 
-* *phoneNumber* 手机号
-* *passCode* 手机短信验证码
-* *password* 新密码
-* [*passwordEncryptType* 密码加密类型](./enum.md#-EncryptType)
+| 名称  | 说明 |
+| :---- | :---- |
+| phoneNumber | 手机号 |
+| passCode | 手机短信验证码 |
+| password | 新密码 |
+| [passwordEncryptType](./enum.md#-EncryptType) | [密码加密类型](./enum.md#-EncryptType) |
 
 **示例代码**
 
@@ -219,10 +234,12 @@ func resetPasswordByEmail(email: String, passCode: String, password: String, _ p
 
 **请求参数**
 
-* *email* 邮箱
-* *passCode* 验证码
-* *password* 新密码
-* [*passwordEncryptType* 密码加密类型](./enum.md#-EncryptType)
+| 名称  | 说明 |
+| :---- | :---- |
+| email | 邮箱 |
+| passCode | 手机短信验证码 |
+| password | 新密码 |
+| [passwordEncryptType](./enum.md#-EncryptType) | [密码加密类型](./enum.md#-EncryptType) |
 
 **示例代码**
 
@@ -242,8 +259,10 @@ func deleteAccountByPhone(phoneCountryCode: String? = nil, phoneNumber: String, 
 
 **请求参数**
 
-* *phoneNumber* 手机号
-* *passCode* 手机短信验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| phoneNumber | 邮手机号箱 |
+| passCode | 手机短信验证码 |
 
 **示例代码**
 
@@ -263,8 +282,10 @@ func deleteAccountByEmail(email: String, passCode: String, completion: @escaping
 
 **请求参数**
 
-* *email* 邮箱
-* *passCode* 验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| email | 邮箱 |
+| passCode | 验证码 |
 
 **示例代码**
 
@@ -284,9 +305,11 @@ func deleteAccountByPassword(password: String, _ passwordEncryptType: EncryptTyp
 ```
 
 **请求参数**
-
-* *password* 密码
-* [*passwordEncryptType* 密码加密类型](./enum.md#-EncryptType)
+ 
+| 名称  | 说明 |
+| :---- | :---- |
+| password | 密码 |
+| [passwordEncryptType](./enum.md#-EncryptType) | [密码加密类型](./enum.md#-EncryptType) |
 
 **示例代码**
 

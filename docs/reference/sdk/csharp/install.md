@@ -76,7 +76,7 @@ namespace ConsoleApplication
             {
                 AppId = "AUTHING_APP_ID",// Authing 应用 ID
                 AppSecret = "AUTHING_APP_SECRET",// Authing 应用密钥
-                AppHost = "AUTHING_APP_HOST", // Authing 应用域名，如 https://example.authing.cn
+                AppHost = "AUTHING_APP_HOST", // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址样式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
                 RedirectUri = "AUTHING_APP_REDIRECT_URI"// Authing 应用配置的登录回调地址
             };
 
@@ -92,7 +92,7 @@ namespace ConsoleApplication
 
 - `appId`: Authing 应用 ID，必填。
 - `appSecret`: Authing 应用密钥，必填。
-- `appHost`: Authing 应用域名，如 https://example.authing.cn，必填。
+- `appHost`: Authing 应用域名，如 https://example.authing.cn，必填。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址样式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
 - `redirectUri`: 认证完成后的重定向目标 URL，可选。Authing 服务器会对此链接进行校验，需要和控制台的设置保持一致。
 - `logoutRedirectUri`: 登出完成后的重定向目标 URL，可选。Authing 服务器会对此链接进行校验，需要和控制台的设置保持一致。
 - `scope`: 应用侧向 Authing 请求的权限，以空格分隔，可选。默认为 `'openid profile'`，成功获取的权限项会出现在 `access_token` 的 `scope` 字段中。一些示例：
@@ -152,7 +152,7 @@ namespace ConsoleApplication
             {
                 AppId = "AUTHING_APP_ID",// Authing 应用 ID
                 AppSecret = "AUTHING_APP_SECRET",// Authing 应用密钥
-                AppHost = "AUTHING_APP_HOST", // Authing 应用域名，如 https://example.authing.cn
+                AppHost = "AUTHING_APP_HOST", // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址样式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
                 RedirectUri = "AUTHING_APP_REDIRECT_URI"// Authing 应用配置的登录回调地址
             };
 
@@ -191,7 +191,7 @@ namespace ConsoleApplication
             {
                 AppId = "AUTHING_APP_ID",// Authing 应用 ID
                 AppSecret = "AUTHING_APP_SECRET",// Authing 应用密钥
-                AppHost = "AUTHING_APP_HOST", // Authing 应用域名，如 https://example.authing.cn
+                AppHost = "AUTHING_APP_HOST", // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址样式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
                 RedirectUri = "AUTHING_APP_REDIRECT_URI"// Authing 应用配置的登录回调地址
             };
 
@@ -238,7 +238,7 @@ namespace ConsoleApplication
             {
                 AppId = "AUTHING_APP_ID",// Authing 应用 ID
                 AppSecret = "AUTHING_APP_SECRET",// Authing 应用密钥
-                AppHost = "AUTHING_APP_HOST", // Authing 应用域名，如 https://example.authing.cn
+                AppHost = "AUTHING_APP_HOST", // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址样式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
                 RedirectUri = "AUTHING_APP_REDIRECT_URI"// Authing 应用配置的登录回调地址
             };
 
@@ -320,7 +320,7 @@ namespace ConsoleManagement
             ManagementClientOptions clientOptions = new ManagementClientOptions
             {
                 AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing 应用密钥
-                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing 应用域名，如 https://example.authing.cn
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址样式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
             };
 
             // 初始化 ManagementClient
@@ -370,7 +370,7 @@ namespace ConsoleManagement
             ManagementClientOptions clientOptions = new ManagementClientOptions
             {
                 AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing 应用密钥
-                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing 应用域名，如 https://example.authing.cn
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址样式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
             };
 
             // 初始化 ManagementClient
@@ -457,7 +457,7 @@ namespace ConsoleManagement
             ManagementClientOptions clientOptions = new ManagementClientOptions
             {
                 AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing 应用密钥
-                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing 应用域名，如 https://example.authing.cn
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址样式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
             };
 
             // 初始化 ManagementClient
@@ -505,7 +505,7 @@ namespace ConsoleManagement
             ManagementClientOptions clientOptions = new ManagementClientOptions
             {
                 AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing 应用密钥
-                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing 应用域名，如 https://example.authing.cn
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址样式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
                 Host= "https://api.your-authing-service.com"
             };
 

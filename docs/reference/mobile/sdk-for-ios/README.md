@@ -27,7 +27,7 @@ Authing iOS SDK 为 iOS 接入者提供了以下 Authing 认证能力：
 
 1. 开发设备上安装 [Xcode](https://developer.apple.com/xcode/)。
 2. 免费创建一个 [Authing 帐号](https://www.authing.cn/)。
-3. 在 Authing 控制台 [创建一个客户端自建应用](/guides/app-new/create-app/create-app.md)。
+3. 在 Authing 控制台 [创建一个客户端自建应用](https://docs.authing.cn/v2/guides/app-new/create-app/create-app.html)。
 
 在 **选择类型** 时请选择：**客户端应用**。
 

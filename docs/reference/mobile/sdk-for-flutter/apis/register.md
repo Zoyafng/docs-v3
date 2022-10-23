@@ -10,10 +10,11 @@ static Future<AuthResult> registerByEmail(String email, String password, [Regist
 
 **请求参数**
 
-* *email* 邮箱
-* *password* 明文密码
-* [*options* 注册可选参数](./options.md#RegisterOptions)
-
+| 名称  | 说明 |
+| :---- | :---- |
+| email | 邮箱 |
+| password | 明文密码 |
+| [*options* ](./options.md#RegisterOptions) | [注册可选参数]((./options.md#RegisterOptions)) |
 
 **示例代码**
 
@@ -33,9 +34,11 @@ static Future<AuthResult> registerByEmailCode(String email, String passCode, [Re
 
 **请求参数**
 
-* *email* 邮箱
-* *password* 明文密码
-* [*options* 注册可选参数](./options.md#RegisterOptions)
+| 名称  | 说明 |
+| :---- | :---- |
+| email | 邮箱 |
+| passCode | 邮箱验证码 |
+| [*options* ](./options.md#RegisterOptions) | [注册可选参数]((./options.md#RegisterOptions)) |
 
 **示例代码**
 
@@ -55,9 +58,11 @@ static Future<AuthResult> registerByUsername(String username, String password, [
 
 **请求参数**
 
-* *username* 用户名
-* *password* 明文密码
-* [*options* 注册可选参数](./options.md#RegisterOptions)
+| 名称  | 说明 |
+| :---- | :---- |
+| username | 用户名 |
+| password | 明文密码 |
+| [*options* ](./options.md#RegisterOptions) | [注册可选参数]((./options.md#RegisterOptions)) |
 
 **示例代码**
 
@@ -77,9 +82,11 @@ static Future<AuthResult> registerByPhoneCode(String phone, String passCode, [St
 
 **请求参数**
 
-* *phone* 手机号
-* *code* 短信验证码
-* [*options* 注册可选参数](./options.md#RegisterOptions)
+| 名称  | 说明 |
+| :---- | :---- |
+| phone | 手机号 |
+| code | 短信验证码 |
+| [*options* ](./options.md#RegisterOptions) | [注册可选参数]((./options.md#RegisterOptions)) |
 
 **示例代码**
 

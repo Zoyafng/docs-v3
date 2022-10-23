@@ -12,8 +12,10 @@ func mfaBindEmail(email: String, passCode: String, completion: @escaping(Respons
 
 **请求参数**
 
-* *email* 邮箱
-* *passCode* 邮箱验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| email | 邮箱 |
+| passCode | 邮箱验证码 |
 
 **示例代码**
 
@@ -37,8 +39,10 @@ func mfaBindPhone(phoneCountryCode: String? = nil, phoneNumber: String, passCode
 
 **请求参数**
 
-* *phoneNumber* 手机号
-* *passCode* 短信验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| phoneNumber | 手机号 |
+| passCode | 短信验证码 |
 
 **示例代码**
 
@@ -60,7 +64,7 @@ func mfaBindOTP(passCode: String, completion: @escaping(Response) -> Void)
 
 **请求参数**
 
-* *passCode* OTP 验证码
+`passCode`: OTP 验证码
 
 **示例代码**
 
@@ -83,7 +87,7 @@ func mfaUnbindFactor(factorId: String, completion: @escaping(Response) -> Void)
 
 **请求参数**
 
-* *factorId* MFA 认证要素 ID
+`factorId`: MFA 认证要素 ID
 
 **示例代码**
 
@@ -123,7 +127,7 @@ func mfaGetEnrolledBindFactor(factorId: String, completion: @escaping(Response) 
 
 **请求参数**
 
-* *factorId* MFA 认证要素 ID
+`factorId`: MFA 认证要素 ID
 
 **示例代码**
 

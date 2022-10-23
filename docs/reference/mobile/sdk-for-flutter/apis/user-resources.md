@@ -10,11 +10,13 @@ static Future<AuthResult> getLoginHistory(int page, int limit, [bool? success, S
 
 **请求参数**
 
-* *page* 当前页数，从 1 开始
-* *limit* 每页数目，最大不能超过 50，默认为 10
-* *success* 是否登录成功，可根据是否登录成功进行筛选。
-* *start* 开始时间，为单位为毫秒的时间戳
-* *end* 结束时间，为单位为毫秒的时间戳
+| 名称  | 说明 |
+| :---- | :---- |
+| page | 当前页数，从 1 开始 |
+| limit | 显示条目，最大不能超过 50，默认为 10 |
+| success | 是否登录成功，可根据是否登录成功进行筛选 |
+| start | 开始时间，为单位为毫秒的时间戳 |
+| end | 结束时间，为单位为毫秒的时间戳 |
 
 **示例代码**
 
@@ -68,7 +70,8 @@ static Future<Result> getRoleList([String? namespace]) async
 ```
 
 **请求参数**
-* *namespace* 所属权限分组的 code
+
+`namespace`: 所属权限分组的 code
 
 **示例代码**
 
@@ -96,15 +99,13 @@ static Future<AuthResult> getDepartmentList(int page, int limit, [bool? withCust
 
 **请求参数**
 
-* *page* 当前页数，从 1 开始
-* *limit* 每页数目，最大不能超过 50，默认为 10
-* *withCustomData* 是否获取部门的自定义数据
-* *sortBy* 排序依据，如 部门创建时间、加入部门时间、部门名称、部门标志符
-            - "DepartmentCreatedAt" 
-            - "JoinDepartmentAt" 
-            - "DepartmentName" 
-            - "DepartmemtCode"
-* *orderBy* 增序或降序
+| 名称  | 说明 |
+| :---- | :---- |
+| page | 当前页数，从 1 开始 |
+| limit | 显示条目，最大不能超过 50，默认为 10 |
+| withCustomData | 是否获取部门的自定义数据 |
+| sortBy | 排序依据，如 部门创建时间 `DepartmentCreatedAt`、加入部门时间 `JoinDepartmentAt`、部门名称 `DepartmentName`、部门标志符 `DepartmemtCode` |
+| orderBy | 增序或降序 |
 
 **示例代码**
 
@@ -121,8 +122,10 @@ static Future<Result> getAuthorizedResources([String? namespace, String? resourc
 
 **请求参数**
 
-* *namespace* 所属权限分组的 code
-* *resourceType* 资源类型，如 数据、API、菜单、按钮
+| 名称  | 说明 |
+| :---- | :---- |
+| namespace | 所属权限分组的 code |
+| resourceType | 资源类型，如数据、API、菜单、按钮 |
 
 **示例代码**
 
