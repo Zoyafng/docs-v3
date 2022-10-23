@@ -3,7 +3,7 @@
 <details>
 <summary>点此展开详情</summary>
 
-首先你需要在 [Authing 控制台](https://console.authing.cn) 创建一个 **SDK** 或者 **后端应用**：
+首先你需要在 [Authing 控制台](https://console.authing.cn) 创建一个 **标准 Web 应用** 或者 **后端应用**：
 
 ![](~@imagesZhCn/reference/create-app-for-sdk.jpg)
 
