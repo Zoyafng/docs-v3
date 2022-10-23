@@ -76,7 +76,7 @@ func main() {
   "message": "操作成功",
   "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c",
   "data": {
-    "allowedOrigins": "[\"https://example.com\"]",
+    "allowedOrigins": "https://example.com \n https://example.com",
     "authingTokenExpiresIn": 1296000,
     "verifyCodeLength": 6,
     "verifyCodeMaxAttempts": 1,
@@ -124,7 +124,8 @@ func main() {
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| allowedOrigins | array | 否 | 安全域（CORS）   |  `["https://example.com"]` |
+| allowedOrigins | string | 否 | 安全域（CORS）   |  `https://example.com 
+ https://example.com` |
 | authingTokenExpiresIn | number | 是 | Authing Token 有效时间（秒）   |  `1296000` |
 | verifyCodeLength | number | 是 | 验证码长度。包含短信验证码、邮件验证码和图形验证码。   |  `6` |
 | verifyCodeMaxAttempts | number | 是 | 验证码尝试次数。在一个验证码有效周期内（默认为 60 s），用户输入验证码错误次数超过此阈值之后，将会导致当前验证码失效，需要重新发送。   |  `1` |
