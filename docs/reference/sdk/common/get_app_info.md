@@ -3,7 +3,7 @@
 <details>
 <summary>点此展开详情</summary>
 
-首先你需要在 [Authing 控制台](https://console.authing.cn) 创建一个 ** SDK ** 或者 **后端应用**：
+首先你需要在 [Authing 控制台](https://console.authing.cn) 创建一个 **SDK** 或者 **后端应用**：
 
 ![](~@imagesZhCn/reference/create-app-for-sdk.jpg)
 
@@ -11,7 +11,7 @@
 
 - 应用 ID（App ID）：应用的唯一标志。
 - 应用密钥（App Secret）：用于验证客户端请求的合法性。
-- 应用域名（App Host）：应用域名，如 https://example.authing.cn 。
+- 应用域名（App Host）：应用域名，如 https://example.authing.cn 。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址样式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
 - 登录回调 URL（Redirect Uri）：当用户使用 Authing 的托管登录页进行认证，认证完成之后，会通过浏览器 `302` 重定向回调到此地址。可以配置多个地址，发起登录时可以选择任意一个。
 - 退出登录回调 URL（Logout Redirect Uri）：当用户在浏览器端退出登录时，可以通过浏览器 `302` 重定向回调到此地址。可以配置多个地址，发起退出登录时可以选择任意一个。
 - 换取 token 身份验证方式（Token Endpoint Auth Method）：调用 OIDC 获取 Token 接口或者 Signin 接口时客户端需要提供的校验方式。
