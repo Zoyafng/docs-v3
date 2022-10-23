@@ -24,7 +24,7 @@
 | subject | string | 否 | - | 邮件主题，可选，如果不传默认使用用户池配置的邮件模版进行渲染。  | `欢迎加入 {{app_name}}` |
 | sender | string | 否 | - | 邮件发件人名称，可选，如果不传默认使用用户池配置的邮件模版进行渲染。  | `{{client_name}}` |
 | expiresIn | number | 否 | - | 验证码/邮件有效时间，只有验证类邮件才有有效时间。可选，如果不传默认使用用户池配置的邮件模版进行渲染。  | `300` |
-| tplEngine | string | 否 | handlebar | 模版渲染引擎。Authing 邮件模版目前支持两种渲染引擎：<br>- `handlebar`: 详细使用方法请见：[handlebars 官方文档](https://handlebarsjs.com/)<br>- `ejs`: 详细使用方法请见：[ejs 官方文档](https://ejs.co/)<br><br>默认将使用 `handlerbar` 作为膜拜渲染引擎。<br>      | `handlebar` |
+| tplEngine | string | 否 | handlebar | 模版渲染引擎。Authing 邮件模版目前支持两种渲染引擎：<br>- `handlebar`: 详细使用方法请见：[handlebars 官方文档](https://handlebarsjs.com/)<br>- `ejs`: 详细使用方法请见：[ejs 官方文档](https://ejs.co/)<br><br>默认将使用 `handlerbar` 作为模版渲染引擎。<br>      | `handlebar` |
 
 
 
@@ -36,8 +36,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Authing/authing-golang-sdk/dto"
-	"github.com/Authing/authing-golang-sdk/management"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
 )
 
 func main() {

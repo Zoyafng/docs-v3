@@ -24,8 +24,8 @@
 package main
 
 import (
-    "github.com/Authing/authing-golang-sdk/management"
-    "github.com/Authing/authing-golang-sdk/dto"
+    "github.com/Authing/authing-golang-sdk/v3/management"
+    "github.com/Authing/authing-golang-sdk/v3/dto"
 
     "fmt"
 )

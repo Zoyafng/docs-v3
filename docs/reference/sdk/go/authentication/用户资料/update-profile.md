@@ -44,8 +44,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Authing/authing-golang-sdk/authentication"
-	"github.com/Authing/authing-golang-sdk/dto"
+	"github.com/Authing/authing-golang-sdk/v3/authentication"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
 )
 
 func main() {

@@ -26,7 +26,7 @@ meta:
 ## 安装
 
 ```bash
-go get -u github.com/Authing/authing-golang-sdk
+go get -u github.com/Authing/authing-golang-sdk/v3
 ```
 
 ## 使用用户认证模块
@@ -49,8 +49,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/Authing/authing-golang-sdk/constant"
-	"github.com/Authing/authing-golang-sdk/util"
+	"github.com/Authing/authing-golang-sdk/v3/constant"
+	"github.com/Authing/authing-golang-sdk/v3/util"
 
 	// "fmt"
 	"strings"
@@ -127,8 +127,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/Authing/authing-golang-sdk/constant"
-	"github.com/Authing/authing-golang-sdk/util"
+	"github.com/Authing/authing-golang-sdk/v3/constant"
+	"github.com/Authing/authing-golang-sdk/v3/util"
 
 	// "fmt"
 	"strings"
@@ -173,8 +173,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Authing/authing-golang-sdk/authentication"
-	"github.com/Authing/authing-golang-sdk/dto"
+	"github.com/Authing/authing-golang-sdk/v3/authentication"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
 )
 
 var authenticationClient *AuthenticationClient
@@ -212,8 +212,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Authing/authing-golang-sdk/authentication"
-	"github.com/Authing/authing-golang-sdk/dto"
+	"github.com/Authing/authing-golang-sdk/v3/authentication"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
 )
 
 var authenticationClient *AuthenticationClient
@@ -286,8 +286,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Authing/authing-golang-sdk/dto"
-	"github.com/Authing/authing-golang-sdk/management"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
 )
 
 func main() {
@@ -326,8 +326,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Authing/authing-golang-sdk/dto"
-	"github.com/Authing/authing-golang-sdk/management"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
 )
 
 func main() {
@@ -363,8 +363,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Authing/authing-golang-sdk/dto"
-	"github.com/Authing/authing-golang-sdk/management"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
 )
 
 func main() {
@@ -410,8 +410,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Authing/authing-golang-sdk/dto"
-	"github.com/Authing/authing-golang-sdk/management"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
 )
 
 func main() {

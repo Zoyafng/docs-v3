@@ -12,13 +12,13 @@ golang SDK 中使用 OIDC 协议的[授权码模式](https://docs.authing.cn/v2/
 
 ## 2. API
 
-> 授权 API 和 管理 API 是同一个 go module，所以通过 `go get -u github.com/Authing/authing-golang-sdk` 安装后可以同时使用管理 API 和 授权 API 。
+> 授权 API 和 管理 API 是同一个 go module，所以通过 `go get -u github.com/Authing/authing-golang-sdk/v3` 安装后可以同时使用管理 API 和 授权 API 。
 
 ### 2.1 初始化授权客户端
 
 ```go
 import (
-	"github.com/Authing/authing-golang-sdk/authentication"
+	"github.com/Authing/authing-golang-sdk/v3/authentication"
 )
 var authClient *authentication.Client
 var err error

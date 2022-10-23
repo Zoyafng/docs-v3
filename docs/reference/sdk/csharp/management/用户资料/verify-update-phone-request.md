@@ -1,0 +1,139 @@
+# 发起修改手机号的验证请求
+
+<!--
+  警告⚠️：
+  不要直接修改该文档，
+  https://github.com/Authing/authing-docs-factory
+  使用该项目进行生成
+-->
+
+<LastUpdated />
+
+终端用户自主修改手机号时，需要提供相应的验证手段。此接口用于验证用户的修改手机号请求是否合法。当前支持通过**短信验证码**的方式进行验证，你需要先调用发送短信接口发送对应的短信验证码。
+
+## 方法名称
+
+`AuthenticationClient.VerifyUpdatePhoneRequest`
+
+## 请求参数
+
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| phonePassCodePayload | <a href="#UpdatePhoneByPhonePassCodeDto">UpdatePhoneByPhonePassCodeDto</a> | 是 | - | 使用手机号验证码方式验证的数据  |  |
+| verifyMethod | string | 是 | - | 修改手机号的验证方式：<br>- `PHONE_PASSCODE`: 使用短信验证码的方式进行验证，当前仅支持这一种方式。<br>      |  |
+
+
+
+
+## 示例代码
+
+```csharp
+using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using Authing.CSharp.SDK.Models.Authentication;
+using Authing.CSharp.SDK.Services;
+
+namespace ConsoleApplication
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            AuthenticationClientInitOptions clientOptions = new AuthenticationClientInitOptions
+            {
+                AppId = "AUTHING_APP_ID",// Authing 应用 ID
+                AppSecret = "AUTHING_APP_SECRET",// Authing 应用密钥
+                AppHost = "AUTHING_APP_DOMAIN", // Authing 应用域名，如 https://example.authing.cn
+                RedirectUri = "AUTHING_APP_REDIRECT_URI",// Authing 应用配置的登录回调地址
+            };
+
+            // 初始化 AuthenticationClient
+            AuthenticationClient authenticationClient = new AuthenticationClient(clientOptions);
+
+            //登录临时用户
+            LoginTokenRespDto loginTokenRespDto = await authenticationClient.SignInByAccountPassword("AUTHING_USERNAME", "AUTHING_USER_PASSWORD");
+            authenticationClient.setAccessToken(loginTokenRespDto.Data.Access_token);
+
+            var res0 = await authenticationClient.SendSms(new SendSMSDto()
+            {
+                Channel = SendSMSDto.channel.CHANNEL_UNBIND_PHONE,
+                PhoneNumber = "AUTHING_NEW_PHONE"
+            });
+            var res1 = await authenticationClient.SendSms(new SendSMSDto()
+            {
+                Channel = SendSMSDto.channel.CHANNEL_UNBIND_PHONE,
+                PhoneNumber = "AUTHING_OLD_PHONE"
+            });
+            var res2 = await authenticationClient.VerifyUpdatePhoneRequest(new VerifyUpdatePhoneRequestDto()
+            {
+                PhonePassCodePayload = new UpdatePhoneByPhonePassCodeDto()
+                {
+                    NewPhoneNumber = "AUTHING_NEW_PHONE",
+                    NewPhonePassCode = "AUTHING_NEW_CODE",
+                    OldPhoneNumber = "AUTHING_OLD_PHONE",
+                    OldPhonePassCode = "AUTHING_OLD_CODE"
+                },
+                VerifyMethod = VerifyUpdatePhoneRequestDto.verifyMethod.PHONE_PASSCODE
+            });
+        }
+    }
+}
+```
+
+
+
+  
+## 请求响应
+
+类型： `VerifyUpdatePhoneRequestRespDto`
+
+| 名称 | 类型 | 描述 |
+| ---- | ---- | ---- |
+| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message | string | 描述信息 |
+| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
+| requestId | string | 请求 ID。当请求失败时会返回。 |
+| data | <a href="#VerifyUpdatePhoneRequestData">VerifyUpdatePhoneRequestData</a> | 响应数据 |
+
+
+
+示例结果：
+
+```json
+{
+  "statusCode": 200,
+  "message": "操作成功",
+  "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c",
+  "data": {}
+}
+```
+
+## 数据结构
+
+
+### <a id="UpdatePhoneByPhonePassCodeDto"></a> UpdatePhoneByPhonePassCodeDto
+
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+| ---- |  ---- | ---- | ---- | ---- |
+| newPhoneNumber | string | 是 | 新手机号码，不带区号。如果是国外手机号，请在 newPhoneCountryCode 参数中指定区号。   |  `188xxxx8888` |
+| newPhonePassCode | string | 是 | 验证码   |  `123456` |
+| newPhoneCountryCode | string | 否 | 手机区号，中国大陆手机号可不填。Authing 短信服务暂不内置支持国际手机号，你需要在 Authing 控制台配置对应的国际短信服务。完整的手机区号列表可参阅 https://en.wikipedia.org/wiki/List_of_country_calling_codes。   |  `+86` |
+| oldPhoneNumber | string | 否 | 旧手机号码，不带区号。如果是国外手机号，请在 oldPhoneCountryCode 参数中指定区号。如果用户池开启了修改手机号需要验证之前的手机号，此参数必填。   |  `188xxxx8888` |
+| oldPhonePassCode | string | 否 | 旧手机号的验证码，如果用户池开启了修改手机号需要验证之前的手机号，此参数必填   |  `123456` |
+| oldPhoneCountryCode | string | 否 | 手机区号，中国大陆手机号可不填。Authing 短信服务暂不内置支持国际手机号，你需要在 Authing 控制台配置对应的国际短信服务。完整的手机区号列表可参阅 https://en.wikipedia.org/wiki/List_of_country_calling_codes。   |  `+86` |
+
+
+### <a id="VerifyUpdatePhoneRequestData"></a> VerifyUpdatePhoneRequestData
+
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+| ---- |  ---- | ---- | ---- | ---- |
+| updatePhoneToken | string | 是 | 用于修改当前手机号 token，你需要使用此 token 请求**修改手机号**的接口。   |  |
+| tokenExpiresIn | number | 是 | 过期时间   |  |
+
+

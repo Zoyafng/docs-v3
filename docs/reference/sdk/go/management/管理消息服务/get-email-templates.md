@@ -30,8 +30,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Authing/authing-golang-sdk/dto"
-	"github.com/Authing/authing-golang-sdk/management"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
 )
 
 func main() {
@@ -120,7 +120,7 @@ func main() {
 | content | string | 是 | 邮件内容模版   |  `xxx` |
 | expiresIn | number | 否 | 验证码/邮件有效时间，只有验证类邮件才有有效时间。   |  `300` |
 | redirectTo | string | 否 | 完成邮件验证之后跳转到的地址，只针对 `FIRST_EMAIL_LOGIN_VERIFY` 和 `CONSOLE_CONDUCTED_VERIFY` 类型的模版有效。   |  `https://example.com` |
-| tplEngine | string | 否 | 模版渲染引擎。Authing 邮件模版目前支持两种渲染引擎：<br>- `handlebar`: 详细使用方法请见：[handlebars 官方文档](https://handlebarsjs.com/)<br>- `ejs`: 详细使用方法请见：[ejs 官方文档](https://ejs.co/)<br><br>默认将使用 `handlerbar` 作为膜拜渲染引擎。<br>   | handlebar |
+| tplEngine | string | 否 | 模版渲染引擎。Authing 邮件模版目前支持两种渲染引擎：<br>- `handlebar`: 详细使用方法请见：[handlebars 官方文档](https://handlebarsjs.com/)<br>- `ejs`: 详细使用方法请见：[ejs 官方文档](https://ejs.co/)<br><br>默认将使用 `handlerbar` 作为模版渲染引擎。<br>   | handlebar |
 
 
 ### <a id="EmailTemplateCategoryDto"></a> EmailTemplateCategoryDto
