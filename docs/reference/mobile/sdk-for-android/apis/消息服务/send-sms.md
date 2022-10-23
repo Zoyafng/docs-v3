@@ -49,7 +49,7 @@ authClient.sendSms("+86", "188xxxx8888", EmailType.CHANNEL_LOGIN, (AuthCallback)
 
 ## 数据结构
 
-<a id="SmsType"></a> SmsType
+### <a id="SmsType"></a> SmsType
 
 | 名称                          | 类型 | 描述                            |
 | :---------------------------- | :--- | ------------------------------- |
