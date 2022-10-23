@@ -1,4 +1,4 @@
-# 使用邮箱 + 验证码登录
+# 邮箱验证码登录
 
 <LastUpdated />
 
@@ -9,7 +9,7 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | email | String | 是 | - | 邮箱 | `test@example.com` |
-| passCode | String | 是 | - | 邮箱验证码<br>你需要先调用[发送邮件](./send-email.md)（场景值为 `CHANNEL_LOGIN`）接口获取验证码。 | `1234` |
+| passCode | String | 是 | - | 邮箱验证码<br>你需要先调用 [发送邮件](../消息服务/send-email.md)（场景值为 `CHANNEL_LOGIN`）接口获取验证码。 | `1234` |
 | options | <a href="#AuthOptions">AuthOptions</a> | 否 | - | 可选参数  | `{"passwordEncryptType":"none"}` |
 
 ## 示例代码
@@ -36,7 +36,7 @@ authClient.signInByEmailPassCode("test@example.com", "1234", options, (AuthCallb
 | statusCode | int        | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
 | message    | String     | 描述信息                                                     |
 | apiCode    | int        | 细分错误码，可通过此错误码得到具体的错误类型。               |
-| requestId  | String     | 请求 ID。当请求失败时会返回。                                |
+| requestId  | String     | 请求 ID，当请求失败时会返回。                                |
 | data       | JSONObject | 响应数据                                                     |
 
 

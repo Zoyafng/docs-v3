@@ -2,7 +2,7 @@
 
 <LastUpdated />
 
-当用户希望注销账号时，需提供相应凭证，当前支持**使用邮箱验证码**、使用**手机验证码**、**使用密码**三种验证方式。
+当用户希望注销账号时，需提供相应凭证，当前支持使用**邮箱验证码**、**手机号验证码**、**密码**三种验证方式。
 
 ## 请求参数
 
@@ -65,7 +65,7 @@ authClient.deleteAccountRequest(DeleteAccountVerifyMethod.PASSWORD, deleteAccoun
 | statusCode | int        | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
 | message    | String     | 描述信息                                                     |
 | apiCode    | int        | 细分错误码，可通过此错误码得到具体的错误类型。               |
-| requestId  | String     | 请求 ID。当请求失败时会返回。                                |
+| requestId  | String     | 请求 ID，当请求失败时会返回。                                |
 | data       | JSONObject | 响应数据<br/>参考：<a href="#data">data</a>。                |
 
 

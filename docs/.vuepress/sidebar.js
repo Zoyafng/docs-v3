@@ -6577,11 +6577,11 @@ const zhCnNavBar = {
           path: '/reference/mobile/sdk-for-android/',
           children: [
             {
-              title: '快速开始',
+              title: '安装使用',
               path: '/reference/mobile/sdk-for-android/quick'
             },
             {
-              title: 'APIs',
+              title: 'API',
               path: '/reference/mobile/sdk-for-android/apis/',
               children: [
                 {

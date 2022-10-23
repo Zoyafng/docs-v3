@@ -1,4 +1,4 @@
-# 使用手机号验证码登录
+# 手机号验证码登录
 
 <LastUpdated />
 
@@ -10,7 +10,7 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | phoneCountryCode | String | 是 | - | 手机号区号 | `+86` |
 | phone | String | 否 | - | 手机号 | `188xxxx8888` |
-| passCode | String | 是 | - | 短信验证码<br>你需要先调用[发送短信](./send-sms.md)（场景值为 `CHANNEL_LOGIN`）接口获取验证码。 | `1234` |
+| passCode | String | 是 | - | 短信验证码<br>你需要先调用 [发送短信](../消息服务/send-sms.md)（场景值为 `CHANNEL_LOGIN`）接口获取验证码。 | `1234` |
 | options | <a href="#AuthOptions">AuthOptions</a> | 否 | - | 可选参数  | `{"passwordEncryptType":"none"}` |
 
 ## 示例代码
@@ -37,7 +37,7 @@ authClient.signInByPhonePassCode("+86","188xxxx8888", "1234", options, (AuthCall
 | statusCode | int        | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
 | message    | String     | 描述信息                                                     |
 | apiCode    | int        | 细分错误码，可通过此错误码得到具体的错误类型。               |
-| requestId  | String     | 请求 ID。当请求失败时会返回。                                |
+| requestId  | String     | 请求 ID，当请求失败时会返回。                                |
 | data       | JSONObject | 响应数据                                                     |
 
 

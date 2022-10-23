@@ -2,7 +2,7 @@
 
 <LastUpdated />
 
-此接口用于修改用户的用户资料，包含用户的自定义数据。如果需要**修改邮箱**、**修改手机号**、**修改密码**，请使用对应的单独接口。
+此接口用于修改用户资料，包含用户的自定义数据。如果需要**修改邮箱**、**手机号**、**密码**，请使用对应的单独接口。
 
 ## 请求参数
 
@@ -31,8 +31,7 @@ profile.setGender(Gender.M);
 profile.setUsername("bob");
 JSONObject customData = new JSONObject();
 try {
-    customData.put("height", "170");
-  	customData.put("org", "11111111111");
+    customData.put("height", "180");
 } catch (JSONException e) {
   	e.printStackTrace();
 }
@@ -58,7 +57,7 @@ authClient.updateProfile(profile, new AuthCallback() {
 | statusCode | int        | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
 | message    | String     | 描述信息                                                     |
 | apiCode    | int        | 细分错误码，可通过此错误码得到具体的错误类型。               |
-| requestId  | String     | 请求 ID。当请求失败时会返回。                                |
+| requestId  | String     | 请求 ID，当请求失败时会返回。                                |
 | data       | JSONObject | 响应数据<br/>参考：<a href="#data">data</a>。                |
 
 
@@ -141,7 +140,7 @@ authClient.updateProfile(profile, new AuthCallback() {
 | postalCode    | string | 否                                     | -      | 邮政编码号                                                   | `438100`                                                     |
 | gender        | string | 否                                     | U      | 性别                                                         | `M`                                                          |
 | username      | string | 否                                     | -      | 用户名，用户池内唯一                                         | `bob`                                                        |
-| customData    | object | 否                                     | -      | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段 | `{"school":"北京大学","age":22}`                             |
+| customData    | object | 否                                     | -      | 自定义数据，传入的对象中的 `key` 必须先在用户池定义相关自定义字段 | `{"school":"北京大学","age":22}`                             |
 
 ### <a id="data"></a> data
 
@@ -162,7 +161,7 @@ authClient.updateProfile(profile, new AuthCallback() {
 | loginsCount | number | 否 | 历史总登录次数   |  `3` |
 | lastLogin | string | 否 | 上次登录时间   |  `2022-07-03T02:20:30.000Z` |
 | lastIp | string | 否 | 上次登录 IP   |  `127.0.0.1` |
-| gender | string | 是 | 性别:<br>- `M`: 男性，`male`<br>- `F`: 女性，`female`<br>- `U`: 未知，`unknown`<br>     | M |
+| gender | string | 是 | 性别:<br>- `M`: 男性，`male`<br>- `F`: 女性，`female`<br>- `U`: 未知，`unknown`<br>     | `M` |
 | emailVerified | boolean | 是 | 邮箱是否验证   |  `true` |
 | phoneVerified | boolean | 是 | 手机号是否验证   |  `true` |
 | passwordLastSetAt | string | 否 | 用户上次密码修改时间   |  `2022-07-03T02:20:30.000Z` |

@@ -4,6 +4,8 @@
 
 ## 第一步：新建 Android 工程
 
+在 AndroidStudio 的导航栏 File 中选中 New Project 来创建工程。
+
 <img src="./images/create_project1.png" alt="drawing" width="800"/>
 
 <img src="./images/create_project2.png" alt="drawing" width="800"/>
@@ -15,7 +17,7 @@
 
 ## 第二步：添加 Guard 依赖
 
-在工程根目录的 build.gradle	(4.2+以后的版本 AndroidStudio 创建的新工程在 setting.gradle) 文件里面需包含 mavenCentral：
+在工程根目录的 build.gradle	(V4.2+以后的版本 AndroidStudio 创建的新工程在 setting.gradle) 文件里面需包含 `mavenCentral`：
 
  ```groovy
  buildscript {
@@ -43,7 +45,7 @@ Authing.init(context, "AUTHING_APP_ID");
 ```
 
 ::: hint-info
-注意：AUTHING_APP_ID 是应用 ID，不是用户池 ID，请先[前往控制台获取](https://docs.authing.cn/v2/guides/faqs/get-app-id-and-secret.html)。
+注意：AUTHING_APP_ID 是应用 ID，不是用户池 ID，请先 [前往控制台获取](https://docs.pre.authing.cn/v2/guides/app-new/create-app/app-configuration.html)。
 :::
 
 
