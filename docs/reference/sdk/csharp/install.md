@@ -281,9 +281,18 @@ Authing CSharp SDK 使用 AK/SK 本地对请求数据的摘要进行签名的鉴
 在 Authing 中，目前有两种类型的 AK/SK：
 
 - 用户池全局 AK/SK：具备用户池内所有资源的全局操作权限。你可以在 [Authing 控制台](https://console.authing.cn) 的**设置** - **基础设置** - **密钥管理** 获取到**用户池 ID** 和**用户池密钥**，其中**用户池 ID**为 AK（Access Key ID）,**用户池密钥**为 SK（Access Key Secret）。
-- 协作管理员 AK/SK：可针对用户池内的资源进行细粒度授权，协作管理员的 AK/SK 只能调用其被授权的 API。
+- 协作管理员 AK/SK：可针对用户池内的资源进行细粒度授权，协作管理员的 AK/SK 只能调用其被授权的 API。（正在开发中，尽情期待）
 
 你可以根据自己的需求选择合适的 AK/SK。
+
+<details>
+<summary>点此展开如何获取用户池 ID 和用户池密钥</summary>
+
+在 [Authing 控制台](https://console.authing.cn)的**设置** -> **基础设置** -> **密钥管理**页面，可以获取到用户池 ID（UserPool Id）和用户池密钥（UserPool Secret），如下图所示：
+
+![](https://files.authing.co/authing-docs-v2/20220328-182903.png)
+
+</details>
 
 #### 初始化
 
