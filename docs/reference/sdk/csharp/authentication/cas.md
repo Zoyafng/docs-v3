@@ -15,7 +15,7 @@ CAS 是 Central Authentication Service 的缩写，中央认证服务，一种�
 初始化 authenticationClient 时的参数：
 
 - `appId` \<string\> 应用 ID，必填。
-- `appHost` \<string\> 应用完整地址，如 https://sample-app.authing.cn，不带最后的斜线 "/"。
+- `appHost` \<string\> 应用完整地址，如 https://sample-app.authing.cn，不带最后的斜线 "/"。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址形式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
 - `protocol` \<ProtocolEnum\> 协议类型，可选值为 `OIDC`、`OAUTH`、`SAML`、`CAS`，默认为 `OIDC`。
 
 ### 示例
