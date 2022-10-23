@@ -84,7 +84,7 @@ authClient.signInByMobile(Connection.wechat, "1660291866076", (AuthCallback) res
 | statusCode | int        | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
 | message    | String     | 描述信息                                                     |
 | apiCode    | int        | 细分错误码，可通过此错误码得到具体的错误类型。               |
-| requestId  | String     | 请求 ID。当请求失败时会返回。                                |
+| requestId  | String     | 请求 ID，当请求失败时会返回。                                |
 | data       | JSONObject | 响应数据                                                     |
 
 
