@@ -99,7 +99,7 @@
       </template>
     </Page>
 
-    <Footer />
+    <Footer v-if="!$page.frontmatter.home" />
   </div>
 </template>
 
