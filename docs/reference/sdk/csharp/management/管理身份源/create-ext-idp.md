@@ -11,6 +11,10 @@
 
 创建身份源，可以设置身份源名称、连接类型、租户 ID 等。
 
+## 方法名称
+
+`AuthenticationClient.CreateExtIdp`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |

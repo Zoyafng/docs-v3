@@ -9,7 +9,11 @@
 
 <LastUpdated />
 
-传入 MFA 认证因素列表进行修改
+传入 MFA 认证因素列表进行开启,
+
+## 方法名称
+
+`AuthenticationClient.UpdateGlobalMfaSettings`
 
 ## 请求参数
 

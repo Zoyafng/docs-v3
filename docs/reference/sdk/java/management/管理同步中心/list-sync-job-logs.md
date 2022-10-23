@@ -11,6 +11,10 @@
 
 获取同步作业详情
 
+## 方法名称
+
+`AuthenticationClient.listSyncJobLogs`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
@@ -21,6 +25,44 @@
  | success | boolean  | 否 | - | 根据是否操作成功进行筛选  | `true` |
  | action | string  | 否 | - | 根据操作类型进行筛选：<br>- `CreateUser`: 创建用户<br>- `UpdateUser`: 修改用户信息<br>- `DeleteUser`: 删除用户<br>- `UpdateUserIdentifier`: 修改用户唯一标志符<br>- `ChangeUserDepartment`: 修改用户部门<br>- `CreateDepartment`: 创建部门<br>- `UpdateDepartment`: 修改部门信息<br>- `DeleteDepartment`: 删除部门<br>- `MoveDepartment`: 移动部门<br>- `UpdateDepartmentLeader`: 同步部门负责人<br>- `CreateGroup`: 创建分组<br>- `UpdateGroup`: 修改分组<br>- `DeleteGroup`: 删除分组<br>- `Updateless`: 无更新<br>      | `CreateUser` |
  | objectType | string  | 否 | - | 操作对象类型:<br>- `department`: 部门<br>- `user`: 用户<br>      | `DEPARTMENT` |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.ListSyncJobLogsDto;
+import cn.authing.sdk.java.dto.TriggerSyncTaskRespDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class ListSyncJobLogsTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        ListSyncJobLogsDto reqDto = new ListSyncJobLogsDto();
+        reqDto.setSyncJobId(1000);
+        TriggerSyncTaskRespDto response = client.listSyncJobLogs(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

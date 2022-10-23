@@ -11,12 +11,62 @@
 
 当用户未绑定某个 MFA 认证要素时，可以发起绑定 MFA 认证要素请求。不同类型的 MFA 认证要素绑定请求需要发送不同的参数，详细见 profile 参数。发起验证请求之后，Authing 服务器会根据相应的认证要素类型和传递的参数，使用不同的手段要求验证。此接口会返回 enrollmentToken，你需要在请求「绑定 MFA 认证要素」接口时带上此 enrollmentToken，并提供相应的凭证。
 
+## 方法名称
+
+`AuthenticationClient.sendEnrollFactorRequest`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | profile | <a href="#FactorProfile">FactorProfile</a> | 是 | - | MFA 认证要素详细信息  | `{"phoneNumber":"188xxxx8888","phoneCountryCode":"+86"}` |
 | factorType | string | 是 | - | MFA 认证要素类型：<br>- `OTP`: OTP<br>- `SMS`: 短信<br>- `EMAIL`: 邮件<br>- `FACE`: 人脸<br>        | `SMS` |
+
+
+
+
+## 示例代码
+
+```java
+package test.authentication;
+
+import cn.authing.sdk.java.client.AuthenticationClient;
+import cn.authing.sdk.java.dto.FactorProfile;
+import cn.authing.sdk.java.dto.SendEnrollFactorRequestDto;
+import cn.authing.sdk.java.dto.SendEnrollFactorRequestRespDto;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class SendEnrollFactorRequestTest {
+    // 需要替换成你的 Authing App ID
+    private static final String APP_ID = "AUTHING_APP_ID";
+    // 需要替换成你的 Authing App Secret
+    private static final String APP_SECRET = "AUTHING_APP_SECRET";
+    // 需要替换成你的 Authing App Host
+    private static final String APP_HOST = "AUTHING_APP_HOST";
+    // 需要替换成你的 Authing Access Token
+    private static final String ACCESS_TOKEN = "AUTHING_ACCESS_TOKEN";
+
+    public static void main(String[] args) throws Throwable {
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId(APP_ID);
+        clientOptions.setAppSecret(APP_SECRET);
+        clientOptions.setAppHost(APP_HOST);
+        clientOptions.setAccessToken(ACCESS_TOKEN);
+
+        AuthenticationClient client = new AuthenticationClient(clientOptions);
+
+        SendEnrollFactorRequestDto reqDto = new SendEnrollFactorRequestDto();
+        reqDto.setFactorType(SendEnrollFactorRequestDto.FactorType.EMAIL);
+        FactorProfile profile = new FactorProfile();
+        profile.setEmail("123@qq.com");
+        reqDto.setProfile(profile);
+        SendEnrollFactorRequestRespDto response = client.sendEnrollFactorRequest(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

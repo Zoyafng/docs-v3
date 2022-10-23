@@ -11,6 +11,10 @@
 
 通过权限分组内角色 code，移除分配的角色，被分配者可以是用户或部门。
 
+## 方法名称
+
+`AuthenticationClient.revokeRole`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
@@ -18,6 +22,54 @@
 | targets | <a href="#TargetDto">TargetDto[]</a> | 是 | - | 移除角色的目标 数组长度限制：50。 | `[{"targetIdentifier":"60b49eb83fd80adb96f26e68","targetType":"USER"}]` |
 | code | string | 是 | - | 权限分组内角色的唯一标识符  | `code1` |
 | namespace | string | 否 | - | 所属权限分组的 code  | `default` |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.IsSuccessRespDto;
+import cn.authing.sdk.java.dto.RevokeRoleDto;
+import cn.authing.sdk.java.dto.TargetDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class RevokeRoleTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        RevokeRoleDto reqDto = new RevokeRoleDto();
+        reqDto.setCode("code1");
+        List<TargetDto> list = new ArrayList<>();
+        TargetDto targetDto = new TargetDto();
+        targetDto.setTargetType(TargetDto.TargetType.USER);
+        targetDto.setTargetIdentifier("6343b98b7cfxxx9366e9b7c");
+        list.add(targetDto);
+        reqDto.setTargets(list);
+        IsSuccessRespDto response = client.revokeRole(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

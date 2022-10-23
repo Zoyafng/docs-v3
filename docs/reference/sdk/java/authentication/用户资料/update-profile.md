@@ -11,6 +11,10 @@
 
 此接口用于修改用户的用户资料，包含用户的自定义数据。如果需要**修改邮箱**、**修改手机号**、**修改密码**，请使用对应的单独接口。
 
+## 方法名称
+
+`AuthenticationClient.updateProfile`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
@@ -29,6 +33,46 @@
 | gender | string | 否 | U | 性别  | `M` |
 | username | string | 否 | - | 用户名，用户池内唯一  | `bob` |
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"school":"北京大学","age":22}` |
+
+
+
+
+## 示例代码
+
+```java
+package test.authentication;
+
+import cn.authing.sdk.java.client.AuthenticationClient;
+import cn.authing.sdk.java.dto.UpdateUserProfileDto;
+import cn.authing.sdk.java.dto.UserSingleRespDto;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class UpdateProfileTest {
+    // 需要替换成你的 Authing App ID
+    private static final String APP_ID = "AUTHING_APP_ID";
+    // 需要替换成你的 Authing App Secret
+    private static final String APP_SECRET = "AUTHING_APP_SECRET";
+    // 需要替换成你的 Authing App Host
+    private static final String APP_HOST = "AUTHING_APP_HOST";
+    // 需要替换成你的 Authing Access Token
+    private static final String ACCESS_TOKEN = "AUTHING_ACCESS_TOKEN";
+
+    public static void main(String[] args) throws Throwable {
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId(APP_ID);
+        clientOptions.setAppSecret(APP_SECRET);
+        clientOptions.setAppHost(APP_HOST);
+        clientOptions.setAccessToken(ACCESS_TOKEN);
+
+        AuthenticationClient client = new AuthenticationClient(clientOptions);
+
+        UserSingleRespDto response = client.updateProfile(new UpdateUserProfileDto());
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

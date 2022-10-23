@@ -11,6 +11,10 @@
 
 身份源连接开关，可以打开或关闭身份源连接。
 
+## 方法名称
+
+`AuthenticationClient.ChangeExtIdpConnState`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |

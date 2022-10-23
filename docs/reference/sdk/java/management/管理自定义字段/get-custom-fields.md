@@ -11,11 +11,54 @@
 
 通过主体类型，获取用户、部门或角色的自定义字段列表。
 
+## 方法名称
+
+`AuthenticationClient.getCustomFields`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
- | targetType | string  | 是 | - | 目标对象类型：<br>- `USER`: 用户<br>- `ROLE`: 角色<br>- `GROUP`: 分组<br>- `DEPARTMENT`: 部门<br>      | `USER` |
+ | targetType | string  | 是 | - | 目标对象类型：<br>- `USER`: 用户<br>- `ROLE`: 角色<br>- `GROUP`: 分组<br>- `DEPARTMENT`: 部门<br>    ;该接口暂不支持分组(GROUP)  | `USER` |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.CustomFieldListRespDto;
+import cn.authing.sdk.java.dto.GetCustomFieldsDto;
+import cn.authing.sdk.java.dto.TargetDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class GetCustomFieldsTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        GetCustomFieldsDto reqDto = new GetCustomFieldsDto();
+        reqDto.setTargetType(TargetDto.TargetType.USER.getValue());
+        CustomFieldListRespDto response = client.getCustomFields(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

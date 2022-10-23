@@ -11,6 +11,10 @@
 
 通过组织 code、部门 ID，修改部门，可以设置多种参数。
 
+## 方法名称
+
+`AuthenticationClient.updateDepartment`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
@@ -25,6 +29,45 @@
 | departmentIdType | string | 否 | department_id | 此次调用中使用的部门 ID 的类型  | `department_id` |
 | parentDepartmentId | string | 否 | - | 父部门 ID  | `6229c4deb3e4d8a20b6021ff` |
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"icon":"https://example.com/icon"}` |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.DepartmentSingleRespDto;
+import cn.authing.sdk.java.dto.UpdateDepartmentReqDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class UpdateDepartmentTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        UpdateDepartmentReqDto reqDto = new UpdateDepartmentReqDto();
+        reqDto.setDepartmentId("60b49exxxxb96f26e68");
+        reqDto.setOrganizationCode("steamory");
+        DepartmentSingleRespDto response = client.updateDepartment(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

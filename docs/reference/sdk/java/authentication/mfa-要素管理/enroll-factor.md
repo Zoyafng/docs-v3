@@ -11,6 +11,10 @@
 
 绑定 MFA 要素
 
+## 方法名称
+
+`AuthenticationClient.enrollFactor`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
@@ -18,6 +22,54 @@
 | enrollmentData | <a href="#EnrollFactorEnrollmentDataDto">EnrollFactorEnrollmentDataDto</a> | 是 | - | 绑定 MFA 认证要素时，对应认证要素要求的验证信息。  |  |
 | enrollmentToken | string | 是 | - | 「发起绑定 MFA 认证要素请求」接口返回的 enrollmentToken，此 token 有效时间为一分钟。  | `TQoCISidM0kBji0dxRi3afSDtkvvMiUphenIgLF87y+JOw4T8fDWOsHHXIcvZ2EVESXhTrfGyh1iGf52Cg9e9byeFQvm1VZ0QWrwmzwpntFAVtf1IP9LqVhmzXhBMFvLOcU/z1Eh/n0CrwX0uHNpJoMW9lp9AqHd9HvauaGKX+Y=` |
 | factorType | string | 是 | - | MFA 认证要素类型：<br>- `OTP`: OTP<br>- `SMS`: 短信<br>- `EMAIL`: 邮件<br>- `FACE`: 人脸<br>        | `SMS` |
+
+
+
+
+## 示例代码
+
+```java
+package test.authentication;
+
+import cn.authing.sdk.java.client.AuthenticationClient;
+import cn.authing.sdk.java.dto.EnrollFactorDto;
+import cn.authing.sdk.java.dto.EnrollFactorEnrollmentDataDto;
+import cn.authing.sdk.java.dto.EnrollFactorRespDto;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class EnrollFactorTest {
+    // 需要替换成你的 Authing App ID
+    private static final String APP_ID = "AUTHING_APP_ID";
+    // 需要替换成你的 Authing App Secret
+    private static final String APP_SECRET = "AUTHING_APP_SECRET";
+    // 需要替换成你的 Authing App Host
+    private static final String APP_HOST = "AUTHING_APP_HOST";
+    // 需要替换成你的 Authing Access Token
+    private static final String ACCESS_TOKEN = "AUTHING_ACCESS_TOKEN";
+
+    public static void main(String[] args) throws Throwable {
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId(APP_ID);
+        clientOptions.setAppSecret(APP_SECRET);
+        clientOptions.setAppHost(APP_HOST);
+        clientOptions.setAccessToken(ACCESS_TOKEN);
+
+        AuthenticationClient client = new AuthenticationClient(clientOptions);
+
+        EnrollFactorDto reqDto = new EnrollFactorDto();
+        reqDto.setFactorType(EnrollFactorDto.FactorType.EMAIL);
+        // 「发起绑定 MFA 认证要素请求」接口返回的 enrollmentToken，此 token 有效时间为一分钟。
+        reqDto.setEnrollmentToken("xxx");
+        EnrollFactorEnrollmentDataDto dataDto = new EnrollFactorEnrollmentDataDto();
+        dataDto.setPassCode("123");
+        reqDto.setEnrollmentData(dataDto);
+        EnrollFactorRespDto response = client.enrollFactor(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

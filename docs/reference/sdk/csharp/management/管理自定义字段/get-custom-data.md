@@ -11,6 +11,10 @@
 
 通过筛选条件，获取用户、分组、角色、组织机构的自定义字段值。
 
+## 方法名称
+
+`AuthenticationClient.GetCustomData`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |

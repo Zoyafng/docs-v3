@@ -12,11 +12,58 @@
 终端用户自主修改邮箱，需要提供相应的验证手段，见[发起修改邮箱的验证请求](#tag/用户资料/修改邮箱/operation/ProfileV3Controller_updateEmailVerification)。
 此参数需要提供一次性临时凭证 `updateEmailToken`，此数据需要从**发起修改邮箱的验证请求**接口获取。
 
+## 方法名称
+
+`AuthenticationClient.updateEmail`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | updateEmailToken | string | 是 | - | 用于临时修改邮箱的 token，可从**发起修改邮箱的验证请求**接口获取。  | `xxxx` |
+
+
+
+
+## 示例代码
+
+```java
+package test.authentication;
+
+import cn.authing.sdk.java.client.AuthenticationClient;
+import cn.authing.sdk.java.dto.CommonResponseDto;
+import cn.authing.sdk.java.dto.UpdateEmailDto;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class UpdateEmailTest {
+    // 需要替换成你的 Authing App ID
+    private static final String APP_ID = "AUTHING_APP_ID";
+    // 需要替换成你的 Authing App Secret
+    private static final String APP_SECRET = "AUTHING_APP_SECRET";
+    // 需要替换成你的 Authing App Host
+    private static final String APP_HOST = "AUTHING_APP_HOST";
+    // 需要替换成你的 Authing Access Token
+    private static final String ACCESS_TOKEN = "AUTHING_ACCESS_TOKEN";
+
+    public static void main(String[] args) throws Throwable {
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId(APP_ID);
+        clientOptions.setAppSecret(APP_SECRET);
+        clientOptions.setAppHost(APP_HOST);
+        clientOptions.setAccessToken(ACCESS_TOKEN);
+
+        AuthenticationClient client = new AuthenticationClient(clientOptions);
+
+        UpdateEmailDto reqDto = new UpdateEmailDto();
+        // 用于临时修改邮箱的 token，可从发起修改邮箱的验证请求接口获取。
+        reqDto.setUpdateEmailToken("xxx");
+        CommonResponseDto response = client.updateEmail(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

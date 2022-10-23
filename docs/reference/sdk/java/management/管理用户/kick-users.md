@@ -11,6 +11,10 @@
 
 通过用户 ID、App ID 列表，强制让用户下线，可以选择指定用户 ID 类型等。
 
+## 方法名称
+
+`AuthenticationClient.kickUsers`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
@@ -18,6 +22,47 @@
 | appIds | string[] | 是 | - | APP ID 列表 数组长度限制：50。 | `["62188e71cxxxx3075289c580"]` |
 | userId | string | 是 | - | 用户 ID  |  |
 | options | <a href="#KickUsersOptionsDto">KickUsersOptionsDto</a> | 否 | - | 可选参数  | `{"userIdType":"user_id"}` |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.IsSuccessRespDto;
+import cn.authing.sdk.java.dto.KickUsersDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+import java.util.Collections;
+
+public class KickUsersTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        KickUsersDto reqDto = new KickUsersDto();
+        reqDto.setUserId("6229ffaxxxxxxxxcade3e3d9");
+        reqDto.setAppIds(Collections.singletonList("62188e71cxxxx3075289c580"));
+        IsSuccessRespDto response = client.kickUsers(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

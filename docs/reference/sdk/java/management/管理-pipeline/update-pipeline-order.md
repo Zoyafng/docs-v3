@@ -11,12 +11,60 @@
 
 修改 Pipeline 函数顺序
 
+## 方法名称
+
+`AuthenticationClient.updatePipelineOrder`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | order | string[] | 是 | - | 新的排序方式，按照函数 ID 的先后顺序进行排列。  | `[]` |
 | scene | string | 是 | - | 函数的触发场景：<br>- `PRE_REGISTER`: 注册前<br>- `POST_REGISTER`: 注册后<br>- `PRE_AUTHENTICATION`: 认证前<br>- `POST_AUTHENTICATION`: 认证后<br>- `PRE_OIDC_ID_TOKEN_ISSUED`: OIDC ID Token 签发前<br>- `PRE_OIDC_ACCESS_TOKEN_ISSUED`: OIDC Access Token 签发前<br>- `PRE_COMPLETE_USER_INFO`: 补全用户信息前<br>      | `PRE_REGISTER` |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.CommonResponseDto;
+import cn.authing.sdk.java.dto.CostGetCurrentPackageRespDto;
+import cn.authing.sdk.java.dto.UpdatePipelineOrderDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class UpdatePipelineOrderTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        UpdatePipelineOrderDto updatePipelineOrderDto = new UpdatePipelineOrderDto();
+        updatePipelineOrderDto.setScene(UpdatePipelineOrderDto.Scene.POST_AUTHENTICATION);
+        List<String> order = new ArrayList<>();
+        updatePipelineOrderDto.setOrder(order);
+        CommonResponseDto commonResponseDto = client.updatePipelineOrder(updatePipelineOrderDto);
+        System.out.println(JsonUtils.serialize(commonResponseDto));
+    }
+}
+
+```
 
 
 

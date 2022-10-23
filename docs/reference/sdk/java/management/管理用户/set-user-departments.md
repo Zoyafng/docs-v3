@@ -11,6 +11,10 @@
 
 通过用户 ID，设置用户所在部门，可以选择指定用户 ID 类型等。
 
+## 方法名称
+
+`AuthenticationClient.setUserDepartments`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
@@ -18,6 +22,53 @@
 | departments | <a href="#SetUserDepartmentDto">SetUserDepartmentDto[]</a> | 是 | - | 部门信息 数组长度限制：10。 | `[{"departmentId":"60b49eb83fd80adb96f26e68","isLeader":true,"isMainDepartment":true}]` |
 | userId | string | 是 | - | 用户唯一标志，可以是用户 ID、用户名、邮箱、手机号、外部 ID、在外部身份源的 ID。  | `6229ffaxxxxxxxxcade3e3d9` |
 | options | <a href="#SetUserDepartmentsOptionsDto">SetUserDepartmentsOptionsDto</a> | 否 | - | 可选参数  |  |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.IsSuccessRespDto;
+import cn.authing.sdk.java.dto.SetUserDepartmentDto;
+import cn.authing.sdk.java.dto.SetUserDepartmentsDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SetUserDepartmentsTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        SetUserDepartmentsDto reqDto = new SetUserDepartmentsDto();
+        List<SetUserDepartmentDto> list = new ArrayList<>();
+        SetUserDepartmentDto departmentDto = new SetUserDepartmentDto();
+        departmentDto.setDepartmentId("SetUserDepartmentDto()");
+        list.add(departmentDto);
+        reqDto.setDepartments(list);
+        reqDto.setUserId("6229ffaxxxxxxxxcade3e3d9");
+        IsSuccessRespDto response = client.setUserDepartments(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

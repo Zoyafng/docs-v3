@@ -11,6 +11,10 @@
 
 通过用户 ID 列表，删除用户，支持批量删除，可以选择指定用户 ID 类型等。
 
+## 方法名称
+
+`AuthenticationClient.delete_users_batch`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |

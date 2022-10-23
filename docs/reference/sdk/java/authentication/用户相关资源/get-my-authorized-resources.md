@@ -11,12 +11,56 @@
 
 此接口用于获取用户被授权的资源列表。
 
+## 方法名称
+
+`AuthenticationClient.getAuthorizedResources`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
  | namespace | string  | 否 | - | 所属权限分组的 code  | `default` |
  | resourceType | string  | 否 | - | 资源类型，如 数据、API、菜单、按钮  |  |
+
+
+
+
+## 示例代码
+
+```java
+package test.authentication;
+
+import cn.authing.sdk.java.client.AuthenticationClient;
+import cn.authing.sdk.java.dto.AuthorizedResourcePaginatedRespDto;
+import cn.authing.sdk.java.dto.GetMyAuthorizedResourcesDto;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class GetAuthorizedResourcesTest {
+    // 需要替换成你的 Authing App ID
+    private static final String APP_ID = "AUTHING_APP_ID";
+    // 需要替换成你的 Authing App Secret
+    private static final String APP_SECRET = "AUTHING_APP_SECRET";
+    // 需要替换成你的 Authing App Host
+    private static final String APP_HOST = "AUTHING_APP_HOST";
+    // 需要替换成你的 Authing Access Token
+    private static final String ACCESS_TOKEN = "AUTHING_ACCESS_TOKEN";
+
+    public static void main(String[] args) throws Throwable {
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId(APP_ID);
+        clientOptions.setAppSecret(APP_SECRET);
+        clientOptions.setAppHost(APP_HOST);
+        clientOptions.setAccessToken(ACCESS_TOKEN);
+
+        AuthenticationClient client = new AuthenticationClient(clientOptions);
+
+        AuthorizedResourcePaginatedRespDto response = client.getAuthorizedResources(new GetMyAuthorizedResourcesDto());
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

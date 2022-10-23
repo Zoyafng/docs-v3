@@ -9,7 +9,11 @@
 
 <LastUpdated />
 
-取消给用户、分组、组织或角色的应用访问权限授权
+取消给用户、分组、组织或角色的应用访问权限授权,如果传入数据不存在，则返回数据不报错处理。
+
+## 方法名称
+
+`AuthenticationClient.revoke_application_access`
 
 ## 请求参数
 

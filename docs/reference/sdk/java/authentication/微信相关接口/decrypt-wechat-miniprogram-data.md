@@ -11,6 +11,10 @@
 
 
 
+## 方法名称
+
+`AuthenticationClient.decryptWechatMiniProgramData`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
@@ -19,6 +23,48 @@
 | iv | string | 是 | - | 对称解密算法初始向量，由微信返回  |  |
 | encryptedData | string | 是 | - | 获取微信开放数据返回的加密数据（encryptedData）  |  |
 | extIdpConnidentifier | string | 是 | - | 微信小程序的外部身份源连接标志符  | `my-wxapp` |
+
+
+
+
+## 示例代码
+
+```java
+package test.authentication;
+
+import cn.authing.sdk.java.client.AuthenticationClient;
+import cn.authing.sdk.java.dto.DecryptWechatMiniProgramDataDto;
+import cn.authing.sdk.java.dto.DecryptWechatMiniProgramDataRespDto;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class DecryptWechatMiniProgramDataTest {
+    // 需要替换成你的 Authing App ID
+    private static final String APP_ID = "AUTHING_APP_ID";
+    // 需要替换成你的 Authing App Secret
+    private static final String APP_SECRET = "AUTHING_APP_SECRET";
+    // 需要替换成你的 Authing App Host
+    private static final String APP_HOST = "AUTHING_APP_HOST";
+
+    public static void main(String[] args) throws Throwable {
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId(APP_ID);
+        clientOptions.setAppSecret(APP_SECRET);
+        clientOptions.setAppHost(APP_HOST);
+
+        AuthenticationClient client = new AuthenticationClient(clientOptions);
+
+        DecryptWechatMiniProgramDataDto reqDto = new DecryptWechatMiniProgramDataDto();
+        reqDto.setCode("xxx");
+        reqDto.setIv("xxx");
+        reqDto.setEncryptedData("xxx");
+        reqDto.setExtIdpConnidentifier("my-wxapp");
+        DecryptWechatMiniProgramDataRespDto response = client.decryptWechatMiniProgramData(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

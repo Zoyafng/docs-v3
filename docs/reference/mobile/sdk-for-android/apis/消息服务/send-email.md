@@ -48,7 +48,7 @@ authClient.sendEmail("test@example.com", EmailType.CHANNEL_LOGIN, (AuthCallback)
 
 ## 数据结构
 
-<a id="EmailType"></a> EmailType
+### <a id="EmailType"></a> EmailType
 
 | 名称                      | 类型 | 描述                        |
 | :------------------------ | :--- | --------------------------- |

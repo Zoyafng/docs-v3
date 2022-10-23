@@ -59,6 +59,10 @@ JS 代码示例：
 
     
 
+## 方法名称
+
+`AuthenticationClient.exchangeTokenSetWithQrCodeTicket`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
@@ -66,6 +70,48 @@ JS 代码示例：
 | ticket | string | 是 | - | 当二维码状态为已授权时返回。如果在控制台应用安全 - 通用安全 - 登录安全 - APP 扫码登录 Web 安全中未开启「Web 轮询接口返回完整用户信息」（默认处于关闭状态），会返回此 ticket，用于换取完整的用户信息。  |  |
 | client_id | string | 否 | - | 应用 ID。当应用的「换取 token 身份验证方式」配置为 `client_secret_post` 需要传。  | `6342b8537axxxx047d314109` |
 | client_secret | string | 否 | - | 应用密钥。当应用的「换取 token 身份验证方式」配置为 `client_secret_post` 需要传。  | `4203d30e5e915xxxxxx26c31c9adce68` |
+
+
+
+
+## 示例代码
+
+```java
+package test.authentication;
+
+import cn.authing.sdk.java.client.AuthenticationClient;
+import cn.authing.sdk.java.dto.ExchangeTokenSetWithQRcodeTicketDto;
+import cn.authing.sdk.java.dto.LoginTokenRespDto;
+import cn.authing.sdk.java.enums.AuthMethodEnum;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class ExchangeTokenSetWithQrCodeTicketTest {
+    // 需要替换成你的 Authing App ID
+    private static final String APP_ID = "AUTHING_APP_ID";
+    // 需要替换成你的 Authing App Secret
+    private static final String APP_SECRET = "AUTHING_APP_SECRET";
+    // 需要替换成你的 Authing App Host
+    private static final String APP_HOST = "AUTHING_APP_HOST";
+
+    public static void main(String[] args) throws Throwable {
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setTokenEndPointAuthMethod(AuthMethodEnum.CLIENT_SECRET_BASIC.getValue());
+        clientOptions.setAppId(APP_ID);
+        clientOptions.setAppSecret(APP_SECRET);
+        clientOptions.setAppHost(APP_HOST);
+
+        AuthenticationClient client = new AuthenticationClient(clientOptions);
+
+        ExchangeTokenSetWithQRcodeTicketDto reqDto = new ExchangeTokenSetWithQRcodeTicketDto();
+        // 可查询二维码状态获取, 当二维码状态为已授权时返回
+        reqDto.setTicket("REPLACE_WITH_REAL_TICKET");
+        LoginTokenRespDto response = client.exchangeTokenSetWithQrCodeTicket(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

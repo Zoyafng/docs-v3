@@ -9,7 +9,11 @@
 
 <LastUpdated />
 
-给用户、分组、组织或角色授权应用访问权限
+给用户、分组、组织或角色授权应用访问权限，如果用户、分组、组织或角色不存在，则跳过，进行下一步授权，不返回报错
+
+## 方法名称
+
+`AuthenticationClient.authorize_application_access`
 
 ## 请求参数
 

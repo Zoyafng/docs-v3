@@ -11,6 +11,10 @@
 
 通过指定 webhookId，可选请求头和请求体进行手动触发 webhook 执行
 
+## 方法名称
+
+`AuthenticationClient.triggerWebhook`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
@@ -18,6 +22,45 @@
 | webhookId | string | 是 | - | Webhook ID  | `6229ffaxxxxxxxxcade3e3d9` |
 | requestHeaders | object | 否 | - | 请求头  | `{"eventName":"test","data":{"description":"A test from authing"}}` |
 | requestBody | object | 否 | - | 请求体  | `{"eventName":"test","data":{"description":"A test from authing"}}` |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.CostGetCurrentUsageRespDto;
+import cn.authing.sdk.java.dto.TriggerWebhookDto;
+import cn.authing.sdk.java.dto.TriggerWebhookRespDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class TriggerWebhookTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        TriggerWebhookDto triggerWebhookDto = new TriggerWebhookDto();
+        triggerWebhookDto.setWebhookId("AUTHING_WEBHOOK_ID");
+        TriggerWebhookRespDto triggerWebhookRespDto = client.triggerWebhook(triggerWebhookDto);
+        System.out.println(JsonUtils.serialize(triggerWebhookRespDto));
+    }
+}
+
+```
 
 
 

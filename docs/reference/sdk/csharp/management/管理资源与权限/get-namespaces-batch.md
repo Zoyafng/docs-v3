@@ -11,6 +11,10 @@
 
 分别通过权限分组唯一标志符，批量获取权限分组详情。
 
+## 方法名称
+
+`AuthenticationClient.GetNamespacesBatch`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |

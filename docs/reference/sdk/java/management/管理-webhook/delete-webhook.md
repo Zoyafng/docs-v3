@@ -11,11 +11,57 @@
 
 通过指定多个 webhookId,以数组的形式进行 webhook 的删除,如果 webhookId 不存在,不提示报错
 
+## 方法名称
+
+`AuthenticationClient.deleteWebhook`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | webhookIds | string[] | 是 | - | webhookId 数组  | `["xxxx"]` |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.CostGetCurrentUsageRespDto;
+import cn.authing.sdk.java.dto.DeleteWebhookDto;
+import cn.authing.sdk.java.dto.DeleteWebhookRespDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+import java.util.ArrayList;
+
+public class DeleteWebhookTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        DeleteWebhookDto deleteWebhookDto = new DeleteWebhookDto();
+        ArrayList<String> webhookIds = new ArrayList<>();
+        deleteWebhookDto.setWebhookIds(webhookIds);
+        DeleteWebhookRespDto deleteWebhookRespDto = client.deleteWebhook(deleteWebhookDto);
+        System.out.println(JsonUtils.serialize(deleteWebhookRespDto));
+    }
+}
+
+```
 
 
 

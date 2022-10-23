@@ -11,11 +11,61 @@
 
 批量创建角色，可以选择权限分组、角色描述等。
 
+## 方法名称
+
+`AuthenticationClient.createRolesBatch`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | list | <a href="#RoleListItem">RoleListItem[]</a> | 是 | - | 角色列表 数组长度限制：50。 | `[{"code":"my-role-code","namespace":"default","description":"this is  description"}]` |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.CreateRolesBatch;
+import cn.authing.sdk.java.dto.IsSuccessRespDto;
+import cn.authing.sdk.java.dto.RoleListItem;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CreateRolesBatchTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        CreateRolesBatch reqDto = new CreateRolesBatch();
+        List<RoleListItem> list = new ArrayList<>();
+        RoleListItem item = new RoleListItem();
+        item.setCode("code1");
+        list.add(item);
+        reqDto.setList(list);
+        IsSuccessRespDto response = client.createRolesBatch(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

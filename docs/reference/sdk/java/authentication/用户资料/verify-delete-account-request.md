@@ -11,6 +11,10 @@
 
 当用户希望注销账号时，需提供相应凭证，当前支持**使用邮箱验证码**、使用**手机验证码**、**使用密码**三种验证方式。
 
+## 方法名称
+
+`AuthenticationClient.verifyDeleteAccountRequest`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
@@ -19,6 +23,54 @@
 | phonePassCodePayload | <a href="#DeleteAccountByPhonePassCodeDto">DeleteAccountByPhonePassCodeDto</a> | 否 | - | 使用手机号验证码验证的数据  |  |
 | emailPassCodePayload | <a href="#DeleteAccountByEmailPassCodeDto">DeleteAccountByEmailPassCodeDto</a> | 否 | - | 使用邮箱验证码验证的数据  |  |
 | passwordPayload | <a href="#DeleteAccountByPasswordDto">DeleteAccountByPasswordDto</a> | 否 | - | 使用密码验证的数据  |  |
+
+
+
+
+## 示例代码
+
+```java
+package test.authentication;
+
+import cn.authing.sdk.java.client.AuthenticationClient;
+import cn.authing.sdk.java.dto.DeleteAccountByEmailPassCodeDto;
+import cn.authing.sdk.java.dto.VerifyDeleteAccountRequestDto;
+import cn.authing.sdk.java.dto.VerifyDeleteAccountRequestRespDto;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class VerifyDeleteAccountRequestTest {
+    // 需要替换成你的 Authing App ID
+    private static final String APP_ID = "AUTHING_APP_ID";
+    // 需要替换成你的 Authing App Secret
+    private static final String APP_SECRET = "AUTHING_APP_SECRET";
+    // 需要替换成你的 Authing App Host
+    private static final String APP_HOST = "AUTHING_APP_HOST";
+    // 需要替换成你的 Authing Access Token
+    private static final String ACCESS_TOKEN = "AUTHING_ACCESS_TOKEN";
+
+    public static void main(String[] args) throws Throwable {
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId(APP_ID);
+        clientOptions.setAppSecret(APP_SECRET);
+        clientOptions.setAppHost(APP_HOST);
+        clientOptions.setAccessToken(ACCESS_TOKEN);
+
+        AuthenticationClient client = new AuthenticationClient(clientOptions);
+
+        VerifyDeleteAccountRequestDto reqDto = new VerifyDeleteAccountRequestDto();
+        reqDto.setVerifyMethod(VerifyDeleteAccountRequestDto.VerifyMethod.EMAIL_PASSCODE);
+        DeleteAccountByEmailPassCodeDto passCodeDto = new DeleteAccountByEmailPassCodeDto();
+        passCodeDto.setEmail("123@qq.com");
+        // 邮箱验证码，一个短信验证码只能使用一次，默认有效时间为 5 分钟。你需要通过发送邮件接口获取。
+        passCodeDto.setPassCode("xxx");
+        reqDto.setEmailPassCodePayload(passCodeDto);
+        VerifyDeleteAccountRequestRespDto response = client.verifyDeleteAccountRequest(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

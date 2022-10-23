@@ -11,6 +11,10 @@
 
 创建资源，可以设置资源的描述、定义的操作类型、URL 标识等。
 
+## 方法名称
+
+`AuthenticationClient.createResource`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
@@ -21,6 +25,45 @@
 | actions | <a href="#ResourceAction">ResourceAction[]</a> | 否 | - | 资源定义的操作类型 数组长度限制：100。 | `[{"name":"ecs:Start","description":"启动 ECS 服务器"},{"name":"ecs:Stop","description":"停止 ECS 服务器"}]` |
 | apiIdentifier | string | 否 | - | API 资源的 URL 标识  | `https://my-awesome-api.com/api` |
 | namespace | string | 否 | - | 所属权限分组的 code  | `default` |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.CreateResourceDto;
+import cn.authing.sdk.java.dto.ResourceRespDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class CreateResourceTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        CreateResourceDto reqDto = new CreateResourceDto();
+        reqDto.setCode("ecs");
+        reqDto.setType(CreateResourceDto.Type.DATA);
+        ResourceRespDto response = client.createResource(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

@@ -11,6 +11,10 @@
 
 根据 Factor ID 获取用户绑定的某个 MFA Factor 详情。
 
+## 方法名称
+
+`AuthenticationClient.getFactor`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |

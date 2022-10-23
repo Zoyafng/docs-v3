@@ -11,6 +11,10 @@
 
 根据筛选条件，获取某个主体被授权的资源列表。
 
+## 方法名称
+
+`AuthenticationClient.getAuthorizedResources`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
@@ -21,6 +25,46 @@
  | resourceType | string  | 否 | - | 限定资源类型，如数据、API、按钮、菜单  | `DATA` |
  | resourceList | string[]  | 否 | - | 限定查询的资源列表，如果指定，只会返回所指定的资源列表。 数组长度限制：50。 |  |
  | withDenied | boolean  | 否 | - | 是否获取被拒绝的资源  |  |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.AuthorizedResourcePaginatedRespDto;
+import cn.authing.sdk.java.dto.GetAuthorizedResourcesDto;
+import cn.authing.sdk.java.dto.TargetDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class GetAuthorizedResourcesTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        GetAuthorizedResourcesDto reqDto = new GetAuthorizedResourcesDto();
+        reqDto.setTargetType(TargetDto.TargetType.USER.getValue());
+        reqDto.setTargetIdentifier("6343b98b7cfxxx9366e9b7c");
+        AuthorizedResourcePaginatedRespDto response = client.getAuthorizedResources(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

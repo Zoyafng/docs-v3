@@ -59,6 +59,10 @@ JS 代码示例：
 
   
 
+## 方法名称
+
+`AuthenticationClient.signInByCredentials`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
@@ -71,6 +75,53 @@ JS 代码示例：
 | options | <a href="#SignInOptionsDto">SignInOptionsDto</a> | 否 | - | 可选参数  | `{"passwordEncryptType":"none"}` |
 | client_id | string | 否 | - | 应用 ID。当应用的「换取 token 身份验证方式」配置为 `client_secret_post` 需要传。  | `6342b8537axxxx047d314109` |
 | client_secret | string | 否 | - | 应用密钥。当应用的「换取 token 身份验证方式」配置为 `client_secret_post` 需要传。  | `4203d30e5e915xxxxxx26c31c9adce68` |
+
+
+
+
+## 示例代码
+
+```java
+package test.authentication;
+
+import cn.authing.sdk.java.client.AuthenticationClient;
+import cn.authing.sdk.java.dto.LoginTokenRespDto;
+import cn.authing.sdk.java.dto.SignInByPasswordPayloadDto;
+import cn.authing.sdk.java.dto.SigninByCredentialsDto;
+import cn.authing.sdk.java.enums.AuthMethodEnum;
+import cn.authing.sdk.java.model.AuthenticationClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class SignInByCredentialsTest {
+    // 需要替换成你的 Authing App ID
+    private static final String APP_ID = "AUTHING_APP_ID";
+    // 需要替换成你的 Authing App Secret
+    private static final String APP_SECRET = "AUTHING_APP_SECRET";
+    // 需要替换成你的 Authing App Host
+    private static final String APP_HOST = "AUTHING_APP_HOST";
+
+    public static void main(String[] args) throws Throwable {
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setTokenEndPointAuthMethod(AuthMethodEnum.CLIENT_SECRET_BASIC.getValue());
+        clientOptions.setAppId(APP_ID);
+        clientOptions.setAppSecret(APP_SECRET);
+        clientOptions.setAppHost(APP_HOST);
+
+        AuthenticationClient client = new AuthenticationClient(clientOptions);
+
+        SigninByCredentialsDto reqDto = new SigninByCredentialsDto();
+        reqDto.setConnection(SigninByCredentialsDto.Connection.PASSWORD);
+        SignInByPasswordPayloadDto passwordPayloadDto = new SignInByPasswordPayloadDto();
+        passwordPayloadDto.setPassword("123");
+        passwordPayloadDto.setAccount("test");
+        passwordPayloadDto.setEmail("123@qq.com");
+        reqDto.setPasswordPayload(passwordPayloadDto);
+        LoginTokenRespDto response = client.signInByCredentials(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

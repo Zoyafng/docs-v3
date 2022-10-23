@@ -11,6 +11,10 @@
 
 创建同步任务
 
+## 方法名称
+
+`AuthenticationClient.createSyncTask`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
@@ -24,6 +28,59 @@
 | organizationCode | string | 否 | - | 此同步任务绑定的组织机构。针对上游同步，需执行一次同步任务之后才会绑定组织机构；针对下游同步，创建同步任务的时候就需要设置。  | `steamory` |
 | provisioningScope | <a href="#SyncTaskProvisioningScope">SyncTaskProvisioningScope</a> | 否 | - | 同步范围，**只针对下游同步任务有效**。为空表示同步整个组织机构。  |  |
 | timedScheduler | <a href="#SyncTaskTimedScheduler">SyncTaskTimedScheduler</a> | 否 | - | 定时同步时间设置  |  |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.CreateSyncTaskDto;
+import cn.authing.sdk.java.dto.SyncTaskClientConfig;
+import cn.authing.sdk.java.dto.SyncTaskFieldMapping;
+import cn.authing.sdk.java.dto.SyncTaskPaginatedRespDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CreateSyncTaskTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        CreateSyncTaskDto reqDto = new CreateSyncTaskDto();
+        List<SyncTaskFieldMapping> list = new ArrayList<>();
+        SyncTaskFieldMapping fieldMapping = new SyncTaskFieldMapping();
+        fieldMapping.setExpression("mobile");
+        fieldMapping.setTargetKey("phone");
+        list.add(fieldMapping);
+        reqDto.setFieldMapping(list);
+        reqDto.setSyncTaskTrigger(CreateSyncTaskDto.SyncTaskTrigger.MANUALLY);
+        reqDto.setSyncTaskFlow(CreateSyncTaskDto.SyncTaskFlow.UPSTREAM);
+        reqDto.setClientConfig(new SyncTaskClientConfig());
+        reqDto.setSyncTaskType(CreateSyncTaskDto.SyncTaskType.ACTIVE_DIRECTORY);
+        reqDto.setSyncTaskName("task_name");
+        SyncTaskPaginatedRespDto response = client.createSyncTask(reqDto);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 

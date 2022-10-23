@@ -11,11 +11,54 @@
 
 获取当前用户池订单支付明细
 
+## 方法名称
+
+`AuthenticationClient.getOrderPayDetail`
+
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
  | orderNo | string  | 是 | - | 订单号  | `2022080410062060e26f7fd6b9` |
+
+
+
+
+## 示例代码
+
+```java
+package test.management;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.CostGetCurrentUsageRespDto;
+import cn.authing.sdk.java.dto.CostGetOrderPayDetailRespDto;
+import cn.authing.sdk.java.dto.GetOrderPayDetailDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+
+public class GetOrderPayDetailTest {
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        GetOrderPayDetailDto getOrderPayDetailDto = new GetOrderPayDetailDto();
+        getOrderPayDetailDto.setOrderNo("AUTHING_ORDER_NO");
+        CostGetOrderPayDetailRespDto orderPayDetail = client.getOrderPayDetail(getOrderPayDetailDto);
+        System.out.println(JsonUtils.serialize(orderPayDetail));
+    }
+}
+
+```
 
 
 
