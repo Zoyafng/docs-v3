@@ -8,7 +8,7 @@ Authing Android SDK 包含[**用户认证 API**](./apis/) 模块，SDK 中的用
 * [注册](./apis/authentication/注册/)
 * [用户资料](./apis/authentication/用户资料/)
 * [账号绑定](./apis/authentication/账号绑定/)
-* [MFA 要素管理](./apis/authentication/MFA 要素管理/)
+* [MFA 要素管理](./apis/authentication/mfa-要素管理/)
 * [用户相关资源](./apis/authentication/用户相关资源/)
 * [消息服务](./apis/authentication/消息服务/)
 * [其他](./apis/authentication/其他/)

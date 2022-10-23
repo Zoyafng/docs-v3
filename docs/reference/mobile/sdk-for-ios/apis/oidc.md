@@ -17,57 +17,6 @@ AuthClient(authRequest).loginByXXX()
 ```
 <br>
 
-使用 OIDC 邮箱注册帐号，邮箱不区分大小写且用户池内唯一。此接口不要求用户对邮箱进行验证，用户注册之后 emailVerified 字段会为 false 。
-
-```swift
-func registerByEmail(email: String, password: String, completion: @escaping(Response) -> Void)
-```
-
-**参数**
-
-* *email* 邮箱
-* *password* 明文密码
-
-**示例**
-
-```swift
-AuthClient().registerByEmail(email: "test@example.com", password: "strong") { code, message, userInfo in
-    if (code == 200) {
-        // userInfo：用户信息
-    }
-}
-```
-
-**错误码**
-
-* 2003 非法邮箱地址
-* 2026 邮箱已注册
-
-<br>
-
-
-
-
-```swift
-func loginByWechat(_ code: String, completion: @escaping(Response) -> Void)
-```
-
-**参数**
-
-* *code* 微信授权码
-
-**示例**
-
-```swift
-AuthClient().loginByWechat("authCode") { code, message, userInfo in
-    if (code == 200) {
-        // userInfo：用户信息
-    }
-}
-```
-
-<br>
-
 ### 获取用户信息
 
 通过 access token 获取用户信息。此接口只返回协议相关用户信息字段。
@@ -160,7 +109,7 @@ AuthClient(authRequest).buildAuthorizeUrl() { url in }
 
 ### code 换 token
 
-通过 OIDC 授权码认证，返回的 UserInfo 里面包含 access token 和 id token。如果登录 url 的 scope 里面包含 offline_access，则该接口也会返回 refresh token
+通过 OIDC 授权码认证，返回的 UserInfo 里面包含 access token 和 id token。如果登录 url 的 scope 里面包含 offline_access，则该接口也会返回 refresh token 。
 
 ```swift
 func authByCode(code: String, completion: @escaping(Response) -> Void)
