@@ -6493,270 +6493,265 @@ const zhCnNavBar = {
               path: '/reference/mobile/sdk-for-android/apis/',
               children: [
                 {
-                  "title": "用户认证模块",
+                  "title": "登录",
                   "children": [
                     {
-                      "title": "登录",
-                      "children": [
-                        {
-                          "title": "账号密码登录",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/signin-by-account-password.md"
-                        },
-                        {
-                          "title": "用户名密码登录",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/signin-by-username-password.md"
-                        },
-                        {
-                          "title": "手机号密码登录",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/signin-by-phone-password.md"
-                        },
-                        {
-                          "title": "邮箱密码登录",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/signin-by-email-password.md"
-                        },
-                        {
-                          "title": "邮箱验证码登录",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/signin-by-email-passcode.md"
-                        },
-                        {
-                          "title": "手机号验证码登录",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/signin-by-phone-passcode.md"
-                        },
-                        {
-                          "title": "LDAP 账号登录",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/signin-by-ldap.md"
-                        },
-                        {
-                          "title": "AD 账号登录",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/signin-by-ad.md"
-                        },
-                        {
-                          "title": "使用手机号一键登录",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/signin-by-oneauth"
-                        },
-                        {
-                          "title": "使用移动端社会化登录",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/signin-by-mobile"
-                        },
-                        {
-                          "title": "查询二维码状态",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/check-qrcode-status"
-                        },
-                        {
-                          "title": "自建 APP 扫码登录：APP 端修改二维码状态",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/登录/change-qrcode-status"
-                        }
-                      ]
+                      "title": "账号密码登录",
+                      "path": "/reference/mobile/sdk-for-android/apis/登录/signin-by-account-password.md"
                     },
                     {
-                      "title": "注册",
-                      "children": [
-                        {
-                          "title": "用户名密码注册",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/注册/signup-by-username-password.md"
-                        },
-                        {
-                          "title": "邮箱密码注册",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/注册/signup-by-email-password.md"
-                        },
-                        {
-                          "title": "手机号验证码注册",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/注册/signup-by-phone-passcode.md"
-                        },
-                        {
-                          "title": "邮箱验证码注册",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/注册/signup-by-email-passcode.md"
-                        }
-                      ]
+                      "title": "用户名密码登录",
+                      "path": "/reference/mobile/sdk-for-android/apis/登录/signin-by-username-password.md"
                     },
                     {
-                      "title": "用户资料",
-                      "children": [
-                        {
-                          "title": "获取用户资料",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/get-profile"
-                        },
-                        {
-                          "title": "修改用户资料",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/update-profile"
-                        },
-                        {
-                          "title": "绑定邮箱",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/bind-email"
-                        },
-                        {
-                          "title": "解绑邮箱",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/unbind-email"
-                        },
-                        {
-                          "title": "绑定手机号",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/bind-phone"
-                        },
-                        {
-                          "title": "解绑手机号",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/unbind-phone"
-                        },
-                        {
-                          "title": "获取密码强度和账号安全等级评分",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/get-security-info"
-                        },
-                        {
-                          "title": "修改密码",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/update-password"
-                        },
-                        {
-                          "title": "发起修改邮箱的验证请求",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/verify-update-email-request"
-                        },
-                        {
-                          "title": "修改邮箱",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/update-email"
-                        },
-                        {
-                          "title": "发起修改手机号的验证请求",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/verify-update-phone-request"
-                        },
-                        {
-                          "title": "修改手机号",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/update-phone"
-                        },
-                        {
-                          "title": "发起忘记密码请求",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/verify-reset-password-request"
-                        },
-                        {
-                          "title": "忘记密码",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/reset-password"
-                        },
-                        {
-                          "title": "发起注销账号请求",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/verify-delete-account-request"
-                        },
-                        {
-                          "title": "注销账户",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户资料/delete-account"
-                        }
-                      ]
+                      "title": "手机号密码登录",
+                      "path": "/reference/mobile/sdk-for-android/apis/登录/signin-by-phone-password.md"
                     },
                     {
-                      "title": "账号绑定",
-                      "children": [
-                        {
-                          "title": "绑定外部身份源",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/账号绑定/link-extidp"
-                        },
-                        {
-                          "title": "解绑外部身份源",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/账号绑定/unlink-extidp"
-                        },
-                        {
-                          "title": "获取绑定的外部身份源",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/账号绑定/get-identities"
-                        },
-                        {
-                          "title": "获取应用开启的外部身份源列表",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/账号绑定/get-extidps"
-                        }
-                      ]
+                      "title": "邮箱密码登录",
+                      "path": "/reference/mobile/sdk-for-android/apis/登录/signin-by-email-password.md"
                     },
                     {
-                      "title": "MFA 要素管理",
-                      "children": [
-                        {
-                          "title": "发起绑定 MFA 认证要素请求",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/mfa-要素管理/send-enroll-factor-request"
-                        },
-                        {
-                          "title": "绑定 MFA 认证要素",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/mfa-要素管理/enroll-factor"
-                        },
-                        {
-                          "title": "解绑 MFA 认证要素",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/mfa-要素管理/reset-factor"
-                        },
-                        {
-                          "title": "获取绑定的所有 MFA 认证要素",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/mfa-要素管理/list-enrolled-factors"
-                        },
-                        {
-                          "title": "获取绑定的某个 MFA 认证要素",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/mfa-要素管理/get-factor"
-                        },
-                        {
-                          "title": "获取可绑定的 MFA 认证要素",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/mfa-要素管理/list-factors-to-enroll"
-                        }
-                      ]
+                      "title": "邮箱验证码登录",
+                      "path": "/reference/mobile/sdk-for-android/apis/登录/signin-by-email-passcode.md"
                     },
                     {
-                      "title": "用户相关资源",
-                      "children": [
-                        {
-                          "title": "获取登录日志",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户相关资源/get-my-login-history"
-                        },
-                        {
-                          "title": "获取登录应用",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户相关资源/get-my-logged-in-apps"
-                        },
-                        {
-                          "title": "获取具备访问权限的应用",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户相关资源/get-my-accessible-apps"
-                        },
-                        {
-                          "title": "获取租户列表",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户相关资源/get-my-tenant-list"
-                        },
-                        {
-                          "title": "获取角色列表",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户相关资源/get-my-role-list"
-                        },
-                        {
-                          "title": "获取分组列表",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户相关资源/get-my-group-list"
-                        },
-                        {
-                          "title": "获取部门列表",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户相关资源/get-my-department-list"
-                        },
-                        {
-                          "title": "获取被授权的资源列表",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/用户相关资源/get-my-authorized-resources"
-                        }
-                      ]
+                      "title": "手机号验证码登录",
+                      "path": "/reference/mobile/sdk-for-android/apis/登录/signin-by-phone-passcode.md"
                     },
                     {
-                      "title": "消息服务",
-                      "children": [
-                        {
-                          "title": "发送短信",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/消息服务/send-sms"
-                        },
-                        {
-                          "title": "发送邮件",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/消息服务/send-email"
-                        }
-                      ]
+                      "title": "LDAP 账号登录",
+                      "path": "/reference/mobile/sdk-for-android/apis/登录/signin-by-ldap.md"
                     },
                     {
-                      "title": "其他",
-                      "children": [
-                        {
-                          "title": "获取服务器公开信息",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/其他/system"
-                        },
-                        {
-                          "title": "获取国家列表",
-                          "path": "/reference/mobile/sdk-for-android/apis/authentication/其他/get-country-list"
-                        }
-                      ]
+                      "title": "AD 账号登录",
+                      "path": "/reference/mobile/sdk-for-android/apis/登录/signin-by-ad.md"
                     },
                     {
-                      "title": "OIDC 模块",
-                      "path": "/reference/mobile/sdk-for-android/apis/authentication/oidc.md"
+                      "title": "使用手机号一键登录",
+                      "path": "/reference/mobile/sdk-for-android/apis/登录/signin-by-oneauth"
+                    },
+                    {
+                      "title": "使用移动端社会化登录",
+                      "path": "/reference/mobile/sdk-for-android/apis/登录/signin-by-mobile"
+                    },
+                    {
+                      "title": "查询二维码状态",
+                      "path": "/reference/mobile/sdk-for-android/apis/登录/check-qrcode-status"
+                    },
+                    {
+                      "title": "自建 APP 扫码登录：APP 端修改二维码状态",
+                      "path": "/reference/mobile/sdk-for-android/apis/登录/change-qrcode-status"
                     }
                   ]
                 },
+                {
+                  "title": "注册",
+                  "children": [
+                    {
+                      "title": "用户名密码注册",
+                      "path": "/reference/mobile/sdk-for-android/apis/注册/signup-by-username-password.md"
+                    },
+                    {
+                      "title": "邮箱密码注册",
+                      "path": "/reference/mobile/sdk-for-android/apis/注册/signup-by-email-password.md"
+                    },
+                    {
+                      "title": "手机号验证码注册",
+                      "path": "/reference/mobile/sdk-for-android/apis/注册/signup-by-phone-passcode.md"
+                    },
+                    {
+                      "title": "邮箱验证码注册",
+                      "path": "/reference/mobile/sdk-for-android/apis/注册/signup-by-email-passcode.md"
+                    }
+                  ]
+                },
+                {
+                  "title": "用户资料",
+                  "children": [
+                    {
+                      "title": "获取用户资料",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/get-profile"
+                    },
+                    {
+                      "title": "修改用户资料",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/update-profile"
+                    },
+                    {
+                      "title": "绑定邮箱",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/bind-email"
+                    },
+                    {
+                      "title": "解绑邮箱",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/unbind-email"
+                    },
+                    {
+                      "title": "绑定手机号",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/bind-phone"
+                    },
+                    {
+                      "title": "解绑手机号",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/unbind-phone"
+                    },
+                    {
+                      "title": "获取密码强度和账号安全等级评分",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/get-security-info"
+                    },
+                    {
+                      "title": "修改密码",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/update-password"
+                    },
+                    {
+                      "title": "发起修改邮箱的验证请求",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/verify-update-email-request"
+                    },
+                    {
+                      "title": "修改邮箱",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/update-email"
+                    },
+                    {
+                      "title": "发起修改手机号的验证请求",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/verify-update-phone-request"
+                    },
+                    {
+                      "title": "修改手机号",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/update-phone"
+                    },
+                    {
+                      "title": "发起忘记密码请求",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/verify-reset-password-request"
+                    },
+                    {
+                      "title": "忘记密码",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/reset-password"
+                    },
+                    {
+                      "title": "发起注销账号请求",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/verify-delete-account-request"
+                    },
+                    {
+                      "title": "注销账户",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户资料/delete-account"
+                    }
+                  ]
+                },
+                {
+                  "title": "账号绑定",
+                  "children": [
+                    {
+                      "title": "绑定外部身份源",
+                      "path": "/reference/mobile/sdk-for-android/apis/账号绑定/link-extidp"
+                    },
+                    {
+                      "title": "解绑外部身份源",
+                      "path": "/reference/mobile/sdk-for-android/apis/账号绑定/unlink-extidp"
+                    },
+                    {
+                      "title": "获取绑定的外部身份源",
+                      "path": "/reference/mobile/sdk-for-android/apis/账号绑定/get-identities"
+                    },
+                    {
+                      "title": "获取应用开启的外部身份源列表",
+                      "path": "/reference/mobile/sdk-for-android/apis/账号绑定/get-extidps"
+                    }
+                  ]
+                },
+                {
+                  "title": "MFA 要素管理",
+                  "children": [
+                    {
+                      "title": "发起绑定 MFA 认证要素请求",
+                      "path": "/reference/mobile/sdk-for-android/apis/mfa-要素管理/send-enroll-factor-request"
+                    },
+                    {
+                      "title": "绑定 MFA 认证要素",
+                      "path": "/reference/mobile/sdk-for-android/apis/mfa-要素管理/enroll-factor"
+                    },
+                    {
+                      "title": "解绑 MFA 认证要素",
+                      "path": "/reference/mobile/sdk-for-android/apis/mfa-要素管理/reset-factor"
+                    },
+                    {
+                      "title": "获取绑定的所有 MFA 认证要素",
+                      "path": "/reference/mobile/sdk-for-android/apis/mfa-要素管理/list-enrolled-factors"
+                    },
+                    {
+                      "title": "获取绑定的某个 MFA 认证要素",
+                      "path": "/reference/mobile/sdk-for-android/apis/mfa-要素管理/get-factor"
+                    },
+                    {
+                      "title": "获取可绑定的 MFA 认证要素",
+                      "path": "/reference/mobile/sdk-for-android/apis/mfa-要素管理/list-factors-to-enroll"
+                    }
+                  ]
+                },
+                {
+                  "title": "用户相关资源",
+                  "children": [
+                    {
+                      "title": "获取登录日志",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户相关资源/get-my-login-history"
+                    },
+                    {
+                      "title": "获取登录应用",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户相关资源/get-my-logged-in-apps"
+                    },
+                    {
+                      "title": "获取具备访问权限的应用",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户相关资源/get-my-accessible-apps"
+                    },
+                    {
+                      "title": "获取租户列表",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户相关资源/get-my-tenant-list"
+                    },
+                    {
+                      "title": "获取角色列表",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户相关资源/get-my-role-list"
+                    },
+                    {
+                      "title": "获取分组列表",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户相关资源/get-my-group-list"
+                    },
+                    {
+                      "title": "获取部门列表",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户相关资源/get-my-department-list"
+                    },
+                    {
+                      "title": "获取被授权的资源列表",
+                      "path": "/reference/mobile/sdk-for-android/apis/用户相关资源/get-my-authorized-resources"
+                    }
+                  ]
+                },
+                {
+                  "title": "消息服务",
+                  "children": [
+                    {
+                      "title": "发送短信",
+                      "path": "/reference/mobile/sdk-for-android/apis/消息服务/send-sms"
+                    },
+                    {
+                      "title": "发送邮件",
+                      "path": "/reference/mobile/sdk-for-android/apis/消息服务/send-email"
+                    }
+                  ]
+                },
+                {
+                  "title": "其他",
+                  "children": [
+                    {
+                      "title": "获取服务器公开信息",
+                      "path": "/reference/mobile/sdk-for-android/apis/其他/system"
+                    },
+                    {
+                      "title": "获取国家列表",
+                      "path": "/reference/mobile/sdk-for-android/apis/其他/get-country-list"
+                    }
+                  ]
+                },
+                {
+                  "title": "OIDC 模块",
+                  "path": "/reference/mobile/sdk-for-android/apis/oidc.md"
+                }
               ]
             },
             {

@@ -4,15 +4,15 @@
 
 Authing Android SDK 包含[**用户认证 API**](./apis/) 模块，SDK 中的用户认证模块（AuthClient）以终端用户（End User）的身份进行请求，提供了登录、注册、登出、管理用户资料、获取授权资源等所有用户**自助完成**的操作，如下：
 
-* [登录](./apis/authentication/登录/)
-* [注册](./apis/authentication/注册/)
-* [用户资料](./apis/authentication/用户资料/)
-* [账号绑定](./apis/authentication/账号绑定/)
-* [MFA 要素管理](./apis/authentication/mfa-要素管理/)
-* [用户相关资源](./apis/authentication/用户相关资源/)
-* [消息服务](./apis/authentication/消息服务/)
-* [其他](./apis/authentication/其他/)
-* [OIDC 模块](./apis/authentication/oidc.md)
+* [登录](./apis/登录/signin-by-account-password.md)
+* [注册](./apis/注册/signup-by-username-password.md)
+* [用户资料](./apis/用户资料/get-profile.md)
+* [账号绑定](./apis/账号绑定/link-extidp.md)
+* [MFA 要素管理](./apis/mfa-要素管理/send-enroll-factor-request.md)
+* [用户相关资源](./apis/用户相关资源/get-my-login-history.md)
+* [消息服务](./apis/消息服务/send-sms.md)
+* [其他](./apis/其他//system.md)
+* [OIDC 模块](./apis/oidc.md)
 
 
 
