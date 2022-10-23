@@ -152,7 +152,7 @@ static Future<AuthResult> updatePassword(String newPassword, [String? oldPasswor
 
 * *newPassword* 新密码
 * *oldPassword* 原始密码，如果用户当前设置了密码，此参数必填。
-* *passwordEncryptType* 密码加密类型
+* *passwordEncryptType* 密码加密类型, 可选值包括: `sm2` `rsa` `none`
 
 **示例代码**
 
@@ -171,6 +171,7 @@ static Future<AuthResult> resetPasswordByPhone(String phoneNumber, String passCo
 * *phoneNumber* 手机号
 * *passCode* 手机短信验证码
 * *password* 新密码
+* *passwordEncryptType* 密码加密类型, 可选值包括: `sm2` `rsa` `none`
 
 **示例代码**
 
@@ -189,7 +190,8 @@ static Future<AuthResult> resetPasswordByEmailCode(String email, String passCode
 * *email* 邮箱
 * *passCode* 验证码
 * *password* 新密码
-
+* *passwordEncryptType* 密码加密类型, 可选值包括: `sm2` `rsa` `none`
+  
 **示例代码**
 
 ```dart
@@ -240,6 +242,7 @@ static Future<AuthResult> deleteAccountByPassword(String password, [String? pass
 **请求参数**
 
 * *password* 密码
+* *passwordEncryptType* 密码加密类型, 可选值包括: `sm2` `rsa` `none`
 
 **示例代码**
 

@@ -2,16 +2,16 @@
 
 <LastUpdated/>
 
-Authing Flutter SDK 提供了以下能力：
+Authing Flutter SDK 为 Flutter 接入者提供了以下 Authing 认证能力：
 
-* [登录](./apis/login.md)
-* [注册](./apis/register.md)
-* [用户资料](./apis/user.md)
-* [MFA 要素管理](./apis/mfa.md)
-* [用户相关资源](./apis/user-resources.md)
-* [消息服务](./apis/message.md)
-* [其他](./apis/utils.md)
-* [OIDC 模块](./apis/oidc.md)
+- [登录](./apis/login.md)
+- [注册](./apis/register.md)
+- [用户资料](./apis/user.md)
+- [MFA 要素管理](./apis/mfa.md)
+- [用户相关资源](./apis/user-resources.md)
+- [消息服务](./apis/message.md)
+- [其他](./apis/utils.md)
+- [OIDC 模块](./apis/oidc.md)
 
 ## 代码地址
 

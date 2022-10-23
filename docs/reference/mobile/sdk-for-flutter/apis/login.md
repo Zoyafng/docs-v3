@@ -14,7 +14,7 @@ static Future<AuthResult> loginByPhoneCode(String phone, String code, LoginOptio
 
 * *phone* 手机号
 * *code* 短信验证码
-* [*options* 登录可选参数](../options.md#LoginOptions)
+* [*options* 登录可选参数](./options.md#LoginOptions)
 
 **示例代码**
 
@@ -38,7 +38,7 @@ static Future<AuthResult> loginByEmailCode(String email, String passCode, [Login
 
 * *email* 邮箱
 * *code* 邮箱验证码
-* [*options* 登录可选参数](../options.md#LoginOptions)
+* [*options* 登录可选参数](./options.md#LoginOptions)
   
 **示例代码**
 
@@ -59,7 +59,7 @@ static Future<AuthResult> loginByUsername(String username, String password, [Log
 
 * *account* 可以是手机号 / 邮箱 / 用户名
 * *password* 明文密码
-* [*options* 登录可选参数](../options.md#LoginOptions)
+* [*options* 登录可选参数](./options.md#LoginOptions)
 
 **示例代码**
 
@@ -80,7 +80,7 @@ static Future<AuthResult> loginByAccount(String account, String password, [Login
 
 * *account* 可以是手机号 / 邮箱 / 用户名
 * *password* 明文密码
-* [*options* 登录可选参数](../options.md#LoginOptions)
+* [*options* 登录可选参数](./options.md#LoginOptions)
 
 **示例代码**
 
@@ -104,7 +104,7 @@ static Future<AuthResult> loginByThirdPart(String code, String connection, Strin
 * *code* 社会化登录获取到的 Auth Code
 * *connection* 社会化登录类型 
 * *extIdpConnidentifier* 外部身份源连接标志符
-* [*options* 登录可选参数](../options.md#LoginOptions)
+* [*options* 登录可选参数](./options.md#LoginOptions)
 
 **示例代码**
 
@@ -126,7 +126,7 @@ static Future<AuthResult> loginByOneAuth(String token, String accessToken, Strin
 * *token* 易盾返回的 Token
 * *accessToken* 易盾返回的 AccessToken
 * *extIdpConnidentifier* 外部身份源连接标志符
-* [*options* 登录可选参数](../options.md#LoginOptions)
+* [*options* 登录可选参数](./options.md#LoginOptions)
 
 **示例代码**
 

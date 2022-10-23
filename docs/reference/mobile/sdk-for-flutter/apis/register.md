@@ -12,7 +12,7 @@ static Future<AuthResult> registerByEmail(String email, String password, [Regist
 
 * *email* 邮箱
 * *password* 明文密码
-* [*options* 注册可选参数](../options.md#RegisterOptions)
+* [*options* 注册可选参数](./options.md#RegisterOptions)
 
 
 **示例代码**
@@ -35,7 +35,7 @@ static Future<AuthResult> registerByEmailCode(String email, String passCode, [Re
 
 * *email* 邮箱
 * *password* 明文密码
-* [*options* 注册可选参数](../options.md#RegisterOptions)
+* [*options* 注册可选参数](./options.md#RegisterOptions)
 
 **示例代码**
 
@@ -57,7 +57,7 @@ static Future<AuthResult> registerByUsername(String username, String password, [
 
 * *username* 用户名
 * *password* 明文密码
-* [*options* 注册可选参数](../options.md#RegisterOptions)
+* [*options* 注册可选参数](./options.md#RegisterOptions)
 
 **示例代码**
 
@@ -79,7 +79,7 @@ static Future<AuthResult> registerByPhoneCode(String phone, String passCode, [St
 
 * *phone* 手机号
 * *code* 短信验证码
-* [*options* 注册可选参数](../options.md#RegisterOptions)
+* [*options* 注册可选参数](./options.md#RegisterOptions)
 
 **示例代码**
 

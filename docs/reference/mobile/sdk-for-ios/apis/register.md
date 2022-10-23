@@ -12,7 +12,7 @@ func registerByEmail(email: String, password: String, _ options: RegisterOptions
 
 * *email* 邮箱
 * *password* 明文密码
-* [*options* 注册可选参数](../options.md#RegisterOptions)
+* [*options* 注册可选参数](./options.md#RegisterOptions)
 
 
 **示例代码**
@@ -39,7 +39,7 @@ func registerByEmailCode(email: String, passCode: String, _ options: RegisterOpt
 
 * *email* 邮箱
 * *password* 明文密码
-* [*options* 注册可选参数](../options.md#RegisterOptions)
+* [*options* 注册可选参数](./options.md#RegisterOptions)
 
 **示例代码**
 
@@ -65,7 +65,7 @@ func registerByUserName(username: String, password: String, _ options: RegisterO
 
 * *username* 用户名
 * *password* 明文密码
-* [*options* 注册可选参数](../options.md#RegisterOptions)
+* [*options* 注册可选参数](./options.md#RegisterOptions)
 
 **示例代码**
 
@@ -91,7 +91,7 @@ func registerByPhoneCode(phone: String, passCode: String, _ options: RegisterOpt
 
 * *phone* 手机号
 * *code* 短信验证码
-* [*options* 注册可选参数](../options.md#RegisterOptions)
+* [*options* 注册可选参数](./options.md#RegisterOptions)
 
 **示例代码**
 

@@ -16,3 +16,5 @@ Flutter SDK 提供了丰富完善的认证用户及管理用户 API，来帮你�
 * [消息服务](message.md)
 * [其他](utils.md)
 * [OIDC 模块](oidc.md)
+
+API 错误码说明请参阅：[错误处理](https://api.authing.cn/openapi/v3/authentication/#tag/开发准备/错误处理)。

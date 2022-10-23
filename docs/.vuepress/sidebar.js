@@ -6785,11 +6785,8 @@ const zhCnNavBar = {
                 '/reference/mobile/sdk-for-flutter/apis/message',
                 '/reference/mobile/sdk-for-flutter/apis/utils',
                 '/reference/mobile/sdk-for-flutter/apis/oidc',
+                '/reference/mobile/sdk-for-ios/apis/options',
               ]
-            },
-            {
-              title: '可选参数说明',
-              path: '/reference/mobile/sdk-for-flutter/options'
             },
             {
               title: '版本记录',
@@ -6817,11 +6814,13 @@ const zhCnNavBar = {
                 '/reference/mobile/sdk-for-ios/apis/message',
                 '/reference/mobile/sdk-for-ios/apis/utils',
                 '/reference/mobile/sdk-for-ios/apis/oidc',
+                '/reference/mobile/sdk-for-ios/apis/options',
+                '/reference/mobile/sdk-for-ios/apis/enum',
               ]
             },
             {
-              title: '可选参数说明',
-              path: '/reference/mobile/sdk-for-ios/options'
+              title: '返回码',
+              path: '/reference/mobile/sdk-for-ios/errorcode'
             },
             {
               title: '版本记录',
