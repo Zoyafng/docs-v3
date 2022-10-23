@@ -29,7 +29,7 @@ AuthClient().registerByEmail(email: "test@example.com", password: "password") { 
 
 ## 邮箱验证码注册
 
-使用邮箱验证码，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](./message.md) 接口以获取邮箱验证码。
+使用邮箱验证码，邮箱不区分大小写且用户池内唯一。调用此接口之前，需要先调用 [发送邮件](./message.md##-发送邮件) 接口以获取邮箱验证码。
 
 ```swift
 func registerByEmailCode(email: String, passCode: String, _ options: RegisterOptions? = nil, completion: @escaping(Response) -> Void)
@@ -81,7 +81,7 @@ AuthClient().registerByUserName(username: "test", password: "strong") { code, me
 
 ## 短信验证码注册
 
-通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](./message.md) 接口以获取短信验证码。
+通过手机号和短信验证码注册帐号。手机号需要在用户池内唯一。调用此接口之前，需要先调用 [发送短信验证码](./message.md##-发送短信) 接口以获取短信验证码。
 
 ```swift
 func registerByPhoneCode(phone: String, passCode: String, _ options: RegisterOptions? = nil, completion: @escaping(Response) -> Void)

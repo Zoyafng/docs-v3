@@ -18,12 +18,14 @@
 
 **示例**
 
-```swift
-let options = LoginOptions()
-options.passwordEncryptType = .NONE
-AuthClient().registerByUsername(username: "test", password: "password", options) { res in
-    // res.data
-}
+```dart
+    var options = LoginOptions();
+    options.passwordEncryptType = 'RSA';
+    AuthResult result = await AuthClient.loginByUsername('test', 'password', options);
+    print(result.statusCode);
+    print(result.message);
+    print(result.data);
+
 ```
 
 <br>
@@ -45,12 +47,14 @@ AuthClient().registerByUsername(username: "test", password: "password", options)
 
 **示例**
 
-```swift
-let option = RegisterOptions()
-option.passwordEncryptType = .NONE
-AuthClient().registerByUsername(username: "test", password: "password", options) { res in
-    // res.data
-}
+```dart
+    var options = RegisterOptions();
+    options.passwordEncryptType = 'RSA';
+    AuthResult result = await AuthClient.registerByUsername('test', 'password', options);
+    print(result.statusCode);
+    print(result.message);
+    print(result.data);
+
 ```
 
 <br>

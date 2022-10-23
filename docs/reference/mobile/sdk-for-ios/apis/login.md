@@ -4,7 +4,7 @@
 
 ## 手机验证码登录
 
-通过短信验证码登录，需要先调用 [发送短信验证码](./message.md) 接口。
+通过短信验证码登录，需要先调用 [发送短信验证码](./message.md##-发送短信) 接口。
 
 ```swift
 func loginByPhoneCode(phone: String, code: String, _ options: LoginOptions? = nil, completion: @escaping(Response) -> Void)
@@ -31,7 +31,7 @@ AuthClient().loginByPhoneCode(phone: "188xxxx8888", code: "1234") { res in
 
 ## 邮箱验证码登录
 
-通过邮箱验证码登录，需要先调用 [发送邮件](./message.md) 接口。
+通过邮箱验证码登录，需要先调用 [发送邮件](./message.md##-发送邮件) 接口。
 
 ```swift
 func loginByEmailCode(email: String, code: String, _ options: LoginOptions? = nil, completion: @escaping(Response) -> Void)
@@ -137,8 +137,8 @@ func loginByOneAuth(token: String, accessToken: String, _ options: LoginOptions?
 
 **请求参数**
 
-* *code* 社会化登录获取到的 Auth Code
-* *connection* 社会化登录类型
+* *token* 易盾返回的 Token
+* *accessToken* 易盾返回的 AccessToken
 * [*options* 登录可选参数](../options.md#LoginOptions)
 
 **示例代码**

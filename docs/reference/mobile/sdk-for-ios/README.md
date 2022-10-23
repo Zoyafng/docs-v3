@@ -25,11 +25,13 @@ Authing iOS SDK 提供了以下能力：
 
 在开始开发之前，需要准备以下内容：
 
-1. 开发设备上安装 [Xcode 13](https://developer.apple.com/xcode/)。
+1. 开发设备上安装 [Xcode](https://developer.apple.com/xcode/)。
 2. 免费创建一个 [Authing 帐号](https://www.authing.cn/)。
 3. 在 Authing 控制台 [创建一个客户端自建应用](/guides/app-new/create-app/create-app.md)。
 
 在 **选择类型** 时请选择：**客户端应用**。
+
+<img src="./images/create_client_application.png" alt="drawing" width="620"/>
 
 <span style="background-color: #215ae5;a:link:color:#FFF;padding:8px;border-radius: 4px;"><a href="./quick.html" style="color:#FFF;">快速开始 →</a>
 </span>

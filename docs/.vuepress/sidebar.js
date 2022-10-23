@@ -6771,21 +6771,29 @@ const zhCnNavBar = {
           children: [
             {
               title: '快速开始',
-              path: '/reference/mobile/sdk-for-flutter/develop'
+              path: '/reference/mobile/sdk-for-flutter/quick'
             },
             {
               title: 'APIs',
+              path: '/reference/mobile/sdk-for-flutter/apis/',
               children: [
-                '/reference/mobile/sdk-for-flutter/authentication/',
-                '/reference/mobile/sdk-for-flutter/protocol/',
-                '/reference/mobile/sdk-for-flutter/mfa/',
-                '/reference/mobile/sdk-for-flutter/scan/',
-                '/reference/mobile/sdk-for-flutter/social/'
+                '/reference/mobile/sdk-for-flutter/apis/login',
+                '/reference/mobile/sdk-for-flutter/apis/register',
+                '/reference/mobile/sdk-for-flutter/apis/user',
+                '/reference/mobile/sdk-for-flutter/apis/mfa',
+                '/reference/mobile/sdk-for-flutter/apis/user-resources',
+                '/reference/mobile/sdk-for-flutter/apis/message',
+                '/reference/mobile/sdk-for-flutter/apis/utils',
+                '/reference/mobile/sdk-for-flutter/apis/oidc',
               ]
             },
             {
-              title: '私有化部署',
-              path: '/reference/mobile/sdk-for-flutter/onpremise'
+              title: '可选参数说明',
+              path: '/reference/mobile/sdk-for-flutter/options'
+            },
+            {
+              title: '版本记录',
+              path: '/reference/mobile/sdk-for-flutter/change-log'
             }
           ]
         },
