@@ -67,7 +67,7 @@ import cn.authing.sdk.java.model.AuthenticationClientOptions;
 AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
 clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
 clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
+clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址形式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
 clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
 
 // 初始化 AuthenticationClient
@@ -79,7 +79,7 @@ AuthenticationClient authenticationClient = new AuthenticationClient(clientOptio
 
 - `appId`: Authing 应用 ID，必填。
 - `appSecret`: Authing 应用密钥，必填。
-- `appHost`: Authing 应用域名，如 https://example.authing.cn，必填。
+- `appHost`: Authing 应用域名，如 https://example.authing.cn，必填。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址形式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
 - `redirectUri`: 认证完成后的重定向目标 URL，可选。Authing 服务器会对此链接进行校验，需要和控制台的设置保持一致。
 - `logoutRedirectUri`: 登出完成后的重定向目标 URL，可选。Authing 服务器会对此链接进行校验，需要和控制台的设置保持一致。
 - `scope`: 应用侧向 Authing 请求的权限，以空格分隔，可选。默认为 `'openid profile'`，成功获取的权限项会出现在 `access_token` 的 `scope` 字段中。下面是一些示例，更多 scope 定义参见 Authing 相关[文档](https://docs.authing.cn/v2/concepts/oidc-common-questions.html#scope-%E5%8F%82%E6%95%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
@@ -129,7 +129,7 @@ public static void main(String[] args) {
     AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
     clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
     clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-    clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
+    clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址形式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
     clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
 
     // 初始化 AuthenticationClient
@@ -155,7 +155,7 @@ public static void main(String[] args) {
     AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
     clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
     clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-    clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
+    clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址形式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
     clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
 
     // 初始化 AuthenticationClient
@@ -182,7 +182,7 @@ public static void main(String[] args) {
     AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
     clientOptions.setAppId("AUTHING_APP_ID"); // Authing 应用 ID
     clientOptions.setAppSecret("AUTHING_APP_SECRET"); // Authing 应用密钥
-    clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn
+    clientOptions.setAppHost("AUTHING_APP_HOST"); // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址形式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
     clientOptions.setRedirectUri("AUTHING_APP_REDIRECT_URI"); // Authing 应用配置的登录回调地址
 
     // 初始化 AuthenticationClient
