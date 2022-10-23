@@ -5,7 +5,7 @@
 ## Channel
 
 短信/邮件通道，指定发送此短信的目的。
-发送短信/邮件时必须指定 Channel，每个手机号/邮箱同一 Channel 在一分钟内只能发送一次。
+发送短信/邮件时必须指定 `channel`，每个手机号/邮箱同一 `channel` 在一分钟内只能发送一次。
 
 | 名称 | <div style="width:300px">rawValue</div> | <div style="width:200px">示例值</div> |
 | :---- | :---- | :---- |
@@ -14,8 +14,8 @@
 | Channel.reset_password |  `CHANNEL_RESET_PASSWORD`  | 用于重置密码 |
 | Channel.bind_phone |  `CHANNEL_BIND_PHONE`  | 用于绑定手机号 |
 | Channel.unbind_phone |  `CHANNEL_UNBIND_PHONE`  |  用于解绑手机号 |
-| Channel.bind_mfa |  `CHANNEL_BIND_MF`A  |  用于绑定 MFA |
-| Channel.verify_mfa |  `CHANNEL_VERIFY_MF`A  |  用于验证 MFA |
+| Channel.bind_mfa |  `CHANNEL_BIND_MFA`  |  用于绑定 MFA |
+| Channel.verify_mfa |  `CHANNEL_VERIFY_MFA`  |  用于验证 MFA |
 | Channel.unbind_mfa |  `CHANNEL_UNBIND_MFA`  |  用于解绑 MFA |
 | Channel.complete_phone |  `CHANNEL_COMPLETE_PHONE`  |  用于在注册/登录时补全手机号信息 |
 | Channel.identity_verification |  `CHANNEL_IDENTITY_VERIFICATION`  |  用于进行用户实名认证 |

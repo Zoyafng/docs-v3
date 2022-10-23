@@ -26,7 +26,7 @@ Authing Flutter SDK 为 Flutter 接入者提供了以下 Authing 认证能力：
 
 - 开发设备上安装 [AndroidStudio](https://developer.android.google.cn/studio) 以及 [Xcode](https://developer.apple.com/xcode/)
 - 免费创建一个 [Authing 帐号](https://www.authing.cn/)
-- 在 Authing 控制台 [创建一个自建应用](/guides/app-new/create-app/create-app.md)
+- 在 Authing 控制台 [创建一个自建应用](https://docs.authing.cn/v2/guides/app-new/create-app/create-app.html)。
 
 在 **选择类型** 时请选择：**客户端应用**。
 

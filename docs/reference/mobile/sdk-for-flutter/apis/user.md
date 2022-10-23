@@ -10,9 +10,11 @@ static Future<AuthResult> getCurrentUser([bool? customData, bool? identities]) a
 
 **请求参数**
 
-* *customData* 是否获取自定义数据
-* *identities* 是否获取 identities
-* *departmentIds* 是否获取部门 ID 列表
+| 名称  | 说明 |
+| :---- | :---- |
+| customData | 是否获取自定义数据 |
+| identities | 是否获取 identities |
+| departmentIds | 是否获取部门 ID 列表 |
 
 **示例代码**
 
@@ -28,7 +30,7 @@ static Future<AuthResult> updateProfile(Map object) async
 
 **请求参数**
 
-* *object* 字典类型用户资料
+`object` 字典类型用户资料
  
 **示例代码**
 
@@ -45,8 +47,10 @@ static Future<AuthResult> bindEmail(String email, String passCode) async
 
 **请求参数**
 
-* *email* 邮箱
-* *passCode* 验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| email | 邮箱 |
+| passCode | 验证码 |
  
 **示例代码**
 
@@ -76,10 +80,12 @@ static Future<AuthResult> updateEmail(String newEmail, String newEmailPassCode,
 
 **请求参数**
 
-* *newEmail* 新邮箱
-* *newEmailPassCode* 新邮箱验证码
-* *oldEmail* 旧邮箱
-* *oldEmailPassCode* 旧邮箱验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| newEmail | 新邮箱 |
+| newEmailPassCode | 新邮箱验证码 |
+| oldEmail | 旧邮箱 |
+| oldEmailPassCode | 旧邮箱验证码 |
  
 **示例代码**
 
@@ -101,8 +107,10 @@ static Future<AuthResult> bindPhone(String phoneNumber, String passCode, [String
 
 **请求参数**
 
-* *phoneNumber* 手机号
-* *passCode* 短信验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| phoneNumber | 手机号 |
+| passCode | 短信验证码 |
  
 **示例代码**
 
@@ -131,10 +139,12 @@ static Future<AuthResult> updatePhone(String newPhoneNumber, String newPhonePass
 
 **请求参数**
 
-* *newPhoneNumber* 新手机号
-* *newPhonePassCode* 新手机短信验证码
-* *oldPhoneNumber* 旧手机号
-* *oldPhonePassCode* 旧手机短信验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| newPhoneNumber | 新手机号 |
+| newPhonePassCode | 新手机短信验证码 |
+| oldPhoneNumber | 旧手机号 |
+| oldPhonePassCode | 旧手机短信验证码 |
  
 **示例代码**
 
@@ -150,9 +160,11 @@ static Future<AuthResult> updatePassword(String newPassword, [String? oldPasswor
 
 **请求参数**
 
-* *newPassword* 新密码
-* *oldPassword* 原始密码，如果用户当前设置了密码，此参数必填。
-* *passwordEncryptType* 密码加密类型, 可选值包括: `sm2` `rsa` `none`
+| 名称  | 说明 |
+| :---- | :---- |
+| newPassword | 新密码 |
+| oldPassword | 原始密码，如果用户当前设置了密码，此参数必填。 |
+| [passwordEncryptType](./enum.md#-PasswordEncryptType) | [密码加密类型](./enum.md#-PasswordEncryptType) |
 
 **示例代码**
 
@@ -168,10 +180,12 @@ static Future<AuthResult> resetPasswordByPhone(String phoneNumber, String passCo
 
 **请求参数**
 
-* *phoneNumber* 手机号
-* *passCode* 手机短信验证码
-* *password* 新密码
-* *passwordEncryptType* 密码加密类型, 可选值包括: `sm2` `rsa` `none`
+| 名称  | 说明 |
+| :---- | :---- |
+| phoneNumber | 手机号 |
+| passCode | 手机短信验证码 |
+| password | 新密码 |
+| [passwordEncryptType](./enum.md#-PasswordEncryptType) | [密码加密类型](./enum.md#-PasswordEncryptType) |
 
 **示例代码**
 
@@ -187,11 +201,13 @@ static Future<AuthResult> resetPasswordByEmailCode(String email, String passCode
 
 **请求参数**
 
-* *email* 邮箱
-* *passCode* 验证码
-* *password* 新密码
-* *passwordEncryptType* 密码加密类型, 可选值包括: `sm2` `rsa` `none`
-  
+| 名称  | 说明 |
+| :---- | :---- |
+| email | 邮箱 |
+| passCode | 手机短信验证码 |
+| password | 新密码 |
+| [passwordEncryptType](./enum.md#-PasswordEncryptType) | [密码加密类型](./enum.md#-PasswordEncryptType) |
+
 **示例代码**
 
 ```dart
@@ -206,8 +222,10 @@ static Future<AuthResult> deleteAccountByPhone(String phoneNumber, String passCo
 
 **请求参数**
 
-* *phoneNumber* 手机号
-* *passCode* 手机短信验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| phoneNumber | 邮手机号箱 |
+| passCode | 手机短信验证码 |
 
 **示例代码**
 
@@ -223,8 +241,10 @@ static Future<AuthResult> deleteAccountByEmail(String email, String passCode) as
 
 **请求参数**
 
-* *email* 邮箱
-* *passCode* 验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| email | 邮箱 |
+| passCode | 验证码 |
 
 **示例代码**
 
@@ -241,8 +261,11 @@ static Future<AuthResult> deleteAccountByPassword(String password, [String? pass
 
 **请求参数**
 
-* *password* 密码
-* *passwordEncryptType* 密码加密类型, 可选值包括: `sm2` `rsa` `none`
+| 名称  | 说明 |
+| :---- | :---- |
+| password | 密码 |
+| [passwordEncryptType](./enum.md#-PasswordEncryptType) | [密码加密类型](./enum.md#-PasswordEncryptType) |
+
 
 **示例代码**
 

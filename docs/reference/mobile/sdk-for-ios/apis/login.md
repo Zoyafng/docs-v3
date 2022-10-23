@@ -12,9 +12,11 @@ func loginByPhoneCode(phone: String, code: String, _ options: LoginOptions? = ni
 
 **请求参数**
 
-* *phone* 手机号
-* *code* 短信验证码
-* [*options* 登录可选参数](./options.md#LoginOptions)
+| 名称  | 说明 |
+| :---- | :---- |
+| phone | 手机号 |
+| code | 短信验证码 |
+| [*options* ](./options.md#LoginOptions) | [登录可选参数]((./options.md#LoginOptions)) |
 
 **示例代码**
 
@@ -39,9 +41,11 @@ func loginByEmailCode(email: String, code: String, _ options: LoginOptions? = ni
 
 **请求参数**
 
-* *email* 邮箱
-* *code* 邮箱验证码
-* [*options* 登录可选参数](./options.md#LoginOptions)
+| 名称  | 说明 |
+| :---- | :---- |
+| email | 邮箱 |
+| code | 短信验邮箱验证码证码 |
+| [*options* ](./options.md#LoginOptions) | [登录可选参数]((./options.md#LoginOptions)) |
   
 **示例代码**
 
@@ -63,9 +67,11 @@ func loginByUsername(username: String, password: String, _ options: LoginOptions
 
 **请求参数**
 
-* *account* 可以是手机号 / 邮箱 / 用户名
-* *password* 明文密码
-* [*options* 登录可选参数](./options.md#LoginOptions)
+| 名称  | 说明 |
+| :---- | :---- |
+| account | 可以是手机号 / 邮箱 / 用户名 |
+| password | 明文密码 |
+| [*options* ](./options.md#LoginOptions) | [登录可选参数]((./options.md#LoginOptions)) |
 
 **示例代码**
 
@@ -87,9 +93,11 @@ func loginByAccount(account: String, password: String, _ options: LoginOptions? 
 
 **请求参数**
 
-* *account* 可以是手机号 / 邮箱 / 用户名
-* *password* 明文密码
-* [*options* 登录可选参数](./options.md#LoginOptions)
+| 名称  | 说明 |
+| :---- | :---- |
+| account | 可以是手机号 / 邮箱 / 用户名 |
+| password | 明文密码 |
+| [*options* ](./options.md#LoginOptions) | [登录可选参数]((./options.md#LoginOptions)) |
 
 **示例代码**
 
@@ -113,9 +121,11 @@ func loginByThirdPart(code: String, connection: SocialConnection, _ options: Log
 
 **请求参数**
 
-* *code* 社会化登录获取到的 Auth Code
-* [*connection* 社会化登录类型](enum.md#SocialConnection)
-* [*options* 登录可选参数](./options.md#LoginOptions)
+| 名称  | 说明 |
+| :---- | :---- |
+| code | 社会化登录获取到的 Auth Code |
+| [connection](enum.md#SocialConnection) | [社会化登录类型](enum.md#SocialConnection) |
+| [*options* ](./options.md#LoginOptions) | [登录可选参数]((./options.md#LoginOptions)) |
 
 **示例代码**
 
@@ -137,9 +147,11 @@ func loginByOneAuth(token: String, accessToken: String, _ options: LoginOptions?
 
 **请求参数**
 
-* *token* 易盾返回的 Token
-* *accessToken* 易盾返回的 AccessToken
-* [*options* 登录可选参数](./options.md#LoginOptions)
+| 名称  | 说明 |
+| :---- | :---- |
+| token | 易盾授权后返回的 token |
+| accessToken | 易盾授权后返回的 accessToken |
+| [*options* ](./options.md#LoginOptions) | [登录可选参数]((./options.md#LoginOptions)) |
 
 **示例代码**
 

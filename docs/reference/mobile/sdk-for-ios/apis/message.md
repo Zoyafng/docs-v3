@@ -10,8 +10,10 @@ func sendSms(phone: String, phoneCountryCode: String? = nil, channel: Channel, c
 
 **请求参数**
 
-* *phone* 手机号
-* [*channel* 枚举值 Channel](./enum.md#-Channel) ，短信通道，指定发送此短信的目的。
+| 名称  | 说明 |
+| :---- | :---- |
+| phone | 手机号 |
+| [*channel* ](./enum.md#-Channel) | [枚举值 Channel](./enum.md#-Channel) |
 
 **示例代码**
 
@@ -31,8 +33,10 @@ func sendEmail(email: String, channel: Channel, completion: @escaping(Response) 
 
 **请求参数**
 
-* *email* 邮箱
-* [*channel* 枚举值 Channel](./enum.md#-Channel)  ，指定发送此邮件的目的。
+| 名称  | 说明 |
+| :---- | :---- |
+| email | 邮箱 |
+| [*channel* ](./enum.md#-Channel) | [枚举值 Channel](./enum.md#-Channel) |
 
 **示例代码**
 

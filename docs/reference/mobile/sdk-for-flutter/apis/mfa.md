@@ -12,8 +12,10 @@ static Future<AuthResult> mfaBindEmail(String email, String passCode) async
 
 **请求参数**
 
-* *email* 邮箱
-* *passCode* 邮箱验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| email | 邮箱 |
+| passCode | 邮箱验证码 |
 
 **示例代码**
 
@@ -33,8 +35,10 @@ static Future<AuthResult> mfaBindPhone(String phoneNumber, String passCode, [Str
 
 **请求参数**
 
-* *phoneNumber* 手机号
-* *passCode* 短信验证码
+| 名称  | 说明 |
+| :---- | :---- |
+| phoneNumber | 手机号 |
+| passCode | 短信验证码 |
 
 **示例代码**
 
@@ -52,7 +56,7 @@ static Future<AuthResult> mfaBindOTP(String passCode) async
 
 **请求参数**
 
-* *passCode* OTP 验证码
+`passCode`: OTP 验证码
 
 **示例代码**
 
@@ -71,7 +75,7 @@ static Future<Result> mfaUnbindFactor(String factorId) async
 
 **请求参数**
 
-* *factorId* MFA 认证要素 ID
+`factorId`: MFA 认证要素 ID
 
 **示例代码**
 
@@ -103,7 +107,7 @@ static Future<Result> mfaGetEnrolledBindFactor(String factorId) async
 
 **请求参数**
 
-* *factorId* MFA 认证要素 ID
+`factorId`: MFA 认证要素 ID
 
 **示例代码**
 
