@@ -32,6 +32,20 @@ const DATABASE_CONNECTION_MENU_EN = {
 const zhCnNavBar = {
   '/reference/': [
     {
+      title: 'API',
+      redirect: '/reference/api/authentication/',
+      children: [
+        {
+          title: '用户认证 API',
+          path: '/reference/api/authentication/'
+        },
+        {
+          title: '管理 API',
+          path: '/reference/api/management/'
+        }
+      ]
+    },
+    {
       title: 'SDK',
       path: '/reference/sdk/',
       redirect: '/reference/sdk/java/install.html',
@@ -6968,20 +6982,6 @@ const zhCnNavBar = {
     //   }
     // ]
     // },
-    {
-      title: 'API',
-      redirect: '/reference/api/authentication/',
-      children: [
-        {
-          title: '用户认证 API',
-          path: '/reference/api/authentication/'
-        },
-        {
-          title: '管理 API',
-          path: '/reference/api/management/'
-        }
-      ]
-    },
     {
       title: '错误码',
       path: '/reference/error-code'
