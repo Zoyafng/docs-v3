@@ -47,23 +47,16 @@ go get -u github.com/Authing/authing-golang-sdk/v3
 package main
 
 import (
-	"fmt"
-
-	"github.com/Authing/authing-golang-sdk/v3/constant"
-	"github.com/Authing/authing-golang-sdk/v3/util"
-
-	// "fmt"
-	"strings"
-
-	"github.com/valyala/fasthttp"
+   "fmt"
+   "github.com/Authing/authing-golang-sdk/v3/authentication"
 )
 
-var authenticationClient *AuthenticationClient
-var options = AuthenticationClientOptions{
-	AppId:       "AUTHING_APP_ID", // Authing 应用 ID
-	AppSecret:   "AUTHING_APP_SECRET", // Authing 应用密钥
-	AppHost:      "AUTHING_APP_HOST", // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址形式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
-	RedirectUri: "AUTHING_APP_REDIRECT_URI", // Authing 应用配置的登录回调地址
+var authenticationClient *authentication.AuthenticationClient
+var options = authentication.AuthenticationClientOptions{
+   AppId:       "AUTHING_APP_ID",           // Authing 应用 ID
+   AppSecret:   "AUTHING_APP_SECRET",       // Authing 应用密钥
+   AppHost:     "AUTHING_APP_HOST",         // Authing 应用域名，如https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址形式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
+   RedirectUri: "AUTHING_APP_REDIRECT_URI", // Authing 应用配置的登录回调地址
 }
 
 func main() {
@@ -125,42 +118,35 @@ Authing 托管登录页是最简单，最安全的集成方式。这是因为登
 package main
 
 import (
-	"fmt"
-
-	"github.com/Authing/authing-golang-sdk/v3/constant"
-	"github.com/Authing/authing-golang-sdk/v3/util"
-
-	// "fmt"
-	"strings"
-
-	"github.com/valyala/fasthttp"
+   "fmt"
+   "github.com/Authing/authing-golang-sdk/v3/authentication"
 )
 
-var authenticationClient *AuthenticationClient
-var options = AuthenticationClientOptions{
-	AppId:       "AUTHING_APP_ID", // Authing 应用 ID
-	AppSecret:   "AUTHING_APP_SECRET", // Authing 应用密钥
-	AppHost:      "AUTHING_APP_HOST", // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址形式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
-	RedirectUri: "AUTHING_APP_REDIRECT_URI", // Authing 应用配置的登录回调地址
+var authenticationClient *authentication.AuthenticationClient
+var options = authentication.AuthenticationClientOptions{
+   AppId:       "AUTHING_APP_ID",           // Authing 应用 ID
+   AppSecret:   "AUTHING_APP_SECRET",       // Authing 应用密钥
+   AppHost:     "AUTHING_APP_HOST",         // Authing 应用域名，如https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址形式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
+   RedirectUri: "AUTHING_APP_REDIRECT_URI", // Authing 应用配置的登录回调地址
 }
 
 func main() {
 
-	var err error
-	// 初始化 AuthenticationClient
-	authenticationClient, err = NewAuthenticationClient(&options)
-	if err != nil {
-		panic(err)
-	}
+   var err error
+   // 初始化 AuthenticationClient
+   authenticationClient, err = authentication.NewAuthenticationClient(&options)
+   if err != nil {
+      panic(err)
+   }
 
-    // 生成用于登录的一次性地址，之后可以引导用户访问此地址
-	result, err := authenticationClient.BuildAuthorizeUrlByOidc(&OIDCAuthURLParams{
-		Scope: "openid profile offline_access"
-	})
-	if err != nil {
-		panic("构建登录链接失败")
-	}
-	fmt.Println(result.Url)
+   // 生成用于登录的一次性地址，之后可以引导用户访问此地址
+   result, err := authenticationClient.BuildAuthorizeUrlByOidc(&authentication.OIDCAuthURLParams{
+      Scope: "openid profile offline_access",
+   })
+   if err != nil {
+      panic("构建登录链接失败")
+   }
+   fmt.Println(result.Url)
 }
 ```
 
@@ -172,17 +158,16 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/Authing/authing-golang-sdk/v3/authentication"
-	"github.com/Authing/authing-golang-sdk/v3/dto"
+   "fmt"
+   "github.com/Authing/authing-golang-sdk/v3/authentication"
 )
 
-var authenticationClient *AuthenticationClient
-var options = AuthenticationClientOptions{
-	AppId:       "AUTHING_APP_ID", // Authing 应用 ID
-	AppSecret:   "AUTHING_APP_SECRET", // Authing 应用密钥
-	AppHost:      "AUTHING_APP_HOST", // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址形式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
-	RedirectUri: "AUTHING_APP_REDIRECT_URI", // Authing 应用配置的登录回调地址
+var authenticationClient *authentication.AuthenticationClient
+var options = authentication.AuthenticationClientOptions{
+   AppId:       "AUTHING_APP_ID",           // Authing 应用 ID
+   AppSecret:   "AUTHING_APP_SECRET",       // Authing 应用密钥
+   AppHost:     "AUTHING_APP_HOST",         // Authing 应用域名，如https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址形式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
+   RedirectUri: "AUTHING_APP_REDIRECT_URI", // Authing 应用配置的登录回调地址
 }
 
 func main() {

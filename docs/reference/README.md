@@ -3,7 +3,7 @@
 <LastUpdated/>
 
 ::: hint-info
-为了给开发者持续提供更全面、更开发者友好的开放能力，Authing V3 版本的 API、SDK 已于 2022 年 10 月 24 日正式上线。若你仍希望使用旧版 API、SDK， 可[点击此处跳转 〉](https://docs.authing.cn/v2)。
+为了给开发者持续提供更全面、更开发者友好的开放能力，Authing V3 版本的 API、SDK 已于 2022 年 10 月 24 日正式上线。若你仍希望使用旧版 API、SDK， 可[点击此处跳转 〉](https://docs.authing.cn/v2/reference/)。
 :::
 
 ## 新版 API & SDK 特性
