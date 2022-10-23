@@ -11,7 +11,7 @@ Authing Android SDK 包含[**用户认证 API**](./apis/) 模块，SDK 中的用
 * [MFA 要素管理](./apis/mfa-要素管理/send-enroll-factor-request.md)
 * [用户相关资源](./apis/用户相关资源/get-my-login-history.md)
 * [消息服务](./apis/消息服务/send-sms.md)
-* [其他](./apis/其他//system.md)
+* [其他](./apis/其他/system.md)
 * [OIDC 模块](./apis/oidc.md)
 
 
