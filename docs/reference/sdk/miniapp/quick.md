@@ -1427,7 +1427,7 @@ interface ErrorData {
 ### <p id="GetUserPhoneResponseData">GetUserPhoneResponseData</p>
 |名称|类型|描述|
 |-----|----|----|
-|countryCode|String|区号，默认为 +86|
+|countryCode|String|手机区号|
 |phoneNumber|String|用户绑定的手机号（国外手机号会有区号）|
 |purePhoneNumber|string|没有区号的手机号|
 |watermark|Watermark|微信返回的其他信息|
