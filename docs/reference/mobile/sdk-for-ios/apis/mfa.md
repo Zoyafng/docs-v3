@@ -4,7 +4,7 @@
 
 ## 邮箱绑定 MFA 认证要素
 
-调用此接口前，需要先调用 [发送邮件](./message.md) 接口。
+调用此接口前，需要先调用 [发送邮件](./message.md##-发送邮件) 接口。
 
 ```swift
 func mfaBindEmail(email: String, passCode: String, completion: @escaping(Response) -> Void)
@@ -29,7 +29,7 @@ AuthClient().mfaBindEmail(email: "test@example.com", passCode: "passCode") { res
 
 ## 手机号绑定 MFA 认证要素
 
-调用此接口前，需要先调用 [发送短信验证码](./message.md) 接口。
+调用此接口前，需要先调用 [发送短信验证码](./message.md##-发送短信) 接口。
 
 ```swift
 func mfaBindPhone(phoneCountryCode: String? = nil, phoneNumber: String, passCode: String, completion: @escaping(Response) -> Void)

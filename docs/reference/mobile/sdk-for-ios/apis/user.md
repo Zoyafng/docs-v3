@@ -176,7 +176,7 @@ func updatePassword(newPassword: String, oldPassword: String? = nil, passwordEnc
 
 * *newPassword* 新密码
 * *oldPassword* 原始密码，如果用户当前设置了密码，此参数必填。
-* *passwordEncryptType* 密码加密类型
+* [*passwordEncryptType* 密码加密类型](./enum.md#-EncryptType)
 
 **示例代码**
 
@@ -199,6 +199,7 @@ func resetPasswordByPhone(phoneCountryCode: String? = nil, phoneNumber: String, 
 * *phoneNumber* 手机号
 * *passCode* 手机短信验证码
 * *password* 新密码
+* [*passwordEncryptType* 密码加密类型](./enum.md#-EncryptType)
 
 **示例代码**
 
@@ -221,6 +222,7 @@ func resetPasswordByEmail(email: String, passCode: String, password: String, _ p
 * *email* 邮箱
 * *passCode* 验证码
 * *password* 新密码
+* [*passwordEncryptType* 密码加密类型](./enum.md#-EncryptType)
 
 **示例代码**
 
@@ -284,6 +286,7 @@ func deleteAccountByPassword(password: String, _ passwordEncryptType: EncryptTyp
 **请求参数**
 
 * *password* 密码
+* [*passwordEncryptType* 密码加密类型](./enum.md#-EncryptType)
 
 **示例代码**
 

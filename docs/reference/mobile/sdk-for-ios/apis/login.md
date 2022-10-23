@@ -4,7 +4,7 @@
 
 ## 手机验证码登录
 
-通过短信验证码登录，需要先调用 [发送短信验证码](./message.md) 接口。
+通过短信验证码登录，需要先调用 [发送短信验证码](./message.md##-发送短信) 接口。
 
 ```swift
 func loginByPhoneCode(phone: String, code: String, _ options: LoginOptions? = nil, completion: @escaping(Response) -> Void)
@@ -14,7 +14,7 @@ func loginByPhoneCode(phone: String, code: String, _ options: LoginOptions? = ni
 
 * *phone* 手机号
 * *code* 短信验证码
-* [*options* 登录可选参数](../options.md#LoginOptions)
+* [*options* 登录可选参数](./options.md#LoginOptions)
 
 **示例代码**
 
@@ -31,7 +31,7 @@ AuthClient().loginByPhoneCode(phone: "188xxxx8888", code: "1234") { res in
 
 ## 邮箱验证码登录
 
-通过邮箱验证码登录，需要先调用 [发送邮件](./message.md) 接口。
+通过邮箱验证码登录，需要先调用 [发送邮件](./message.md##-发送邮件) 接口。
 
 ```swift
 func loginByEmailCode(email: String, code: String, _ options: LoginOptions? = nil, completion: @escaping(Response) -> Void)
@@ -41,7 +41,7 @@ func loginByEmailCode(email: String, code: String, _ options: LoginOptions? = ni
 
 * *email* 邮箱
 * *code* 邮箱验证码
-* [*options* 登录可选参数](../options.md#LoginOptions)
+* [*options* 登录可选参数](./options.md#LoginOptions)
   
 **示例代码**
 
@@ -65,7 +65,7 @@ func loginByUsername(username: String, password: String, _ options: LoginOptions
 
 * *account* 可以是手机号 / 邮箱 / 用户名
 * *password* 明文密码
-* [*options* 登录可选参数](../options.md#LoginOptions)
+* [*options* 登录可选参数](./options.md#LoginOptions)
 
 **示例代码**
 
@@ -89,7 +89,7 @@ func loginByAccount(account: String, password: String, _ options: LoginOptions? 
 
 * *account* 可以是手机号 / 邮箱 / 用户名
 * *password* 明文密码
-* [*options* 登录可选参数](../options.md#LoginOptions)
+* [*options* 登录可选参数](./options.md#LoginOptions)
 
 **示例代码**
 
@@ -108,19 +108,19 @@ AuthClient().loginByAccount(account: "account", password: "strong") { res in
 ## 社会化登录
 
 ```swift
-func loginByThirdPart(code: String, connection: String, _ options: LoginOptions? = nil, completion: @escaping(Response) -> Void)
+func loginByThirdPart(code: String, connection: SocialConnection, _ options: LoginOptions? = nil, completion: @escaping(Response) -> Void)
 ```
 
 **请求参数**
 
 * *code* 社会化登录获取到的 Auth Code
-* *connection* 社会化登录类型
-* [*options* 登录可选参数](../options.md#LoginOptions)
+* [*connection* 社会化登录类型](enum.md#SocialConnection)
+* [*options* 登录可选参数](./options.md#LoginOptions)
 
 **示例代码**
 
 ```swift
-AuthClient().loginByThirdPart(code: "code", connection: "connection") { res in
+AuthClient().loginByThirdPart(code: "code", connection: SocialConnection.wechat) { res in
     if (res.statusCode == 200) {
         // response.data
     }
@@ -137,9 +137,9 @@ func loginByOneAuth(token: String, accessToken: String, _ options: LoginOptions?
 
 **请求参数**
 
-* *code* 社会化登录获取到的 Auth Code
-* *connection* 社会化登录类型
-* [*options* 登录可选参数](../options.md#LoginOptions)
+* *token* 易盾返回的 Token
+* *accessToken* 易盾返回的 AccessToken
+* [*options* 登录可选参数](./options.md#LoginOptions)
 
 **示例代码**
 
