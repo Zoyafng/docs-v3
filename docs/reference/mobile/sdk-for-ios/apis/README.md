@@ -16,3 +16,6 @@ iOS SDK 提供了丰富完善的认证用户及管理用户 API，来帮你应�
 * [消息服务](message.md)
 * [其他](utils.md)
 * [OIDC 模块](oidc.md)
+
+可选参数说明请参阅：[可选参数](options.md)
+枚举值说明请参阅：[枚举值](enum.md)

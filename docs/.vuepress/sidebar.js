@@ -6785,7 +6785,7 @@ const zhCnNavBar = {
                 '/reference/mobile/sdk-for-flutter/apis/message',
                 '/reference/mobile/sdk-for-flutter/apis/utils',
                 '/reference/mobile/sdk-for-flutter/apis/oidc',
-                '/reference/mobile/sdk-for-ios/apis/options',
+                '/reference/mobile/sdk-for-flutter/apis/options',
               ]
             },
             {
