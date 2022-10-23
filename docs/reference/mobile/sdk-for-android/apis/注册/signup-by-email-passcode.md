@@ -10,7 +10,7 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | email | String | 是 | - |  邮箱   | `test@example.com` |
-| passCode | String | 是 | - | 邮箱验证码<br/>你需要先调用[发送邮件](./send-email.md)（场景值为 `CHANNEL_REGISTER`）接口获取验证码。 | `1234` |
+| passCode | String | 是 | - | 邮箱验证码<br/>你需要先调用 [发送邮件](../消息服务/send-email.md)（场景值为 `CHANNEL_REGISTER`）接口获取验证码。 | `1234` |
 | profile | <a href="#AuthProfile">AuthProfile</a> | 否 | - | 用户资料  |  |
 | options | <a href="#AuthOptions">AuthOptions</a> | 否 | - | 可选参数  |  |
 
@@ -40,7 +40,7 @@ authClient.signUpByEmailPassword("test@example.com", "1234", profile, options, (
 | statusCode | int        | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
 | message    | String     | 描述信息                                                     |
 | apiCode    | int        | 细分错误码，可通过此错误码得到具体的错误类型。               |
-| requestId  | String     | 请求 ID。当请求失败时会返回。                                |
+| requestId  | String     | 请求 ID，当请求失败时会返回。                                |
 | data       | JSONObject | 响应数据<br/>参考：<a href="#data">data</a>。                |
 
 
@@ -163,10 +163,10 @@ authClient.signUpByEmailPassword("test@example.com", "1234", profile, options, (
 | userId                   | string  | 是                                     | 用户唯一标志，可以是用户 ID、用户名、邮箱、手机号、外部 ID、在外部身份源的 ID。 | `6229ffaxxxxxxxxcade3e3d9`                                   |
 | createdAt                | string  | 是                                     | 创建时间                                                     | `2022-07-03T02:20:30.000Z`                                   |
 | updatedAt                | string  | 是                                     | 更新时间                                                     | `2022-07-03T02:20:30.000Z`                                   |
-| status                   | string  | 是                                     | 账户当前状态                                                 | Suspended                                                    |
+| status                   | string  | 是                                     | 账户当前状态                                                 | `Suspended`                                                  |
 | externalId               | string  | 否                                     | 第三方外部 ID                                                | `10010`                                                      |
 | email                    | string  | 否                                     | 邮箱，不区分大小写                                           | `test@example.com`                                           |
-| phone                    | string  | 否                                     | 手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。 | `188xxxx8888`                                                |
+| phone                    | string  | 否                                     | 手机号，不带区号。如果是国外手机号，请在 `phoneCountryCode` 参数中指定区号。 | `188xxxx8888`                                                |
 | phoneCountryCode         | string  | 否                                     | 手机区号，中国大陆手机号可不填。Authing 短信服务暂不内置支持国际手机号，你需要在 Authing 控制台配置对应的国际短信服务。完整的手机区号列表可参阅 https://en.wikipedia.org/wiki/List_of_country_calling_codes。 | `+86`                                                        |
 | username                 | string  | 否                                     | 用户名，用户池内唯一                                         | `bob`                                                        |
 | name                     | string  | 否                                     | 用户真实名称，不具备唯一性                                   | `张三`                                                       |
@@ -175,7 +175,7 @@ authClient.signUpByEmailPassword("test@example.com", "1234", profile, options, (
 | loginsCount              | number  | 否                                     | 历史总登录次数                                               | `3`                                                          |
 | lastLogin                | string  | 否                                     | 上次登录时间                                                 | `2022-07-03T02:20:30.000Z`                                   |
 | lastIp                   | string  | 否                                     | 上次登录 IP                                                  | `127.0.0.1`                                                  |
-| gender                   | string  | 是                                     | 性别:<br>- `M`: 男性，`male`<br>- `F`: 女性，`female`<br>- `U`: 未知，`unknown`<br> | M                                                            |
+| gender                   | string  | 是                                     | 性别:<br>- `M`: 男性，`male`<br>- `F`: 女性，`female`<br>- `U`: 未知，`unknown`<br> | `M`                                                          |
 | emailVerified            | boolean | 是                                     | 邮箱是否验证                                                 | `true`                                                       |
 | phoneVerified            | boolean | 是                                     | 手机号是否验证                                               | `true`                                                       |
 | passwordLastSetAt        | string  | 否                                     | 用户上次密码修改时间                                         | `2022-07-03T02:20:30.000Z`                                   |
@@ -192,14 +192,14 @@ authClient.signUpByEmailPassword("test@example.com", "1234", profile, options, (
 | givenName                | string  | 否                                     | 名                                                           | `三`                                                         |
 | familyName               | string  | 否                                     | 姓                                                           | `张`                                                         |
 | middleName               | string  | 否                                     | 中间名                                                       |                                                              |
-| profile                  | string  | 否                                     | Preferred Username                                           |                                                              |
-| preferredUsername        | string  | 否                                     | Preferred Username                                           |                                                              |
+| profile                  | string  | 否                                     | 资料                                                         |                                                              |
+| preferredUsername        | string  | 否                                     | 希望称呼的用户名                                             |                                                              |
 | website                  | string  | 否                                     | 用户个人网页                                                 |                                                              |
 | zoneinfo                 | string  | 否                                     | 用户时区信息                                                 |                                                              |
 | locale                   | string  | 否                                     | Locale                                                       |                                                              |
 | formatted                | string  | 否                                     | 标准的完整地址                                               |                                                              |
 | region                   | string  | 否                                     | 用户所在区域                                                 |                                                              |
-| userSourceType           | string  | 是                                     | 来源类型:<br>- `excel`: 通过 excel 导入<br>- `register`: 用户自主注册<br>- `adminCreated`: 管理员后台手动创建（包含使用管理 API 创建用户 ）<br>- `syncTask`: 同步中心的同步任务  <br> | excel                                                        |
+| userSourceType           | string  | 是                                     | 来源类型:<br>- `excel`: 通过 excel 导入<br>- `register`: 用户自主注册<br>- `adminCreated`: 管理员后台手动创建（包含使用管理 API 创建用户 ）<br>- `syncTask`: 同步中心的同步任务  <br> | `excel`                                                      |
 | userSourceId             | string  | 否                                     | 应用 ID 或者同步任务 ID                                      |                                                              |
 | lastLoginApp             | string  | 否                                     | 用户上次登录的应用 ID                                        |                                                              |
 | mainDepartmentId         | string  | 否                                     | 用户主部门 ID                                                |                                                              |
@@ -218,8 +218,8 @@ authClient.signUpByEmailPassword("test@example.com", "1234", profile, options, (
 | ------------- | ------ | -------------------------------------- | ------------------------------------------------------------ | ------------------------------------- |
 | identityId    | string | 是                                     | 身份源 ID                                                    | `62299d8b866d2dab79a89dc4`            |
 | extIdpId      | string | 是                                     | 身份源连接 ID                                                | `6076bacxxxxxxxxd80d993b5`            |
-| provider      | string | 是                                     | 外部身份源类型：<br>- `wechat`: 微信<br>- `qq`: QQ<br>- `wechatwork`: 企业微信<br>- `dingtalk`: 钉钉<br>- `weibo`: 微博<br>- `github`: GitHub<br>- `alipay`: 支付宝<br>- `baidu`: 百度<br>- `lark`: 飞书<br>- `welink`: Welink<br>- `yidun`: 网易易盾<br>- `qingcloud`: 青云<br>- `google`: Google<br>- `gitlab`: GitLab<br>- `gitee`: Gitee<br>- `twitter`: Twitter<br>- `facebook`: Facebook<br>- `slack`: Slack<br>- `linkedin`: Linkedin<br>- `instagram`: Instagram<br>- `oidc`: OIDC 型企业身份源<br>- `oauth2`: OAuth2 型企业身份源<br>- `saml`: SAML 型企业身份源<br>- `ldap`: LDAP 型企业身份源<br>- `ad`: AD 型企业身份源<br>- `cas`: CAS 型企业身份源<br>- `azure-ad`: Azure AD 型企业身份源<br> | oidc                                  |
-| type          | string | 是                                     | Identity 类型，如 unionid, openid, primary                   | `openid`                              |
+| provider      | string | 是                                     | 外部身份源类型：<br>- `wechat`: 微信<br>- `qq`: QQ<br>- `wechatwork`: 企业微信<br>- `dingtalk`: 钉钉<br>- `weibo`: 微博<br>- `github`: GitHub<br>- `alipay`: 支付宝<br>- `baidu`: 百度<br>- `lark`: 飞书<br>- `welink`: Welink<br>- `yidun`: 网易易盾<br>- `qingcloud`: 青云<br>- `google`: Google<br>- `gitlab`: GitLab<br>- `gitee`: Gitee<br>- `twitter`: Twitter<br>- `facebook`: Facebook<br>- `slack`: Slack<br>- `linkedin`: Linkedin<br>- `instagram`: Instagram<br>- `oidc`: OIDC 型企业身份源<br>- `oauth2`: OAuth2 型企业身份源<br>- `saml`: SAML 型企业身份源<br>- `ldap`: LDAP 型企业身份源<br>- `ad`: AD 型企业身份源<br>- `cas`: CAS 型企业身份源<br>- `azure-ad`: Azure AD 型企业身份源<br> | `oidc`                                |
+| type          | string | 是                                     | Identity 类型，如 `unionid`、`openid`、 `primary`            | `openid`                              |
 | userIdInIdp   | string | 是                                     | 在外部身份源中的 ID                                          | `oj7Nq05R-RRaqak0_YlMLnnIwsvg`        |
 | originConnIds | array  | 是                                     | 身份来自的身份源连接 ID 列表                                 | `["605492ac41xxxxe0362f0707"]`        |
 

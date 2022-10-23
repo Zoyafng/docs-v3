@@ -2,7 +2,7 @@
 
 <LastUpdated />
 
-终端用户自主修改手机号，需要提供相应的验证手段，见[发起修改手机号的验证请求](./verify-update-phone-request.md)。
+终端用户自主修改手机号，需要提供相应的验证手段，见 [发起修改手机号的验证请求](./verify-update-phone-request.md)。
 此参数需要提供一次性临时凭证 `updatePhoneToken`，此数据需要从**发起修改手机号的验证请求**接口获取。
 
 ## 请求参数
@@ -34,7 +34,7 @@ authClient.updatePhone("undefined", (AuthCallback) response -> {
 | statusCode | int    | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
 | message    | String | 描述信息                                                     |
 | apiCode    | int    | 细分错误码，可通过此错误码得到具体的错误类型。               |
-| requestId  | String | 请求 ID。当请求失败时会返回。                                |
+| requestId  | String | 请求 ID，当请求失败时会返回。                                |
 
 
 

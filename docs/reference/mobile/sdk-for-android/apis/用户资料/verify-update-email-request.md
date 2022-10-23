@@ -34,7 +34,7 @@ authClient.updateEmailRequest("new@example.com", "1234", "old@example.com", "123
 | statusCode | int        | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
 | message    | String     | 描述信息                                                     |
 | apiCode    | int        | 细分错误码，可通过此错误码得到具体的错误类型。               |
-| requestId  | String     | 请求 ID。当请求失败时会返回。                                |
+| requestId  | String     | 请求 ID，当请求失败时会返回。                                |
 | data       | JSONObject | 响应数据<br/>参考：<a href="#data">data</a>。                |
 
 
@@ -59,6 +59,6 @@ authClient.updateEmailRequest("new@example.com", "1234", "old@example.com", "123
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| updateEmailToken | string | 是 | 用于修改当前邮箱的 token，你需要使用此 token 调用**修改邮箱**接口。   |  |
+| updateEmailToken | string | 是 | 用于修改当前邮箱的 token，你需要使用此 token 调用**[修改邮箱](./update-email.md)**接口。 |  |
 | tokenExpiresIn | number | 是 | Token 有效时间，时间为 60 秒。   |  `60` |
 

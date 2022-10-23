@@ -8,9 +8,9 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
- | withCustomData | boolean  | 否 | - | 是否获取自定义数据  | `true` |
- | withIdentities | boolean  | 否 | - | 是否获取 identities  | `true` |
- | withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表  | `true` |
+| withCustomData | boolean  | 否 | - | 是否获取自定义数据。 | `true` |
+| withIdentities | boolean  | 否 | - | 是否获取 identities。 | `true` |
+| withDepartmentIds | boolean  | 否 | - | 是否获取部门 ID 列表。 | `true` |
 
 
 ## 示例代码
@@ -34,7 +34,7 @@ authClient.getProfile(true, true, true, (AuthCallback) response -> {
 | statusCode | int        | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
 | message    | String     | 描述信息                                                     |
 | apiCode    | int        | 细分错误码，可通过此错误码得到具体的错误类型。               |
-| requestId  | String     | 请求 ID。当请求失败时会返回。                                |
+| requestId  | String     | 请求 ID，当请求失败时会返回。                                |
 | data       | JSONObject | 响应数据<br/>参考：<a href="#data">data</a>。                |
 
 

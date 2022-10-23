@@ -10,7 +10,7 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | username | String | 是 | - |  用户名   | `test` |
-| password | String | 是 | - | 用户密码，默认不加密。Authing 所有 API 均通过 HTTPS 协议对密码进行安全传输，可以在一定程度上保证安全性。如果你还需要更高级别的安全性，我们还支持 `RSA256` 和国密 `SM2` 的密码加密方式。详情见可选参数 `options.passwordEncryptType`。  | `password` |
+| password | String | 是 | - | 用户密码，默认不加密。Authing 所有 API 均通过 HTTPS 协议对密码进行安全传输，可以在一定程度上保证安全性。如果你还需要更高级别的安全性，我们还支持 `RSA256` 和国密 `SM2` 的密码加密方式。详情见<a href="#AuthOptions">可选参数</a>  `options.passwordEncryptType`。 | `password` |
 | profile | <a href="#AuthProfile">AuthProfile</a> | 否 | - | 用户资料  |  |
 | options | <a href="#AuthOptions">AuthOptions</a> | 否 | - | 可选参数  |  |
 
@@ -40,7 +40,7 @@ authClient.signUpByUsernamePassword("test", "password", profile, options, (AuthC
 | statusCode | int        | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
 | message    | String     | 描述信息                                                     |
 | apiCode    | int        | 细分错误码，可通过此错误码得到具体的错误类型。               |
-| requestId  | String     | 请求 ID。当请求失败时会返回。                                |
+| requestId  | String     | 请求 ID，当请求失败时会返回。                                |
 | data       | JSONObject | 响应数据<br/>参考：<a href="#data">data</a>。                |
 
 
@@ -145,9 +145,9 @@ authClient.signUpByUsernamePassword("test", "password", profile, options, (AuthC
 | ---- |  ---- | ---- | ---- | ---- |
 | clientIp | string | 否 | 客户端 IP   |  `192.168.0.1` |
 | phonePassCodeForInformationCompletion | string | 否 | 用于注册时补全用户信息的短信验证码   |  `1234` |
-| emailPassCodeForInformationCompletion | string | 否 | 用于注册时补全用户信息的短信验证码   |  `1234` |
+| emailPassCodeForInformationCompletion | string | 否 | 用于注册时补全用户信息的邮箱验证码 |  `1234` |
 | context | object | 是 | 登录/注册时传的额外参数，会存到用户自定义字段里面   |  `{"phoneNumber":"188xxxx8888","phoneCountryCode":"+86"}` |
-| passwordEncryptType | <a href="#PasswordEncryptType">PasswordEncryptType</a> | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密。<br>- `none`: 不对密码进行加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码进行加密，需要使用 Authing 服务的 RSA 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码进行加密，需要使用 Authing 服务的 SM2 公钥进行加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>     | sm2 |
+| passwordEncryptType | <a href="#PasswordEncryptType">PasswordEncryptType</a> | 否 | 密码加密类型，支持 sm2 和 rsa。默认可以不加密：<br>- `none`: 不对密码加密，使用明文进行传输。<br>- `rsa`: 使用 RSA256 算法对密码加密，需要使用 Authing 服务的 RSA 公钥加密，请阅读**介绍**部分了解如何获取 Authing 服务的 RSA256 公钥。<br>- `sm2`: 使用 [国密 SM2 算法](https://baike.baidu.com/item/SM2/15081831) 对密码加密，需要使用 Authing 服务的 SM2 公钥加密，请阅读**介绍**部分了解如何获取 Authing 服务的 SM2 公钥。<br>    | `sm2` |
 
 ### <a id="PasswordEncryptType"></a> PasswordEncryptType
 
@@ -164,10 +164,10 @@ authClient.signUpByUsernamePassword("test", "password", profile, options, (AuthC
 | userId | string | 是 | 用户唯一标志，可以是用户 ID、用户名、邮箱、手机号、外部 ID、在外部身份源的 ID。   |  `6229ffaxxxxxxxxcade3e3d9` |
 | createdAt | string | 是 | 创建时间   |  `2022-07-03T02:20:30.000Z` |
 | updatedAt | string | 是 | 更新时间   |  `2022-07-03T02:20:30.000Z` |
-| status | string | 是 | 账户当前状态   | Suspended |
+| status | string | 是 | 账户当前状态   | `Suspended` |
 | externalId | string | 否 | 第三方外部 ID   |  `10010` |
 | email | string | 否 | 邮箱，不区分大小写   |  `test@example.com` |
-| phone | string | 否 | 手机号，不带区号。如果是国外手机号，请在 phoneCountryCode 参数中指定区号。   |  `188xxxx8888` |
+| phone | string | 否 | 手机号，不带区号。如果是国外手机号，请在 `phoneCountryCode` 参数中指定区号。 |  `188xxxx8888` |
 | phoneCountryCode | string | 否 | 手机区号，中国大陆手机号可不填。Authing 短信服务暂不内置支持国际手机号，你需要在 Authing 控制台配置对应的国际短信服务。完整的手机区号列表可参阅 https://en.wikipedia.org/wiki/List_of_country_calling_codes。   |  `+86` |
 | username | string | 否 | 用户名，用户池内唯一   |  `bob` |
 | name | string | 否 | 用户真实名称，不具备唯一性   |  `张三` |
@@ -176,7 +176,7 @@ authClient.signUpByUsernamePassword("test", "password", profile, options, (AuthC
 | loginsCount | number | 否 | 历史总登录次数   |  `3` |
 | lastLogin | string | 否 | 上次登录时间   |  `2022-07-03T02:20:30.000Z` |
 | lastIp | string | 否 | 上次登录 IP   |  `127.0.0.1` |
-| gender | string | 是 | 性别:<br>- `M`: 男性，`male`<br>- `F`: 女性，`female`<br>- `U`: 未知，`unknown`<br>     | M |
+| gender | string | 是 | 性别:<br>- `M`: 男性，`male`<br>- `F`: 女性，`female`<br>- `U`: 未知，`unknown`<br>     | `M` |
 | emailVerified | boolean | 是 | 邮箱是否验证   |  `true` |
 | phoneVerified | boolean | 是 | 手机号是否验证   |  `true` |
 | passwordLastSetAt | string | 否 | 用户上次密码修改时间   |  `2022-07-03T02:20:30.000Z` |
@@ -193,14 +193,14 @@ authClient.signUpByUsernamePassword("test", "password", profile, options, (AuthC
 | givenName | string | 否 | 名   |  `三` |
 | familyName | string | 否 | 姓   |  `张` |
 | middleName | string | 否 | 中间名   |  |
-| profile | string | 否 | Preferred Username   |  |
-| preferredUsername | string | 否 | Preferred Username   |  |
+| profile | string | 否 | 资料 |  |
+| preferredUsername | string | 否 | 希望称呼的用户名 |  |
 | website | string | 否 | 用户个人网页   |  |
 | zoneinfo | string | 否 | 用户时区信息   |  |
 | locale | string | 否 | Locale   |  |
 | formatted | string | 否 | 标准的完整地址   |  |
 | region | string | 否 | 用户所在区域   |  |
-| userSourceType | string | 是 | 来源类型:<br>- `excel`: 通过 excel 导入<br>- `register`: 用户自主注册<br>- `adminCreated`: 管理员后台手动创建（包含使用管理 API 创建用户 ）<br>- `syncTask`: 同步中心的同步任务  <br>   | excel |
+| userSourceType | string | 是 | 来源类型:<br>- `excel`: 通过 excel 导入<br>- `register`: 用户自主注册<br>- `adminCreated`: 管理员后台手动创建（包含使用管理 API 创建用户 ）<br>- `syncTask`: 同步中心的同步任务  <br>   | `excel` |
 | userSourceId | string | 否 | 应用 ID 或者同步任务 ID   |  |
 | lastLoginApp | string | 否 | 用户上次登录的应用 ID   |  |
 | mainDepartmentId | string | 否 | 用户主部门 ID   |  |
@@ -219,8 +219,8 @@ authClient.signUpByUsernamePassword("test", "password", profile, options, (AuthC
 | ---- |  ---- | ---- | ---- | ---- |
 | identityId | string | 是 | 身份源 ID   |  `62299d8b866d2dab79a89dc4` |
 | extIdpId | string | 是 | 身份源连接 ID   |  `6076bacxxxxxxxxd80d993b5` |
-| provider | string | 是 | 外部身份源类型：<br>- `wechat`: 微信<br>- `qq`: QQ<br>- `wechatwork`: 企业微信<br>- `dingtalk`: 钉钉<br>- `weibo`: 微博<br>- `github`: GitHub<br>- `alipay`: 支付宝<br>- `baidu`: 百度<br>- `lark`: 飞书<br>- `welink`: Welink<br>- `yidun`: 网易易盾<br>- `qingcloud`: 青云<br>- `google`: Google<br>- `gitlab`: GitLab<br>- `gitee`: Gitee<br>- `twitter`: Twitter<br>- `facebook`: Facebook<br>- `slack`: Slack<br>- `linkedin`: Linkedin<br>- `instagram`: Instagram<br>- `oidc`: OIDC 型企业身份源<br>- `oauth2`: OAuth2 型企业身份源<br>- `saml`: SAML 型企业身份源<br>- `ldap`: LDAP 型企业身份源<br>- `ad`: AD 型企业身份源<br>- `cas`: CAS 型企业身份源<br>- `azure-ad`: Azure AD 型企业身份源<br>       | oidc |
-| type | string | 是 | Identity 类型，如 unionid, openid, primary   |  `openid` |
+| provider | string | 是 | 外部身份源类型：<br>- `wechat`: 微信<br>- `qq`: QQ<br>- `wechatwork`: 企业微信<br>- `dingtalk`: 钉钉<br>- `weibo`: 微博<br>- `github`: GitHub<br>- `alipay`: 支付宝<br>- `baidu`: 百度<br>- `lark`: 飞书<br>- `welink`: Welink<br>- `yidun`: 网易易盾<br>- `qingcloud`: 青云<br>- `google`: Google<br>- `gitlab`: GitLab<br>- `gitee`: Gitee<br>- `twitter`: Twitter<br>- `facebook`: Facebook<br>- `slack`: Slack<br>- `linkedin`: Linkedin<br>- `instagram`: Instagram<br>- `oidc`: OIDC 型企业身份源<br>- `oauth2`: OAuth2 型企业身份源<br>- `saml`: SAML 型企业身份源<br>- `ldap`: LDAP 型企业身份源<br>- `ad`: AD 型企业身份源<br>- `cas`: CAS 型企业身份源<br>- `azure-ad`: Azure AD 型企业身份源<br>       | `oidc` |
+| type | string | 是 | Identity 类型，如 `unionid`、`openid`、 `primary` |  `openid` |
 | userIdInIdp | string | 是 | 在外部身份源中的 ID   |  `oj7Nq05R-RRaqak0_YlMLnnIwsvg` |
 | originConnIds | array | 是 | 身份来自的身份源连接 ID 列表   |  `["605492ac41xxxxe0362f0707"]` |
 
