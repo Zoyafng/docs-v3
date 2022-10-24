@@ -28,12 +28,12 @@
       v-else
       class="sidebar-heading"
       :class="{ open }"
-      @click="$emit('toggle')"
+      @click="onClickSideBar"
     >
       <span v-show="collapsable" class="arrow" :class="open ? 'down-arrow' : 'right-arrow'">
         <img :src="require(`@theme/assets/images/arrow-${open ? 'down' : 'right'}-s-fill.svg`)" />
       </span>
-      <span class="sidebar-heading__title">{{ item.title }}</span>
+      <span class="sidebar-heading__title" :class="{ gray: isDeveloping }">{{ item.title }}</span>
     </p>
 
     <DropdownTransition>
@@ -77,6 +77,10 @@ export default {
         }, 200);
       }
       return active
+    },
+    isDeveloping () {
+      const { collapsable, sidebarDepth } = this.item
+      return collapsable === false && sidebarDepth === 1
     }
   },
 
@@ -85,12 +89,19 @@ export default {
     goLink(path) {
       this.$emit('toggle')
       this.$router.push(path)
+    },
+    onClickSideBar () {
+      if (!this.isDeveloping) {
+        this.$emit('toggle')
+      }
     }
   }
 };
 </script>
 
 <style lang="stylus" scoped>
+.gray
+  color #a7a4a4
 .sidebar-group
   .sidebar-group
     padding-left 16px
