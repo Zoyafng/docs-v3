@@ -1,10 +1,10 @@
-## OIDC
+# OIDC 模块
 
 <LastUpdated/>
 
 [OpenID Connect (OIDC)](https://docs.authing.cn/v2/apn/#关于-oidc)，是 OAuth 2.0 的一个扩展，主要增加了语义化的用户信息字段。
 
-### 初始化
+## 初始化
 
 `AuthClient` 会自动获取控制台默认回调，如需要自定义 `scope`、`redirect_uri` 等参数，可创建 `AuthRequest` 对象，重新给 `scope` 或 `redirect_uri` 属性赋值。
 
@@ -17,7 +17,7 @@ AuthClient(authRequest).loginByXXX()
 ```
 <br>
 
-### 获取用户信息
+## 获取用户信息
 
 通过 access token 获取用户信息。此接口只返回协议相关用户信息字段。
 
@@ -41,7 +41,7 @@ AuthClient().getUserInfoByAccessToken(accessToken: accessToken) { res in
 
 <br>
 
-### 通过 refresh token 获取新的 access token 和 id token
+## 通过 refresh token 获取新的 access token 和 id token
 
 通常来说 access token 的有效期较短，比如几个小时或者 1 天。当 access token 过期后，App 不能频繁地弹出登录界面让用户认证，那样体验比较糟糕。所以通常的做法是通过代码，用一个有效期比较长的 refresh token 去刷新 access token，从而保持登录状态。只有当 refresh token 过期才弹出登录界面。
 
@@ -67,7 +67,7 @@ AuthClient().getNewAccessTokenByRefreshToken(refreshToken: "refreshToken") { res
 
 <br>
 
-### 生成 OIDC 协议的用户登录链接
+## 生成 OIDC 协议的用户登录链接
 
 生成登录 URL，传给 `WebView` 加载
 
@@ -109,7 +109,7 @@ AuthClient(authRequest).buildAuthorizeUrl() { url in }
 
 <br>
 
-### code 换 token
+## code 换 token
 
 通过 OIDC 授权码认证。
 
