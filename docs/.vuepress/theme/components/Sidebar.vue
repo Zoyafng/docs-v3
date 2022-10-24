@@ -114,7 +114,7 @@ export default {
   max-height 'calc(%s - %s - %s)' % (100vh $navbarHeight $headerContentGutter)
   top calc(3.6rem + 36px)
   align-self flex-start
-  width 250px
+  width 286px
   overflow-y unset
   .sidebar-search
     width: 94%
@@ -177,6 +177,7 @@ export default {
     left unset
     right 0
     max-height unset
+    width 296px
     height 100%
     transform translateX(100%)
     border-right none
