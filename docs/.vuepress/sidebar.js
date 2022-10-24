@@ -6856,7 +6856,7 @@ const zhCnNavBar = {
               path: '/reference/mobile/sdk-for-flutter/quick'
             },
             {
-              title: 'API',
+              title: '用户认证模块',
               path: '/reference/mobile/sdk-for-flutter/apis/',
               children: [
                 '/reference/mobile/sdk-for-flutter/apis/login',
@@ -6886,7 +6886,7 @@ const zhCnNavBar = {
               path: '/reference/mobile/sdk-for-ios/quick'
             },
             {
-              title: 'API',
+              title: '用户认证模块',
               path: '/reference/mobile/sdk-for-ios/apis/',
               children: [
                 '/reference/mobile/sdk-for-ios/apis/login',
