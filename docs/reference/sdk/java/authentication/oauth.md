@@ -4,9 +4,9 @@ meta:
     content: Java SDK
 ---
 
-<LastUpdated/>
-
 # {{$localeConfig.brandName}} - Java SDK OAuth2.0 模块
+
+<LastUpdated/>
 
 OAuth 是一个关于授权（Authorization）的开放网络标准，目前的版本是 2.0 版。
 
@@ -17,7 +17,7 @@ OAuth 是一个关于授权（Authorization）的开放网络标准，目前的�
 - `appId` \<String\> 应用 ID，必填。
 - `secret` \<String\> 应用密钥，必填。
 - `host` \<String\> 应用完整地址，如 https://sample-app.authing.cn，不带最后的斜线 '/'。
-- `redirectUri` \<String\> 业务回调 URL，必填。详情请查看[文档](/guides/federation/oidc.html#授权码模式)。
+- `redirectUri` \<String\> 业务回调 URL，必填。详情请查看[授权码模式](https://docs.authing.cn/v2/guides/federation/oidc.html#%E6%8E%88%E6%9D%83%E7%A0%81%E6%A8%A1%E5%BC%8F)。
 - `protocol` \<ProtocolEnum\> 协议类型，可选值为 `OIDC`、`OAUTH`、`SAML`、`CAS`，默认为 `OIDC`。
 - `tokenEndPointAuthMethod` \<AuthMethodEnum\> 获取 token 端点验证方式，可选值为 `CLIENT_SECRET_POST`、`CLIENT_SECRET_BASIC`、`NONE`，默认为 `CLIENT_SECRET_POST`。
 - `introspectionEndPointAuthMethod` \<AuthMethodEnum\> 检验 token 端点验证方式，可选值为 `CLIENT_SECRET_POST`、`CLIENT_SECRET_BASIC`、`NONE`，默认为 `CLIENT_SECRET_POST`。
@@ -41,7 +41,7 @@ authenticationClient.buildAuthorizeUrl(options)
 
 ### 参数
 
-- `options` \<IOauthParams\> 发起授权登录时需要填写的参数。详情请见[使用 OAuth2.0 授权码模式](/federation/oauth2/authorization-code/)。
+- `options` \<IOauthParams\> 发起授权登录时需要填写的参数。详情请见[使用 OAuth2.0 授权码模式](https://docs.authing.cn/v2/federation/oauth2/authorization-code/)。
 - `options.scope` \<String\> 请求的权限项目，选填，OIDC 协议默认为 `openid profile email phone address`，OAuth 2.0 协议默认为 `user`。
 - `options.state` \<String\> 随机字符串，选填，默认自动生成。
 - `options.responseType` \<String\> 响应类型，选填，可选值为 `code`、`token` 默认为 `code`，授权码模式。
@@ -70,7 +70,7 @@ authenticationClient.getAccessTokenByCode(code)
 
 ### 参数
 
-- `code` \<String\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OAuth 2.0 授权码模式](/federation/oauth2/authorization-code/)，每个 Code 只能使用一次。
+- `code` \<String\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OAuth 2.0 授权码模式](https://docs.authing.cn/v2/federation/oauth2/authorization-code/)，每个 Code 只能使用一次。
 
 ### 示例
 
@@ -107,7 +107,7 @@ authenticationClient.getUserInfoByAccessToken('access_token')
 
 ### 参数
 
-- `access_token` \<String\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OAuth 2.0 授权码模式](/federation/oauth2/authorization-code/)。
+- `access_token` \<String\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OAuth 2.0 授权码模式](https://docs.authing.cn/v2/federation/oauth2/authorization-code/)。
 
 ### 示例
 

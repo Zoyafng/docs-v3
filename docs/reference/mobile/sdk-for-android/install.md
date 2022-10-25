@@ -103,7 +103,7 @@ Authing.setHost(String host)；
 
 - *`host`* 是[私有化域名](https://docs.authing.cn/v2/guides/customize/domain/customized-domain.html)，如：`mycompany.com`
 
-如果你不清楚如何获取，可以联系 Authing IDaaS 服务管理员。
+如果你不清楚如何获取，可以联系为你们提供 Authing IDaaS 服务的管理人员，通常是 IT 部门或信息化部门。
 
 
 

@@ -4,9 +4,9 @@ meta:
     content: Java SDK
 ---
 
-<LastUpdated/>
-
 # {{$localeConfig.brandName}} - Java SDK OIDC 模块
+
+<LastUpdated/>
 
 OpenID Connect 简称 OIDC，是 OAuth 2.0 的一个扩展，主要增加了语义化的用户信息字段。
 
@@ -17,7 +17,7 @@ OpenID Connect 简称 OIDC，是 OAuth 2.0 的一个扩展，主要增加了语�
 - `appId` \<String\> 应用 ID，必填。
 - `secret` \<String\> 应用密钥，必填。
 - `host` \<String\> 应用完整地址，如 https://sample-app.authing.cn，不带最后的斜线 '/'。
-- `redirectUri` \<String\> 业务回调 URL，必填。详情请查看[文档](/guides/federation/oidc.html#授权码模式)。
+- `redirectUri` \<String\> 业务回调 URL，必填。详情请查看[授权码模式](https://docs.authing.cn/v2/guides/federation/oidc.html#%E6%8E%88%E6%9D%83%E7%A0%81%E6%A8%A1%E5%BC%8F)。
 - `protocol` \<ProtocolEnum\> 协议类型，可选值为 `OIDC`、`OAUTH`、`SAML`、`CAS`，默认为 `OIDC`。
 - `tokenEndPointAuthMethod` \<AuthMethodEnum\> 获取 token 端点验证方式，可选值为 `CLIENT_SECRET_POST`、`CLIENT_SECRET_BASIC`、`NONE`，默认为 `CLIENT_SECRET_POST`。
 - `introspectionEndPointAuthMethod` \<AuthMethodEnum\> 检验 token 端点验证方式，可选值为 `CLIENT_SECRET_POST`、`CLIENT_SECRET_BASIC`、`NONE`，默认为 `CLIENT_SECRET_POST`。
@@ -41,7 +41,7 @@ authenticationClient.buildAuthorizeUrl(options)
 
 ### 参数
 
-- `options` \<IOidcParams\> 发起授权登录时需要填写的参数。详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)。
+- `options` \<IOidcParams\> 发起授权登录时需要填写的参数。详情请见[使用 OIDC 授权码模式](https://docs.authing.cn/v3/reference/sdk/java/authentication/oidc.html)。
 - `options.scope` \<String\> 请求的权限项目，选填，OIDC 协议默认为 `openid profile email phone address`，OAuth 2.0 协议默认为 `user`。
 - `options.nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `options.state` \<String\> 随机字符串，选填，默认自动生成。
@@ -74,7 +74,7 @@ authenticationClient.getAccessTokenByCode(code)
 
 ### 参数
 
-- `code` \<String\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)，每个 Code 只能使用一次。
+- `code` \<String\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OIDC 授权码模式](https://docs.authing.cn/v3/reference/sdk/java/authentication/oidc.html)，每个 Code 只能使用一次。
 
 ### 示例
 
@@ -112,7 +112,7 @@ authenticationClient.getUserInfoByAccessToken('access_token')
 
 ### 参数
 
-- `access_token` \<String\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OIDC 授权码模式](/federation/oidc/authorization-code/)。
+- `access_token` \<String\> Access token，使用授权码 Code 换取的 Access token 的内容。详情请见[使用 OIDC 授权码模式](https://docs.authing.cn/v3/reference/sdk/java/authentication/oidc.html)。
 
 ### 示例
 
@@ -191,7 +191,7 @@ authenticationClient.getNewAccessTokenByRefreshToken(refreshToken)
 
 ### 参数
 
-- `refreshToken` \<String\> Refresh token，可以从 authenticationClient.getAccessTokenByCode 方法的返回值中的 refresh_token 获得。详情请见[刷新 Access token](/guides/federation/oidc.md#刷新-access-token)。
+- `refreshToken` \<String\> Refresh token，可以从 authenticationClient.getAccessTokenByCode 方法的返回值中的 refresh_token 获得。详情请见[刷新 Access token](https://docs.authing.cn/v2/guides/federation/oidc.html#%E5%88%B7%E6%96%B0-access-token)。
 
 ### 示例
 
@@ -393,11 +393,11 @@ String url = authenticationClient.buildLogoutUrl(params);
 
 authenticationClient.getAccessTokenByClientCredentials(scope, options)
 
-> 使用[编程访问账号](/guides/authorization/m2m-authz.html#m2m-授权)获取具备权限的 Access Token。
+> 使用[编程访问账号](https://docs.authing.cn/v2/guides/authorization/m2m-authz.html#m2m-%E6%8E%88%E6%9D%83)获取具备权限的 Access Token。
 
 ### 参数
 
-- `scope` \<String\> 权限项目，空格分隔的字符串，每一项代表一个权限。详情请见[机器间（M2M）授权](/guides/authorization/m2m-authz.html#获取具备权限的-accesstoken)。
+- `scope` \<String\> 权限项目，空格分隔的字符串，每一项代表一个权限。详情请见[机器间（M2M）授权](https://docs.authing.cn/v2/guides/authorization/m2m-authz.html#%E8%8E%B7%E5%8F%96%E5%85%B7%E5%A4%87%E6%9D%83%E9%99%90%E7%9A%84-accesstoken)。
 - `options` \<ClientCredentialInput\> 编程访问账号的 AK 与 SK 信息
 - `options.accessKey` \<String\> 编程访问账号 AccessKey
 - `options.secretKey` \<String\> 编程访问账号 SecretKey

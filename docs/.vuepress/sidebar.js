@@ -6596,7 +6596,7 @@ const zhCnNavBar = {
         {
           title: 'Android',
           path: '/reference/mobile/sdk-for-android/',
-          redirect: "reference/mobile/sdk-for-android/install.html",
+          redirect: "/reference/mobile/sdk-for-android/install.html",
           children: [
             {
               title: '安装使用',
