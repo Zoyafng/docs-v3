@@ -4,9 +4,9 @@ meta:
     content: Java SDK
 ---
 
-<LastUpdated/>
-
 # {{$localeConfig.brandName}} - Java SDK CSA 模块
+
+<LastUpdated/>
 
 CAS 是 Central Authentication Service 的缩写，中央认证服务，一种独立开放指令协议。
 
