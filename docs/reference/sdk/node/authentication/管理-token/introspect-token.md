@@ -94,44 +94,28 @@ const authenticationClient = new AuthenticationClient({
 
 ### 示例代码
 
-```go
-package main
 
-import (
-	"fmt"
-	"github.com/Authing/authing-golang-sdk/v3/authentication"
-	"github.com/Authing/authing-golang-sdk/v3/dto"
-)
+```typescript
+import { AuthenticationClient, Models } from 'authing-node-sdk';
 
-func main() {
-	options := &authentication.AuthenticationClientOptions{
-        // 需要替换成你的 Authing 应用 ID
-		AppId:       "AUTHING_APP_ID",
-        // 需要替换成你的 Authing 应用密钥
-		AppSecret:   "AUTHING_APP_SECRET",
-        // 需要替换成你的 Authing 应用域名
-		AppHost:     "AUTHING_APP_HOST",
-        // 需要替换成你的 Authing 应用回调地址
-		RedirectUri: "AUTHING_APP_REDIRECT_URI",
-	}
-	client, err := authentication.NewAuthenticationClient(options)
-	if err != nil {
-		// The exception needs to be handled by the developer.
-	}
+const authenticationClient = new AuthenticationClient({
+	// 需要替换成你的 Authing 应用 ID
+	appId:       "AUTHING_APP_ID",
+	// 需要替换成你的 Authing 应用密钥
+	appSecret:   "AUTHING_APP_SECRET",
+	// 需要替换成你的 Authing 应用域名
+	appHost:     "AUTHING_APP_HOST",
+	// 需要替换成你的 Authing 应用回调地址
+	redirectUri: "AUTHING_APP_REDIRECT_URI",
+});
 
+(async () => {
+  const result = await authenticationClient.parseAccessToken(
     // 需要替换成真实的 access_token 或 refresh_token
-    token := "REPLACE_ME_WITH_REAL_TOKEN"
-
-    // 本地校验
-    respDto, err := client.IntrospectAccessTokenOffline(code)
-
-    // 如果 err 不为 nil，表示校验失败
-    if (err != nil) {
-        // The exception needs to be handled by the developer.
-    }
-
-    fmt.Println(respDto)
-}
+    'REPLACE_ME_WITH_REAL_CODE'
+  );
+  console.log(JSON.stringify(result, null, 2));
+})();
 ```
 
 ### 请求响应

@@ -84,37 +84,27 @@ const authenticationClient = new AuthenticationClient({
 
 ### 示例代码
 
-```go
-package main
+```typescript
+import { AuthenticationClient, Models } from 'authing-node-sdk';
 
-import (
-	"fmt"
-	"github.com/Authing/authing-golang-sdk/v3/authentication"
-	"github.com/Authing/authing-golang-sdk/v3/dto"
-)
+const authenticationClient = new AuthenticationClient({
+	// 需要替换成你的 Authing 应用 ID
+	appId:       "AUTHING_APP_ID",
+	// 需要替换成你的 Authing 应用密钥
+	appSecret:   "AUTHING_APP_SECRET",
+	// 需要替换成你的 Authing 应用域名
+	appHost:     "AUTHING_APP_HOST",
+	// 需要替换成你的 Authing 应用回调地址
+	redirectUri: "AUTHING_APP_REDIRECT_URI",
+});
 
-func main() {
-	options := &authentication.AuthenticationClientOptions{
-        // 需要替换成你的 Authing 应用 ID
-		AppId:       "AUTHING_APP_ID",
-        // 需要替换成你的 Authing 应用密钥
-		AppSecret:   "AUTHING_APP_SECRET",
-        // 需要替换成你的 Authing 应用域名
-		AppHost:     "AUTHING_APP_HOST",
-        // 需要替换成你的 Authing 应用回调地址
-		RedirectUri: "AUTHING_APP_REDIRECT_URI",
-	}
-	client, err := authentication.NewAuthenticationClient(options)
-	if err != nil {
-		// The exception needs to be handled by the developer.
-	}
-
-    refreshToken := "REPLACE_ME_WITH_REFRESH_TOKEN"
-
-    // 使用 code
-    respDto, _ := client.GetNewAccessTokenByRefreshToken(refreshToken)
-    fmt.Println(respDto)
-}
+(async () => {
+  const result = await authenticationClient.getAccessTokenByCode(
+    // 用户认证完成回调到你的系统之后，你可以从回调地址的 query 参数中得到一次性临时凭证
+    'REPLACE_ME_WITH_REFRESH_TOKEN'
+  );
+  console.log(JSON.stringify(result, null, 2));
+})();
 ```
 
 ## 请求响应
