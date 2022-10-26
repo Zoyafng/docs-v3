@@ -62,7 +62,7 @@ var options = authentication.AuthenticationClientOptions{
 func main() {
 
 	var err error
-	authenticationClient, err = NewAuthenticationClient(&options)
+	authenticationClient, err = authentication.NewAuthenticationClient(&options)
 	if err != nil {
 		panic(err)
 	}
@@ -174,7 +174,7 @@ func main() {
 
 	var err error
 	// 初始化 AuthenticationClient
-	authenticationClient, err = NewAuthenticationClient(&options)
+	authenticationClient, err = authentication.NewAuthenticationClient(&options)
 	if err != nil {
 		panic(err)
 	}
@@ -213,7 +213,7 @@ func main() {
 
 	var err error
 	// 初始化 AuthenticationClient
-	authenticationClient, err = NewAuthenticationClient(&options)
+	authenticationClient, err = authentication.NewAuthenticationClient(&options)
 	if err != nil {
 		panic(err)
 	}
