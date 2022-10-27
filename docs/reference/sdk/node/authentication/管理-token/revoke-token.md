@@ -24,14 +24,14 @@
 import { AuthenticationClient, Models } from 'authing-node-sdk';
 
 const authenticationClient = new AuthenticationClient({
-	// 需要替换成你的 Authing 应用 ID
-	appId:       "AUTHING_APP_ID",
-	// 需要替换成你的 Authing 应用密钥
-	appSecret:   "AUTHING_APP_SECRET",
-	// 需要替换成你的 Authing 应用域名
-	appHost:     "AUTHING_APP_HOST",
-	// 需要替换成你的 Authing 应用回调地址
-	redirectUri: "AUTHING_APP_REDIRECT_URI",
+  // 需要替换成你的 Authing 应用 ID
+  appId: 'AUTHING_APP_ID',
+  // 需要替换成你的 Authing 应用密钥
+  appSecret: 'AUTHING_APP_SECRET',
+  // 需要替换成你的 Authing 应用域名
+  appHost: 'AUTHING_APP_HOST',
+  // 需要替换成你的 Authing 应用回调地址
+  redirectUri: 'AUTHING_APP_REDIRECT_URI'
 });
 
 (async () => {
@@ -43,15 +43,13 @@ const authenticationClient = new AuthenticationClient({
 })();
 ```
 
-
 ## 请求响应
 
 类型： `IntrospectTokenResult`
 
 | 名称    | 类型 | <div style="width:80px">是否必含</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ------- | ---- | -------------------------------------- | ----------------------------------- | ------------------------------------- |
-| Success | bool | 是                                     | 是否撤回成功                        | `true`                                |
-
+| success | bool | 是                                     | 是否撤回成功                        | `true`                                |
 
 示例结果：
 
