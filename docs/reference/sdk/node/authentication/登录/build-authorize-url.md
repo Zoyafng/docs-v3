@@ -8,7 +8,7 @@
 
 ## 方法名称
 
-`AuthenticationClient.buildAuthorizeUrlByOidc`
+`AuthenticationClient.buildAuthorizeUrl`
 
 ## 请求参数
 
