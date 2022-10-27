@@ -45,47 +45,39 @@
 
 ### 示例代码
 
-```go
-package main
+```java
+public class GetAccessTokenByCodeTest {
+    // 需要替换成你的 Authing App ID
+    private static final String APP_ID = "AUTHING_APP_ID";
+    // 需要替换成你的 Authing App Secret
+    private static final String APP_SECRET = "AUTHING_APP_SECRET";
+    // 需要替换成你的 Authing App Host
+    private static final String APP_HOST = "AUTHING_APP_HOST";
+    // 需要替换成你的 Authing Redirect Uri
+    private static final String REDIRECT_URI = "AUTHING_REDIRECT_URI";
 
-import (
-	"fmt"
-	"github.com/Authing/authing-golang-sdk/v3/authentication"
-	"github.com/Authing/authing-golang-sdk/v3/dto"
-)
+    public static void main(String[] args) throws Throwable {
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId(APP_ID);
+        clientOptions.setAppSecret(APP_SECRET);
+        clientOptions.setAppHost(APP_HOST);
+        clientOptions.setRedirectUri(REDIRECT_URI);
 
-func main() {
-	options := &authentication.AuthenticationClientOptions{
-        // 需要替换成你的 Authing 应用 ID
-		AppId:       "AUTHING_APP_ID",
-        // 需要替换成你的 Authing 应用密钥
-		AppSecret:   "AUTHING_APP_SECRET",
-        // 需要替换成你的 Authing 应用域名
-		AppHost:     "AUTHING_APP_HOST",
-        // 需要替换成你的 Authing 应用回调地址
-		RedirectUri: "AUTHING_APP_REDIRECT_URI",
-	}
-	client, err := authentication.NewAuthenticationClient(options)
-	if err != nil {
-		// The exception needs to be handled by the developer.
-	}
+        AuthenticationClient client = new AuthenticationClient(clientOptions);
 
-    // 用户认证完成回调到你的系统之后，你可以从回调地址的 query 参数中得到一次性临时凭证
-    code := "REPLACE_ME_WITH_REAL_CODE"
-
-    // 使用 code
-    respDto := client.GetAccessTokenByCode(code)
-    fmt.Println(respDto)
+        OIDCTokenResponse response = client.getAccessTokenByCode("REPLACE_ME_WITH_REAL_CODE");
+        System.out.println(JsonUtils.serialize(response));
+    }
 }
 ```
 
 ## 使用 refresh_toke 换取新的 token
 
 :::hint-info
-**注意**：`refresh_token` 只有在发起 OIDC 登录请求时，在 `scope` 中添加 `offline_access` 才会返回。
+**注意**：只有在发起 OIDC 登录请求时，在 `scope` 中添加 `offline_access` 才会返回 `refresh_token`。
 :::
 
-当 `access_token` 过期时，可以使用 `refresh_token` 换取新的 `access_token`，从而在保证安全性的前提下，实现长期保持用户登录态无需用户再次登录的功能。
+当 `access_token` 过期时，可以使用 `refresh_token` 换取新的 `access_token`，从而在保证安全性的前提下，实现长期保持用户登录态无需用户再次登录。
 
 ### 请求参数
 
@@ -95,50 +87,44 @@ func main() {
 
 ### 示例代码
 
-```go
-package main
+```java
+public class GetNewAccessTokenByRefreshTokenTest {
+    // 需要替换成你的 Authing App ID
+    private static final String APP_ID = "AUTHING_APP_ID";
+    // 需要替换成你的 Authing App Secret
+    private static final String APP_SECRET = "AUTHING_APP_SECRET";
+    // 需要替换成你的 Authing App Host
+    private static final String APP_HOST = "AUTHING_APP_HOST";
+    // 需要替换成你的 Authing Redirect Uri
+    private static final String REDIRECT_URI = "AUTHING_REDIRECT_URI";
 
-import (
-	"fmt"
-	"github.com/Authing/authing-golang-sdk/v3/authentication"
-	"github.com/Authing/authing-golang-sdk/v3/dto"
-)
+    public static void main(String[] args) throws Throwable {
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId(APP_ID);
+        clientOptions.setAppSecret(APP_SECRET);
+        clientOptions.setAppHost(APP_HOST);
+        clientOptions.setRedirectUri(REDIRECT_URI);
 
-func main() {
-	options := &authentication.AuthenticationClientOptions{
-        // 需要替换成你的 Authing 应用 ID
-		AppId:       "AUTHING_APP_ID",
-        // 需要替换成你的 Authing 应用密钥
-		AppSecret:   "AUTHING_APP_SECRET",
-        // 需要替换成你的 Authing 应用域名
-		AppHost:     "AUTHING_APP_HOST",
-        // 需要替换成你的 Authing 应用回调地址
-		RedirectUri: "AUTHING_APP_REDIRECT_URI",
-	}
-	client, err := authentication.NewAuthenticationClient(options)
-	if err != nil {
-		// The exception needs to be handled by the developer.
-	}
+        AuthenticationClient client = new AuthenticationClient(clientOptions);
 
-    refreshToken := "REPLACE_ME_WITH_REFRESH_TOKEN"
-
-    // 使用 code
-    respDto, _ := client.GetNewAccessTokenByRefreshToken(refreshToken)
-    fmt.Println(respDto)
+        GetNewAccessTokenByRefreshTokenRespDto response = client.getNewAccessTokenByRefreshToken("REPLACE_ME_WITH_REFRESH_TOKEN");
+        System.out.println(JsonUtils.serialize(response));
+    }
 }
 ```
 
 ## 请求响应
 
-类型： `OIDCTokenResponse`
+类型： `GetNewAccessTokenByRefreshTokenRespDto`
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | access_token | string | 否 | 接口调用凭据，在限制时间内被授权访问资源 API。   |  `eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InIxTGtiQm8zOTI1UmIyWkZGckt5VTNNVmV4OVQyODE3S3gwdmJpNmlfS2MifQ.eyJqdGkiOiJ4R01uczd5cmNFckxiakNRVW9US1MiLCJzdWIiOiI1YzlmNzVjN2NjZjg3YjA1YTkyMWU5YjAiLCJpc3MiOiJodHRwczovL2F1dGhpbmcuY24iLCJpYXQiOjE1NTQ1Mzc4NjksImV4cCI6MTU1NDU0MTQ2OSwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBvZmZsaW5lX2FjY2VzcyBwaG9uZSBlbWFpbCIsImF1ZCI6IjVjYTc2NWUzOTMxOTRkNTg5MWRiMTkyNyJ9.wX05OAgYuXeYM7zCxhrkvTO_taqxrCTG_L2ImDmQjMml6E3GXjYA9EFK0NfWquUI2mdSMAqohX-ndffN0fa5cChdcMJEm3XS9tt6-_zzhoOojK-q9MHF7huZg4O1587xhSofxs-KS7BeYxEHKn_10tAkjEIo9QtYUE7zD7JXwGUsvfMMjOqEVW6KuY3ZOmIq_ncKlB4jvbdrduxy1pbky_kvzHWlE9El_N5qveQXyuvNZVMSIEpw8_y5iSxPxKfrVwGY7hBaF40Oph-d2PO7AzKvxEVMamzLvMGBMaRAP_WttBPAUSqTU5uMXwMafryhGdIcQVsDPcGNgMX6E1jzLA` |
 | id_token | string | 否 | 用户的身份凭证，解析后会包含用户信息。   |  `eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InIxTGtiQm8zOTI1UmIyWkZGckt5VTNNVmV4OVQyODE3S3gwdmJpNmlfS2MifQ.eyJzdWIiOiI1YzlmNzVjN2NjZjg3YjA1YTkyMWU5YjAiLCJub25jZSI6IjIyMTIxIiwiYXRfaGFzaCI6Ik5kbW9iZVBZOEFFaWQ2T216MzIyOXciLCJzaWQiOiI1ODM2NzllNC1lYWM5LTRjNDEtOGQxMS1jZWFkMmE5OWQzZWIiLCJhdWQiOiI1Y2E3NjVlMzkzMTk0ZDU4OTFkYjE5MjciLCJleHAiOjE1NTQ1NDE0NjksImlhdCI6MTU1NDUzNzg2OSwiaXNzIjoiaHR0cHM6Ly9hdXRoaW5nLmNuIn0.IQi5FRHO756e_eAmdAs3OnFMU7QuP-XtrbwCZC1gJntevYJTltEg1CLkG7eVhdi_g5MJV1c0pNZ_xHmwS0R-E4lAXcc1QveYKptnMroKpBWs5mXwoOiqbrjKEmLMaPgRzCOdLiSdoZuQNw_z-gVhFiMNxI055TyFJdXTNtExt1O3KmwqanPNUi6XyW43bUl29v_kAvKgiOB28f3I0fB4EsiZjxp1uxHQBaDeBMSPaRVWQJcIjAJ9JLgkaDt1j7HZ2a1daWZ4HPzifDuDfi6_Ob1ZL40tWEC7xdxHlCEWJ4pUIsDjvScdQsez9aV_xMwumw3X4tgUIxFOCNVEvr73Fg` |
-| refresh_token | string | 否 | refresh_token 用于获取新的 AccessToken。   |  `WPsGJbvpBjqXz6IJIr1UHKyrdVF` |
+| refresh_token | string | 否 | `refresh_token` 用于获取新的 AccessToken。   |  `WPsGJbvpBjqXz6IJIr1UHKyrdVF` |
 | token_type | string | 是 | token 类型。   |  `xxx` |
 | expire_in | number | 是 | 过期时间，单位是秒。   |  `7200` |
+| scope | string | 否 | `openid profile` | 需要请求的权限，必须包含 `openid`。如果需要获取手机号和邮箱需要包含 `phone email`；如果需要 `refresh_token` 需要包含 `offline_access`。多个 `scope` 请用空格分隔。`id_token` 解码后的内容中会包含这些 `scope` 对应的用户信息相关的字段。<br>- `openid`: 必须包含。<br>- `profile`: 返回 birthdate、family_name、gender，given_name、locale、middle_name、name、nickname、picture、preferred_username、profile、updated_at、website、zoneinfo 字段。<br>- `username`: 返回 username。<br>- `email`: 返回 email、email_verified。<br>- `phone`: 返回 phone_number、phone_number_verified。<br>- `offline_access`: 如果存在此参数，token 接口会返回 `refresh_token` 字段。<br>- `roles`: 返回用户的角色列表。<br>- `external_id`: 用户在原有系统的用户 ID。<br>- `extended_fields`: 返回用户的扩展字段信息，内容为一个对象，`key` 为扩展字段名，`value` 为扩展字段值。<br>- `tenant_id`: 返回用户的租户 ID。<br> | `openid profile` |
 
 
 
@@ -154,7 +140,8 @@ func main() {
     "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InIxTGtiQm8zOTI1UmIyWkZGckt5VTNNVmV4OVQyODE3S3gwdmJpNmlfS2MifQ.eyJzdWIiOiI1YzlmNzVjN2NjZjg3YjA1YTkyMWU5YjAiLCJub25jZSI6IjIyMTIxIiwiYXRfaGFzaCI6Ik5kbW9iZVBZOEFFaWQ2T216MzIyOXciLCJzaWQiOiI1ODM2NzllNC1lYWM5LTRjNDEtOGQxMS1jZWFkMmE5OWQzZWIiLCJhdWQiOiI1Y2E3NjVlMzkzMTk0ZDU4OTFkYjE5MjciLCJleHAiOjE1NTQ1NDE0NjksImlhdCI6MTU1NDUzNzg2OSwiaXNzIjoiaHR0cHM6Ly9hdXRoaW5nLmNuIn0.IQi5FRHO756e_eAmdAs3OnFMU7QuP-XtrbwCZC1gJntevYJTltEg1CLkG7eVhdi_g5MJV1c0pNZ_xHmwS0R-E4lAXcc1QveYKptnMroKpBWs5mXwoOiqbrjKEmLMaPgRzCOdLiSdoZuQNw_z-gVhFiMNxI055TyFJdXTNtExt1O3KmwqanPNUi6XyW43bUl29v_kAvKgiOB28f3I0fB4EsiZjxp1uxHQBaDeBMSPaRVWQJcIjAJ9JLgkaDt1j7HZ2a1daWZ4HPzifDuDfi6_Ob1ZL40tWEC7xdxHlCEWJ4pUIsDjvScdQsez9aV_xMwumw3X4tgUIxFOCNVEvr73Fg",
     "refresh_token": "WPsGJbvpBjqXz6IJIr1UHKyrdVF",
     "token_type": "xxx",
-    "expire_in": 7200
+    "expire_in": 7200,
+    "scope": "openid profile"
   }
 }
 ```

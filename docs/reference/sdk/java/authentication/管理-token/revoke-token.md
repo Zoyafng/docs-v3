@@ -20,37 +20,29 @@
 
 ## 示例代码
 
-```go
-package main
+```java
+public class RevokeTokenTest {
+    // 需要替换成你的 Authing App ID
+    private static final String APP_ID = "AUTHING_APP_ID";
+    // 需要替换成你的 Authing App Secret
+    private static final String APP_SECRET = "AUTHING_APP_SECRET";
+    // 需要替换成你的 Authing App Host
+    private static final String APP_HOST = "AUTHING_APP_HOST";
+    // 需要替换成你的 Authing Redirect Uri
+    private static final String REDIRECT_URI = "AUTHING_REDIRECT_URI";
 
-import (
-	"fmt"
-	"github.com/Authing/authing-golang-sdk/v3/authentication"
-	"github.com/Authing/authing-golang-sdk/v3/dto"
-)
+    public static void main(String[] args) throws Throwable {
+        AuthenticationClientOptions clientOptions = new AuthenticationClientOptions();
+        clientOptions.setAppId(APP_ID);
+        clientOptions.setAppSecret(APP_SECRET);
+        clientOptions.setAppHost(APP_HOST);
+        clientOptions.setRedirectUri(REDIRECT_URI);
 
-func main() {
-	options := &authentication.AuthenticationClientOptions{
-        // 需要替换成你的 Authing 应用 ID
-		AppId:       "AUTHING_APP_ID",
-        // 需要替换成你的 Authing 应用密钥
-		AppSecret:   "AUTHING_APP_SECRET",
-        // 需要替换成你的 Authing 应用域名
-		AppHost:     "AUTHING_APP_HOST",
-        // 需要替换成你的 Authing 应用回调地址
-		RedirectUri: "AUTHING_APP_REDIRECT_URI",
-	}
-	client, err := authentication.NewAuthenticationClient(options)
-	if err != nil {
-		// The exception needs to be handled by the developer.
-	}
+        AuthenticationClient client = new AuthenticationClient(clientOptions);
 
-    // 需要替换成真实的 access_token 或 refresh_token
-    token := "REPLACE_ME_WITH_REAL_TOKEN"
-
-    // 在线校验
-    success, _ := client.RevokeToken(code)
-    fmt.Println(success)
+        boolean response = client.revokeToken("REPLACE_ME_WITH_REAL_TOKEN");
+        System.out.println(response);
+    }
 }
 ```
 

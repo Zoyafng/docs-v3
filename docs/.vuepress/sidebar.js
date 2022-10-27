@@ -106,6 +106,10 @@ const zhCnNavBar = {
                       "path": "/reference/sdk/java/authentication/登录/signin"
                     },
                     {
+                      "title": "生成登录地址",
+                      "path": "/reference/sdk/java/authentication/登录/build-authorize-url.md"
+                    },
+                    {
                       "title": "使用移动端社会化登录",
                       "path": "/reference/sdk/java/authentication/登录/signin-by-mobile"
                     },
@@ -128,6 +132,23 @@ const zhCnNavBar = {
                     {
                       "title": "自建 APP 扫码登录：APP 端修改二维码状态",
                       "path": "/reference/sdk/java/authentication/登录/change-qrcode-status"
+                    }
+                  ]
+                },
+                {
+                  "title": "管理 Token",
+                  "children": [
+                    {
+                      "title": "获取 Token",
+                      "path": "/reference/sdk/java/authentication/管理-token/get-access-token.md"
+                    },
+                    {
+                      "title": "校验 Token",
+                      "path": "/reference/sdk/java/authentication/管理-token/introspect-token.md"
+                    },
+                    {
+                      "title": "撤销 Token",
+                      "path": "/reference/sdk/java/authentication/管理-token/revoke-token.md"
                     }
                   ]
                 },

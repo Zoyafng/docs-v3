@@ -9,7 +9,7 @@ Authing Go SDK 提供两种校验 Token 的方式：在线校验和本地校验�
 | <div style="width:80px">校验方式</div> | <div style="width:80px">优势</div>                          | <div style="width:80px">劣势</div>                                                                                                                                                                                                  |
 | -------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 在线校验                               | 使用中心服务器对 Token 进行校验，确保最终结果一定是正确的。 | <br> - 会产生网络请求。 <br>- 存在单点故障风险。                                                                                                                                                                                    |
-| 本地校验                               | 无需网络请求，性能更快。                                    | 如果 `access_token` 和 `refresh_token` 被手动撤销之后，应用服务器没有清除缓存的 `access_token`，本地校验任然会通过，所以应用服务器在 `access_token` 和 `refresh_token` 之后一定要清除本地缓存的 `access_token` 和 `refresh_token`。 |
+| 本地校验                               | 无需网络请求，性能更快。                                    | `access_token` 和 `refresh_token` 被手动撤销之后，应用服务器没有清除缓存的 `access_token`，本地校验仍然会通过，所以应用服务器在 `access_token` 和 `refresh_token` 之后一定要清除本地缓存的 `access_token` 和 `refresh_token`。 |
 
 
 ## 在线校验
@@ -151,13 +151,13 @@ func main() {
 
 | 名称                      | 类型   | <div style="width:80px">是否必含</div> | <div style="width:300px">描述</div>    | <div style="width:200px">示例值</div> |
 | ------------------------- | ------ | -------------------------------------- | -------------------------------------- | ------------------------------------- |
-| Id                        | string | 是                                     | 此 Token 的唯一 ID                     | `K5TYewNhvdGBdHiRifMyW`               |
-| Audience                  | string | 是                                     | 签发此 Token 的应用 ID                 | `xxxxxxx`                             |
-| Subject                   | string | 是                                     | 此 Token 对应的用户 ID                 | `xxxxxxx`                             |
+| Id                        | string | 是                                     | 此 Token 的唯一 ID。                     | `K5TYewNhvdGBdHiRifMyW`               |
+| Audience                  | string | 是                                     | 签发此 Token 的应用 ID。                 | `xxxxxxx`                             |
+| Subject                   | string | 是                                     | 此 Token 对应的用户 ID。                 | `xxxxxxx`                             |
 | ExpiresAt                 | string | 是                                     | Token 的到期时间，为单位为秒的时间戳。 | `1601460494`                          |
 | IssuedAt                  | string | 是                                     | Token 的签发时间，为单位为秒的时间戳。 | `1601460494`                          |
-| Issuer                    | string | 是                                     | OIDC Issuer                            | `https://example.authing.cn/oidc`     |
-| AccessTokenExtended.Scope | string | 是                                     | 使用逗号分割的 scope 数组              | `openid profile`                      |
+| Issuer                    | string | 是                                     | OIDC Issuer。                            | `https://example.authing.cn/oidc`     |
+| AccessTokenExtended.Scope | string | 是                                     | 使用逗号分割的 `scope` 数组。              | `openid profile`                      |
 
 
 示例结果：
