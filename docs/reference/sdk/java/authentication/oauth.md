@@ -191,7 +191,7 @@ authenticationClient.getNewAccessTokenByRefreshToken(refreshToken)
 ### 示例
 
 ```java
-Object res = authenticationClient.getNewAccessTokenByRefreshToken('Access token').execute();
+Object res = authenticationClient.getNewAccessTokenByRefreshToken("Access token").execute();
 ```
 
 ### 示例数据
@@ -219,7 +219,7 @@ authenticationClient.introspectToken(token)
 ### 示例
 
 ```java
-Object res = authenticationClient.introspectToken('Access token 或 Refresh token').execute();
+Object res = authenticationClient.introspectToken("Access token 或 Refresh token").execute();
 ```
 
 ### 示例数据
