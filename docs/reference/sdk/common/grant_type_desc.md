@@ -20,7 +20,7 @@
 1. 在你的应用中，让用户访问登录链接，浏览器跳转到 Authing，用户在 Authing 完成**认证**。
 2. Authing 服务器会签发一个临时的**授权码**，并通过浏览器重定向将授权码发送到你的应用前端。
 3. 你的应用将**授权码**和**校验码**发送到 Authing 获取 **AccessToken** 和 **IdToken**，如果需要，还会返回 Refresh token。
-4. 你的应用前端现在通过 IdToken 知道了用户的身份，后续使用 Access token 换取用户信息，重定向到前端其他页面，使用 AccessToken 调用你的后端 API 等等。
+4. 你的应用前端现在通过 IdToken 知道了用户的身份，后续使用 Access token 换取用户信息，重定向到前端其他页面，使用 AccessToken 调用你的后端 API。
 
 <img src="https://cdn.authing.co/authing-docs-v2/1.3.96/assets/img/pkce-2.7ef745c5.png" alt="drawing" />
 

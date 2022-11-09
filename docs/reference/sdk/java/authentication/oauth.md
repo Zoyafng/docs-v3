@@ -75,7 +75,7 @@ authenticationClient.getAccessTokenByCode(code)
 ### 示例
 
 ```java
-Object res = authenticationClient.getAccessTokenByCode('授权码 code').execute();
+Object res = authenticationClient.getAccessTokenByCode("授权码 code").execute();
 ```
 
 ### 示例数据
@@ -101,7 +101,7 @@ Object res = authenticationClient.getAccessTokenByCode('授权码 code').execute
 
 ## Token 换用户信息
 
-authenticationClient.getUserInfoByAccessToken('access_token')
+authenticationClient.getUserInfoByAccessToken(access_token)
 
 > 使用 Access token 获取用户信息。
 
@@ -112,7 +112,7 @@ authenticationClient.getUserInfoByAccessToken('access_token')
 ### 示例
 
 ```java
-Object res = authenticationClient.getUserInfoByAccessToken('Access token').execute();
+Object res = authenticationClient.getUserInfoByAccessToken("Access token").execute();
 ```
 
 ### 示例数据
