@@ -12,7 +12,7 @@ OAuth 是一个关于授权（Authorization）的开放网络标准，目前的�
 
 ## 初始化
 
-初始化 AuthenticationClient 时的参数：
+初始化 AuthenticationClient 时需传递 AuthenticationClientOptions 参数，其部分属性列如下：
 
 - `appId` \<String\> 应用 ID，必填。
 - `secret` \<String\> 应用密钥，必填。
@@ -26,16 +26,23 @@ OAuth 是一个关于授权（Authorization）的开放网络标准，目前的�
 ### 示例
 
 ```java
-// 使用 AppId 和 appHost 进行初始化
-AuthenticationClient authentication = new AuthenticationClient(APP_ID, APP_HOST);
-
-// 业务回调地址
-authentication.setRedirectUri(REDIRECT_URI);
+// 使用 AppId 和 AppHost 进行初始化
+AuthenticationClientOptions options = new AuthenticationClientOptions();
+options.setAppId("AUTHING_APP_ID");
+options.setAppHost("AUTHING_APP_HOST");
+// 协议
+options.setProtocol(ProtocolEnum.OAUTH.getValue());
+AuthenticationClient authenticationClient = null;
+try {
+    authenticationClient = new AuthenticationClient(options);
+} catch (IOException | ParseException e) {
+    e.printStackTrace();
+}
 ```
 
 ## 生成 OAuth 2.0 协议的用户登录链接
 
-authenticationClient.buildAuthorizeUrl(options)
+authenticationClient.buildAuthorizeUrl(IOidcParams options)
 
 > 生成 OAuth 2.0 协议的用户登录链接
 
@@ -43,17 +50,21 @@ authenticationClient.buildAuthorizeUrl(options)
 
 - `options` \<IOauthParams\> 发起授权登录时需要填写的参数。详情请见[使用 OAuth2.0 授权码模式](https://docs.authing.cn/v2/federation/oauth2/authorization-code/)。
 - `options.scope` \<String\> 请求的权限项目，选填，OIDC 协议默认为 `openid profile email phone address`，OAuth 2.0 协议默认为 `user`。
+- `options.nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `options.state` \<String\> 随机字符串，选填，默认自动生成。
-- `options.responseType` \<String\> 响应类型，选填，可选值为 `code`、`token` 默认为 `code`，授权码模式。
+- `options.responseMode` \<String\> 响应类型，选填，可选值为 `query`、`fragment`、`form_post`；默认为 `query`，即通过浏览器重定向发送 code 到回调地址。
+- `options.responseType` \<String\> 响应类型，选填，可选值为 `code`、`code id_token token`、`code id_token`、`code id_token`、`code token`、`id_token token`、`id_token`、`none`；默认为 `code`，授权码模式。
 - `options.redirectUri` \<String\> 回调地址，必填，默认为 SDK 初始化时的 redirectUri 参数。
 
 ### 示例
 
 ```java
-authenticationClient.setProtocol(ProtocolEnum.OAUTH);
-IOauthParams iOauthParams = new IOauthParams();
-iOauthParams.setRedirectUri("www.xxxxx.com");
-String oauthString = authenticationClient.buildAuthorizeUrl(iOauthParams);
+//options.setProtocol(ProtocolEnum.OAUTH.getValue());
+
+IOidcParams iOidcParams = new IOidcParams();
+iOidcParams.setRedirectUri("AUTHING_REDIRECTURI");
+iOidcParams.setNonce("nonce test");
+String oidcString = authenticationClient.buildAuthorizeUrl(iOidcParams);
 ```
 
 ### 示例数据
@@ -75,7 +86,7 @@ authenticationClient.getAccessTokenByCode(code)
 ### 示例
 
 ```java
-Object res = authenticationClient.getAccessTokenByCode("授权码 code").execute();
+OIDCTokenResponse respDto = authenticationClient.getAccessTokenByCode("code");
 ```
 
 ### 示例数据
@@ -112,7 +123,7 @@ authenticationClient.getUserInfoByAccessToken(access_token)
 ### 示例
 
 ```java
-Object res = authenticationClient.getUserInfoByAccessToken("Access token").execute();
+UserInfo userInfo = authenticationClient.getUserInfoByAccessToken("Access Token");
 ```
 
 ### 示例数据
@@ -191,7 +202,7 @@ authenticationClient.getNewAccessTokenByRefreshToken(refreshToken)
 ### 示例
 
 ```java
-Object res = authenticationClient.getNewAccessTokenByRefreshToken("Access token").execute();
+GetNewAccessTokenByRefreshTokenRespDto respDto = authenticationClient.getNewAccessTokenByRefreshToken("Refresh Token");
 ```
 
 ### 示例数据
@@ -219,7 +230,7 @@ authenticationClient.introspectToken(token)
 ### 示例
 
 ```java
-Object res = authenticationClient.introspectToken("Access token 或 Refresh token").execute();
+IntrospectTokenWithClientSecretPostRespDto respDto = authenticationClient.introspectToken("Access/Refresh token");
 ```
 
 ### 示例数据
