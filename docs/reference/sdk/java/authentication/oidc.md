@@ -12,7 +12,7 @@ OpenID Connect 简称 OIDC，是 OAuth 2.0 的一个扩展，主要增加了语�
 
 ## 初始化
 
-初始化 AuthenticationClient 时的参数：
+初始化 AuthenticationClient 时需传递 AuthenticationClientOptions 参数，其部分属性列如下：
 
 - `appId` \<String\> 应用 ID，必填。
 - `secret` \<String\> 应用密钥，必填。
@@ -26,22 +26,27 @@ OpenID Connect 简称 OIDC，是 OAuth 2.0 的一个扩展，主要增加了语�
 ### 示例
 
 ```java
-// 使用 AppId 和 appHost 进行初始化
-AuthenticationClient authentication = new AuthenticationClient(APP_ID, APP_HOST);
-
-// 业务回调地址
-authentication.setRedirectUri(REDIRECT_URI);
+// 使用 AppId 和 AppHost 进行初始化
+AuthenticationClientOptions options = new AuthenticationClientOptions();
+options.setAppId("AUTHING_APP_ID");
+options.setAppHost("AUTHING_APP_HOST");
+AuthenticationClient authenticationClient = null;
+try {
+    authenticationClient = new AuthenticationClient(options);
+} catch (IOException | ParseException e) {
+    e.printStackTrace();
+}
 ```
 
 ## 生成 OIDC 协议的用户登录链接
 
-authenticationClient.buildAuthorizeUrl(options)
+authenticationClient.buildAuthorizeUrl(IOidcParams options)
 
 > 生成 OIDC 协议的用户登录链接
 
 ### 参数
 
-- `options` \<IOidcParams\> 发起授权登录时需要填写的参数。详情请见[使用 OIDC 授权码模式](https://docs.authing.cn/v3/reference/sdk/java/authentication/oidc.html)。
+- `options` \<IOidcParams\> 发起授权登录时需要填写的参数。详情请见[使用 OIDC 授权码模式](https://docs.authing.cn/v2/federation/oidc/authorization-code/)。
 - `options.scope` \<String\> 请求的权限项目，选填，OIDC 协议默认为 `openid profile email phone address`，OAuth 2.0 协议默认为 `user`。
 - `options.nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `options.state` \<String\> 随机字符串，选填，默认自动生成。
@@ -53,9 +58,8 @@ authenticationClient.buildAuthorizeUrl(options)
 
 ```java
 // 拼接 OIDC 授权链接
-authenticationClient.setProtocol(ProtocolEnum.OIDC);
 IOidcParams iOidcParams = new IOidcParams();
-iOidcParams.setRedirectUri("www.xxxxxxx.com");
+iOidcParams.setRedirectUri("AUTHING_REDIRECTURI");
 iOidcParams.setNonce("nonce test");
 String oidcString = authenticationClient.buildAuthorizeUrl(iOidcParams);
 ```
@@ -74,12 +78,12 @@ authenticationClient.getAccessTokenByCode(code)
 
 ### 参数
 
-- `code` \<String\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OIDC 授权码模式](https://docs.authing.cn/v3/reference/sdk/java/authentication/oidc.html)，每个 Code 只能使用一次。
+- `code` \<String\> 授权码 Code，用户在认证成功后，Authing 会将授权码 Code 发送到回调地址，详情请见[使用 OIDC 授权码模式](https://docs.authing.cn/v2/federation/oidc/authorization-code/)，每个 Code 只能使用一次。
 
 ### 示例
 
 ```java
-Object res = authenticationClient.getAccessTokenByCode("授权码 code").execute();
+OIDCTokenResponse respDto = authenticationClient.getAccessTokenByCode("code");
 ```
 
 ### 示例数据
@@ -117,7 +121,7 @@ authenticationClient.getUserInfoByAccessToken(access_token)
 ### 示例
 
 ```java
-Object res = authenticationClient.getUserInfoByAccessToken("Access token").execute();
+UserInfo userInfo = authenticationClient.getUserInfoByAccessToken("Access Token");
 ```
 
 ### 示例数据
@@ -196,7 +200,7 @@ authenticationClient.getNewAccessTokenByRefreshToken(refreshToken)
 ### 示例
 
 ```java
-Object res = authenticationClient.getNewAccessTokenByRefreshToken("Access token").execute();
+GetNewAccessTokenByRefreshTokenRespDto respDto = authenticationClient.getNewAccessTokenByRefreshToken("Refresh Token");
 ```
 
 ### 示例数据
@@ -225,7 +229,7 @@ authenticationClient.introspectToken(token)
 ### 示例
 
 ```java
-Object res = authenticationClient.introspectToken("Access token 或 Refresh token").execute();
+IntrospectTokenWithClientSecretPostRespDto respDto = authenticationClient.introspectToken("Access/Refresh token");
 ```
 
 ### 示例数据
@@ -272,8 +276,9 @@ authenticationClient.validateToken(param)
 
 ```java
 ValidateTokenParams params = new ValidateTokenParams();
+// params.setIdToken("Id Token");
 params.setAccessToken("Access Token");
-Object res = authenticationClient.validateToken(params).execute();
+ValidateTokenRespDto respDto = authenticationClient.validateToken(params);
 ```
 
 ### 示例数据
@@ -353,7 +358,7 @@ authenticationClient.buildLogoutUrl(params)
 ### 参数
 
 - `params` \<ILogoutParams\> 登出配置项
-- `params.expert` \<Boolean\> 是否开启专家模式，默认为 `false`。
+- `params.state` \<String\> 随机字符串，选填，默认自动生成
 - `params.redirectUri` \<String\> 登出后的重定向地址
 - `params.idToken` \<String\> 用户的 idToken
 
@@ -363,30 +368,19 @@ authenticationClient.buildLogoutUrl(params)
 
 ```java
 // 拼接前端万能登出链接
-AuthenticationClient authenticationClient = new AuthenticationClient();
-authenticationClient.setAppId("应用 ID");
-authenticationClient.setHost("https://{YOUR_DOMAIN}.authing.cn");
-authenticationClient.setRedirectUri("业务回调地址");
-ILogoutParams params = new ILogoutParams();
-params.setRedirectUri("https://authing.cn");
-String url = authenticationClient.buildLogoutUrl(params);
+BuildLogoutUrlParams params = new BuildLogoutUrlParams();
+String logoutUrl = authenticationClient.buildLogoutUrl(params);
 ```
 
-使用 OIDC 协议标准链接退出登录，需要传入当前用户的 **Id token**，且登出回调地址**必须与控制台配置的一致**：
+使用 OIDC 协议标准链接退出登录，需在 authenticationClientOptions 中 setProtocol（默认OIDC） ，需要传入当前用户的 **Id token**，且登出回调地址**必须与控制台配置的一致**：
 
 ```java
 // 拼接符合 OIDC 协议标准的登出链接
- AuthenticationClient authenticationClient = new AuthenticationClient();
- authenticationClient.setAppId("应用 ID");
- authenticationClient.setHost("https://{YOUR_DOMAIN}.authing.cn");
- authenticationClient.setRedirectUri("业务回调地址");
- authenticationClient.setProtocol(ProtocolEnum.OIDC);
-
- ILogoutParams params = new ILogoutParams();
- params.setRedirectUri("https://authing.cn");
- params.setExpert("true");
- params.setIdToken("待退出用户的 idToken");
- String url = authenticationClient.buildLogoutUrl(params);
+BuildLogoutUrlParams params = new BuildLogoutUrlParams();
+params.setPostLogoutRedirectUri("AUTHING_LOGOUG_REDIRECT_URI");
+params.setIdTokenHint("AUTHING_ID_TOKEN");
+params.setState("random string");
+String logoutUrl = authenticationClient.buildLogoutUrl(params);
 ```
 
 ## Client Credentials 模式获取 Access Token
@@ -405,10 +399,10 @@ authenticationClient.getAccessTokenByClientCredentials(scope, options)
 ### 示例
 
 ```java
- ClientCredentialInput clientCredentialInput = new ClientCredentialInput("60519949a70e7dda12785693"
-                , "be1a5596b3185d88c097ae310e3184ed");
-
-Object res = testAC.getAccessTokenByClientCredentials("testr2", clientCredentialInput).execute();
+ClientCredentialInput input = new ClientCredentialInput();
+input.setAccessKey("AUTHING_ACCESS_KEY");
+input.setAccessSecret("AUTHING_ACCESS_SECRET");
+GetAccessTokenByClientCredentialsRespDto respDto = authenticationClient.getAccessTokenByClientCredentials("scope", input);
 ```
 
 ### 示例数据
