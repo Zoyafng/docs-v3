@@ -6992,10 +6992,10 @@ const zhCnNavBar = {
             },
             {
               title: '版本更新',
-              path: '/reference/sdk/changelog-authing-js-sdk'
+              path: '/reference/sdk/miniapp/changelog'
             }
           ]
-        }
+        },
         // {
         // title: '微信网页授权（开发中）',
         // path: '/reference/sdk/weixin-official-account/',
@@ -7010,26 +7010,21 @@ const zhCnNavBar = {
         //   }
         // ]
         // },
+        {
+          title: '单点登录 SSO',
+          path: '/reference/sdk/web',
+          children: [
+            {
+              title: '开始集成',
+              path: '/reference/sdk/web/quick'
+            },
+            {
+              title: '版本更新',
+              path: '/reference/sdk/web/changelog'
+            }
+          ]
+        }
       ]
-    },
-    {
-      title: '单点登录 SSO（V3 开发中）',
-      gray: true,
-      collapsable: false,
-      sidebarDepth: 1
-    },
-    {
-      title: '单点登录 SSO（查看 V2 版本）',
-      path: 'https://docs.authing.cn/v2/reference/sdk-for-sso-spa.html'
-    },
-    {
-      title: '登录组件 Guard（V3 开发中）',
-      collapsable: false,
-      sidebarDepth: 1
-    },
-    {
-      title: '登录组件 Guard（查看 V2 版本）',
-      path: 'https://docs.authing.cn/v2/reference/guard/v2/web.html'
     },
     // {
     // title: 'Guard 登录组件（开发中）',
