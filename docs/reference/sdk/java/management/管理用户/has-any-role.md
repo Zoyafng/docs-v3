@@ -13,7 +13,7 @@
 
 ## 方法名称
 
-`AuthenticationClient.hasAnyRole`
+`ManagementClient.hasAnyRole`
 
 ## 请求参数
 
@@ -73,7 +73,7 @@ public class HasAnyRoleTest {
 
 
 
-  
+
 ## 请求响应
 
 类型： `HasAnyRoleRespDto`
@@ -108,7 +108,7 @@ public class HasAnyRoleTest {
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| namespace | string | 否 | 所属权限分组的 code   |  `default` |
+| namespace | string | 否 | 所属权限分组(权限空间)的 Code   |  `default` |
 | code | string | 是 | 角色 code   |  `admin` |
 
 

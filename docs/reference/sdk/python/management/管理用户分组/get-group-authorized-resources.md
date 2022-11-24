@@ -13,19 +13,19 @@
 
 ## 方法名称
 
-`AuthenticationClient.get_group_authorized_resources`
+`ManagementClient.get_group_authorized_resources`
 
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
  | code | string  | 是 | - | 分组 code  | `developer` |
- | namespace | string  | 否 | - | 所属权限分组的 code  | `default` |
+ | namespace | string  | 否 | - | 所属权限分组(权限空间)的 Code  | `default` |
  | resourceType | string  | 否 | - | 资源类型  |  |
 
 
 
-  
+
 ## 请求响应
 
 类型： `AuthorizedResourceListRespDto`

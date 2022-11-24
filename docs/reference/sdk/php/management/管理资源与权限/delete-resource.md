@@ -13,14 +13,14 @@
 
 ## 方法名称
 
-`AuthenticationClient.deleteResource`
+`ManagementClient.deleteResource`
 
 ## 请求参数
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | code | string | 是 | - | 资源唯一标志符  | `ecs` |
-| namespace | string | 否 | - | 所属权限分组的 code  | `default` |
+| namespace | string | 否 | - | 所属权限分组(权限空间)的 Code  | `default` |
 
 
 
@@ -57,7 +57,7 @@ print_r($data);
 ```
 
 
-  
+
 ## 请求响应
 
 类型： `IsSuccessRespDto`

@@ -13,7 +13,7 @@
 
 ## 方法名称
 
-`AuthenticationClient.assignRole`
+`ManagementClient.assignRole`
 
 ## 请求参数
 
@@ -21,6 +21,7 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | targets | <a href="#TargetDto">TargetDto[]</a> | 是 | - | 目标对象 数组长度限制：50。 | `[{"targetIdentifier":"60b49eb83fd80adb96f26e68","targetType":"USER"}]` |
 | code | string | 是 | - | 权限分组内角色的唯一标识符  | `code1` |
+| endTime | number | 否 | - | 主体过期时间毫秒值  | `1669114748050` |
 | namespace | string | 否 | - | 所属权限分组的 code  | `60b49eb83fd80adb96f26e68` |
 
 
@@ -73,7 +74,7 @@ public class AssignRoleTest {
 
 
 
-  
+
 ## 请求响应
 
 类型： `IsSuccessRespDto`
