@@ -19,7 +19,7 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| codeList | string[] | 是 | - | 权限分组 code 列表 数组长度限制：10。 | `["example1","example2"]` |
+| codes | string[] | 是 | - | 权限分组 code 列表 数组长度限制：10。 | `["example1","example2"]` |
 
 
 

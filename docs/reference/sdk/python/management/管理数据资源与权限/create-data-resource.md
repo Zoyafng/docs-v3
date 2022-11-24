@@ -22,7 +22,7 @@
   "type": "STRING",
   "description": "这是一个数据资源字符串类型创建",
   "struct":"str1",
-  "actionList": ["get","read","update"]
+  "actions": ["get","read","update"]
 }
 ```
 
@@ -36,11 +36,11 @@
   "description": "这是一个数据资源数组类型创建",
   "type": "ARRAY",
   "struct":["array1", "array2", "array3"],
-  "actionList": ["get","read","update"]
+  "actions": ["get","read","update"]
 }
 ```
 
-### 创建数据资源书类型示例
+### 创建数据资源树类型示例
 
 ```json
 {
@@ -60,11 +60,11 @@
         "children": [{
           "code": "tree3",
           "name": "tree3",
-          "value": "tree3",
+          "value": "tree3"
         }]
       }]
   }],
-  "actionList": ["get","read","update"]
+  "actions": ["get","read","update"]
 }
 ```
   
@@ -77,7 +77,7 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| actionList | string[] | 是 | - | 数据资源权限操作列表 数组长度限制：50。 | `["read","get"]` |
+| actions | string[] | 是 | - | 数据资源权限操作列表 数组长度限制：50。 | `["read","get"]` |
 | struct | <a href="#"></a> | 是 | - | 数据资源节点类型，支持字符串（STRING）、树结构（TREE）和数组结构（ARRAY）。  |  |
 | type | string | 是 | - | 数据资源类型，目前支持树结构（TREE）、字符串（STRING）、数组（ARRAY）  | `TREE` |
 | resourceCode | string | 是 | - | 数据资源 Code,权限空间内唯一  | `dataResourceTestCode` |
@@ -114,7 +114,7 @@
     "resourceCode": "dataResourceTestCode",
     "type": "TREE",
     "description": "示例数据资源描述",
-    "actionList": "[\"read\",\"get\"]"
+    "actions": "[\"read\",\"get\"]"
   }
 }
 ```
@@ -131,6 +131,6 @@
 | type | string | 是 | 数据资源类型，目前支持树结构（TREE）、字符串（STRING）、数组（ARRAY）   | TREE |
 | description | string | 否 | 数据资源描述   |  `示例数据资源描述` |
 | struct |  | 是 | 数据资源节点类型，支持字符串（STRING）、树结构（TREE）和数组结构（ARRAY）。   |  |
-| actionList | array | 是 | 数据资源权限操作列表 数组长度限制：50。  |  `["read","get"]` |
+| actions | array | 是 | 数据资源权限操作列表 数组长度限制：50。  |  `["read","get"]` |
 
 

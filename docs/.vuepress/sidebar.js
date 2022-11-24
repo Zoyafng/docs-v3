@@ -620,51 +620,63 @@ const zhCnNavBar = {
                   ]
                 },
                 {
-                  title: '管理角色',
-                  children: [
+                  "title": "管理角色",
+                  "children": [
                     {
-                      title: '获取角色详情',
-                      path: '/reference/sdk/java/management/管理角色/get-role'
+                      "title": "获取角色详情",
+                      "path": "/reference/sdk/java/management/管理角色/get-role"
                     },
                     {
-                      title: '分配角色',
-                      path: '/reference/sdk/java/management/管理角色/assign-role'
+                      "title": "分配角色",
+                      "path": "/reference/sdk/java/management/管理角色/assign-role"
                     },
                     {
-                      title: '移除分配的角色',
-                      path: '/reference/sdk/java/management/管理角色/revoke-role'
+                      "title": "移除分配的角色",
+                      "path": "/reference/sdk/java/management/管理角色/revoke-role"
                     },
                     {
-                      title: '获取角色被授权的资源列表',
-                      path: '/reference/sdk/java/management/管理角色/get-role-authorized-resources'
+                      "title": "获取角色被授权的资源列表",
+                      "path": "/reference/sdk/java/management/管理角色/get-role-authorized-resources"
                     },
                     {
-                      title: '获取角色成员列表',
-                      path: '/reference/sdk/java/management/管理角色/list-role-members'
+                      "title": "获取角色成员列表",
+                      "path": "/reference/sdk/java/management/管理角色/list-role-members"
                     },
                     {
-                      title: '获取角色的部门列表',
-                      path: '/reference/sdk/java/management/管理角色/list-role-departments'
+                      "title": "获取角色的部门列表",
+                      "path": "/reference/sdk/java/management/管理角色/list-role-departments"
                     },
                     {
-                      title: '创建角色',
-                      path: '/reference/sdk/java/management/管理角色/create-role'
+                      "title": "创建角色",
+                      "path": "/reference/sdk/java/management/管理角色/create-role"
                     },
                     {
-                      title: '获取角色列表',
-                      path: '/reference/sdk/java/management/管理角色/list-roles'
+                      "title": "获取角色列表",
+                      "path": "/reference/sdk/java/management/管理角色/list-roles"
                     },
                     {
-                      title: '删除角色',
-                      path: '/reference/sdk/java/management/管理角色/delete-roles-batch'
+                      "title": "单个权限分组（权限空间）内删除角色",
+                      "path": "/reference/sdk/java/management/管理角色/delete-roles-batch"
                     },
                     {
-                      title: '批量创建角色',
-                      path: '/reference/sdk/java/management/管理角色/create-roles-batch'
+                      "title": "批量创建角色",
+                      "path": "/reference/sdk/java/management/管理角色/create-roles-batch"
                     },
                     {
-                      title: '修改角色',
-                      path: '/reference/sdk/java/management/管理角色/update-role'
+                      "title": "修改角色",
+                      "path": "/reference/sdk/java/management/管理角色/update-role"
+                    },
+                    {
+                      "title": "跨权限分组（空间）删除角色",
+                      "path": "/reference/sdk/java/management/管理角色/multiple-namespace-delete-roles-batch"
+                    },
+                    {
+                      "title": "校验角色 Code 或者名称是否可用",
+                      "path": "/reference/sdk/java/management/管理角色/check-role-params"
+                    },
+                    {
+                      "title": "角色 list 分页查询",
+                      "path": "/reference/sdk/java/management/管理角色/list-role-assignments"
                     }
                   ]
                 },
@@ -893,26 +905,6 @@ const zhCnNavBar = {
                     {
                       "title": "检查数据资源名称或者 Code 是否有效",
                       "path": "/reference/sdk/java/management/管理数据资源与权限/check-data-resource-exists"
-                    },
-                    {
-                      "title": "获取用户权限列表",
-                      "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-permission-list"
-                    },
-                    {
-                      "title": "判断用户权限",
-                      "path": "/reference/sdk/java/management/管理数据资源与权限/check-permission"
-                    },
-                    {
-                      "title": "获取用户指定资源权限列表",
-                      "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-resource-permission-list"
-                    },
-                    {
-                      "title": "获取资源被授权的用户列表",
-                      "path": "/reference/sdk/java/management/管理数据资源与权限/list-resource-targets"
-                    },
-                    {
-                      "title": "判断用户在同层级资源下的权限",
-                      "path": "/reference/sdk/java/management/管理数据资源与权限/check-user-same-level-permission"
                     }
                   ]
                 },

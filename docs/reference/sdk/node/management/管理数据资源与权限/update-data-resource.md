@@ -24,7 +24,7 @@
 | resourceName | string | 否 | - | 数据资源名称,权限空间内唯一  | `示例数据资源名称` |
 | description | string | 否 | - | 数据资源描述  | `示例数据资源描述` |
 | struct | <a href="#"></a> | 否 | - | 数据资源节点类型，支持字符串（STRING）、树结构（TREE）和数组结构（ARRAY）。  |  |
-| actionList | string[] | 否 | - | 数据资源权限操作列表 数组长度限制：50。 | `["read","get"]` |
+| actions | string[] | 否 | - | 数据资源权限操作列表 数组长度限制：50。 | `["read","get"]` |
 
 
 
@@ -55,7 +55,7 @@
     "resourceCode": "dataResourceTestCode",
     "type": "TREE",
     "description": "示例数据资源描述",
-    "actionList": "[\"read\",\"get\"]"
+    "actions": "[\"read\",\"get\"]"
   }
 }
 ```
@@ -72,6 +72,6 @@
 | type | string | 是 | 数据资源类型，目前支持树结构（TREE）、字符串（STRING）、数组（ARRAY）   | TREE |
 | description | string | 否 | 数据资源描述   |  `示例数据资源描述` |
 | struct |  | 是 | 数据资源节点类型，支持字符串（STRING）、树结构（TREE）和数组结构（ARRAY）。   |  |
-| actionList | array | 是 | 数据资源权限操作列表 数组长度限制：50。  |  `["read","get"]` |
+| actions | array | 是 | 数据资源权限操作列表 数组长度限制：50。  |  `["read","get"]` |
 
 

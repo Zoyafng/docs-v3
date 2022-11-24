@@ -52,7 +52,7 @@
     "type": "TREE",
     "description": "示例数据资源描述",
     "namespaceCode": "code1",
-    "actionList": "[\"read\",\"get\"]"
+    "actions": "[\"read\",\"get\"]"
   }
 }
 ```
@@ -70,6 +70,6 @@
 | description | string | 否 | 数据资源描述   |  `示例数据资源描述` |
 | struct |  | 是 | 数据资源节点类型，支持字符串（STRING）、树结构（TREE）和数组结构（ARRAY）。   |  |
 | namespaceCode | string | 是 | 数据策略所在的权限空间 Code   |  `code1` |
-| actionList | array | 是 | 数据资源权限操作列表 数组长度限制：50。  |  `["read","get"]` |
+| actions | array | 是 | 数据资源权限操作列表 数组长度限制：50。  |  `["read","get"]` |
 
 
