@@ -54,8 +54,7 @@ public class GetPermissionNamespacesBatchTest {
         ManagementClient client = new ManagementClient(clientOptions);
 
         GetPermissionNamespacesBatchDto request = new GetPermissionNamespacesBatchDto();
-        request.setCodes("codes1,codes2");
-
+        request.setCodes("code1,code2");
         GetPermissionNamespaceListResponseDto response = client.getPermissionNamespacesBatch(request);
         System.out.println(JsonUtils.serialize(response));
     }

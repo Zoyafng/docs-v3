@@ -88,6 +88,55 @@
 
 
 
+## 示例代码
+
+```ts
+import { ManagementClient, Models } from 'authing-node-sdk';
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  // 需要替换成你的 Authing Access Key ID
+  accessKeyId: 'AUTHING_ACCESS_KEY_ID',
+  // 需要替换成你的 Authing Access Key Secret
+  accessKeySecret: 'AUTHING_ACCESS_KEY_SECRET',
+  // 如果是私有化部署的客户，需要设置 Authing 服务域名
+  // host: 'https://api.your-authing-service.com'
+});
+
+(async () => {
+
+  const result = await managementClient.createDataResource({
+    namespaceCode: 'examplePermissionNamespace',
+    resourceCode: 'treeResourceCode',
+    resourceName: '示例树数据资源',
+    type: Models.CreateDataResourceDto.type.TREE,
+    struct: [{
+      code: 'tree1',
+      name: '树节点1',
+      value: '树节点1描述',
+      children:[{
+        code: 'tree11',
+        name: '树节点11',
+        value: '树节点11描述'
+      }]
+    },{
+      code: 'tree2',
+      name: '树节点2',
+      value: '树节点2描述'
+    }],
+    description:'示例树数据资源描述',
+    actions:['get','read']
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
+
+
+
+
 ## 请求响应
 
 类型： `CreateDataResourceResponseDto`

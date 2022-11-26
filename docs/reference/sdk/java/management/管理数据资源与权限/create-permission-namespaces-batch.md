@@ -60,6 +60,7 @@ public class CreatePermissionNamespacesBatchTest {
         createPermissionNamespacesBatchItem1.setName("示例权限空间1");
         createPermissionNamespacesBatchItem1.setCode("examplePermissionNamespace1");
         createPermissionNamespacesBatchItem1.setDescription("示例权限空间1描述");
+        createPermissionNamespacesBatch.add(createPermissionNamespacesBatchItem1);
         CreatePermissionNamespacesBatchItemDto createPermissionNamespacesBatchItem2 = new CreatePermissionNamespacesBatchItemDto();
         createPermissionNamespacesBatchItem2.setName("示例权限空间2");
         createPermissionNamespacesBatchItem2.setCode("examplePermissionNamespace2");

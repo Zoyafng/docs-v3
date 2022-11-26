@@ -24,6 +24,50 @@
 
 
 
+## 示例代码
+
+```ts
+import { ManagementClient, Models } from 'authing-node-sdk';
+
+// 初始化 ManagementClient
+const managementClient = new ManagementClient({
+  // 需要替换成你的 Authing Access Key ID
+  accessKeyId: 'AUTHING_ACCESS_KEY_ID',
+  // 需要替换成你的 Authing Access Key Secret
+  accessKeySecret: 'AUTHING_ACCESS_KEY_SECRET',
+  // 如果是私有化部署的客户，需要设置 Authing 服务域名
+  // host: 'https://api.your-authing-service.com'
+});
+
+(async () => {
+
+  const result = await managementClient.createPermissionNamespacesBatch({
+    list: [
+      {
+        code: 'examplePermissionNamespace1',
+        name: '示例权限空间1',
+        description: '示例权限空间1描述'
+      }, {
+        code: 'examplePermissionNamespace2',
+        name: '示例权限空间2',
+        description: '示例权限空间2描述'
+      }, {
+        code: 'examplePermissionNamespace3',
+        name: '示例权限空间3',
+        description: '示例权限空间3描述'
+      },
+    ]
+  });
+
+
+  console.log(JSON.stringify(result, null, 2));
+})();
+
+```
+
+
+
+
 ## 请求响应
 
 类型： `IsSuccessRespDto`
