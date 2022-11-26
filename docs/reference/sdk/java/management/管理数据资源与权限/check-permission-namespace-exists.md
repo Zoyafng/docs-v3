@@ -19,8 +19,8 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| name | string | 是 | - | 权限空间名称  | `示例权限空间` |
 | code | string | 否 | - | 权限空间 Code  | `examplePermissionNamespace` |
+| name | string | 否 | - | 权限空间名称  | `示例权限空间` |
 
 
 
@@ -53,11 +53,11 @@ public class CheckPermissionNamespaceExistsTest {
         ManagementClient client = new ManagementClient(clientOptions);
 
         CheckPermissionNamespaceExistsDto request1 = new CheckPermissionNamespaceExistsDto();
-        request1.setName("name_7991");
+        request1.setName("示例权限空间名称");
         PermissionNamespaceCheckExistsRespDto response1 = client.checkPermissionNamespaceExists(request1);
         System.out.println(JsonUtils.serialize(response1));
         CheckPermissionNamespaceExistsDto request2 = new CheckPermissionNamespaceExistsDto();
-        request2.setCode("code_6301");
+        request2.setCode("examplePermissionNamespace");
         PermissionNamespaceCheckExistsRespDto response2 = client.checkPermissionNamespaceExists(request2);
         System.out.println(JsonUtils.serialize(response2));
     }
@@ -104,6 +104,6 @@ public class CheckPermissionNamespaceExistsTest {
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | isValid | boolean | 是 | 校验权限空间名称或者权限空间名称 Code 是否有效   |  ` false` |
-| message | string | 是 | 权限空间名称或权限空间 Code 校验失败提示信息,如果校验成功, Message 不返回   |  ` permission namespace code already exist` |
+| message | string | 否 | 权限空间名称或权限空间 Code 校验失败提示信息,如果校验成功, Message 不返回   |  ` permission namespace code already exist` |
 
 
