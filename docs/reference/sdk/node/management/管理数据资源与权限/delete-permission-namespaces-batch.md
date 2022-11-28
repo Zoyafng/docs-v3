@@ -42,7 +42,7 @@ const managementClient = new ManagementClient({
 (async () => {
 
   const result = await managementClient.deletePermissionNamespacesBatch({
-    codes: ['examplePermissionNamespace1', 'examplePermissionNamespace2']
+    codes: 'examplePermissionNamespace1,examplePermissionNamespace2'
   });
 
 

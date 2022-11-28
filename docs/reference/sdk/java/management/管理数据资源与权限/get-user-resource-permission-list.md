@@ -34,12 +34,12 @@
   "data":{
     "permissionList": [{
       "namespaceCode": "权限空间1",
-      "actionList": ["read","get"]  
-      "resource": "strResourceCode1",
+      "actionList": ["read","get"],  
+      "resource": "strResourceCode1"
     },{
       "namespaceCode": "权限空间1",
-      "actionList": ["read","update","delete"]      
-      "resource": "arrayResourceCode1",
+      "actionList": ["read","update","delete"], 
+      "resource": "arrayResourceCode1"
     }]
   }
 }
@@ -67,12 +67,12 @@
   "data":{
     "permissionList": [{
       "namespaceCode": "权限空间1",
-      "actionList": ["read", "update", "delete"]  
-      "resource": "/treeResourceCode1/StructCode1/resourceStructChildrenCode1",
+      "actionList": ["read", "update", "delete"],
+      "resource": "/treeResourceCode1/StructCode1/resourceStructChildrenCode1"
     },{
       "namespaceCode": "权限空间1",
-      "actionList": ["read", "get", "delete"]      
-      "resource": "/treeResourceCode2/StructCode1/resourceStructChildrenCode1",
+      "actionList": ["read", "get", "delete"],     
+      "resource": "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"
     }]
   }
 }

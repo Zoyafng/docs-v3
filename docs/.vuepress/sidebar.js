@@ -905,6 +905,26 @@ const zhCnNavBar = {
                     {
                       "title": "检查数据资源名称或者 Code 是否有效",
                       "path": "/reference/sdk/java/management/管理数据资源与权限/check-data-resource-exists"
+                    },
+                    {
+                      "title": "获取用户权限列表",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-permission-list"
+                    },
+                    {
+                      "title": "判断用户权限",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/check-permission"
+                    },
+                    {
+                      "title": "获取用户指定资源权限列表",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-resource-permission-list"
+                    },
+                    {
+                      "title": "获取资源被授权的用户列表",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/list-resource-targets"
+                    },
+                    {
+                      "title": "判断用户在同层级资源下的权限",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/check-user-same-level-permission"
                     }
                   ]
                 },
@@ -2016,6 +2036,93 @@ const zhCnNavBar = {
                     }
                   ]
                 },
+                {
+                  "title": "管理数据资源与权限",
+                  "children": [
+                    {
+                      "title": "创建权限空间",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/create-permission-namespace"
+                    },
+                    {
+                      "title": "批量创建权限空间",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/create-permission-namespaces-batch"
+                    },
+                    {
+                      "title": "获取权限空间详情",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/get-permission-namespace"
+                    },
+                    {
+                      "title": "批量获取权限空间详情列表",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/get-permission-namespaces-batch"
+                    },
+                    {
+                      "title": "分页获取权限空间列表",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/list-permission-namespaces"
+                    },
+                    {
+                      "title": "修改权限空间",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/update-permission-namespace"
+                    },
+                    {
+                      "title": "删除权限空间",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/delete-permission-namespace"
+                    },
+                    {
+                      "title": "批量删除权限空间",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/delete-permission-namespaces-batch"
+                    },
+                    {
+                      "title": "校验权限空间 Code 或者名称是否有效",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/check-permission-namespace-exists"
+                    },
+                    {
+                      "title": "分页查询权限空间下所有的角色列表",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/list-permission-namespace-roles"
+                    },
+                    {
+                      "title": "创建数据资源",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/create-data-resource"
+                    },
+                    {
+                      "title": "获取数据资源列表",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/list-data-resources"
+                    },
+                    {
+                      "title": "获取数据资源信息",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/get-data-resource"
+                    },
+                    {
+                      "title": "修改数据资源",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/update-data-resource"
+                    },
+                    {
+                      "title": "删除数据资源",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/delete-data-resource"
+                    },
+                    {
+                      "title": "检查数据资源名称或者 Code 是否有效",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/check-data-resource-exists"
+                    },
+                    {
+                      "title": "获取用户权限列表",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/get-user-permission-list"
+                    },
+                    {
+                      "title": "判断用户权限",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/check-permission"
+                    },
+                    {
+                      "title": "获取用户指定资源权限列表",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/get-user-resource-permission-list"
+                    },
+                    {
+                      "title": "获取资源被授权的用户列表",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/list-resource-targets"
+                    },
+                    {
+                      "title": "判断用户在同层级资源下的权限",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/check-user-same-level-permission"
+                    },
                 {
                   title: '管理应用',
                   children: [

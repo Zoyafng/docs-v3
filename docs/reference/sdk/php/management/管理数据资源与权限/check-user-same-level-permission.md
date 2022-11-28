@@ -18,7 +18,7 @@
   "namespaceCode": "权限空间1",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "action": "read"
-  "resource":"strResourceCode1",
+  "resource":"strResourceCode1"
 }
 ```
 
@@ -28,8 +28,8 @@
 {
   "namespaceCode": "权限空间1",
   "userId": "63721xxxxxxxxxxxxdde14a3",
-  "action": "read"
-  "resource":"arrayResourceCode1",
+  "action": "read",
+  "resource":"arrayResourceCode1"
 }
 ```
 

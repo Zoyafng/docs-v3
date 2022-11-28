@@ -51,7 +51,7 @@
           "resourceCode": "tree1",
           "actionList":[{
             "nodePath": "/node",
-            "nodeActions": ["get","read","update"],
+            "nodeActions": ["get","read","update"]
           }]
         }]
       }]

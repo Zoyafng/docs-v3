@@ -20,32 +20,14 @@
   "namespaceCode": "权限空间1",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "action": "get"
-  "resources":["strResourceCode1", "arrayResourceCode1"],
+  "resources":["strResourceCode1", "arrayResourceCode1"]
 }
 ```
 
 - 出参
 
 ```json
-{
-
-  "statusCode": 200,
-  "message": "操作成功",
-  "apiCode": 20001,
-  "data":{
-    "checkResultList": [{
-      "namespaceCode": "权限空间1",
-      "action": "get",
-      "resource": "strResourceCode1",
-      "enabled": true     
-    },{
-      "namespaceCode": "权限空间1",
-      "action": "get",
-      "resource": "arrayResourceCode1",
-      "enabled": true     
-    }]
-  }
-}
+ 
 ```
 
 ### 判断用户对树资源权限示例
@@ -57,7 +39,7 @@
   "namespaceCode": "权限空间1",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "action": "get"
-  "resources":["/treeResourceCode1/StructCode1/resourceStructChildrenCode1", "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"],
+  "resources":["/treeResourceCode1/StructCode1/resourceStructChildrenCode1", "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"]
 }
 ```
 

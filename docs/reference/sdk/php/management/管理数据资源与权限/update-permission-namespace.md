@@ -19,7 +19,7 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| code | string | 否 | - | 权限分组老的唯一标志符 Code  | `examplePermissionNamespace` |
+| code | string | 是 | - | 权限分组老的唯一标志符 Code  | `examplePermissionNamespace` |
 | name | string | 否 | - | 权限空间名称  | `示例权限空间` |
 | newCode | string | 否 | - | 权限分组新的唯一标志符 Code  | `exampleNewPermissionNamespace` |
 | description | string | 否 | - | 权限空间描述  | `示例权限空间描述` |

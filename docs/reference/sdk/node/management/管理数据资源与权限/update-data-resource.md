@@ -49,14 +49,14 @@ const managementClient = new ManagementClient({
   const result = await managementClient.updateDataResource({
     namespaceCode: 'examplePermissionNamespace',
     resourceCode: 'treeResourceCode',
-    resourceName: '示例新树数据资源',
+    resourceName: '示例树数据资源新名称',
     struct: [{
       code: 'tree1',
       name: '树节点1',
       value: '树节点1描述'
     }],
-    description:'示例数据资源新描述',
-    actions:['get','read','delete','update']
+    description: '示例树数据资源新描述',
+    actions: ['get','read','delete','update']
   });
 
 

@@ -124,8 +124,8 @@ const managementClient = new ManagementClient({
       name: '树节点2',
       value: '树节点2描述'
     }],
-    description:'示例树数据资源描述',
-    actions:['get','read']
+    description: '示例树数据资源描述',
+    actions: ['get','read']
   });
 
 

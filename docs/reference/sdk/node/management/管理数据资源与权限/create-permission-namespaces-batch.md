@@ -42,21 +42,19 @@ const managementClient = new ManagementClient({
 (async () => {
 
   const result = await managementClient.createPermissionNamespacesBatch({
-    list: [
-      {
+    list: [{
         code: 'examplePermissionNamespace1',
         name: '示例权限空间1',
         description: '示例权限空间1描述'
-      }, {
+      },{
         code: 'examplePermissionNamespace2',
         name: '示例权限空间2',
         description: '示例权限空间2描述'
-      }, {
+      },{
         code: 'examplePermissionNamespace3',
         name: '示例权限空间3',
         description: '示例权限空间3描述'
-      },
-    ]
+      }]
   });
 
 

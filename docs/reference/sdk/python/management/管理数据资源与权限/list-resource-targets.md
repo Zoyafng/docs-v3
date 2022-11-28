@@ -19,7 +19,7 @@
 {
   "namespaceCode": "权限空间1",
   "actions": ["get", "update", "read"]
-  "resources":["strResourceCode1", "arrayResourceCode1"],
+  "resources":["strResourceCode1", "arrayResourceCode1"]
 }
 ```
   
@@ -34,26 +34,26 @@
     "authUserList": [{
       "resource": "strResourceCode1",
       "actionAuthList": [{
-        "userIds": ["63721xxxxxxxxxxxxdde14a3"]
-        "action": "get",
+        "userIds": ["63721xxxxxxxxxxxxdde14a3"],
+        "action": "get"
       },{
-        "userIds": ["63721xxxxxxxxxxxxdde14a3"]
-        "action": "update",
+        "userIds": ["63721xxxxxxxxxxxxdde14a3"],
+        "action": "update"
       },{
-        "userIds": ["63721xxxxxxxxxxxxdde14a3"]
-        "action": "read",
+        "userIds": ["63721xxxxxxxxxxxxdde14a3"],
+        "action": "read"
       }]  
     },{
         "resource": "arrayResourceCode1",
         "actionAuthList": [{
-        "userIds": ["63721xxxxxxxxxxxxdde14a3"]
-        "action": "get",
+        "userIds": ["63721xxxxxxxxxxxxdde14a3"],
+        "action": "get"
       },{
-        "userIds": ["63721xxxxxxxxxxxxdde14a3"]
-        "action": "update",
+        "userIds": ["63721xxxxxxxxxxxxdde14a3"],
+        "action": "update"
       },{
-        "userIds": ["63721xxxxxxxxxxxxdde14a3"]
-        "action": "read",
+        "userIds": ["63721xxxxxxxxxxxxdde14a3"],
+        "action": "read"
       }] 
     }]
   }
@@ -68,7 +68,7 @@
 {
   "namespaceCode": "权限空间1",
   "actions": ["get", "update", "delete"]
-  "resources":["/treeResourceCode1/StructCode1/resourceStructChildrenCode1", "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"],
+  "resources":["/treeResourceCode1/StructCode1/resourceStructChildrenCode1", "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"]
 }
 ```
   
@@ -83,26 +83,26 @@
     "authUserList": [{
       "resource": "/treeResourceCode1/StructCode1/resourceStructChildrenCode1",
       "actionAuthList": [{
-        "userIds": ["63721xxxxxxxxxxxxdde14a3"]
-        "action": "get",
+        "userIds": ["63721xxxxxxxxxxxxdde14a3"],
+        "action": "get"
       },{
-        "userIds": ["63721xxxxxxxxxxxxdde14a3"]
-        "action": "update",
+        "userIds": ["63721xxxxxxxxxxxxdde14a3"],
+        "action": "update"
       },{
-        "userIds": ["63721xxxxxxxxxxxxdde14a3"]
-        "action": "delete",
+        "userIds": ["63721xxxxxxxxxxxxdde14a3"],
+        "action": "delete"
       }]  
     },{
       "resource": "/treeResourceCode2/StructCode1/resourceStructChildrenCode1",
       "actionAuthList": [{
-        "userIds": ["63721xxxxxxxxxxxxdde14a3"]
-        "action": "get",
+        "userIds": ["63721xxxxxxxxxxxxdde14a3"],
+        "action": "get"
       },{
-        "userIds": ["63721xxxxxxxxxxxxdde14a3"]
-        "action": "update",
+        "userIds": ["63721xxxxxxxxxxxxdde14a3"],
+        "action": "update"
       },{
-        "userIds": ["63721xxxxxxxxxxxxdde14a3"]
-        "action": "delete",
+        "userIds": ["63721xxxxxxxxxxxxdde14a3"],
+        "action": "delete"
       }] 
     }]
   }
