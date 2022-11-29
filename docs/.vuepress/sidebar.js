@@ -905,27 +905,27 @@ const zhCnNavBar = {
                     {
                       "title": "检查数据资源名称或者 Code 是否有效",
                       "path": "/reference/sdk/java/management/管理数据资源与权限/check-data-resource-exists"
-                    },
-                    {
-                      "title": "获取用户权限列表",
-                      "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-permission-list"
-                    },
-                    {
-                      "title": "判断用户权限",
-                      "path": "/reference/sdk/java/management/管理数据资源与权限/check-permission"
-                    },
-                    {
-                      "title": "获取用户指定资源权限列表",
-                      "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-resource-permission-list"
-                    },
-                    {
-                      "title": "获取资源被授权的用户列表",
-                      "path": "/reference/sdk/java/management/管理数据资源与权限/list-resource-targets"
-                    },
-                    {
-                      "title": "判断用户在同层级资源下的权限",
-                      "path": "/reference/sdk/java/management/管理数据资源与权限/check-user-same-level-permission"
                     }
+                    // {
+                    //   "title": "获取用户权限列表",
+                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-permission-list"
+                    // },
+                    // {
+                    //   "title": "判断用户权限",
+                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/check-permission"
+                    // },
+                    // {
+                    //   "title": "获取用户指定资源权限列表",
+                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-resource-permission-list"
+                    // },
+                    // {
+                    //   "title": "获取资源被授权的用户列表",
+                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/list-resource-targets"
+                    // },
+                    // {
+                    //   "title": "判断用户在同层级资源下的权限",
+                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/check-user-same-level-permission"
+                    // }
                   ]
                 },
                 {
@@ -2122,7 +2122,9 @@ const zhCnNavBar = {
                     {
                       "title": "判断用户在同层级资源下的权限",
                       "path": "/reference/sdk/node/management/管理数据资源与权限/check-user-same-level-permission"
-                    },
+                    }
+                  ]
+                },
                 {
                   title: '管理应用',
                   children: [
