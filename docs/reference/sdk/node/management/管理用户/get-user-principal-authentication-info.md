@@ -13,7 +13,7 @@
 
 ## 方法名称
 
-`AuthenticationClient.getUserPrincipalAuthenticationInfo`
+`ManagementClient.getUserPrincipalAuthenticationInfo`
 
 ## 请求参数
 
@@ -44,7 +44,7 @@ const managementClient = new ManagementClient({
 
   const result = await managementClient.getUserPrincipalAuthenticationInfo({
     // 替换用户 ID
-    userId: '6229ffaxxxxxxxxcade3e3d9',
+    userIds: '6229ffaxxxxxxxxcade3e3d9',
     userIdType: 'user_id'
   });
 
@@ -56,7 +56,7 @@ const managementClient = new ManagementClient({
 
 
 
-  
+
 ## 请求响应
 
 类型： `PrincipalAuthenticationInfoPaginatedRespDto`

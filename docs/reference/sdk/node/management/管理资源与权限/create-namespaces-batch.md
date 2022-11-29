@@ -9,11 +9,11 @@
 
 <LastUpdated />
 
-批量创建权限分组，可以分别设置分组名称与描述信息。
+批量创建权限分组，可以分别设置权限分组名称、Code 和描述信息。
 
 ## 方法名称
 
-`AuthenticationClient.createNamespacesBatch`
+`ManagementClient.createNamespacesBatch`
 
 ## 请求参数
 
@@ -59,7 +59,7 @@ const managementClient = new ManagementClient({
 
 
 
-  
+
 ## 请求响应
 
 类型： `IsSuccessRespDto`

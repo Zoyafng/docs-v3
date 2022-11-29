@@ -9,11 +9,11 @@
 
 <LastUpdated />
 
-通过权限分组唯一标志符，获取权限分组详情。
+通过权限分组唯一标志符（Code），获取权限分组详情。
 
 ## 方法名称
 
-`AuthenticationClient.GetNamespace`
+`ManagementClient.GetNamespace`
 
 ## 请求参数
 
@@ -63,7 +63,7 @@ namespace ConsoleManagement
 
 
 
-  
+
 ## 请求响应
 
 类型： `NamespaceRespDto`
