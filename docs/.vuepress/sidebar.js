@@ -878,34 +878,34 @@ const zhCnNavBar = {
                       "title": "校验权限空间 Code 或者名称是否有效",
                       "path": "/reference/sdk/java/management/管理数据资源与权限/check-permission-namespace-exists"
                     },
-                    // {
-                    //   "title": "分页查询权限空间下所有的角色列表",
-                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/list-permission-namespace-roles"
-                    // },
-                    // {
-                    //   "title": "创建数据资源",
-                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/create-data-resource"
-                    // },
-                    // {
-                    //   "title": "获取数据资源列表",
-                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/list-data-resources"
-                    // },
-                    // {
-                    //   "title": "获取数据资源信息",
-                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/get-data-resource"
-                    // },
-                    // {
-                    //   "title": "修改数据资源",
-                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/update-data-resource"
-                    // },
-                    // {
-                    //   "title": "删除数据资源",
-                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/delete-data-resource"
-                    // },
-                    // {
-                    //   "title": "检查数据资源名称或者 Code 是否有效",
-                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/check-data-resource-exists"
-                    // },
+                    {
+                      "title": "分页查询权限空间下所有的角色列表",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/list-permission-namespace-roles"
+                    },
+                    {
+                      "title": "创建数据资源",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/create-data-resource"
+                    },
+                    {
+                      "title": "获取数据资源列表",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/list-data-resources"
+                    },
+                    {
+                      "title": "获取数据资源信息",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/get-data-resource"
+                    },
+                    {
+                      "title": "修改数据资源",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/update-data-resource"
+                    },
+                    {
+                      "title": "删除数据资源",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/delete-data-resource"
+                    },
+                    {
+                      "title": "检查数据资源名称或者 Code 是否有效",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/check-data-resource-exists"
+                    },
                     // {
                     //   "title": "获取用户权限列表",
                     //   "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-permission-list"
