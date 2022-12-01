@@ -905,7 +905,7 @@ const zhCnNavBar = {
                     {
                       "title": "检查数据资源名称或者 Code 是否有效",
                       "path": "/reference/sdk/java/management/管理数据资源与权限/check-data-resource-exists"
-                    }
+                    },
                     // {
                     //   "title": "获取用户权限列表",
                     //   "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-permission-list"

@@ -27,35 +27,78 @@
   
 ```json
 {
-    "statusCode": 200,
-    "message": "操作成功",
-    "apiCode": 20001,
-    "data":{
-      "userPermissionList": [{
-        "userId": "6301ceaxxxxxxxxxxx27478",
-        "namespaceCode": "权限空间1",
-        "resourceList":[{
-          "resourceCode": "str1",
-          "actionList":["get"]
-        },{
-        "userId": "6301ceaxxxxxxxxxxx27478",
-        "namespaceCode": "权限空间1",
-        "resourceList":[{
-          "resourceCode": "str1",
-          "actionList":["get","read","update"]
-        }]
-      },{
-        "namespaceCode": "权限空间1",
-        "userId": "6301ceaxxxxxxxxxxx27478",
-        "resourceList":[{
-          "resourceCode": "tree1",
-          "actionList":[{
-            "nodePath": "/node",
-            "nodeActions": ["get","read","update"]
-          }]
-        }]
-      }]
-    }
+  "statusCode": 200, 
+  "message": "操作成功", 
+  "apiCode": 20001, 
+  "data": {
+    "userPermissionList": [
+      {
+        "userId": "6301ceaxxxxxxxxxxx27478", 
+        "namespaceCode": "examplePermissionNamespace", 
+        "resourceList": [
+          {
+            "resourceCode": "strCode", 
+            "authorize": {
+              "value": "示例字符串资源", 
+              "actions": [
+                "read", 
+                "post", 
+                "get", 
+                "write"
+              ]
+            }
+          }, 
+          {
+            "resourceCode": "arrayCode", 
+            "authorize": {
+              "values": [
+                "示例数据资源"
+              ], 
+              "actions": [
+                "read", 
+                "post", 
+                "get", 
+                "write"
+              ]
+            }
+          }, 
+          {
+            "resourceCode": "treeCode", 
+            "authorize": {
+              "authList": [
+                {
+                  "nodePath": "/treeCode/treeChildrenCode1", 
+                  "nodeActions": [
+                    "read", 
+                    "get"
+                  ], 
+                  "nodeName": "treeChildrenName1", 
+                  "nodeValue": "treeChildrenValue1"
+                }, 
+                {
+                  "nodePath": "/treeCode/treeChildrenCode2", 
+                  "nodeActions": [
+                    "read", 
+                    "get"
+                  ], 
+                  "nodeName": "treeChildrenName2", 
+                  "nodeValue": "treeChildrenValue2"
+                }, 
+                {
+                  "nodePath": "/treeCode/treeChildrenCode3", 
+                  "nodeActions": [
+                    "read"
+                  ], 
+                  "nodeName": "treeChildrenName3", 
+                  "nodeValue": "treeChildrenValue3"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
@@ -76,46 +119,51 @@
 
 ```json
 {
-  "statusCode": 200,
-  "message": "操作成功",
-  "apiCode": 20001,
+  "statusCode": 200, 
+  "message": "操作成功", 
+  "apiCode": 20001, 
   "data": {
     "userPermissionList": [
-    {
-      "namespaceCode": "权限空间1",
-      "userId": "6301ceaxxxxxxxxxxx27478",
-      "resourceList": {
-        "resourceCode": "tree1",
-        "actionList": [{
-          "nodePath": "/node",
-          "nodeActions": ["read","write" ]
-        }]
+      {
+        "userId": "6301ceaxxxxxxxxxxx27478", 
+        "namespaceCode": "examplePermissionNamespace1", 
+        "resourceList": [
+          {
+            "resourceCode": "strCode1", 
+            "authorize": {
+              "value": "示例字符串资源", 
+              "actions": [
+                "read", 
+                "post", 
+                "get", 
+                "write"
+              ]
+            }
+          }
+        ]
+      }, 
+      {
+        "userId": "6121ceaxxxxxxxxxxx27312", 
+        "namespaceCode": "examplePermissionNamespace2", 
+        "resourceList": [
+          {
+            "resourceCode": "arrayCode", 
+            "authorize": {
+              "values": [
+                "示例数组资源1", 
+                "示例数组资源2"
+              ], 
+              "actions": [
+                "read", 
+                "post", 
+                "get", 
+                "write"
+              ]
+            }
+          }
+        ]
       }
-    }, {
-      "namespaceCode": "权限空间1",
-      "userId": "6301ceaxxxxxxxxxxx27478",
-      "resourceList": {
-        "resourceCode": "array1",
-        "actionList": ["read","write"]
-      }
-    },{
-      "namespaceCode": "权限空间1",
-      "userId": "6121ceaxxxxxxxxxxx27312",
-      "resourceList": {
-        "resourceCode": "tree1",
-        "actionList": [{
-          "nodePath": "/node",
-          "nodeActions": ["read","write" ]
-        }]
-      }
-    }, {
-      "namespaceCode": "权限空间1",
-      "userId": "6121ceaxxxxxxxxxxx27312",
-      "resourceList": {
-        "resourceCode": "array1",
-        "actionList": ["read","write"]
-      }
-    }]
+    ]
   }
 }
 ```
@@ -131,8 +179,8 @@
     "6121ceaxxxxxxxxxxx27312"
   ],
   "namespaceCodes": [
-    "权限空间1",
-    "权限空间2"
+    "examplePermissionNamespace1",
+    "examplePermissionNamespace2"
   ]
 }
 ```
@@ -141,32 +189,51 @@
 
 ```json
 {
-  "statusCode": 200,
-  "message": "操作成功",
-  "apiCode": 20001,
+  "statusCode": 200, 
+  "message": "操作成功", 
+  "apiCode": 20001, 
   "data": {
     "userPermissionList": [
-    {
-      "namespaceCode": "权限空间1",
-      "userId": "6301ceaxxxxxxxxxxx27478",
-      "resourceList": {
-        "resourceCode": "tree1",
-        "actionList": [{
-          "nodePath": "/node",
-          "nodeActions": ["read","write" ]
-        }]
+      {
+        "userId": "6301ceaxxxxxxxxxxx27478", 
+        "namespaceCode": "examplePermissionNamespace1", 
+        "resourceList": [
+          {
+            "resourceCode": "strCode1", 
+            "authorize": {
+              "value": "示例字符串资源", 
+              "actions": [
+                "read", 
+                "post", 
+                "get", 
+                "write"
+              ]
+            }
+          }
+        ]
+      }, 
+      {
+        "userId": "6121ceaxxxxxxxxxxx27312", 
+        "namespaceCode": "examplePermissionNamespace2", 
+        "resourceList": [
+          {
+            "resourceCode": "arrayCode", 
+            "authorize": {
+              "values": [
+                "示例数组资源1", 
+                "示例数组资源2"
+              ], 
+              "actions": [
+                "read", 
+                "post", 
+                "get", 
+                "write"
+              ]
+            }
+          }
+        ]
       }
-    },{
-      "namespaceCode": "权限空间2",
-      "userId": "6121ceaxxxxxxxxxxx27312",
-      "resourceList": {
-        "resourceCode": "tree1",
-        "actionList": [{
-          "nodePath": "/node",
-          "nodeActions": ["read","write" ]
-        }]
-      }
-    }]
+    ]
   }
 }
 ```
@@ -181,7 +248,7 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | userIds | string[] | 是 | - | 用户 ID 列表  | `["6301ceaxxxxxxxxxxx27478"]` |
-| namespaceCodes | string[] | 否 | - | 权限空间 Code 列表  | `["权限空间1"]` |
+| namespaceCodes | string[] | 否 | - | 权限空间 Code 列表  | `["examplePermissionNamespace1"]` |
 
 
 
@@ -259,7 +326,10 @@ public class GetUserPermissionListTest {
   "data": {
     "userPermissionList": {
       "userId": "6301cexxxxxxxxxxxxxxxxx78",
-      "namespaceCode": "6301cexxxxxxxxxxxxxxxxx78"
+      "namespaceCode": "examplePermissionNamespace",
+      "resourceList": {
+        "resourceCode": "resourceCode"
+      }
     }
   }
 }
@@ -280,7 +350,15 @@ public class GetUserPermissionListTest {
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | userId | string | 是 | 数据策略授权的用户 ID   |  `6301cexxxxxxxxxxxxxxxxx78` |
-| namespaceCode | string | 是 | 数据策略授权的权限空间 Code   |  `6301cexxxxxxxxxxxxxxxxx78` |
-| resourceList |  | 是 | 用户在权限空间下所有的数据策略资源列表   |  |
+| namespaceCode | string | 是 | 数据策略授权的权限空间 Code   |  `examplePermissionNamespace` |
+| resourceList | array | 否 | 用户在权限空间下所有的数据策略资源列表 嵌套类型：<a href="#OpenResource">OpenResource</a>。  |  |
+
+
+### <a id="OpenResource"></a> OpenResource
+
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+| ---- |  ---- | ---- | ---- | ---- |
+| resourceCode | string | 是 | 数据策略下所授权的数据资源 Code   |  `resourceCode` |
+| authorize |  | 是 | 用户在权限空间下所有的数据策略的资源列表   |  |
 
 

@@ -17,7 +17,7 @@
 
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "resourceCode": "test"
 }
 ```
@@ -41,7 +41,7 @@
 
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "resourceName": "test"
 }
 ```
@@ -65,7 +65,7 @@
 
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "resourceCode": "test"
 }
 ```

@@ -78,7 +78,7 @@ public class ListPermissionNamespaceRolesTest {
 | message | string | 描述信息 |
 | apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
 | requestId | string | 请求 ID。当请求失败时会返回。 |
-| data | <a href="#PermissionNamespaceListPagingDto">PermissionNamespaceListPagingDto</a> | 响应数据 |
+| data | <a href="#PermissionNamespaceRolesListPagingDto">PermissionNamespaceRolesListPagingDto</a> | 响应数据 |
 
 
 
@@ -104,7 +104,7 @@ public class ListPermissionNamespaceRolesTest {
 ## 数据结构
 
 
-### <a id="PermissionNamespaceListPagingDto"></a> PermissionNamespaceListPagingDto
+### <a id="PermissionNamespaceRolesListPagingDto"></a> PermissionNamespaceRolesListPagingDto
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
