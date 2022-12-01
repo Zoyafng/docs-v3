@@ -98,7 +98,7 @@
 | resources | string[] | 是 | - | 数据资源路径列表,  | `["/treeResourceCode1/StructCode1/resourceStructChildrenCode1"]` |
 | action | string | 是 | - | 数据资源权限操作, read、get、write 等动作  | `get` |
 | userId | string | 是 | - | 用户 ID  | `63721xxxxxxxxxxxxdde14a3` |
-| namespaceCode | string | 是 | - | 权限空间 Code  | `权限空间1` |
+| namespaceCode | string | 是 | - | 权限空间 Code  | `examplePermissionNamespace` |
 
 
 
@@ -160,7 +160,7 @@ const managementClient = new ManagementClient({
   "apiCode": 20001,
   "data": {
     "checkResultList": {
-      "namespaceCode": "权限空间1",
+      "namespaceCode": "examplePermissionNamespace",
       "action": "get",
       "resource": "treeResource1",
       "enabled": true
@@ -183,7 +183,7 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| namespaceCode | string | 是 | 权限空间 Code   |  `权限空间1` |
+| namespaceCode | string | 是 | 权限空间 Code   |  `examplePermissionNamespace` |
 | action | string | 是 | 数据资源权限操作   |  `get` |
 | resource | string | 是 | 资源路径   |  `treeResource1` |
 | enabled | boolean | 是 | 用户在某个权限空间下是否具有该数据资源的某个操作   |  `true` |

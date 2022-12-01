@@ -120,7 +120,7 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | resources | string[] | 是 | - | 数据策略所属的数据资源路径列表 数组长度限制：50。 | `["treeResourceCode1"]` |
 | actions | string[] | 是 | - | 数据资源权限操作列表 数组长度限制：50。 | `["get"]` |
-| namespaceCode | string | 是 | - | 权限空间 Code  | `权限空间1` |
+| namespaceCode | string | 是 | - | 权限空间 Code  | `examplePermissionNamespace` |
 
 
 

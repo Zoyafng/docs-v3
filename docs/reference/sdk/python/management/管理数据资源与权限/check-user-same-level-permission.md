@@ -57,7 +57,7 @@
 | resource | string | 是 | - | 资源路径  | `/treeResourceCode1/structCode1` |
 | action | string | 是 | - | 数据资源权限操作  | `read` |
 | userId | string | 是 | - | 用户 ID  | `63721xxxxxxxxxxxxdde14a3` |
-| namespaceCode | string | 是 | - | 权限空间 Code  | `权限空间1` |
+| namespaceCode | string | 是 | - | 权限空间 Code  | `examplePermissionNamespace` |
 | resourceNodeCodes | string[] | 否 | - | 当前树资源路径子节点code  | `["resourceStructChildrenCode1"]` |
 
 

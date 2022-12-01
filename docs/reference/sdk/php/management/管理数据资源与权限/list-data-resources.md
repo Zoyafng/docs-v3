@@ -22,7 +22,7 @@
  | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
  | query | string  | 否 | - | 关键字搜索，可以是数据资源名称或者数据资源 Code  | `资源1` |
- | namespaceCodes | string[]  | 否 | - | 权限数据所属权限空间 Code 列表 数组长度限制：50。 | `["权限空间1","权限空间2"]` |
+ | namespaceCodes | string[]  | 否 | - | 权限数据所属权限空间 Code 列表 数组长度限制：50。 | `["examplePermissionNamespace1","examplePermissionNamespac2"]` |
 
 
 
