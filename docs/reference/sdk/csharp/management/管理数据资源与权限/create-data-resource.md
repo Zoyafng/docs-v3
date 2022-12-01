@@ -16,7 +16,7 @@
 
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "resourceName": "字符串资源1",
   "resourceCode": "str1",
   "type": "STRING",
@@ -30,7 +30,7 @@
 
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "resourceName": "数组资源1",
   "resourceCode": "array1",
   "description": "这是一个数据资源数组类型创建",
@@ -44,7 +44,7 @@
 
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "resourceName": "树资源1",
   "resourceCode": "tree1",
   "description": "这是一个数据资源树类型创建",

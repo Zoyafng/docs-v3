@@ -15,7 +15,7 @@
 
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "action": "read"
   "resource":"strResourceCode1"
@@ -26,7 +26,7 @@
 
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "action": "read",
   "resource":"arrayResourceCode1"
@@ -37,7 +37,7 @@
 
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "action": "read",
   "resource":"/treeResourceCode1/structCode1",
@@ -58,7 +58,7 @@
 | action | string | 是 | - | 数据资源权限操作  | `read` |
 | userId | string | 是 | - | 用户 ID  | `63721xxxxxxxxxxxxdde14a3` |
 | namespaceCode | string | 是 | - | 权限空间 Code  | `权限空间1` |
-| resourceNodeCodes | string[] | 否 | - | 当前树资源路径子节点code  | `["resourceStructChildrenCode1","resourceStructChildrenCode2","resourceStructChildrenCode3"]` |
+| resourceNodeCodes | string[] | 否 | - | 当前树资源路径子节点code  | `["resourceStructChildrenCode1"]` |
 
 
 
@@ -112,7 +112,7 @@ const managementClient = new ManagementClient({
   "data": {
     "checkLevelResultList": {
       "action": "get",
-      "resourceNodeCode": "resourceStructChildrenCode1",
+      "resourceNodeCode": "treeResourceStructChildrenCode1",
       "enabled": true
     }
   }
@@ -134,7 +134,7 @@ const managementClient = new ManagementClient({
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | action | string | 是 | 数据资源权限操作   |  `get` |
-| resourceNodeCode | string | 否 | 树资源节点code   |  `resourceStructChildrenCode1` |
+| resourceNodeCode | string | 否 | 树资源节点code   |  `treeResourceStructChildrenCode1` |
 | enabled | boolean | 是 | 是否拥有 action 权限   |  `true` |
 
 

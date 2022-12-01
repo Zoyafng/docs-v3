@@ -17,7 +17,7 @@
   
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "resources":["strResourceCode1", "arrayResourceCode1"]
 }
@@ -33,11 +33,11 @@
   "apiCode": 20001,
   "data":{
     "permissionList": [{
-      "namespaceCode": "权限空间1",
+      "namespaceCode": "examplePermissionNamespace",
       "actionList": ["read","get"],  
       "resource": "strResourceCode1"
     },{
-      "namespaceCode": "权限空间1",
+      "namespaceCode": "examplePermissionNamespace",
       "actionList": ["read","update","delete"], 
       "resource": "arrayResourceCode1"
     }]
@@ -51,7 +51,7 @@
   
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "resources":["/treeResourceCode1/StructCode1/resourceStructChildrenCode1", "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"]
 }
@@ -66,11 +66,11 @@
   "apiCode": 20001,
   "data":{
     "permissionList": [{
-      "namespaceCode": "权限空间1",
+      "namespaceCode": "examplePermissionNamespace",
       "actionList": ["read", "update", "delete"],
       "resource": "/treeResourceCode1/StructCode1/resourceStructChildrenCode1"
     },{
-      "namespaceCode": "权限空间1",
+      "namespaceCode": "examplePermissionNamespace",
       "actionList": ["read", "get", "delete"],     
       "resource": "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"
     }]
@@ -87,7 +87,7 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| resources | string[] | 是 | - | 资源路径列表  | `["strResourceCode1","arrayResourceCode1"]` |
+| resources | string[] | 是 | - | 资源路径列表  | `["treeResourceCode1"]` |
 | userId | string | 是 | - | 用户 ID  | `6301ceaxxxxxxxxx27478` |
 | namespaceCode | string | 是 | - | 权限空间 Code  | `权限空间1` |
 
@@ -128,9 +128,9 @@ public class GetUserResourcePermissionListTest {
         request.setNamespaceCode("examplePermissionNamespace");
         request.setUserId("63721xxxxxxxxxxxxdde14a3");
         List<String> resources = new ArrayList<>();
-        resources.add("strResourceCode1");
-        resources.add("arrayResourceCode1");
-        resources.add("/treeResourceCode1/StructCode1/resourceStructChildrenCode1");
+        resources.add("strResourceCode");
+        resources.add("arrayResourceCode");
+        resources.add("/treeResourceCode/structCode/resourceStructChildrenCode");
         request.setResources(resources);
         GetUserResourcePermissionListRespDto response = client.getUserResourcePermissionList(request);
         System.out.println(JsonUtils.serialize(response));
@@ -167,7 +167,7 @@ public class GetUserResourcePermissionListTest {
     "permissionList": {
       "namespaceCode": "权限空间1",
       "actions": "[\"get\",\"read\",\"write\",\"delete\"]",
-      "resources": "strResourceCode1"
+      "resource": "treeResourceCode1"
     }
   }
 }
@@ -189,6 +189,6 @@ public class GetUserResourcePermissionListTest {
 | ---- |  ---- | ---- | ---- | ---- |
 | namespaceCode | string | 是 | 权限空间 code   |  `权限空间1` |
 | actions | array | 是 | 数据资源权限操作列表   |  `["get","read","write","delete"]` |
-| resources | string | 是 | 资源路径   |  `strResourceCode1` |
+| resource | string | 是 | 资源路径   |  `treeResourceCode1` |
 
 

@@ -17,7 +17,7 @@
     
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "actions": ["get", "update", "read"]
   "resources":["strResourceCode1", "arrayResourceCode1"]
 }
@@ -44,9 +44,9 @@
         "action": "read"
       }]  
     },{
-        "resource": "arrayResourceCode1",
-        "actionAuthList": [{
-        "userIds": ["63721xxxxxxxxxxxxdde14a3"],
+      "resource": "arrayResourceCode1",
+      "actionAuthList": [{
+      "userIds": ["63721xxxxxxxxxxxxdde14a3"],
         "action": "get"
       },{
         "userIds": ["63721xxxxxxxxxxxxdde14a3"],
@@ -66,7 +66,7 @@
     
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "actions": ["get", "update", "delete"]
   "resources":["/treeResourceCode1/StructCode1/resourceStructChildrenCode1", "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"]
 }
@@ -118,8 +118,8 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| resources | string[] | 是 | - | 数据策略所属的数据资源路径列表 数组长度限制：50。 | `["strResourceCode1","arrayResourceCode1"]` |
-| actions | string[] | 是 | - | 数据资源权限操作列表 数组长度限制：50。 | `["get","update","read"]` |
+| resources | string[] | 是 | - | 数据策略所属的数据资源路径列表 数组长度限制：50。 | `["treeResourceCode1"]` |
+| actions | string[] | 是 | - | 数据资源权限操作列表 数组长度限制：50。 | `["get"]` |
 | namespaceCode | string | 是 | - | 权限空间 Code  | `权限空间1` |
 
 
@@ -163,14 +163,13 @@ public class ListResourceTargetsTest {
         actionList.add("read");
         request.setActions(actionList);
         List<String> resources = new ArrayList<>();
-        resources.add("strResourceCode1");
-        resources.add("arrayResourceCode1");
-        resources.add("/treeResourceCode1/StructCode1/resourceStructChildrenCode1");
+        resources.add("strResourceCode");
+        resources.add("arrayResourceCode");
+        resources.add("/treeResourceCode/structCode/resourceStructChildrenCode2");
         request.setResources(resources);
         ListResourceTargetsRespDto response = client.listResourceTargets(request);
         System.out.println(JsonUtils.serialize(response));
     }
-
 }
 ```
 
@@ -200,7 +199,7 @@ public class ListResourceTargetsTest {
   "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c",
   "data": {
     "authUserList": {
-      "resource": "strResourceCode1",
+      "resource": "treeResourceCode1",
       "actionAuthList": {
         "userIds": "[\"63721xxxxxxxxxxxxdde14a3\"]",
         "action": "get"
@@ -224,7 +223,7 @@ public class ListResourceTargetsTest {
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| resource | string | 是 | 资源路径   |  `strResourceCode1` |
+| resource | string | 是 | 资源路径   |  `treeResourceCode1` |
 | actionAuthList | array | 是 | 数据资源权限操作列表 嵌套类型：<a href="#ActionAuth">ActionAuth</a>。  |  |
 
 

@@ -17,7 +17,7 @@
 
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "action": "get"
   "resources":["strResourceCode1", "arrayResourceCode1"]
@@ -27,7 +27,27 @@
 - 出参
 
 ```json
- 
+{
+  "statusCode": 200,
+  "message": "操作成功",
+  "apiCode": 20001,
+  "data": {
+      "checkResultList": [
+          {
+              "namespaceCode": "examplePermissionNamespace",
+              "resource": "strResourceCode1",
+              "action": "get",
+              "enabled": true
+          },
+          {
+              "namespaceCode": "examplePermissionNamespace",
+              "resource": "arrayResourceCode1",
+              "action": "get",
+              "enabled": false
+          }
+      ]
+  }
+}
 ```
 
 ### 判断用户对树资源权限示例
@@ -36,7 +56,7 @@
 
 ```json
 {
-  "namespaceCode": "权限空间1",
+  "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "action": "get"
   "resources":["/treeResourceCode1/StructCode1/resourceStructChildrenCode1", "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"]
@@ -52,12 +72,12 @@
   "apiCode": 20001,
   "data":{
     "checkResultList": [{
-      "namespaceCode": "权限空间1",
+      "namespaceCode": "examplePermissionNamespace",
       "action": "get",
       "resource": "/treeResourceCode1/StructCode1/resourceStructChildrenCode1",
       "enabled": true     
     },{
-      "namespaceCode": "权限空间1",
+      "namespaceCode": "examplePermissionNamespace",
       "action": "get",
       "resource": "/treeResourceCode2/StructCode1/resourceStructChildrenCode1",
       "enabled": true     
@@ -107,7 +127,7 @@
     "checkResultList": {
       "namespaceCode": "权限空间1",
       "action": "get",
-      "resource": "strResource1",
+      "resource": "treeResource1",
       "enabled": true
     }
   }
@@ -130,7 +150,7 @@
 | ---- |  ---- | ---- | ---- | ---- |
 | namespaceCode | string | 是 | 权限空间 Code   |  `权限空间1` |
 | action | string | 是 | 数据资源权限操作   |  `get` |
-| resource | string | 是 | 资源路径   |  `strResource1` |
+| resource | string | 是 | 资源路径   |  `treeResource1` |
 | enabled | boolean | 是 | 用户在某个权限空间下是否具有该数据资源的某个操作   |  `true` |
 
 

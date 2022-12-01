@@ -49,11 +49,10 @@
   "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c",
   "data": {
     "list": {
-      "name": "角色名称",
-      "code": "role1",
-      "description": "这是一个示例角色的描述",
-      "namespace": "system",
-      "updatedAt": "2022-07-03T02:20:30.000Z"
+      "name": "示例权限空间名称",
+      "code": "examplePermissionNamespace",
+      "description": "dd8d7stf44",
+      "status": 1
     }
   }
 }
@@ -67,17 +66,16 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | totalCount | number | 是 | 记录总数   |  |
-| list | array | 是 | 响应数据 嵌套类型：<a href="#PermissionNamespaceRolesListRespDto">PermissionNamespaceRolesListRespDto</a>。  |  |
+| list | array | 是 | 响应数据 嵌套类型：<a href="#PermissionNamespacesListRespDto">PermissionNamespacesListRespDto</a>。  |  |
 
 
-### <a id="PermissionNamespaceRolesListRespDto"></a> PermissionNamespaceRolesListRespDto
+### <a id="PermissionNamespacesListRespDto"></a> PermissionNamespacesListRespDto
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| name | string | 是 | 角色名称   |  `角色名称` |
-| code | string | 是 | 角色 Code   |  `role1` |
-| description | string | 否 | 角色 描述信息   |  `这是一个示例角色的描述` |
-| namespace | string | 是 | 权限空间 Code   |  `system` |
-| updatedAt | string | 是 | 更新时间   |  `2022-07-03T02:20:30.000Z` |
+| name | string | 是 | 权限空间 名称   |  `示例权限空间名称` |
+| code | string | 是 | 权限空间 Code   |  `examplePermissionNamespace` |
+| description | string | 否 | 权限空间描述信息   |  `dd8d7stf44` |
+| status | number | 否 | 权限空间状态：0 -> 关闭、1 -> 开启   |  `1` |
 
 
