@@ -47,7 +47,7 @@ authenticationClient.buildAuthorizeUrl(IOidcParams options)
 ### 参数
 
 - `options` \<IOidcParams\> 发起授权登录时需要填写的参数。详情请见[使用 OIDC 授权码模式](https://docs.authing.cn/v2/federation/oidc/authorization-code/)。
-- `options.scope` \<String\> 请求的权限项目，选填，OIDC 协议默认为 `openid profile email phone address`，OAuth 2.0 协议默认为 `user`。
+- `options.scope` \<String\> 请求的权限项目，选填，OIDC 协议默认为 `openid profile email phone address`。
 - `options.nonce` \<String\> 随机字符串，选填，默认自动生成。
 - `options.state` \<String\> 随机字符串，选填，默认自动生成。
 - `options.responseMode` \<String\> 响应类型，选填，可选值为 `query`、`fragment`、`form_post`；默认为 `query`，即通过浏览器重定向发送 code 到回调地址。
@@ -61,7 +61,7 @@ authenticationClient.buildAuthorizeUrl(IOidcParams options)
 IOidcParams iOidcParams = new IOidcParams();
 iOidcParams.setRedirectUri("AUTHING_REDIRECTURI");
 iOidcParams.setNonce("nonce test");
-String oidcString = authenticationClient.buildAuthorizeUrl(iOidcParams);
+String respDto = authenticationClient.buildAuthorizeUrl(iOidcParams);
 ```
 
 ### 示例数据
@@ -128,31 +128,18 @@ UserInfo userInfo = authenticationClient.getUserInfoByAccessToken("Access Token"
 
 ```json
 {
-  "address": {
-    "country": null,
-    "postal_code": null,
-    "region": null,
-    "formatted": null
-  },
-  "birthdate": null,
-  "family_name": null,
-  "gender": "U",
-  "given_name": null,
-  "locale": null,
-  "middle_name": null,
-  "name": null,
-  "nickname": null,
-  "picture": "https://files.authing.co/authing-console/default-user-avatar.png",
-  "preferred_username": null,
-  "profile": null,
-  "updated_at": "2021-03-03T06:17:14.485Z",
-  "website": null,
-  "zoneinfo": null,
-  "email": "test1@authing.cn",
-  "email_verified": false,
   "sub": "603f184cec4505e2868431fc", // subject 的缩写，为用户 ID
-  "phone_number": null,
-  "phone_number_verified": false
+  "name": "example",
+  "nickname": "example",
+  "given_name": "example",
+  "family_name": "example",
+  "birthdate": "2022-02-22",
+  "gender": "M",
+  "picture": "https://files.authing.co/authing-console/default-user-avatar.png",
+  "updatedAt": "2021-03-03T06:17:14.485Z",
+  "zoneinfo": null,
+  "preferred_username": null,
+  "locale": null
 }
 ```
 
@@ -162,30 +149,16 @@ UserInfo userInfo = authenticationClient.getUserInfoByAccessToken("Access Token"
 | :--------------------- | :-------------------------------------- |
 | sub                    | subject 的缩写，唯一标识，一般为用户 ID |
 | name                   | 姓名                                    |
+| nickname               | 昵称                                    |
 | given_name             | 名字                                    |
 | family_name            | 姓氏                                    |
-| middle_name            | 中间名                                  |
-| nickname               | 昵称                                    |
-| preferred_username     | 希望被称呼的名字                        |
-| profile                | 基础资料                                |
-| picture                | 头像                                    |
-| website                | 网站链接                                |
-| email                  | 电子邮箱                                |
-| email_verified         | 邮箱是否被认证                          |
-| gender                 | 性别                                    |
 | birthdate              | 生日                                    |
-| zoneinfo               | 时区                                    |
-| locale                 | 区域                                    |
-| phone_number           | 手机号                                  |
-| phone_number_verified  | 认证手机号                              |
-| address                | 地址对象                                |
-| address.formatted      | 详细地址                                |
-| address.street_address | 街道地址                                |
-| address.locality       | 城市                                    |
-| address.region         | 省                                      |
-| address.postal_code    | 邮编                                    |
-| address.country        | 国家                                    |
+| gender                 | 性别                                    |
+| picture                | 头像                                    |
 | updated_at             | 信息更新时间                            |
+| zoneinfo               | 时区                                    |
+| preferred_username     | 希望被称呼的名字                        |
+| locale                 | 区域                                    |
 
 ## 刷新 Access Token
 

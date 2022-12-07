@@ -42,17 +42,15 @@ try {
 
 ## 生成 OAuth 2.0 协议的用户登录链接
 
-authenticationClient.buildAuthorizeUrl(IOidcParams options)
+authenticationClient.buildAuthorizeUrl(IOauthParams options)
 
 > 生成 OAuth 2.0 协议的用户登录链接
 
 ### 参数
 
 - `options` \<IOauthParams\> 发起授权登录时需要填写的参数。详情请见[使用 OAuth2.0 授权码模式](https://docs.authing.cn/v2/federation/oauth2/authorization-code/)。
-- `options.scope` \<String\> 请求的权限项目，选填，OIDC 协议默认为 `openid profile email phone address`，OAuth 2.0 协议默认为 `user`。
-- `options.nonce` \<String\> 随机字符串，选填，默认自动生成。
+- `options.scope` \<String\> 请求的权限项目，选填，OAuth 2.0 协议默认为 `user`。
 - `options.state` \<String\> 随机字符串，选填，默认自动生成。
-- `options.responseMode` \<String\> 响应类型，选填，可选值为 `query`、`fragment`、`form_post`；默认为 `query`，即通过浏览器重定向发送 code 到回调地址。
 - `options.responseType` \<String\> 响应类型，选填，可选值为 `code`、`code id_token token`、`code id_token`、`code id_token`、`code token`、`id_token token`、`id_token`、`none`；默认为 `code`，授权码模式。
 - `options.redirectUri` \<String\> 回调地址，必填，默认为 SDK 初始化时的 redirectUri 参数。
 
@@ -61,10 +59,9 @@ authenticationClient.buildAuthorizeUrl(IOidcParams options)
 ```java
 //options.setProtocol(ProtocolEnum.OAUTH.getValue());
 
-IOidcParams iOidcParams = new IOidcParams();
-iOidcParams.setRedirectUri("AUTHING_REDIRECTURI");
-iOidcParams.setNonce("nonce test");
-String oidcString = authenticationClient.buildAuthorizeUrl(iOidcParams);
+IOauthParams iOauthParams = new IOauthParams();
+iOauthParams.setRedirectUri("AUTHING_REDIRECTURI");
+String respDto = authenticationClient.buildAuthorizeUrl(iOauthParams);
 ```
 
 ### 示例数据
