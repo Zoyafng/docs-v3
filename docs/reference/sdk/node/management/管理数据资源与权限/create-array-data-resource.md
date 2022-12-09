@@ -50,7 +50,7 @@ const managementClient = new ManagementClient({
     namespaceCode: 'examplePermissionNamespace',
     resourceCode: 'arrayResourceCode',
     resourceName: '示例数组数据资源',
-    struct: ['exampleArrayStruct1', 'exampleArrayStruct1',],
+    struct: ['exampleArrayStruct1', 'exampleArrayStruct2',],
     description: '示例数组数据资源描述',
     actions: ['get','read']
   });

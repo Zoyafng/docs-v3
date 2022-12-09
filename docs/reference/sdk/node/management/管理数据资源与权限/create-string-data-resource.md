@@ -54,8 +54,6 @@ const managementClient = new ManagementClient({
     description: '示例字符串数据资源描述',
     actions: ['get','read']
   });
-
-  createDataResourceByString
   
 
   console.log(JSON.stringify(result, null, 2));
