@@ -1,4 +1,4 @@
-# 角色 list 分页查询
+# 获取角色授权列表
 
 <!--
   警告⚠️：
@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-搜索角色列表，可以通过角色 name 和 code 以及所属应用进行筛选
+获取角色授权列表。
 
 ## 方法名称
 
@@ -20,10 +20,9 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | roleCode | string | 是 | - | 角色 code,只能使用字母、数字和 -_，最多 50 字符  | `code_1` |
-| appId | string | 是 | - | 按照应用 id 列表进行筛选  | `60b49eb83fd80adb96f26e68` |
 | page | number | 否 | 1 | 当前页数，从 1 开始  | `1` |
 | limit | number | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
-| query | string | 否 | - | 按角色code或者角色名称查询  | `示例应用` |
+| query | string | 否 | - | 按角色 Code 或者角色名称查询  | `示例应用` |
 | targetType | string[] | 否 | - | 目标类型，接受用户，部门  | `["USER","ORG"]` |
 
 
@@ -58,8 +57,6 @@
       "roleName": "测试用户",
       "roleCode": "code_1",
       "description": "这个一个角色的描述信息",
-      "appId": "6076bacxxxxxxxxd80d993b",
-      "appName": "示例应用",
       "createdAt": "2022-03-17T05:23:01.567Z",
       "updatedAt": "2022-03-17T05:23:01.567Z"
     }
@@ -75,7 +72,7 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | totalCount | number | 否 | 记录总数   |  `20` |
-| data | array | 是 | 数据 嵌套类型：<a href="#RolePermissionListDto">RolePermissionListDto</a>。  |  |
+| data | array | 是 | 响应数据 嵌套类型：<a href="#RolePermissionListDto">RolePermissionListDto</a>。  |  |
 
 
 ### <a id="RolePermissionListDto"></a> RolePermissionListDto
@@ -87,8 +84,6 @@
 | roleName | string | 是 | 角色名称，最多 50 字符   |  `测试用户` |
 | roleCode | string | 是 | 角色 code,只能使用字母、数字和 -_，最多 50 字符   |  `code_1` |
 | description | string | 否 | 角色描述信息,最多两百字符   |  `这个一个角色的描述信息` |
-| appId | string | 是 | 应用 id   |  `6076bacxxxxxxxxd80d993b` |
-| appName | string | 是 | 角色所属应用名称   |  `示例应用` |
 | createdAt | string | 是 | 创建时间   |  `2022-03-17T05:23:01.567Z` |
 | updatedAt | string | 是 | 更新时间   |  `2022-03-17T05:23:01.567Z` |
 

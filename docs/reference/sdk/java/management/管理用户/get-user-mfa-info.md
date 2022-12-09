@@ -86,7 +86,9 @@ public class GetUserMfaInfoTest {
   "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c",
   "data": {
     "totpStatus": true,
-    "faceMfaStatus": true
+    "faceMfaStatus": true,
+    "smsMfaStatus": true,
+    "emailMfaStatus": true
   }
 }
 ```
@@ -100,5 +102,7 @@ public class GetUserMfaInfoTest {
 | ---- |  ---- | ---- | ---- | ---- |
 | totpStatus | string | 是 | 是否绑定了 TOTP，可选值 enabled, disabled   |  `true` |
 | faceMfaStatus | string | 是 | 是否绑定了人脸 MFA，可选值 enabled, disabled   |  `true` |
+| smsMfaStatus | string | 是 | 是否绑定了 SMS MFA，可选值 enabled, disabled   |  `true` |
+| emailMfaStatus | string | 是 | 是否绑定了 EMAIL MFA，可选值 enabled, disabled   |  `true` |
 
 

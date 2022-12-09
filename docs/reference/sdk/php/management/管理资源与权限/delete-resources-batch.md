@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-通过资源唯一标志符以及所属权限分组，批量删除资源
+批量删除资源，允许通过资源 Id 列表进行批量删除，同时允许权限空间加资源 Code 列表进行批量删除，资源 Id 列表和资源 Code 列表同时必须存在一个，如果两个都存在，则以资源 Id 列表为主
 
 ## 方法名称
 
@@ -19,8 +19,9 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| codeList | string[] | 是 | - | 资源 code 列表 数组长度限制：50。 | `["code1","code2"]` |
 | namespace | string | 否 | - | 所属权限分组(权限空间)的 Code  | `default` |
+| codeList | string[] | 否 | - | 资源 Code 列表 数组长度限制：50。 | `["code1","code2"]` |
+| ids | string[] | 否 | - | 资源 Id 列表 数组长度限制：50。 | `["6250f12d5dxxxx9bcfcf784b","6250f12d5dxxxx9bcfcf784b"]` |
 
 
 

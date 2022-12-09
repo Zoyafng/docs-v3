@@ -223,6 +223,7 @@ namespace ConsoleManagement
 | extIdpConnIdentifier | string | 是 | 身份源连接可读唯一标志   |  `6303a2bf2xxxxx7f665f01bf1` |
 | extIdpConnDisplayName | string | 是 | 微信   |  `6303a2bf2xxxxx7f665f01bf1` |
 | extIdpConnLogo | string | 是 | 身份源连接 Logo   |  `https://files.authing.co/authing-console/social-connections/wechatBrowser.svg` |
+| enabled | boolean | 否 | 是否允许身份源连接   |  |
 
 
 ### <a id="ApplicationRegisterConfig"></a> ApplicationRegisterConfig

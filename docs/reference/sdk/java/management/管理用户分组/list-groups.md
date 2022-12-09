@@ -87,7 +87,8 @@ public class ListGroupsTest {
     "list": {
       "code": "developer",
       "name": "开发者",
-      "description": "描述内容"
+      "description": "描述内容",
+      "type": "static"
     }
   }
 }
@@ -111,5 +112,6 @@ public class ListGroupsTest {
 | code | string | 是 | 分组 code   |  `developer` |
 | name | string | 是 | 分组名称   |  `开发者` |
 | description | string | 是 | 分组描述   |  `描述内容` |
+| type | string | 是 | 分组类型   |  `static` |
 
 

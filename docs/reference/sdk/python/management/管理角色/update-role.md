@@ -24,6 +24,7 @@
 | code | string | 是 | - | 权限分组(权限空间）内角色的唯一标识符  | `code1` |
 | namespace | string | 否 | default | 所属权限分组(权限空间)的 code  | `default` |
 | description | string | 否 | - | 角色描述  | `this is description` |
+| status | string | 否 | - | 角色状态，ENABLE-表示正常，DISABLE-表示禁止  | `enable` |
 
 
 

@@ -99,7 +99,8 @@ namespace ConsoleManagement
       "name": "role1",
       "description": "this is role description",
       "namespace": "default",
-      "namespaceName": "示例权限名称"
+      "namespaceName": "示例权限名称",
+      "status": "ENABLE"
     }
   }
 }
@@ -125,5 +126,6 @@ namespace ConsoleManagement
 | description | string | 是 | 角色描述   |  `this is role description` |
 | namespace | string | 是 | 所属权限分组(权限空间)的 Code   |  `default` |
 | namespaceName | string | 是 | 所属权限分组(权限空间)的名称   |  `示例权限名称` |
+| status | string | 否 | 角色状态，ENABLE-表示正常，DISABLE-表示禁止   |  `ENABLE` |
 
 

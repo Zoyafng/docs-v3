@@ -44,7 +44,7 @@ const managementClient = new ManagementClient({
 
   const result = await managementClient.getUserPrincipalAuthenticationInfo({
     // 替换用户 ID
-    userIds: '6229ffaxxxxxxxxcade3e3d9',
+    userId: '6229ffaxxxxxxxxcade3e3d9',
     userIdType: 'user_id'
   });
 
