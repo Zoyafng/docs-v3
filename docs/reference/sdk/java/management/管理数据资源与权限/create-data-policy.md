@@ -88,7 +88,7 @@ public class CreateDataPolicyTest {
         DataStatementPermissionDto permissionDto = new DataStatementPermissionDto();
         List<String> list1 = new ArrayList<>();
         list1.add("namespaceCode/treeResourceCode/path/action");
-        permissionDto.setDataPermissions(list1);
+        permissionDto.setPermissions(list1);
         permissionDto.setEffect(DataStatementPermissionDto.Effect.ALLOW);
         list.add(permissionDto);
         reqDto.setStatementList(list);
