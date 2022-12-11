@@ -19,10 +19,13 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| keywords | string | 是 | - | 搜索关键词，如组织名称等  | `Authing` |
 | organizationCode | string | 是 | - | 组织 code  | `steamory` |
 | withCustomData | boolean | 否 | - | 是否获取自定义数据  | `true` |
+| page | number | 否 | 1 | 当前页数，从 1 开始  | `1` |
 | limit | number | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
+| advancedFilter | <a href="#SearchDepartmentsFilterItemDto">SearchDepartmentsFilterItemDto[]</a> | 否 | - | 高级搜索  |  |
+| sortBy | string | 否 | updatedAt | 排序依据，如 更新时间或创建时间  | `updatedAt` |
+| orderBy | string | 否 | DESC | 增序或降序  | `DESC` |
 
 
 
@@ -81,6 +84,15 @@
 ```
 
 ## 数据结构
+
+
+### <a id="SearchDepartmentsFilterItemDto"></a> SearchDepartmentsFilterItemDto
+
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+| ---- |  ---- | ---- | ---- | ---- |
+| field | string | 是 | 高级搜索指定的部门字段：<br>- `updatedAt`: 更新时间，高级搜索请用时间戳<br>- `createdAt`: 创建时间，高级搜索请用时间戳<br>- `name`: 部门名称<br>   |  |
+| operator | string | 是 | 运算符，可选值为：<br>- `EQUAL`: 全等，适用于数字和字符串的全等匹配<br>- `IN`: 为某个数组中的元素<br>- `GREATER`: 大于或等于，适用于数字、日期类型数据的比较<br>- `LESSER`: 小于或等于，适用于数字、日期类型数据的比较<br>- `BETWEEN`: 介于什么什么之间，适用于数字、日期类型数据的比较<br>- `CONTAINS`: 字符串包含<br>       | BETWEEN |
+| value | object | 否 | 搜索值，不同的 `field` 对应的 `value` 类型可能不一样   |  `test` |
 
 
 ### <a id="DepartmentDto"></a> DepartmentDto

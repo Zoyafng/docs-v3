@@ -2080,6 +2080,10 @@ const zhCnNavBar = {
                       "path": "/reference/sdk/node/management/管理数据资源与权限/list-permission-namespace-roles"
                     },
                     {
+                      "title": "创建数据资源",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/create-data-resource"
+                    },
+                    {
                       "title": "创建字符串数据资源",
                       "path": "/reference/sdk/node/management/管理数据资源与权限/create-string-data-resource"
                     },

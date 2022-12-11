@@ -22,7 +22,6 @@
 | keywords | string | 是 | - | 搜索关键词，如组织名称等  | `Authing` |
 | organizationCode | string | 是 | - | 组织 code  | `steamory` |
 | withCustomData | boolean | 否 | - | 是否获取自定义数据  | `true` |
-| limit | number | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 
 
 
