@@ -44,7 +44,7 @@ const managementClient = new ManagementClient({
 
 (async () => {
 
-  const result = await managementClient.updateNamespace({
+  const result = await managementClient.updatePermissionNamespace({
     code: 'examplePermissionNamespace',
     newCode: 'exampleNewPermissionNamespace',
     name: '示例权限空间新名称',

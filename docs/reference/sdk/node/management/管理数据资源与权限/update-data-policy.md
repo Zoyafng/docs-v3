@@ -101,7 +101,7 @@ const managementClient = new ManagementClient({
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | effect | string | 是 | 数据资源权限操作：ALLOW（允许）/DENY（拒绝）   | DENY |
-| permissions | array | 是 | 资源权限列表，字符串数据资源和字符串数据资源，没有 path 路径   |  `["namespaceCode/stringResourceCode/action","namespaceCode/arrayResourceCode/action","namespaceCode/treeResourceCode/path/action"]` |
+| permissions | array | 是 | 资源权限列表，字符串数据资源和数组数据资源，没有 path 路径   |  `["namespaceCode/stringResourceCode/action","namespaceCode/arrayResourceCode/action","namespaceCode/treeResourceCode/path/action"]` |
 
 
 ### <a id="UpdateDataPolicyRespDto"></a> UpdateDataPolicyRespDto

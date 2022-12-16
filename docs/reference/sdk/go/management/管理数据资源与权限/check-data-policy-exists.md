@@ -68,7 +68,7 @@ func main() {
 | message | string | 描述信息 |
 | apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
 | requestId | string | 请求 ID。当请求失败时会返回。 |
-| data | <a href="#CheckParamsDataPolicyRespDto">CheckParamsDataPolicyRespDto</a> | 数据 |
+| data | <a href="#CheckParamsDataPolicyRespDto">CheckParamsDataPolicyRespDto</a> | 响应数据 |
 
 
 
@@ -94,6 +94,6 @@ func main() {
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | isValid | boolean | 是 | 数据策略名称校验是否有效   |  ` false` |
-| message | boolean | 否 | 数据策略名称校验失败提示信息,如果校验成功, message 不返回   |  ` data Policy name already exist` |
+| message | string | 否 | 数据策略名称校验失败提示信息,如果校验成功, message 不返回   |  ` data Policy name already exist` |
 
 
