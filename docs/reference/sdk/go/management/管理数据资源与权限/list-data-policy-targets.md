@@ -22,8 +22,46 @@
  | policyId | string  | 是 | - | 数据策略 ID  | `60b49xxxxxxxxxxxxxxx6e68` |
  | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
- | query | string  | 否 | - | 数据策略名称搜索  | `示例1` |
+ | query | string  | 否 | - | 主体名称  | `示例1` |
  | targetType | string[]  | 否 | - | 主体类型,包括 USER、GROUP、ROLE、ORG 四种类型  | `[0]` |
+
+
+
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.ListDataPolicyTargetsDto{
+		PolicyId:   "60b49xxxxxxxxxxxxxxx6e68",
+		Page:       1,
+		Limit:      10,
+		Query:      "主体名称",
+		TargetType: "USER",
+	}
+	respDto := client.ListDataPolicyTargets(reqDto)
+	fmt.Println(respDto)
+}
+```
 
 
 

@@ -109,7 +109,7 @@ const managementClient = new ManagementClient({
     namespaceCode: 'examplePermissionNamespace',
     resourceCode: 'treeResourceCode',
     resourceName: '示例树数据资源',
-    type: Models.CreateDataResourceDto.type.TREE,
+    type: CreateDataResourceDto.type.TREE,
     struct: [{
       code: 'tree1',
       name: '树节点1',

@@ -29,6 +29,63 @@
 
 
 
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.CreateTreeDataResourceDto{
+		NamespaceCode: "examplePermissionNamespace",
+		ResourceCode:  "treeResourceCode",
+		ResourceName:  "示例树数据资源",
+		Struct: []dto.DataResourceTreeStructs{
+			{
+				Code:  "tree1",
+				Name:  "树节点1",
+				Value: "树节点1描述",
+				Children: []dto.DataResourceTreeStructs{
+					{
+						Code:  "tree11",
+						Name:  "树节点11",
+						Value: "树节点11描述",
+					},
+				},
+			},
+			{
+				Code:  "tree2",
+				Name:  "树节点2",
+				Value: "树节点2描述",
+			},
+		},
+		Description: "示例树数据资源描述",
+		Actions:     []string{"get", "read"},
+	}
+	respDto := client.CreateDataResourceByTree(reqDto)
+	fmt.Println(respDto)
+}
+```
+
+
+
+
 ## 请求响应
 
 类型： `CreateTreeDataResourceResponseDto`

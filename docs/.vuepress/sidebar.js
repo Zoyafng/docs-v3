@@ -875,7 +875,7 @@ const zhCnNavBar = {
                       "path": "/reference/sdk/java/management/管理数据资源与权限/delete-permission-namespaces-batch"
                     },
                     {
-                      "title": "校验权限空间 Code 或者名称是否有效",
+                      "title": "校验权限空间 Code 或者名称是否可用",
                       "path": "/reference/sdk/java/management/管理数据资源与权限/check-permission-namespace-exists"
                     },
                     {
@@ -885,6 +885,18 @@ const zhCnNavBar = {
                     {
                       "title": "创建数据资源",
                       "path": "/reference/sdk/java/management/管理数据资源与权限/create-data-resource"
+                    },
+                    {
+                      "title": "创建字符串数据资源",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/create-string-data-resource"
+                    },
+                    {
+                      "title": "创建数组数据资源",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/create-array-data-resource"
+                    },
+                    {
+                      "title": "创建树数据资源",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/create-tree-data-resource"
                     },
                     {
                       "title": "获取数据资源列表",
@@ -903,29 +915,69 @@ const zhCnNavBar = {
                       "path": "/reference/sdk/java/management/管理数据资源与权限/delete-data-resource"
                     },
                     {
-                      "title": "检查数据资源名称或者 Code 是否有效",
+                      "title": "检查数据资源名称或者 Code 是否可用",
                       "path": "/reference/sdk/java/management/管理数据资源与权限/check-data-resource-exists"
                     },
-                    // {
-                    //   "title": "获取用户权限列表",
-                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-permission-list"
-                    // },
-                    // {
-                    //   "title": "判断用户权限",
-                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/check-permission"
-                    // },
-                    // {
-                    //   "title": "获取用户指定资源权限列表",
-                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-resource-permission-list"
-                    // },
-                    // {
-                    //   "title": "获取资源被授权的用户列表",
-                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/list-resource-targets"
-                    // },
-                    // {
-                    //   "title": "判断用户在同层级资源下的权限",
-                    //   "path": "/reference/sdk/java/management/管理数据资源与权限/check-user-same-level-permission"
-                    // }
+                    {
+                      "title": "创建数据策略",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/create-data-policy"
+                    },
+                    {
+                      "title": "获取数据策略列表",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/list-data-policies"
+                    },
+                    {
+                      "title": "获取数据策略简略信息列表",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/list-simple-data-policies"
+                    },
+                    {
+                      "title": "获取数据策略信息",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/get-data-policy"
+                    },
+                    {
+                      "title": "修改数据策略",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/update-data-policy"
+                    },
+                    {
+                      "title": "删除数据策略",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/delete-data-policy"
+                    },
+                    {
+                      "title": "校验数据策略名称是否存在",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/check-data-policy-exists"
+                    },
+                    {
+                      "title": "获取数据策略下所有的授权主体的信息",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/list-data-policy-targets"
+                    },
+                    {
+                      "title": "授权数据策略",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/authorize-data-policies"
+                    },
+                    {
+                      "title": "撤销数据策略",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/revoke-data-policy"
+                    },
+                    {
+                      "title": "获取用户权限列表",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-permission-list"
+                    },
+                    {
+                      "title": "判断用户权限",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/check-permission"
+                    },
+                    {
+                      "title": "获取用户指定资源权限列表",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-resource-permission-list"
+                    },
+                    {
+                      "title": "获取资源被授权的用户列表",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/list-resource-targets"
+                    },
+                    {
+                      "title": "判断用户在同层级资源下的权限",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/check-user-same-level-permission"
+                    }
                   ]
                 },
                 {

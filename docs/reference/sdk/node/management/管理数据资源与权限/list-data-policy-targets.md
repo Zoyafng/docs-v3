@@ -22,7 +22,7 @@
  | policyId | string  | 是 | - | 数据策略 ID  | `60b49xxxxxxxxxxxxxxx6e68` |
  | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
- | query | string  | 否 | - | 数据策略名称搜索  | `示例1` |
+ | query | string  | 否 | - | 主体名称  | `示例1` |
  | targetType | string[]  | 否 | - | 主体类型,包括 USER、GROUP、ROLE、ORG 四种类型  | `[0]` |
 
 
@@ -49,8 +49,8 @@ const managementClient = new ManagementClient({
     policyId: '60b49xxxxxxxxxxxxxxx6e68',
     page: 1,
     limit: 10,
-    query: '示例1',
-    targetType: 'USER',
+    query: '主体名称',
+    targetType: ['USER'],
   });
 
   console.log(JSON.stringify(result, null, 2));

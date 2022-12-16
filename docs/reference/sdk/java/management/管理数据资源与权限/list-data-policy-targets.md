@@ -22,7 +22,7 @@
  | policyId | string  | 是 | - | 数据策略 ID  | `60b49xxxxxxxxxxxxxxx6e68` |
  | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
- | query | string  | 否 | - | 数据策略名称搜索  | `示例1` |
+ | query | string  | 否 | - | 主体名称  | `示例1` |
  | targetType | string[]  | 否 | - | 主体类型,包括 USER、GROUP、ROLE、ORG 四种类型  | `[0]` |
 
 
@@ -36,8 +36,12 @@ package test.management.dataPermission.policy;
 import cn.authing.sdk.java.client.ManagementClient;
 import cn.authing.sdk.java.dto.ListDataPolicySubjectPaginatedRespDto;
 import cn.authing.sdk.java.dto.ListDataPolicyTargetsDto;
+import cn.authing.sdk.java.dto.SubjectDto;
 import cn.authing.sdk.java.model.ManagementClientOptions;
 import cn.authing.sdk.java.util.JsonUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ListDataPolicyTargetsTest {
     // 需要替换成你的 Authing Access Key ID
@@ -55,10 +59,13 @@ public class ListDataPolicyTargetsTest {
 
         ListDataPolicyTargetsDto reqDto = new ListDataPolicyTargetsDto();
         reqDto.setPolicyId("60b49xxxxxxxxxxxxxxx6e68");
-        reqDto.setQuery("示例1");
+        reqDto.setQuery("主体名称");
         reqDto.setPage(1);
         reqDto.setLimit(10);
-        reqDto.setTargetType("USER");
+        List<SubjectDto.Type> targetType = new ArrayList<>();
+        targetType.add(SubjectDto.Type.USER);
+        targetType.add(SubjectDto.Type.ROLE);
+        reqDto.setTargetType(targetType);
         ListDataPolicySubjectPaginatedRespDto response = client.listDataPolicyTargets(reqDto);
         System.out.println(JsonUtils.serialize(response));
     }

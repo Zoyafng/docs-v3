@@ -27,6 +27,48 @@
 
 
 
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.UpdateDataPolicyDto{
+		PolicyId: "60b49xxxxxxxxxxxxxxx6e68",
+		PolicyName: "示例数据策略名称",
+		Description: "示例数据策略描述",
+		StatementList: []dto.DataStatementPermissionDto{
+			{
+				Effect:      "ALLOW",
+				Permissions: []string{"namespaceCode/treeResourceCode/path/action"},
+			},
+		},
+	}
+	respDto := client.UpdateDataPolicy(reqDto)
+	fmt.Println(respDto)
+}
+```
+
+
+
+
 ## 请求响应
 
 类型： `UpdateDataPolicyResponseDto`

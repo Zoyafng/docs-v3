@@ -48,7 +48,7 @@ const managementClient = new ManagementClient({
     page: 1,
     limit: 10,
     query: '示例数据资源'
-    namespaceCodes: 'examplePermissionNamespace1,examplePermissionNamespace2'
+    namespaceCodes: ['examplePermissionNamespace1','examplePermissionNamespace2']
   });
 
 
