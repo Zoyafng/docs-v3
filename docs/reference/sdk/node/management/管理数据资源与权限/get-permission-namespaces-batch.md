@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-分别通过权限空间唯一标志符 Code，批量获取权限空间详情。
+分别通过权限空间唯一标志符(Code)，获取权限空间详情。
 
 ## 方法名称
 
@@ -42,7 +42,7 @@ const managementClient = new ManagementClient({
 (async () => {
 
   const result = await managementClient.getPermissionNamespacesBatch({
-    codes: 'examplePermissionNamespace1,examplePermissionNamespace2'
+    codes: ['examplePermissionNamespace1','examplePermissionNamespace2']
   });
 
 

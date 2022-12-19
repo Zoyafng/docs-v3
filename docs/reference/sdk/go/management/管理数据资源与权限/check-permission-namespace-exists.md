@@ -1,4 +1,4 @@
-# 校验权限空间 Code 或者名称是否有效
+# 校验权限空间 Code 或者名称是否可用
 
 <!--
   警告⚠️：
@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-通过用户池 ID 和权限空间 Code,或者用户池 ID 和权限空间名称查询是否有效。
+通过用户池 ID 和权限空间 Code,或者用户池 ID 和权限空间名称查询是否可用。
 
 ## 方法名称
 
@@ -21,6 +21,41 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | code | string | 否 | - | 权限空间 Code  | `examplePermissionNamespace` |
 | name | string | 否 | - | 权限空间名称  | `示例权限空间` |
+
+
+
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.CheckPermissionNamespaceExistsDto{
+		Code: "examplePermissionNamespace",
+    Name: "示例权限空间名称",
+	}
+	respDto := client.CheckPermissionNamespaceExists(reqDto)
+	fmt.Println(respDto)
+}
+```
 
 
 

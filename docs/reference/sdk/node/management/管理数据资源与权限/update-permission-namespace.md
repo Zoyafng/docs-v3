@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-修改权限空间，可以修改权限空间名称、权限空间描述信息以及权限空间新的唯一标志符 Code。
+修改权限空间，可以修改权限空间名称、权限空间描述信息以及权限空间新的唯一标志符(Code)。
 
 ## 方法名称
 
@@ -44,7 +44,7 @@ const managementClient = new ManagementClient({
 
 (async () => {
 
-  const result = await managementClient.updateNamespace({
+  const result = await managementClient.updatePermissionNamespace({
     code: 'examplePermissionNamespace',
     newCode: 'exampleNewPermissionNamespace',
     name: '示例权限空间新名称',

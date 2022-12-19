@@ -101,6 +101,10 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | 描述 |
 | ---- | ---- | ---- |
+| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message | string | 描述信息 |
+| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
+| requestId | string | 请求 ID。当请求失败时会返回。 |
 | data | <a href="#CheckUserSameLevelPermissionDataDto">CheckUserSameLevelPermissionDataDto</a> | 响应数据 |
 
 
@@ -109,6 +113,9 @@ const managementClient = new ManagementClient({
 
 ```json
 {
+  "statusCode": 200,
+  "message": "操作成功",
+  "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c",
   "data": {
     "checkLevelResultList": {
       "action": "get",

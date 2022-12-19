@@ -63,12 +63,53 @@
 
 
 
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.CheckUserSameLevelPermissionDto{
+		NamespaceCode: "examplePermissionNamespace",
+		UserId:        "63721xxxxxxxxxxxxdde14a3",
+		Action:        "get",
+		Resource:      "strResourceCode",
+	}
+	respDto := client.CheckUserSameLevelPermission(reqDto)
+	fmt.Println(respDto)
+}
+```
+
+
+
+
 ## 请求响应
 
 类型： `CheckUserSameLevelPermissionResponseDto`
 
 | 名称 | 类型 | 描述 |
 | ---- | ---- | ---- |
+| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message | string | 描述信息 |
+| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
+| requestId | string | 请求 ID。当请求失败时会返回。 |
 | data | <a href="#CheckUserSameLevelPermissionDataDto">CheckUserSameLevelPermissionDataDto</a> | 响应数据 |
 
 
@@ -77,6 +118,9 @@
 
 ```json
 {
+  "statusCode": 200,
+  "message": "操作成功",
+  "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c",
   "data": {
     "checkLevelResultList": {
       "action": "get",

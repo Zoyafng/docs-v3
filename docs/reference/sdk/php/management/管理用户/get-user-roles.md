@@ -84,7 +84,9 @@ print_r($data);
       "name": "role1",
       "description": "this is role description",
       "namespace": "default",
-      "namespaceName": "示例权限名称"
+      "namespaceName": "示例权限名称",
+      "status": "ENABLE",
+      "disableTime": "1669881887852"
     }
   }
 }
@@ -110,5 +112,7 @@ print_r($data);
 | description | string | 是 | 角色描述   |  `this is role description` |
 | namespace | string | 是 | 所属权限分组(权限空间)的 Code   |  `default` |
 | namespaceName | string | 是 | 所属权限分组(权限空间)的名称   |  `示例权限名称` |
+| status | string | 否 | 角色状态，ENABLE-表示正常，DISABLE-表示禁止   |  `ENABLE` |
+| disableTime | number | 否 | 角色自动禁止时间，单位毫秒, 如果传null表示永久有效   |  `1669881887852` |
 
 

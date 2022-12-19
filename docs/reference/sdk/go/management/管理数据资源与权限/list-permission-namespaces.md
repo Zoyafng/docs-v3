@@ -21,7 +21,43 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
  | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
- | query | string  | 否 | - | 权限空间 Code  | `examplePermissionNamespace` |
+ | query | string  | 否 | - | 权限空间 name  | `examplePermissionNamespace` |
+
+
+
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.ListPermissionNamespacesDto{
+		Page:  1,
+		Limit: 10,
+		Query: "示例权限空间",
+	}
+	respDto := client.ListPermissionNamespaces(reqDto)
+	fmt.Println(respDto)
+}
+```
 
 
 

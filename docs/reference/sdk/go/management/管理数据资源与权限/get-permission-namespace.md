@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-通过权限空间唯一标志符 Code，获取权限空间详情。
+通过权限空间唯一标志符(Code)，获取权限空间详情。
 
 ## 方法名称
 
@@ -20,6 +20,40 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
  | code | string  | 是 | - | 权限空间 Code  | `examplePermissionNamespace` |
+
+
+
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+	  reqDto := &dto.GetPermissionNamespaceDto{
+		Code: "examplePermissionNamespace",
+	}
+	respDto := client.GetPermissionNamespace(reqDto)
+	fmt.Println(respDto)
+}
+```
 
 
 

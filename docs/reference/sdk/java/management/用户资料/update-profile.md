@@ -32,6 +32,7 @@
 | postalCode | string | 否 | - | 邮政编码号  | `438100` |
 | gender | string | 否 | U | 性别  | `M` |
 | username | string | 否 | - | 用户名，用户池内唯一  | `bob` |
+| company | string | 否 | - | 所在公司  | `steamory` |
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"school":"北京大学","age":22}` |
 
 

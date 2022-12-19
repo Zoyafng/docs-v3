@@ -19,6 +19,7 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
+| type | string | 是 | - | 分组类型  | `static` |
 | description | string | 是 | - | 分组描述  | `描述内容` |
 | name | string | 是 | - | 分组名称  | `开发者` |
 | code | string | 是 | - | 分组 code  | `developer` |
@@ -87,7 +88,8 @@ func main() {
   "data": {
     "code": "developer",
     "name": "开发者",
-    "description": "描述内容"
+    "description": "描述内容",
+    "type": "static"
   }
 }
 ```
@@ -102,5 +104,6 @@ func main() {
 | code | string | 是 | 分组 code   |  `developer` |
 | name | string | 是 | 分组名称   |  `开发者` |
 | description | string | 是 | 分组描述   |  `描述内容` |
+| type | string | 是 | 分组类型   |  `static` |
 
 

@@ -1,4 +1,4 @@
-# 检查数据资源名称或者 Code 是否有效
+# 检查数据资源名称或者 Code 是否可用
 
 <!--
   警告⚠️：
@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-检查数据资源名称或者 Code 在权限空间内是否有效,通过数据资源名称或者数据资源 Code 以及所属权限空间 Code,判断在指定的权限空间内是否有效。
+检查数据资源名称或者 Code 在权限空间内是否有效,通过数据资源名称或者数据资源 Code 以及所属权限空间 Code,判断在指定的权限空间内是否可用。
 
 ### 数据资源 Code 有效示例
 
@@ -97,6 +97,41 @@
  | namespaceCode | string  | 是 | - | 数据资源所属的权限空间 Code  | `examplePermissionNamespace` |
  | resourceName | string  | 否 | - | 数据资源名称,权限空间内唯一  | `示例数据资源名称` |
  | resourceCode | string  | 否 | - | 数据资源 Code,权限空间内唯一  | `dataResourceTestCode` |
+
+
+
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.CheckDataResourceExistsDto{
+		NamespaceCode: "examplePermissionNamespace",
+		ResourceName:  "示例数据资源名称",
+	}
+	respDto := client.CheckDataResourceExists(reqDto)
+	fmt.Println(respDto)
+}
+```
 
 
 

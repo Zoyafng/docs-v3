@@ -9,11 +9,11 @@
 
 <LastUpdated />
 
-通过资源id批量删除资源
+批量删除资源，通过资源 Id 进行批量删除。
 
 ## 方法名称
 
-`ManagementClient.batchDeleteCommonResource`
+`ManagementClient.deleteResourcesByIdBatch`
 
 ## 请求参数
 

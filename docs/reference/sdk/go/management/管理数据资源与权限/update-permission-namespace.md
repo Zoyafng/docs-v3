@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-修改权限空间，可以修改权限空间名称、权限空间描述信息以及权限空间新的唯一标志符 Code。
+修改权限空间，可以修改权限空间名称、权限空间描述信息以及权限空间新的唯一标志符(Code)。
 
 ## 方法名称
 
@@ -23,6 +23,43 @@
 | name | string | 否 | - | 权限空间名称  | `示例权限空间` |
 | newCode | string | 否 | - | 权限分组新的唯一标志符 Code  | `exampleNewPermissionNamespace` |
 | description | string | 否 | - | 权限空间描述  | `示例权限空间描述` |
+
+
+
+
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.UpdatePermissionNamespaceDto{
+		Code:        "examplePermissionNamespace",
+		Name:        "示例新权限空间名称",
+		Description: "示例新权限空间描述",
+		NewCode:     "exampleNewPermissionNamespace",
+	}
+	respDto := client.UpdatePermissionNamespace(reqDto)
+	fmt.Println(respDto)
+}
+```
 
 
 

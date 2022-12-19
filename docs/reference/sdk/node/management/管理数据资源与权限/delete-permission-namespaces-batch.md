@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-分别通过权限空间唯一标志符 Code，批量删除权限空间信息。
+分别通过权限空间唯一标志符(Code)，批量删除权限空间信息。
 
 ## 方法名称
 
@@ -42,7 +42,7 @@ const managementClient = new ManagementClient({
 (async () => {
 
   const result = await managementClient.deletePermissionNamespacesBatch({
-    codes: ['examplePermissionNamespace1,examplePermissionNamespace2']
+    codes: ['examplePermissionNamespace1','examplePermissionNamespace2']
   });
 
 

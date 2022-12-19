@@ -21,7 +21,7 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
  | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
  | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
- | query | string  | 否 | - | 权限空间 Code  | `examplePermissionNamespace` |
+ | query | string  | 否 | - | 权限空间 name  | `examplePermissionNamespace` |
 
 
 
@@ -46,7 +46,7 @@ const managementClient = new ManagementClient({
   const result = await managementClient.listPermissionNamespaces({
     page: 1,
     limit: 10,
-    query: '示例权限空间'
+    query: '示例权限空间名称'
   });
 
 
