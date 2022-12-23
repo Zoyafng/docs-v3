@@ -56,16 +56,33 @@ func main() {
 		NamespaceCode: "examplePermissionNamespace",
 		ResourceCode:  "treeResourceCode",
 		ResourceName:  "示例树数据资源",
-		Struct: []dto.DataResourceTreeStructs{
+	Struct: []dto.DataResourceTreeStructs{
 			{
 				Code:  "tree1",
 				Name:  "树节点1",
 				Value: "树节点1描述",
-				Children: []dto.DataResourceTreeStructs{
-					{
+				Children: []interface{}{
+					dto.DataResourceTreeStructs{
 						Code:  "tree11",
 						Name:  "树节点11",
 						Value: "树节点11描述",
+						Children: []interface{}{
+							dto.DataResourceTreeStructs{
+								Code:  "tree111",
+								Name:  "树节点111",
+								Value: "树节点111描述",
+							},
+							dto.DataResourceTreeStructs{
+								Code:  "tree112",
+								Name:  "树节点112",
+								Value: "树节点112描述",
+							},
+						},
+					},
+					dto.DataResourceTreeStructs{
+						Code:  "tree12",
+						Name:  "树节点12",
+						Value: "树节点12描述",
 					},
 				},
 			},
