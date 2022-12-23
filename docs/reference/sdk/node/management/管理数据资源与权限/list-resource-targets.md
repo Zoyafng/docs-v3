@@ -196,10 +196,10 @@ const managementClient = new ManagementClient({
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
-| authUserList | array | 是 | 用户授权列表 嵌套类型：<a href="#ListResourceTargetsDto">ListResourceTargetsDto</a>。  |  |
+| authUserList | array | 是 | 用户授权列表 嵌套类型：<a href="#ListResourceTargetsDtoResp">ListResourceTargetsDtoResp</a>。  |  |
 
 
-### <a id="ListResourceTargetsDto"></a> ListResourceTargetsDto
+### <a id="ListResourceTargetsDtoResp"></a> ListResourceTargetsDtoResp
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |

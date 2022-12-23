@@ -143,6 +143,9 @@ namespace ConsoleManagement
         "limit": 50,
         "timeInterval": 300,
         "unit": "Second"
+      },
+      "robotVerifyLoginIpWhitelistCheck": {
+        "ipWhitelist": "132.133.123.144,255.255.255.255"
       }
     },
     "selfUnlockAccount": {
@@ -205,6 +208,9 @@ namespace ConsoleManagement
 | loginPasswordFailCheck |  | 是 | 登录密码错误限制：当用户登录输入密码信息错误的时候会被按照「登录安全策略」规则触发相对应的策略。此字段被标志为过时，见 accountLockLoginPasswordFailCheck/ robotVerifyLoginPasswordFailCheck 嵌套类型：<a href="#LoginPassowrdFailCheckConfigDto">LoginPassowrdFailCheckConfigDto</a>。  |  |
 | accountLockLoginPasswordFailCheck |  | 否 | 账号锁定-登录密码错误限制：当用户登录输入密码信息错误的时候会被按照「登录安全策略」规则触发相对应的策略。 嵌套类型：<a href="#LoginPassowrdFailCheckConfigDto">LoginPassowrdFailCheckConfigDto</a>。  |  |
 | robotVerifyLoginPasswordFailCheck |  | 是 | 人机验证（验证码）-登录密码错误限制：当用户登录输入密码信息错误的时候会被按照「登录安全策略」规则触发相对应的策略。 嵌套类型：<a href="#LoginPassowrdFailCheckConfigDto">LoginPassowrdFailCheckConfigDto</a>。  |  |
+| robotVerifyLoginIpWhitelistCheck |  | 是 | 人机验证（验证码）- ip 白名单：当登录者 ip 不在白名单会触发人机验证。 嵌套类型：<a href="#LoginIpWhitelistCheckConfigDto">LoginIpWhitelistCheckConfigDto</a>。  |  |
+| robotVerifyLoginTimeCheckEnable | boolean | 是 | 是否开启登录时间限制   |  |
+| robotVerifyloginWeekStartEndTime | array | 是 | 登录时间限制周几+起始时间数组   |  |
 
 
 ### <a id="LoginFailCheckConfigDto"></a> LoginFailCheckConfigDto
@@ -225,6 +231,14 @@ namespace ConsoleManagement
 | limit | number | 是 | 密码错误次数最大限制   |  `50` |
 | timeInterval | number | 是 | 限定周期时间长度，单位为秒。   |  `300` |
 | unit | string | 否 | 时间长度单位。Second/Minute/Hour/Day，仅仅做显示，timeInterval的单位还是秒   |  `Second` |
+
+
+### <a id="LoginIpWhitelistCheckConfigDto"></a> LoginIpWhitelistCheckConfigDto
+
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+| ---- |  ---- | ---- | ---- | ---- |
+| enabled | boolean | 是 | 是否开启登录 ip 白名单验证   |  |
+| ipWhitelist | string | 是 | 人机验证 ip 白名单   |  `132.133.123.144,255.255.255.255` |
 
 
 ### <a id="SelfUnlockAccountConfigDto"></a> SelfUnlockAccountConfigDto
@@ -311,6 +325,9 @@ namespace ConsoleManagement
 | loginPasswordFailCheck |  | 是 | 登录密码错误限制：当用户登录输入密码信息错误的时候会被按照「登录安全策略」规则触发相对应的策略。此字段被标志为过时，见 accountLockLoginPasswordFailCheck/ robotVerifyLoginPasswordFailCheck 嵌套类型：<a href="#LoginPassowrdFailCheckConfigDto">LoginPassowrdFailCheckConfigDto</a>。  |  |
 | accountLockLoginPasswordFailCheck |  | 否 | 账号锁定-登录密码错误限制：当用户登录输入密码信息错误的时候会被按照「登录安全策略」规则触发相对应的策略。 嵌套类型：<a href="#LoginPassowrdFailCheckConfigDto">LoginPassowrdFailCheckConfigDto</a>。  |  |
 | robotVerifyLoginPasswordFailCheck |  | 是 | 人机验证（验证码）-登录密码错误限制：当用户登录输入密码信息错误的时候会被按照「登录安全策略」规则触发相对应的策略。 嵌套类型：<a href="#LoginPassowrdFailCheckConfigDto">LoginPassowrdFailCheckConfigDto</a>。  |  |
+| robotVerifyLoginIpWhitelistCheck |  | 是 | 人机验证（验证码）- ip 白名单：当登录者 ip 不在白名单会触发人机验证。 嵌套类型：<a href="#LoginIpWhitelistCheckConfigDto">LoginIpWhitelistCheckConfigDto</a>。  |  |
+| robotVerifyLoginTimeCheckEnable | boolean | 是 | 是否开启登录时间限制   |  |
+| robotVerifyloginWeekStartEndTime | array | 是 | 登录时间限制周几+起始时间数组   |  |
 
 
 ### <a id="LoginFailCheckConfigDto"></a> LoginFailCheckConfigDto
@@ -331,6 +348,14 @@ namespace ConsoleManagement
 | limit | number | 是 | 密码错误次数最大限制   |  `50` |
 | timeInterval | number | 是 | 限定周期时间长度，单位为秒。   |  `300` |
 | unit | string | 否 | 时间长度单位。Second/Minute/Hour/Day，仅仅做显示，timeInterval的单位还是秒   |  `Second` |
+
+
+### <a id="LoginIpWhitelistCheckConfigDto"></a> LoginIpWhitelistCheckConfigDto
+
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+| ---- |  ---- | ---- | ---- | ---- |
+| enabled | boolean | 是 | 是否开启登录 ip 白名单验证   |  |
+| ipWhitelist | string | 是 | 人机验证 ip 白名单   |  `132.133.123.144,255.255.255.255` |
 
 
 ### <a id="SelfUnlockAccountConfigDto"></a> SelfUnlockAccountConfigDto

@@ -23,6 +23,7 @@
 | page | number | 否 | 1 | 当前页数，从 1 开始  | `1` |
 | limit | number | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
 | query | string | 否 | - | 按角色 Code 或者角色名称查询  | `示例应用` |
+| namespaceCode | string | 否 | - | 权限空间code  |  |
 | targetType | string[] | 否 | - | 目标类型，接受用户，部门  | `["USER","ORG"]` |
 
 
@@ -53,6 +54,9 @@
     "totalCount": 20,
     "data": {
       "roleId": "60b49eb83fd80adb96f26e68",
+      "status": "ENABLE",
+      "enableTime": "1670915666812",
+      "endTime": "1670915666812",
       "userPoolId": "6076bacxxxxxxxxd80d993b5",
       "roleName": "测试用户",
       "roleCode": "code_1",
@@ -80,6 +84,9 @@
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | roleId | string | 是 | 角色 ID   |  `60b49eb83fd80adb96f26e68` |
+| status | string | 是 | 主体状态，DISABLE-未加入角色，ENABLE-已经加入了角色   |  `ENABLE` |
+| enableTime | number | 否 | 主体加入时间毫秒值   |  `1670915666812` |
+| endTime | number | 否 | 主体失效时间毫秒值，为 null 表示用不失效   |  `1670915666812` |
 | userPoolId | string | 是 | 所属用户池 ID   |  `6076bacxxxxxxxxd80d993b5` |
 | roleName | string | 是 | 角色名称，最多 50 字符   |  `测试用户` |
 | roleCode | string | 是 | 角色 code,只能使用字母、数字和 -_，最多 50 字符   |  `code_1` |
