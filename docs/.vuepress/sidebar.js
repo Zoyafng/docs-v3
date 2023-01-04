@@ -62,347 +62,363 @@ const zhCnNavBar = {
               path: '/reference/sdk/java/install.md'
             },
             {
-              title: '用户认证模块',
-              children: [
+              "title": "用户认证模块",
+              "children": [
                 {
-                  title: '登录',
-                  children: [
+                  "title": "登录",
+                  "children": [
                     {
-                      title: '账号密码登录',
-                      path: '/reference/sdk/java/authentication/登录/signin-by-account-password.md'
+                      "title": "账号密码登录",
+                      "path": "/reference/sdk/java/authentication/登录/signin-by-account-password.md"
                     },
                     {
-                      title: '用户名密码登录',
-                      path: '/reference/sdk/java/authentication/登录/signin-by-username-password.md'
+                      "title": "用户名密码登录",
+                      "path": "/reference/sdk/java/authentication/登录/signin-by-username-password.md"
                     },
                     {
-                      title: '手机号密码登录',
-                      path: '/reference/sdk/java/authentication/登录/signin-by-phone-password.md'
+                      "title": "手机号密码登录",
+                      "path": "/reference/sdk/java/authentication/登录/signin-by-phone-password.md"
                     },
                     {
-                      title: '邮箱密码登录',
-                      path: '/reference/sdk/java/authentication/登录/signin-by-email-password.md'
+                      "title": "邮箱密码登录",
+                      "path": "/reference/sdk/java/authentication/登录/signin-by-email-password.md"
                     },
                     {
-                      title: '邮箱验证码登录',
-                      path: '/reference/sdk/java/authentication/登录/signin-by-email-passcode.md'
+                      "title": "邮箱验证码登录",
+                      "path": "/reference/sdk/java/authentication/登录/signin-by-email-passcode.md"
                     },
                     {
-                      title: '手机号验证码登录',
-                      path: '/reference/sdk/java/authentication/登录/signin-by-phone-passcode.md'
+                      "title": "手机号验证码登录",
+                      "path": "/reference/sdk/java/authentication/登录/signin-by-phone-passcode.md"
                     },
                     {
-                      title: 'LDAP 账号登录',
-                      path: '/reference/sdk/java/authentication/登录/signin-by-ldap.md'
+                      "title": "LDAP 账号登录",
+                      "path": "/reference/sdk/java/authentication/登录/signin-by-ldap.md"
                     },
                     {
-                      title: 'AD 账号登录',
-                      path: '/reference/sdk/java/authentication/登录/signin-by-ad.md'
+                      "title": "AD 账号登录",
+                      "path": "/reference/sdk/java/authentication/登录/signin-by-ad.md"
                     },
                     {
-                      title: '使用用户凭证登录',
-                      path: '/reference/sdk/java/authentication/登录/signin'
+                      "title": "生成登录地址",
+                      "path": "/reference/sdk/java/authentication/登录/build-authorize-url.md"
                     },
                     {
-                      title: '生成登录地址',
-                      path: '/reference/sdk/java/authentication/登录/build-authorize-url.md'
+                      "title": "使用用户凭证登录",
+                      "path": "/reference/sdk/java/authentication/登录/signin"
                     },
                     {
-                      title: '使用移动端社会化登录',
-                      path: '/reference/sdk/java/authentication/登录/signin-by-mobile'
+                      "title": "使用移动端社会化登录",
+                      "path": "/reference/sdk/java/authentication/登录/signin-by-mobile"
                     },
                     {
-                      title: '获取支付宝 AuthInfo',
-                      path: '/reference/sdk/java/authentication/登录/get-alipay-authinfo'
+                      "title": "获取支付宝 AuthInfo",
+                      "path": "/reference/sdk/java/authentication/登录/get-alipay-authinfo"
                     },
                     {
-                      title: '生成用于登录的二维码',
-                      path: '/reference/sdk/java/authentication/登录/gene-qrcode'
+                      "title": "生成用于登录的二维码",
+                      "path": "/reference/sdk/java/authentication/登录/gene-qrcode"
                     },
                     {
-                      title: '查询二维码状态',
-                      path: '/reference/sdk/java/authentication/登录/check-qrcode-status'
+                      "title": "查询二维码状态",
+                      "path": "/reference/sdk/java/authentication/登录/check-qrcode-status"
                     },
                     {
-                      title: '使用二维码 ticket 换取 TokenSet',
-                      path: '/reference/sdk/java/authentication/登录/exchange-tokenset-with-qrcode-ticket'
+                      "title": "使用二维码 ticket 换取 TokenSet",
+                      "path": "/reference/sdk/java/authentication/登录/exchange-tokenset-with-qrcode-ticket"
                     },
                     {
-                      title: '自建 APP 扫码登录：APP 端修改二维码状态',
-                      path: '/reference/sdk/java/authentication/登录/change-qrcode-status'
+                      "title": "自建 APP 扫码登录：APP 端修改二维码状态",
+                      "path": "/reference/sdk/java/authentication/登录/change-qrcode-status"
                     }
                   ]
                 },
                 {
-                  title: '管理 Token',
-                  children: [
+                  "title": "登出",
+                  "children": [
                     {
-                      title: '获取 Token',
-                      path: '/reference/sdk/java/authentication/管理-token/get-access-token.md'
+                      "title": "前端登出",
+                      "path": "/reference/sdk/java/authentication/登出/front-channel-logout.md"
                     },
                     {
-                      title: '校验 Token',
-                      path: '/reference/sdk/java/authentication/管理-token/introspect-token.md'
-                    },
-                    {
-                      title: '撤销 Token',
-                      path: '/reference/sdk/java/authentication/管理-token/revoke-token.md'
+                      "title": "后端登出",
+                      "path": "/reference/sdk/java/authentication/登出/backend-channel-logout.md"
                     }
                   ]
                 },
                 {
-                  title: '登出',
-                  children: [
+                  "title": "管理 Token",
+                  "children": [
                     {
-                      title: '前端登出',
-                      path: '/reference/sdk/java/authentication/登出/front-channel-logout.md'
+                      "title": "获取 Token",
+                      "path": "/reference/sdk/java/authentication/管理-token/get-access-token.md"
                     },
                     {
-                      title: '后端登出',
-                      path: '/reference/sdk/java/authentication/登出/backend-channel-logout.md'
+                      "title": "校验 Token",
+                      "path": "/reference/sdk/java/authentication/管理-token/introspect-token.md"
+                    },
+                    {
+                      "title": "撤销 Token",
+                      "path": "/reference/sdk/java/authentication/管理-token/revoke-token.md"
                     }
                   ]
                 },
                 {
-                  title: '注册',
-                  children: [
+                  "title": "注册",
+                  "children": [
                     {
-                      title: '用户名密码注册',
-                      path: '/reference/sdk/java/authentication/注册/signup-by-username-password.md'
+                      "title": "用户名密码注册",
+                      "path": "/reference/sdk/java/authentication/注册/signup-by-username-password.md"
                     },
                     {
-                      title: '邮箱密码注册',
-                      path: '/reference/sdk/java/authentication/注册/signup-by-email-password.md'
+                      "title": "邮箱密码注册",
+                      "path": "/reference/sdk/java/authentication/注册/signup-by-email-password.md"
                     },
                     {
-                      title: '手机号验证码注册',
-                      path: '/reference/sdk/java/authentication/注册/signup-by-phone-passcode.md'
+                      "title": "手机号验证码注册",
+                      "path": "/reference/sdk/java/authentication/注册/signup-by-phone-passcode.md"
                     },
                     {
-                      title: '邮箱验证码注册',
-                      path: '/reference/sdk/java/authentication/注册/signup-by-email-passcode.md'
+                      "title": "邮箱验证码注册",
+                      "path": "/reference/sdk/java/authentication/注册/signup-by-email-passcode.md"
                     },
                     {
-                      title: '注册',
-                      path: '/reference/sdk/java/authentication/注册/signup'
+                      "title": "注册",
+                      "path": "/reference/sdk/java/authentication/注册/signup"
                     }
                   ]
                 },
                 {
-                  title: '用户资料',
-                  children: [
+                  "title": "用户资料",
+                  "children": [
                     {
-                      title: '获取用户资料',
-                      path: '/reference/sdk/java/authentication/用户资料/get-profile'
+                      "title": "获取用户资料",
+                      "path": "/reference/sdk/java/authentication/用户资料/get-profile"
                     },
                     {
-                      title: '修改用户资料',
-                      path: '/reference/sdk/java/authentication/用户资料/update-profile'
+                      "title": "修改用户资料",
+                      "path": "/reference/sdk/java/authentication/用户资料/update-profile"
                     },
                     {
-                      title: '绑定邮箱',
-                      path: '/reference/sdk/java/authentication/用户资料/bind-email'
+                      "title": "绑定邮箱",
+                      "path": "/reference/sdk/java/authentication/用户资料/bind-email"
                     },
                     {
-                      title: '解绑邮箱',
-                      path: '/reference/sdk/java/authentication/用户资料/unbind-email'
+                      "title": "解绑邮箱",
+                      "path": "/reference/sdk/java/authentication/用户资料/unbind-email"
                     },
                     {
-                      title: '绑定手机号',
-                      path: '/reference/sdk/java/authentication/用户资料/bind-phone'
+                      "title": "绑定手机号",
+                      "path": "/reference/sdk/java/authentication/用户资料/bind-phone"
                     },
                     {
-                      title: '解绑手机号',
-                      path: '/reference/sdk/java/authentication/用户资料/unbind-phone'
+                      "title": "解绑手机号",
+                      "path": "/reference/sdk/java/authentication/用户资料/unbind-phone"
                     },
                     {
-                      title: '获取密码强度和账号安全等级评分',
-                      path: '/reference/sdk/java/authentication/用户资料/get-security-info'
+                      "title": "获取密码强度和账号安全等级评分",
+                      "path": "/reference/sdk/java/authentication/用户资料/get-security-info"
                     },
                     {
-                      title: '修改密码',
-                      path: '/reference/sdk/java/authentication/用户资料/update-password'
+                      "title": "修改密码",
+                      "path": "/reference/sdk/java/authentication/用户资料/update-password"
                     },
                     {
-                      title: '发起修改邮箱的验证请求',
-                      path: '/reference/sdk/java/authentication/用户资料/verify-update-email-request'
+                      "title": "发起修改邮箱的验证请求",
+                      "path": "/reference/sdk/java/authentication/用户资料/verify-update-email-request"
                     },
                     {
-                      title: '修改邮箱',
-                      path: '/reference/sdk/java/authentication/用户资料/update-email'
+                      "title": "修改邮箱",
+                      "path": "/reference/sdk/java/authentication/用户资料/update-email"
                     },
                     {
-                      title: '发起修改手机号的验证请求',
-                      path: '/reference/sdk/java/authentication/用户资料/verify-update-phone-request'
+                      "title": "发起修改手机号的验证请求",
+                      "path": "/reference/sdk/java/authentication/用户资料/verify-update-phone-request"
                     },
                     {
-                      title: '修改手机号',
-                      path: '/reference/sdk/java/authentication/用户资料/update-phone'
+                      "title": "修改手机号",
+                      "path": "/reference/sdk/java/authentication/用户资料/update-phone"
                     },
                     {
-                      title: '发起忘记密码请求',
-                      path: '/reference/sdk/java/authentication/用户资料/verify-reset-password-request'
+                      "title": "发起忘记密码请求",
+                      "path": "/reference/sdk/java/authentication/用户资料/verify-reset-password-request"
                     },
                     {
-                      title: '忘记密码',
-                      path: '/reference/sdk/java/authentication/用户资料/reset-password'
+                      "title": "忘记密码",
+                      "path": "/reference/sdk/java/authentication/用户资料/reset-password"
                     },
                     {
-                      title: '发起注销账号请求',
-                      path: '/reference/sdk/java/authentication/用户资料/verify-delete-account-request'
+                      "title": "发起注销账号请求",
+                      "path": "/reference/sdk/java/authentication/用户资料/verify-delete-account-request"
                     },
                     {
-                      title: '注销账户',
-                      path: '/reference/sdk/java/authentication/用户资料/delete-account'
+                      "title": "注销账户",
+                      "path": "/reference/sdk/java/authentication/用户资料/delete-account"
                     }
                   ]
                 },
                 {
-                  title: '账号绑定',
-                  children: [
+                  "title": "账号绑定",
+                  "children": [
                     {
-                      title: '生成绑定外部身份源的链接',
-                      path: '/reference/sdk/java/authentication/账号绑定/generate-link-extidp-url'
+                      "title": "生成绑定外部身份源的链接",
+                      "path": "/reference/sdk/java/authentication/账号绑定/generate-link-extidp-url"
                     },
                     {
-                      title: '解绑外部身份源',
-                      path: '/reference/sdk/java/authentication/账号绑定/unlink-extidp'
+                      "title": "解绑外部身份源",
+                      "path": "/reference/sdk/java/authentication/账号绑定/unlink-extidp"
                     },
                     {
-                      title: '获取绑定的外部身份源',
-                      path: '/reference/sdk/java/authentication/账号绑定/get-identities'
+                      "title": "获取绑定的外部身份源",
+                      "path": "/reference/sdk/java/authentication/账号绑定/get-identities"
                     },
                     {
-                      title: '获取应用开启的外部身份源列表',
-                      path: '/reference/sdk/java/authentication/账号绑定/get-application-enabled-extidps'
+                      "title": "获取应用开启的外部身份源列表",
+                      "path": "/reference/sdk/java/authentication/账号绑定/get-application-enabled-extidps"
                     }
                   ]
                 },
                 {
-                  title: 'MFA 要素管理',
-                  children: [
+                  "title": "MFA 要素管理",
+                  "children": [
                     {
-                      title: '发起绑定 MFA 认证要素请求',
-                      path: '/reference/sdk/java/authentication/mfa-要素管理/send-enroll-factor-request'
+                      "title": "发起绑定 MFA 认证要素请求",
+                      "path": "/reference/sdk/java/authentication/mfa-要素管理/send-enroll-factor-request"
                     },
                     {
-                      title: '绑定 MFA 认证要素',
-                      path: '/reference/sdk/java/authentication/mfa-要素管理/enroll-factor'
+                      "title": "绑定 MFA 认证要素",
+                      "path": "/reference/sdk/java/authentication/mfa-要素管理/enroll-factor"
                     },
                     {
-                      title: '解绑 MFA 认证要素',
-                      path: '/reference/sdk/java/authentication/mfa-要素管理/reset-factor'
+                      "title": "解绑 MFA 认证要素",
+                      "path": "/reference/sdk/java/authentication/mfa-要素管理/reset-factor"
                     },
                     {
-                      title: '获取绑定的所有 MFA 认证要素',
-                      path: '/reference/sdk/java/authentication/mfa-要素管理/list-enrolled-factors'
+                      "title": "获取绑定的所有 MFA 认证要素",
+                      "path": "/reference/sdk/java/authentication/mfa-要素管理/list-enrolled-factors"
                     },
                     {
-                      title: '获取绑定的某个 MFA 认证要素',
-                      path: '/reference/sdk/java/authentication/mfa-要素管理/get-factor'
+                      "title": "获取绑定的某个 MFA 认证要素",
+                      "path": "/reference/sdk/java/authentication/mfa-要素管理/get-factor"
                     },
                     {
-                      title: '获取可绑定的 MFA 认证要素',
-                      path: '/reference/sdk/java/authentication/mfa-要素管理/list-factors-to-enroll'
+                      "title": "获取可绑定的 MFA 认证要素",
+                      "path": "/reference/sdk/java/authentication/mfa-要素管理/list-factors-to-enroll"
                     }
                   ]
                 },
                 {
-                  title: '用户相关资源',
-                  children: [
+                  "title": "用户相关资源",
+                  "children": [
                     {
-                      title: '获取登录日志',
-                      path: '/reference/sdk/java/authentication/用户相关资源/get-my-login-history'
+                      "title": "获取登录日志",
+                      "path": "/reference/sdk/java/authentication/用户相关资源/get-my-login-history"
                     },
                     {
-                      title: '获取登录应用',
-                      path: '/reference/sdk/java/authentication/用户相关资源/get-my-logged-in-apps'
+                      "title": "获取登录应用",
+                      "path": "/reference/sdk/java/authentication/用户相关资源/get-my-logged-in-apps"
                     },
                     {
-                      title: '获取具备访问权限的应用',
-                      path: '/reference/sdk/java/authentication/用户相关资源/get-my-accessible-apps'
+                      "title": "获取具备访问权限的应用",
+                      "path": "/reference/sdk/java/authentication/用户相关资源/get-my-accessible-apps"
                     },
                     {
-                      title: '获取租户列表',
-                      path: '/reference/sdk/java/authentication/用户相关资源/get-my-tenant-list'
+                      "title": "获取租户列表",
+                      "path": "/reference/sdk/java/authentication/用户相关资源/get-my-tenant-list"
                     },
                     {
-                      title: '获取角色列表',
-                      path: '/reference/sdk/java/authentication/用户相关资源/get-my-role-list'
+                      "title": "获取角色列表",
+                      "path": "/reference/sdk/java/authentication/用户相关资源/get-my-role-list"
                     },
                     {
-                      title: '获取分组列表',
-                      path: '/reference/sdk/java/authentication/用户相关资源/get-my-group-list'
+                      "title": "获取分组列表",
+                      "path": "/reference/sdk/java/authentication/用户相关资源/get-my-group-list"
                     },
                     {
-                      title: '获取部门列表',
-                      path: '/reference/sdk/java/authentication/用户相关资源/get-my-department-list'
+                      "title": "获取部门列表",
+                      "path": "/reference/sdk/java/authentication/用户相关资源/get-my-department-list"
                     },
                     {
-                      title: '获取被授权的资源列表',
-                      path: '/reference/sdk/java/authentication/用户相关资源/get-my-authorized-resources'
+                      "title": "获取被授权的资源列表",
+                      "path": "/reference/sdk/java/authentication/用户相关资源/get-my-authorized-resources"
                     }
                   ]
                 },
                 {
-                  title: '消息服务',
-                  children: [
+                  "title": "消息服务",
+                  "children": [
                     {
-                      title: '发送短信',
-                      path: '/reference/sdk/java/authentication/消息服务/send-sms'
+                      "title": "发送短信",
+                      "path": "/reference/sdk/java/authentication/消息服务/send-sms"
                     },
                     {
-                      title: '发送邮件',
-                      path: '/reference/sdk/java/authentication/消息服务/send-email'
+                      "title": "发送邮件",
+                      "path": "/reference/sdk/java/authentication/消息服务/send-email"
                     }
                   ]
                 },
                 {
-                  title: '微信相关接口',
-                  children: [
+                  "title": "鉴权",
+                  "children": [
                     {
-                      title: '解密微信小程序数据',
-                      path: '/reference/sdk/java/authentication/微信相关接口/decrypt-wechat-miniprogram-data'
+                      "title": "字符串类型资源鉴权",
+                      "path": "/reference/sdk/java/authentication/鉴权/check-permission-string-resource"
                     },
                     {
-                      title: '获取小程序的手机号',
-                      path: '/reference/sdk/java/authentication/微信相关接口/get-wechat-miniprogram-phone'
+                      "title": "数组类型资源鉴权",
+                      "path": "/reference/sdk/java/authentication/鉴权/check-permission-array-resource"
                     },
                     {
-                      title:
-                        '获取 Authing 服务器缓存的微信小程序、公众号 Access Token',
-                      path: '/reference/sdk/java/authentication/微信相关接口/get-wechat-access-token'
+                      "title": "树类型资源鉴权",
+                      "path": "/reference/sdk/java/authentication/鉴权/check-permission-tree-resource"
+                    },
+                    {
+                      "title": "获取用户在登录应用下被授权资源列表",
+                      "path": "/reference/sdk/java/authentication/鉴权/get-user-auth-resource-list"
                     }
                   ]
                 },
                 {
-                  title: '其他',
-                  children: [
+                  "title": "微信相关接口",
+                  "children": [
                     {
-                      title: '获取服务器公开信息',
-                      path: '/reference/sdk/java/authentication/其他/system'
+                      "title": "解密微信小程序数据",
+                      "path": "/reference/sdk/java/authentication/微信相关接口/decrypt-wechat-miniprogram-data"
                     },
                     {
-                      title: '获取国家列表',
-                      path: '/reference/sdk/java/authentication/其他/get-country-list'
+                      "title": "获取微信小程序、公众号 Access Token",
+                      "path": "/reference/sdk/java/authentication/微信相关接口/get-wechat-access-token"
                     }
                   ]
                 },
                 {
-                  title: 'OIDC 模块',
-                  path: '/reference/sdk/java/authentication/oidc.md'
+                  "title": "其他",
+                  "children": [
+                    {
+                      "title": "获取服务器公开信息",
+                      "path": "/reference/sdk/java/authentication/其他/system"
+                    },
+                    {
+                      "title": "获取国家列表",
+                      "path": "/reference/sdk/java/authentication/其他/get-country-list"
+                    }
+                  ]
                 },
                 {
-                  title: 'OAuth 模块',
-                  path: '/reference/sdk/java/authentication/oauth.md'
+                  "title": "OIDC 模块",
+                  "path": "/reference/sdk/java/authentication/oidc.md"
                 },
                 {
-                  title: 'SAML 模块',
-                  path: '/reference/sdk/java/authentication/saml.md'
+                  "title": "OAuth 模块",
+                  "path": "/reference/sdk/java/authentication/oauth.md"
                 },
                 {
-                  title: 'CAS 模块',
-                  path: '/reference/sdk/java/authentication/cas.md'
+                  "title": "SAML 模块",
+                  "path": "/reference/sdk/java/authentication/saml.md"
+                },
+                {
+                  "title": "CAS 模块",
+                  "path": "/reference/sdk/java/authentication/cas.md"
                 }
               ]
             },
@@ -1323,347 +1339,363 @@ const zhCnNavBar = {
               path: '/reference/sdk/node/install.md'
             },
             {
-              title: '用户认证模块',
-              children: [
+              "title": "用户认证模块",
+              "children": [
                 {
-                  title: '登录',
-                  children: [
+                  "title": "登录",
+                  "children": [
                     {
-                      title: '账号密码登录',
-                      path: '/reference/sdk/node/authentication/登录/signin-by-account-password.md'
+                      "title": "账号密码登录",
+                      "path": "/reference/sdk/node/authentication/登录/signin-by-account-password.md"
                     },
                     {
-                      title: '用户名密码登录',
-                      path: '/reference/sdk/node/authentication/登录/signin-by-username-password.md'
+                      "title": "用户名密码登录",
+                      "path": "/reference/sdk/node/authentication/登录/signin-by-username-password.md"
                     },
                     {
-                      title: '手机号密码登录',
-                      path: '/reference/sdk/node/authentication/登录/signin-by-phone-password.md'
+                      "title": "手机号密码登录",
+                      "path": "/reference/sdk/node/authentication/登录/signin-by-phone-password.md"
                     },
                     {
-                      title: '邮箱密码登录',
-                      path: '/reference/sdk/node/authentication/登录/signin-by-email-password.md'
+                      "title": "邮箱密码登录",
+                      "path": "/reference/sdk/node/authentication/登录/signin-by-email-password.md"
                     },
                     {
-                      title: '邮箱验证码登录',
-                      path: '/reference/sdk/node/authentication/登录/signin-by-email-passcode.md'
+                      "title": "邮箱验证码登录",
+                      "path": "/reference/sdk/node/authentication/登录/signin-by-email-passcode.md"
                     },
                     {
-                      title: '手机号验证码登录',
-                      path: '/reference/sdk/node/authentication/登录/signin-by-phone-passcode.md'
+                      "title": "手机号验证码登录",
+                      "path": "/reference/sdk/node/authentication/登录/signin-by-phone-passcode.md"
                     },
                     {
-                      title: 'LDAP 账号登录',
-                      path: '/reference/sdk/node/authentication/登录/signin-by-ldap.md'
+                      "title": "LDAP 账号登录",
+                      "path": "/reference/sdk/node/authentication/登录/signin-by-ldap.md"
                     },
                     {
-                      title: 'AD 账号登录',
-                      path: '/reference/sdk/node/authentication/登录/signin-by-ad.md'
+                      "title": "AD 账号登录",
+                      "path": "/reference/sdk/node/authentication/登录/signin-by-ad.md"
                     },
                     {
-                      title: '使用用户凭证登录',
-                      path: '/reference/sdk/node/authentication/登录/signin'
+                      "title": "生成登录地址",
+                      "path": "/reference/sdk/node/authentication/登录/build-authorize-url.md"
                     },
                     {
-                      title: '生成登录地址',
-                      path: '/reference/sdk/node/authentication/登录/build-authorize-url.md'
+                      "title": "使用用户凭证登录",
+                      "path": "/reference/sdk/node/authentication/登录/signin"
                     },
                     {
-                      title: '使用移动端社会化登录',
-                      path: '/reference/sdk/node/authentication/登录/signin-by-mobile'
+                      "title": "使用移动端社会化登录",
+                      "path": "/reference/sdk/node/authentication/登录/signin-by-mobile"
                     },
                     {
-                      title: '获取支付宝 AuthInfo',
-                      path: '/reference/sdk/node/authentication/登录/get-alipay-authinfo'
+                      "title": "获取支付宝 AuthInfo",
+                      "path": "/reference/sdk/node/authentication/登录/get-alipay-authinfo"
                     },
                     {
-                      title: '生成用于登录的二维码',
-                      path: '/reference/sdk/node/authentication/登录/gene-qrcode'
+                      "title": "生成用于登录的二维码",
+                      "path": "/reference/sdk/node/authentication/登录/gene-qrcode"
                     },
                     {
-                      title: '查询二维码状态',
-                      path: '/reference/sdk/node/authentication/登录/check-qrcode-status'
+                      "title": "查询二维码状态",
+                      "path": "/reference/sdk/node/authentication/登录/check-qrcode-status"
                     },
                     {
-                      title: '使用二维码 ticket 换取 TokenSet',
-                      path: '/reference/sdk/node/authentication/登录/exchange-tokenset-with-qrcode-ticket'
+                      "title": "使用二维码 ticket 换取 TokenSet",
+                      "path": "/reference/sdk/node/authentication/登录/exchange-tokenset-with-qrcode-ticket"
                     },
                     {
-                      title: '自建 APP 扫码登录：APP 端修改二维码状态',
-                      path: '/reference/sdk/node/authentication/登录/change-qrcode-status'
+                      "title": "自建 APP 扫码登录：APP 端修改二维码状态",
+                      "path": "/reference/sdk/node/authentication/登录/change-qrcode-status"
                     }
                   ]
                 },
                 {
-                  title: '管理 Token',
-                  children: [
+                  "title": "登出",
+                  "children": [
                     {
-                      title: '获取 Token',
-                      path: '/reference/sdk/node/authentication/管理-token/get-access-token.md'
+                      "title": "前端登出",
+                      "path": "/reference/sdk/node/authentication/登出/front-channel-logout.md"
                     },
                     {
-                      title: '校验 Token',
-                      path: '/reference/sdk/node/authentication/管理-token/introspect-token.md'
-                    },
-                    {
-                      title: '撤销 Token',
-                      path: '/reference/sdk/node/authentication/管理-token/revoke-token.md'
+                      "title": "后端登出",
+                      "path": "/reference/sdk/node/authentication/登出/backend-channel-logout.md"
                     }
                   ]
                 },
                 {
-                  title: '登出',
-                  children: [
+                  "title": "管理 Token",
+                  "children": [
                     {
-                      title: '前端登出',
-                      path: '/reference/sdk/node/authentication/登出/front-channel-logout.md'
+                      "title": "获取 Token",
+                      "path": "/reference/sdk/node/authentication/管理-token/get-access-token.md"
                     },
                     {
-                      title: '后端登出',
-                      path: '/reference/sdk/node/authentication/登出/backend-channel-logout.md'
+                      "title": "校验 Token",
+                      "path": "/reference/sdk/node/authentication/管理-token/introspect-token.md"
+                    },
+                    {
+                      "title": "撤销 Token",
+                      "path": "/reference/sdk/node/authentication/管理-token/revoke-token.md"
                     }
                   ]
                 },
                 {
-                  title: '注册',
-                  children: [
+                  "title": "注册",
+                  "children": [
                     {
-                      title: '用户名密码注册',
-                      path: '/reference/sdk/node/authentication/注册/signup-by-username-password.md'
+                      "title": "用户名密码注册",
+                      "path": "/reference/sdk/node/authentication/注册/signup-by-username-password.md"
                     },
                     {
-                      title: '邮箱密码注册',
-                      path: '/reference/sdk/node/authentication/注册/signup-by-email-password.md'
+                      "title": "邮箱密码注册",
+                      "path": "/reference/sdk/node/authentication/注册/signup-by-email-password.md"
                     },
                     {
-                      title: '手机号验证码注册',
-                      path: '/reference/sdk/node/authentication/注册/signup-by-phone-passcode.md'
+                      "title": "手机号验证码注册",
+                      "path": "/reference/sdk/node/authentication/注册/signup-by-phone-passcode.md"
                     },
                     {
-                      title: '邮箱验证码注册',
-                      path: '/reference/sdk/node/authentication/注册/signup-by-email-passcode.md'
+                      "title": "邮箱验证码注册",
+                      "path": "/reference/sdk/node/authentication/注册/signup-by-email-passcode.md"
                     },
                     {
-                      title: '注册',
-                      path: '/reference/sdk/node/authentication/注册/signup'
+                      "title": "注册",
+                      "path": "/reference/sdk/node/authentication/注册/signup"
                     }
                   ]
                 },
                 {
-                  title: '用户资料',
-                  children: [
+                  "title": "用户资料",
+                  "children": [
                     {
-                      title: '获取用户资料',
-                      path: '/reference/sdk/node/authentication/用户资料/get-profile'
+                      "title": "获取用户资料",
+                      "path": "/reference/sdk/node/authentication/用户资料/get-profile"
                     },
                     {
-                      title: '修改用户资料',
-                      path: '/reference/sdk/node/authentication/用户资料/update-profile'
+                      "title": "修改用户资料",
+                      "path": "/reference/sdk/node/authentication/用户资料/update-profile"
                     },
                     {
-                      title: '绑定邮箱',
-                      path: '/reference/sdk/node/authentication/用户资料/bind-email'
+                      "title": "绑定邮箱",
+                      "path": "/reference/sdk/node/authentication/用户资料/bind-email"
                     },
                     {
-                      title: '解绑邮箱',
-                      path: '/reference/sdk/node/authentication/用户资料/unbind-email'
+                      "title": "解绑邮箱",
+                      "path": "/reference/sdk/node/authentication/用户资料/unbind-email"
                     },
                     {
-                      title: '绑定手机号',
-                      path: '/reference/sdk/node/authentication/用户资料/bind-phone'
+                      "title": "绑定手机号",
+                      "path": "/reference/sdk/node/authentication/用户资料/bind-phone"
                     },
                     {
-                      title: '解绑手机号',
-                      path: '/reference/sdk/node/authentication/用户资料/unbind-phone'
+                      "title": "解绑手机号",
+                      "path": "/reference/sdk/node/authentication/用户资料/unbind-phone"
                     },
                     {
-                      title: '获取密码强度和账号安全等级评分',
-                      path: '/reference/sdk/node/authentication/用户资料/get-security-info'
+                      "title": "获取密码强度和账号安全等级评分",
+                      "path": "/reference/sdk/node/authentication/用户资料/get-security-info"
                     },
                     {
-                      title: '修改密码',
-                      path: '/reference/sdk/node/authentication/用户资料/update-password'
+                      "title": "修改密码",
+                      "path": "/reference/sdk/node/authentication/用户资料/update-password"
                     },
                     {
-                      title: '发起修改邮箱的验证请求',
-                      path: '/reference/sdk/node/authentication/用户资料/verify-update-email-request'
+                      "title": "发起修改邮箱的验证请求",
+                      "path": "/reference/sdk/node/authentication/用户资料/verify-update-email-request"
                     },
                     {
-                      title: '修改邮箱',
-                      path: '/reference/sdk/node/authentication/用户资料/update-email'
+                      "title": "修改邮箱",
+                      "path": "/reference/sdk/node/authentication/用户资料/update-email"
                     },
                     {
-                      title: '发起修改手机号的验证请求',
-                      path: '/reference/sdk/node/authentication/用户资料/verify-update-phone-request'
+                      "title": "发起修改手机号的验证请求",
+                      "path": "/reference/sdk/node/authentication/用户资料/verify-update-phone-request"
                     },
                     {
-                      title: '修改手机号',
-                      path: '/reference/sdk/node/authentication/用户资料/update-phone'
+                      "title": "修改手机号",
+                      "path": "/reference/sdk/node/authentication/用户资料/update-phone"
                     },
                     {
-                      title: '发起忘记密码请求',
-                      path: '/reference/sdk/node/authentication/用户资料/verify-reset-password-request'
+                      "title": "发起忘记密码请求",
+                      "path": "/reference/sdk/node/authentication/用户资料/verify-reset-password-request"
                     },
                     {
-                      title: '忘记密码',
-                      path: '/reference/sdk/node/authentication/用户资料/reset-password'
+                      "title": "忘记密码",
+                      "path": "/reference/sdk/node/authentication/用户资料/reset-password"
                     },
                     {
-                      title: '发起注销账号请求',
-                      path: '/reference/sdk/node/authentication/用户资料/verify-delete-account-request'
+                      "title": "发起注销账号请求",
+                      "path": "/reference/sdk/node/authentication/用户资料/verify-delete-account-request"
                     },
                     {
-                      title: '注销账户',
-                      path: '/reference/sdk/node/authentication/用户资料/delete-account'
+                      "title": "注销账户",
+                      "path": "/reference/sdk/node/authentication/用户资料/delete-account"
                     }
                   ]
                 },
                 {
-                  title: '账号绑定',
-                  children: [
+                  "title": "账号绑定",
+                  "children": [
                     {
-                      title: '生成绑定外部身份源的链接',
-                      path: '/reference/sdk/node/authentication/账号绑定/generate-link-extidp-url'
+                      "title": "生成绑定外部身份源的链接",
+                      "path": "/reference/sdk/node/authentication/账号绑定/generate-link-extidp-url"
                     },
                     {
-                      title: '解绑外部身份源',
-                      path: '/reference/sdk/node/authentication/账号绑定/unlink-extidp'
+                      "title": "解绑外部身份源",
+                      "path": "/reference/sdk/node/authentication/账号绑定/unlink-extidp"
                     },
                     {
-                      title: '获取绑定的外部身份源',
-                      path: '/reference/sdk/node/authentication/账号绑定/get-identities'
+                      "title": "获取绑定的外部身份源",
+                      "path": "/reference/sdk/node/authentication/账号绑定/get-identities"
                     },
                     {
-                      title: '获取应用开启的外部身份源列表',
-                      path: '/reference/sdk/node/authentication/账号绑定/get-application-enabled-extidps'
+                      "title": "获取应用开启的外部身份源列表",
+                      "path": "/reference/sdk/node/authentication/账号绑定/get-application-enabled-extidps"
                     }
                   ]
                 },
                 {
-                  title: 'MFA 要素管理',
-                  children: [
+                  "title": "MFA 要素管理",
+                  "children": [
                     {
-                      title: '发起绑定 MFA 认证要素请求',
-                      path: '/reference/sdk/node/authentication/mfa-要素管理/send-enroll-factor-request'
+                      "title": "发起绑定 MFA 认证要素请求",
+                      "path": "/reference/sdk/node/authentication/mfa-要素管理/send-enroll-factor-request"
                     },
                     {
-                      title: '绑定 MFA 认证要素',
-                      path: '/reference/sdk/node/authentication/mfa-要素管理/enroll-factor'
+                      "title": "绑定 MFA 认证要素",
+                      "path": "/reference/sdk/node/authentication/mfa-要素管理/enroll-factor"
                     },
                     {
-                      title: '解绑 MFA 认证要素',
-                      path: '/reference/sdk/node/authentication/mfa-要素管理/reset-factor'
+                      "title": "解绑 MFA 认证要素",
+                      "path": "/reference/sdk/node/authentication/mfa-要素管理/reset-factor"
                     },
                     {
-                      title: '获取绑定的所有 MFA 认证要素',
-                      path: '/reference/sdk/node/authentication/mfa-要素管理/list-enrolled-factors'
+                      "title": "获取绑定的所有 MFA 认证要素",
+                      "path": "/reference/sdk/node/authentication/mfa-要素管理/list-enrolled-factors"
                     },
                     {
-                      title: '获取绑定的某个 MFA 认证要素',
-                      path: '/reference/sdk/node/authentication/mfa-要素管理/get-factor'
+                      "title": "获取绑定的某个 MFA 认证要素",
+                      "path": "/reference/sdk/node/authentication/mfa-要素管理/get-factor"
                     },
                     {
-                      title: '获取可绑定的 MFA 认证要素',
-                      path: '/reference/sdk/node/authentication/mfa-要素管理/list-factors-to-enroll'
+                      "title": "获取可绑定的 MFA 认证要素",
+                      "path": "/reference/sdk/node/authentication/mfa-要素管理/list-factors-to-enroll"
                     }
                   ]
                 },
                 {
-                  title: '用户相关资源',
-                  children: [
+                  "title": "用户相关资源",
+                  "children": [
                     {
-                      title: '获取登录日志',
-                      path: '/reference/sdk/node/authentication/用户相关资源/get-my-login-history'
+                      "title": "获取登录日志",
+                      "path": "/reference/sdk/node/authentication/用户相关资源/get-my-login-history"
                     },
                     {
-                      title: '获取登录应用',
-                      path: '/reference/sdk/node/authentication/用户相关资源/get-my-logged-in-apps'
+                      "title": "获取登录应用",
+                      "path": "/reference/sdk/node/authentication/用户相关资源/get-my-logged-in-apps"
                     },
                     {
-                      title: '获取具备访问权限的应用',
-                      path: '/reference/sdk/node/authentication/用户相关资源/get-my-accessible-apps'
+                      "title": "获取具备访问权限的应用",
+                      "path": "/reference/sdk/node/authentication/用户相关资源/get-my-accessible-apps"
                     },
                     {
-                      title: '获取租户列表',
-                      path: '/reference/sdk/node/authentication/用户相关资源/get-my-tenant-list'
+                      "title": "获取租户列表",
+                      "path": "/reference/sdk/node/authentication/用户相关资源/get-my-tenant-list"
                     },
                     {
-                      title: '获取角色列表',
-                      path: '/reference/sdk/node/authentication/用户相关资源/get-my-role-list'
+                      "title": "获取角色列表",
+                      "path": "/reference/sdk/node/authentication/用户相关资源/get-my-role-list"
                     },
                     {
-                      title: '获取分组列表',
-                      path: '/reference/sdk/node/authentication/用户相关资源/get-my-group-list'
+                      "title": "获取分组列表",
+                      "path": "/reference/sdk/node/authentication/用户相关资源/get-my-group-list"
                     },
                     {
-                      title: '获取部门列表',
-                      path: '/reference/sdk/node/authentication/用户相关资源/get-my-department-list'
+                      "title": "获取部门列表",
+                      "path": "/reference/sdk/node/authentication/用户相关资源/get-my-department-list"
                     },
                     {
-                      title: '获取被授权的资源列表',
-                      path: '/reference/sdk/node/authentication/用户相关资源/get-my-authorized-resources'
+                      "title": "获取被授权的资源列表",
+                      "path": "/reference/sdk/node/authentication/用户相关资源/get-my-authorized-resources"
                     }
                   ]
                 },
                 {
-                  title: '消息服务',
-                  children: [
+                  "title": "消息服务",
+                  "children": [
                     {
-                      title: '发送短信',
-                      path: '/reference/sdk/node/authentication/消息服务/send-sms'
+                      "title": "发送短信",
+                      "path": "/reference/sdk/node/authentication/消息服务/send-sms"
                     },
                     {
-                      title: '发送邮件',
-                      path: '/reference/sdk/node/authentication/消息服务/send-email'
+                      "title": "发送邮件",
+                      "path": "/reference/sdk/node/authentication/消息服务/send-email"
                     }
                   ]
                 },
                 {
-                  title: '微信相关接口',
-                  children: [
+                  "title": "鉴权",
+                  "children": [
                     {
-                      title: '解密微信小程序数据',
-                      path: '/reference/sdk/node/authentication/微信相关接口/decrypt-wechat-miniprogram-data'
+                      "title": "字符串类型资源鉴权",
+                      "path": "/reference/sdk/node/authentication/鉴权/check-permission-string-resource"
                     },
                     {
-                      title: '获取小程序的手机号',
-                      path: '/reference/sdk/node/authentication/微信相关接口/get-wechat-miniprogram-phone'
+                      "title": "数组类型资源鉴权",
+                      "path": "/reference/sdk/node/authentication/鉴权/check-permission-array-resource"
                     },
                     {
-                      title:
-                        '获取 Authing 服务器缓存的微信小程序、公众号 Access Token',
-                      path: '/reference/sdk/node/authentication/微信相关接口/get-wechat-access-token'
+                      "title": "树类型资源鉴权",
+                      "path": "/reference/sdk/node/authentication/鉴权/check-permission-tree-resource"
+                    },
+                    {
+                      "title": "获取用户在登录应用下被授权资源列表",
+                      "path": "/reference/sdk/node/authentication/鉴权/get-user-auth-resource-list"
                     }
                   ]
                 },
                 {
-                  title: '其他',
-                  children: [
+                  "title": "微信相关接口",
+                  "children": [
                     {
-                      title: '获取服务器公开信息',
-                      path: '/reference/sdk/node/authentication/其他/system'
+                      "title": "解密微信小程序数据",
+                      "path": "/reference/sdk/node/authentication/微信相关接口/decrypt-wechat-miniprogram-data"
                     },
                     {
-                      title: '获取国家列表',
-                      path: '/reference/sdk/node/authentication/其他/get-country-list'
+                      "title": "获取微信小程序、公众号 Access Token",
+                      "path": "/reference/sdk/node/authentication/微信相关接口/get-wechat-access-token"
                     }
                   ]
                 },
                 {
-                  title: 'OIDC 模块',
-                  path: '/reference/sdk/node/authentication/oidc.md'
+                  "title": "其他",
+                  "children": [
+                    {
+                      "title": "获取服务器公开信息",
+                      "path": "/reference/sdk/node/authentication/其他/system"
+                    },
+                    {
+                      "title": "获取国家列表",
+                      "path": "/reference/sdk/node/authentication/其他/get-country-list"
+                    }
+                  ]
                 },
                 {
-                  title: 'OAuth 模块',
-                  path: '/reference/sdk/node/authentication/oauth.md'
+                  "title": "OIDC 模块",
+                  "path": "/reference/sdk/node/authentication/oidc.md"
                 },
                 {
-                  title: 'SAML 模块',
-                  path: '/reference/sdk/node/authentication/saml.md'
+                  "title": "OAuth 模块",
+                  "path": "/reference/sdk/node/authentication/oauth.md"
                 },
                 {
-                  title: 'CAS 模块',
-                  path: '/reference/sdk/node/authentication/cas.md'
+                  "title": "SAML 模块",
+                  "path": "/reference/sdk/node/authentication/saml.md"
+                },
+                {
+                  "title": "CAS 模块",
+                  "path": "/reference/sdk/node/authentication/cas.md"
                 }
               ]
             },
@@ -2572,347 +2604,363 @@ const zhCnNavBar = {
               path: '/reference/sdk/go/install.md'
             },
             {
-              title: '用户认证模块',
-              children: [
+              "title": "用户认证模块",
+              "children": [
                 {
-                  title: '登录',
-                  children: [
+                  "title": "登录",
+                  "children": [
                     {
-                      title: '账号密码登录',
-                      path: '/reference/sdk/go/authentication/登录/signin-by-account-password.md'
+                      "title": "账号密码登录",
+                      "path": "/reference/sdk/go/authentication/登录/signin-by-account-password.md"
                     },
                     {
-                      title: '用户名密码登录',
-                      path: '/reference/sdk/go/authentication/登录/signin-by-username-password.md'
+                      "title": "用户名密码登录",
+                      "path": "/reference/sdk/go/authentication/登录/signin-by-username-password.md"
                     },
                     {
-                      title: '手机号密码登录',
-                      path: '/reference/sdk/go/authentication/登录/signin-by-phone-password.md'
+                      "title": "手机号密码登录",
+                      "path": "/reference/sdk/go/authentication/登录/signin-by-phone-password.md"
                     },
                     {
-                      title: '邮箱密码登录',
-                      path: '/reference/sdk/go/authentication/登录/signin-by-email-password.md'
+                      "title": "邮箱密码登录",
+                      "path": "/reference/sdk/go/authentication/登录/signin-by-email-password.md"
                     },
                     {
-                      title: '邮箱验证码登录',
-                      path: '/reference/sdk/go/authentication/登录/signin-by-email-passcode.md'
+                      "title": "邮箱验证码登录",
+                      "path": "/reference/sdk/go/authentication/登录/signin-by-email-passcode.md"
                     },
                     {
-                      title: '手机号验证码登录',
-                      path: '/reference/sdk/go/authentication/登录/signin-by-phone-passcode.md'
+                      "title": "手机号验证码登录",
+                      "path": "/reference/sdk/go/authentication/登录/signin-by-phone-passcode.md"
                     },
                     {
-                      title: 'LDAP 账号登录',
-                      path: '/reference/sdk/go/authentication/登录/signin-by-ldap.md'
+                      "title": "LDAP 账号登录",
+                      "path": "/reference/sdk/go/authentication/登录/signin-by-ldap.md"
                     },
                     {
-                      title: 'AD 账号登录',
-                      path: '/reference/sdk/go/authentication/登录/signin-by-ad.md'
+                      "title": "AD 账号登录",
+                      "path": "/reference/sdk/go/authentication/登录/signin-by-ad.md"
                     },
                     {
-                      title: '使用用户凭证登录',
-                      path: '/reference/sdk/go/authentication/登录/signin'
+                      "title": "生成登录地址",
+                      "path": "/reference/sdk/go/authentication/登录/build-authorize-url.md"
                     },
                     {
-                      title: '生成登录地址',
-                      path: '/reference/sdk/go/authentication/登录/build-authorize-url.md'
+                      "title": "使用用户凭证登录",
+                      "path": "/reference/sdk/go/authentication/登录/signin"
                     },
                     {
-                      title: '使用移动端社会化登录',
-                      path: '/reference/sdk/go/authentication/登录/signin-by-mobile'
+                      "title": "使用移动端社会化登录",
+                      "path": "/reference/sdk/go/authentication/登录/signin-by-mobile"
                     },
                     {
-                      title: '获取支付宝 AuthInfo',
-                      path: '/reference/sdk/go/authentication/登录/get-alipay-authinfo'
+                      "title": "获取支付宝 AuthInfo",
+                      "path": "/reference/sdk/go/authentication/登录/get-alipay-authinfo"
                     },
                     {
-                      title: '生成用于登录的二维码',
-                      path: '/reference/sdk/go/authentication/登录/gene-qrcode'
+                      "title": "生成用于登录的二维码",
+                      "path": "/reference/sdk/go/authentication/登录/gene-qrcode"
                     },
                     {
-                      title: '查询二维码状态',
-                      path: '/reference/sdk/go/authentication/登录/check-qrcode-status'
+                      "title": "查询二维码状态",
+                      "path": "/reference/sdk/go/authentication/登录/check-qrcode-status"
                     },
                     {
-                      title: '使用二维码 ticket 换取 TokenSet',
-                      path: '/reference/sdk/go/authentication/登录/exchange-tokenset-with-qrcode-ticket'
+                      "title": "使用二维码 ticket 换取 TokenSet",
+                      "path": "/reference/sdk/go/authentication/登录/exchange-tokenset-with-qrcode-ticket"
                     },
                     {
-                      title: '自建 APP 扫码登录：APP 端修改二维码状态',
-                      path: '/reference/sdk/go/authentication/登录/change-qrcode-status'
+                      "title": "自建 APP 扫码登录：APP 端修改二维码状态",
+                      "path": "/reference/sdk/go/authentication/登录/change-qrcode-status"
                     }
                   ]
                 },
                 {
-                  title: '管理 Token',
-                  children: [
+                  "title": "登出",
+                  "children": [
                     {
-                      title: '获取 Token',
-                      path: '/reference/sdk/go/authentication/管理-token/get-access-token.md'
+                      "title": "前端登出",
+                      "path": "/reference/sdk/go/authentication/登出/front-channel-logout.md"
                     },
                     {
-                      title: '校验 Token',
-                      path: '/reference/sdk/go/authentication/管理-token/introspect-token.md'
-                    },
-                    {
-                      title: '撤销 Token',
-                      path: '/reference/sdk/go/authentication/管理-token/revoke-token.md'
+                      "title": "后端登出",
+                      "path": "/reference/sdk/go/authentication/登出/backend-channel-logout.md"
                     }
                   ]
                 },
                 {
-                  title: '登出',
-                  children: [
+                  "title": "管理 Token",
+                  "children": [
                     {
-                      title: '前端登出',
-                      path: '/reference/sdk/go/authentication/登出/front-channel-logout.md'
+                      "title": "获取 Token",
+                      "path": "/reference/sdk/go/authentication/管理-token/get-access-token.md"
                     },
                     {
-                      title: '后端登出',
-                      path: '/reference/sdk/go/authentication/登出/backend-channel-logout.md'
+                      "title": "校验 Token",
+                      "path": "/reference/sdk/go/authentication/管理-token/introspect-token.md"
+                    },
+                    {
+                      "title": "撤销 Token",
+                      "path": "/reference/sdk/go/authentication/管理-token/revoke-token.md"
                     }
                   ]
                 },
                 {
-                  title: '注册',
-                  children: [
+                  "title": "注册",
+                  "children": [
                     {
-                      title: '用户名密码注册',
-                      path: '/reference/sdk/go/authentication/注册/signup-by-username-password.md'
+                      "title": "用户名密码注册",
+                      "path": "/reference/sdk/go/authentication/注册/signup-by-username-password.md"
                     },
                     {
-                      title: '邮箱密码注册',
-                      path: '/reference/sdk/go/authentication/注册/signup-by-email-password.md'
+                      "title": "邮箱密码注册",
+                      "path": "/reference/sdk/go/authentication/注册/signup-by-email-password.md"
                     },
                     {
-                      title: '手机号验证码注册',
-                      path: '/reference/sdk/go/authentication/注册/signup-by-phone-passcode.md'
+                      "title": "手机号验证码注册",
+                      "path": "/reference/sdk/go/authentication/注册/signup-by-phone-passcode.md"
                     },
                     {
-                      title: '邮箱验证码注册',
-                      path: '/reference/sdk/go/authentication/注册/signup-by-email-passcode.md'
+                      "title": "邮箱验证码注册",
+                      "path": "/reference/sdk/go/authentication/注册/signup-by-email-passcode.md"
                     },
                     {
-                      title: '注册',
-                      path: '/reference/sdk/go/authentication/注册/signup'
+                      "title": "注册",
+                      "path": "/reference/sdk/go/authentication/注册/signup"
                     }
                   ]
                 },
                 {
-                  title: '用户资料',
-                  children: [
+                  "title": "用户资料",
+                  "children": [
                     {
-                      title: '获取用户资料',
-                      path: '/reference/sdk/go/authentication/用户资料/get-profile'
+                      "title": "获取用户资料",
+                      "path": "/reference/sdk/go/authentication/用户资料/get-profile"
                     },
                     {
-                      title: '修改用户资料',
-                      path: '/reference/sdk/go/authentication/用户资料/update-profile'
+                      "title": "修改用户资料",
+                      "path": "/reference/sdk/go/authentication/用户资料/update-profile"
                     },
                     {
-                      title: '绑定邮箱',
-                      path: '/reference/sdk/go/authentication/用户资料/bind-email'
+                      "title": "绑定邮箱",
+                      "path": "/reference/sdk/go/authentication/用户资料/bind-email"
                     },
                     {
-                      title: '解绑邮箱',
-                      path: '/reference/sdk/go/authentication/用户资料/unbind-email'
+                      "title": "解绑邮箱",
+                      "path": "/reference/sdk/go/authentication/用户资料/unbind-email"
                     },
                     {
-                      title: '绑定手机号',
-                      path: '/reference/sdk/go/authentication/用户资料/bind-phone'
+                      "title": "绑定手机号",
+                      "path": "/reference/sdk/go/authentication/用户资料/bind-phone"
                     },
                     {
-                      title: '解绑手机号',
-                      path: '/reference/sdk/go/authentication/用户资料/unbind-phone'
+                      "title": "解绑手机号",
+                      "path": "/reference/sdk/go/authentication/用户资料/unbind-phone"
                     },
                     {
-                      title: '获取密码强度和账号安全等级评分',
-                      path: '/reference/sdk/go/authentication/用户资料/get-security-info'
+                      "title": "获取密码强度和账号安全等级评分",
+                      "path": "/reference/sdk/go/authentication/用户资料/get-security-info"
                     },
                     {
-                      title: '修改密码',
-                      path: '/reference/sdk/go/authentication/用户资料/update-password'
+                      "title": "修改密码",
+                      "path": "/reference/sdk/go/authentication/用户资料/update-password"
                     },
                     {
-                      title: '发起修改邮箱的验证请求',
-                      path: '/reference/sdk/go/authentication/用户资料/verify-update-email-request'
+                      "title": "发起修改邮箱的验证请求",
+                      "path": "/reference/sdk/go/authentication/用户资料/verify-update-email-request"
                     },
                     {
-                      title: '修改邮箱',
-                      path: '/reference/sdk/go/authentication/用户资料/update-email'
+                      "title": "修改邮箱",
+                      "path": "/reference/sdk/go/authentication/用户资料/update-email"
                     },
                     {
-                      title: '发起修改手机号的验证请求',
-                      path: '/reference/sdk/go/authentication/用户资料/verify-update-phone-request'
+                      "title": "发起修改手机号的验证请求",
+                      "path": "/reference/sdk/go/authentication/用户资料/verify-update-phone-request"
                     },
                     {
-                      title: '修改手机号',
-                      path: '/reference/sdk/go/authentication/用户资料/update-phone'
+                      "title": "修改手机号",
+                      "path": "/reference/sdk/go/authentication/用户资料/update-phone"
                     },
                     {
-                      title: '发起忘记密码请求',
-                      path: '/reference/sdk/go/authentication/用户资料/verify-reset-password-request'
+                      "title": "发起忘记密码请求",
+                      "path": "/reference/sdk/go/authentication/用户资料/verify-reset-password-request"
                     },
                     {
-                      title: '忘记密码',
-                      path: '/reference/sdk/go/authentication/用户资料/reset-password'
+                      "title": "忘记密码",
+                      "path": "/reference/sdk/go/authentication/用户资料/reset-password"
                     },
                     {
-                      title: '发起注销账号请求',
-                      path: '/reference/sdk/go/authentication/用户资料/verify-delete-account-request'
+                      "title": "发起注销账号请求",
+                      "path": "/reference/sdk/go/authentication/用户资料/verify-delete-account-request"
                     },
                     {
-                      title: '注销账户',
-                      path: '/reference/sdk/go/authentication/用户资料/delete-account'
+                      "title": "注销账户",
+                      "path": "/reference/sdk/go/authentication/用户资料/delete-account"
                     }
                   ]
                 },
                 {
-                  title: '账号绑定',
-                  children: [
+                  "title": "账号绑定",
+                  "children": [
                     {
-                      title: '生成绑定外部身份源的链接',
-                      path: '/reference/sdk/go/authentication/账号绑定/generate-link-extidp-url'
+                      "title": "生成绑定外部身份源的链接",
+                      "path": "/reference/sdk/go/authentication/账号绑定/generate-link-extidp-url"
                     },
                     {
-                      title: '解绑外部身份源',
-                      path: '/reference/sdk/go/authentication/账号绑定/unlink-extidp'
+                      "title": "解绑外部身份源",
+                      "path": "/reference/sdk/go/authentication/账号绑定/unlink-extidp"
                     },
                     {
-                      title: '获取绑定的外部身份源',
-                      path: '/reference/sdk/go/authentication/账号绑定/get-identities'
+                      "title": "获取绑定的外部身份源",
+                      "path": "/reference/sdk/go/authentication/账号绑定/get-identities"
                     },
                     {
-                      title: '获取应用开启的外部身份源列表',
-                      path: '/reference/sdk/go/authentication/账号绑定/get-application-enabled-extidps'
+                      "title": "获取应用开启的外部身份源列表",
+                      "path": "/reference/sdk/go/authentication/账号绑定/get-application-enabled-extidps"
                     }
                   ]
                 },
                 {
-                  title: 'MFA 要素管理',
-                  children: [
+                  "title": "MFA 要素管理",
+                  "children": [
                     {
-                      title: '发起绑定 MFA 认证要素请求',
-                      path: '/reference/sdk/go/authentication/mfa-要素管理/send-enroll-factor-request'
+                      "title": "发起绑定 MFA 认证要素请求",
+                      "path": "/reference/sdk/go/authentication/mfa-要素管理/send-enroll-factor-request"
                     },
                     {
-                      title: '绑定 MFA 认证要素',
-                      path: '/reference/sdk/go/authentication/mfa-要素管理/enroll-factor'
+                      "title": "绑定 MFA 认证要素",
+                      "path": "/reference/sdk/go/authentication/mfa-要素管理/enroll-factor"
                     },
                     {
-                      title: '解绑 MFA 认证要素',
-                      path: '/reference/sdk/go/authentication/mfa-要素管理/reset-factor'
+                      "title": "解绑 MFA 认证要素",
+                      "path": "/reference/sdk/go/authentication/mfa-要素管理/reset-factor"
                     },
                     {
-                      title: '获取绑定的所有 MFA 认证要素',
-                      path: '/reference/sdk/go/authentication/mfa-要素管理/list-enrolled-factors'
+                      "title": "获取绑定的所有 MFA 认证要素",
+                      "path": "/reference/sdk/go/authentication/mfa-要素管理/list-enrolled-factors"
                     },
                     {
-                      title: '获取绑定的某个 MFA 认证要素',
-                      path: '/reference/sdk/go/authentication/mfa-要素管理/get-factor'
+                      "title": "获取绑定的某个 MFA 认证要素",
+                      "path": "/reference/sdk/go/authentication/mfa-要素管理/get-factor"
                     },
                     {
-                      title: '获取可绑定的 MFA 认证要素',
-                      path: '/reference/sdk/go/authentication/mfa-要素管理/list-factors-to-enroll'
+                      "title": "获取可绑定的 MFA 认证要素",
+                      "path": "/reference/sdk/go/authentication/mfa-要素管理/list-factors-to-enroll"
                     }
                   ]
                 },
                 {
-                  title: '用户相关资源',
-                  children: [
+                  "title": "用户相关资源",
+                  "children": [
                     {
-                      title: '获取登录日志',
-                      path: '/reference/sdk/go/authentication/用户相关资源/get-my-login-history'
+                      "title": "获取登录日志",
+                      "path": "/reference/sdk/go/authentication/用户相关资源/get-my-login-history"
                     },
                     {
-                      title: '获取登录应用',
-                      path: '/reference/sdk/go/authentication/用户相关资源/get-my-logged-in-apps'
+                      "title": "获取登录应用",
+                      "path": "/reference/sdk/go/authentication/用户相关资源/get-my-logged-in-apps"
                     },
                     {
-                      title: '获取具备访问权限的应用',
-                      path: '/reference/sdk/go/authentication/用户相关资源/get-my-accessible-apps'
+                      "title": "获取具备访问权限的应用",
+                      "path": "/reference/sdk/go/authentication/用户相关资源/get-my-accessible-apps"
                     },
                     {
-                      title: '获取租户列表',
-                      path: '/reference/sdk/go/authentication/用户相关资源/get-my-tenant-list'
+                      "title": "获取租户列表",
+                      "path": "/reference/sdk/go/authentication/用户相关资源/get-my-tenant-list"
                     },
                     {
-                      title: '获取角色列表',
-                      path: '/reference/sdk/go/authentication/用户相关资源/get-my-role-list'
+                      "title": "获取角色列表",
+                      "path": "/reference/sdk/go/authentication/用户相关资源/get-my-role-list"
                     },
                     {
-                      title: '获取分组列表',
-                      path: '/reference/sdk/go/authentication/用户相关资源/get-my-group-list'
+                      "title": "获取分组列表",
+                      "path": "/reference/sdk/go/authentication/用户相关资源/get-my-group-list"
                     },
                     {
-                      title: '获取部门列表',
-                      path: '/reference/sdk/go/authentication/用户相关资源/get-my-department-list'
+                      "title": "获取部门列表",
+                      "path": "/reference/sdk/go/authentication/用户相关资源/get-my-department-list"
                     },
                     {
-                      title: '获取被授权的资源列表',
-                      path: '/reference/sdk/go/authentication/用户相关资源/get-my-authorized-resources'
+                      "title": "获取被授权的资源列表",
+                      "path": "/reference/sdk/go/authentication/用户相关资源/get-my-authorized-resources"
                     }
                   ]
                 },
                 {
-                  title: '消息服务',
-                  children: [
+                  "title": "消息服务",
+                  "children": [
                     {
-                      title: '发送短信',
-                      path: '/reference/sdk/go/authentication/消息服务/send-sms'
+                      "title": "发送短信",
+                      "path": "/reference/sdk/go/authentication/消息服务/send-sms"
                     },
                     {
-                      title: '发送邮件',
-                      path: '/reference/sdk/go/authentication/消息服务/send-email'
+                      "title": "发送邮件",
+                      "path": "/reference/sdk/go/authentication/消息服务/send-email"
                     }
                   ]
                 },
                 {
-                  title: '微信相关接口',
-                  children: [
+                  "title": "鉴权",
+                  "children": [
                     {
-                      title: '解密微信小程序数据',
-                      path: '/reference/sdk/go/authentication/微信相关接口/decrypt-wechat-miniprogram-data'
+                      "title": "字符串类型资源鉴权",
+                      "path": "/reference/sdk/go/authentication/鉴权/check-permission-string-resource"
                     },
                     {
-                      title: '获取小程序的手机号',
-                      path: '/reference/sdk/go/authentication/微信相关接口/get-wechat-miniprogram-phone'
+                      "title": "数组类型资源鉴权",
+                      "path": "/reference/sdk/go/authentication/鉴权/check-permission-array-resource"
                     },
                     {
-                      title:
-                        '获取 Authing 服务器缓存的微信小程序、公众号 Access Token',
-                      path: '/reference/sdk/go/authentication/微信相关接口/get-wechat-access-token'
+                      "title": "树类型资源鉴权",
+                      "path": "/reference/sdk/go/authentication/鉴权/check-permission-tree-resource"
+                    },
+                    {
+                      "title": "获取用户在登录应用下被授权资源列表",
+                      "path": "/reference/sdk/go/authentication/鉴权/get-user-auth-resource-list"
                     }
                   ]
                 },
                 {
-                  title: '其他',
-                  children: [
+                  "title": "微信相关接口",
+                  "children": [
                     {
-                      title: '获取服务器公开信息',
-                      path: '/reference/sdk/go/authentication/其他/system'
+                      "title": "解密微信小程序数据",
+                      "path": "/reference/sdk/go/authentication/微信相关接口/decrypt-wechat-miniprogram-data"
                     },
                     {
-                      title: '获取国家列表',
-                      path: '/reference/sdk/go/authentication/其他/get-country-list'
+                      "title": "获取微信小程序、公众号 Access Token",
+                      "path": "/reference/sdk/go/authentication/微信相关接口/get-wechat-access-token"
                     }
                   ]
                 },
                 {
-                  title: 'OIDC 模块',
-                  path: '/reference/sdk/go/authentication/oidc.md'
+                  "title": "其他",
+                  "children": [
+                    {
+                      "title": "获取服务器公开信息",
+                      "path": "/reference/sdk/go/authentication/其他/system"
+                    },
+                    {
+                      "title": "获取国家列表",
+                      "path": "/reference/sdk/go/authentication/其他/get-country-list"
+                    }
+                  ]
                 },
                 {
-                  title: 'OAuth 模块',
-                  path: '/reference/sdk/go/authentication/oauth.md'
+                  "title": "OIDC 模块",
+                  "path": "/reference/sdk/go/authentication/oidc.md"
                 },
                 {
-                  title: 'SAML 模块',
-                  path: '/reference/sdk/go/authentication/saml.md'
+                  "title": "OAuth 模块",
+                  "path": "/reference/sdk/go/authentication/oauth.md"
                 },
                 {
-                  title: 'CAS 模块',
-                  path: '/reference/sdk/go/authentication/cas.md'
+                  "title": "SAML 模块",
+                  "path": "/reference/sdk/go/authentication/saml.md"
+                },
+                {
+                  "title": "CAS 模块",
+                  "path": "/reference/sdk/go/authentication/cas.md"
                 }
               ]
             },

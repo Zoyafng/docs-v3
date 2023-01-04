@@ -53,7 +53,7 @@
 {
   "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
-  "resources":["/treeResourceCode1/StructCode1/resourceStructChildrenCode1", "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"]
+  "resources":["treeResourceCode1/StructCode1/resourceStructChildrenCode1", "treeResourceCode2/StructCode1/resourceStructChildrenCode1"]
 }
 ```
 
@@ -68,11 +68,11 @@
     "permissionList": [{
       "namespaceCode": "examplePermissionNamespace",
       "actionList": ["read", "update", "delete"],
-      "resource": "/treeResourceCode1/StructCode1/resourceStructChildrenCode1"
+      "resource": "treeResourceCode1/StructCode1/resourceStructChildrenCode1"
     },{
       "namespaceCode": "examplePermissionNamespace",
       "actionList": ["read", "get", "delete"],     
-      "resource": "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"
+      "resource": "treeResourceCode2/StructCode1/resourceStructChildrenCode1"
     }]
   }
 }

@@ -88,6 +88,55 @@
 
 
 
+## 示例代码
+
+```csharp
+using Authing.CSharp.SDK.Services;
+using System;
+using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+
+namespace ConsoleManagement
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
+
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
+
+            CreateDataResourceResponseDto result = await managementClient.CreateDataResource(new CreateDataResourceDto
+            {
+                NamespaceCode = "examplePermissionNamespace",
+                ResourceName = "字符串资源1",
+                ResourceCode = "str1",
+                Type = CreateDataResourceDto.type.STRING,
+                Description = "这是一个数据资源字符串类型创建",
+                Struct = "str1",
+                Actions = new List<string> { "get", "read", "update" }
+            });
+
+        }
+    }
+}
+```
+
+
+
+
 ## 请求响应
 
 类型： `CreateDataResourceResponseDto`

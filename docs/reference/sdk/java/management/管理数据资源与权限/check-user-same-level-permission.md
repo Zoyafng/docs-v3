@@ -9,16 +9,38 @@
 
 <LastUpdated />
 
-该接口主要用于判断用户在同层级资源下的权限，通过权限空间 Code 、用户 ID、资源操作、资源或资源子节点查询用户是否有该同级资源的权限。
+该接口主要用于判断用户在同层级资源下的权限，通过权限空间 Code 、用户 ID、资源操作、资源或资源子节点查询用户是否有该同级资源的权限。可选传条件属性参数，默认不开启条件判断。
   
-### 判断用户在同层级字符串资源权限示例
+### 判断用户在同层级字符串资源权限示例（无条件判断）
 
 ```json
 {
   "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
-  "action": "read"
-  "resource":"strResourceCode1"
+  "action": "read",
+  "resource": "strResourceCode1"
+}
+```
+
+### 判断用户在同层级字符串资源权限示例（开启条件判断）
+
+```json
+{
+  "namespaceCode": "examplePermissionNamespace",
+  "userId": "63721xxxxxxxxxxxxdde14a3",
+  "action": "read",
+  "resource": "strResourceCode1",
+  "judgeConditionEnabled": true,
+  "authEnvParams":{
+      "ip":"110.96.0.0",
+      "city":"北京",
+      "province":"北京",
+      "country":"中国",
+      "deviceType":"PC",
+      "systemType":"ios",
+      "browserType":"IE",
+      "requestDate":"2022-12-26 17:40:00"
+  }
 }
 ```
 
@@ -29,7 +51,7 @@
   "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "action": "read",
-  "resource":"arrayResourceCode1"
+  "resource": "arrayResourceCode1"
 }
 ```
 
@@ -40,7 +62,7 @@
   "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "action": "read",
-  "resource":"/treeResourceCode1/structCode1",
+  "resource": "treeResourceCode1/structCode1",
   "resourceNodeCodes": ["resourceStructChildrenCode1","resourceStructChildrenCode2","resourceStructChildrenCode3"]
 }
 ```
@@ -54,11 +76,13 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| resource | string | 是 | - | 资源路径  | `/treeResourceCode1/structCode1` |
+| resource | string | 是 | - | 资源路径  | `treeResourceCode1/structCode1` |
 | action | string | 是 | - | 数据资源权限操作  | `read` |
 | userId | string | 是 | - | 用户 ID  | `63721xxxxxxxxxxxxdde14a3` |
 | namespaceCode | string | 是 | - | 权限空间 Code  | `examplePermissionNamespace` |
 | resourceNodeCodes | string[] | 否 | - | 当前树资源路径子节点code  | `["resourceStructChildrenCode1"]` |
+| judgeConditionEnabled | boolean | 否 | - | 是否开启条件判断，默认 false 不开启  | `true` |
+| authEnvParams | <a href="#AuthEnvParams">AuthEnvParams</a> | 否 | - | 条件环境属性，若开启条件判断则使用  | `{"ip":"127.0.0.1"}` |
 
 
 
@@ -140,6 +164,20 @@ public class CheckUserSameLevelPermissionTest {
 ```
 
 ## 数据结构
+
+
+### <a id="AuthEnvParams"></a> AuthEnvParams
+
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+| ---- |  ---- | ---- | ---- | ---- |
+| ip | string | 否 | ip   |  `127.0.0.1` |
+| city | string | 否 | 城市   |  `北京` |
+| province | string | 否 | 省份   |  `湖北` |
+| country | string | 否 | 国家   |  `中国` |
+| deviceType | string | 否 | 设备类型：PC/Mobile   | PC |
+| systemType | string | 否 | 操作类型：Windows、Android、iOS、MacOS   | Windows |
+| browserType | string | 否 | 浏览器类型：IE/Chrome/Firefox   | IE |
+| requestDate | string | 否 | 请求时间   |  `2022-07-03T02:20:30.000Z` |
 
 
 ### <a id="CheckUserSameLevelPermissionDataDto"></a> CheckUserSameLevelPermissionDataDto

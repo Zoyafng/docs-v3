@@ -104,7 +104,7 @@ Change the background color
 
 ## 请求响应
 
-类型： `ApplicationPaginatedRespDto`
+类型： `CreateApplicationRespDto`
 
 | 名称 | 类型 | 描述 |
 | ---- | ---- | ---- |
@@ -112,7 +112,7 @@ Change the background color
 | message | string | 描述信息 |
 | apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
 | requestId | string | 请求 ID。当请求失败时会返回。 |
-| data | <a href="#ApplicationPaginatedDataDto">ApplicationPaginatedDataDto</a> | 响应数据 |
+| data | <a href="#CreateApplicationRespDataDto">CreateApplicationRespDataDto</a> | 响应数据 |
 
 
 
@@ -124,56 +124,53 @@ Change the background color
   "message": "操作成功",
   "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c",
   "data": {
-    "list": {
-      "appId": "62eaa95fe0xxxx9a5295bf7c",
-      "appIdentifier": "example",
-      "appName": "示例应用",
-      "appLogo": "示例应用",
-      "appDescription": "示例描述信息",
-      "appType": "web",
-      "defaultProtocol": "oidc",
-      "redirectUris": "[\"https://example.com/callback\"]",
-      "logoutRedirectUris": "[\"https://example.com/logout-callback\"]",
-      "initLoginUri": "[\"https://example.com/login\"]",
-      "ssoEnabled": true,
-      "ssoEnabledAt": "2022-07-03T02:20:30.000Z",
-      "loginConfig": {
-        "enabledBasicLoginMethods": "[\"EMAIL_CODE\",\"EMAIL_PASSWORD\"]",
-        "defaultLoginMethod": {
-          "connectionType": "QRCODE",
-          "qrcodeExtIdpConnId": "6303a2bf2xxxxx7f665f01bf1"
-        },
-        "enabledExtIdpConns": "[\"6303a2bf2xxxx7f665f01bf1\",\"6321397b6xxxx1b8481ccfc0\"]"
+    "appId": "62eaa95fe0xxxx9a5295bf7c",
+    "appIdentifier": "example",
+    "appName": "示例应用",
+    "appLogo": "示例应用",
+    "appDescription": "示例描述信息",
+    "appType": "web",
+    "defaultProtocol": "oidc",
+    "redirectUris": "[\"https://example.com/callback\"]",
+    "logoutRedirectUris": "[\"https://example.com/logout-callback\"]",
+    "initLoginUri": "[\"https://example.com/login\"]",
+    "ssoEnabled": true,
+    "ssoEnabledAt": "2022-07-03T02:20:30.000Z",
+    "loginConfig": {
+      "enabledBasicLoginMethods": "[\"EMAIL_CODE\",\"EMAIL_PASSWORD\"]",
+      "defaultLoginMethod": {
+        "connectionType": "QRCODE",
+        "qrcodeExtIdpConnId": "6303a2bf2xxxxx7f665f01bf1"
       },
-      "registerConfig": {
-        "enabledBasicRegisterMethods": "[\"EMAIL_CODE\",\"PHONE_CODE\"]",
-        "defaultRegisterMethod": {
-          "connectionType": "PASSWORD"
-        }
-      },
-      "brandingConfig": {
-        "customCSS": "/* \nEdit login page css\neg：\n.authing-guard-layout {\n  background: black !important;\n}\nChange the background color\n*/",
-        "guardVersion": "Advanced",
-        "customLoadingImage": "https://files.authing.co/user-contents/photos/cbd51df7-efb1-4b50-b38c-d8e5a04b1830.png",
-        "customBackground": "https://files.authing.co/user-contents/photos/cbd51df7-efb1-4b50-b38c-d8e5a04b1830.png",
-        "defaultLanguage": "zh-CN",
-        "showForgetPasswordButton": true,
-        "showEnterpriseConnections": true,
-        "showSocialConnections": true,
-        "agreements": {
-          "displayAt": "[\"LoginPage\",\"RegisterPage\"]",
-          "isRequired": true,
-          "lang": "zh-CN",
-          "content": "我已阅读并同意隐私协议与服务条款"
-        }
-      },
-      "oidcConfig": {},
-      "samlConfig": {},
-      "oauthConfig": {},
-      "casConfig": {},
-      "template": "github"
+      "enabledExtIdpConns": "[\"6303a2bf2xxxx7f665f01bf1\",\"6321397b6xxxx1b8481ccfc0\"]"
     },
-    "totalCount": 10
+    "registerConfig": {
+      "enabledBasicRegisterMethods": "[\"EMAIL_CODE\",\"PHONE_CODE\"]",
+      "defaultRegisterMethod": {
+        "connectionType": "PASSWORD"
+      }
+    },
+    "brandingConfig": {
+      "customCSS": "/* \nEdit login page css\neg：\n.authing-guard-layout {\n  background: black !important;\n}\nChange the background color\n*/",
+      "guardVersion": "Advanced",
+      "customLoadingImage": "https://files.authing.co/user-contents/photos/cbd51df7-efb1-4b50-b38c-d8e5a04b1830.png",
+      "customBackground": "https://files.authing.co/user-contents/photos/cbd51df7-efb1-4b50-b38c-d8e5a04b1830.png",
+      "defaultLanguage": "zh-CN",
+      "showForgetPasswordButton": true,
+      "showEnterpriseConnections": true,
+      "showSocialConnections": true,
+      "agreements": {
+        "displayAt": "[\"LoginPage\",\"RegisterPage\"]",
+        "isRequired": true,
+        "lang": "zh-CN",
+        "content": "我已阅读并同意隐私协议与服务条款"
+      }
+    },
+    "oidcConfig": {},
+    "samlConfig": {},
+    "oauthConfig": {},
+    "casConfig": {},
+    "template": "github"
   }
 }
 ```
@@ -266,15 +263,7 @@ Change the background color
 | showSocialConnections | boolean | 否 | 是否显示社会化登录方式   |  `true` |
 
 
-### <a id="ApplicationPaginatedDataDto"></a> ApplicationPaginatedDataDto
-
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- |  ---- | ---- | ---- | ---- |
-| list | array | 是 | 列表数据 嵌套类型：<a href="#ApplicationDto">ApplicationDto</a>。  |  |
-| totalCount | number | 是 | 记录总数   |  `10` |
-
-
-### <a id="ApplicationDto"></a> ApplicationDto
+### <a id="CreateApplicationRespDataDto"></a> CreateApplicationRespDataDto
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |

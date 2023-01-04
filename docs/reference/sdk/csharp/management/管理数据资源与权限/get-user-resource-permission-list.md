@@ -53,7 +53,7 @@
 {
   "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
-  "resources":["/treeResourceCode1/StructCode1/resourceStructChildrenCode1", "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"]
+  "resources":["treeResourceCode1/StructCode1/resourceStructChildrenCode1", "treeResourceCode2/StructCode1/resourceStructChildrenCode1"]
 }
 ```
 
@@ -68,11 +68,11 @@
     "permissionList": [{
       "namespaceCode": "examplePermissionNamespace",
       "actionList": ["read", "update", "delete"],
-      "resource": "/treeResourceCode1/StructCode1/resourceStructChildrenCode1"
+      "resource": "treeResourceCode1/StructCode1/resourceStructChildrenCode1"
     },{
       "namespaceCode": "examplePermissionNamespace",
       "actionList": ["read", "get", "delete"],     
-      "resource": "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"
+      "resource": "treeResourceCode2/StructCode1/resourceStructChildrenCode1"
     }]
   }
 }
@@ -90,6 +90,50 @@
 | resources | string[] | 是 | - | 资源路径列表  | `["treeResourceCode1"]` |
 | userId | string | 是 | - | 用户 ID  | `6301ceaxxxxxxxxx27478` |
 | namespaceCode | string | 是 | - | 权限空间 Code  | `examplePermissionNamespace` |
+
+
+
+
+## 示例代码
+
+```csharp
+using Authing.CSharp.SDK.Services;
+using System;
+using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+
+namespace ConsoleManagement
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
+
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
+
+            GetUserResourcePermissionListRespDto result = await managementClient.GetUserResourcePermissionList(new GetUserResourcePermissionListDto
+            {
+                NamespaceCode = "examplePermissionNamespace",
+                Resources = new List<string> { "treeResourceCode1" },
+                UserId = "USERID"
+            });
+        }
+    }
+}
+```
 
 
 

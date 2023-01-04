@@ -19,10 +19,57 @@
 
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| resources | string[] | 是 | - | 数据资源路径列表,  | `["/treeResourceCode1/StructCode1/resourceStructChildrenCode1"]` |
+| resources | string[] | 是 | - | 数据资源路径列表,  | `["treeResourceCode1/StructCode1/resourceStructChildrenCode1"]` |
 | action | string | 是 | - | 数据资源权限操作, read、get、write 等动作  | `get` |
 | externalId | string | 是 | - | 外部用户 ID  | `63721xxxxxxxxxxxxdde14a3` |
 | namespaceCode | string | 是 | - | 权限空间 Code  | `examplePermissionNamespace` |
+| judgeConditionEnabled | boolean | 否 | - | 是否开启条件判断，默认 true 开启  | `true` |
+| authEnvParams | <a href="#AuthEnvParams">AuthEnvParams</a> | 否 | - | 条件环境属性，若开启条件判断则使用  | `{"ip":"127.0.0.1"}` |
+
+
+
+
+## 示例代码
+
+```csharp
+using Authing.CSharp.SDK.Services;
+using System;
+using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+
+namespace ConsoleManagement
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
+
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
+
+            CheckExternalUserPermissionRespDto result = await managementClient.CheckExternalUserPermission(new CheckExternalUserPermissionDto
+            {
+                NamespaceCode = "examplePermissionNamespace",
+                ExternalId = "EXTERNALEID",
+                Action = "get,read",
+                Resources = new List<string> { "treeResourceCode1" }
+            });
+        }
+    }
+}
+```
 
 
 
@@ -59,6 +106,20 @@
 ```
 
 ## 数据结构
+
+
+### <a id="AuthEnvParams"></a> AuthEnvParams
+
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+| ---- |  ---- | ---- | ---- | ---- |
+| ip | string | 否 | ip   |  `127.0.0.1` |
+| city | string | 否 | 城市   |  `北京` |
+| province | string | 否 | 省份   |  `湖北` |
+| country | string | 否 | 国家   |  `中国` |
+| deviceType | string | 否 | 设备类型：PC/Mobile   | PC |
+| systemType | string | 否 | 操作类型：Windows、Android、iOS、MacOS   | Windows |
+| browserType | string | 否 | 浏览器类型：IE/Chrome/Firefox   | IE |
+| requestDate | string | 否 | 请求时间   |  `2022-07-03T02:20:30.000Z` |
 
 
 ### <a id="CheckExternalUserPermissionDataDto"></a> CheckExternalUserPermissionDataDto

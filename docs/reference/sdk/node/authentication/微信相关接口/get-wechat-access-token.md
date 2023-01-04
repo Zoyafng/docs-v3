@@ -1,4 +1,4 @@
-# 获取 Authing 服务器缓存的微信小程序、公众号 Access Token
+# 获取微信小程序、公众号 Access Token
 
 <!--
   警告⚠️：
@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-
+获取 Authing 服务器缓存的微信小程序、公众号 Access Token
 
 ## 方法名称
 

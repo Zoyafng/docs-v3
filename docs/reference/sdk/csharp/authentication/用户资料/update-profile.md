@@ -32,6 +32,7 @@
 | postalCode | string | 否 | - | 邮政编码号  | `438100` |
 | gender | string | 否 | U | 性别  | `M` |
 | username | string | 否 | - | 用户名，用户池内唯一  | `bob` |
+| company | string | 否 | - | 所在公司  | `steamory` |
 | customData | object | 否 | - | 自定义数据，传入的对象中的 key 必须先在用户池定义相关自定义字段  | `{"school":"北京大学","age":22}` |
 
 
@@ -61,7 +62,7 @@ namespace ConsoleApplication
             {
                 AppId = "AUTHING_APP_ID",// Authing 应用 ID
                 AppSecret = "AUTHING_APP_SECRET",// Authing 应用密钥
-                AppHost = "AUTHING_APP_DOMAIN", // Authing 应用域名，如 https://example.authing.cn。注意：Host 地址为示例样式，不同版本用户池的应用 Host 地址形式有所差异，实际地址以 自建应用->应用配置->认证配置 下 `认证地址 `字段为准。
+                AppHost = "AUTHING_APP_DOMAIN", // Authing 应用域名，如 https://example.authing.cn
                 RedirectUri = "AUTHING_APP_REDIRECT_URI",// Authing 应用配置的登录回调地址
             };
 
@@ -146,6 +147,9 @@ namespace ConsoleApplication
       "provider": "wechat",
       "type": "openid",
       "userIdInIdp": "oj7Nq05R-RRaqak0_YlMLnnIwsvg",
+      "userInfoInIdp": {},
+      "accessToken": "57_fK0xgSL_NwVlS-gmUwlMQ2N6AONNIOAYxxxx",
+      "refreshToken": "57_IZFu91Ak1Wg6DRytZFFIOd3upNF5lH7vPxxxxx",
       "originConnIds": "[\"605492ac41xxxxe0362f0707\"]"
     },
     "customData": {
@@ -226,6 +230,15 @@ namespace ConsoleApplication
 | provider | string | 是 | 外部身份源类型：<br>- `wechat`: 微信<br>- `qq`: QQ<br>- `wechatwork`: 企业微信<br>- `dingtalk`: 钉钉<br>- `weibo`: 微博<br>- `github`: GitHub<br>- `alipay`: 支付宝<br>- `baidu`: 百度<br>- `lark`: 飞书<br>- `welink`: Welink<br>- `yidun`: 网易易盾<br>- `qingcloud`: 青云<br>- `google`: Google<br>- `gitlab`: GitLab<br>- `gitee`: Gitee<br>- `twitter`: Twitter<br>- `facebook`: Facebook<br>- `slack`: Slack<br>- `linkedin`: Linkedin<br>- `instagram`: Instagram<br>- `oidc`: OIDC 型企业身份源<br>- `oauth2`: OAuth2 型企业身份源<br>- `saml`: SAML 型企业身份源<br>- `ldap`: LDAP 型企业身份源<br>- `ad`: AD 型企业身份源<br>- `cas`: CAS 型企业身份源<br>- `azure-ad`: Azure AD 型企业身份源<br>       | oidc |
 | type | string | 是 | Identity 类型，如 unionid, openid, primary   |  `openid` |
 | userIdInIdp | string | 是 | 在外部身份源中的 ID   |  `oj7Nq05R-RRaqak0_YlMLnnIwsvg` |
+| userInfoInIdp |  | 是 | 用户在 idp 中的身份信息 嵌套类型：<a href="#User">User</a>。  |  |
+| accessToken | string | 否 | 在外部身份源中的 Access Token（此参数只会在用户主动获取时返回，管理侧接口不会返回）。   |  `57_fK0xgSL_NwVlS-gmUwlMQ2N6AONNIOAYxxxx` |
+| refreshToken | string | 否 | 在外部身份源中的 Refresh Token（此参数只会在用户主动获取时返回，管理侧接口不会返回）。   |  `57_IZFu91Ak1Wg6DRytZFFIOd3upNF5lH7vPxxxxx` |
 | originConnIds | array | 是 | 身份来自的身份源连接 ID 列表   |  `["605492ac41xxxxe0362f0707"]` |
+
+
+### <a id="User"></a> User
+
+| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+| ---- |  ---- | ---- | ---- | ---- |
 
 

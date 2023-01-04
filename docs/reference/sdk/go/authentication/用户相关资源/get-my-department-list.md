@@ -118,7 +118,10 @@ func main() {
       },
       "customData": {
         "icon": "https://example.com/logo"
-      }
+      },
+      "departmentIdPath": "[\"parentId1\",\"parentId2\"]",
+      "departmentCodePath": "[\"parentCode1\",\"parentCode2\"]",
+      "departmentNamePath": "[\"parentName1\",\"parentName2\"]"
     }
   }
 }
@@ -152,6 +155,9 @@ func main() {
 | isVirtualNode | boolean | 是 | 是否是虚拟部门   |  |
 | i18n |  | 否 | 多语言设置 嵌套类型：<a href="#DepartmentI18nDto">DepartmentI18nDto</a>。  |  `{"name":{"zh-CN":{"enabled":false,"value":"中文"},"en-US":{"enabled":false,"value":"English"}}}` |
 | customData | object | 否 | 部门的扩展字段数据   |  `{"icon":"https://example.com/logo"}` |
+| departmentIdPath | array | 否 | 部门 ID 路径   |  `["parentId1","parentId2"]` |
+| departmentCodePath | array | 否 | 部门 Code 路径   |  `["parentCode1","parentCode2"]` |
+| departmentNamePath | array | 否 | 部门名路径   |  `["parentName1","parentName2"]` |
 
 
 ### <a id="DepartmentI18nDto"></a> DepartmentI18nDto

@@ -68,7 +68,7 @@
 {
   "namespaceCode": "examplePermissionNamespace",
   "actions": ["get", "update", "delete"]
-  "resources":["/treeResourceCode1/StructCode1/resourceStructChildrenCode1", "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"]
+  "resources":["treeResourceCode1/StructCode1/resourceStructChildrenCode1", "treeResourceCode2/StructCode1/resourceStructChildrenCode1"]
 }
 ```
   
@@ -81,7 +81,7 @@
   "apiCode": 20001,
   "data":{
     "authUserList": [{
-      "resource": "/treeResourceCode1/StructCode1/resourceStructChildrenCode1",
+      "resource": "treeResourceCode1/StructCode1/resourceStructChildrenCode1",
       "actionAuthList": [{
         "userIds": ["63721xxxxxxxxxxxxdde14a3"],
         "action": "get"
@@ -93,7 +93,7 @@
         "action": "delete"
       }]  
     },{
-      "resource": "/treeResourceCode2/StructCode1/resourceStructChildrenCode1",
+      "resource": "treeResourceCode2/StructCode1/resourceStructChildrenCode1",
       "actionAuthList": [{
         "userIds": ["63721xxxxxxxxxxxxdde14a3"],
         "action": "get"

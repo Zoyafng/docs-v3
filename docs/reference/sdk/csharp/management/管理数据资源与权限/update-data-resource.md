@@ -29,6 +29,79 @@
 
 
 
+## 示例代码
+
+```csharp
+using Authing.CSharp.SDK.Services;
+using System;
+using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+
+namespace ConsoleManagement
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
+
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
+
+            UpdateDataResourceResponseDto result = await managementClient.UpdateDataResource(new UpdateDataResourceDto
+            {
+                NamespaceCode = "examplePermissionNamespace",
+                ResourceName = "示例数据资源名称" ,
+                ResourceCode = "dataResourceTestCode",
+                Description = "示例数据资源描述" ,
+                Struct = new List<DataResourceTreeStructs>
+                {
+                    new DataResourceTreeStructs
+                    {
+                        Code="123",
+                        Name="数据资源",
+                        Value="示例数据资源节点",
+                        Children=new List<object>
+                        {
+                            new DataResourceTreeStructs
+                            {
+                                Code="code1",
+                                Name="子节点1",
+                                Value="子节点值",
+                                Children=new List<object>
+                                {
+                                    new DataResourceTreeStructs
+                                    {
+                                        Code="code2",
+                                        Name="子节点2",
+                                        Value="子节点值2"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                Actions = new List<string> { "get", "read", "update" }
+            });
+        }
+    }
+}
+```
+
+
+
+
 ## 请求响应
 
 类型： `UpdateDataResourceResponseDto`
