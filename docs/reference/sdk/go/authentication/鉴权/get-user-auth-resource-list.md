@@ -81,13 +81,13 @@ func main() {
   "message": "操作成功",
   "apiCode": 20001,
   "data": {
-    "userPermissionList": {
+    "userPermissionList": [{
       "userId": "6301cexxxxxxxxxxxxxxxxx78",
       "namespaceCode": "examplePermissionNamespace",
-      "resourceList": {
+      "resourceList": [{
         "resourceCode": "resourceCode"
-      }
-    }
+      }]
+    }]
   }
 }
 ```

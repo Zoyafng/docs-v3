@@ -102,12 +102,12 @@ public class CheckPermissionStringResourceTest {
   "message": "操作成功",
   "apiCode": 20001,
   "data": {
-    "checkResultList": {
+    "checkResultList": [{
       "namespaceCode": "examplePermissionNamespace",
       "action": "get",
       "resource": "exampleResource",
       "enabled": true
-    }
+    }]
   }
 }
 ```
