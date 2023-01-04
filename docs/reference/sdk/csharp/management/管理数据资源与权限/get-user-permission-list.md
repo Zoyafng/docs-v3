@@ -67,7 +67,7 @@
             "authorize": {
               "authList": [
                 {
-                  "nodePath": "/treeCode/treeChildrenCode1", 
+                  "nodePath": "treeCode/treeChildrenCode1", 
                   "nodeActions": [
                     "read", 
                     "get"
@@ -76,7 +76,7 @@
                   "nodeValue": "treeChildrenValue1"
                 }, 
                 {
-                  "nodePath": "/treeCode/treeChildrenCode2", 
+                  "nodePath": "treeCode/treeChildrenCode2", 
                   "nodeActions": [
                     "read", 
                     "get"
@@ -85,7 +85,7 @@
                   "nodeValue": "treeChildrenValue2"
                 }, 
                 {
-                  "nodePath": "/treeCode/treeChildrenCode3", 
+                  "nodePath": "treeCode/treeChildrenCode3", 
                   "nodeActions": [
                     "read"
                   ], 
@@ -249,6 +249,49 @@
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | userIds | string[] | 是 | - | 用户 ID 列表  | `["6301ceaxxxxxxxxxxx27478"]` |
 | namespaceCodes | string[] | 否 | - | 权限空间 Code 列表  | `["examplePermissionNamespace1"]` |
+
+
+
+
+## 示例代码
+
+```csharp
+using Authing.CSharp.SDK.Services;
+using System;
+using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+
+namespace ConsoleManagement
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
+
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
+
+            GetUserPermissionListRespDto result = await managementClient.GetUserPermissionList(new GetUserPermissionListDto
+            {
+                NamespaceCodes = new List<string> { "exampleNamespaceCode" },
+                UserIds = new List<string> { "USERID" }
+            });
+        }
+    }
+}
+```
 
 
 

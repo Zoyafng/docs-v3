@@ -24,6 +24,61 @@
 
 
 
+## 示例代码
+
+```csharp
+using Authing.CSharp.SDK.Services;
+using System;
+using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+
+namespace ConsoleManagement
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
+
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
+
+            List<CreatePermissionNamespacesBatchItemDto> nameSpaceList = new List<CreatePermissionNamespacesBatchItemDto>();
+            for (int i = 0; i < 3; i++)
+            {
+                CreatePermissionNamespacesBatchItemDto item = new CreatePermissionNamespacesBatchItemDto
+                {
+                    Code = "examplePermissionCode" + i,
+                    Name = "examplePermissionNamespace" + i,
+                    Description = "examplePermissionDescription" + i
+                };
+
+                nameSpaceList.Add(item);
+            }
+
+            IsSuccessRespDto dto = await managementClient.CreatePermissionNamespacesBatch(new CreatePermissionNamespacesBatchDto
+            {
+                List = nameSpaceList
+            });
+        }
+    }
+}
+```
+
+
+
+
 ## 请求响应
 
 类型： `IsSuccessRespDto`

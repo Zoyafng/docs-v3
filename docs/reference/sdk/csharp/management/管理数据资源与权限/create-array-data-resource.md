@@ -29,6 +29,54 @@
 
 
 
+## 示例代码
+
+```csharp
+using Authing.CSharp.SDK.Services;
+using System;
+using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+
+namespace ConsoleManagement
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
+
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
+
+            CreateArrayDataResourceResponseDto result = await managementClient.CreateDataResourceByArray(new CreateArrayDataResourceDto
+            {
+                NamespaceCode = "code1",
+                ResourceName = "示例数组资源名称",
+                ResourceCode = "dataResourceArrayTestCode",
+                Struct = new List<string> { "exampleArrayStruct1", "exampleArrayStruct2" },
+                Actions = new List<string> { "read", "get" },
+                Description = "示例数组数据资源描述"
+            });
+
+        }
+    }
+}
+```
+
+
+
+
 ## 请求响应
 
 类型： `CreateArrayDataResourceResponseDto`

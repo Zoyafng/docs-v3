@@ -9,7 +9,7 @@
 
 <LastUpdated />
 
-绑定 MFA 要素
+绑定 MFA 要素。
 
 ## 方法名称
 

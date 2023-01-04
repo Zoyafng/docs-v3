@@ -68,7 +68,7 @@
 {
   "namespaceCode": "examplePermissionNamespace",
   "actions": ["get", "update", "delete"]
-  "resources":["/treeResourceCode1/StructCode1/resourceStructChildrenCode1", "/treeResourceCode2/StructCode1/resourceStructChildrenCode1"]
+  "resources":["treeResourceCode1/StructCode1/resourceStructChildrenCode1", "treeResourceCode2/StructCode1/resourceStructChildrenCode1"]
 }
 ```
   
@@ -81,7 +81,7 @@
   "apiCode": 20001,
   "data":{
     "authUserList": [{
-      "resource": "/treeResourceCode1/StructCode1/resourceStructChildrenCode1",
+      "resource": "treeResourceCode1/StructCode1/resourceStructChildrenCode1",
       "actionAuthList": [{
         "userIds": ["63721xxxxxxxxxxxxdde14a3"],
         "action": "get"
@@ -93,7 +93,7 @@
         "action": "delete"
       }]  
     },{
-      "resource": "/treeResourceCode2/StructCode1/resourceStructChildrenCode1",
+      "resource": "treeResourceCode2/StructCode1/resourceStructChildrenCode1",
       "actionAuthList": [{
         "userIds": ["63721xxxxxxxxxxxxdde14a3"],
         "action": "get"
@@ -121,6 +121,50 @@
 | resources | string[] | 是 | - | 数据策略所属的数据资源路径列表 数组长度限制：50。 | `["treeResourceCode1"]` |
 | actions | string[] | 是 | - | 数据资源权限操作列表 数组长度限制：50。 | `["get"]` |
 | namespaceCode | string | 是 | - | 权限空间 Code  | `examplePermissionNamespace` |
+
+
+
+
+## 示例代码
+
+```csharp
+using Authing.CSharp.SDK.Services;
+using System;
+using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+
+namespace ConsoleManagement
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
+
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
+
+            ListResourceTargetsRespDto result = await managementClient.ListResourceTargets(new ListResourceTargets
+            {
+                NamespaceCode = "examplePermissionNamespace",
+                Actions = new List<string> { "read" },
+                Resources = new List<string> { "treeResourceCode1" }
+            });
+        }
+    }
+}
+```
 
 
 

@@ -67,7 +67,7 @@
             "authorize": {
               "authList": [
                 {
-                  "nodePath": "/treeCode/treeChildrenCode1", 
+                  "nodePath": "treeCode/treeChildrenCode1", 
                   "nodeActions": [
                     "read", 
                     "get"
@@ -76,7 +76,7 @@
                   "nodeValue": "treeChildrenValue1"
                 }, 
                 {
-                  "nodePath": "/treeCode/treeChildrenCode2", 
+                  "nodePath": "treeCode/treeChildrenCode2", 
                   "nodeActions": [
                     "read", 
                     "get"
@@ -85,7 +85,7 @@
                   "nodeValue": "treeChildrenValue2"
                 }, 
                 {
-                  "nodePath": "/treeCode/treeChildrenCode3", 
+                  "nodePath": "treeCode/treeChildrenCode3", 
                   "nodeActions": [
                     "read"
                   ], 

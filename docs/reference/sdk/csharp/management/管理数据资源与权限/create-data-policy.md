@@ -53,6 +53,62 @@
 
 
 
+## 示例代码
+
+```csharp
+using Authing.CSharp.SDK.Services;
+using System;
+using System.Threading.Tasks;
+using Authing.CSharp.SDK.Models;
+using System.Collections.Generic;
+
+namespace ConsoleManagement
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        private static async Task MainAsync()
+        {
+            // 设置初始化参数
+            ManagementClientOptions clientOptions = new ManagementClientOptions
+            {
+                AccessKeyId = "AUTHING_ACCESS_KEY_ID",// Authing Access Key ID
+                AccessKeySecret = "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+            };
+
+            // 初始化 ManagementClient
+            ManagementClient managementClient = new ManagementClient(clientOptions);
+
+            CreateDataPolicyResponseDto result = await managementClient.CreateDataPolicy(new CreateDataPolicyDto
+            {
+                PolicyName = "示例数据策略",
+                Description = "这是一个示例数据策略",
+                StatementList = new List<DataStatementPermissionDto>
+                {
+                    new DataStatementPermissionDto
+                    {
+                        Effect=DataStatementPermissionDto.effect.ALLOW,
+                        Permissions=new List<string>
+                        {
+                            "examplePermissionCode/str1/get",
+                            "examplePermissionCode/str1/read",
+                        }
+                    }
+                }
+            });
+
+        }
+    }
+}
+```
+
+
+
+
 ## 请求响应
 
 类型： `CreateDataPolicyResponseDto`
