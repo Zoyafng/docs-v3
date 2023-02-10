@@ -267,14 +267,7 @@ export default {
 |-----|----|----|----|----|
 |connection|String|认证方式|wechat_mini_program_code|否|
 |extIdpConnidentifier|String|Console 控制台中小程序身份源唯一标识| - |是|
-|wechatMiniProgramCodePayload|WechatMiniProgramCodePayload|社会化登录数据|-|是|
 |options|[WxLoginOptions](#WxLoginOptions)|额外数据| - |否|
-
-**WechatMiniProgramCodePayload**
-|名称|类型|描述|默认值|必填|
-|-----|----|----|----|----|
-|encryptedData|String|包括敏感数据在内的完整用户信息的加密数据|-|是|
-|iv|String|加密算法的初始向量|-|是|
 
 #### 出参
 
@@ -301,15 +294,6 @@ Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
 // index.js
 Page({
   async loginByCode () {
-    // 微信小程序限制：wx.getUserProfile 必须使用 button 触发
-    // 为了防止用户频繁触发登录按钮
-    // 建议使用 const [error, loginState] = await authing.getLoginState() 方法获取登录态
-    // 如果 loginState 为 undefined，说明用户未登录，或登录态已过期，则显示登录按钮
-    // 如果 loginState 不为 undefined，说明用户已登录，且登录态未过期，则无需再显示登录按钮
-    const { encryptedData, iv } = await wx.getUserProfile({
-      desc: 'getUserProfile'
-    })
-
     // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
     // 偶然情况下 res 会是 undefined
     // 所以需要判断 res 是否为 undefined 再进一步处理剩余业务逻辑
@@ -317,10 +301,6 @@ Page({
     const [error, res] = await authing.loginByCode({
       // 你的小程序身份源唯一标识
       extIdpConnidentifier: 'AUTHING_EXT_IDP_CONN_IDENTIFIER',
-      wechatMiniProgramCodePayload: {
-        encryptedData,
-        iv
-      },
       options: {
         scope: 'openid profile offline_access'
       }
@@ -340,15 +320,6 @@ export default class Index extends Component<PropsWithChildren> {
     )
   }
   async loginByCode () {    
-    // 微信小程序限制：wx.getUserProfile 必须使用 button 触发
-    // 为了防止用户频繁触发登录按钮
-    // 建议使用 const [error, loginState] = await authing.getLoginState() 方法获取登录态
-    // 如果 loginState 为 undefined，说明用户未登录，或登录态已过期，则显示登录按钮
-    // 如果 loginState 不为 undefined，说明用户已登录，且登录态未过期，则无需再显示登录按钮
-    const { encryptedData, iv } = await Taro.getUserProfile({
-      desc: 'getUserProfile'
-    })
-
     // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
     // 偶然情况下 res 会是 undefined
     // 所以需要判断 res 是否为 undefined 再进一步处理剩余业务逻辑
@@ -356,10 +327,6 @@ export default class Index extends Component<PropsWithChildren> {
     const [error, res] = await authing.loginByCode({
       // 你的小程序身份源唯一标识
       extIdpConnidentifier: 'AUTHING_EXT_IDP_CONN_IDENTIFIER',
-      wechatMiniProgramCodePayload: {
-        encryptedData,
-        iv
-      },
       options: {
         scope: 'openid profile offline_access'
       }
@@ -373,15 +340,6 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async loginByCode () {   
-      // 微信小程序限制：wx.getUserProfile 必须使用 button 触发
-      // 为了防止用户频繁触发登录按钮
-      // 建议使用 const [error, loginState] = await authing.getLoginState() 方法获取登录态
-      // 如果 loginState 为 undefined，说明用户未登录，或登录态已过期，则显示登录按钮
-      // 如果 loginState 不为 undefined，说明用户已登录，且登录态未过期，则无需再显示登录按钮
-      const [, { encryptedData, iv }] = await uni.getUserProfile({
-        desc: 'getUserProfile'
-      })
-
       // 由于微信小程序 wx.login() 获取 code 、 session_key 有效期及相关数据解密的机制
       // 偶然情况下 res 会是 undefined
       // 所以需要判断 res 是否为 undefined 再进一步处理剩余业务逻辑
@@ -389,14 +347,126 @@ export default {
       const [error, res] = await authing.loginByCode({
         // 你的小程序身份源唯一标识
         extIdpConnidentifier: 'AUTHING_EXT_IDP_CONN_IDENTIFIER',
-        wechatMiniProgramCodePayload: {
-          encryptedData,
-          iv
+        options: {
+          scope: 'openid profile offline_access'
+        }
+      })
+    }
+  }
+}
+```
+:::
+::::
+
+### 微信授权手机号码登录
+
+>authing.loginByPhone
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|extIdpConnidentifier|String|Console 控制台中小程序身份源唯一标识| - |是|
+|wechatMiniProgramCodeAndPhonePayload|[WechatMiniProgramCodeAndPhonePayload](#WechatMiniProgramCodeAndPhonePayload)|微信授权信息| - |是|
+|options|[WxLoginOptions](#WxLoginOptions)|额外数据| - |否|
+
+<strong>
+  <p id="WechatMiniProgramCodeAndPhonePayload">WechatMiniProgramCodeAndPhonePayload</p>
+</strong>
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|wxPhoneInfo|[WxPhoneInfo](#WxPhoneInfo)|微信授权手机号信息|-|是|
+
+<strong>
+  <p id="WxPhoneInfo">WxPhoneInfo</p>
+</strong>
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|code|string|微信授权手机号返回的 code|-|是|
+
+#### 出参
+
+Promise<[SDKResponse](#SDKResponse)<[LoginState](#LoginState)>>
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button open-type="getPhoneNumber" bindgetphonenumber="loginByPhone">Login By Phone</button>
+```
+``` typescript
+// index.js
+Page({
+  async loginByPhone (e) {
+    const { code } = e.detail
+    const res = await authing.loginByPhone({
+      extIdpConnidentifier: 'EXT_IDP_CONNIDENTIFIER',
+      wechatMiniProgramCodeAndPhonePayload: {
+        wxPhoneInfo: {
+          code
+        }
+      },
+      options: {
+        scope: 'openid profile offline_access'
+      }
+    })
+    console.log('authing.loginByPhone res: ', res)
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button openType="getPhoneNumber"  onGetPhoneNumber={(e) => this.loginByPhone(e)}>Login By Phone</Button>
+      </View>
+    )
+  }
+  async loginByPhone (e) {
+    const { code } = e.detail
+    const res = await authing.loginByPhone({
+      extIdpConnidentifier: 'EXT_IDP_CONNIDENTIFIER',
+      wechatMiniProgramCodeAndPhonePayload: {
+        wxPhoneInfo: {
+          code
+        }
+      },
+      options: {
+        scope: 'openid profile offline_access'
+      }
+    })
+    console.log('authing.loginByPhone res: ', res)
+  }
+}
+```
+:::
+::: tab uni-app
+``` html
+<button open-type="getPhoneNumber" @getphonenumber="loginByPhone">Login By Phone</button>
+```
+``` typescript
+export default {
+  methods: {
+    async loginByPhone (e) {
+      const { code } = e.detail
+      const res = await authing.loginByPhone({
+        extIdpConnidentifier: 'EXT_IDP_CONNIDENTIFIER',
+        wechatMiniProgramCodeAndPhonePayload: {
+          wxPhoneInfo: {
+            code
+          }
         },
         options: {
           scope: 'openid profile offline_access'
         }
       })
+      console.log('authing.loginByPhone res: ', res)
     }
   }
 }
@@ -529,11 +599,6 @@ export default {
 #### 出参
 
 Promise<[SDKResponse](#SDKResponse)<[SimpleResponseData](#SimpleResponseData)>>
-
-|名称|类型|描述|
-|-----|----|----|
-|message|String|返回信息
-|statusCode|Number|状态码
 
 #### 示例代码
 :::: tabs :options="{ useUrlFragment: false }"
@@ -1406,7 +1471,7 @@ interface ErrorData {
 ### <p id="SimpleResponseData">SimpleResponseData</p>
 |名称|类型|描述|
 |-----|----|----|
-|message|String|错误信息|
+|message|String|返回信息|
 |statusCode|Number|状态码|
 
 ### <p id="GetUserPhoneResponseData">GetUserPhoneResponseData</p>
