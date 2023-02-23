@@ -155,7 +155,7 @@ public class ListResourceTargetsTest {
         // clientOptions.setHost("https://api.your-authing-service.com");
         ManagementClient client = new ManagementClient(clientOptions);
 
-        ListResourceTargets request = new ListResourceTargets();
+        ListResourceTargetsDto request = new ListResourceTargetsDto();
         request.setNamespaceCode("examplePermissionNamespace");
         ArrayList<String> actionList = new ArrayList<>();
         actionList.add("get");
