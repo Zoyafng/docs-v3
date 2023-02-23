@@ -17,9 +17,9 @@
 
 ## 请求参数
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| resources | string[] | 是 | - | 数据资源路径列表,  | `["exampleResource"]` |
+| 名称 | 类型     | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
+| ---- |--------| ---- | ---- | ---- | ---- |
+| resources | array  | 是 | - | 数据资源路径列表,  | `["exampleResource"]` |
 | action | string | 是 | - | 数据资源权限操作, read、get、write 等动作  | `get` |
 
 
