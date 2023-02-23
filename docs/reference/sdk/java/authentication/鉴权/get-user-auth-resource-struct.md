@@ -9,8 +9,7 @@
 
 <LastUpdated />
 
-获取用户指定资源权限列表，用户获取在某个应用下所拥有的资源列表
-
+获取用户授权的资源列表，用户获取某个应用下的某个资源所授权的结构列表，通过不同的资源类型返回对应资源的授权列表。
 ## 方法名称
 
 `AuthenticationClient.getUserAuthResourceStruct`
