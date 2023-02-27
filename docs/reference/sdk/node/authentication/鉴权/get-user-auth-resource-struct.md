@@ -145,9 +145,9 @@ const authenticationClient = new AuthenticationClient({
 
 ### <a id="TreeResourceAuthAction"></a> TreeResourceAuthAction
 
-| 名称                 | 类型    | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div>                    | <div style="width:200px">示例值</div> |
-|--------------------|-------|------------------------------------|------------------------------------------------------|------------------------------------|
-| nodeAuthActionList | array | 是                                  | 树结构节点列表,嵌套类型：<a href="#TreeStructs">TreeStructs</a>。 | -                                  |
+| 名称                 | 类型            | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div>                    | <div style="width:200px">示例值</div> |
+|--------------------|---------------|------------------------------------|------------------------------------------------------|------------------------------------|
+| nodeAuthActionList | TreeStructs[] | 是                                  | 树结构节点列表,嵌套类型：<a href="#TreeStructs">TreeStructs</a>。 | -                                  |
 
 ### <a id="TreeStructs"></a> TreeStructs
 
