@@ -2933,6 +2933,14 @@ const zhCnNavBar = {
                     {
                       "title": "获取用户在登录应用下被授权资源列表",
                       "path": "/reference/sdk/go/authentication/鉴权/get-user-auth-resource-list"
+                    },
+                    {
+                      "title": "获取用户在登录应用下指定资源权限列表",
+                      "path": "/reference/sdk/go/authentication/鉴权/get-user-auth-resource-permission-list"
+                    },
+                    {
+                      "title": "获取用户在登录应用下指定资源权限列表",
+                      "path": "/reference/sdk/go/authentication/鉴权/get-user-auth-resource-struct"
                     }
                   ]
                 },
