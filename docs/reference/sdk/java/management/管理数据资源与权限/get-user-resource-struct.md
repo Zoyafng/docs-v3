@@ -9,17 +9,17 @@
 
 <LastUpdated />
 
-该接口主要用于获取用户授权的资源列表，通过权限空间 Code、用户 id、资源 Code 获取用户资源的授权列表。
-  
-  ### 示例
-  
-  - 入参
+该接口主要用于获取用户授权的资源列表，通过权限空间 Code、用户 Id、资源 Code 获取用户资源的授权列表，通过不同的资源类型返回对应资源的授权。
+
+### 获取用户授权字符串数据资源示例
+
+- 入参
 
 ```json
 {
   "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
-  "resourceCode": "exampleResourceCode"
+  "resourceCode": "exampleStrResourceCode"
 }
 ```
 
@@ -32,51 +32,93 @@
   "apiCode": 20001,
   "data":{
     "namespaceCode": "exampleNamespaceCode",
-    "resourceCode": "exampleResourceCode",
-    "permissionBo": {
-        "resourceId": "63xxxxxxxxxxxxx999",
-        "resourceType": "TREE",
-        "nodeAuthActionList": [
-            {
-                "name": "1",
-                "code": "1",
-                "children": [
-                    {
-                        "name": "1-1",
-                        "code": "1-1",
-                        "children": [],
-                        "actions": [
-                            "read",
-                            "get"
-                        ]
-                    }
-                ],
-                "actions": [
-                    "read"
-                ]
-            },
-            {
-                "name": "2",
-                "code": "2",
-                "children": [
-                    {
-                        "name": "2-1",
-                        "code": "2-1",
-                        "actions": [
-                            "read"
-                        ]
-                    }
-                ],
-                "actions": [
-                    "get"
-                ]
-            }
-        ]
+    "resourceCode": "exampleStrResourceCode",
+    "resourceType": "STRING",
+    "strResourceAuthAction":{
+      "value": "strTestValue",
+      "actions": ["get","delete"]
     }
   }
 }
 ```
-  
+
+### 获取用户授权数据数组资源示例
+
+- 入参
+
+```json
+{
+  "namespaceCode": "examplePermissionNamespace",
+  "userId": "63721xxxxxxxxxxxxdde14a3",
+  "resourceCode": "exampleArrResourceCode"
+}
+```
+
+- 出参
+
+```json
+{
+  "statusCode": 200,
+  "message": "操作成功",
+  "apiCode": 20001,
+  "data":{
+    "namespaceCode": "exampleNamespaceCode",
+    "resourceCode": "exampleArrResourceCode",
+    "resourceType": "ARRAY",
+    "arrResourceAuthAction":{
+      "values": ["arrTestValue1","arrTestValue2","arrTestValue3"],
+      "actions": ["get","delete"]
+    }
+  }
+}
+```
+
+### 获取用户授权树数据资源示例
+
+- 入参
+
+```json
+{
+  "namespaceCode": "examplePermissionNamespace",
+  "userId": "63721xxxxxxxxxxxxdde14a3",
+  "resourceCode": "exampleArrResourceCode"
+}
+```
+
+- 出参
+
+```json
+{
+  "statusCode": 200,
+  "message": "操作成功",
+  "apiCode": 20001,
+  "data":{
+    "namespaceCode": "exampleNamespaceCode",
+    "resourceCode": "exampleArrResourceCode",
+    "resourceType": "TREE",
+    "treeResourceAuthAction":{
+      "nodeAuthActionList":[{
+        "code": "tree11",
+        "name": "tree11",
+        "value": "test11Value",
+        "actions": ["get","delete"],
+        "children": [{
+          "code": "tree111",
+          "name": "tree111",
+          "value": "test111Value",
+          "actions": ["update","read"],
+        }]
+      },{
+        "code": "tree22",
+        "name": "tree22",
+        "value": "test22Value",
+        "actions": ["get","delete"]
+      }]
+    }
+  }
+}
+```
+
 
 ## 方法名称
 
@@ -89,6 +131,48 @@
 | resourceCode | string | 是 | - | 资源 Code  | `exampleResourceCode` |
 | userId | string | 是 | - | 用户 ID   | `6301ceaxxxxxxxxxxx27478` |
 | namespaceCode | string | 是 | - | 权限空间 Code  | `examplePermissionNamespace` |
+
+## 示例代码
+
+```java
+package test.management.dataPermission.authentication;
+
+import cn.authing.sdk.java.client.ManagementClient;
+import cn.authing.sdk.java.dto.CheckPermissionDto;
+import cn.authing.sdk.java.dto.CheckPermissionRespDto;
+import cn.authing.sdk.java.dto.GetUserResourceStructDto;
+import cn.authing.sdk.java.dto.GetUserResourceStructRespDto;
+import cn.authing.sdk.java.model.ManagementClientOptions;
+import cn.authing.sdk.java.util.JsonUtils;
+import java.util.ArrayList;
+import java.util.List;
+
+public class GetUserResourceStructTest {
+  
+    // 需要替换成你的 Authing Access Key ID
+    private static final String ACCESS_KEY_ID = "AUTHING_ACCESS_KEY_ID";
+    // 需要替换成你的 Authing Access Key Secret
+    private static final String ACCESS_KEY_SECRET = "AUTHING_ACCESS_KEY_SECRET";
+
+    public static void main(String[] args) throws Throwable {
+        ManagementClientOptions clientOptions = new ManagementClientOptions();
+        clientOptions.setAccessKeyId(ACCESS_KEY_ID);
+        clientOptions.setAccessKeySecret(ACCESS_KEY_SECRET);
+        // 如果是私有化部署的客户，需要设置 Authing 服务域名
+        // clientOptions.setHost("https://api.your-authing-service.com");
+        ManagementClient client = new ManagementClient(clientOptions);
+
+        GetUserResourceStructDto request = new GetUserResourceStructDto();
+        request.setNamespaceCode("examplePermissionNamespace");
+        request.setUserId("63721xxxxxxxxxxxxdde14a3");
+        request.setResourceCode("exampleStrResourceCode");
+
+        GetUserResourceStructRespDto response = client.getUserResourceStruct(request);
+        System.out.println(JsonUtils.serialize(response));
+    }
+}
+
+```
 
 
 
@@ -113,20 +197,55 @@
 {
   "statusCode": 200,
   "message": "操作成功",
+  "apiCode": 0,
   "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c",
   "data": {
     "namespaceCode": "namespaceCode",
     "resourceCode": "resourceCode",
-    "permissionBo": {
-      "resourceId": "resourceId",
-      "resourceType": "TREE",
-      "nodeAuthActionList": {
-        "code": "123",
-        "value": "示例资源策略节点",
-        "name": "数据资源",
-        "action": "read",
-        "children": "[{\"code\":\"code1\",\"name\":\"子节点1\",\"value\":\"子节点值\",\"enabled\":false,\"action\":\"Create\",\"children\":[{\"code\":\"code2\",\"name\":\"子节点2\",\"value\":\"子节点2值\",\"enabled\":true,\"action\":\"Get\"}]}]"
-      }
+    "resourceType": "STRING",
+    "strResourceAuthAction": {
+      "value": "resourceCode",
+      "actions": [
+        "resourceCode"
+      ]
+    },
+    "arrResourceAuthAction": {
+      "values": [
+        "resourceCode"
+      ],
+      "actions": [
+        "resourceCode"
+      ]
+    },
+    "treeResourceAuthAction": {
+      "nodeAuthActionList": [
+        {
+          "code": "123",
+          "name": "树数据资源",
+          "value": "示例树资源策略节点",
+          "actions": "read",
+          "children": [
+            {
+              "code": "code1",
+              "name": "子节点1",
+              "value": "子节点值",
+              "actions": [
+                "Create"
+              ],
+              "children": [
+                {
+                  "code": "code2",
+                  "name": "子节点2",
+                  "value": "子节点2值",
+                  "actions": [
+                    "get"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }
@@ -141,27 +260,8 @@
 | ---- |  ---- | ---- | ---- | ---- |
 | namespaceCode | string | 是 | 权限空间code   |  `namespaceCode` |
 | resourceCode | string | 是 | 资源code   |  `resourceCode` |
-| permissionBo |  | 是 | 数据资源权限操作列表 嵌套类型：<a href="#TreePermissionDto">TreePermissionDto</a>。  |  |
-
-
-### <a id="TreePermissionDto"></a> TreePermissionDto
-
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- |  ---- | ---- | ---- | ---- |
-| resourceId | string | 是 | 资源id   |  `resourceId` |
-| resourceType | string | 是 | 资源类型，STRING/ARRAY/TREE   |  `TREE` |
-| nodeAuthActionList | array | 是 | 树结构节点列表 嵌套类型：<a href="#DataResourcePolicyTreeStructs">DataResourcePolicyTreeStructs</a>。  |  |
-
-
-### <a id="DataResourcePolicyTreeStructs"></a> DataResourcePolicyTreeStructs
-
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- |  ---- | ---- | ---- | ---- |
-| code | string | 是 | 数据资源策略节点 Code, 同层级唯一   |  `123` |
-| value | string | 否 | 数据资源策略节点 Value   |  `示例资源策略节点` |
-| name | string | 是 | 数据资源节点名称 ，同层级唯一   |  `数据资源` |
-| action | string | 是 | 数据资源策略节点 action 动作   |  `read` |
-| enabled | boolean | 是 | 数据资源策略节点是否开启动作   |  |
-| children | array | 否 | 子节点数据,子节点数据最多五个层级   |  `[{"code":"code1","name":"子节点1","value":"子节点值","enabled":false,"action":"Create","children":[{"code":"code2","name":"子节点2","value":"子节点2值","enabled":true,"action":"Get"}]}]` |
-
+| resourceType | ResourceType | 是 | 数据资源类型，目前支持树结构（TREE）、字符串（STRING）、数组（ARRAY）三种类型 | `TREE` |
+| strResourceAuthAction | StrResourceAuthAction | 是 | 字符串资源授权 | |
+| arrResourceAuthAction | ArrResourceAuthAction | 是 | 数组资源授权 | |
+| treeResourceAuthAction | TreeResourceAuthAction | 是 | 树资源授权 | |
 

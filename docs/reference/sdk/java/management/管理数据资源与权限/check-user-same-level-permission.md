@@ -1,4 +1,4 @@
-# 判断用户在同层级资源下的权限
+# 判断用户在树资源同层级资源下的权限
 
 <!--
   警告⚠️：
@@ -9,8 +9,8 @@
 
 <LastUpdated />
 
-该接口主要用于判断用户在同层级资源下的权限，通过权限空间 Code 、用户 ID、资源操作、资源或资源子节点查询用户是否有该同级资源的权限。可选传条件属性参数，默认不开启条件判断。
-  
+该接口主要用于判断用户在树资源同层级下的权限，通过权限空间 Code 、用户 ID、资源操作、资源或资源子节点查询用户是否有该树资源同级路径的权限。可选传条件属性参数，默认不开启条件判断。
+
 ### 判断用户在同层级字符串资源权限示例（无条件判断）
 
 ```json
@@ -18,7 +18,8 @@
   "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "action": "read",
-  "resource": "strResourceCode1"
+  "resource": "treeResourceCode/structCode",
+  "resourceNodeCodes": ["resourceStructChildrenCode1","resourceStructChildrenCode2","resourceStructChildrenCode3"]
 }
 ```
 
@@ -29,7 +30,8 @@
   "namespaceCode": "examplePermissionNamespace",
   "userId": "63721xxxxxxxxxxxxdde14a3",
   "action": "read",
-  "resource": "strResourceCode1",
+  "resource": "treeResourceCode/structCode",
+  "resourceNodeCodes": ["resourceStructChildrenCode1","resourceStructChildrenCode2","resourceStructChildrenCode3"],
   "judgeConditionEnabled": true,
   "authEnvParams":{
       "ip":"110.96.0.0",
@@ -44,29 +46,6 @@
 }
 ```
 
-### 判断用户在同层级数组资源权限示例
-
-```json
-{
-  "namespaceCode": "examplePermissionNamespace",
-  "userId": "63721xxxxxxxxxxxxdde14a3",
-  "action": "read",
-  "resource": "arrayResourceCode1"
-}
-```
-
-### 判断用户在同层级树资源权限示例
-
-```json
-{
-  "namespaceCode": "examplePermissionNamespace",
-  "userId": "63721xxxxxxxxxxxxdde14a3",
-  "action": "read",
-  "resource": "treeResourceCode1/structCode1",
-  "resourceNodeCodes": ["resourceStructChildrenCode1","resourceStructChildrenCode2","resourceStructChildrenCode3"]
-}
-```
-  
 
 ## 方法名称
 
@@ -80,7 +59,7 @@
 | action | string | 是 | - | 数据资源权限操作  | `read` |
 | userId | string | 是 | - | 用户 ID  | `63721xxxxxxxxxxxxdde14a3` |
 | namespaceCode | string | 是 | - | 权限空间 Code  | `examplePermissionNamespace` |
-| resourceNodeCodes | string[] | 否 | - | 当前树资源路径子节点code  | `["resourceStructChildrenCode1"]` |
+| resourceNodeCodes | string[] | 是 | - | 当前树资源路径子节点code  | `["resourceStructChildrenCode1"]` |
 | judgeConditionEnabled | boolean | 否 | - | 是否开启条件判断，默认 false 不开启  | `true` |
 | authEnvParams | <a href="#AuthEnvParams">AuthEnvParams</a> | 否 | - | 条件环境属性，若开启条件判断则使用  | `{"ip":"127.0.0.1"}` |
 
@@ -152,13 +131,16 @@ public class CheckUserSameLevelPermissionTest {
 {
   "statusCode": 200,
   "message": "操作成功",
+  "apiCode": 0,
   "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c",
   "data": {
-    "checkLevelResultList": {
-      "action": "get",
-      "resourceNodeCode": "treeResourceStructChildrenCode1",
-      "enabled": true
-    }
+    "checkLevelResultList": [
+      {
+        "action": "get",
+        "resourceNodeCode": "treeResourceStructChildrenCode1",
+        "enabled": true
+      }
+    ]
   }
 }
 ```
@@ -194,5 +176,4 @@ public class CheckUserSameLevelPermissionTest {
 | action | string | 是 | 数据资源权限操作   |  `get` |
 | resourceNodeCode | string | 否 | 树资源节点code   |  `treeResourceStructChildrenCode1` |
 | enabled | boolean | 是 | 是否拥有 action 权限   |  `true` |
-
 
