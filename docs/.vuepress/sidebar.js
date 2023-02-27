@@ -377,15 +377,13 @@ const zhCnNavBar = {
                       "path": "/reference/sdk/java/authentication/鉴权/get-user-auth-resource-list"
                     },
                     {
-                      "title": "获取用户指定资源权限列表",
+                      "title": "获取用户在登录应用下指定资源权限列表",
                       "path": "/reference/sdk/java/authentication/鉴权/get-user-auth-resource-permission-list"
                     },
                     {
-                      "title": "获取用户授权资源的结构列表",
+                      "title": "获取用户在登录应用下授权资源的结构列表",
                       "path": "/reference/sdk/java/authentication/鉴权/get-user-auth-resource-struct"
                     }
-
-
                   ]
                 },
                 {
@@ -1662,6 +1660,14 @@ const zhCnNavBar = {
                     {
                       "title": "获取用户在登录应用下被授权资源列表",
                       "path": "/reference/sdk/node/authentication/鉴权/get-user-auth-resource-list"
+                    },
+                    {
+                      "title": "获取用户在登录应用下指定资源权限列表",
+                      "path": "/reference/sdk/node/authentication/鉴权/get-user-auth-resource-permission-list"
+                    },
+                    {
+                      "title": "获取用户在登录应用下指定资源权限列表",
+                      "path": "/reference/sdk/node/authentication/鉴权/get-user-auth-resource-struct"
                     }
                   ]
                 },
