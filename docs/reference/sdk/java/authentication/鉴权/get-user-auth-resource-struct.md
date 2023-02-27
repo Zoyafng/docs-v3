@@ -94,27 +94,7 @@ public class GetUserAuthResourceStructTest {
   "data": {
     "namespaceCode": "namespaceCode",
     "resourceCode": "resourceCode",
-    "resourceType": "STRING",
-    "strResourceAuthAction": {
-      "value": "resourceCode",
-      "actions": [
-        "get",
-        "update",
-        "delete",
-        "read"
-      ]
-    },
-    "arrResourceAuthAction": {
-      "values": [
-        "resourceCode"
-      ],
-      "actions": [
-        "get",
-        "update",
-        "delete",
-        "read"
-      ]
-    },
+    "resourceType": "TREE",
     "treeResourceAuthAction": {
       "nodeAuthActionList": [
         {

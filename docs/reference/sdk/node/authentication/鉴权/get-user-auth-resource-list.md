@@ -17,8 +17,8 @@
 
 ## 请求参数
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
-| ---- | ---- | ---- | ---- | ---- | ---- |
+| 名称  | 类型  | <div style="width:80px">是否必填</div> | 默认值 | <div style="width:300px">描述</div> | <div style="width:200px"></div>示例值</div> |
+|-----|-----|------------------------------------|-----|-----------------------------------|------------------------------------------|
 
 
 
@@ -54,12 +54,12 @@ const authenticationClient = new AuthenticationClient({
 
 类型： `GetUserAuthResourceListRespDto`
 
-| 名称 | 类型 | 描述 |
-| ---- | ---- | ---- |
-| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
-| message | string | 描述信息 |
-| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
-| data | <a href="#GetUserAuthResourceListDataDto">GetUserAuthResourceListDataDto</a> | 响应数据 |
+| 名称         | 类型                                                                           | 描述                               |
+|------------|------------------------------------------------------------------------------|----------------------------------|
+| statusCode | number                                                                       | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message    | string                                                                       | 描述信息                             |
+| apiCode    | number                                                                       | 细分错误码，可通过此错误码得到具体的错误类型。          |
+| data       | <a href="#GetUserAuthResourceListDataDto">GetUserAuthResourceListDataDto</a> | 响应数据                             |
 
 
 
@@ -87,25 +87,25 @@ const authenticationClient = new AuthenticationClient({
 
 ### <a id="GetUserAuthResourceListDataDto"></a> GetUserAuthResourceListDataDto
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- |  ---- | ---- | ---- | ---- |
-| userPermissionList | array | 是 | 用户权限列表 嵌套类型：<a href="#UserAuthResourceListDto">UserAuthResourceListDto</a>。  |  |
+| 名称                 | 类型                        | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div>                                           | <div style="width:200px">示例值</div> |
+|--------------------|---------------------------|------------------------------------|-----------------------------------------------------------------------------|------------------------------------|
+| userPermissionList | UserAuthResourceListDto[] | 是                                  | 用户权限列表 嵌套类型：<a href="#UserAuthResourceListDto">UserAuthResourceListDto</a>。 |                                    |
 
 
 ### <a id="UserAuthResourceListDto"></a> UserAuthResourceListDto
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- |  ---- | ---- | ---- | ---- |
-| userId | string | 是 | 数据策略授权的用户 ID   |  `6301cexxxxxxxxxxxxxxxxx78` |
-| namespaceCode | string | 是 | 数据策略授权的权限空间 Code   |  `examplePermissionNamespace` |
-| resourceList | array | 否 | 用户在权限空间下所有的数据策略资源列表 嵌套类型：<a href="#OpenResource">OpenResource</a>。  |  |
+| 名称            | 类型             | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div>                                  | <div style="width:200px">示例值</div> |
+|---------------|----------------|------------------------------------|--------------------------------------------------------------------|------------------------------------|
+| userId        | string         | 是                                  | 数据策略授权的用户 ID                                                       | `6301cexxxxxxxxxxxxxxxxx78`        |
+| namespaceCode | string         | 是                                  | 数据策略授权的权限空间 Code                                                   | `examplePermissionNamespace`       |
+| resourceList  | OpenResource[] | 否                                  | 用户在权限空间下所有的数据策略资源列表 嵌套类型：<a href="#OpenResource">OpenResource</a>。 |                                    |
 
 
 ### <a id="OpenResource"></a> OpenResource
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- |  ---- | ---- | ---- | ---- |
-| resourceCode | string | 是 | 数据策略下所授权的数据资源 Code   |  `resourceCode` |
-| authorize |  | 是 | 用户在权限空间下所有的数据策略的资源列表   |  |
+| 名称           | 类型     | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+|--------------|--------|------------------------------------|-----------------------------------|------------------------------------|
+| resourceCode | string | 是                                  | 数据策略下所授权的数据资源 Code                | `resourceCode`                     |
+| authorize    |        | 是                                  | 用户在权限空间下所有的数据策略的资源列表              |                                    |
 
 
