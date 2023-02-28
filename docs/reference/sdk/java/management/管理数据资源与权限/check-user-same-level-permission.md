@@ -99,6 +99,9 @@ public class CheckUserSameLevelPermissionTest {
         request.setUserId("63721xxxxxxxxxxxxdde14a3");
         request.setAction("get");
         request.setResource("treeResourceCode");
+      	List<String> list = new ArrayList<>();
+      	list.add("resourceStructChildrenCode1");
+      	request.setResourceNodeCodes(list);
 
         CheckUserSameLevelPermissionResponseDto response = client
                 .checkUserSameLevelPermission(request);
