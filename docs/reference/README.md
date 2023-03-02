@@ -4,11 +4,12 @@
 
 ::: hint-info
 为了给开发者持续提供更全面、更开发者友好的开放能力，Authing V3 版本的 API、SDK 已于 2022 年 10 月 24 日正式上线。若你仍希望使用旧版 API、SDK， 可[点击此处跳转 〉](https://docs.authing.cn/v2/reference/)。
+Authing API Explorer 已于 2023 年 2 月 26 日正式上线，面向 Authing 开发者用户使用链路提供：API 发现、API 调试、API 集成等能力，帮助开发者用户更好、更快使用 Authing 产品，[点击此处跳转 〉](https://api-explorer.authing.cn/)。
 :::
 
 ## 新版 API & SDK 特性
 
-![](https://files.authing.co/api-explorer/what-is-authing.png)
+![](https://files.authing.co/api-explorer/what-is-authing.jpg)
 
 Authing 的产品演进到了第三代，但无论到了第几代，核心的**以开发者为中心**都是贯穿全产品线的重要**产品设计哲学**。也就是说，不论将来 Authing 的产品如何演进，定位如何变化，「以开发者为中心」将像鱼骨一样，不论伸出多少分支，总有一个「主线」贯穿全程。
 
@@ -24,6 +25,7 @@ Authing By developers, for developers.
 - 配套丰富的全新 API 文档，方便开发者更快上手。
 - 每个接口、每个参数、每个返回值都有类型和说明。
 - 一致的 API 设计语言，更加语义化，使用起来更加流畅。
+- 提提供面向开发者的 [API Explorer](https://api-explorer.authing.cn/) 在线调试中心，高效满足开发者的 API 调试、API 学习等需求。
 4. 提高生产力： 完全遵循 [OpenAPI](https://swagger.io/specification/) 规范，使用 OpenAPI 标准定义接口描述、参数、返回值，基于这此元数据可以进行任意二次开发，如生成文档、SDK 等。
 
 
