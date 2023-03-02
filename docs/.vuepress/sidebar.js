@@ -991,6 +991,10 @@ const zhCnNavBar = {
                       "path": "/reference/sdk/java/management/管理数据资源与权限/check-permission"
                     },
                     {
+                      "title": "判断外部用户权限",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/check-external-user-permission"
+                    },
+                    {
                       "title": "获取用户指定资源权限列表",
                       "path": "/reference/sdk/java/management/管理数据资源与权限/get-user-resource-permission-list"
                     },
