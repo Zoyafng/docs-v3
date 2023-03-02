@@ -25,7 +25,7 @@ Authing By developers, for developers.
 - 配套丰富的全新 API 文档，方便开发者更快上手。
 - 每个接口、每个参数、每个返回值都有类型和说明。
 - 一致的 API 设计语言，更加语义化，使用起来更加流畅。
-- 提提供面向开发者的 [API Explorer](https://api-explorer.authing.cn/) 在线调试中心，高效满足开发者的 API 调试、API 学习等需求。
+- 提供面向开发者的 [API Explorer](https://api-explorer.authing.cn/) 在线调试中心，高效满足开发者的 API 调试、API 学习等需求。
 4. 提高生产力： 完全遵循 [OpenAPI](https://swagger.io/specification/) 规范，使用 OpenAPI 标准定义接口描述、参数、返回值，基于这此元数据可以进行任意二次开发，如生成文档、SDK 等。
 
 
