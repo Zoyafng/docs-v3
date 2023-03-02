@@ -4,7 +4,7 @@
 
 ::: hint-info
 为了给开发者持续提供更全面、更开发者友好的开放能力，Authing V3 版本的 API、SDK 已于 2022 年 10 月 24 日正式上线。若你仍希望使用旧版 API、SDK， 可[点击此处跳转 〉](https://docs.authing.cn/v2/reference/)。
-Authing API Explorer 已于 2023 年 2 月 26 日正式上线，面向 Authing 开发者用户使用链路提供：API 发现、API 调试、API 集成等能力，帮助开发者用户更好、更快使用 Authing 产品，[点击此处跳转 〉](https://api-explorer.authing.cn/)。
+Authing API Explorer 已于 2023 年 2 月 12 日正式上线，面向 Authing 开发者用户使用链路提供：API 发现、API 调试、API 集成等能力，帮助开发者用户更好、更快使用 Authing 产品，[点击此处跳转 〉](https://api-explorer.authing.cn/)。
 :::
 
 ## 新版 API & SDK 特性
