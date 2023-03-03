@@ -17,14 +17,16 @@
 
 ## 请求参数
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| resourceCode | string | 是 | - | 数据资源 Code,权限空间内唯一  | `dataResourceTestCode` |
-| namespaceCode | string | 是 | - | 数据资源所属的权限空间 Code  | `examplePermissionNamespace` |
-| resourceName | string | 否 | - | 数据资源名称,权限空间内唯一  | `示例数据资源名称` |
-| description | string | 否 | - | 数据资源描述  | `示例数据资源描述` |
-| struct | <a href="#"></a> | 否 | - | 数据资源节点类型，支持字符串（STRING）、树结构（TREE）和数组结构（ARRAY）。  |  |
-| actions | string[] | 否 | - | 数据资源权限操作列表 数组长度限制：50。 | `["read","get"]` |
+类型： `UpdateDataResourceDto`
+
+| 名称            | 类型               | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div>             | <div style="width:200px">示例值</div> |
+|---------------|------------------|------------------------------------|-----------------------------------|-----------------------------------------------|------------------------------------|
+| resourceCode  | string           | 是                                  | -                                 | 数据资源 Code,权限空间内唯一                             | `dataResourceTestCode`             |
+| namespaceCode | string           | 是                                  | -                                 | 数据资源所属的权限空间 Code                              | `examplePermissionNamespace`       |
+| resourceName  | string           | 否                                  | -                                 | 数据资源名称,权限空间内唯一                                | `示例数据资源名称`                         |
+| description   | string           | 否                                  | -                                 | 数据资源描述                                        | `示例数据资源描述`                         |
+| struct        | <a href="#"></a> | 否                                  | -                                 | 数据资源节点类型，支持字符串（STRING）、树结构（TREE）和数组结构（ARRAY）。 |                                    |
+| actions       | array            | 否                                  | -                                 | 数据资源权限操作列表 数组长度限制：50。                         | `["read","get"]`                   |
 
 
 

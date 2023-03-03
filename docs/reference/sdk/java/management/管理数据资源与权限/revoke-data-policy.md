@@ -17,11 +17,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| targetType | string | 是 | - | 主体类型,包括 USER、GROUP、ROLE、ORG 四种类型  | `USER` |
-| targetIdentifier | string | 是 | - | 主体 ID ，包含用户 ID、用户组 ID、角色 ID、组织机构 ID  | `6301cexxxxxxxxxxxxxxxxx78` |
-| policyId | string | 是 | - | 数据策略 ID  | `60b49xxxxxxxxxxxxxxx6e68` |
+类型： `DeleteAuthorizeDataPolicyDto`
+
+| 名称               | 类型     | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div>   | <div style="width:200px">示例值</div> |
+|------------------|--------|------------------------------------|-----------------------------------|-------------------------------------|------------------------------------|
+| targetType       | string | 是                                  | -                                 | 主体类型,包括 USER、GROUP、ROLE、ORG 四种类型    | `USER`                             |
+| targetIdentifier | string | 是                                  | -                                 | 主体 ID ，包含用户 ID、用户组 ID、角色 ID、组织机构 ID | `6301cexxxxxxxxxxxxxxxxx78`        |
+| policyId         | string | 是                                  | -                                 | 数据策略 ID                             | `60b49xxxxxxxxxxxxxxx6e68`         |
 
 
 

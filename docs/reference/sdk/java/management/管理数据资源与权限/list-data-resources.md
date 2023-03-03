@@ -17,12 +17,14 @@
 
 ## 请求参数
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- | ---- | ---- | ---- | ---- | ---- |
- | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
- | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
- | query | string  | 否 | - | 关键字搜索，可以是数据资源名称或者数据资源 Code  | `资源1` |
- | namespaceCodes | string[]  | 否 | - | 权限数据所属权限空间 Code 列表 数组长度限制：50。 | `["examplePermissionNamespace1","examplePermissionNamespac2"]` |
+类型： `ListDataResourcesDto`
+
+| 名称             | 类型     | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div>                             |
+|----------------|--------|------------------------------------|-----------------------------------|-----------------------------------|----------------------------------------------------------------|
+ | page           | number | 否                                  | 1                                 | 当前页数，从 1 开始                       | `1`                                                            |
+ | limit          | number | 否                                  | 10                                | 每页数目，最大不能超过 50，默认为 10             | `10`                                                           |
+ | query          | string | 否                                  | -                                 | 关键字搜索，可以是数据资源名称或者数据资源 Code        | `资源1`                                                          |
+ | namespaceCodes | array  | 否                                  | -                                 | 权限数据所属权限空间 Code 列表 数组长度限制：50。     | `["examplePermissionNamespace1","examplePermissionNamespac2"]` |
 
 
 

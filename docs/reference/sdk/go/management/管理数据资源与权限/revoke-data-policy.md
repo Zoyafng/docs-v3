@@ -17,6 +17,9 @@
 
 ## 请求参数
 
+类型： `DeleteAuthorizeDataPolicyDto`
+
+
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | targetType | string | 是 | - | 主体类型,包括 USER、GROUP、ROLE、ORG 四种类型  | `USER` |

@@ -377,15 +377,13 @@ const zhCnNavBar = {
                       "path": "/reference/sdk/java/authentication/鉴权/get-user-auth-resource-list"
                     },
                     {
-                      "title": "获取用户指定资源权限列表",
+                      "title": "获取用户在登录应用下指定资源权限列表",
                       "path": "/reference/sdk/java/authentication/鉴权/get-user-auth-resource-permission-list"
                     },
                     {
-                      "title": "获取用户授权资源的结构列表",
+                      "title": "获取用户在登录应用下授权资源的结构列表",
                       "path": "/reference/sdk/java/authentication/鉴权/get-user-auth-resource-struct"
                     }
-
-
                   ]
                 },
                 {
@@ -991,6 +989,10 @@ const zhCnNavBar = {
                     {
                       "title": "判断用户权限",
                       "path": "/reference/sdk/java/management/管理数据资源与权限/check-permission"
+                    },
+                    {
+                      "title": "判断外部用户权限",
+                      "path": "/reference/sdk/java/management/管理数据资源与权限/check-external-user-permission"
                     },
                     {
                       "title": "获取用户指定资源权限列表",
@@ -1670,6 +1672,14 @@ const zhCnNavBar = {
                     {
                       "title": "获取用户在登录应用下被授权资源列表",
                       "path": "/reference/sdk/node/authentication/鉴权/get-user-auth-resource-list"
+                    },
+                    {
+                      "title": "获取用户在登录应用下指定资源权限列表",
+                      "path": "/reference/sdk/node/authentication/鉴权/get-user-auth-resource-permission-list"
+                    },
+                    {
+                      "title": "获取用户在登录应用下指定资源权限列表",
+                      "path": "/reference/sdk/node/authentication/鉴权/get-user-auth-resource-struct"
                     }
                   ]
                 },
@@ -2266,6 +2276,10 @@ const zhCnNavBar = {
                       "path": "/reference/sdk/node/management/管理数据资源与权限/check-permission"
                     },
                     {
+                      "title": "判断外部用户权限",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/check-external-user-permission"
+                    },
+                    {
                       "title": "获取用户指定资源权限列表",
                       "path": "/reference/sdk/node/management/管理数据资源与权限/get-user-resource-permission-list"
                     },
@@ -2274,9 +2288,17 @@ const zhCnNavBar = {
                       "path": "/reference/sdk/node/management/管理数据资源与权限/list-resource-targets"
                     },
                     {
-                      "title": "判断用户在同层级资源下的权限",
+                      "title": "获取用户授权资源的结构列表",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/get-user-resource-struct"
+                    },
+                    {
+                      "title": "获取外部用户授权资源的结构列表",
+                      "path": "/reference/sdk/node/management/管理数据资源与权限/get-external-user-resource-struct"
+                    },
+                    {
+                      "title": "判断用户在树资源同层级资源下的权限",
                       "path": "/reference/sdk/node/management/管理数据资源与权限/check-user-same-level-permission"
-                    }
+                    },
                   ]
                 },
                 {
@@ -2935,6 +2957,14 @@ const zhCnNavBar = {
                     {
                       "title": "获取用户在登录应用下被授权资源列表",
                       "path": "/reference/sdk/go/authentication/鉴权/get-user-auth-resource-list"
+                    },
+                    {
+                      "title": "获取用户在登录应用下指定资源权限列表",
+                      "path": "/reference/sdk/go/authentication/鉴权/get-user-auth-resource-permission-list"
+                    },
+                    {
+                      "title": "获取用户在登录应用下指定资源权限列表",
+                      "path": "/reference/sdk/go/authentication/鉴权/get-user-auth-resource-struct"
                     }
                   ]
                 },
@@ -3543,9 +3573,17 @@ const zhCnNavBar = {
                       "path": "/reference/sdk/go/management/管理数据资源与权限/list-resource-targets"
                     },
                     {
-                      "title": "判断用户在同层级资源下的权限",
+                      "title": "获取用户授权资源的结构列表",
+                      "path": "/reference/sdk/go/management/管理数据资源与权限/get-user-resource-struct"
+                    },
+                    {
+                      "title": "获取外部用户授权资源的结构列表",
+                      "path": "/reference/sdk/go/management/管理数据资源与权限/get-external-user-resource-struct"
+                    },
+                    {
+                      "title": "判断用户在树资源同层级资源下的权限",
                       "path": "/reference/sdk/go/management/管理数据资源与权限/check-user-same-level-permission"
-                    }
+                    },
                   ]
                 },
                 {
