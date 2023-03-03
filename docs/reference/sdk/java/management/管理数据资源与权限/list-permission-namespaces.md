@@ -17,11 +17,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- | ---- | ---- | ---- | ---- | ---- |
- | page | number  | 否 | 1 | 当前页数，从 1 开始  | `1` |
- | limit | number  | 否 | 10 | 每页数目，最大不能超过 50，默认为 10  | `10` |
- | query | string  | 否 | - | 权限空间 name  | `examplePermissionNamespace` |
+类型： `ListPermissionNamespacesDto`
+
+| 名称    | 类型     | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+|-------|--------|------------------------------------|-----------------------------------|-----------------------------------|------------------------------------|
+ | page  | number | 否                                  | 1                                 | 当前页数，从 1 开始                       | `1`                                |
+ | limit | number | 否                                  | 10                                | 每页数目，最大不能超过 50，默认为 10             | `10`                               |
+ | query | string | 否                                  | -                                 | 权限空间 name                         | `examplePermissionNamespace`       |
 
 
 

@@ -75,15 +75,17 @@
 
 ## 请求参数
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| actions | string[] | 是 | - | 数据资源权限操作列表 数组长度限制：50。 | `["read","get"]` |
-| struct | <a href="#"></a> | 是 | - | 数据资源节点类型，支持字符串（STRING）、树结构（TREE）和数组结构（ARRAY）。  |  |
-| type | string | 是 | - | 数据资源类型，目前支持树结构（TREE）、字符串（STRING）、数组（ARRAY）  | `TREE` |
-| resourceCode | string | 是 | - | 数据资源 Code,权限空间内唯一  | `dataResourceTestCode` |
-| resourceName | string | 是 | - | 数据资源名称,权限空间内唯一  | `示例数据资源名称` |
-| namespaceCode | string | 是 | - | 数据资源所属的权限空间 Code  | `examplePermissionNamespace` |
-| description | string | 否 | - | 数据资源描述  | `示例数据资源描述` |
+类型： `CreateDataResourceDto`
+
+| 名称            | 类型               | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div>             | <div style="width:200px">示例值</div> |
+|---------------|------------------|------------------------------------|-----------------------------------|-----------------------------------------------|------------------------------------|
+| actions       | array            | 是                                  | -                                 | 数据资源权限操作列表 数组长度限制：50。                         | `["read","get"]`                   |
+| struct        | <a href="#"></a> | 是                                  | -                                 | 数据资源节点类型，支持字符串（STRING）、树结构（TREE）和数组结构（ARRAY）。 |                                    |
+| type          | string           | 是                                  | -                                 | 数据资源类型，目前支持树结构（TREE）、字符串（STRING）、数组（ARRAY）    | `TREE`                             |
+| resourceCode  | string           | 是                                  | -                                 | 数据资源 Code,权限空间内唯一                             | `dataResourceTestCode`             |
+| resourceName  | string           | 是                                  | -                                 | 数据资源名称,权限空间内唯一                                | `示例数据资源名称`                         |
+| namespaceCode | string           | 是                                  | -                                 | 数据资源所属的权限空间 Code                              | `examplePermissionNamespace`       |
+| description   | string           | 否                                  | -                                 | 数据资源描述                                        | `示例数据资源描述`                         |
 
 
 

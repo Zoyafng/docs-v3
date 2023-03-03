@@ -44,11 +44,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| statementList | <a href="#DataStatementPermissionDto">DataStatementPermissionDto[]</a> | 是 | - | 数据权限列表，策略下数据资源权限列表 数组长度限制：5。 |  |
-| policyName | string | 是 | - | 数据策略名称，用户池唯一  | `示例数据策略名称` |
-| description | string | 否 | - | 数据策略描述  | `示例数据策略描述` |
+类型： `CreateDataPolicyDto`
+
+| 名称            | 类型                                                                     | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+|---------------|------------------------------------------------------------------------|------------------------------------|-----------------------------------|-----------------------------------|------------------------------------|
+| statementList | <a href="#DataStatementPermissionDto">DataStatementPermissionDto[]</a> | 是                                  | -                                 | 数据权限列表，策略下数据资源权限列表 数组长度限制：5。      |                                    |
+| policyName    | string                                                                 | 是                                  | -                                 | 数据策略名称，用户池唯一                      | `示例数据策略名称`                         |
+| description   | string                                                                 | 否                                  | -                                 | 数据策略描述                            | `示例数据策略描述`                         |
 
 
 

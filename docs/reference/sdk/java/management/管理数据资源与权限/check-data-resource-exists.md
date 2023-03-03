@@ -92,11 +92,13 @@
 
 ## 请求参数
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- | ---- | ---- | ---- | ---- | ---- |
- | namespaceCode | string  | 是 | - | 数据资源所属的权限空间 Code  | `examplePermissionNamespace` |
- | resourceName | string  | 否 | - | 数据资源名称,权限空间内唯一  | `示例数据资源名称` |
- | resourceCode | string  | 否 | - | 数据资源 Code,权限空间内唯一  | `dataResourceTestCode` |
+类型： `CheckDataResourceExistsDto`
+
+| 名称            | 类型     | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+|---------------|--------|------------------------------------|-----------------------------------|-----------------------------------|------------------------------------|
+ | namespaceCode | string | 是                                  | -                                 | 数据资源所属的权限空间 Code                  | `examplePermissionNamespace`       |
+ | resourceName  | string | 否                                  | -                                 | 数据资源名称,权限空间内唯一                    | `示例数据资源名称`                         |
+ | resourceCode  | string | 否                                  | -                                 | 数据资源 Code,权限空间内唯一                 | `dataResourceTestCode`             |
 
 
 

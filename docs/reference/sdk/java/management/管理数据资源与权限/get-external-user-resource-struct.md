@@ -110,7 +110,7 @@
               "code": "tree111",
               "name": "tree111",
               "value": "test111Value",
-              "actions": ["update","read"],
+              "actions": ["update","read"]
             }]
         },{
             "code": "tree22",
@@ -132,6 +132,8 @@
 `ManagementClient.getExternalUserResourceStruct`
 
 ## 请求参数
+
+类型： `GetExternalUserResourceStructDto`
 
 | 名称            | 类型     | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 |---------------|--------|------------------------------------|-----------------------------------|-----------------------------------|------------------------------------|
@@ -168,12 +170,12 @@ public class GetUserResourceStructTest {
         // clientOptions.setHost("https://api.your-authing-service.com");
         ManagementClient client = new ManagementClient(clientOptions);
 
-        GetUserResourceStructDto request = new GetUserResourceStructDto();
+        GetExternalUserResourceStructDto request = new GetExternalUserResourceStructDto();
         request.setNamespaceCode("examplePermissionNamespace");
-        request.setUserId("63721xxxxxxxxxxxxdde14a3");
+        request.setExternalId("63721xxxxxxxxxxxxdde14a3");
         request.setResourceCode("exampleStrResourceCode");
 
-        GetUserResourceStructRespDto response = client.getUserResourceStruct(request);
+        GetExternalUserResourceStructRespDto response = client.getExternalUserResourceStruct(request);
         System.out.println(JsonUtils.serialize(response));
     }
 }

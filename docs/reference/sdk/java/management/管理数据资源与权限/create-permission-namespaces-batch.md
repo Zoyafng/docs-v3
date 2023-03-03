@@ -17,12 +17,20 @@
 
 ## 请求参数
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| list | <a href="#CreatePermissionNamespacesBatchItemDto">CreatePermissionNamespacesBatchItemDto[]</a> | 是 | - | 权限空间列表 数组长度限制：50。 |  |
+类型： `CreatePermissionNamespacesBatchDto`
+
+| 名称   | 类型                                                                                             | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+|------|------------------------------------------------------------------------------------------------|------------------------------------|-----------------------------------|-----------------------------------|------------------------------------|
+| list | <a href="#CreatePermissionNamespacesBatchItemDto">CreatePermissionNamespacesBatchItemDto[]</a> | 是                                  | -                                 | 权限空间列表 数组长度限制：50。                 |                                    |
 
 
+### <a id="CreatePermissionNamespacesBatchItemDto"></a> CreatePermissionNamespacesBatchItemDto
 
+| 名称          | 类型     | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+|-------------|--------|------------------------------------|-----------------------------------|------------------------------------|
+| code        | string | 是                                  | 权限空间 Code                         | `examplePermissionNamespace`       |
+| name        | string | 是                                  | 权限空间名称                            | `示例权限空间`                           |
+| description | string | 否                                  | 权限空间描述                            | `示例权限空间描述`                         |
 
 ## 示例代码
 
@@ -105,15 +113,6 @@ public class CreatePermissionNamespacesBatchTest {
 ```
 
 ## 数据结构
-
-
-### <a id="CreatePermissionNamespacesBatchItemDto"></a> CreatePermissionNamespacesBatchItemDto
-
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- |  ---- | ---- | ---- | ---- |
-| code | string | 是 | 权限空间 Code   |  `examplePermissionNamespace` |
-| name | string | 是 | 权限空间名称   |  `示例权限空间` |
-| description | string | 否 | 权限空间描述   |  `示例权限空间描述` |
 
 
 ### <a id="IsSuccessDto"></a> IsSuccessDto
