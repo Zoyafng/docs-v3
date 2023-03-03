@@ -115,13 +115,11 @@
 `ManagementClient.listResourceTargets`
 
 ## 请求参数
-
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| resources | string[] | 是 | - | 数据策略所属的数据资源路径列表 数组长度限制：50。 | `["treeResourceCode1"]` |
-| actions | string[] | 是 | - | 数据资源权限操作列表 数组长度限制：50。 | `["get"]` |
-| namespaceCode | string | 是 | - | 权限空间 Code  | `examplePermissionNamespace` |
-
+| 名称            | 类型     | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+|---------------|--------|------------------------------------|-----------------------------------|-----------------------------------|------------------------------------|
+| namespaceCode | string | 是                                  | -                                 | 权限空间 Code                         | `examplePermissionNamespace`       |
+| resources     | array  | 是                                  | -                                 | 数据策略所属的数据资源路径列表 数组长度限制：50。        | `["treeResourceCode1"]`            |
+| actions       | array  | 是                                  | -                                 | 数据资源权限操作列表 数组长度限制：50。             | `["get"]`                          |
 
 
 
@@ -160,13 +158,13 @@ const managementClient = new ManagementClient({
 
 类型： `ListResourceTargetsRespDto`
 
-| 名称 | 类型 | 描述 |
-| ---- | ---- | ---- |
-| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
-| message | string | 描述信息 |
-| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
-| requestId | string | 请求 ID。当请求失败时会返回。 |
-| data | <a href="#ListResourceTargetsDataDto">ListResourceTargetsDataDto</a> | 响应数据 |
+| 名称         | 类型                                                                   | 描述                               |
+|------------|----------------------------------------------------------------------|----------------------------------|
+| statusCode | number                                                               | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message    | string                                                               | 描述信息                             |
+| apiCode    | number                                                               | 细分错误码，可通过此错误码得到具体的错误类型。          |
+| requestId  | string                                                               | 请求 ID。当请求失败时会返回。                 |
+| data       | <a href="#ListResourceTargetsDataDto">ListResourceTargetsDataDto</a> | 响应数据                             |
 
 
 
@@ -179,7 +177,7 @@ const managementClient = new ManagementClient({
   "requestId": "934108e5-9fbf-4d24-8da1-c330328abd6c",
   "data": {
     "authUserList": {
-      "resource": "treeResourceCode1",
+      "resource": "treeResourceCode",
       "actionAuthList": {
         "userIds": "[\"63721xxxxxxxxxxxxdde14a3\"]",
         "action": "get"
@@ -191,27 +189,26 @@ const managementClient = new ManagementClient({
 
 ## 数据结构
 
-
 ### <a id="ListResourceTargetsDataDto"></a> ListResourceTargetsDataDto
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- |  ---- | ---- | ---- | ---- |
-| authUserList | array | 是 | 用户授权列表 嵌套类型：<a href="#ListResourceTargetsDtoResp">ListResourceTargetsDtoResp</a>。  |  |
+| 名称           | 类型    | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div>                                                 | <div style="width:200px">示例值</div> |
+|--------------|-------|------------------------------------|-----------------------------------------------------------------------------------|------------------------------------|
+| authUserList | array | 是                                  | 用户授权列表 嵌套类型：<a href="#ListResourceTargetsDtoResp">ListResourceTargetsDtoResp</a>。 |                                    |
 
 
 ### <a id="ListResourceTargetsDtoResp"></a> ListResourceTargetsDtoResp
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- |  ---- | ---- | ---- | ---- |
-| resource | string | 是 | 资源路径   |  `treeResourceCode1` |
-| actionAuthList | array | 是 | 数据资源权限操作列表 嵌套类型：<a href="#ActionAuth">ActionAuth</a>。  |  |
+| 名称             | 类型     | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div>                     | <div style="width:200px">示例值</div> |
+|----------------|--------|------------------------------------|-------------------------------------------------------|------------------------------------|
+| resource       | string | 是                                  | 资源路径                                                  | `treeResourceCode1`                |
+| actionAuthList | array  | 是                                  | 数据资源权限操作列表 嵌套类型：<a href="#ActionAuth">ActionAuth</a>。 |                                    |
 
 
 ### <a id="ActionAuth"></a> ActionAuth
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- |  ---- | ---- | ---- | ---- |
-| userIds | array | 是 | 数据策略授权用户 ID 列表   |  `["63721xxxxxxxxxxxxdde14a3"]` |
-| action | string | 是 | 数据资源权限操作   |  `get` |
+| 名称      | 类型       | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+|---------|----------|------------------------------------|-----------------------------------|------------------------------------|
+| userIds | string[] | 是                                  | 数据策略授权用户 ID 列表                    | `["63721xxxxxxxxxxxxdde14a3"]`     |
+| action  | string   | 是                                  | 数据资源权限操作                          | `get`                              |
 
 

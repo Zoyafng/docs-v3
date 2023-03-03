@@ -84,12 +84,11 @@
 `ManagementClient.getUserResourcePermissionList`
 
 ## 请求参数
-
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| resources | string[] | 是 | - | 资源路径列表  | `["treeResourceCode1"]` |
-| userId | string | 是 | - | 用户 ID  | `6301ceaxxxxxxxxx27478` |
-| namespaceCode | string | 是 | - | 权限空间 Code  | `examplePermissionNamespace` |
+| 名称            | 类型       | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+|---------------|----------|------------------------------------|-----------------------------------|-----------------------------------|------------------------------------|
+| namespaceCode | string   | 是                                  | -                                 | 权限空间 Code                         | `examplePermissionNamespace`       |
+| resources     | string[] | 是                                  | -                                 | 资源路径列表                            | `["treeResourceCode1"]`            |
+| userId        | string   | 是                                  | -                                 | 用户 ID                             | `6301ceaxxxxxxxxx27478`            |
 
 
 
@@ -130,13 +129,13 @@ const managementClient = new ManagementClient({
 
 类型： `GetUserResourcePermissionListRespDto`
 
-| 名称 | 类型 | 描述 |
-| ---- | ---- | ---- |
-| statusCode | number | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
-| message | string | 描述信息 |
-| apiCode | number | 细分错误码，可通过此错误码得到具体的错误类型。 |
-| requestId | string | 请求 ID。当请求失败时会返回。 |
-| data | <a href="#GetUserResourcePermissionListDataDto">GetUserResourcePermissionListDataDto</a> | 响应数据 |
+| 名称         | 类型                                                                                       | 描述                               |
+|------------|------------------------------------------------------------------------------------------|----------------------------------|
+| statusCode | number                                                                                   | 业务状态码，可以通过此状态码判断操作是否成功，200 表示成功。 |
+| message    | string                                                                                   | 描述信息                             |
+| apiCode    | number                                                                                   | 细分错误码，可通过此错误码得到具体的错误类型。          |
+| requestId  | string                                                                                   | 请求 ID。当请求失败时会返回。                 |
+| data       | <a href="#GetUserResourcePermissionListDataDto">GetUserResourcePermissionListDataDto</a> | 响应数据                             |
 
 
 
@@ -160,19 +159,20 @@ const managementClient = new ManagementClient({
 ## 数据结构
 
 
+
 ### <a id="GetUserResourcePermissionListDataDto"></a> GetUserResourcePermissionListDataDto
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- |  ---- | ---- | ---- | ---- |
-| permissionList | array | 是 | 权限列表 嵌套类型：<a href="#GetUserResourcePermissionList">GetUserResourcePermissionList</a>。  |  |
+| 名称             | 类型    | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div>                                                     | <div style="width:200px">示例值</div> |
+|----------------|-------|------------------------------------|---------------------------------------------------------------------------------------|------------------------------------|
+| permissionList | array | 是                                  | 权限列表 嵌套类型：<a href="#GetUserResourcePermissionList">GetUserResourcePermissionList</a>。 |                                    |
 
 
 ### <a id="GetUserResourcePermissionList"></a> GetUserResourcePermissionList
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- |  ---- | ---- | ---- | ---- |
-| namespaceCode | string | 是 | 权限空间 code   |  `examplePermissionNamespace` |
-| actions | array | 是 | 数据资源权限操作列表   |  `["get","read","write","delete"]` |
-| resource | string | 是 | 资源路径   |  `treeResourceCode1` |
+| 名称            | 类型     | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+|---------------|--------|------------------------------------|-----------------------------------|------------------------------------|
+| namespaceCode | string | 是                                  | 权限空间 code                         | `examplePermissionNamespace`       |
+| actions       | array  | 是                                  | 数据资源权限操作列表                        | `["get","read","write","delete"]`  |
+| resource      | string | 是                                  | 资源路径                              | `treeResourceCode1`                |
 
 
