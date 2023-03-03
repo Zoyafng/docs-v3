@@ -63,7 +63,7 @@
 | userId                | string                                     | 是                                  | -                                 | 用户 ID                             | `63721xxxxxxxxxxxxdde14a3`         |
 | action                | string                                     | 是                                  | -                                 | 数据资源权限操作                          | `read`                             |
 | resource              | string                                     | 是                                  | -                                 | 资源路径                              | `treeResourceCode1/structCode1`    |
-| resourceNodeCodes     | string[]                                      | 是                                  | -                                 | 当前树资源路径子节点 Code                   | `["resourceStructChildrenCode1"]`  |
+| resourceNodeCodes     | string[]                                   | 是                                  | -                                 | 当前树资源路径子节点 Code                   | `["resourceStructChildrenCode1"]`  |
 | judgeConditionEnabled | boolean                                    | 否                                  | -                                 | 是否开启条件判断，默认 false 不开启             | `true`                             |
 | authEnvParams         | <a href="#AuthEnvParams">AuthEnvParams</a> | 否                                  | -                                 | 条件环境属性，若开启条件判断则使用                 | `{"ip":"127.0.0.1"}`               |
 
@@ -111,6 +111,8 @@ func main() {
 		UserId:        "63721xxxxxxxxxxxxdde14a3",
 		Action:        "get",
 		Resource:      "strResourceCode",
+		ResourceNodeCodes: []string{"resourceStructChildrenCode1", "resourceStructChildrenCode", "resourceStructChildrenCode3"}
+
 	}
 	respDto := client.CheckUserSameLevelPermission(reqDto)
 	fmt.Println(respDto)

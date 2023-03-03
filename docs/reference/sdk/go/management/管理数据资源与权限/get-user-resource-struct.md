@@ -135,6 +135,38 @@
 | userId        | string | 是                                  | -                                 | 用户 ID                             | `6301ceaxxxxxxxxxxx27478`          |
 
 
+## 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/Authing/authing-golang-sdk/v3/dto"
+	"github.com/Authing/authing-golang-sdk/v3/management"
+)
+
+func main() {
+	options := management.ManagementClientOptions{
+		AccessKeyId:     "AUTHING_ACCESS_KEY_ID", // Authing Access Key ID
+		AccessKeySecret: "AUTHING_ACCESS_KEY_SECRET", // Authing Access Key Secret
+	}
+	
+	// 初始化 ManagementClient
+	client, err := management.NewManagementClient(&options)
+	if err != nil {
+		// The exception needs to be handled by the developer.
+	}
+
+		reqDto := &dto.GetUserResourceStructDto{
+		NamespaceCode: "examplePermissionNamespace",
+		ResourceCode:   "strResourceCode",
+		UserId:        "63721xxxxxxxxxxxxdde14",
+	}
+	respDto := client.GetUserResourceStruct(reqDto)
+	fmt.Println(respDto)
+}
+```
 
 ## 请求响应
 

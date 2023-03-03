@@ -137,7 +137,7 @@
 
 ## 示例代码
 
-```java
+```ts
 import { ManagementClient, Models } from 'authing-node-sdk';
 
 // 初始化 ManagementClient
@@ -189,21 +189,7 @@ const managementClient = new ManagementClient({
   "data": {
     "namespaceCode": "namespaceCode",
     "resourceCode": "resourceCode",
-    "resourceType": "STRING",
-    "strResourceAuthAction": {
-      "value": "resourceCode",
-      "actions": [
-        "resourceCode"
-      ]
-    },
-    "arrResourceAuthAction": {
-      "values": [
-        "resourceCode"
-      ],
-      "actions": [
-        "resourceCode"
-      ]
-    },
+    "resourceType": "TREE",
     "treeResourceAuthAction": {
       "nodeAuthActionList": [
         {

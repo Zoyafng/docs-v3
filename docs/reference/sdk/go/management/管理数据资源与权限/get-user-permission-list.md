@@ -321,13 +321,31 @@ func main() {
   "message": "操作成功",
   "apiCode": 20001,
   "data": {
-    "userPermissionList": {
-      "userId": "6301cexxxxxxxxxxxxxxxxx78",
-      "namespaceCode": "examplePermissionNamespace",
-      "resourceList": {
-        "resourceCode": "resourceCode"
+    "userPermissionList": [
+      {
+        "userId": "6301cexxxxxxxxxxxxxxxxx78",
+        "namespaceCode": "examplePermissionNamespace",
+        "resourceList": [
+          {
+            "resourceCode": "resourceCode",
+            "resourceType": "TREE",
+            "treeAuthorize": {
+              "authList": [
+                {
+                  "nodePath": "/treeCode1/treeCode11",
+                  "nodeName": "示例树资源节点名称",
+                  "nodeActions": [
+                    "read",
+                    "get"
+                  ],
+                  "nodeValue": "示例树资源节点 Value"
+                }
+              ]
+            }
+          }
+        ]
       }
-    }
+    ]
   }
 }
 ```

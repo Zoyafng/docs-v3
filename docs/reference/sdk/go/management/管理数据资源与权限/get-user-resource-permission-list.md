@@ -88,11 +88,11 @@
 类型： `GetUserResourcePermissionListDto`
 
 
-| 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| resources | string[] | 是 | - | 资源路径列表  | `["treeResourceCode1"]` |
-| userId | string | 是 | - | 用户 ID  | `6301ceaxxxxxxxxx27478` |
-| namespaceCode | string | 是 | - | 权限空间 Code  | `examplePermissionNamespace` |
+| 名称            | 类型       | <div style="width:80px">是否必填</div> | <div style="width:60px">默认值</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
+|---------------|----------|------------------------------------|-----------------------------------|-----------------------------------|------------------------------------|
+| namespaceCode | string   | 是                                  | -                                 | 权限空间 Code                         | `examplePermissionNamespace`       |
+| resources     | string[] | 是                                  | -                                 | 资源路径列表                            | `["treeResourceCode1"]`            |
+| userId        | string   | 是                                  | -                                 | 用户 ID                             | `6301ceaxxxxxxxxx27478`            |
 
 
 

@@ -11,15 +11,15 @@
 
 该接口主要用于获取外部用户授权的资源列表，通过权限空间 Code、外部用户 id、资源 Code 获取外部用户资源的授权列表。
   
-### 示例
-  
+### 获取用户授权字符串数据资源示例
+
 - 入参
 
 ```json
 {
   "namespaceCode": "examplePermissionNamespace",
   "externalId": "63721xxxxxxxxxxxxdde14a3",
-  "resourceCode": "exampleResourceCode"
+  "resourceCode": "exampleStrResourceCode"
 }
 ```
 
@@ -32,46 +32,88 @@
   "apiCode": 20001,
   "data":{
     "namespaceCode": "exampleNamespaceCode",
-    "resourceCode": "exampleResourceCode",
-    "permissionBo": {
-        "resourceId": "63xxxxxxxxxxxxx999",
-        "resourceType": "TREE",
-        "nodeAuthActionList": [
-            {
-                "name": "1",
-                "code": "1",
-                "children": [
-                    {
-                        "name": "1-1",
-                        "code": "1-1",
-                        "children": [],
-                        "actions": [
-                            "read",
-                            "get"
-                        ]
-                    }
-                ],
-                "actions": [
-                    "read"
-                ]
-            },
-            {
-                "name": "2",
-                "code": "2",
-                "children": [
-                    {
-                        "name": "2-1",
-                        "code": "2-1",
-                        "actions": [
-                            "read"
-                        ]
-                    }
-                ],
-                "actions": [
-                    "get"
-                ]
-            }
-        ]
+    "resourceCode": "exampleStrResourceCode",
+    "resourceType": "STRING",
+    "strResourceAuthAction":{
+      "value": "strTestValue",
+      "actions": ["get","delete"]
+    }
+  }
+}
+```
+
+### 获取用户授权数据数组资源示例
+
+- 入参
+
+```json
+{
+  "namespaceCode": "examplePermissionNamespace",
+  "externalId": "63721xxxxxxxxxxxxdde14a3",
+  "resourceCode": "exampleArrResourceCode"
+}
+```
+
+- 出参
+
+```json
+{
+  "statusCode": 200,
+  "message": "操作成功",
+  "apiCode": 20001,
+  "data":{
+    "namespaceCode": "exampleNamespaceCode",
+    "resourceCode": "exampleArrResourceCode",
+    "resourceType": "ARRAY",
+    "arrResourceAuthAction":{
+      "values": ["arrTestValue1","arrTestValue2","arrTestValue3"],
+      "actions": ["get","delete"]
+    }
+  }
+}
+```
+
+### 获取用户授权树数据资源示例
+
+- 入参
+
+```json
+{
+  "namespaceCode": "examplePermissionNamespace",
+  "externalId": "63721xxxxxxxxxxxxdde14a3",
+  "resourceCode": "exampleArrResourceCode"
+}
+```
+
+- 出参
+
+```json
+{
+  "statusCode": 200,
+  "message": "操作成功",
+  "apiCode": 20001,
+  "data":{
+    "namespaceCode": "exampleNamespaceCode",
+    "resourceCode": "exampleArrResourceCode",
+    "resourceType": "TREE",
+    "treeResourceAuthAction":{
+      "nodeAuthActionList":[{
+        "code": "tree11",
+        "name": "tree11",
+        "value": "test11Value",
+        "actions": ["get","delete"],
+        "children": [{
+          "code": "tree111",
+          "name": "tree111",
+          "value": "test111Value",
+          "actions": ["update","read"]
+        }]
+      },{
+        "code": "tree22",
+        "name": "tree22",
+        "value": "test22Value",
+        "actions": ["get","delete"]
+      }]
     }
   }
 }
