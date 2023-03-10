@@ -2,7 +2,7 @@
 
 <LastUpdated/>
 
-API 错误码说明请参阅：[错误处理](https://api.authing.cn/openapi/v3/authentication/#tag/开发准备/错误处理)
+API 错误码说明请参阅：[错误处理](https://api-explorer.authing.cn/?tag=group/开发准备#tag/开发准备/错误处理)
 
 以下几种为 iOS SDK 特有错误码：
 
