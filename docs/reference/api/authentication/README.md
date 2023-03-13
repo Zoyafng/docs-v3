@@ -1,6 +1,6 @@
 # Authing 用户认证 API
 
-Authing 用户认证 API 全部以终端用户（End User）的身份进行请求。Authing 用户认证 API 提供了登录、注册、登出、MFA、检查登录态、OIDC 标准协议等所有与认证相关的接口。[点此查看](https://api.authing.cn/openapi/v3/authentication/)。
+Authing 用户认证 API 全部以终端用户（End User）的身份进行请求。Authing 用户认证 API 提供了登录、注册、登出、MFA、检查登录态、OIDC 标准协议等所有与认证相关的接口。[点此查看](https://api-explorer.authing.cn/?source=Authing%20用户认证%20API)。
 
 常用接口包含：
 

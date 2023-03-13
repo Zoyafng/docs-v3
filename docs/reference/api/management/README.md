@@ -1,6 +1,6 @@
 # Authing 管理 API
 
-Authing 管理 API 指的是以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，如管理用户、组织机构、角色、应用、权限、用户池配置等。一般来说，你在 Authing 控制台中能做的所有操作，都能用此模块完成。[点此查看](https://api.authing.cn/openapi/v3/management/)。
+Authing 管理 API 指的是以管理员（Administrator）的身份进行请求，用于管理用户池资源和执行管理任务，如管理用户、组织机构、角色、应用、权限、用户池配置等。一般来说，你在 Authing 控制台中能做的所有操作，都能用此模块完成。[点此查看](https://api-explorer.authing.cn/?source=Authing%20管理%20API)。
 
 常用接口包含：
 
