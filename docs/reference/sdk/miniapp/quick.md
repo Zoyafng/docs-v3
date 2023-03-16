@@ -1291,7 +1291,7 @@ export default {
 |名称|类型|描述|默认值|必填|
 |-----|----|----|----|----|
 |email|String|邮箱地址|-|是|
-|passCode|String|邮箱验证码|-|是|
+|passCode|String|邮箱验证码([发送邮箱验证码](#发送邮箱验证码) `channel` 设置 `CHANNEL_BIND_EMAIL`)|-|是|
 
 #### 出参
 
@@ -1372,9 +1372,9 @@ export default {
 |名称|类型|描述|默认值|必填|
 |-----|----|----|----|----|
 |newEmail|String|新邮箱|-|是|
-|newEmailPassCode|String|新邮箱验证码|-|是|
+|newEmailPassCode|String|新邮箱验证码([发送邮箱验证码](#发送邮箱验证码) `channel` 设置 `CHANNEL_UPDATE_EMAIL`)|-|是|
 |oldEmail|String|旧邮箱，如果用户池开启了修改邮箱需要验证之前的邮箱，此参数必填。|-|否|
-|account|String|旧邮箱验证码，如果用户池开启了修改邮箱需要验证之前的邮箱，此参数必填。|-|否|
+|oldEmailPassCode|String|旧邮箱验证码，如果用户池开启了修改邮箱需要验证之前的邮箱，此参数必填。([发送邮箱验证码](#发送邮箱验证码) `channel` 设置 `CHANNEL_UPDATE_EMAIL`)|-|否|
 
 #### 出参
 
@@ -1396,9 +1396,9 @@ Page({
       verifyMethod: 'EMAIL_PASSCODE',
       emailPassCodePayload: {
         newEmail: 'YOUR_EMAIL_ADDRESS',
-        newEmailPassCode: '', // 发送短信验证码方法 channel: CHANNEL_UPDATE_EMAIL
+        newEmailPassCode: '',
         oldEmail: 'YOUR_EMAIL_ADDRESS',
-        oldEmailPassCode: '' // 发送短信验证码方法 channel: CHANNEL_UPDATE_EMAIL
+        oldEmailPassCode: ''
       }
     })
   }
@@ -1421,9 +1421,9 @@ export default class Index extends Component<PropsWithChildren> {
       verifyMethod: 'EMAIL_PASSCODE',
       emailPassCodePayload: {
         newEmail: 'YOUR_EMAIL_ADDRESS',
-        newEmailPassCode: '', // 发送短信验证码方法 channel: CHANNEL_UPDATE_EMAIL
+        newEmailPassCode: '',
         oldEmail: 'YOUR_EMAIL_ADDRESS',
-        oldEmailPassCode: '' // 发送短信验证码方法 channel: CHANNEL_UPDATE_EMAIL
+        oldEmailPassCode: ''
       }
     })
   }
@@ -1442,9 +1442,9 @@ export default {
       verifyMethod: 'EMAIL_PASSCODE',
       emailPassCodePayload: {
         newEmail: 'YOUR_EMAIL_ADDRESS',
-        newEmailPassCode: '', // 发送短信验证码方法 channel: CHANNEL_UPDATE_EMAIL
+        newEmailPassCode: '',
         oldEmail: 'YOUR_EMAIL_ADDRESS',
-        oldEmailPassCode: '' // 发送短信验证码方法 channel: CHANNEL_UPDATE_EMAIL
+        oldEmailPassCode: ''
       }
     })
     }
@@ -1462,7 +1462,7 @@ export default {
 
 |名称|类型|描述|默认值|必填|
 |-----|----|----|----|----|
-|updateEmailToken|String|用于临时修改邮箱的 token，可从[发起修改邮箱的验证请求](#发起修改邮箱验证请求)接口获取。|-|是|
+|updateEmailToken|String|用于临时修改邮箱的 token，可从[发起修改邮箱的验证请求](#发起修改邮箱验证请求)获取。|-|是|
 
 #### 出参
 
@@ -1533,7 +1533,7 @@ export default {
 |名称|类型|描述|默认值|必填|
 |-----|----|----|----|----|
 |phoneNumber|String|手机号|-|是|
-|passCode|String|短信验证码|-|是|
+|passCode|String|短信验证码（[发送短信验证码](#发送短信验证码) `channel` 设置 `CHANNEL_BIND_PHONE`）|-|是|
 |phoneCountryCode|String|手机区号|-|否|
 
 #### 出参
@@ -1617,7 +1617,7 @@ export default {
 |名称|类型|描述|默认值|必填|
 |-----|----|----|----|----|
 |phoneNumber|String|手机号|-|是|
-|passCode|String|短信验证码（通过[发送短信验证码](#发送短信验证码) 接口指定 `channel: CHANNEL_DELETE_ACCOUNT`）|-|是|
+|passCode|String|短信验证码（[发送短信验证码](#发送短信验证码) `channel` 设置 `CHANNEL_DELETE_ACCOUNT`）|-|是|
 |phoneCountryCode|String|手机区号|-|否|
 
 **EmailPassCodePayload**
@@ -1625,7 +1625,7 @@ export default {
 |名称|类型|描述|默认值|必填|
 |-----|----|----|----|----|
 |email|String|邮箱（不区分大小写）|-|是|
-|passCode|String|邮箱验证码（通过[发送邮箱验证码](#发送邮箱验证码) 接口指定 `channel: CHANNEL_DELETE_ACCOUNT`）|-|是|
+|passCode|String|邮箱验证码（[发送邮箱验证码](#发送邮箱验证码) `channel` 设置 `CHANNEL_DELETE_ACCOUNT`）|-|是|
 
 **PasswordPayload**
 
@@ -1714,7 +1714,7 @@ export default {
 
 |名称|类型|描述|默认值|必填|
 |-----|----|----|----|----|
-|deleteAccountToken|String|注销账户的 token，可从[发起删除账号请求](#发起删除账号请求)接口获取。|-|是|
+|deleteAccountToken|String|注销账户的 token，可从[发起删除账号请求](#发起删除账号请求)获取。|-|是|
 
 #### 出参
 
