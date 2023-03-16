@@ -602,6 +602,79 @@ export default {
 :::
 ::::
 
+### 发送邮箱验证码
+
+> authing.sendEmailCode
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|email|String|邮箱|-|是|
+|channel|[EmailChannel](#EmailChannel)|邮箱验证码用途|-|是|
+
+#### 出参
+
+Promise<[SDKResponse](#SDKResponse)<[SimpleResponseData](#SimpleResponseData)>>
+
+#### 示例代码
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="sendEmailCode">sendEmailCode</button>
+```
+``` typescript
+// index.js
+Page({
+  async sendEmailCode () {
+    const [error, res] = await authing.sendEmailCode({
+      email: 'YOUR_EMAIL_ADDRESS',
+      channel: 'CHANNEL_LOGIN'
+    })
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.sendEmailCode()}>sendEmailCode</Button>
+      </View>
+    )
+  }
+  
+  async sendEmailCode () {
+    const [error, res] = await authing.sendEmailCode({
+      email: 'YOUR_EMAIL_ADDRESS',
+      channel: 'CHANNEL_LOGIN'
+    })
+  }
+}
+```
+:::
+::: tab uni-app
+```html
+<button @click="sendEmailCode">sendEmailCode</button>
+```
+``` typescript
+export default {
+  methods: {
+    async sendEmailCode () {
+      const [error, res] = await authing.sendEmailCode({
+        email: 'YOUR_EMAIL_ADDRESS',
+        channel: 'CHANNEL_LOGIN'
+      })
+    },
+  }
+}
+```
+:::
+::::
+
 ### 发送短信验证码
 
 > authing.sendSms
@@ -1209,6 +1282,500 @@ export default {
 :::
 ::::
 
+### 绑定邮箱
+
+> authing.bindEmail
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|email|String|邮箱地址|-|是|
+|passCode|String|邮箱验证码([发送邮箱验证码](#发送邮箱验证码) `channel` 设置 `CHANNEL_BIND_EMAIL`)|-|是|
+
+#### 出参
+
+Promise<[SDKResponse](#SDKResponse)<[SimpleResponseData](#SimpleResponseData)>>
+
+#### 示例代码
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="bindEmail">BindEmail</button>
+```
+``` typescript
+// index.js
+Page({
+  async bindEmail () {
+    const [error, res] = await authing.bindEmail({
+      email: 'YOUR_EMAIL_ADDRESS',
+      passCode: 'YOUR_EMAIL_CODE'
+    })
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.bindEmail()}>BindEmail</Button>
+      </View>
+    )
+  }
+  
+  async bindEmail () {
+    const [error, res] = await authing.bindEmail({
+      email: 'YOUR_EMAIL_ADDRESS',
+      passCode: 'YOUR_EMAIL_CODE'
+    })
+  }
+}
+```
+:::
+::: tab uni-app
+```html
+<button @click="bindEmail">BindEmail</button>
+```
+``` typescript
+export default {
+  methods: {
+    async bindEmail () {
+      const [error, res] = await authing.bindEmail({
+      email: 'YOUR_EMAIL_ADDRESS',
+      passCode: 'YOUR_EMAIL_CODE'
+    })
+    }
+  }
+}
+```
+:::
+::::
+
+### 发起修改邮箱验证请求
+
+> authing.updateEmailRequest
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|verifyMethod|`EMAIL_PASSCODE`|修改当前邮箱使用的验证手段|-|是|
+|emailPassCodePayload|EmailPassCodePayload|使用邮箱验证码方式验证的数据|-|是|
+
+**EmailPassCodePayload**
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|newEmail|String|新邮箱|-|是|
+|newEmailPassCode|String|新邮箱验证码([发送邮箱验证码](#发送邮箱验证码) `channel` 设置 `CHANNEL_UPDATE_EMAIL`)|-|是|
+|oldEmail|String|旧邮箱，如果用户池开启了修改邮箱需要验证之前的邮箱，此参数必填。|-|否|
+|oldEmailPassCode|String|旧邮箱验证码，如果用户池开启了修改邮箱需要验证之前的邮箱，此参数必填。([发送邮箱验证码](#发送邮箱验证码) `channel` 设置 `CHANNEL_UPDATE_EMAIL`)|-|否|
+
+#### 出参
+
+Promise<[SDKResponse](#SDKResponse)<[UpdateEmailRequestResponseData](#UpdateEmailRequestResponseData)>>
+
+#### 示例代码
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="updateEmailRequest">updateEmailRequest</button>
+```
+``` typescript
+// index.js
+Page({
+  async updateEmailRequest () {
+    const [error, res] = await authing.updateEmailRequest({
+      verifyMethod: 'EMAIL_PASSCODE',
+      emailPassCodePayload: {
+        newEmail: 'YOUR_EMAIL_ADDRESS',
+        newEmailPassCode: '',
+        oldEmail: 'YOUR_EMAIL_ADDRESS',
+        oldEmailPassCode: ''
+      }
+    })
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.updateEmailRequest()}>updateEmailRequest</Button>
+      </View>
+    )
+  }
+  
+  async updateEmailRequest () {
+    const [error, res] = await authing.updateEmailRequest({
+      verifyMethod: 'EMAIL_PASSCODE',
+      emailPassCodePayload: {
+        newEmail: 'YOUR_EMAIL_ADDRESS',
+        newEmailPassCode: '',
+        oldEmail: 'YOUR_EMAIL_ADDRESS',
+        oldEmailPassCode: ''
+      }
+    })
+  }
+}
+```
+:::
+::: tab uni-app
+```html
+<button @click="updateEmailRequest">updateEmailRequest</button>
+```
+``` typescript
+export default {
+  methods: {
+    async updateEmailRequest () {
+      const [error, res] = await authing.updateEmailRequest({
+      verifyMethod: 'EMAIL_PASSCODE',
+      emailPassCodePayload: {
+        newEmail: 'YOUR_EMAIL_ADDRESS',
+        newEmailPassCode: '',
+        oldEmail: 'YOUR_EMAIL_ADDRESS',
+        oldEmailPassCode: ''
+      }
+    })
+    }
+  }
+}
+```
+:::
+::::
+
+### 修改邮箱
+
+> authing.updateEmail
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|updateEmailToken|String|用于临时修改邮箱的 token，可从[发起修改邮箱的验证请求](#发起修改邮箱验证请求)获取。|-|是|
+
+#### 出参
+
+Promise<[SDKResponse](#SDKResponse)<[SimpleResponseData](#SimpleResponseData)>>
+
+#### 示例代码
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="updateEmail">updateEmail</button>
+```
+``` typescript
+// index.js
+Page({
+  async updateEmail () {
+    const [error, res] = await authing.updateEmail({
+      updateEmailToken: 'Token' // 发起修改邮箱的验证请求 SDK 获取
+    })
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.updateEmail()}>updateEmail</Button>
+      </View>
+    )
+  }
+  
+  async updateEmail () {
+    const [error, res] = await authing.updateEmail({
+      updateEmailToken: 'Token' // 发起修改邮箱的验证请求 SDK 获取
+    })
+  }
+}
+```
+:::
+::: tab uni-app
+```html
+<button @click="updateEmail">updateEmail</button>
+```
+``` typescript
+export default {
+  methods: {
+    async updateEmail () {
+      const [error, res] = await authing.updateEmail({
+        updateEmailToken: 'Token' // 发起修改邮箱的验证请求 SDK 获取
+      })
+    }
+  }
+}
+```
+:::
+::::
+
+### 绑定手机号
+
+> authing.bindPhone
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|phoneNumber|String|手机号|-|是|
+|passCode|String|短信验证码（[发送短信验证码](#发送短信验证码) `channel` 设置 `CHANNEL_BIND_PHONE`）|-|是|
+|phoneCountryCode|String|手机区号|-|否|
+
+#### 出参
+
+Promise<[SDKResponse](#SDKResponse)<[SimpleResponseData](#SimpleResponseData)>>
+
+#### 示例代码
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="bindPhone">bindPhone</button>
+```
+``` typescript
+// index.js
+Page({
+  async bindPhone () {
+    const [error, res] = await authing.bindPhone({
+      phoneNumber: 'YOUR_PHONE_NUMBER',
+      passCode: '',
+    })
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.bindPhone()}>bindPhone</Button>
+      </View>
+    )
+  }
+  
+  async bindPhone () {
+    const [error, res] = await authing.bindPhone({
+      phoneNumber: 'YOUR_PHONE_NUMBER',
+      passCode: '',
+    })
+  }
+}
+```
+:::
+::: tab uni-app
+```html
+<button @click="bindPhone">bindPhone</button>
+```
+``` typescript
+export default {
+  methods: {
+    async bindPhone () {
+      const [error, res] = await authing.bindPhone({
+        phoneNumber: 'YOUR_PHONE_NUMBER',
+        passCode: '',
+      })
+    }
+  }
+}
+```
+:::
+::::
+
+### 发起删除账号请求
+
+> authing.deleteAccountRequest
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|verifyMethod|[VerifyMethod](#VerifyMethod)|注销账号的验证手段|-|是|
+|phonePassCodePayload|PhonePassCodePayload|使用手机号验证码验证的数据|-|否|
+|emailPassCodePayload|EmailPassCodePayload|使用邮箱验证码验证的数据|-|否|
+|passwordPayload|PasswordPayload|使用密码验证的数据|-|否|
+
+**PhonePassCodePayload**
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|phoneNumber|String|手机号|-|是|
+|passCode|String|短信验证码（[发送短信验证码](#发送短信验证码) `channel` 设置 `CHANNEL_DELETE_ACCOUNT`）|-|是|
+|phoneCountryCode|String|手机区号|-|否|
+
+**EmailPassCodePayload**
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|email|String|邮箱（不区分大小写）|-|是|
+|passCode|String|邮箱验证码（[发送邮箱验证码](#发送邮箱验证码) `channel` 设置 `CHANNEL_DELETE_ACCOUNT`）|-|是|
+
+**PasswordPayload**
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|password|String|邮箱（不区分大小写）|-|是|
+|passwordEncryptType|none / rsa / sm2|加密方式|none|否|
+#### 出参
+
+Promise<[SDKResponse](#SDKResponse)<[DeleteAccountRequestResponseData](#DeleteAccountRequestResponseData)>>
+
+#### 示例代码
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="deleteAccountRequest">deleteAccountRequest</button>
+```
+``` typescript
+// index.js
+Page({
+  async deleteAccountRequest () {
+    const [error, res] = await authing.deleteAccountRequest({
+      verifyMethod: 'EMAIL_PASSCODE',
+      emailPassCodePayload: {
+        email: 'YOUR_EMAIL_ADDRESS',
+        passCode: ''
+      }
+    })
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.deleteAccountRequest()}>deleteAccountRequest</Button>
+      </View>
+    )
+  }
+  
+  async deleteAccountRequest () {
+    const [error, res] = await authing.deleteAccountRequest({
+      verifyMethod: 'EMAIL_PASSCODE',
+      emailPassCodePayload: {
+        email: 'YOUR_EMAIL_ADDRESS',
+        passCode: ''
+      }
+    })
+  }
+}
+```
+:::
+::: tab uni-app
+```html
+<button @click="deleteAccountRequest">deleteAccountRequest</button>
+```
+``` typescript
+export default {
+  methods: {
+    async deleteAccountRequest () {
+      const [error, res] = await authing.deleteAccountRequest({
+        verifyMethod: 'EMAIL_PASSCODE',
+        emailPassCodePayload: {
+          email: 'YOUR_EMAIL_ADDRESS',
+          passCode: ''
+        }
+      })
+    }
+  }
+}
+```
+:::
+::::
+
+
+### 删除账户
+
+> authing.deleteAccount
+
+#### 入参
+
+|名称|类型|描述|默认值|必填|
+|-----|----|----|----|----|
+|deleteAccountToken|String|注销账户的 token，可从[发起删除账号请求](#发起删除账号请求)获取。|-|是|
+
+#### 出参
+
+Promise<[SDKResponse](#SDKResponse)<[SimpleResponseData](#SimpleResponseData)>>
+
+#### 示例代码
+
+:::: tabs :options="{ useUrlFragment: false }"
+::: tab 微信原生小程序
+``` html
+<!-- index.wxml -->
+<button bindtap="deleteAccount">deleteAccount</button>
+```
+``` typescript
+// index.js
+Page({
+  async deleteAccount () {
+    const [error, res] = await authing.deleteAccount({
+      deleteAccountToken: 'Token' // 发起删除账号请求 SDK 获取
+    })
+  }
+})
+```
+:::
+::: tab Taro
+``` tsx
+export default class Index extends Component<PropsWithChildren> {
+  render () {
+    return (
+      <View className='index'>
+        <Button onClick={() => this.deleteAccount()}>deleteAccount</Button>
+      </View>
+    )
+  }
+  
+  async deleteAccount () {
+    const [error, res] = await authing.deleteAccount({
+      deleteAccountToken: 'Token' // 发起删除账号请求 SDK 获取
+    })
+  }
+}
+```
+:::
+::: tab uni-app
+```html
+<button @click="deleteAccount">deleteAccount</button>
+```
+``` typescript
+export default {
+  methods: {
+    async deleteAccount () {
+      const [error, res] = await authing.deleteAccount({
+        deleteAccountToken: 'Token' // 发起删除账号请求 SDK 获取
+      })
+    }
+  }
+}
+```
+:::
+::::
+
 ### 退出登录
 
 > authing.logout
@@ -1464,6 +2031,21 @@ interface ErrorData {
 |token_type|String|token 类型，默认：Bearer|
 |refresh_token|String|用于更新 token|
 
+### <p id="EmailChannel">EmailChannel</p>
+|名称|描述|
+|-----|----|
+|CHANNEL_LOGIN|登录|
+|CHANNEL_REGISTER|注册|
+|CHANNEL_RESET_PASSWORD|重置密码|
+|CHANNEL_VERIFY_EMAIL_LINK|验证邮箱地址|
+|CHANNEL_UPDATE_EMAIL|修改邮箱|
+|CHANNEL_BIND_EMAIL|绑定邮箱|
+|CHANNEL_UNBIND_EMAIL|解绑邮箱|
+|CHANNEL_VERIFY_MFA|验证 MFA|
+|CHANNEL_UNLOCK_ACCOUNT|自助解锁|
+|CHANNEL_COMPLETE_EMAIL|注册/登录时补全邮箱信息|
+|CHANNEL_DELETE_ACCOUNT|删除账号|
+
 ### <p id="SmsChannel">SmsChannel</p>
 |名称|描述|
 |-----|----|
@@ -1478,6 +2060,14 @@ interface ErrorData {
 |CHANNEL_COMPLETE_PHONE|确认手机号码|
 |CHANNEL_IDENTITY_VERIFICATION|实名认证|
 |CHANNEL_DELETE_ACCOUNT|删除账号|
+
+### <p id="VerifyMethod">VerifyMethod</p>
+|名称|描述|
+|-----|----|
+|EMAIL_PASSCODE|邮箱验证码|
+|PHONE_PASSCODE|手机号验证码|
+|PASSWORD|密码验证|
+
 
 ### <p id="ErrorData">ErrorData</p>
 |名称|类型|描述|
@@ -1513,6 +2103,18 @@ interface ErrorData {
 |code|Number|wx.uploadFile 返回的 code|
 |message|String|wx.uploadFile 返回的 message|
 |data|Data|主体数据|
+
+### <p id="UpdateEmailRequestResponseData">UpdateEmailRequestResponseData</p>
+|名称|类型|描述|
+|-----|----|----|
+|updateEmailToken|String|用于修改当前邮箱的 token，你需要使用此 token 调用修改邮箱接口|
+|tokenExpiresIn|Number|Token 有效时间，时间为 60 秒|
+
+### <p id="DeleteAccountRequestResponseData">DeleteAccountRequestResponseData</p>
+|名称|类型|描述|
+|-----|----|----|
+|deleteAccountToken|String|用于注销账号的临时 Token，你需要调用注销账号接口执行实际注销账号操作。|
+|tokenExpiresIn|Number|Token 有效时间，时间为 60 秒|
 
 **Data**
 
