@@ -21,11 +21,11 @@
 
         <Divider />
 
-        <RouterLink :to="$localePath" class="home-link">
+        <a href="https://docs.authing.cn/v2/" class="home-link">
           <span ref="siteName" class="site-name">{{
             $localeConfig.navbarTitle
           }}</span>
-        </RouterLink>
+        </a>
       </div>
 
       <div
