@@ -18,7 +18,6 @@
     v-else
     :href="link"
     class="nav-link external"
-    :target="target"
     :rel="rel"
     @focusout="focusoutAction">
     <slot>
