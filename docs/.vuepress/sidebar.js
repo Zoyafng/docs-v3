@@ -427,6 +427,10 @@ const zhCnNavBar = {
                 {
                   "title": "CAS 模块",
                   "path": "/reference/sdk/java/authentication/cas.md"
+                },
+                {
+                  "title": "事件",
+                  "path": "/reference/sdk/java/authentication/events.md"
                 }
               ]
             },
@@ -1344,6 +1348,10 @@ const zhCnNavBar = {
                       path: '/reference/sdk/java/management/管理计量计费/get-order-pay-detail'
                     }
                   ]
+                },
+                {
+                  title: '事件',
+                  path: '/reference/sdk/java/management/events.md'
                 }
               ]
             }
@@ -1724,6 +1732,10 @@ const zhCnNavBar = {
                 {
                   "title": "CAS 模块",
                   "path": "/reference/sdk/node/authentication/cas.md"
+                },
+                {
+                  "title": "事件",
+                  "path": "/reference/sdk/node/authentication/events.md"
                 }
               ]
             },
@@ -2629,6 +2641,10 @@ const zhCnNavBar = {
                       path: '/reference/sdk/node/management/管理计量计费/get-order-pay-detail'
                     }
                   ]
+                },
+                {
+                  title: '事件',
+                  path: '/reference/sdk/node/management/events.md'
                 }
               ]
             }
@@ -3009,6 +3025,10 @@ const zhCnNavBar = {
                 {
                   "title": "CAS 模块",
                   "path": "/reference/sdk/go/authentication/cas.md"
+                },
+                {
+                  "title": "事件",
+                  "path": "/reference/sdk/go/authentication/events.md"
                 }
               ]
             },
@@ -3914,6 +3934,10 @@ const zhCnNavBar = {
                       path: '/reference/sdk/go/management/管理计量计费/get-order-pay-detail'
                     }
                   ]
+                },
+                {
+                  title: '事件',
+                  path: '/reference/sdk/go/management/events.md'
                 }
               ]
             }
@@ -4249,6 +4273,10 @@ const zhCnNavBar = {
                 {
                   title: 'CAS 模块',
                   path: '/reference/sdk/python/authentication/cas.md'
+                },
+                {
+                  title: '事件',
+                  path: '/reference/sdk/python/authentication/events.md'
                 }
               ]
             },
@@ -5001,6 +5029,10 @@ const zhCnNavBar = {
                       path: '/reference/sdk/python/management/管理计量计费/get-order-pay-detail'
                     }
                   ]
+                },
+                {
+                  title: '事件',
+                  path: '/reference/sdk/python/management/events.md'
                 }
               ]
             }
@@ -5336,6 +5368,10 @@ const zhCnNavBar = {
                 {
                   title: 'CAS 模块',
                   path: '/reference/sdk/php/authentication/cas.md'
+                },
+                {
+                  "title": "事件",
+                  "path": "/reference/sdk/php/authentication/events.md"
                 }
               ]
             },
@@ -6088,6 +6124,10 @@ const zhCnNavBar = {
                       path: '/reference/sdk/php/management/管理计量计费/get-order-pay-detail'
                     }
                   ]
+                },
+                {
+                  title: '事件',
+                  path: '/reference/sdk/php/management/events.md'
                 }
               ]
             }
@@ -6423,6 +6463,10 @@ const zhCnNavBar = {
                 {
                   title: 'CAS 模块',
                   path: '/reference/sdk/csharp/authentication/cas.md'
+                },
+                {
+                  "title": "事件",
+                  "path": "/reference/sdk/csharp/authentication/events.md"
                 }
               ]
             },
@@ -7175,7 +7219,12 @@ const zhCnNavBar = {
                       path: '/reference/sdk/csharp/management/管理计量计费/get-order-pay-detail'
                     }
                   ]
+                },
+                {
+                  title: '事件',
+                  path: '/reference/sdk/csharp/management/events.md'
                 }
+
               ]
             }
           ]
@@ -7452,6 +7501,10 @@ const zhCnNavBar = {
                 {
                   title: 'OIDC 模块',
                   path: '/reference/mobile/sdk-for-android/apis/oidc.md'
+                },
+                {
+                  title: '事件',
+                  path: '/reference/mobile/sdk-for-android/apis/events.md'
                 }
               ]
             }
@@ -7508,7 +7561,8 @@ const zhCnNavBar = {
                 '/reference/mobile/sdk-for-ios/apis/utils',
                 '/reference/mobile/sdk-for-ios/apis/oidc',
                 '/reference/mobile/sdk-for-ios/apis/options',
-                '/reference/mobile/sdk-for-ios/apis/enum'
+                '/reference/mobile/sdk-for-ios/apis/enum',
+                '/reference/mobile/sdk-for-ios/apis/events'
               ]
             },
             {
