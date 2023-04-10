@@ -1,7 +1,9 @@
 # 事件
 
 ## 订阅事件
-- func subEvent(eventCode: String, completion: @escaping (String?) -> Void)
+```swift
+func subEvent(eventCode: String, completion: @escaping (Int, String?) -> Void)
+```
 
 ### 参数
 - eventCode `<String>` 事件编码
@@ -12,14 +14,16 @@
 ```swift
 Authing.start(APP_ID)
 Authing.setWebsocketHost(websocketHost: "yourapp.websocketHost")
-AuthClient().subEvent(eventCode: "yourapp.event.code") { message in
+AuthClient().subEvent(eventCode: "yourapp.event.code") { code, message in
     print(message)
 }
 ```
 
 ## 发布事件
 
-- func pubEvent(eventType: String, eventData: NSDictionary, completion: @escaping(Int, String?, NSDictionary?) -> Void)
+```swift
+func pubEvent(eventType: String, eventData: NSDictionary, completion: @escaping(Int, String?, NSDictionary?) -> Void)
+```
 
 ### 参数
 - eventType `<String>`  事件编码
