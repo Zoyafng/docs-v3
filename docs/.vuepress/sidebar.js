@@ -559,6 +559,14 @@ const zhCnNavBar = {
                     {
                       title: '导入用户的 OTP',
                       path: '/reference/sdk/java/management/管理用户/import-otp'
+                    },
+                    {
+                      title: '设置用户 MFA 状态',
+                      path: '/reference/sdk/java/management/管理用户/set-user-mfa-status'
+                    },
+                    {
+                      title: '获取用户 MFA 状态',
+                      path: '/reference/sdk/java/management/管理用户/get-user-mfa-status'
                     }
                   ]
                 },
@@ -1078,6 +1086,10 @@ const zhCnNavBar = {
                     {
                       title: '检测域名是否可用',
                       path: '/reference/sdk/java/management/管理应用/check-domain-available'
+                    },
+                    {
+                      title: '获取应用下用户 MFA 触发数据',
+                      path: '/reference/sdk/java/management/管理应用/get-application-mfa-trigger-data'
                     }
                   ]
                 },
@@ -1864,6 +1876,14 @@ const zhCnNavBar = {
                     {
                       title: '导入用户的 OTP',
                       path: '/reference/sdk/node/management/管理用户/import-otp'
+                    },
+                    {
+                      title: '设置用户 MFA 状态',
+                      path: '/reference/sdk/node/management/管理用户/set-user-mfa-status'
+                    },
+                    {
+                      title: '获取用户 MFA 状态',
+                      path: '/reference/sdk/node/management/管理用户/get-user-mfa-status'
                     }
                   ]
                 },
@@ -2371,6 +2391,10 @@ const zhCnNavBar = {
                     {
                       title: '检测域名是否可用',
                       path: '/reference/sdk/node/management/管理应用/check-domain-available'
+                    },
+                    {
+                      title: '获取应用下用户 MFA 触发数据',
+                      path: '/reference/sdk/node/management/管理应用/get-application-mfa-trigger-data'
                     }
                   ]
                 },
