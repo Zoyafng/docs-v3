@@ -105,17 +105,16 @@ const managementClient = new ManagementClient({
 | 名称 | 类型 | <div style="width:80px">是否必填</div> | <div style="width:300px">描述</div> | <div style="width:200px">示例值</div> |
 | ---- |  ---- | ---- | ---- | ---- |
 | mfaToken | string | 是 | MFA Token   |  `xxxxxxx` |
-| mfaPhone | string | 是 | MFA 绑定的手机号   |  `null` |
-| mfaPhoneCountryCode | string | 是 | MFA 绑定的手机区号   |  `null` |
-| mfaEmail | string | 是 | MFA 绑定的邮箱   |  `null` |
-| nickname | string | 是 | 用户昵称   |  `null` |
-| username | string | 是 | 用户名   |  `null` |
-| phone | string | 是 | 用户手机号   |  `null` |
-| phoneCountryCode | string | 是 | 用户手机区号   |  `null` |
-| faceMfaEnabled | boolean | 是 | 人脸校验是否开启   |  `true` |
-| totpMfaEnabled | boolean | 是 | OTP 校验是否开启   |  `true` |
 | applicationMfa | array | 是 | MFA 配置类型：<a href="#ApplicationMfaDto">ApplicationMfaDto</a>。  |  |
-
+| mfaPhone | string | 否 | MFA 绑定的手机号   |  `null` |
+| mfaPhoneCountryCode | string | 否 | MFA 绑定的手机区号   |  `null` |
+| mfaEmail | string | 否 | MFA 绑定的邮箱   |  `null` |
+| nickname | string | 否 | 用户昵称   |  `null` |
+| username | string | 否 | 用户名   |  `null` |
+| phone | string | 否 | 用户手机号   |  `null` |
+| phoneCountryCode | string | 否 | 用户手机区号   |  `null` |
+| faceMfaEnabled | boolean | 否 | 人脸校验是否开启   |  `true` |
+| totpMfaEnabled | boolean | 否 | OTP 校验是否开启   |  `true` |
 
 ### <a id="ApplicationMfaDto"></a> ApplicationMfaDto
 
