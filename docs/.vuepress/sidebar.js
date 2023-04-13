@@ -7631,20 +7631,20 @@ const zhCnNavBar = {
         //   }
         // ]
         // },
-        {
-          title: '单点登录 SSO',
-          path: '/reference/sdk/web',
-          children: [
-            {
-              title: '开始集成',
-              path: '/reference/sdk/web/quick'
-            },
-            {
-              title: '版本更新',
-              path: '/reference/sdk/web/changelog'
-            }
-          ]
-        }
+        // {
+        //   title: '单点登录 SSO',
+        //   path: '/reference/sdk/web',
+        //   children: [
+        //     {
+        //       title: '开始集成',
+        //       path: '/reference/sdk/web/quick'
+        //     },
+        //     {
+        //       title: '版本更新',
+        //       path: '/reference/sdk/web/changelog'
+        //     }
+        //   ]
+        // }
       ]
     },
     // {
