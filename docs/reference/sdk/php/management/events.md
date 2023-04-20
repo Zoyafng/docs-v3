@@ -1,6 +1,7 @@
 ## 订阅事件
 - $management->sub("eventName", $callback, $errCallback, 5000);
-> 使用接口可以订阅 authing 产生的事件，eventCode 为事件编码，可在 authing 控制台 查看。
+> 使用 WebSocket 方式订阅 authing 产生的事件，eventCode 为事件编码，可在 [Authing API Explorer
+](https://api-explorer.authing.cn/) 中查看可使用的事件。
 
 ### 参数
 - event_code `<String>`  事件编码

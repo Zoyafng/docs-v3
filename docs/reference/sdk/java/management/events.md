@@ -1,7 +1,8 @@
 ## 订阅事件
 - managementClient.subEvent(eventCode,receiver)
 
-使用接口可以订阅 authing 产生的事件，eventCode 为事件编码，可在 authing 控制台 查看。
+使用 WebSocket 方式订阅 authing 产生的事件，eventCode 为事件编码，可在 [Authing API Explorer
+](https://api-explorer.authing.cn/) 中查看可使用的事件。
 
 ### 请求参数
 - eventCode `<String>`  事件编码
@@ -27,7 +28,8 @@ managementClient.subEvent("authing.user.created", new Receiver() {
 ## 发布事件
 - managementClient. pubEvent(eventCode, data)
 
-使用接口可以发布自定义事件，eventCode 为事件编码，可在 authing 控制台 查看。
+使用接口可以发布自定义事件，eventCode 为事件编码，可在 [Authing API Explorer
+](https://api-explorer.authing.cn/) 中查看可使用的事件。
 
 
 ### 请求参数
