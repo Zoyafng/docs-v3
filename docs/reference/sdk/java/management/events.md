@@ -28,9 +28,6 @@ managementClient.subEvent("authing.user.created", new Receiver() {
 ## 发布事件
 - managementClient. pubEvent(eventCode, data)
 
-使用接口可以发布自定义事件，eventCode 为事件编码，可在 [Authing API Explorer
-](https://api-explorer.authing.cn/) 中查看可使用的事件。
-
 
 ### 请求参数
 - eventCode `<String>`  事件编码
