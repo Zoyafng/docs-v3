@@ -1100,7 +1100,7 @@ export default {
 
 #### 入参
 
-无
+参考：[GetUserInfo](#GetUserInfo)
 
 #### 出参
 
@@ -1112,11 +1112,13 @@ Promise<[SDKResponse](#SDKResponse)<[UserInfo](#UserInfo)>>
 <!-- index.wxml -->
 <button bindtap="getUserInfo">Get User Info</button>
 ```
-``` typescript
+``` js
 // index.js
 Page({
   async getUserInfo () {
-    const [error, res] = await authing.getUserInfo()
+    const [error, res] = await authing.getUserInfo({
+      withCustomData: true
+    })
   }
 })
 ```
@@ -1133,7 +1135,9 @@ export default class Index extends Component<PropsWithChildren> {
   }
   
   async getUserInfo () {
-    const [error, res] = await authing.getUserInfo()
+    const [error, res] = await authing.getUserInfo({
+      withCustomData: true
+    })
   }
 }
 ```
@@ -1146,7 +1150,9 @@ export default class Index extends Component<PropsWithChildren> {
 export default {
   methods: {
     async getUserInfo () {
-      const [error, res] = await authing.getUserInfo()
+      const [error, res] = await authing.getUserInfo({
+        withCustomData: true
+      })
     }
   }
 }
@@ -2122,3 +2128,11 @@ interface ErrorData {
 |-----|----|----|
 |key|String|wx.uploadFile 返回的 key|
 |url|String|文件地址|
+
+### <p id="GetUserInfo">GetUserInfo</p>
+
+|名称|类型|描述|默认值|必传|
+|-----|----|----|----|----|
+|withCustomData|boolean|是否获取自定义数据|false|否|
+|withIdentities|boolean|是否获取 identities|false|否|
+|withDepartmentIds|boolean|是否获取部门 ID 列表|false|否|
