@@ -9,7 +9,6 @@ Authing Web SDK 目前支持的功能如下：
 |功能|说明|
 |----|----|
 |loginWithRedirect|跳转登录|
-|loginWithPopup|弹窗登录|
 |isRedirectCallback|判断当前 URL 是否为 Authing 登录回调 URL，结合 getLoginState 实现静默登录|
 |getLoginState|获取登录态|
 |getUserInfo|获取用户信息|
