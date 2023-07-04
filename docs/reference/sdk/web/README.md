@@ -14,8 +14,6 @@ Authing Web SDK 目前支持的功能如下：
 |getUserInfo|获取用户信息|
 |logoutWithRedirect|退出登录|
 
-除此之外，Authing Web SDK 未来将陆续从 [authing-js-sdk](https://docs.authing.cn/v2/reference/sdk-for-node/authentication/) 中迁移所有可在浏览器中运行的 Authing 大部分认证类功能，并集成 Authing 最新的 V3 版认证类 API，为用户提供更好的使用体验。
-
 ## 代码地址
 
 |条目|说明|
