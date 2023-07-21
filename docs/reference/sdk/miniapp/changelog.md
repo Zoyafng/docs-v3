@@ -1,6 +1,6 @@
 # 版本更新
 
-当前 **Authing 小程序 SDK** 相关的最新稳定版本是 v5.1.8。
+当前 **Authing 小程序 SDK** 相关的最新稳定版本是 v5.1.9。
 
 完整的过往发布记录可以在 [GitHub](https://github.com/Authing/authing-js-sdk/releases) 查阅。
 

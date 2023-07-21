@@ -54,7 +54,7 @@ yarn add @authing/web
 ::: tab CDN
 ```html
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://cdn.authing.co/packages/web/5.1.8/index.global.js"></script>
+<script src="https://cdn.authing.co/packages/web/5.1.9/index.global.js"></script>
 ```
 :::
 ::::
